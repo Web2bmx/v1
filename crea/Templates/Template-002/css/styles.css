@@ -1,0 +1,104 @@
+@font-face {
+    font-family: 'Modern Pics';
+    src: url(../../Fonts/modernpics.otf);
+}
+body {
+	margin: 0; padding: 0;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: #664422;
+	font-family: 'Skranji', cursive;
+}
+main {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.font-icon {
+	font-family: 'Modern Pics', cursive;
+}
+#hero {
+	width: 100%; height: auto;
+	background-color: #FFFABB;
+	display: block; overflow: hidden;
+}
+#hero-content {
+	width: 90%; height: auto;
+	padding: 10% 5%;
+	display: block; overflow: hidden;
+}
+#hero-image {
+	width: 80%; max-width: 400px; height: auto;
+	margin: 0 auto;
+	display: block; overflow: hidden;
+}
+#items {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.item {
+	width: 100%; height: auto;
+	margin: 2em 0;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.item-image {
+	width: 60%; height: auto;
+	margin: 0 20%;
+	display: block; overflow: hidden;
+	position: relative; z-index: 0;
+}
+.item h2 {
+	width: 90%; height: auto;
+	margin: 0;
+	padding: 5%;
+	background-color: rgba(255,255,255,.6);
+	display: block; overflow: hidden;
+	position: absolute; z-index: 1;
+	bottom: 0;
+}
+#mapa {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+#mapa>iframe {
+	width: 100%; height: 600px;
+	display: block; overflow: hidden;
+}
+footer {
+	width: 100%; height: auto;
+	padding: 2em 0;
+	background-color: #664422;
+	color: #FFF;
+	display: block; overflow: hidden;
+}
+footer h3 {
+	color: #FFF;
+}
+footer a, footer a:link, footer a:visited, footer a:hover, footer a:active {
+	color: #FFF;
+}
+footer ul {
+	list-style: none;
+}
+@media only screen and (min-width: 1280px) {
+    main {
+		width: 80%; max-width: 1440px;
+		margin: 0 auto;
+	}
+	#hero-content {
+		width: 60%;
+		margin: 1% 15% 0 15%;
+		padding: 3% 5%;
+	}
+	.item {
+		width: 33.33%;
+		float: left;
+	}
+	.footer-column {
+		width: 25%;
+		padding: 0 4%;
+		float: left;
+	}
+}
