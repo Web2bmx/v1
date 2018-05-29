@@ -94,8 +94,14 @@ footer ul {
 		padding: 3% 5%;
 	}
 	.item {
-		width: 33.33%;
+		width: 33%;
 		float: left;
+	}
+	.item:nth-child(2) {
+		margin: 0 .5%;
+	}
+	.item:nth-child(3) {
+		float: right;
 	}
 	.footer-column {
 		width: 25%;

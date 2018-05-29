@@ -62,7 +62,7 @@
 						<p>El primer paso es poner el nombre de tu Negocio.</p>
 						<p>Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
 						<div>
-							<input type="text" id="inp-name" name="inp-name" value="" placeholder="El nombre de tu negocio" /> 
+							<input type="text" id="inp-name" name="inp-name" value="El nombre de tu negocio" placeholder="El nombre de tu negocio" /> 
 						</div>
 					</div>
 				</div>
@@ -71,8 +71,8 @@
 						<h1>¡Excelente! Ahora elige el diseño de tu página.</h1>
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div>
-							<label>Femenino</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
-							<label>Restaurante</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
+							<label>Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
+							<label>Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
 						</div>
 					</div>
 				</div>
@@ -88,12 +88,12 @@
 						<p>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio.</p>
 						<p>Si deseas no mostrarle ni un dato de contacto a tus Clientes sólo haz clic en el botón de Siguiente.</p>
 						<div>
-							<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" /><br />
-							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" /><br />
-							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" /><br />
+							<input type="text" id="inp-contact-email" name="inp-contact-email" value="tucorreo@tunegocio.com" placeholder="El correo electrónico de tu Negocio" /><br />
+							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="555 555 5555" placeholder="El teléfono de tu Negocio" /><br />
+							<input type="text" id="inp-contact-address" name="inp-contact-address" value="La dirección de tu negocio" placeholder="La dirección de tu Negocio" /><br />
 							<input type="text" id="inp-contact-map" name="inp-contact-map" value="" placeholder="El mapa de tu Negocio" /><br />
-							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" /><br />
-							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" /><br />
+							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="facbook.com/tuNegocio" placeholder="La página de Facebook de tu Negocio" /><br />
+							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="twitter.com/tuNegocio" placeholder="La página de Twitter de tu Negocio" /><br />
 						</div>
 					</div>
 				</div>
@@ -103,10 +103,10 @@
 						<p>Recuerda que puedes remover las secciones que no necesites con el botón de cerrar [x].</p>
 						<p>¡Los textos que ves son tuyos! Modificalos a tu gusto o haz clic aquí* para asesorarte. </p>
 						<div>
-							<label>Eslógan</label><br /><textarea id="inp-content-slogan" name="inp-content-slogan"></textarea><br />
-							<label>Producto o servicio 1</label><br /><textarea id="inp-content-item-001" name="inp-content-item-001"></textarea><br />
-							<label>Producto o servicio 2</label><br /><textarea id="inp-content-item-002" name="inp-content-item-002"></textarea><br />
-							<label>Producto o servicio 3</label><br /><textarea id="inp-content-item-003" name="inp-content-item-003"></textarea><br />
+							<label>Eslógan</label><br /><textarea id="inp-content-slogan" name="inp-content-slogan">El eslógan de tu negocio</textarea><br />
+							<label>Producto o servicio 1</label><br /><textarea id="inp-content-item-001" name="inp-content-item-001">Tu primer producto o servicio</textarea><br />
+							<label>Producto o servicio 2</label><br /><textarea id="inp-content-item-002" name="inp-content-item-002">Tu segundo producto o servicio</textarea><br />
+							<label>Producto o servicio 3</label><br /><textarea id="inp-content-item-003" name="inp-content-item-003">Tu tercer producto o servicio</textarea><br />
 						</div>
 					</div>
 				</div>
@@ -131,8 +131,16 @@
 							<li>Agregar mi logotipo.</li>
 							<li>Agregar nuevo contenido.</li>
 							<li>Actualizaciones ilimitadas.</li>
-							<li>$699.00</li>
+							<!--<li>$699.00</li>-->
 						</ul>
+						<div>
+							<h4>Selecciona el precio que pagarías por esta opción</h4>
+							<ul>
+								<li>Menos de $700.00 <input type="radio" name="price-opt1" value="1"/></li>
+								<li>Entre $700.00 y $1,200.00<input type="radio" name="price-opt1" value="2"/></li>
+								<li>Más de $1,200.00<input type="radio" name="price-opt1" value="3"/></li>
+							</ul>
+						</div>
 						<h3>Paquete Premium</h3>
 						<ul>
 							<li>Dominio, elnombredeminegocio.mx</li>
@@ -140,13 +148,29 @@
 							<li>Agregar mi logotipo.</li>
 							<li>Agregar nuevo contenido.</li>
 							<li>Actualizaciones ilimitadas.</li>
-							<li>$1,599.00</li>
+							<!--<li>$1,599.00</li>-->
 						</ul>
-						<ol>
-							<li>Selecciona el paquete que más te guste</li>
-							<li>Escribe un correo donde podamos contactarte</li>
-							<li>Un asesor de ventas te contactará en máximo 24 horas</li>
-						</ol>
+						<div>
+							<h4>Selecciona el precio que pagarías por esta opción</h4>
+							<ul>
+								<li>Menos de $1,600.00 <input type="radio" name="price-opt2" value="1"/></li>
+								<li>Entre $1,600.00 y $2,500.00<input type="radio" name="price-opt2" value="2"/></li>
+								<li>Más de $2,500.00<input type="radio" name="price-opt2" value="3"/></li>
+							</ul>
+						</div>
+						<h2>Escribe un correo donde podamos contactarte</h2>
+						<input type="text" placeholder="Tu correo" />
+						<h3>Recibirás un correo en los próximos mínutos con los siguientes pasos.</h3>
+						<input type="button" value="Aceptar" />
+						<!--Start of Zendesk Chat Script-->
+						<script type="text/javascript">
+						window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+						d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+						_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+						$.src="https://v2.zopim.com/?5i6KYxksBWn5b8FtltKtu2xXDupSBICm";z.t=+new Date;$.
+						type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+						</script>
+						<!--End of Zendesk Chat Script-->
 					</div>
 				</div>
 			</div>
