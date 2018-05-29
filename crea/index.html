@@ -18,30 +18,11 @@
 		<!--<script src="js/jquery.js"></script>-->
 		<script src="js/scripts.js"></script>
 		<main>
-			<div id="app-iframe"></div>
-			<div id="app-preview">
-				<div>	
-					<ul>
-						<li id="val-name">Nombre del Negocio: <span>*</span></li>
-						<li id="val-design">Diseño de la página: <span>*</span></li>
-						<li id="val-palette">Paleta de la página: <span>*</span></li>
-						<li id="val-contact-email">El correo electrónico del Negocio: <span>*</span></li>
-						<li id="val-contact-phone">El teléfono del Negocio: <span>*</span></li>
-						<li id="val-contact-address">La dirección del Negocio: <span>*</span></li>
-						<li id="val-contact-map">El mapa del Negocio: <span>*</span></li>
-						<li id="val-contact-facebook">La página de Facebook del Negocio: <span>*</span></li>
-						<li id="val-contact-twitter">La página de Twitter del Negocio: <span>*</span></li>
-						<li id="val-content-slogan">Eslógan de la página: <span>*</span></li>
-						<li id="val-content-item-001">Servicio o producto 001 de la página: <span>*</span></li>
-						<li id="val-content-item-002">Servicio o producto 002 de la página: <span>*</span></li>
-						<li id="val-content-item-003">Servicio o producto 003 de la página: <span>*</span></li>
-						<li id="val-images-slogan">Imágen para eslógan de la página: <span>*</span></li>
-						<li id="val-images-item-001">Imágen para servicio o producto 001 de la página: <span>*</span></li>
-						<li id="val-images-item-002">Imágen para servicio o producto 002 de la página: <span>*</span></li>
-						<li id="val-images-item-003">Imágen para servicio o producto 003 de la página: <span>*</span></li>
-					</ul>
-				</div>
+			<div id='app-switch' style="display : none;">
+				<a id='switch-view'>Mira tu sitio</a>
+				<a id='switch-edit' style="display : none;">Edita tu sitio</a>
 			</div>
+			<div id="app-preview"></div>
 			<div id="app-control">
 				<div>
 					<div>
@@ -162,18 +143,18 @@
 						<input type="text" placeholder="Tu correo" />
 						<h3>Recibirás un correo en los próximos mínutos con los siguientes pasos.</h3>
 						<input type="button" value="Aceptar" />
-						<!--Start of Zendesk Chat Script-->
-						<script type="text/javascript">
-						window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-						d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-						_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-						$.src="https://v2.zopim.com/?5i6KYxksBWn5b8FtltKtu2xXDupSBICm";z.t=+new Date;$.
-						type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-						</script>
-						<!--End of Zendesk Chat Script-->
 					</div>
 				</div>
 			</div>
 		</main>
+		<!--Start of Zendesk Chat Script-->
+		<script type="text/javascript">
+		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+		$.src="https://v2.zopim.com/?5i6KYxksBWn5b8FtltKtu2xXDupSBICm";z.t=+new Date;$.
+		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+		</script>
+		<!--End of Zendesk Chat Script-->
 	</body>
 </html>

@@ -1,20 +1,35 @@
+var palettes = [
+				["Natural", [["#FFFFFF", "#444444"], ["#74db6b", "#FFFFFF"], ["#44963d", "#DDDDDD"]]],
+				["Calido", [["#e27b5f", "#995f21"], ["#ffe95b", "#995f21"], ["#726b39", "#444444"]]],
+				["Colorido", [["#FF0000", "#FFFFFF"], ["#EE00FF", "#454545"], ["#6666FF", "#AA00AA"]]],
+				["Azules", [["#2D707F", "#FFFFFF"], ["#A7EFFF", "#222222"], ["#54777F", "#FFFFFF"]]],
+				["Grises", [["#666666", "#FFFFFF"], ["#EFEFEF", "#222222"], ["#444444", "#FFFFFF"]]],
+				["Rojos", [["#820333", "#FFFFFF"], ["#540032", "#FFFFFF"], ["#C9283E", "#FFFFFF"]]]
+			];
+var images = [
+				"Templates/Images/Thumbnails/pretty-woman-makeup-mirror-glamour-39250.jpg",
+				"Templates/Images/Thumbnails/girl-dandelion-yellow-flowers-160699.jpg",
+				"Templates/Images/Thumbnails/portrait-woman-girl-blond-157967.jpg",
+				"Templates/Images/Thumbnails/pexels-photo-887352.jpg",
+				"Templates/Images/Thumbnails/pexels-photo-221063.jpg",
+				"Templates/Images/Thumbnails/pexels-photo-315704.jpg",
+				"Templates/Images/Thumbnails/pexels-photo-315708.jpg",
+				"Templates/Images/Thumbnails/pexels-photo-461217.jpg"
+			];
+var image_types = [
+				["slogan", "La imágen para tu eslógan"],
+				["item-001", "La imágen para tu servicio o producto 1"],
+				["item-002", "La imágen para tu servicio o producto 2"],
+				["item-003", "La imágen para tu servicio o producto 3"]
+			];
 $(document).ready(function() {
 	var template_id = "";
-	$(document.body).on("change", "[name^='inp-']", function() {
-		updateTemplate();
-		
-		var $this = $(this);
-		var id = $this.attr("name");
-		id = id.replace("inp", "val");
-		$("#" + id + ">span").html($this.val());
-	});
-	/*DISEÑO*/
 	updateTemplate();
-	function onMyFrameLoad() {
-		setTimeout(updateContent, 700);
-	}
+	$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
+	$(document.body).on("keyup", "[name^='inp-'][type='text']", function() { updateTemplate(); });
+	function onMyFrameLoad() { setTimeout(updateContent, 700); }
 	function updateContent() {
-		var iFrameDOM = $("#app-iframe>iframe").contents();
+		var iFrameDOM = $("#app-preview>iframe").contents();
 		iFrameDOM.find("#hero-logotipo").css({
 			"display" : "none"
 		});
@@ -142,11 +157,11 @@ $(document).ready(function() {
 		if (template_id != id) {
 			template_id = id;
 			id = id.replace("inp-design-", "");
-			$("#app-iframe>iframe").remove();
+			$("#app-preview>iframe").remove();
 			var iframe = document.createElement('iframe');
 			iframe.onload = onMyFrameLoad();
 			iframe.src = "Templates/Template-" + id + "/index.html"; 
-			document.getElementById("app-iframe").appendChild(iframe);
+			document.getElementById("app-preview").appendChild(iframe);
 		} else {
 			updateContent();
 		}
@@ -156,14 +171,7 @@ $(document).ready(function() {
 	/*DISEÑO*/
 	
 	/*COLORES*/
-	var palettes = [
-					["Natural", [["#FFFFFF", "#444444"], ["#74db6b", "#FFFFFF"], ["#44963d", "#DDDDDD"]]],
-					["Calido", [["#e27b5f", "#995f21"], ["#ffe95b", "#995f21"], ["#726b39", "#444444"]]],
-					["Colorido", [["#FF0000", "#FFFFFF"], ["#EE00FF", "#454545"], ["#6666FF", "#AA00AA"]]],
-					["Azules", [["#2D707F", "#FFFFFF"], ["#A7EFFF", "#222222"], ["#54777F", "#FFFFFF"]]],
-					["Grises", [["#666666", "#FFFFFF"], ["#EFEFEF", "#222222"], ["#444444", "#FFFFFF"]]],
-					["Rojos", [["#820333", "#FFFFFF"], ["#540032", "#FFFFFF"], ["#C9283E", "#FFFFFF"]]]
-					];
+	
 	for (i = 0; i < palettes.length; i++) {
 		var color_checked = i == 0 ? " checked='checked'" : "";
 		$("#app-control-palettes").append('<label>' + palettes[i][0] + '</label><input type="radio" id="inp-palette-' + i + '" name="inp-palette" value="' + i + '"' + color_checked + ' /><br />' + 
@@ -176,22 +184,7 @@ $(document).ready(function() {
 	}				
 	/*COLORES*/
 	/*IMAGENES*/
-	var images = [
-				"Templates/Images/Thumbnails/pretty-woman-makeup-mirror-glamour-39250.jpg",
-				"Templates/Images/Thumbnails/girl-dandelion-yellow-flowers-160699.jpg",
-				"Templates/Images/Thumbnails/portrait-woman-girl-blond-157967.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-887352.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-221063.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-315704.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-315708.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-461217.jpg"
-				];
-	var image_types = [
-							["slogan", "La imágen para tu eslógan"],
-							["item-001", "La imágen para tu servicio o producto 1"],
-							["item-002", "La imágen para tu servicio o producto 2"],
-							["item-003", "La imágen para tu servicio o producto 3"]
-						];
+	
 	for (i = 0; i < image_types.length; i++) {
 		$("#app-control-images").append("<div id='app-control-images-" + image_types[i][0] + "'><h4>" + image_types[i][1] + "</h4></div>");
 		for (k = 0; k < images.length; k++) {
@@ -219,15 +212,12 @@ $(document).ready(function() {
 	});
 	/*NAV BUTTONS*/
 	/*APP SWITCH*/
-	$("body").append("<div id='app-switch'><a href='#switch'>Mira tu sitio</a></div>");
-	$("[href='#switch']").on('click', function() {
-		if($("#app-control").is(":visible")) {
-			$(this).html("Edita tu sitio");
-			$("#app-control").hide();
-		} else {
-			$(this).html("Mira tu sitio");
-			$("#app-control").show();
-		}
-	}).parent().hide();
-	/*APP SWITCH*/
+	var $appControl = $("#app-control");
+	var $switchView = $("#switch-view");
+	var $switchEdit = $("#switch-edit");
+	$("[id^='switch-']").on('click', function() {
+		if($appControl.is(":visible")) { $switchView.hide(); $switchEdit.show(); $appControl.hide(); }
+		else { $switchView.show(); $switchEdit.hide(); $appControl.show(); }
+	});
+	/*EO APP SWITCH*/
 });
