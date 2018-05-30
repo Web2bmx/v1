@@ -13,11 +13,16 @@ ul, ol, nav {
 a {
 	color: #000000;
 	text-decoration: none;
+	cursor: pointer;
 }
 a:link { color: #000000; }
 a:visited { color: #000000; }
 a:hover { color: #000000; }
 a:active { color: #000000; }
+/**/
+.template {
+	display: none;
+}
 /**/
 main {
 	width: 100%; height: 100%;
@@ -28,15 +33,16 @@ main {
 #app-control {
 	width: 100%; height: 95%;
 	background-color: #EFEFEF;
-	display: block; overflow: hidden;
+	display: block; overflow-y: scroll;
 	position: absolute;
 	top: 5%; right: 0; bottom: 0; left: 0;
 	z-index: 2;
 }
-#app-control>div {
-	width: 100%; height: 100%;
+#app-control>.app-control-step {
+	width: 100%; height: auto;
+	padding-bottom: 5em;
 	text-align: center;
-	display: block; overflow-y: scroll;
+	display: block; overflow: hidden;
 	outline: 1px solid #cc2880;
 }
 #app-control>div.appview {
@@ -68,24 +74,32 @@ main {
 }
 .img-thumb {
 	width: 25%; height: auto;
-	float: left; overflow: hidden;
+	float: left; overflow: visible;
 }
 .img-thumb>img {
 	width: 100%; height: auto;
 	display: block;
+	cursor: pointer;
+	position: relative; z-index: 0;
+}
+.img-thumb>img.thumb-selected {
+	outline: 3px solid blue;
+	z-index: 2;
 }
 /**/
-.control-view-nav {
+#control-view-nav {
 	width: 100%; height: auto;
-	padding: 10% 0 0 0;
 	text-align: center;
 	display: block; overflow: hidden;
+	position: fixed; z-index: 1000;
+	top: auto; right: 0; bottom: 0; left: auto;
 }
-.control-view-nav>a {
+#control-view-nav>a {
 	width: 50%; height: auto;
 	padding: 1em 0;
 	background-color: #666;
 	color: #FFF;
+	vertical-align: middle;
 	display: inline-block; overflow: hidden;
 }
 /**/
@@ -129,6 +143,33 @@ a[id^='switch'] {
 	text-align: center;
 	display: block;
 }
+/**/
+#app-cover {
+	width: 100%; height: 100%;
+	background-color: rgba(255, 255, 255, .95);
+	display: block; overflow-y: scroll;
+	position: fixed; z-index: 1001;
+	top: 0; right: 0; bottom: 0; left: 0;
+}
+#app-cover>div {
+	width: 80%; height: auto;
+	margin: 3em auto;
+	text-align: center;
+	display: block; overflow: hidden;
+}
+#app-cover input[type='button'] {
+	padding: 1em;
+	background-color: #cc2880;
+	color: #FFFFFF;
+	border: none;
+	cursor: pointer;
+}
+.app-cover-finish-package {
+	margin: 1em 0;
+	padding: 2em;
+	border: 1px dotted #ADADAD;
+}
+/**/
 @media screen and (min-width: 1280px) {
 	#app-switch {
 		display: none;
@@ -150,9 +191,12 @@ a[id^='switch'] {
 	#app-control {
 		width: 20%; height: 100%;
 		background-color: #EFEFEF;
-		display: block; overflow: hidden;
+		display: block; overflow-y: scroll;
 		position: absolute;
 		top: 0; right: 0; bottom: 0; left: 80%;
 		z-index: 2;
+	}
+	#control-view-nav {
+		width: 20%;
 	}
 }

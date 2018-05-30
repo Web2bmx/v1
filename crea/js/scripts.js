@@ -27,6 +27,7 @@ $(document).ready(function() {
 	updateTemplate();
 	$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
 	$(document.body).on("keyup", "[name^='inp-'][type='text']", function() { updateTemplate(); });
+	$(document.body).on("keyup", "textarea[name^='inp-']", function() { updateTemplate(); });
 	function onMyFrameLoad() { setTimeout(updateContent, 700); }
 	function updateContent() {
 		var iFrameDOM = $("#app-preview>iframe").contents();
@@ -62,49 +63,28 @@ $(document).ready(function() {
 			"background-color" : palettes[$("[name='inp-palette']:checked").val()][1][2][0],
 			"color" : palettes[$("[name='inp-palette']:checked").val()][1][2][1]
 		});
-		/*Contacto*/
-		$("[id^='inp-contact-']").each(function() {
+		/*Content & Contacto*/
+		$("[id^='inp-contact-'], [id^='inp-content-']").each(function() {
 			var $this = $(this);
 			if ($this.val() != "") {
-				switch ($this.attr("id")) {
-				case "inp-contact-email" :
-					iFrameDOM.find("#contacto-correo").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
-					break;
-				case "inp-contact-phone" :
-					iFrameDOM.find("#contacto-telefono strong").html($this.val());
-					break;
-				case "inp-contact-address" :
-					iFrameDOM.find("#contacto-direccion").html($this.val());
-					break;	
-				case "inp-contact-map" :
-					iFrameDOM.find("#mapa").html($this.val());
-					break;	
-				case "inp-contact-facebook" :
-					iFrameDOM.find("#contacto-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
-					break;	
-				case "inp-contact-twitter" :
-					iFrameDOM.find("#contacto-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
-					break;	
-				}
-			}
-		});
-		/*Content*/
-		$("[id^='inp-content-']").each(function() {
-			var $this = $(this);
-			if ($this.val() != "") {
-				switch ($this.attr("id")) {
-				case "inp-content-slogan" :
-					iFrameDOM.find("#hero h2").html($this.val());
-					break;
-				case "inp-content-item-001" :
-					iFrameDOM.find(".item:eq(0) h2").html($this.val());
-					break;
-				case "inp-content-item-002" :
-					iFrameDOM.find(".item:eq(1) h2").html($this.val());
-					break;
-				case "inp-content-item-003" :
-					iFrameDOM.find(".item:eq(2) h2").html($this.val());
-					break;
+				var i_id = $this.attr("id");
+				var v_id = i_id.replace("inp", "val");
+				switch (i_id) {
+					case "inp-contact-email" :
+						iFrameDOM.find("#contacto-correo").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
+						break;
+					case "inp-contact-map" :
+						iFrameDOM.find("#mapa").html($this.val());
+						break;	
+					case "inp-contact-facebook" :
+						iFrameDOM.find("#contacto-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						break;	
+					case "inp-contact-twitter" :
+						iFrameDOM.find("#contacto-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						break;	
+					default : 
+						iFrameDOM.find("#" + v_id).html($this.val());
+						break;
 				}
 			}
 		});
@@ -168,10 +148,6 @@ $(document).ready(function() {
 		/**/
 		/**/
 	}
-	/*DISEÑO*/
-	
-	/*COLORES*/
-	
 	for (i = 0; i < palettes.length; i++) {
 		var color_checked = i == 0 ? " checked='checked'" : "";
 		$("#app-control-palettes").append('<label>' + palettes[i][0] + '</label><input type="radio" id="inp-palette-' + i + '" name="inp-palette" value="' + i + '"' + color_checked + ' /><br />' + 
@@ -189,26 +165,52 @@ $(document).ready(function() {
 		$("#app-control-images").append("<div id='app-control-images-" + image_types[i][0] + "'><h4>" + image_types[i][1] + "</h4></div>");
 		for (k = 0; k < images.length; k++) {
 			var img_checked = k == i ? " checked='checked'" : "";
+			var img_class = k == i ? " thumb-selected'" : "";
 			$("#app-control-images-" + image_types[i][0]).append("<div class='img-thumb'>" +
-														"<img src='" + images[k] + "' />" +	
-														"<input type='radio' id='inp-images-" + image_types[i][2] + "-" + k + "' name='inp-img-" + image_types[i][0] + "' value='" + images[k] + "'" + img_checked + "/>" +	
+														"<img class='" + img_class + "' src='" + images[k] + "' />" +	
+														"<input type='radio' id='inp-images-" + image_types[i][2] + "-" + k + "' name='inp-img-" + image_types[i][0] + "' value='" + images[k] + "'" + img_checked + " style='display: none;'/>" +	
 														"</div>");
 		}
 	}
+	$(".img-thumb>img").on('click', function() {
+		var $this = $(this);
+		$this.closest("[id^='app-control-images']").find("img").removeClass("thumb-selected");
+		$this.next("input").trigger("click");
+		$this.addClass("thumb-selected");
+	});
 	/*IMAGENES*/
 	/*NAV BUTTONS*/
-	$("#app-control>div").append("<nav class='control-view-nav'><a href='#prev'>Anterior</a><a href='#next'>Siguiente</a></nav>").filter(":gt(0)").hide();
-	$("[href='#prev']:lt(2)").remove();
-	$("[href='#prev']:last").remove();
-	$("[href='#next']:first").html("¡Comienza ya!");
-	$("[href='#next']:last").remove();
-	$(".control-view-nav>a").on("click", function() {
+	var current_step = 0;
+	$("#app-control>.app-control-step").filter(":gt(0)").hide();
+	$("#control-view-nav>a").on("click", function() {
 		var inc = $(this).attr("href") == "#next" ? 1 : -1;
-		var id = $(".control-view-nav").index($(this).parent()) + inc;
-		if (id == 1) {
-			$("#app-switch").show();
+		current_step += inc;
+		switch (current_step) {
+			case 0 :
+				$("#control-view-nav>a:eq(0)").hide();
+				break;
+			case 1 :
+				$("#control-view-nav>a:eq(0)").show();
+				break;
+			case ($("#app-control>.app-control-step").length) :
+				showAppCover();
+			break;
 		}
-		$("#app-control>div").hide().filter(":eq(" + id + ")").show();
+		if (current_step < ($("#app-control>.app-control-step").length)) {
+			$("#app-control>.app-control-step").hide().filter(":eq(" + current_step + ")").show();
+		}	
+	});
+	function showAppCover() {
+		$("#app-cover").show();
+	}
+	$("[name='start']").on("click", function() {
+		$("#app-cover").hide();
+		$("#app-cover-start").hide();
+		$("#app-cover-finish").show();
+	});
+	$("[name='finish']").on("click", function() {
+		current_step --;
+		$("#app-cover").hide();
 	});
 	/*NAV BUTTONS*/
 	/*APP SWITCH*/

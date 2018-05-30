@@ -18,18 +18,13 @@
 		<!--<script src="js/jquery.js"></script>-->
 		<script src="js/scripts.js"></script>
 		<main>
-			<div id='app-switch' style="display : none;">
+			<div id='app-switch'>
 				<a id='switch-view'>Mira tu sitio</a>
 				<a id='switch-edit' style="display : none;">Edita tu sitio</a>
 			</div>
 			<div id="app-preview"></div>
 			<div id="app-control">
-				<div>
-					<div>
-						<h1>Crea tu página web en 5 mínutos</h1>
-					</div>
-				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<h1>¡Tu página web está casi lista!</h1>
 						<p>Vamos a personalizarla.</p>
@@ -38,7 +33,7 @@
 						<p>Y puedes regresar al modo de edición con un solo clic.</p>
 					</div>
 				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<p>El primer paso es poner el nombre de tu Negocio.</p>
 						<p>Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
@@ -47,7 +42,7 @@
 						</div>
 					</div>
 				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<h1>¡Excelente! Ahora elige el diseño de tu página.</h1>
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
@@ -57,14 +52,14 @@
 						</div>
 					</div>
 				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<h1>¡Muy bien! Ahora elige los colores de tu página.</h1>
 						<p>Puedes elegir de nuestras combinaciones de colores o modificar cada color individualmente haciendo clic alguno.</p>
 						<div id="app-control-palettes"></div>
 					</div>
 				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<p>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio.</p>
 						<p>Si deseas no mostrarle ni un dato de contacto a tus Clientes sólo haz clic en el botón de Siguiente.</p>
@@ -78,7 +73,7 @@
 						</div>
 					</div>
 				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<h1>Ahora define el contenido de tu página.</h1>
 						<p>Recuerda que puedes remover las secciones que no necesites con el botón de cerrar [x].</p>
@@ -91,7 +86,7 @@
 						</div>
 					</div>
 				</div>
-				<div>
+				<div class="app-control-step">
 					<div>
 						<h1>¡Ya casi terminamos!</h1>	
 						<p>Selecciona las imágenes para tu página.</p>
@@ -99,50 +94,63 @@
 						<div id="app-control-images"></div>
 					</div>
 				</div>
-				<div>
+				<nav id='control-view-nav'><a href='#prev' style="display: none;">Anterior</a><a href='#next'>Siguiente</a></nav>
+			</div>
+			<div id="app-cover">
+				<div id="app-cover-start">
+					<div>
+						<h1>Crea tu página web en 5 mínutos</h1>
+						<input type="button" name="start" value="¡Comienza ya!" />
+					</div>
+				</div>
+				<div id="app-cover-finish" style="display: none;">
 					<div>
 						<h1>¡Terminamos!</h1>
 						<p>Puedes ver tu sitio aquí*, y puedes compartir este enlace con quien tú quieras.</p>
 						<p>Tu sitio estará disponible durante 14 días.</p>
 						<p>¿Deseas conservar y crecer tu sitio?</p>
 						<h2>Conoce nuestros paquetes.</h2>
-						<h3>Paquete Básico</h3>
-						<ul>
-							<li>Conservar mi sitio por un año.</li>
-							<li>Agregar mi logotipo.</li>
-							<li>Agregar nuevo contenido.</li>
-							<li>Actualizaciones ilimitadas.</li>
-							<!--<li>$699.00</li>-->
-						</ul>
-						<div>
-							<h4>Selecciona el precio que pagarías por esta opción</h4>
+						<div class="app-cover-finish-package">
+							<h3>Paquete Básico</h3>
 							<ul>
-								<li>Menos de $700.00 <input type="radio" name="price-opt1" value="1"/></li>
-								<li>Entre $700.00 y $1,200.00<input type="radio" name="price-opt1" value="2"/></li>
-								<li>Más de $1,200.00<input type="radio" name="price-opt1" value="3"/></li>
+								<li>Conservar mi sitio por un año.</li>
+								<li>Agregar mi logotipo.</li>
+								<li>Agregar nuevo contenido.</li>
+								<li>Actualizaciones ilimitadas.</li>
+								<!--<li>$699.00</li>-->
 							</ul>
+							<div>
+								<h4>Selecciona el precio que pagarías por esta opción</h4>
+								<ul>
+									<li>Menos de $700.00 <input type="radio" name="price-opt1" value="1"/></li>
+									<li>Entre $700.00 y $1,200.00<input type="radio" name="price-opt1" value="2"/></li>
+									<li>Más de $1,200.00<input type="radio" name="price-opt1" value="3"/></li>
+								</ul>
+							</div>
 						</div>
-						<h3>Paquete Premium</h3>
-						<ul>
-							<li>Dominio, elnombredeminegocio.mx</li>
-							<li>Conservar mi sitio por un año.</li>
-							<li>Agregar mi logotipo.</li>
-							<li>Agregar nuevo contenido.</li>
-							<li>Actualizaciones ilimitadas.</li>
-							<!--<li>$1,599.00</li>-->
-						</ul>
-						<div>
-							<h4>Selecciona el precio que pagarías por esta opción</h4>
+						<div class="app-cover-finish-package">	
+							<h3>Paquete Premium</h3>
 							<ul>
-								<li>Menos de $1,600.00 <input type="radio" name="price-opt2" value="1"/></li>
-								<li>Entre $1,600.00 y $2,500.00<input type="radio" name="price-opt2" value="2"/></li>
-								<li>Más de $2,500.00<input type="radio" name="price-opt2" value="3"/></li>
+								<li>Dominio, elnombredeminegocio.mx</li>
+								<li>Conservar mi sitio por un año.</li>
+								<li>Agregar mi logotipo.</li>
+								<li>Agregar nuevo contenido.</li>
+								<li>Actualizaciones ilimitadas.</li>
+								<!--<li>$1,599.00</li>-->
 							</ul>
-						</div>
+							<div>
+								<h4>Selecciona el precio que pagarías por esta opción</h4>
+								<ul>
+									<li>Menos de $1,600.00 <input type="radio" name="price-opt2" value="1"/></li>
+									<li>Entre $1,600.00 y $2,500.00<input type="radio" name="price-opt2" value="2"/></li>
+									<li>Más de $2,500.00<input type="radio" name="price-opt2" value="3"/></li>
+								</ul>
+							</div>
+						</div>	
 						<h2>Escribe un correo donde podamos contactarte</h2>
 						<input type="text" placeholder="Tu correo" />
 						<h3>Recibirás un correo en los próximos mínutos con los siguientes pasos.</h3>
-						<input type="button" value="Aceptar" />
+						<input type="button" name="finish" value="Aceptar" />
 					</div>
 				</div>
 			</div>
@@ -156,5 +164,6 @@
 		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 		</script>
 		<!--End of Zendesk Chat Script-->
+		<!--TEMPLATES-->
 	</body>
 </html>
