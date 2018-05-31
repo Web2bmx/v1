@@ -1,10 +1,10 @@
 var palettes = [
-				["Natural", [["#FFFFFF", "#444444"], ["#74db6b", "#FFFFFF"], ["#44963d", "#DDDDDD"]]],
-				["Calido", [["#e27b5f", "#995f21"], ["#ffe95b", "#995f21"], ["#726b39", "#444444"]]],
-				["Colorido", [["#FF0000", "#FFFFFF"], ["#EE00FF", "#454545"], ["#6666FF", "#AA00AA"]]],
-				["Azules", [["#2D707F", "#FFFFFF"], ["#A7EFFF", "#222222"], ["#54777F", "#FFFFFF"]]],
-				["Grises", [["#666666", "#FFFFFF"], ["#EFEFEF", "#222222"], ["#444444", "#FFFFFF"]]],
-				["Rojos", [["#820333", "#FFFFFF"], ["#540032", "#FFFFFF"], ["#C9283E", "#FFFFFF"]]]
+				["Natural", [["#FFFFFF", "#444444"], ["#74db6b", "#FFFFFF"], ["#44963d", "#DDDDDD"], ["#FFFFFF"]]],
+				["Calido", [["#e27b5f", "#995f21"], ["#ffe95b", "#995f21"], ["#726b39", "#444444"], ["#000000"] ]],
+				["Colorido", [["#FF0000", "#FFFFFF"], ["#EE00FF", "#454545"], ["#6666FF", "#AA00AA"], ["#000000"]]],
+				["Azules", [["#2D707F", "#FFFFFF"], ["#A7EFFF", "#222222"], ["#54777F", "#FFFFFF"], ["#ADADAD"]]],
+				["Grises", [["#666666", "#FFFFFF"], ["#EFEFEF", "#222222"], ["#444444", "#FFFFFF"], ["#FFFFFF"]]],
+				["Rojos", [["#820333", "#FFFFFF"], ["#540032", "#FFFFFF"], ["#C9283E", "#FFFFFF"], ["#000000"]]]
 			];
 var images = [
 				"Templates/Images/Thumbnails/pretty-woman-makeup-mirror-glamour-39250.jpg",
@@ -49,7 +49,7 @@ $(document).ready(function() {
 			"color" : palettes[$("[name='inp-palette']:checked").val()][1][0][1]
 		});
 		iFrameDOM.find("body").css({
-			"background-color" : palettes[$("[name='inp-palette']:checked").val()][1][1][0]
+			"background-color" : palettes[$("[name='inp-palette']:checked").val()][1][3][0]
 		});
 		iFrameDOM.find("#items").css({
 			"background-color" : palettes[$("[name='inp-palette']:checked").val()][1][1][0],
@@ -71,16 +71,16 @@ $(document).ready(function() {
 				var v_id = i_id.replace("inp", "val");
 				switch (i_id) {
 					case "inp-contact-email" :
-						iFrameDOM.find("#contacto-correo").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
+						iFrameDOM.find("#val-contact-email").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
 						break;
 					case "inp-contact-map" :
-						iFrameDOM.find("#mapa").html($this.val());
+						iFrameDOM.find("#val-contact-map").html($this.val());
 						break;	
 					case "inp-contact-facebook" :
-						iFrameDOM.find("#contacto-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						iFrameDOM.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
 						break;	
 					case "inp-contact-twitter" :
-						iFrameDOM.find("#contacto-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						iFrameDOM.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
 						break;	
 					default : 
 						iFrameDOM.find("#" + v_id).html($this.val());
@@ -149,15 +149,30 @@ $(document).ready(function() {
 		/**/
 	}
 	for (i = 0; i < palettes.length; i++) {
-		var color_checked = i == 0 ? " checked='checked'" : "";
-		$("#app-control-palettes").append('<label>' + palettes[i][0] + '</label><input type="radio" id="inp-palette-' + i + '" name="inp-palette" value="' + i + '"' + color_checked + ' /><br />' + 
-											'<div class="palette-colors">' +
-											'<div class="palette-color" style="background-color: ' + palettes[i][1][0][0] + ';"></div>' +
-											'<div class="palette-color" style="background-color: ' + palettes[i][1][1][0] + ';"></div>' +
-											'<div class="palette-color" style="background-color: ' + palettes[i][1][2][0] + ';"></div>' +
-											'</div><br />'
-		);
-	}				
+		var $control_color = $(".template.control-color").clone();
+		if (i == 0) {
+			$control_color.find("input").attr("checked", "checked");
+			$control_color.find(".control-color-thumb").addClass("thumb-selected");
+		}
+		$control_color.removeClass("template");
+		$control_color.find("h4").html(palettes[i][0]);
+		$control_color.find("input").attr("id", ("inp-palette-" + i));
+		$control_color.find("input").attr("value", i);
+		$control_color.find(".control-color-thumb").css({ "background-color" : palettes[i][1][3][0] });
+		$control_color.find(".control-color-thumb-bg:eq(0)").css({ "background-color" : palettes[i][1][0][0] });
+		$control_color.find(".control-color-thumb-content:eq(0)").css({ "background-color" : palettes[i][1][0][1] });
+		$control_color.find(".control-color-thumb-bg:eq(1)").css({ "background-color" : palettes[i][1][1][0] });
+		$control_color.find(".control-color-thumb-content:eq(1)").css({ "background-color" : palettes[i][1][1][1] });
+		$control_color.find(".control-color-thumb-bg:eq(2)").css({ "background-color" : palettes[i][1][2][0] });
+		$control_color.find(".control-color-thumb-content:eq(2)").css({ "background-color" : palettes[i][1][2][1] });
+		$("#app-control-palettes").append($control_color);
+	}
+	$(".control-color-thumb").on('click', function() {
+		var $this = $(this);
+		$this.closest("#app-control-palettes").find(".control-color-thumb").removeClass("thumb-selected");
+		$this.next("input").trigger("click");
+		$this.addClass("thumb-selected");
+	});				
 	/*COLORES*/
 	/*IMAGENES*/
 	

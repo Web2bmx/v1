@@ -59,6 +59,27 @@ main {
 	padding: .5em 4%;
 	font-size: 1.2em;
 }
+.control-color {
+	width: 50%; height: 16em;
+	text-align: center;
+	float: left; overflow: hidden;
+}
+.control-color-thumb {
+	width: 80%; height: auto;
+	margin: 0 5%;
+	padding: 1em 5%;
+	display: block; overflow: hidden;
+	cursor: pointer;
+}
+.control-color-thumb-bg {
+	width: 100%; height: 3em;
+	display: block; overflow: hidden;
+}
+.control-color-thumb-content {
+	width: 80%; height: 1em;
+	margin: 1em 10%;
+	display: block; overflow: hidden;
+}
 #app-control>div>div textarea {
 	width: 96%; height: 8em;
 	margin: 0 0 5% 0;
@@ -85,6 +106,9 @@ main {
 .img-thumb>img.thumb-selected {
 	outline: 3px solid blue;
 	z-index: 2;
+}
+.thumb-selected {
+	outline: 3px solid blue;
 }
 /**/
 #control-view-nav {
