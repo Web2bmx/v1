@@ -3,12 +3,23 @@ $(document).ready(function() {
 	$( window ).resize(function() {
 		optimize();
 	});
-	function optimize() {
-		var w = $(window).width();
-		if (w >= 768) {
-			var src = $("#hero-image").attr("src");
-			var n_src = src.replace("hero-mobile-768x1280", "hero-desktop-1440x500");
-			$("#hero-image").attr("src", n_src);
+	function optimize() {}
+	/*IMAGES*/
+	$.ajax({
+		url: "../../xml/sample_images.xml",
+		dataType: "xml",
+		success: function(data) {
+			$xml = $(data);
+			$images = $xml.find("image");
+			var t = $images.length;
+			var imgs = ["#img-hero", "#img-item-1", "#img-item-2", "#img-item-3"];
+			for (i=0; i<imgs.length; i++) {
+				var index = Math.floor(Math.random() * t);
+				var $img = $images.filter(":eq(" + index + ")");
+				$(imgs[i]).attr("class", ("img-cont img-" + $img.find("orientation").html() + " img-" + $img.find("focus").html())).css({
+					"background-image" : ("url(" + $img.find("src").html() + ")")
+				});
+			}
 		}
-	}
+	});
 });
