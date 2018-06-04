@@ -176,7 +176,7 @@ $(document).ready(function() {
 	/*COLORES*/
 	/*IMAGENES*/
 	
-	for (i = 0; i < image_types.length; i++) {
+/* 	for (i = 0; i < image_types.length; i++) {
 		$("#app-control-images").append("<div id='app-control-images-" + image_types[i][0] + "'><h4>" + image_types[i][1] + "</h4></div>");
 		for (k = 0; k < images.length; k++) {
 			var img_checked = k == i ? " checked='checked'" : "";
@@ -186,7 +186,35 @@ $(document).ready(function() {
 														"<input type='radio' id='inp-images-" + image_types[i][2] + "-" + k + "' name='inp-img-" + image_types[i][0] + "' value='" + images[k] + "'" + img_checked + " style='display: none;'/>" +	
 														"</div>");
 		}
-	}
+	} */
+
+	$.getJSON("https://api.unsplash.com/photos/search",{
+		client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
+		query: 'pasta',
+		page: 1,
+		per_page: 20,
+		orientation: 'landscape'
+	}).done(function(data){
+		console.log(data);
+		var html = "";
+		for(x=0; x<data.length ; x++){
+			html += "<div class='img-thumb'>" +
+			"<img data-url=" + data[x].urls.regular + " class='' src='" + data[x].urls.thumb + "' />" +
+			"</div>";
+		}
+		for (i = 0; i < image_types.length; i++) {
+			$("#app-control-images-" + image_types[i][0] + " .photo-container").append(html);
+		}
+		$(".img-thumb>img").on('click', function() {
+			var $this = $(this);
+			$this.closest("[id^='app-control-images']").find("img").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.addClass("thumb-selected");
+		});		
+	}).fail(function(){
+
+	});
+
 	$(".img-thumb>img").on('click', function() {
 		var $this = $(this);
 		$this.closest("[id^='app-control-images']").find("img").removeClass("thumb-selected");
@@ -219,9 +247,18 @@ $(document).ready(function() {
 		$("#app-cover").show();
 	}
 	$("[name='start']").on("click", function() {
-		$("#app-cover").hide();
-		$("#app-cover-start").hide();
-		$("#app-cover-finish").show();
+		if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
+			$(".empty-fields").css("display","block");
+		} else {
+			if(!isEmail($("#correo").val())){
+				$(".not-email").css("display","block");
+			}else {
+				$("#app-cover").hide();
+				$("#app-cover-start").hide();
+				$("#app-cover-finish").show();
+			}
+		}
+
 	});
 	$("[name='finish']").on("click", function() {
 		current_step --;
@@ -238,3 +275,20 @@ $(document).ready(function() {
 	});
 	/*EO APP SWITCH*/
 });
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+var windowObjectReference = null; // global variable
+
+function openRequestedPopup(strUrl, strWindowName) {
+  if(windowObjectReference == null || windowObjectReference.closed) {
+    windowObjectReference = window.open(strUrl, strWindowName,
+		   "resizable,scrollbars,status");
+	windowObjectReference.focus();
+  } else {
+    windowObjectReference.focus();
+  }
+}
