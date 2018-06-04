@@ -31,10 +31,6 @@
 						<p>A continuación pondremos la información de tu Negocio.</p>
 						<p>Puedes ver como se ve tu página en cualquier momento.</p>
 						<p>Y puedes regresar al modo de edición con un solo clic.</p>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
 						<p>El primer paso es poner el nombre de tu Negocio.</p>
 						<p>Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
 						<div>

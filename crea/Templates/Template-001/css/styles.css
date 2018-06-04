@@ -11,6 +11,20 @@ h1, h2, h3, h4, h5, h6 {
 	color: #444;
 	font-family: 'Gloria Hallelujah', cursive;
 }
+/**/
+.img-L { background-size: auto 150%; }
+.img-S { background-size: auto 150%; }
+.img-P { background-size: 150% auto; }
+.img-TL { background-position: top left; }
+.img-TC { background-position: top center; }
+.img-TR { background-position: top right; }
+.img-ML { background-position: center left; }
+.img-MC { background-position: center center; }
+.img-MR { background-position: center right; }
+.img-BL { background-position: bottom left; }
+.img-BC { background-position: bottom center; }
+.img-BR { background-position: bottom right; }
+/**/
 main {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
@@ -23,8 +37,8 @@ main {
 	display: block; overflow: hidden;
 	position: relative;
 }
-#hero-image {
-	width: 100%; height: auto;
+#hero .img-cont {
+	width: 100%; height: 560px;
 	display: block; overflow: hidden;
 	position: relative; z-index: 0;
 }
@@ -45,8 +59,8 @@ main {
 	display: block; overflow: hidden;
 	position: relative; 
 }
-.item-image {
-	width: 100%; height: auto;
+.item .img-cont {
+	width: 100%; height: 360px;
 	display: block; overflow: hidden;
 	position: relative; z-index: 0;
 }

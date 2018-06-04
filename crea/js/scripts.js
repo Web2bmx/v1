@@ -6,16 +6,6 @@ var palettes = [
 				["Grises", [["#666666", "#FFFFFF"], ["#EFEFEF", "#222222"], ["#444444", "#FFFFFF"], ["#FFFFFF"]]],
 				["Rojos", [["#820333", "#FFFFFF"], ["#540032", "#FFFFFF"], ["#C9283E", "#FFFFFF"], ["#000000"]]]
 			];
-var images = [
-				"Templates/Images/Thumbnails/pretty-woman-makeup-mirror-glamour-39250.jpg",
-				"Templates/Images/Thumbnails/girl-dandelion-yellow-flowers-160699.jpg",
-				"Templates/Images/Thumbnails/portrait-woman-girl-blond-157967.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-887352.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-221063.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-315704.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-315708.jpg",
-				"Templates/Images/Thumbnails/pexels-photo-461217.jpg"
-			];
 var image_types = [
 				["slogan", "La imágen para tu eslógan"],
 				["item-001", "La imágen para tu servicio o producto 1"],
@@ -24,6 +14,8 @@ var image_types = [
 			];
 $(document).ready(function() {
 	var template_id = "";
+	var sample_images_ready = false;
+	var $images = null;
 	updateTemplate();
 	$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
 	$(document.body).on("keyup", "[name^='inp-'][type='text']", function() { updateTemplate(); });
@@ -89,47 +81,40 @@ $(document).ready(function() {
 			}
 		});
 		/*Images*/
-		$("[id^='inp-images-']:checked").each(function() {
-			var $this = $(this);
-			var img_ori = $this.val();
-			var img_src = img_ori.substr(img_ori.lastIndexOf("/"), (img_ori.length - img_ori.lastIndexOf("/")));
-			var o_img_ori = "";
-			var o_img_src = "";
-			switch ($this.attr("name")) {
-				case "inp-img-slogan" :
-					o_img_ori = iFrameDOM.find("#hero-image").attr("src");
-					o_img_src = o_img_ori.substr(3, (o_img_ori.lastIndexOf("/") - 3));
-					n_src = "../" + o_img_src + img_src;
-					if (n_src.indexOf("-circle/") > -1) { n_src = n_src.replace(".jpg", ".png"); }
-					else { n_src = n_src.replace(".png", ".jpg"); }
-					iFrameDOM.find("#hero-image").attr("src", n_src);
-					break;
-				case "inp-img-item-001" :
-					o_img_ori = iFrameDOM.find(".item-image:eq(0)").attr("src");
-					o_img_src = o_img_ori.substr(0, o_img_ori.lastIndexOf("/"));
-					n_src = o_img_src + img_src;
-					if (n_src.indexOf("-circle/") > -1) { n_src = n_src.replace(".jpg", ".png"); }
-					else { n_src = n_src.replace(".png", ".jpg"); }
-					iFrameDOM.find(".item-image:eq(0)").attr("src", n_src);
-					break;
-				case "inp-img-item-002" :
-					o_img_ori = iFrameDOM.find(".item-image:eq(1)").attr("src");
-					o_img_src = o_img_ori.substr(0, o_img_ori.lastIndexOf("/"));
-					n_src = o_img_src + img_src;
-					if (n_src.indexOf("-circle/") > -1) { n_src = n_src.replace(".jpg", ".png"); }
-					else { n_src = n_src.replace(".png", ".jpg"); }
-					iFrameDOM.find(".item-image:eq(1)").attr("src", n_src);
-					break;
-				case "inp-img-item-003" :
-					o_img_ori = iFrameDOM.find(".item-image:eq(2)").attr("src");
-					o_img_src = o_img_ori.substr(0, o_img_ori.lastIndexOf("/"));
-					n_src = o_img_src + img_src;
-					if (n_src.indexOf("-circle/") > -1) { n_src = n_src.replace(".jpg", ".png"); }
-					else { n_src = n_src.replace(".png", ".jpg"); }
-					iFrameDOM.find(".item-image:eq(2)").attr("src", n_src);
-					break;
-			}
-		});
+		if (sample_images_ready) {
+			$("[id^='inp-images-']:checked").each(function() {
+				var $this = $(this);
+				$img = $images.filter(":eq(" + $this.val() + ")");
+				
+				switch ($this.attr("name")) {
+					case "inp-img-slogan" :
+						iFrameDOM.find("#img-hero").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-hero").css({
+								"background-image" : ("url(" + $img.find("src").html() + ")")
+						});
+						break;
+					case "inp-img-item-001" :
+						iFrameDOM.find("#img-item-1").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-item-1").css({
+								"background-image" : ("url(" + $img.find("src").html() + ")")
+						});
+						break;
+					case "inp-img-item-002" :
+						iFrameDOM.find("#img-item-2").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-item-2").css({
+								"background-image" : ("url(" + $img.find("src").html() + ")")
+						});
+						break;
+					case "inp-img-item-003" :
+						iFrameDOM.find("#img-item-3").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-item-3").css({
+								"background-image" : ("url(" + $img.find("src").html() + ")")
+						});
+						break;
+				}
+				
+			});
+		}
 	}
 	function updateTemplate() {
 		var $this = $("[name^='inp-design']:checked");
@@ -220,6 +205,31 @@ $(document).ready(function() {
 		$this.closest("[id^='app-control-images']").find("img").removeClass("thumb-selected");
 		$this.next("input").trigger("click");
 		$this.addClass("thumb-selected");
+	$.ajax({
+		url: "xml/sample_images.xml",
+		dataType: "xml",
+		success: function(data) {
+			$xml = $(data);
+			$images = $xml.find("image");
+			var t = $images.length;
+			for (i = 0; i < image_types.length; i++) {
+				$("#app-control-images").append("<div id='app-control-images-" + image_types[i][0] + "'><h4>" + image_types[i][1] + "</h4></div>");
+				for (k = 0; k < t; k++) {
+					var img_checked = k == i ? " checked='checked'" : "";
+					var img_class = k == i ? " thumb-selected'" : "";
+					$img = $images.filter(":eq(" + k + ")");
+					$("#app-control-images-" + image_types[i][0]).append("<div class='img-thumb " + img_class + " img-" + $img.find("orientation").html() + " img-" + $img.find("focus").html() + "' style='background-image: url(" + $img.find("src").html() + "&cs=tinysrgb&h=100);'></div>" +
+																"<input type='radio' id='inp-images-" + image_types[i][2] + "-" + k + "' name='inp-img-" + image_types[i][0] + "' value='" + k + "'" + img_checked + " style='display: none;'/>");
+				}
+			}
+			$(".img-thumb").on('click', function() {
+				var $this = $(this);
+				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
+				$this.next("input:first").trigger("click");
+				$this.addClass("thumb-selected");
+			});
+			sample_images_ready = true;
+		}
 	});
 	/*IMAGENES*/
 	/*NAV BUTTONS*/

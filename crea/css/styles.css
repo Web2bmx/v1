@@ -154,30 +154,34 @@ main {
   float: left;
   overflow: hidden;
 }
-
+/**/
+.img-L { background-size: auto 150%; }
+.img-S { background-size: auto 150%; }
+.img-P { background-size: 150% auto; }
+.img-TL { background-position: top left; }
+.img-TC { background-position: top center; }
+.img-TR { background-position: top right; }
+.img-ML { background-position: center left; }
+.img-MC { background-position: center center; }
+.img-MR { background-position: center right; }
+.img-BL { background-position: bottom left; }
+.img-BC { background-position: bottom center; }
+.img-BR { background-position: bottom right; }
+/**/
+[id^="app-control-images"] {
+	width: auto; height: auto;
+	display: block; overflow: visible;
+	position: relative;
+}
 .img-thumb {
-  width: 25%;
-  height: 50px;
-  float: left;
-  overflow: hidden;
+	width: 25%; height: 80px;
+	float: left; overflow: visible;
+	cursor: pointer;
+	position: relative; z-index: 1;
 }
-
-.img-thumb > img {
-  width: 100%;
-  height: auto;
-  display: block;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-}
-
-.img-thumb > img.thumb-selected {
-  outline: 3px solid blue;
-  z-index: 2;
-}
-
 .thumb-selected {
-  outline: 3px solid blue;
+	outline: 3px solid blue;
+	z-index: 2;
 }
 
 /**/
