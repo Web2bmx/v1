@@ -43,8 +43,8 @@
 						<h1>¡Excelente! Ahora elige el diseño de tu página.</h1>
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div>
-							<label>Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
-							<label>Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
+							<label for="inp-design-001">Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
+							<label for="inp-design-001">Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
 						</div>
 					</div>
 				</div>
@@ -90,7 +90,12 @@
 						<div id="app-control-images"></div>
 					</div>
 				</div>
-				<nav id='control-view-nav'><a href='#prev' style="display: none;">Anterior</a><a href='#next'>Siguiente</a></nav>
+				<nav id='control-view-nav'>
+					<div id='control-view-nav-buttons'>
+						<a href='#prev' style="display: none;">Anterior</a><a href='#next'>Siguiente</a>
+					</div>
+					<div id='control-view-nav-display'></div>
+				</nav>
 			</div>
 			<div id="app-cover">
 				<div id="app-cover-start">

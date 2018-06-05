@@ -24,6 +24,11 @@ a:active { color: #000000; }
 	display: none;
 }
 /**/
+#app-cover p, #app-cover ol, #app-cover ul,
+#app-control p, #app-control ol, #app-control ul {
+	font-size: 1.4em;
+}
+/**/
 main {
 	width: 100%; height: 100%;
 	display: block; overflow: hidden;
@@ -40,10 +45,8 @@ main {
 }
 #app-control>.app-control-step {
 	width: 100%; height: auto;
-	padding-bottom: 5em;
 	text-align: center;
 	display: block; overflow: hidden;
-	outline: 1px solid #cc2880;
 }
 #app-control>div.appview {
 	position: absolute;
@@ -125,18 +128,42 @@ main {
 /**/
 #control-view-nav {
 	width: 100%; height: auto;
+	margin-top: 1em;
 	text-align: center;
 	display: block; overflow: hidden;
-	position: fixed; z-index: 1000;
-	top: auto; right: 0; bottom: 0; left: auto;
 }
-#control-view-nav>a {
+#control-view-nav-buttons {
+	width: 100%; height: auto;
+	margin-top: 1em;
+	display: block; overflow: hidden;
+}
+#control-view-nav>#control-view-nav-buttons>a {
 	width: 50%; height: auto;
 	padding: 1em 0;
-	background-color: #666;
+	background-color: #cc2880;
 	color: #FFF;
 	vertical-align: middle;
 	display: inline-block; overflow: hidden;
+}
+#control-view-nav-display {
+	width: auto; height: auto;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	display: block; overflow: hidden;
+}
+.control-view-nav-display-mark {
+	width: 2em; height: 2em;
+	margin: 0 .2em;
+	background-color: #999;
+	color: #FFF;
+	display: inline-block; overflow: hidden;
+}
+.control-view-nav-display-mark-active {
+	background-color: #444;
+}
+.control-view-nav-display-mark span {
+	vertical-align: middle;
+	display: block;
 }
 /**/
 #app-preview {
@@ -231,8 +258,5 @@ a[id^='switch'] {
 		position: absolute;
 		top: 0; right: 0; bottom: 0; left: 80%;
 		z-index: 2;
-	}
-	#control-view-nav {
-		width: 20%;
 	}
 }
