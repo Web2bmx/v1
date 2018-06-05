@@ -85,9 +85,28 @@
 				<div class="app-control-step">
 					<div>
 						<h1>¡Ya casi terminamos!</h1>	
-						<p>Selecciona las imágenes para tu página.</p>
-						<p>Puedes ver nuestro catálogo completo de imágenes aquí* o subir las imágenes que tú tengas disponibles para tu negocio.</p>
-						<div id="app-control-images"></div>
+						<p>Selecciona las imágenes para tu página. </p>
+						<p>
+							Puedes ver algunas imagenes recomendadas o subir las imágenes que tú tengas disponibles para tu negocio.
+						</p>
+						<div id="app-control-images">
+							<div id='app-control-images-slogan'>
+								<h4>La imágen para tu eslógan</h4>
+								<div class="photo-container"></div>
+							</div>
+							<div id='app-control-images-item-001'>
+								<h4>La imágen para tu servicio o producto 1</h4>
+								<div class="photo-container"></div>
+							</div>
+							<div id='app-control-images-item-002'>
+								<h4>La imágen para tu servicio o producto 2</h4>
+								<div class="photo-container"></div>
+							</div>
+							<div id='app-control-images-item-003'>
+								<h4>La imágen para tu servicio o producto 3</h4>
+								<div class="photo-container"></div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<nav id='control-view-nav'>
@@ -101,7 +120,17 @@
 				<div id="app-cover-start">
 					<div>
 						<h1>Crea tu página web en 5 mínutos</h1>
-						<input type="button" name="start" value="¡Comienza ya!" />
+						<label>
+							Por favor compártenos tu nombre:<br />
+							<input type="text" name="nombre" id="nombre" />
+						</label>
+						<label>
+							Y tu correo: <br />
+							<input type="email" name="correo" id="correo" />
+						</label>
+						<span class="empty-fields">Los campos están vacios</span>
+						<span class="not-email">El email is inválido</span>
+						<input type="button" name="start" value="¡Comienza ya!" />						
 					</div>
 				</div>
 				<div id="app-cover-finish" style="display: none;">
@@ -175,5 +204,9 @@
 			</div>		
 			<input type="radio" name="inp-palette" value="" style="display: none;" />
 		</div>
+		<div class="img-thumb template">
+			<div class='img-thumb-cont'></div>
+			<input type="radio" name="" value="" style="display: none;" />		
+		</div> 
 	</body>
 </html>

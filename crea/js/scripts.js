@@ -79,33 +79,33 @@ $(document).ready(function() {
 		});
 		/*Images*/
 		if (sample_images_ready) {
-			$("[id^='inp-images-']:checked").each(function() {
+			$("[name^='inp-img-']:checked").each(function() {
 				var $this = $(this);
-				$img = $images.filter(":eq(" + $this.val() + ")");
+				var img_src = $this.val();
 				
 				switch ($this.attr("name")) {
 					case "inp-img-slogan" :
-						iFrameDOM.find("#img-hero").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-hero").attr("class", ("img-cont img-MC img-L"));
 						iFrameDOM.find("#img-hero").css({
-								"background-image" : ("url(" + $img.find("src").html() + ")")
+								"background-image" : ("url(" + img_src + ")")
 						});
 						break;
 					case "inp-img-item-001" :
-						iFrameDOM.find("#img-item-1").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-item-1").attr("class", ("img-cont img-MC img-L"));
 						iFrameDOM.find("#img-item-1").css({
-								"background-image" : ("url(" + $img.find("src").html() + ")")
+								"background-image" : ("url(" + img_src + ")")
 						});
 						break;
 					case "inp-img-item-002" :
-						iFrameDOM.find("#img-item-2").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-item-2").attr("class", ("img-cont img-MC img-L"));
 						iFrameDOM.find("#img-item-2").css({
-								"background-image" : ("url(" + $img.find("src").html() + ")")
+								"background-image" : ("url(" + img_src + ")")
 						});
 						break;
 					case "inp-img-item-003" :
-						iFrameDOM.find("#img-item-3").attr("class", ("img-cont img-" + $img.find("focus").html() + " img-" + $img.find("orientation").html()));
+						iFrameDOM.find("#img-item-3").attr("class", ("img-cont img-MC img-L"));
 						iFrameDOM.find("#img-item-3").css({
-								"background-image" : ("url(" + $img.find("src").html() + ")")
+								"background-image" : ("url(" + img_src + ")")
 						});
 						break;
 				}
@@ -168,31 +168,36 @@ $(document).ready(function() {
 	});				
 	/*COLORES*/
 	/*IMAGENES*/
-	$.ajax({
-		url: "xml/sample_images.xml",
-		dataType: "xml",
-		success: function(data) {
-			$xml = $(data);
-			$images = $xml.find("image");
-			var t = $images.length;
-			for (i = 0; i < image_types.length; i++) {
-				$("#app-control-images").append("<div id='app-control-images-" + image_types[i][0] + "'><h4>" + image_types[i][1] + "</h4></div>");
-				for (k = 0; k < t; k++) {
-					var img_checked = k == i ? " checked='checked'" : "";
-					var img_class = k == i ? " thumb-selected'" : "";
-					$img = $images.filter(":eq(" + k + ")");
-					$("#app-control-images-" + image_types[i][0]).append("<div class='img-thumb " + img_class + " img-" + $img.find("orientation").html() + " img-" + $img.find("focus").html() + "' style='background-image: url(" + $img.find("src").html() + "&cs=tinysrgb&h=100);'></div>" +
-																"<input type='radio' id='inp-images-" + image_types[i][2] + "-" + k + "' name='inp-img-" + image_types[i][0] + "' value='" + k + "'" + img_checked + " style='display: none;'/>");
-				}
-			}
-			$(".img-thumb").on('click', function() {
-				var $this = $(this);
-				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
-				$this.next("input:first").trigger("click");
-				$this.addClass("thumb-selected");
+	$.getJSON("https://api.unsplash.com/photos/search",{
+		client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
+		query: 'pasta',
+		page: 1,
+		per_page: 20,
+		orientation: 'landscape'
+	}).done(function(data){
+		//console.log(data);
+		for(x=0; x<data.length ; x++){
+			var $img_thumb = $(".img-thumb.template").clone();
+			$img_thumb.removeClass("template").find(".img-thumb-cont").css({
+				"background-image" : ("url(" + data[x]["urls"]["regular"] + ")")
 			});
-			sample_images_ready = true;
+			$img_thumb.find("input").attr("value", data[x]["urls"]["regular"]);
+			for (i = 0; i < image_types.length; i++) {
+				var $this_img_thumb = $img_thumb.clone();
+				$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i][0]));
+				$("#app-control-images-" + image_types[i][0] + " .photo-container").append($this_img_thumb);
+			}
 		}
+		
+		$(".img-thumb-cont").on('click', function() {
+			var $this = $(this);
+			$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.parent().addClass("thumb-selected");
+		});		
+		sample_images_ready = true;
+	}).fail(function(){
+
 	});
 	/*IMAGENES*/
 	/*NAV BUTTONS*/
@@ -225,9 +230,18 @@ $(document).ready(function() {
 		$("#app-cover").show();
 	}
 	$("[name='start']").on("click", function() {
-		$("#app-cover").hide();
-		$("#app-cover-start").hide();
-		$("#app-cover-finish").show();
+		if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
+			$(".empty-fields").css("display","block");
+		} else {
+			if(!isEmail($("#correo").val())){
+				$(".not-email").css("display","block");
+			}else {
+				$("#app-cover").hide();
+				$("#app-cover-start").hide();
+				$("#app-cover-finish").show();
+			}
+		}
+
 	});
 	$("[name='finish']").on("click", function() {
 		current_step --;
@@ -244,3 +258,18 @@ $(document).ready(function() {
 	});
 	/*EO APP SWITCH*/
 });
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+var windowObjectReference = null; // global variable
+function openRequestedPopup(strUrl, strWindowName) {
+  if(windowObjectReference == null || windowObjectReference.closed) {
+    windowObjectReference = window.open(strUrl, strWindowName,
+		   "resizable,scrollbars,status");
+	windowObjectReference.focus();
+  } else {
+    windowObjectReference.focus();
+  }
+}
