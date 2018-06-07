@@ -65,7 +65,3 @@ typings/
 
 # Serverless directories
 .serverless
-
-#sass
-scss/
-.scss
