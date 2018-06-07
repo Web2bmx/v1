@@ -43,8 +43,8 @@
 						<h1>¡Excelente! Ahora elige el diseño de tu página.</h1>
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div>
-							<label>Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
-							<label>Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
+							<label for="inp-design-001">Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
+							<label for="inp-design-001">Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
 						</div>
 					</div>
 				</div>
@@ -92,28 +92,29 @@
 						<div id="app-control-images">
 							<div id='app-control-images-slogan'>
 								<h4>La imágen para tu eslógan</h4>
-								<input type="file" name="slogan-img" />
 								<div class="photo-container"></div>
 							</div>
 							<div id='app-control-images-item-001'>
 								<h4>La imágen para tu servicio o producto 1</h4>
-								<input type="file" name="i001-img" />
 								<div class="photo-container"></div>
 							</div>
 							<div id='app-control-images-item-002'>
 								<h4>La imágen para tu servicio o producto 2</h4>
-								<input type="file" name="i002-img" />
 								<div class="photo-container"></div>
 							</div>
 							<div id='app-control-images-item-003'>
 								<h4>La imágen para tu servicio o producto 3</h4>
-								<input type="file" name="i003-img" />
 								<div class="photo-container"></div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<nav id='control-view-nav'><a href='#prev' style="display: none;">Anterior</a><a href='#next'>Siguiente</a></nav>
+				<nav id='control-view-nav'>
+					<div id='control-view-nav-buttons'>
+						<a href='#prev' style="display: none;">Anterior</a><a href='#next'>Siguiente</a>
+					</div>
+					<div id='control-view-nav-display'></div>
+				</nav>
 			</div>
 			<div id="app-cover">
 				<div id="app-cover-start">
@@ -203,5 +204,9 @@
 			</div>		
 			<input type="radio" name="inp-palette" value="" style="display: none;" />
 		</div>
+		<div class="img-thumb template">
+			<div class='img-thumb-cont'></div>
+			<input type="radio" name="" value="" style="display: none;" />		
+		</div> 
 	</body>
 </html>

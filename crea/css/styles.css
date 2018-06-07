@@ -40,6 +40,11 @@ a:active {
 }
 
 /**/
+#app-cover p, #app-cover ol, #app-cover ul,
+#app-control p, #app-control ol, #app-control ul {
+	font-size: 1.4em;
+}
+/**/
 main {
   width: 100%;
   height: 100%;
@@ -151,7 +156,6 @@ main {
   width: 1em;
   height: 1em;
   display: inline-block;
-  float: left;
   overflow: hidden;
 }
 /**/
@@ -183,7 +187,13 @@ main {
 	outline: 3px solid blue;
 	z-index: 2;
 }
-
+.img-thumb-cont {
+  width: 100%; height: 100%;
+  background-color: #000000;
+  background-size: auto 150%;
+  background-position: center center;
+  display: block; overflow: hidden;
+}
 /**/
 #control-view-nav {
   width: 100%;

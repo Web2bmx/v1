@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palettes>
+   <palette>
+        <name>Natural</name>
+        <bg><back>#FFFFFF</back><fore>#000000</fore></bg>
+        <top><back>#FFFFFF</back><fore>#444444</fore></top>
+        <middle><back>#74db6b</back><fore>#FFFFFF</fore></middle>
+        <bottom><back>#44963d</back><fore>#DDDDDD</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Calido</name>
+        <bg><back>#000000</back><fore>#FFFFFF</fore></bg>
+        <top><back>#e27b5f</back><fore>#995f21</fore></top>
+        <middle><back>#ffe95b</back><fore>#995f21</fore></middle>
+        <bottom><back>#726b39</back><fore>#444444</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Colorido</name>
+        <bg><back>#000000</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FF0000</back><fore>#FFFFFF</fore></top>
+        <middle><back>#EE00FF</back><fore>#454545</fore></middle>
+        <bottom><back>#6666FF</back><fore>#AA00AA</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Azules</name>
+        <bg><back>#ADADAD</back><fore>#000000</fore></bg>
+        <top><back>#2D707F</back><fore>#FFFFFF</fore></top>
+        <middle><back>#A7EFFF</back><fore>#222222</fore></middle>
+        <bottom><back>#54777F</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Grises</name>
+        <bg><back>#FFFFFF</back><fore>#000000</fore></bg>
+        <top><back>#666666</back><fore>#FFFFFF</fore></top>
+        <middle><back>#EFEFEF</back><fore>#222222</fore></middle>
+        <bottom><back>#444444</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Rojos</name>
+        <bg><back>#000000</back><fore>#FFFFFF</fore></bg>
+        <top><back>#820333</back><fore>#FFFFFF</fore></top>
+        <middle><back>#540032</back><fore>#FFFFFF</fore></middle>
+        <bottom><back>#C9283E</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+</palettes>
