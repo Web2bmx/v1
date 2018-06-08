@@ -23,19 +23,36 @@ a:active { color: #000000; }
 .template {
 	display: none;
 }
+
+/**/
+#app-cover p, #app-cover ol, #app-cover ul,
+#app-control p, #app-control ol, #app-control ul {
+	font-size: 1.4em;
+}
+
 /**/
 main {
-	width: 100%; height: 100%;
-	display: block; overflow: hidden;
+	width: 100%; 
+	height: 100%;
+	display: block; 
+	overflow: hidden;
 	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0;
 }
 #app-control {
-	width: 100%; height: 95%;
+	width: 100%; 
+	height: 95%;
 	background-color: #EFEFEF;
-	display: block; overflow-y: scroll;
+	display: block; 
+	overflow-y: scroll;
 	position: absolute;
-	top: 5%; right: 0; bottom: 0; left: 0;
+	top: 5%; 
+	right: 0; 
+	bottom: 0; 
+	left: 0;
 	z-index: 2;
 }
 #app-control{
@@ -102,23 +119,34 @@ main {
 	width: 1em; height: 1em;
 	display: inline-block; float: left; overflow: hidden;
 }
-.img-thumb {
-	width: 25%; height: 50px;
-	float: left; overflow: hidden;
+
+/**/
+[id^="app-control-images"] {
+	width: auto; height: auto;
+	display: block; overflow: visible;
+	position: relative;
 }
-.img-thumb>img {
-	width: 100%; height: auto;
-	display: block;
+
+.img-thumb {	
+	width: 25%; height: 80px;
+	float: left; overflow: visible;
 	cursor: pointer;
-	position: relative; z-index: 0;
+	position: relative; z-index: 1;
 }
-.img-thumb>img.thumb-selected {
+
+.thumb-selected {
 	outline: 3px solid blue;
 	z-index: 2;
 }
-.thumb-selected {
-	outline: 3px solid blue;
+
+.img-thumb-cont {
+  width: 100%; height: 100%;
+  background-color: #000000;
+  background-size: auto 150%;
+  background-position: center center;
+  display: block; overflow: hidden;
 }
+
 /**/
 #control-view-nav {
 	width: 100%; height: auto;
@@ -127,7 +155,7 @@ main {
 	position: fixed; z-index: 1000;
 	top: auto; right: 0; bottom: 0; left: auto;
 }
-#control-view-nav>a {
+#control-view-nav a {
 	width: 50%; height: auto;
 	padding: 1em 0;
 	background-color: #666;

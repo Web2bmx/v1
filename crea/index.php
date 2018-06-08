@@ -9,14 +9,9 @@
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="css/styles.css?v=1.0">
-		<!--[if lt IE 9]>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-		<![endif]-->
 	</head>
 	<body>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!--<script src="js/jquery.js"></script>-->
-		<script src="js/scripts.js"></script>
+		<?php include_once("include/include_libraries.php"); ?>
 		<main>
 			<div id='app-switch'>
 				<a id='switch-view'>Mira tu sitio</a>
@@ -185,28 +180,7 @@
 				</div>
 			</div>
 		</main>
-		<!--Start of Zendesk Chat Script-->
-		<script type="text/javascript">
-		window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
-		d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
-		_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
-		$.src="https://v2.zopim.com/?5i6KYxksBWn5b8FtltKtu2xXDupSBICm";z.t=+new Date;$.
-		type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
-		</script>
-		<!--End of Zendesk Chat Script-->
-		<!--TEMPLATES-->
-		<div class="template control-color">
-			<h4></h4>
-			<div class="control-color-thumb">
-				<div class="control-color-thumb-bg"><div class="control-color-thumb-content"></div></div>
-				<div class="control-color-thumb-bg"><div class="control-color-thumb-content"></div></div>
-				<div class="control-color-thumb-bg"><div class="control-color-thumb-content"></div></div>
-			</div>		
-			<input type="radio" name="inp-palette" value="" style="display: none;" />
-		</div>
-		<div class="img-thumb template">
-			<div class='img-thumb-cont'></div>
-			<input type="radio" name="" value="" style="display: none;" />		
-		</div> 
+		<?php include_once("include/include_html_templates.php"); ?>
+		<?php //include_once("include/include_chat.php"); ?>
 	</body>
 </html>
