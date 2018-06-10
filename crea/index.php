@@ -39,7 +39,7 @@
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div>
 							<label for="inp-design-001">Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
-							<label for="inp-design-001">Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
+							<label for="inp-design-002">Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
 						</div>
 					</div>
 				</div>
@@ -85,19 +85,19 @@
 							Puedes ver algunas imagenes recomendadas o subir las imágenes que tú tengas disponibles para tu negocio.
 						</p>
 						<div id="app-control-images">
-							<div id='app-control-images-slogan'>
+							<div id='app-control-images-hero'>
 								<h4>La imágen para tu eslógan</h4>
 								<div class="photo-container"></div>
 							</div>
-							<div id='app-control-images-item-001'>
+							<div id='app-control-images-item-1'>
 								<h4>La imágen para tu servicio o producto 1</h4>
 								<div class="photo-container"></div>
 							</div>
-							<div id='app-control-images-item-002'>
+							<div id='app-control-images-item-2'>
 								<h4>La imágen para tu servicio o producto 2</h4>
 								<div class="photo-container"></div>
 							</div>
-							<div id='app-control-images-item-003'>
+							<div id='app-control-images-item-3'>
 								<h4>La imágen para tu servicio o producto 3</h4>
 								<div class="photo-container"></div>
 							</div>
@@ -106,7 +106,7 @@
 				</div>
 				<nav id='control-view-nav'>
 					<div id='control-view-nav-buttons'>
-						<a href='#prev' style="display: none;">Anterior</a><a href='#next'>Siguiente</a>
+						<a href='#prev' style="display: none;">&lt;</a><a href='#next'>&gt;</a>
 					</div>
 					<div id='control-view-nav-display'></div>
 				</nav>
@@ -115,7 +115,7 @@
 				<div id="app-cover-start">
 					<div>
 						<h1>Crea tu página web en 5 mínutos</h1>
-						<label>
+						<!--<label>
 							Por favor compártenos tu nombre:<br />
 							<input type="text" name="nombre" id="nombre" />
 						</label>
@@ -124,7 +124,7 @@
 							<input type="email" name="correo" id="correo" />
 						</label>
 						<span class="empty-fields">Los campos están vacios</span>
-						<span class="not-email">El email is inválido</span>
+						<span class="not-email">El email is inválido</span>-->
 						<input type="button" name="start" value="¡Comienza ya!" />						
 					</div>
 				</div>

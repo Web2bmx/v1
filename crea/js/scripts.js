@@ -1,23 +1,17 @@
 /*GLOBAL VARIABLES*/
 var windowObjectReference = null;
-/*EO GLOBAL VARIABLES*/
-var image_types = [
-				["slogan", "La imágen para tu eslógan"],
-				["item-001", "La imágen para tu servicio o producto 1"],
-				["item-002", "La imágen para tu servicio o producto 2"],
-				["item-003", "La imágen para tu servicio o producto 3"]
-			];
+var image_types = ["hero", "item-1", "item-2", "item-3"];
 var template_id = "";
 var sample_images_ready = false;
-var $images = null;
-var sample_colors_ready = false;
-var $palettes = null;
 var current_step = 0;
+var sample_colors_ready = false;
+var $images = null;
+var $palettes = null;
+/*EO GLOBAL VARIABLES*/
 $(document).ready(function() {
 	updateTemplate();
 	$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
-	$(document.body).on("keyup", "[name^='inp-'][type='text']", function() { updateTemplate(); });
-	$(document.body).on("keyup", "textarea[name^='inp-']", function() { updateTemplate(); });
+	$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() { updateTemplate(); });
 	$.ajax({
 		url: "xml/sample_colors.xml",
 		dataType: "xml",
@@ -37,12 +31,11 @@ $(document).ready(function() {
 				$control_color.find("input").attr("id", ("inp-palette-" + i));
 				$control_color.find("input").attr("value", i);
 				$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
-				$control_color.find(".control-color-thumb-bg:eq(0)").css({ "background-color" : $palette.find("top>back").html() });
-				$control_color.find(".control-color-thumb-content:eq(0)").css({ "background-color" : $palette.find("top>fore").html() });
-				$control_color.find(".control-color-thumb-bg:eq(1)").css({ "background-color" : $palette.find("middle>back").html() });
-				$control_color.find(".control-color-thumb-content:eq(1)").css({ "background-color" : $palette.find("middle>fore").html() });
-				$control_color.find(".control-color-thumb-bg:eq(2)").css({ "background-color" : $palette.find("bottom>back").html() });
-				$control_color.find(".control-color-thumb-content:eq(2)").css({ "background-color" : $palette.find("bottom>fore").html() });
+				var blocks = ["top", "middle", "bottom"];
+				for (k = 0; k < 3; k++) {
+					$control_color.find(".control-color-thumb-bg:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">back").html() });
+					$control_color.find(".control-color-thumb-content:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">fore").html() });
+				}
 				$("#app-control-palettes").append($control_color);
 			}
 			$(".control-color-thumb").on('click', function() {
@@ -62,7 +55,6 @@ $(document).ready(function() {
 		per_page: 20,
 		orientation: 'landscape'
 	}).done(function(data){
-		//console.log(data);
 		for(x=0; x<data.length ; x++){
 			var $img_thumb = $(".img-thumb.template").clone();
 			$img_thumb.removeClass("template").find(".img-thumb-cont").css({
@@ -71,8 +63,8 @@ $(document).ready(function() {
 			$img_thumb.find("input").attr("value", data[x]["urls"]["regular"]);
 			for (i = 0; i < image_types.length; i++) {
 				var $this_img_thumb = $img_thumb.clone();
-				$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i][0]));
-				$("#app-control-images-" + image_types[i][0] + " .photo-container").append($this_img_thumb);
+				$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));
+				$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
 			}
 		}
 		
@@ -83,12 +75,9 @@ $(document).ready(function() {
 			$this.parent().addClass("thumb-selected");
 		});		
 		sample_images_ready = true;
-	}).fail(function(){
-
-	});
-	/*IMAGENES*/
+	}).fail(function(){});
 	/*NAV BUTTONS*/
-	$("#app-control>.app-control-step").filter(":gt(0)").hide();
+	$(".app-control-step:gt(0)").hide();
 	$("#control-view-nav-buttons>a").on("click", function() {
 		var inc = $(this).attr("href") == "#next" ? 1 : -1;
 		current_step += inc;
@@ -112,11 +101,11 @@ $(document).ready(function() {
 		//$("#control-view-nav-display").append("<div class='control-view-nav-display-mark'><span>" + (i + 1) + "</span></div>");
 	}
 	$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
-	function showAppCover() {
-		$("#app-cover").show();
-	}
 	$("[name='start']").on("click", function() {
-		if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
+		$("#app-cover").hide();
+		$("#app-cover-start").hide();
+		$("#app-cover-finish").show();
+		/*if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
 			$(".empty-fields").css("display","block");
 		} else {
 			if(!isEmail($("#correo").val())){
@@ -126,7 +115,7 @@ $(document).ready(function() {
 				$("#app-cover-start").hide();
 				$("#app-cover-finish").show();
 			}
-		}
+		}*/
 
 	});
 	$("[name='finish']").on("click", function() {
@@ -145,6 +134,7 @@ $(document).ready(function() {
 	/*EO APP SWITCH*/
 });
 /*APPLICATION FUNCTIONS*/
+function showAppCover() { $("#app-cover").show(); }
 function onMyFrameLoad() { setTimeout(updateContent, 700); }
 function updateContent() {
 	var iFrameDOM = $("#app-preview>iframe").contents();
@@ -165,6 +155,9 @@ function updateContent() {
 		});
 		iFrameDOM.find("#hero-content").css({
 			"background-color" : col_hero_content,
+			"color" : $palette.find("top>fore").html()
+		});
+		iFrameDOM.find("#hero-content h1, #hero-content h2").css({
 			"color" : $palette.find("top>fore").html()
 		});
 		iFrameDOM.find("body").css({
@@ -213,32 +206,12 @@ function updateContent() {
 		$("[name^='inp-img-']:checked").each(function() {
 			var $this = $(this);
 			var img_src = $this.val();
-			switch ($this.attr("name")) {
-				case "inp-img-slogan" :
-					iFrameDOM.find("#img-hero").attr("class", ("img-cont img-MC img-L"));
-					iFrameDOM.find("#img-hero").css({
-							"background-image" : ("url(" + img_src + ")")
-					});
-					break;
-				case "inp-img-item-001" :
-					iFrameDOM.find("#img-item-1").attr("class", ("img-cont img-MC img-L"));
-					iFrameDOM.find("#img-item-1").css({
-							"background-image" : ("url(" + img_src + ")")
-					});
-					break;
-				case "inp-img-item-002" :
-					iFrameDOM.find("#img-item-2").attr("class", ("img-cont img-MC img-L"));
-					iFrameDOM.find("#img-item-2").css({
-							"background-image" : ("url(" + img_src + ")")
-					});
-					break;
-				case "inp-img-item-003" :
-					iFrameDOM.find("#img-item-3").attr("class", ("img-cont img-MC img-L"));
-					iFrameDOM.find("#img-item-3").css({
-							"background-image" : ("url(" + img_src + ")")
-					});
-					break;
-			}
+			var img_name = $this.attr("name");
+			var n_name = img_name.replace("inp-", "#");
+			iFrameDOM.find(n_name).attr("class", ("img-cont img-MC img-L"));
+			iFrameDOM.find(n_name).css({
+				"background-image" : ("url(" + img_src + ")")
+			});
 		});
 	}
 }

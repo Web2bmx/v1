@@ -1,14 +1,22 @@
+/*MIXINS*/
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+$color-cta: #cc2880;
 /**/
 body {
-	margin: 0;
-	padding: 0;
 	background-color: #666;
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
 	overflow: hidden;
+	padding: 0;
 }
 ul, ol, nav {
-	padding: 0;
 	list-style-type: none;
+	padding: 0;
 }
 a {
 	color: #000000;
@@ -20,16 +28,12 @@ a:visited { color: #000000; }
 a:hover { color: #000000; }
 a:active { color: #000000; }
 /**/
-.template {
-	display: none;
-}
-
+.template { display: none; }
 /**/
 #app-cover p, #app-cover ol, #app-cover ul,
 #app-control p, #app-control ol, #app-control ul {
 	font-size: 1.4em;
 }
-
 /**/
 main {
 	width: 100%; 
@@ -58,11 +62,11 @@ main {
 #app-control{
 
 	> .app-control-step {
-		width: 100%; height: auto;
-		padding-bottom: 5em;
+		display: block;
+		height: auto;
+		overflow: hidden;
 		text-align: center;
-		display: block; overflow: hidden;
-		outline: 1px solid #cc2880;
+		width: 100%;
 	}
 
 	.photo-container{
@@ -117,7 +121,8 @@ main {
 }
 .palette-color {
 	width: 1em; height: 1em;
-	display: inline-block; float: left; overflow: hidden;
+	display: inline-block;
+	overflow: hidden;
 }
 
 /**/
@@ -149,19 +154,31 @@ main {
 
 /**/
 #control-view-nav {
-	width: 100%; height: auto;
+	display: block;
+	height: auto;
+	width: 100%;
+	margin-top: 1em;
+	overflow: hidden;
 	text-align: center;
-	display: block; overflow: hidden;
-	position: fixed; z-index: 1000;
-	top: auto; right: 0; bottom: 0; left: auto;
 }
-#control-view-nav a {
-	width: 50%; height: auto;
-	padding: 1em 0;
-	background-color: #666;
+#control-view-nav-buttons {
+	display: block;
+	height: auto;
+	overflow: hidden;
+	width: 100%; 
+}
+#control-view-nav-buttons>a {
+	background-color: $color-cta;
 	color: #FFF;
+	display: inline-block;
+	font-size: 1.2em;
+	height: auto;
+	margin: 0 .4em;
+	overflow: hidden;
+	padding: .6em;
+	width: auto;
 	vertical-align: middle;
-	display: inline-block; overflow: hidden;
+	@include border-radius(1em);
 }
 /**/
 #app-preview {
@@ -220,11 +237,13 @@ a[id^='switch'] {
 	}
 
 	input[type='button'] {
-		padding: 1em;
-		background-color: #cc2880;
-		color: #FFFFFF;
+		background-color: $color-cta;
 		border: none;
-		cursor: pointer; 
+		color: #FFFFFF;
+		cursor: pointer;
+		font-size: 1.2em;
+		padding: 1em;
+		@include border-radius(.8em);
 	}
 	
 	label{
@@ -273,8 +292,5 @@ a[id^='switch'] {
 		position: absolute;
 		top: 0; right: 0; bottom: 0; left: 80%;
 		z-index: 2;
-	}
-	#control-view-nav {
-		width: 20%;
 	}
 }

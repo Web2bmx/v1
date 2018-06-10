@@ -98,7 +98,7 @@ footer a, footer a:link, footer a:visited, footer a:hover, footer a:active {
 footer ul {
 	list-style: none;
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 960px) {
     main {
 		width: 80%; max-width: 1440px;
 		margin: 0 auto;
