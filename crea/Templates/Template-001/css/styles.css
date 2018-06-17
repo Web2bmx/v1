@@ -25,6 +25,10 @@ h1, h2, h3, h4, h5, h6 {
 .img-BC { background-position: bottom center; }
 .img-BR { background-position: bottom right; }
 /**/
+#template {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
 main {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;

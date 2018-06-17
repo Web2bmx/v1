@@ -12,12 +12,64 @@
 	</head>
 	<body>
 		<?php include_once("include/include_libraries.php"); ?>
-		<main>
+		<div id="template"></div>
+		<div id="app">
 			<div id='app-switch'>
 				<a id='switch-view'>Mira tu sitio</a>
 				<a id='switch-edit' style="display : none;">Edita tu sitio</a>
 			</div>
-			<div id="app-preview"></div>
+			<div id="app-cover">
+				<div id="app-cover-start">
+					<div>
+						<h1>Crea tu página web en 5 mínutos</h1>
+						<!--<label>
+							Por favor compártenos tu nombre:<br />
+							<input type="text" name="nombre" id="nombre" />
+						</label>
+						<label>
+							Y tu correo: <br />
+							<input type="email" name="correo" id="correo" />
+						</label>
+						<span class="empty-fields">Los campos están vacios</span>
+						<span class="not-email">El email is inválido</span>-->
+						<input type="button" name="start" value="¡Comienza ya!" />						
+					</div>
+				</div>
+				<div id="app-cover-finish" style="display: none;">
+					<div>
+						<h1>¡Terminamos!</h1>
+						<p>Puedes ver tu sitio aquí*, y puedes compartir este enlace con quien tú quieras.</p>
+						<p>Tu sitio estará disponible durante 14 días.</p>
+						<p>¿Deseas conservar y crecer tu sitio?</p>
+						<h2>Conoce nuestros paquetes.</h2>
+						<div class="app-cover-finish-package">
+							<h3>Paquete Básico</h3>
+							<ul>
+								<li>Conservar mi sitio por un año.</li>
+								<li>Agregar mi logotipo.</li>
+								<li>Agregar nuevo contenido.</li>
+								<li>Actualizaciones ilimitadas.</li>
+								<li>$1,199.00</li>
+							</ul>
+						</div>
+						<div class="app-cover-finish-package">	
+							<h3>Paquete Premium</h3>
+							<ul>
+								<li>Dominio, elnombredeminegocio.mx</li>
+								<li>Conservar mi sitio por un año.</li>
+								<li>Agregar mi logotipo.</li>
+								<li>Agregar nuevo contenido.</li>
+								<li>Actualizaciones ilimitadas.</li>
+								<li>$2,499.00</li>
+							</ul>
+						</div>	
+						<h2>Escribe un correo donde podamos contactarte</h2>
+						<input type="text" placeholder="Tu correo" />
+						<h3>Recibirás un correo en los próximos mínutos con los siguientes pasos.</h3>
+						<input type="button" name="finish" value="Aceptar" />
+					</div>
+				</div>
+			</div>
 			<div id="app-control">
 				<div class="app-control-step">
 					<div>
@@ -61,27 +113,54 @@
 				</div>
 				<div class="app-control-step">
 					<div>	
-						<p>Ahora tus productos o servicios</p>	
+						<p>Producto o servicio 1</p>	
 						<div>
 							<label>Producto o servicio 1</label><br /><textarea id="inp-content-item-001" name="inp-content-item-001" placeholder="Tu primer producto o servicio"></textarea><br />
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>	
+						<p>Producto o servicio 2</p>	
+						<div>
 							<label>Producto o servicio 2</label><br /><textarea id="inp-content-item-002" name="inp-content-item-002" placeholder="Tu segundo producto o servicio"></textarea><br />
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>	
+						<p>Producto o servicio 3</p>	
+						<div>
 							<label>Producto o servicio 3</label><br /><textarea id="inp-content-item-003" name="inp-content-item-003" placeholder="Tu tercer producto o servicio"></textarea><br />
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h1>¡Ya casi terminamos!</h1>	
-						<p>Selecciona las imágenes para tus productos o servicios</p>
+						<p>Selecciona las imágenes para tus producto o servicio 1</p>
 						<div class="app-control-images">
 							<div id='app-control-images-item-1'>
 								<h4>La imágen para tu servicio o producto 1</h4>
 								<div class="photo-container"></div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<p>Selecciona las imágenes para tus producto o servicio 2</p>
+						<div class="app-control-images">
 							<div id='app-control-images-item-2'>
 								<h4>La imágen para tu servicio o producto 2</h4>
 								<div class="photo-container"></div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<p>Selecciona las imágenes para tus producto o servicio 3</p>
+						<div class="app-control-images">
 							<div id='app-control-images-item-3'>
 								<h4>La imágen para tu servicio o producto 3</h4>
 								<div class="photo-container"></div>
@@ -91,6 +170,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
+						<h1>¡Ya casi terminamos!</h1>
 						<p>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio.</p>
 						<p>Si deseas no mostrarle ni un dato de contacto a tus Clientes sólo haz clic en el botón de Siguiente.</p>
 						<div>
@@ -128,75 +208,7 @@
 					<div id='control-view-nav-display'></div>
 				</nav>
 			</div>
-			<div id="app-cover">
-				<div id="app-cover-start">
-					<div>
-						<h1>Crea tu página web en 5 mínutos</h1>
-						<!--<label>
-							Por favor compártenos tu nombre:<br />
-							<input type="text" name="nombre" id="nombre" />
-						</label>
-						<label>
-							Y tu correo: <br />
-							<input type="email" name="correo" id="correo" />
-						</label>
-						<span class="empty-fields">Los campos están vacios</span>
-						<span class="not-email">El email is inválido</span>-->
-						<input type="button" name="start" value="¡Comienza ya!" />						
-					</div>
-				</div>
-				<div id="app-cover-finish" style="display: none;">
-					<div>
-						<h1>¡Terminamos!</h1>
-						<p>Puedes ver tu sitio aquí*, y puedes compartir este enlace con quien tú quieras.</p>
-						<p>Tu sitio estará disponible durante 14 días.</p>
-						<p>¿Deseas conservar y crecer tu sitio?</p>
-						<h2>Conoce nuestros paquetes.</h2>
-						<div class="app-cover-finish-package">
-							<h3>Paquete Básico</h3>
-							<ul>
-								<li>Conservar mi sitio por un año.</li>
-								<li>Agregar mi logotipo.</li>
-								<li>Agregar nuevo contenido.</li>
-								<li>Actualizaciones ilimitadas.</li>
-								<!--<li>$699.00</li>-->
-							</ul>
-							<div>
-								<h4>Selecciona el precio que pagarías por esta opción</h4>
-								<ul>
-									<li>Menos de $700.00 <input type="radio" name="price-opt1" value="1"/></li>
-									<li>Entre $700.00 y $1,200.00<input type="radio" name="price-opt1" value="2"/></li>
-									<li>Más de $1,200.00<input type="radio" name="price-opt1" value="3"/></li>
-								</ul>
-							</div>
-						</div>
-						<div class="app-cover-finish-package">	
-							<h3>Paquete Premium</h3>
-							<ul>
-								<li>Dominio, elnombredeminegocio.mx</li>
-								<li>Conservar mi sitio por un año.</li>
-								<li>Agregar mi logotipo.</li>
-								<li>Agregar nuevo contenido.</li>
-								<li>Actualizaciones ilimitadas.</li>
-								<!--<li>$1,599.00</li>-->
-							</ul>
-							<div>
-								<h4>Selecciona el precio que pagarías por esta opción</h4>
-								<ul>
-									<li>Menos de $1,600.00 <input type="radio" name="price-opt2" value="1"/></li>
-									<li>Entre $1,600.00 y $2,500.00<input type="radio" name="price-opt2" value="2"/></li>
-									<li>Más de $2,500.00<input type="radio" name="price-opt2" value="3"/></li>
-								</ul>
-							</div>
-						</div>	
-						<h2>Escribe un correo donde podamos contactarte</h2>
-						<input type="text" placeholder="Tu correo" />
-						<h3>Recibirás un correo en los próximos mínutos con los siguientes pasos.</h3>
-						<input type="button" name="finish" value="Aceptar" />
-					</div>
-				</div>
-			</div>
-		</main>
+		</div>
 		<?php include_once("include/include_html_templates.php"); ?>
 		<?php //include_once("include/include_chat.php"); ?>
 	</body>

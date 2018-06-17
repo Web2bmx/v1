@@ -3,8 +3,8 @@
 body {
   background-color: #666;
   font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
   margin: 0;
-  overflow: hidden;
   padding: 0;
 }
 
@@ -40,36 +40,113 @@ a:active {
   display: none;
 }
 
-/**/
-#app-cover p, #app-cover ol, #app-cover ul,
-#app-control p, #app-control ol, #app-control ul {
-  font-size: 1.4em;
+input[type='button'] {
+  background-color: #cc2880;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 1em;
+  -moz-border-radius: 0.8em;
+  -ms-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  border-radius: 0.8em;
 }
 
 /**/
-main {
-  width: 100%;
-  height: 100%;
+#template {
   display: block;
+  height: auto;
+  width: 100%;
+}
+
+#app {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
   overflow: hidden;
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
-  left: 0;
+  width: 100%;
+  z-index: 1;
 }
 
-#app-control {
-  width: 100%;
-  height: 95%;
-  background-color: #EFEFEF;
+/**/
+#app-switch {
+  background-color: #666;
+  bottom: 95%;
+  height: 5%;
   display: block;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+a[id^='switch'] {
+  color: #FFF;
+  display: block;
+  text-align: center;
+}
+
+/**/
+#app-cover {
+  background-color: rgba(255, 255, 255, 0.95);
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1001;
+}
+
+#app-cover > div {
+  display: block;
+  height: auto;
+  margin: 3em auto;
+  overflow: hidden;
+  text-align: center;
+  width: 80%;
+}
+
+#app-cover label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+#app-cover .empty-fields, #app-cover .not-email {
+  color: red;
+  display: none;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+#app-cover .app-cover-finish-package {
+  border: 1px dotted #ADADAD;
+  margin: 1em 0;
+  padding: 2em;
+}
+
+/**/
+#app-control {
+  background-color: #EFEFEF;
+  bottom: 0;
+  display: block;
+  height: 95%;
+  left: 0;
   overflow-y: scroll;
   position: absolute;
-  top: 5%;
   right: 0;
-  bottom: 0;
-  left: 0;
+  top: 5%;
+  width: 100%;
   z-index: 2;
 }
 
@@ -81,63 +158,9 @@ main {
   width: 100%;
 }
 
-#app-control .photo-container {
-  margin: 10px 0;
-  overflow: hidden;
-}
-
-#app-control > div.appview {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
 #app-control > div > div {
-  width: 80%;
   margin: auto;
-}
-
-#app-control > div > div input[type="text"] {
-  width: 92%;
-  height: auto;
-  margin: 0 0 5% 0;
-  padding: .5em 4%;
-  font-size: 1.2em;
-}
-
-.control-color {
-  width: 50%;
-  height: 16em;
-  text-align: center;
-  float: left;
-  overflow: hidden;
-}
-
-.control-color-thumb {
   width: 80%;
-  height: auto;
-  margin: 0 5%;
-  padding: 1em 5%;
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.control-color-thumb-bg {
-  width: 100%;
-  height: 3em;
-  display: block;
-  overflow: hidden;
-}
-
-.control-color-thumb-content {
-  width: 80%;
-  height: 1em;
-  margin: 1em 10%;
-  display: block;
-  overflow: hidden;
 }
 
 #app-control > div > div textarea {
@@ -148,57 +171,102 @@ main {
   font-size: 1em;
 }
 
-#app-control-palettes {
+#app-control > div > div input[type="text"] {
+  height: auto;
+  font-size: 1.2em;
+  margin: 0 0 5% 0;
+  padding: .5em 4%;
+  width: 92%;
+}
+
+#app-control .control-color {
+  float: left;
+  height: 16em;
+  overflow: hidden;
+  text-align: center;
+  width: 50%;
+}
+
+#app-control .control-color-thumb {
+  cursor: pointer;
+  display: block;
+  height: auto;
+  margin: 0 5%;
+  overflow: hidden;
+  padding: 1em 5%;
+  width: 80%;
+}
+
+#app-control .control-color-thumb-bg {
+  display: block;
+  height: 3em;
+  overflow: hidden;
+  width: 100%;
+}
+
+#app-control .control-color-thumb-content {
+  display: block;
+  height: 1em;
+  margin: 1em 10%;
+  overflow: hidden;
+  width: 80%;
+}
+
+#app-control #app-control-palettes {
   text-align: left;
 }
 
-.palette-color {
-  width: 1em;
-  height: 1em;
+#app-control .palette-color {
   display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  width: 1em;
+}
+
+#app-control .app-control-images {
+  display: block;
+  height: auto;
+  overflow: visible;
+  position: relative;
+  width: auto;
+}
+
+#app-control [id^="app-control-images"] {
+  display: block;
+  height: auto;
+  overflow: visible;
+  position: relative;
+  width: auto;
+}
+
+#app-control .photo-container {
+  margin: 10px 0;
   overflow: hidden;
 }
 
-/**/
-.app-control-images {
-  width: auto;
-  height: auto;
-  display: block;
-  overflow: visible;
-  position: relative;
-}
-
-[id^="app-control-images"] {
-  width: auto;
-  height: auto;
-  display: block;
-  overflow: visible;
-  position: relative;
-}
-
-.img-thumb {
-  width: 25%;
-  height: 80px;
-  float: left;
-  overflow: visible;
+#app-control .img-thumb {
   cursor: pointer;
+  float: left;
+  height: 80px;
+  overflow: visible;
   position: relative;
+  width: 25%;
   z-index: 1;
 }
 
-.thumb-selected {
+#app-control .thumb-selected {
   outline: 3px solid blue;
   z-index: 2;
 }
 
-.img-thumb-cont {
-  width: 100%;
-  height: 100%;
+#app-control .img-thumb-cont {
   background-color: #000000;
-  background-size: auto 150%;
   background-position: center center;
+  background-size: auto 150%;
   display: block;
+  height: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 /**/
@@ -229,135 +297,10 @@ main {
   padding: .6em;
   width: auto;
   vertical-align: middle;
-  -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
   -ms-border-radius: 1em;
+  -webkit-border-radius: 1em;
   border-radius: 1em;
-}
-
-/**/
-#app-preview {
-  width: 100%;
-  height: 95%;
-  display: none;
-  overflow: hidden;
-  position: fixed;
-  top: 5%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-}
-
-#app-preview > div {
-  width: 80%;
-  height: auto;
-  padding: 5% 10% 5% 10%;
-  display: block;
-  overflow: hidden;
-}
-
-/**/
-#app-preview {
-  width: 100%;
-  height: 95%;
-  display: block;
-  overflow: hidden;
-  position: fixed;
-  top: 5%;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1;
-}
-
-#app-preview > iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border: none;
-}
-
-/**/
-#app-switch {
-  width: 100%;
-  height: 5%;
-  background-color: #666;
-  display: block;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 95%;
-  left: 0;
-}
-
-a[id^='switch'] {
-  color: #FFF;
-  text-align: center;
-  display: block;
-}
-
-/**/
-#app-cover {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  display: block;
-  overflow-y: scroll;
-  position: fixed;
-  z-index: 1001;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-#app-cover > div {
-  width: 80%;
-  height: auto;
-  margin: 3em auto;
-  text-align: center;
-  display: block;
-  overflow: hidden;
-}
-
-#app-cover input[type='button'] {
-  background-color: #cc2880;
-  border: none;
-  color: #FFFFFF;
-  cursor: pointer;
-  font-size: 1.2em;
-  padding: 1em;
-  -webkit-border-radius: 0.8em;
-  -moz-border-radius: 0.8em;
-  -ms-border-radius: 0.8em;
-  border-radius: 0.8em;
-}
-
-#app-cover label {
-  display: block;
-  margin-bottom: 15px;
-}
-
-#app-cover .empty-fields,
-#app-cover .not-email {
-  color: red;
-  display: none;
-  font-size: 12px;
-  margin-bottom: 10px;
-}
-
-.app-cover-finish-package {
-  margin: 1em 0;
-  padding: 2em;
-  border: 1px dotted #ADADAD;
 }
 
 /**/
@@ -365,17 +308,15 @@ a[id^='switch'] {
   #app-switch {
     display: none;
   }
-  #app-preview {
-    height: 100%;
-    top: 0;
-  }
   #app-control {
-    width: 50%;
+    bottom: 20%;
     height: 40%;
+    left: 25%;
     top: 40%;
     right: 25%;
-    bottom: 20%;
-    left: 25%;
+    width: 50%;
   }
 }
+
+/**/
 /*# sourceMappingURL=styles.css.map */
