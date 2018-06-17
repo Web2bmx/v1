@@ -11,7 +11,14 @@ var $palettes = null;
 $(document).ready(function() {
 	updateTemplate();
 	$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
-	$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() { updateTemplate(); });
+	$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() {
+		if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
+			goToByScroll($("#app-preview>iframe").contents(), 800);
+		} else {
+			goToByScroll($("#app-preview>iframe").contents(), 0);
+		}
+		updateTemplate();
+	});
 	$.ajax({
 		url: "xml/sample_colors.xml",
 		dataType: "xml",
@@ -141,7 +148,9 @@ function updateContent() {
 	iFrameDOM.find("#hero-logotipo").css({
 		"display" : "none"
 	});
-	iFrameDOM.find("#hero-content h1").html($("[name^='inp-name']").val());
+	if ($("[name^='inp-name']").val() != "") {
+		iFrameDOM.find("#hero-content h1").html($("[name^='inp-name']").val());
+	}
 	/*Colores*/
 	if (sample_colors_ready) {
 		var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
@@ -245,4 +254,7 @@ function openRequestedPopup(strUrl, strWindowName) {
 	  windowObjectReference.focus();
 	}
   }
+function goToByScroll($element, target){
+	$element.scrollTop(target);
+}
 /*EO GENERAL FUNCTIONS*/
