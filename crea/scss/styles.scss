@@ -1,5 +1,5 @@
-/*MIXINS*/
-@mixin border-radius($radius) {
+ /*MIXINS*/
+ @mixin border-radius($radius) {
 	-moz-border-radius: $radius;
 	-ms-border-radius: $radius;
 	-webkit-border-radius: $radius;
@@ -39,7 +39,7 @@ input[type='button'] {
 	@include border-radius(.8em);
 }
 /**/
-#template {
+#template-cont {
 	display: block; 
 	height: auto;
 	width: 100%; 
@@ -55,24 +55,6 @@ input[type='button'] {
 	right: 0;
 	width: 100%;
 	z-index: 1;
-}
-/**/
-#app-switch {
-	background-color: #666;
-	bottom: 95%;
-	height: 5%;
-	display: block;
-	left: 0;
-	overflow: hidden;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 100%; 
-}
-a[id^='switch'] {
-	color: #FFF;
-	display: block;
-	text-align: center;
 }
 /**/
 #app-cover {
@@ -114,15 +96,16 @@ a[id^='switch'] {
 }
 /**/
 #app-control {
-	background-color: #EFEFEF;
+	background-color: #EEFFEE;
 	bottom: 0;
+	color: #666;
 	display: block;
-	height: 95%;
+	height: 100%;
 	left: 0;
-	overflow-y: scroll;
-	position: absolute;
+	overflow-y: auto;
+	position: fixed;
 	right: 0; 
-	top: 5%; 
+	top: 0; 
 	width: 100%; 
 	z-index: 2;
 	
@@ -205,7 +188,7 @@ a[id^='switch'] {
 	}
 	.photo-container{
 		margin: 10px 0;
-		overflow: hidden;
+		overflow: visible;
 	}
 	.img-thumb {	
 		cursor: pointer;
@@ -230,12 +213,25 @@ a[id^='switch'] {
 		width: 100%;
 	}
 }
+#app-switch {
+	background-color: #565;
+	height: auto;
+	display: block;
+	overflow: hidden;
+	width: 100%; 
+}
+a[id^='switch'] {
+	color: #FFF;
+	display: block;
+	text-align: center;
+}
+/**/
 /**/
 #control-view-nav {
 	display: block;
 	height: auto;
 	width: 100%;
-	margin-top: 1em;
+	margin: 1em 0;
 	overflow: hidden;
 	text-align: center;
 }
@@ -260,16 +256,19 @@ a[id^='switch'] {
 }
 /**/
 @media screen and (min-width: 1280px) {
-	#app-switch {
-		display: none;
-	}
 	#app-control {
-		bottom: 20%;
+		bottom: 5%;
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 		height: 40%;
-		left: 25%;
-		top: 40%;
-		right: 25%; 
-		width: 50%; 
+		left: 5%;
+		top: 55%;
+		right: 5%; 
+		width: 90%;
+		@include border-radius(2em);
+	}
+	#app-control.top {
+		bottom: 55%;
+		top: 5%;
 	}
 }
 /**/

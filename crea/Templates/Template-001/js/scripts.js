@@ -4,7 +4,7 @@ $(document).ready(function() {
 		optimize();
 	});
 	function optimize() {}
-	/*IMAGES*/
+	/*IMAGES
 	$.ajax({
 		url: "../../xml/sample_images.xml",
 		dataType: "xml",
@@ -21,5 +21,5 @@ $(document).ready(function() {
 				});
 			}
 		}
-	});
+	});*/
 });

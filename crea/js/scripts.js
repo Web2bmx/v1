@@ -14,9 +14,14 @@
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() {
 			if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
-				goToByScroll($("#app-preview>iframe").contents(), 800);
+				goToByScroll($(document), 800);
 			} else {
-				goToByScroll($("#app-preview>iframe").contents(), 0);
+				goToByScroll($(document), 0);
+			}
+			if ($(this).attr("name").indexOf("-contact-") > -1) {
+				$("#app-control").addClass("top");
+			} else {
+				$("#app-control").removeClass("top");
 			}
 			updateTemplate();
 		});
@@ -104,6 +109,7 @@
 				$("#app-control>.app-control-step").hide().filter(":eq(" + current_step + ")").show();
 			}
 			$(".control-view-nav-display-mark").removeClass("control-view-nav-display-mark-active").filter(":eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
+			goToByScroll($("#app-control"), 0);
 		});
 		for (i=0; i < $("#app-control>.app-control-step").length; i++) {
 			//$("#control-view-nav-display").append("<div class='control-view-nav-display-mark'><span>" + (i + 1) + "</span></div>");
@@ -135,9 +141,17 @@
 		var $appControl = $("#app-control");
 		var $switchView = $("#switch-view");
 		var $switchEdit = $("#switch-edit");
+		var $appControl_h = $appControl.css("height");
 		$("[id^='switch-']").on('click', function() {
-			if($appControl.is(":visible")) { $switchView.hide(); $switchEdit.show(); $appControl.hide(); }
-			else { $switchView.show(); $switchEdit.hide(); $appControl.show(); }
+			if($(this).attr("id").indexOf("view") > -1) {
+				$switchView.hide();
+				$switchEdit.show();
+				$appControl.css({"height" : "2em"});
+			} else {
+				$switchView.show();
+				$switchEdit.hide();
+				$appControl.css({"height" : $appControl_h});
+			}
 		});
 		/*EO APP SWITCH*/
 	});
@@ -232,7 +246,10 @@
 			id = id.replace("inp-design-", "");
 			$("#template").html("");
 			var src = "Templates/Template-" + id + "/index.html"; 
-			$("#template").load("Templates/Template-" + id + "/index.html #template", function() {
+			$("#template-cont").load("Templates/Template-" + id + "/index.html #template", function() {
+				$("#template").find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
+				$("#template").find("script[src^='js/scripts.js']").attr("src", ("Templates/Template-" + id + "/js/scripts.js"));
+				$("#template").find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
 				updateContent();
 			});
 		} else {

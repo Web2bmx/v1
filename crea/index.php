@@ -12,12 +12,8 @@
 	</head>
 	<body>
 		<?php include_once("include/include_libraries.php"); ?>
-		<div id="template"></div>
+		<div id="template-cont"></div>
 		<div id="app">
-			<div id='app-switch'>
-				<a id='switch-view'>Mira tu sitio</a>
-				<a id='switch-edit' style="display : none;">Edita tu sitio</a>
-			</div>
 			<div id="app-cover">
 				<div id="app-cover-start">
 					<div>
@@ -71,16 +67,19 @@
 				</div>
 			</div>
 			<div id="app-control">
+				<div id='app-switch'>
+					<a id='switch-view'>Mira tu sitio</a>
+					<a id='switch-edit' style="display : none;">Edita tu sitio</a>
+				</div>
 				<div class="app-control-step">
 					<div>
-						<h1>¡Tu página web está casi lista!</h1>
-						<p>Vamos a personalizarla.</p>
+						<h2>¡Tu página web está casi lista!</h2>
 						<p>A continuación pondremos la información de tu Negocio.</p>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>		
-						<p>El primer paso es poner el nombre de tu Negocio.</p>
+						<h2>Ahora escribe el nombre de tu Negocio</h2>
 						<p>Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
 						<div>
 							<input type="text" id="inp-name" name="inp-name" value="" placeholder="El nombre de tu negocio" /> 
@@ -89,58 +88,36 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h1>Ahora define el contenido de tu página.</h1>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
-						<p>Primero tu eslogan</p>		
+						<h2>¿Tienes un eslogan?</h2>
+						<p>Escribe una frase breve que describa tu producto o servicio.</p>		
 						<div>
-							<label>Eslógan</label><br /><textarea id="inp-content-slogan" name="inp-content-slogan" placeholder="El eslógan de tu negocio"></textarea><br />
+							<textarea id="inp-content-slogan" name="inp-content-slogan" placeholder="El eslógan de tu negocio"></textarea><br />
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Ahora la imagen para tu eslogan</p>		
+						<h2>Primero elige la imagen principal para tu página:</h2>
 						<div class="app-control-images">
 							<div id='app-control-images-hero'>
-								<h4>La imágen para tu eslógan</h4>
 								<div class="photo-container"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
+					<p>¿Cuál es tu primer producto o servicio?</p>
 					<div>	
-						<p>Producto o servicio 1</p>	
 						<div>
-							<label>Producto o servicio 1</label><br /><textarea id="inp-content-item-001" name="inp-content-item-001" placeholder="Tu primer producto o servicio"></textarea><br />
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>	
-						<p>Producto o servicio 2</p>	
-						<div>
-							<label>Producto o servicio 2</label><br /><textarea id="inp-content-item-002" name="inp-content-item-002" placeholder="Tu segundo producto o servicio"></textarea><br />
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>	
-						<p>Producto o servicio 3</p>	
-						<div>
-							<label>Producto o servicio 3</label><br /><textarea id="inp-content-item-003" name="inp-content-item-003" placeholder="Tu tercer producto o servicio"></textarea><br />
+							<textarea id="inp-content-item-001" name="inp-content-item-001" placeholder="Tu primer producto o servicio"></textarea><br />
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Selecciona las imágenes para tus producto o servicio 1</p>
+						<p>Elige una imagen para tu primer producto o servicio:</p>
 						<div class="app-control-images">
 							<div id='app-control-images-item-1'>
-								<h4>La imágen para tu servicio o producto 1</h4>
 								<div class="photo-container"></div>
 							</div>
 						</div>
@@ -148,21 +125,35 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Selecciona las imágenes para tus producto o servicio 2</p>
+						<p>¿Cuál es tu segundo producto o servicio?</p>
+						<div>
+							<textarea id="inp-content-item-002" name="inp-content-item-002" placeholder="Tu segundo producto o servicio"></textarea><br />
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<p>Elige una imagen para tu segundo producto o servicio:</p>
 						<div class="app-control-images">
 							<div id='app-control-images-item-2'>
-								<h4>La imágen para tu servicio o producto 2</h4>
 								<div class="photo-container"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
+					<div>	
+						<p>¿Cuál es tu tercer producto o servicio?</p>	
+						<div>
+							<textarea id="inp-content-item-003" name="inp-content-item-003" placeholder="Tu tercer producto o servicio"></textarea><br />
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
 					<div>
-						<p>Selecciona las imágenes para tus producto o servicio 3</p>
+						<p>Elige una imagen para tu tercer producto o servicio:</p>
 						<div class="app-control-images">
 							<div id='app-control-images-item-3'>
-								<h4>La imágen para tu servicio o producto 3</h4>
 								<div class="photo-container"></div>
 							</div>
 						</div>
@@ -170,15 +161,27 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h1>¡Ya casi terminamos!</h1>
 						<p>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio.</p>
-						<p>Si deseas no mostrarle ni un dato de contacto a tus Clientes sólo haz clic en el botón de Siguiente.</p>
 						<div>
 							<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" /><br />
 							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" /><br />
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<p>Coloca la dirección y horario de tu Negocio.</p>
+						<div>
 							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" /><br />
 							<input type="text" id="inp-contact-schedule" name="inp-contact-schedule" value="" placeholder="El horario de tu negocio" /><br />
 							<!--<input type="text" id="inp-contact-map" name="inp-contact-map" value="" placeholder="" /><br />-->
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<p>Escribe las redes sociales de tu Negocio.</p>
+						<div>
 							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" /><br />
 							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" /><br />
 						</div>
@@ -186,7 +189,12 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h1>¡Excelente! Ahora elige el diseño de tu página.</h1>
+						<h2>¡Ya casi terminamos!</h2>
+					</div>
+				</div>	
+				<div class="app-control-step">
+					<div>
+						<h2>¡Excelente! Ahora elige el diseño de tu página</h2>
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div>
 							<label for="inp-design-001">Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
@@ -196,7 +204,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h1>¡Muy bien! Ahora elige los colores de tu página.</h1>
+						<h2>¡Muy bien! Ahora elige los colores de tu página.</h2>
 						<p>Puedes elegir de nuestras combinaciones de colores o modificar cada color individualmente haciendo clic alguno.</p>
 						<div id="app-control-palettes"></div>
 					</div>

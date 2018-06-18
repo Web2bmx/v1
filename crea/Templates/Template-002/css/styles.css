@@ -4,12 +4,6 @@
 }
 body {
 	margin: 0; padding: 0;
-	font-family: 'Raleway', sans-serif;
-	text-align: center;
-}
-h1, h2, h3, h4, h5, h6 {
-	color: #664422;
-	font-family: 'Skranji', cursive;
 }
 /**/
 .img-L { background-size: auto 150%; }
@@ -24,10 +18,20 @@ h1, h2, h3, h4, h5, h6 {
 .img-BL { background-position: bottom left; }
 .img-BC { background-position: bottom center; }
 .img-BR { background-position: bottom right; }
+.img-cont {
+	background-color: #CCCCCC;
+	background-repeat: no-repeat;
+}
 /**/
 #template {
 	width: 100%; height: auto;
+	font-family: 'Raleway', sans-serif;
+	text-align: center;
 	display: block; overflow: hidden;
+}
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
+	color: #664422;
+	font-family: 'Skranji', cursive;
 }
 main {
 	width: 100%; height: auto;
