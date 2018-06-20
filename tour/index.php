@@ -103,9 +103,9 @@ function muestra_pregunta($numero_pregunta){
                                         Elaboraremos la mejor <br />
                                         Página web para ti
                                     </p>
-                                    <button>
+                                    <a href="./crea" class="boton">
                                         Quiero ver mi página web
-                                    </button>                                    
+                                    </a>                                    
                                 </div>                                  
                             </div>                        
                             <div class="nave">
@@ -199,7 +199,19 @@ function muestra_pregunta($numero_pregunta){
                             </div>
                             <img class="right space-man" src="images/spaceman.png">
                             <img class="right luna" alt="luna" src="images/land.png">
-                        </div>                       
+                        </div>
+                        <div class="datos-existentes dialog" style="display: none">
+                                <p>
+                                Hemos detectado que ya estabas realizando el tour.<br /> 
+                                Quieres seguir donde estabas o iniciar de nuevo?      
+                                </p>                         
+                                <button class="iniciar">
+                                    Iniciar de nuevo
+                                </button>
+                                <button class="continuar res">
+                                    Continuar donde estaba
+                                </button>                                
+                        </div>                                               
                     </div>
                     
     		</div>           

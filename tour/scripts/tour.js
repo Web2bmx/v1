@@ -47,6 +47,9 @@ function preguntaValida(selector){
         }
         return false;
     } else{
+        if($(selector + " p").data("type") == "1"){
+            localStorage.removeItem("web2b");
+        }
         var jsonData = localStorage.getItem("web2b"),
             resp = "";
 
@@ -73,6 +76,75 @@ function preguntaValida(selector){
     return true;
 }
 
+function paso2(){
+    $(".rocket img + img").animate({
+            opacity: 1
+        }, 50);  
+    if(winWidth < 660){
+        $(".space-man").animate({
+            width: '35px',
+            bottom: '55px',
+            marginLeft: '-73px',
+            opacity: '0'                         
+        }, 2000, function(){
+            darSalto(".sun > img","segunda-pregunta");            
+        });
+    }
+    else if(winWidth < 1040){
+        $(".space-man").animate({
+            width: '50px',
+            marginLeft: '-112px',
+            bottom: '111px',
+            opacity: '0'                         
+        }, 2000, function(){
+            darSalto(".sun > img","segunda-pregunta");           
+        });                        
+    } else{            
+        $(".space-man").animate({
+            width: '50px',
+            marginLeft: '172px',
+            opacity: '0'                         
+        }, 2000, function(){
+            darSalto(".sun > img","segunda-pregunta");           
+        });            
+    }    
+}
+
+function paso3(){
+    $(".rocket img + img").animate({
+        opacity: 1
+    }, 50);        
+    darSalto(".planet-blue","tercera-pregunta");       
+}
+
+function paso4(){
+    $(".rocket img + img").animate({
+        opacity: 1
+    }, 50);        
+        darSalto(".earth","cuarta-pregunta");      
+}
+
+function paso5(){
+    $(".rocket img + img").animate({
+        opacity: 1
+    }, 50);            
+        darSalto(".full_moon > img","quinta-pregunta");       
+}
+
+function paso6(){
+    $(".rocket img + img").animate({
+        opacity: 1
+    }, 50);         
+        darSalto(".planet_ring > img","sexta-pregunta");      
+}
+
+function paso7(){
+    $(".rocket img + img").animate({
+        opacity: 1
+    }, 50);          
+        darSalto(".planet_red > img","septima-pregunta");    
+}
+
 $(document).ready(function(){
     winWidth = $(window).width();
     
@@ -91,6 +163,51 @@ $(document).ready(function(){
         effect: "fade",
         duration: 1000
       }
+    });  
+
+    var jsonData = localStorage.getItem("web2b");
+
+    if(jsonData == null)
+        {
+            jsonData = {};
+            jsonData.respuestas = [];                
+        }
+    else{
+        jsonData = JSON.parse(jsonData);
+    }
+
+    if(jsonData.respuestas.length > 0 && jsonData.respuestas.length < 7){
+        $(".datos-existentes").dialog( "open" ); 
+    }      
+
+    $(".iniciar").click(function(){
+        $(".datos-existentes").dialog( "close" );
+        $(".init").click();
+    });
+
+    $(".continuar").click(function(){
+        $(".init").fadeOut(500);
+        $(".datos-existentes").dialog( "close" );
+        switch(jsonData.respuestas.length + 1){
+            case 2:
+                paso2();
+            break;
+            case 3:
+                paso3();
+            break;
+            case 4:
+                paso4();
+            break;
+            case 5:
+                paso5();
+            break;
+            case 6:
+                paso6();
+            break; 
+            case 7:
+                paso7();
+            break;                                                                        
+        }
     });    
     
     $(window).resize(function(){
@@ -106,37 +223,7 @@ $(document).ready(function(){
         if(preguntaValida(".primera-pregunta")){  
             $(".primera-pregunta").dialog( "close" );
             $( ".primera-pregunta" ).on( "dialogclose", function() {
-                $(".rocket img + img").animate({
-                        opacity: 1
-                    }, 50);  
-                if(winWidth < 660){
-                    $(".space-man").animate({
-                        width: '35px',
-                        bottom: '55px',
-                        marginLeft: '-73px',
-                        opacity: '0'                         
-                    }, 2000, function(){
-                        darSalto(".sun > img","segunda-pregunta");            
-                    });
-                }
-                else if(winWidth < 1040){
-                    $(".space-man").animate({
-                        width: '50px',
-                        marginLeft: '-112px',
-                        bottom: '111px',
-                        opacity: '0'                         
-                    }, 2000, function(){
-                        darSalto(".sun > img","segunda-pregunta");           
-                    });                        
-                } else{            
-                    $(".space-man").animate({
-                        width: '50px',
-                        marginLeft: '172px',
-                        opacity: '0'                         
-                    }, 2000, function(){
-                        darSalto(".sun > img","segunda-pregunta");           
-                    });            
-                }
+                paso2();
             });
         }
     });
@@ -146,10 +233,7 @@ $(document).ready(function(){
         if(preguntaValida(".segunda-pregunta")){
             $(".segunda-pregunta").dialog( "close" );
             $( ".segunda-pregunta" ).on( "dialogclose", function() {            
-                $(".rocket img + img").animate({
-                    opacity: 1
-                }, 50);        
-                    darSalto(".planet-blue","tercera-pregunta");            
+                paso3();         
             } );
         }
     });    
@@ -159,10 +243,7 @@ $(document).ready(function(){
         if(preguntaValida(".tercera-pregunta")){
             $(".tercera-pregunta").dialog( "close" );
             $( ".tercera-pregunta" ).on( "dialogclose", function() {            
-                $(".rocket img + img").animate({
-                    opacity: 1
-                }, 50);        
-                    darSalto(".earth","cuarta-pregunta");            
+                paso4();
             } );
         }
     });
@@ -172,10 +253,7 @@ $(document).ready(function(){
         if(preguntaValida(".cuarta-pregunta")){
             $(".cuarta-pregunta").dialog( "close" );
             $( ".cuarta-pregunta" ).on( "dialogclose", function() {           
-                $(".rocket img + img").animate({
-                    opacity: 1
-                }, 50);            
-                    darSalto(".full_moon > img","quinta-pregunta");     
+                paso5();
             });
         }
     });
@@ -185,10 +263,7 @@ $(document).ready(function(){
         if(preguntaValida(".quinta-pregunta")){
             $(".quinta-pregunta").dialog( "close" );
             $( ".quinta-pregunta" ).on( "dialogclose", function() {          
-                $(".rocket img + img").animate({
-                    opacity: 1
-                }, 50);         
-                    darSalto(".planet_ring > img","sexta-pregunta");       
+                paso6();
             });
         }
     }); 
@@ -198,10 +273,7 @@ $(document).ready(function(){
         if(preguntaValida(".sexta-pregunta")){
             $(".sexta-pregunta").dialog( "close" );
             $( ".sexta-pregunta" ).on( "dialogclose", function() {         
-                $(".rocket img + img").animate({
-                    opacity: 1
-                }, 50);          
-                    darSalto(".planet_red > img","septima-pregunta"); 
+                paso7();
             });
         }
     });    
