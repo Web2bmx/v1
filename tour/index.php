@@ -103,7 +103,7 @@ function muestra_pregunta($numero_pregunta){
                                         Elaboraremos la mejor <br />
                                         Página web para ti
                                     </p>
-                                    <a href="./crea" class="boton">
+                                    <a href="../crea" class="boton">
                                         Quiero ver mi página web
                                     </a>                                    
                                 </div>                                  
