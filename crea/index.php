@@ -106,7 +106,7 @@
 					</div>
 				</div>
 				<div class="app-control-step">
-					<p>¿Cuál es tu primer producto o servicio?</p>
+					<p>¿Cuál es tu principal producto o servicio?</p>
 					<div>	
 						<div>
 							<textarea id="inp-content-item-001" name="inp-content-item-001" placeholder="Tu primer producto o servicio"></textarea><br />
@@ -115,7 +115,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Elige una imagen para tu primer producto o servicio:</p>
+						<p>Elige una imagen para tu principal producto o servicio:</p>
 						<div class="app-control-images">
 							<div id='app-control-images-item-1'>
 								<div class="photo-container"></div>
@@ -196,9 +196,13 @@
 					<div>
 						<h2>¡Excelente! Ahora elige el diseño de tu página</h2>
 						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
-						<div>
-							<label for="inp-design-001">Cuadrado</label><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" /><br />
-							<label for="inp-design-002">Circular</label><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" /><br /> 
+						<div class="control-desing-cont">
+							<div class="control-design-thumb">
+								<label for="inp-design-001">Cuadrado</label><img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><br />
+							</div>
+							<div class="control-design-thumb">
+								<label for="inp-design-002">Circular</label><img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><br /> 
+							</div>
 						</div>
 					</div>
 				</div>

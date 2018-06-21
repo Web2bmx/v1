@@ -68,7 +68,7 @@ main {
 }
 .item .img-cont {
 	width: 200px; height: 200px;
-	margin: 0 20%;
+	margin: 0 auto;
 	display: block; overflow: hidden;
 	position: relative; z-index: 0;
 	clip-path: ellipse(100px 100px at 100px 100px);

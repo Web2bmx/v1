@@ -10,7 +10,16 @@
 	var $palettes = null;
 	/*EO GLOBAL VARIABLES*/
 	$(document).ready(function() {
+		/*SET UP TEMPLATE*/
 		updateTemplate();
+		/*EO SET UP TEMPLATE*/
+		/*SET UP APP*/
+		setAppNavigation();
+		setAppSteps();
+		/*EO SET UP APP*/
+	});
+	/*APPLICATION FUNCTIONS*/
+	function setAppSteps() {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() {
 			if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
@@ -89,7 +98,15 @@
 			});		
 			sample_images_ready = true;
 		}).fail(function(){});
-		/*NAV BUTTONS*/
+		/*DESIGN*/
+		$(".control-design-thumb img").on('click', function() {
+			var $this = $(this);
+			$this.closest(".control-desing-cont").find(".control-design-thumb img").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.addClass("thumb-selected");
+		}).filter(":first").addClass("thumb-selected");		
+	}
+	function setAppNavigation() {
 		$(".app-control-step:gt(0)").hide();
 		$("#control-view-nav-buttons>a").on("click", function() {
 			var inc = $(this).attr("href") == "#next" ? 1 : -1;
@@ -138,63 +155,57 @@
 		});
 		/*NAV BUTTONS*/
 		/*APP SWITCH*/
-		var $appControl = $("#app-control");
-		var $switchView = $("#switch-view");
-		var $switchEdit = $("#switch-edit");
-		var $appControl_h = $appControl.css("height");
+		var $appControl_h = $("#app-control").css("height");
 		$("[id^='switch-']").on('click', function() {
 			if($(this).attr("id").indexOf("view") > -1) {
-				$switchView.hide();
-				$switchEdit.show();
-				$appControl.css({"height" : "2em"});
+				$("#switch-view").hide();
+				$("#switch-edit").show();
+				$("#app-control").css({"height" : "2em"});
 			} else {
-				$switchView.show();
-				$switchEdit.hide();
-				$appControl.css({"height" : $appControl_h});
+				$("#switch-view").show();
+				$("#switch-edit").hide();
+				$("#app-control").css({"height" : $appControl_h});
 			}
 		});
 		/*EO APP SWITCH*/
-	});
-	/*APPLICATION FUNCTIONS*/
+	}
 	function showAppCover() { $("#app-cover").show(); }
 	function updateContent() {
-		var iFrameDOM = $("#template");
-		iFrameDOM.find("#hero-logotipo").css({
-			"display" : "none"
-		});
+		var $template = $("#template");
 		if ($("[name^='inp-name']").val() != "") {
-			iFrameDOM.find("#hero-content h1").html($("[name^='inp-name']").val());
+			$template.find("#hero-content h1").html($("[name^='inp-name']").val());
 		}
 		/*Colores*/
 		if (sample_colors_ready) {
 			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
 			var c1 = $palette.find("top>back").html();
-			var col_hero_content = ("rgba(" + parseInt(c1.substr(1, 2), 16) + "," + parseInt(c1.substr(3, 2), 16) + "," + parseInt(c1.substr(5, 2), 16) + ", .6)");
+			var col_hero_content = HexColorToRGBA(c1, .6);
 			var c2 = $palette.find("middle>back").html();
-			var col_items = ("rgba(" + parseInt(c2.substr(1, 2), 16) + "," + parseInt(c2.substr(3, 2), 16) + "," + parseInt(c2.substr(5, 2), 16) + ", .6)");
-			iFrameDOM.find("#hero").css({
+			var col_items = HexColorToRGBA(c2, .6);
+			console.log(col_items);
+			$template.css({
+				"background-color" : $palette.find("bg>back").html()
+			});
+			$template.find("#hero").css({
 				"background-color" : $palette.find("top>back").html(),
 				"color" : $palette.find("top>fore").html()
 			});
-			iFrameDOM.find("#hero-content").css({
+			$template.find("#hero-content").css({
 				"background-color" : col_hero_content,
 				"color" : $palette.find("top>fore").html()
 			});
-			iFrameDOM.find("#hero-content h1, #hero-content h2").css({
+			$template.find("#hero-content h1, #hero-content h2").css({
 				"color" : $palette.find("top>fore").html()
 			});
-			iFrameDOM.find("body").css({
-				"background-color" : $palette.find("bg>back").html()
-			});
-			iFrameDOM.find("#items").css({
+			$template.find("#items").css({
 				"background-color" : $palette.find("middle>back").html(),
 				"color" : $palette.find("middle>fore").html()
 			});
-			iFrameDOM.find("#items h2").css({
+			$template.find("#items h2").css({
 				"background-color" : col_items,
 				"color" : $palette.find("middle>fore").html()
 			});
-			iFrameDOM.find("footer").css({
+			$template.find("footer").css({
 				"background-color" : $palette.find("bottom>back").html(),
 				"color" : $palette.find("bottom>fore").html()
 			});
@@ -207,54 +218,47 @@
 				var v_id = i_id.replace("inp", "val");
 				switch (i_id) {
 					case "inp-contact-email" :
-						iFrameDOM.find("#val-contact-email").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
+						$template.find("#val-contact-email").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
 						break;
 					case "inp-contact-map" :
-						iFrameDOM.find("#val-contact-map").html($this.val());
+						$template.find("#val-contact-map").html($this.val());
 						break;	
 					case "inp-contact-facebook" :
-						iFrameDOM.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
 						break;	
 					case "inp-contact-twitter" :
-						iFrameDOM.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
 						break;	
 					default : 
-						iFrameDOM.find("#" + v_id).html($this.val());
+						$template.find("#" + v_id).html($this.val());
 						break;
 				}
 			}
 		});
 		/*Images*/
-		if (sample_images_ready) {
-			$("[name^='inp-img-']:checked").each(function() {
-				var $this = $(this);
-				var img_src = $this.val();
-				var img_name = $this.attr("name");
-				var n_name = img_name.replace("inp-", "#");
-				iFrameDOM.find(n_name).attr("class", ("img-cont img-MC img-L"));
-				iFrameDOM.find(n_name).css({
-					"background-image" : ("url(" + img_src + ")")
-				});
+		$("[name^='inp-img-']:checked").each(function() {
+			var $this = $(this);
+			var img_src = $this.val();
+			var n_name = $this.attr("name").replace("inp-", "#");
+			$template.find(n_name).attr("class", ("img-cont img-MC img-L")).css({
+				"background-image" : ("url(" + img_src + ")")
 			});
-		}
+		});
 	}
 	function updateTemplate() {
-		var $this = $("[name^='inp-design']:checked");
-		var id = $this.val();
+		var id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
 		if (template_id != id) {
 			template_id = id;
-			id = id.replace("inp-design-", "");
 			$("#template").html("");
-			var src = "Templates/Template-" + id + "/index.html"; 
+			var src = "Templates/Template-" + template_id + "/index.html"; 
 			$("#template-cont").load("Templates/Template-" + id + "/index.html #template", function() {
-				$("#template").find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-				$("#template").find("script[src^='js/scripts.js']").attr("src", ("Templates/Template-" + id + "/js/scripts.js"));
-				$("#template").find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
+				var $template = $("#template");
+				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
+				$template.find("script[src^='js/scripts.js']").attr("src", ("Templates/Template-" + id + "/js/scripts.js"));
+				$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
 				updateContent();
 			});
-		} else {
-			updateContent();
-		}
+		} else { updateContent(); }
 	}
 	/*EO APPLICATION FUNCTIONS*/
 	/*GENERAL FUNCTIONS*/
@@ -273,6 +277,10 @@
 	}
 	function goToByScroll($element, target){
 		$element.scrollTop(target);
+	}
+	function HexColorToRGBA(c, a) {
+		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");
+		return s;
 	}
 	/*EO GENERAL FUNCTIONS*/
 })();

@@ -134,32 +134,45 @@ input[type='button'] {
 		padding: .5em 4%;
 		width: 92%; 
 	}
+	.control-design-thumb {
+		height: 160px;
+		float: left;
+		margin-right: 20px;
+		overflow: visible;
+		width: 100px;
+	}
+	.control-design-thumb img {
+		cursor: pointer;
+		display: block;
+		height: auto;
+		width: 100%;
+	}
 	.control-color {
 		float: left;
-		height: 16em;
-		overflow: hidden;
+		height: 200px;
+		overflow: visible;
 		text-align: center;
-		width: 50%;
+		width: 140px;
 	}
 	.control-color-thumb {
 		cursor: pointer;
 		display: block; 
 		height: auto;
 		margin: 0 5%;
-		overflow: hidden;
+		overflow: visible;
 		padding: 1em 5%;
 		width: 80%; 
 	}
 	.control-color-thumb-bg {
 		display: block;
-		height: 3em;
+		height: 24px;
 		overflow: hidden;
 		width: 100%; 
 	}
 	.control-color-thumb-content {
 		display: block;
-		height: 1em;
-		margin: 1em 10%;
+		height: 8px;
+		margin: 8px 10%;
 		overflow: hidden;
 		width: 80%;
 	} 
@@ -193,10 +206,10 @@ input[type='button'] {
 	.img-thumb {	
 		cursor: pointer;
 		float: left;
-		height: 80px;
+		height: 120px;
 		overflow: visible;
 		position: relative;
-		width: 25%;
+		width: 120px;
 		z-index: 1;
 	}
 	.thumb-selected {
@@ -206,7 +219,8 @@ input[type='button'] {
 	.img-thumb-cont {
 		background-color: #000000;
 		background-position: center center;
-		background-size: auto 150%;
+		background-repeat: no-repeat;
+		background-size: auto 200%;
 		display: block;
 		height: 100%;
 		overflow: hidden;
