@@ -1,8 +1,8 @@
-@import "normalize-scss/sass/normalize/import-now";
-@import "breakpoint-sass/stylesheets/breakpoint";
+@import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
 @import "_variables";
-
+ 
 .background,
 .main-container{
 	position: fixed;
@@ -125,7 +125,8 @@ img{
     }    
 }
 
-button{
+button,
+.boton{
     padding: 20px 10px;
     background-color: #cc2880;
     color: #FFFFFF;
@@ -434,9 +435,13 @@ button{
     }    
 
     @include breakpoint($desktop){    
-        max-height: 500px !important;
+        max-height: 600px !important;
     }    
-
+    
+    &.datos-existentes{
+        max-height: none !important; 
+        height: auto !important; 
+    }
     
     &.primera-pregunta{
         background: url(../images/p1_bg.jpg) bottom center no-repeat;

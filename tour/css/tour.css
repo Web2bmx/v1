@@ -584,7 +584,8 @@ img {
   overflow: hidden;
 }
 
-button {
+button,
+.boton {
   padding: 20px 10px;
   background-color: #cc2880;
   color: #FFFFFF;
@@ -596,18 +597,21 @@ button {
   outline: none;
 }
 
-button.init {
+button.init,
+.boton.init {
   top: 50%;
   left: 50%;
   margin-left: -50px;
   position: fixed;
 }
 
-button.res {
+button.res,
+.boton.res {
   float: right;
 }
 
-button:active {
+button:active,
+.boton:active {
   background-color: #60A9DE;
 }
 
@@ -932,8 +936,13 @@ button:active {
 
 @media (min-width: 1040px) {
   .ui-dialog .ui-dialog-content.dialog {
-    max-height: 500px !important;
+    max-height: 600px !important;
   }
+}
+
+.ui-dialog .ui-dialog-content.dialog.datos-existentes {
+  max-height: none !important;
+  height: auto !important;
 }
 
 .ui-dialog .ui-dialog-content.dialog.primera-pregunta {
@@ -1044,5 +1053,4 @@ textarea {
   color: red;
   font-weight: 100;
 }
-
 /*# sourceMappingURL=tour.css.map */
