@@ -17,7 +17,8 @@
 			<div id="app-cover">
 				<div id="app-cover-start">
 					<div>
-						<h1>Crea tu página web en 5 mínutos</h1>
+						<img src="Templates/Thumb.png" />
+						<h1>Crea tu página web<br /> en 5 mínutos</h1>
 						<!--<label>
 							Por favor compártenos tu nombre:<br />
 							<input type="text" name="nombre" id="nombre" />
@@ -67,10 +68,6 @@
 				</div>
 			</div>
 			<div id="app-control">
-				<div id='app-switch'>
-					<a id='switch-view'>Mira tu sitio</a>
-					<a id='switch-edit' style="display : none;">Edita tu sitio</a>
-				</div>
 				<div class="app-control-step">
 					<div>
 						<h2>¡Tu página web está casi lista!</h2>
@@ -213,12 +210,17 @@
 						<div id="app-control-palettes"></div>
 					</div>
 				</div>
-				<nav id='control-view-nav'>
-					<div id='control-view-nav-buttons'>
-						<a href='#prev' style="display: none;">&lt;</a><a href='#next'>&gt;</a>
+				<div id="app-control-nav">
+					<div id='app-switch'>
+						<a id='switch-view'>Mira tu sitio &check;</a>
+						<a id='switch-edit' style="display: none;">Edita tu sitio &target;</a>
 					</div>
-					<div id='control-view-nav-display'></div>
-				</nav>
+					<nav id='control-view-nav'>
+						<a href='#prev' class="disabled">&olt; Anterior</a>
+						<div id="control-view-index"><div class="control-view-index-item current"></div></div>
+						<a href='#next'>Siguiente &ogt;</a>
+					</nav>
+				</div>	
 			</div>
 		</div>
 		<?php include_once("include/include_html_templates.php"); ?>

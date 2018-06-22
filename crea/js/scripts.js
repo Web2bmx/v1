@@ -108,28 +108,31 @@
 	}
 	function setAppNavigation() {
 		$(".app-control-step:gt(0)").hide();
-		$("#control-view-nav-buttons>a").on("click", function() {
-			var inc = $(this).attr("href") == "#next" ? 1 : -1;
-			current_step += inc;
-			switch (current_step) {
-				case 0 :
-					$("#control-view-nav-buttons>a:eq(0)").hide();
+		$("#control-view-nav>a").on("click", function() {
+			if (!$(this).hasClass("disabled")) {
+				var inc = $(this).attr("href") == "#next" ? 1 : -1;
+				current_step += inc;
+				switch (current_step) {
+					case 0 :
+						$("#control-view-nav>a:eq(0)").addClass("disabled");
+						break;
+					case 1 :
+						$("#control-view-nav>a:eq(0)").removeClass("disabled");
+						break;
+					case ($("#app-control>.app-control-step").length) :
+						showAppCover();
 					break;
-				case 1 :
-					$("#control-view-nav-buttons>a:eq(0)").show();
-					break;
-				case ($("#app-control>.app-control-step").length) :
-					showAppCover();
-				break;
-			}
-			if (current_step < ($("#app-control>.app-control-step").length)) {
-				$("#app-control>.app-control-step").hide().filter(":eq(" + current_step + ")").show();
-			}
-			$(".control-view-nav-display-mark").removeClass("control-view-nav-display-mark-active").filter(":eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
-			goToByScroll($("#app-control"), 0);
+				}
+				if (current_step < ($("#app-control>.app-control-step").length)) {
+					$("#app-control>.app-control-step").hide().filter(":eq(" + current_step + ")").show();
+					$(".control-view-index-item").removeClass("current").filter(":eq(" + current_step + ")").addClass("current");
+				}
+				$(".control-view-nav-display-mark").removeClass("control-view-nav-display-mark-active").filter(":eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
+				goToByScroll($("#app-control"), 0);
+			}	
 		});
-		for (i=0; i < $("#app-control>.app-control-step").length; i++) {
-			//$("#control-view-nav-display").append("<div class='control-view-nav-display-mark'><span>" + (i + 1) + "</span></div>");
+		for (i=0; i < $("#app-control>.app-control-step").length -1; i++) {
+			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
 		$("[name='start']").on("click", function() {
@@ -160,11 +163,15 @@
 			if($(this).attr("id").indexOf("view") > -1) {
 				$("#switch-view").hide();
 				$("#switch-edit").show();
-				$("#app-control").css({"height" : "2em"});
+				$("#control-view-nav").hide();
+				$("#app-control>.app-control-step").hide();
+				$("#app-control").addClass("view");
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
-				$("#app-control").css({"height" : $appControl_h});
+				$("#control-view-nav").show();
+				$("#app-control>.app-control-step:eq(" + current_step + ")").show();
+				$("#app-control").removeClass("view");
 			}
 		});
 		/*EO APP SWITCH*/
