@@ -71,13 +71,8 @@
 				<div class="app-control-step">
 					<div>
 						<h2>¡Tu página web está casi lista!</h2>
-						<p>A continuación pondremos la información de tu Negocio.</p>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>		
-						<h2>Ahora escribe el nombre de tu Negocio</h2>
-						<p>Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
+						<p>Primero escribe el nombre de tu Negocio</p>
+						<p class="app-control-step-tooltip-info">Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
 						<div>
 							<input type="text" id="inp-name" name="inp-name" value="" placeholder="El nombre de tu negocio" /> 
 						</div>
@@ -86,15 +81,15 @@
 				<div class="app-control-step">
 					<div>
 						<h2>¿Tienes un eslogan?</h2>
-						<p>Escribe una frase breve que describa tu producto o servicio.</p>		
+						<p class="app-control-step-tooltip-info">Escribe una frase breve que describa tu producto o servicio.</p>		
 						<div>
-							<textarea id="inp-content-slogan" name="inp-content-slogan" placeholder="El eslógan de tu negocio"></textarea><br />
+						<input type="text" id="inp-content-slogan" name="inp-content-slogan" value="" placeholder="El eslógan de tu negocio" />
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h2>Primero elige la imagen principal para tu página:</h2>
+						<h2>Ahora elige la imagen principal para tu página</h2>
 						<div class="app-control-images">
 							<div id='app-control-images-hero'>
 								<div class="photo-container"></div>
@@ -192,7 +187,7 @@
 				<div class="app-control-step">
 					<div>
 						<h2>¡Excelente! Ahora elige el diseño de tu página</h2>
-						<p>Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
+						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div class="control-desing-cont">
 							<div class="control-design-thumb">
 								<label for="inp-design-001">Cuadrado</label><img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><br />
@@ -206,7 +201,7 @@
 				<div class="app-control-step">
 					<div>
 						<h2>¡Muy bien! Ahora elige los colores de tu página.</h2>
-						<p>Puedes elegir de nuestras combinaciones de colores o modificar cada color individualmente haciendo clic alguno.</p>
+						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores o modificar cada color individualmente haciendo clic alguno.</p>
 						<div id="app-control-palettes"></div>
 					</div>
 				</div>

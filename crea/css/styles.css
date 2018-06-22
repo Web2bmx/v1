@@ -165,12 +165,38 @@ input[type='button'] {
   font-size: 1em;
 }
 
-#app-control > div > div input[type="text"] {
+#app-control .app-control-step > div input[type="text"] {
   height: auto;
   font-size: 1.2em;
   margin: 0 0 5% 0;
   padding: .5em 4%;
   width: 92%;
+}
+
+#app-control .app-control-step > div .app-control-step-tooltip {
+  background-color: #cc2880;
+  color: #FFF;
+  cursor: pointer;
+  font-size: .8em;
+  height: auto;
+  margin-left: .4em;
+  overflow: hidden;
+  padding: .2em .4em;
+  width: auto;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+
+#app-control .app-control-step > div .app-control-step-tooltip-info {
+  background-color: #FFFFDA;
+  display: none;
+  padding: .2em;
+}
+
+#app-control .app-control-step > div .app-control-step-tooltip-info.active {
+  display: block;
 }
 
 #app-control .control-design-thumb {
@@ -293,7 +319,6 @@ input[type='button'] {
 #app-control-nav a {
   background-color: #cc2880;
   color: #FFF;
-  display: inline-block;
   float: left;
   height: auto;
   margin-left: .4em;
@@ -352,13 +377,13 @@ input[type='button'] {
 }
 
 #app-control.view {
-  bottom: auto;
+  bottom: auto !important;
   border: none;
-  left: 0;
+  left: 0 !important;
   height: auto;
   position: fixed;
-  right: auto;
-  top: 0;
+  right: auto !important;
+  top: 0 !important;
   width: auto;
 }
 

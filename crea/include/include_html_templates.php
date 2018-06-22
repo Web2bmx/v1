@@ -13,3 +13,5 @@
 	<div class='img-thumb-cont'></div>
 	<input type="radio" name="" value="" style="display: none;" />		
 </div> 
+<!--app-control-step-tooltip-->
+<span class="app-control-step-tooltip template">?</span>
