@@ -1,10 +1,11 @@
 (function () {
     /*GLOBAL VARIABLES*/
 	var windowObjectReference = null;
-	var image_types = ["hero", "item-1", "item-2", "item-3"];
+	var image_types = ["hero", "item-1"];
 	var template_id = "";
 	var sample_images_ready = false;
 	var current_step = 0;
+	var number_of_items = 1;
 	var sample_colors_ready = false;
 	var $images = null;
 	var $palettes = null;
@@ -20,9 +21,12 @@
 	});
 	/*APPLICATION FUNCTIONS*/
 	function setAppSteps() {
-		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { updateTemplate(); });
+		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { 
+			updateTemplate();
+		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() {
 			if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
+				console.log($(this).attr("name"));
 				goToByScroll($(document), 800);
 			} else {
 				goToByScroll($(document), 0);
@@ -33,6 +37,31 @@
 				$("#app-control").removeClass("top");
 			}
 			updateTemplate();
+		});
+		/*ADD ITEMS*/
+		$("#inp-content-item-add-y").on("click", function() {
+			var $this = $(this);
+			var index = $(".app-control-step").index($this.closest(".app-control-step"));
+			$("#control-view-index").prepend(($(".control-view-index-item.current").clone().removeClass("current"))).append(($(".control-view-index-item.current").clone().removeClass("current")));
+			addItems(number_of_items);
+			number_of_items ++;
+			var $i_t = $(".app-control-step:eq(" + (current_step - 2) + ")").clone();
+			$i_t.find("p").html("Tu producto o servicio");
+			$i_t.find("input").attr("id", ("inp-content-item-" + number_of_items));
+			$i_t.find("input").attr("name", ("inp-content-item-" + number_of_items));
+			$i_t.find("input").attr("placeholder", "Tu producto o servicio");
+			$i_t.find("input").val("");
+			var $i_i = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
+			$i_i.find("p").html("Elige una imagen para tu producto o servicio");
+			$i_i.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
+			$i_i.find("input").each(function() {
+				$(this).attr("name", ("inp-img-item-" + number_of_items));
+			});
+			$this.closest(".app-control-step").before($i_t).before($i_i);
+			current_step = index;
+			goToStep(current_step);
+			$this.prop('checked', false);
+			$("#inp-content-item-add-n").trigger("click");
 		});
 		/*TOOLTIPS*/
 		$(".app-control-step-tooltip-info").prev("*").append($(".app-control-step-tooltip.template").clone().removeClass("template"));
@@ -115,7 +144,7 @@
 				}
 			}
 			
-			$(".img-thumb-cont").on('click', function() {
+			$(document.body).on('click', '.img-thumb-cont', function() {
 				var $this = $(this);
 				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
 				$this.next("input").trigger("click");
@@ -140,12 +169,7 @@
 						showAppCover();
 					break;
 				}
-				if (current_step < ($("#app-control>.app-control-step").length)) {
-					$("#app-control>.app-control-step").hide().filter(":eq(" + current_step + ")").show();
-					$(".control-view-index-item").removeClass("current").filter(":eq(" + current_step + ")").addClass("current");
-				}
-				$(".control-view-nav-display-mark").removeClass("control-view-nav-display-mark-active").filter(":eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
-				goToByScroll($("#app-control"), 0);
+				goToStep(current_step);
 			}	
 		});
 		for (i=0; i < $("#app-control>.app-control-step").length -1; i++) {
@@ -193,6 +217,13 @@
 		});
 		/*EO APP SWITCH*/
 	}
+	function goToStep(step) {
+		if (step < ($(".app-control-step").length)) {
+			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
+			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
+		}
+		goToByScroll($("#app-control"), 0);
+	} 
 	function showAppCover() { $("#app-cover").show(); }
 	function updateContent() {
 		var $template = $("#template");
@@ -221,11 +252,11 @@
 			$template.find("#hero-content h1, #hero-content h2").css({
 				"color" : $palette.find("top>fore").html()
 			});
-			$template.find("#items").css({
+			$template.find(".items").css({
 				"background-color" : $palette.find("middle>back").html(),
 				"color" : $palette.find("middle>fore").html()
 			});
-			$template.find("#items h2").css({
+			$template.find(".items h2").css({
 				"background-color" : col_items,
 				"color" : $palette.find("middle>fore").html()
 			});
@@ -274,15 +305,32 @@
 		if (template_id != id) {
 			template_id = id;
 			$("#template").html("");
-			var src = "Templates/Template-" + template_id + "/index.html"; 
+			var src = "Templates/Template-" + template_id + "/index.html?foo"; 
 			$("#template-cont").load("Templates/Template-" + id + "/index.html #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
 				$template.find("script[src^='js/scripts.js']").attr("src", ("Templates/Template-" + id + "/js/scripts.js"));
 				$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
+				for (i = 1; i < number_of_items; i ++) {
+					addItems(i);		
+				}
 				updateContent();
 			});
 		} else { updateContent(); }
+	}
+	function addItems(i) {
+		if ($("#template .items:last .item").length == 3) { $("#template .items:last").after("<div class='items'></div>"); }
+		var $item_copy = $(".item:last").clone();
+		$item_copy.find("#img-item-" + i).attr("id", ("img-item-" + (i + 1)));
+		$item_copy.find("#val-content-item-" + i).attr("id", ("val-content-item-" + (i + 1)));
+		$("#template .items:last").append($item_copy);
+		var c = "";
+		switch ($("#template .items:last .item").length % 3) {
+			case 0 : c = "three"; break;
+			case 1 : c = "one"; break;
+			case 2 : c = "two"; break;
+		}
+		$("#template .items:last").attr("class", "items").addClass(c);
 	}
 	/*EO APPLICATION FUNCTIONS*/
 	/*GENERAL FUNCTIONS*/

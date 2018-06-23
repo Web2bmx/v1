@@ -58,7 +58,7 @@ main {
 	display: block; overflow: hidden;
 	position: absolute; z-index: 1;
 }
-#items {
+.items {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
 }
@@ -115,15 +115,20 @@ footer ul {
 		margin: 5% 15% 0 15%;
 		padding: 3% 5%;
 	}
+	.items {
+		display: grid;
+	}
+	.items.one {
+		grid-template-columns: auto;
+	}
+	.items.two {
+		grid-template-columns: auto auto;
+	}
+	.items.three {
+		grid-template-columns: auto auto auto;
+	}
 	.item {
-		width: 33%;
-		float: left;
-	}
-	.item:nth-child(2) {
-		margin: 0 .5%;
-	}
-	.item:nth-child(3) {
-		float: right;
+		width: auto;
 	}
 	.footer-column {
 		width: 25%;

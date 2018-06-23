@@ -272,21 +272,19 @@ input[type='button'] {
 	display: block;
 	height: auto;
 	overflow: hidden;
-	padding: .2em 2%;
+	padding: .2em 0;
 	position: absolute;
-	width: 96%;
+	width: 100%;
 
 	a {
 		background-color: $color-cta;
 		color: #FFF;
 		float: left;
 		height: auto;
-		margin-left: .4em;
 		overflow: hidden;
 		padding: .4em .6em;
 		vertical-align: middle;
-		width: auto;
-		@include border-radius(.2em);
+		width: 100%;
 	}
 	a.disabled {
 		background-color: #999;
@@ -296,17 +294,16 @@ input[type='button'] {
 		float: left;
 		height: auto;
 		overflow: hidden;
-		width: auto; 
+		width: 100%; 
 	}
 	#control-view-nav {
 		float: left;
 		height: auto;
 		overflow: hidden;
-		width: auto;
+		width: 100%;
 	}
-
 	#control-view-index {
-		float: left;
+		display: none;
 		height: auto;
 		margin-left: .4em;
 		overflow: hidden;
@@ -363,5 +360,24 @@ input[type='button'] {
 		bottom: 55%;
 		top: 5%;
 	}
+	#app-control-nav {
+		padding: .2em 2%;
+		width: 96%;
+	
+		a {
+			margin-left: .4em;
+			width: auto;
+			@include border-radius(.2em);
+		}
+		#control-view-index {
+			display: inline-block;
+		}
+		#control-view-nav {
+			width: auto;
+		}
+		#app-switch {
+			width: auto; 
+		}
+	}	
 }
 /**/

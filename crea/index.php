@@ -120,7 +120,7 @@
 					<p>¿Cuál es tu principal producto o servicio?</p>
 					<div>	
 						<div>
-							<input type="text" value="" id="inp-content-item-001" name="inp-content-item-001" placeholder="Tu primer producto o servicio" />
+							<input type="text" value="" id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio" />
 						</div>
 					</div>
 				</div>
@@ -136,37 +136,10 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>¿Cuál es tu segundo producto o servicio?</p>
+						<p>¿Tienes otro producto o servicio que agregar?</p>
 						<div>
-							<input type="text" value="" id="inp-content-item-002" name="inp-content-item-002" placeholder="Tu segundo producto o servicio" />
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
-						<p>Elige una imagen para tu segundo producto o servicio</p>
-						<div class="app-control-images">
-							<div id='app-control-images-item-2'>
-								<div class="photo-container"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>	
-						<p>¿Cuál es tu tercer producto o servicio?</p>	
-						<div>
-							<input type="text" value="" id="inp-content-item-003" name="inp-content-item-003" placeholder="Tu tercer producto o servicio" />
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
-						<p>Elige una imagen para tu tercer producto o servicio</p>
-						<div class="app-control-images">
-							<div id='app-control-images-item-3'>
-								<div class="photo-container"></div>
-							</div>
+							<label for="inp-content-item-add-y">Sí</label><input type="radio" id="inp-content-item-add-y" name="inp-content-item-add" value="y" />
+							<label for="inp-content-item-add-n">No</label><input type="radio" id="inp-content-item-add-n" name="inp-content-item-add" value="n" checked="checked" />
 						</div>
 					</div>
 				</div>

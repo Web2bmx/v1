@@ -320,9 +320,9 @@ input[type='button'] {
   display: block;
   height: auto;
   overflow: hidden;
-  padding: .2em 2%;
+  padding: .2em 0;
   position: absolute;
-  width: 96%;
+  width: 100%;
 }
 
 #app-control-nav a {
@@ -330,15 +330,10 @@ input[type='button'] {
   color: #FFF;
   float: left;
   height: auto;
-  margin-left: .4em;
   overflow: hidden;
   padding: .4em .6em;
   vertical-align: middle;
-  width: auto;
-  -moz-border-radius: 0.2em;
-  -ms-border-radius: 0.2em;
-  -webkit-border-radius: 0.2em;
-  border-radius: 0.2em;
+  width: 100%;
 }
 
 #app-control-nav a.disabled {
@@ -350,18 +345,18 @@ input[type='button'] {
   float: left;
   height: auto;
   overflow: hidden;
-  width: auto;
+  width: 100%;
 }
 
 #app-control-nav #control-view-nav {
   float: left;
   height: auto;
   overflow: hidden;
-  width: auto;
+  width: 100%;
 }
 
 #app-control-nav #control-view-index {
-  float: left;
+  display: none;
   height: auto;
   margin-left: .4em;
   overflow: hidden;
@@ -426,6 +421,27 @@ input[type='button'] {
   #app-control.top {
     bottom: 55%;
     top: 5%;
+  }
+  #app-control-nav {
+    padding: .2em 2%;
+    width: 96%;
+  }
+  #app-control-nav a {
+    margin-left: .4em;
+    width: auto;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    border-radius: 0.2em;
+  }
+  #app-control-nav #control-view-index {
+    display: inline-block;
+  }
+  #app-control-nav #control-view-nav {
+    width: auto;
+  }
+  #app-control-nav #app-switch {
+    width: auto;
   }
 }
 

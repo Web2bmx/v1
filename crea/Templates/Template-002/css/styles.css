@@ -56,7 +56,7 @@ main {
 	display: block; overflow: hidden;
 	clip-path: ellipse(200px 200px at 200px 200px);
 }
-#items {
+.items {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
 }
@@ -116,9 +116,20 @@ footer ul {
 		margin: 1% 15% 0 15%;
 		padding: 3% 5%;
 	}
+	.items {
+		display: grid;
+	}
+	.items.one {
+		grid-template-columns: auto;
+	}
+	.items.two {
+		grid-template-columns: auto auto;
+	}
+	.items.three {
+		grid-template-columns: auto auto auto;
+	}
 	.item {
-		width: 33.33%;
-		float: left;
+		width: auto;
 	}
 	.footer-column {
 		width: 25%;
