@@ -144,6 +144,14 @@ input[type='button'] {
 			padding: .5em 4%;
 			width: 92%; 
 		}
+		select {
+			border-style: solid;
+			height: auto;
+			font-size: 1.2em;
+			margin: 0 0 5% 0;
+			padding: .5em 4%;
+			width: 92%; 
+		}
 		.app-control-step-tooltip {
 			background-color: $color-cta;
 			color: #FFF;

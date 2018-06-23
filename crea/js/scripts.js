@@ -81,9 +81,23 @@
 			}
 		});				
 		/*IMAGENES*/
+		$("#inp-business-type").on("change", function() {
+			setImageSelection($(this).val());
+		});
+		
+		/*DESIGN*/
+		$(".control-design-thumb img").on('click', function() {
+			var $this = $(this);
+			$this.closest(".control-desing-cont").find(".control-design-thumb img").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.addClass("thumb-selected");
+		}).filter(":first").addClass("thumb-selected");		
+	}
+	function setImageSelection (ide) {
+		$(".photo-container").html("");
 		$.getJSON("https://api.unsplash.com/photos/search",{
 			client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
-			query: 'pasta',
+			query: ide,
 			page: 1,
 			per_page: 20,
 			orientation: 'landscape'
@@ -107,15 +121,7 @@
 				$this.next("input").trigger("click");
 				$this.parent().addClass("thumb-selected");
 			});		
-			sample_images_ready = true;
 		}).fail(function(){});
-		/*DESIGN*/
-		$(".control-design-thumb img").on('click', function() {
-			var $this = $(this);
-			$this.closest(".control-desing-cont").find(".control-design-thumb img").removeClass("thumb-selected");
-			$this.next("input").trigger("click");
-			$this.addClass("thumb-selected");
-		}).filter(":first").addClass("thumb-selected");		
 	}
 	function setAppNavigation() {
 		$(".app-control-step:gt(0)").hide();

@@ -173,6 +173,15 @@ input[type='button'] {
   width: 92%;
 }
 
+#app-control .app-control-step > div select {
+  border-style: solid;
+  height: auto;
+  font-size: 1.2em;
+  margin: 0 0 5% 0;
+  padding: .5em 4%;
+  width: 92%;
+}
+
 #app-control .app-control-step > div .app-control-step-tooltip {
   background-color: #cc2880;
   color: #FFF;
