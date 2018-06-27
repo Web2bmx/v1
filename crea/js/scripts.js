@@ -59,11 +59,14 @@
 				});
 				sample_colors_ready = true;
 			}
-		});				
+		});
+		
+		var jd = getWeb2bJson();
+
 		/*IMAGENES*/
 		$.getJSON("https://api.unsplash.com/photos/search",{
 			client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
-			query: 'pasta',
+			query: jd.respuestas[1].respuesta || "pasta",
 			page: 1,
 			per_page: 20,
 			orientation: 'landscape'
@@ -274,5 +277,18 @@
 	function goToByScroll($element, target){
 		$element.scrollTop(target);
 	}
+	function getWeb2bJson(){
+		var jsonData = localStorage.getItem("web2b");
+	
+		if(jsonData == null)
+			{
+				jsonData = {};
+				jsonData.respuestas = [];                
+			}
+		else{
+			jsonData = JSON.parse(jsonData);
+		}
+		return jsonData;
+	}	
 	/*EO GENERAL FUNCTIONS*/
 })();
