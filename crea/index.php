@@ -19,16 +19,16 @@
 					<div>
 						<img src="Templates/Thumb.png" />
 						<h1>Crea tu página web<br /> en 5 mínutos</h1>
-						<!--<label>
+						<label>
 							Por favor compártenos tu nombre:<br />
-							<input type="text" name="nombre" id="nombre" />
+							<input type="text" name="nombre" id="nombre" value="Web2b" />
 						</label>
 						<label>
 							Y tu correo: <br />
-							<input type="email" name="correo" id="correo" />
+							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
 						</label>
 						<span class="empty-fields">Los campos están vacios</span>
-						<span class="not-email">El email is inválido</span>-->
+						<span class="not-email">El email is inválido</span>
 						<input type="button" name="start" value="¡Comienza ya!" />						
 					</div>
 				</div>

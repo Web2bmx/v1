@@ -176,9 +176,9 @@ $(document).ready(function(){
         jsonData = JSON.parse(jsonData);
     }
 
-    if(jsonData.respuestas.length > 0 && jsonData.respuestas.length < 7){
+    if(jsonData.respuestas.length > 0){
         $(".datos-existentes").dialog( "open" ); 
-    }      
+    } 
 
     $(".iniciar").click(function(){
         $(".datos-existentes").dialog( "close" );
@@ -206,7 +206,10 @@ $(document).ready(function(){
             break; 
             case 7:
                 paso7();
-            break;                                                                        
+            break;
+            case 8:
+                $(".fin").dialog( "open" );
+            break;                                                                      
         }
     });    
     

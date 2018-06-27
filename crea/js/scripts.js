@@ -9,8 +9,12 @@
 	var sample_colors_ready = false;
 	var $images = null;
 	var $palettes = null;
+	var jd = getWeb2bJson();
+	
+	/* check data validation */
+	checkDataValidation(jd);
 	/*EO GLOBAL VARIABLES*/
-	$(document).ready(function() {
+	$(document).ready(function() {		
 		/*SET UP TEMPLATE*/
 		updateTemplate();
 		/*EO SET UP TEMPLATE*/
@@ -20,6 +24,11 @@
 		/*EO SET UP APP*/
 	});
 	/*APPLICATION FUNCTIONS*/
+	function checkDataValidation(){
+		if(jd.respuestas.length < 7){
+			location.href = "/tour";
+		}
+	}
 	function setAppSteps() {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { 
 			updateTemplate();
@@ -108,9 +117,7 @@
 				});
 				sample_colors_ready = true;
 			}
-		});
-		
-		var jd = getWeb2bJson();
+		});			
 
 		/*IMAGENES*/
 		$("#inp-business-type").on("change", function() {
@@ -183,17 +190,23 @@
 			$("#app-cover").hide();
 			$("#app-cover-start").hide();
 			$("#app-cover-finish").show();
-			/*if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
+			if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
 				$(".empty-fields").css("display","block");
 			} else {
 				if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 				}else {
-					$("#app-cover").hide();
-					$("#app-cover-start").hide();
-					$("#app-cover-finish").show();
+					$.post("Scripts/guarda_datos.php",{
+						nombre: $("#nombre").val().trim(),
+						correo: $("#correo").val().trim(),
+						info: JSON.stringify(jd)
+					}).done(function(result){
+						$("#app-cover").hide();
+						$("#app-cover-start").hide();
+						$("#app-cover-finish").show();
+					});
 				}
-			}*/
+			}
 	
 		});
 		$("[name='finish']").on("click", function() {
