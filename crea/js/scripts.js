@@ -13,7 +13,7 @@
 	var jd = getWeb2bJson();
 	
 	/* check data validation */
-	checkDataValidation(jd);
+	//checkDataValidation(jd);
 	/*EO GLOBAL VARIABLES*/
 	$(document).ready(function() {		
 		/*SET UP TEMPLATE*/
@@ -103,7 +103,7 @@
 					}
 					var $palette = $palettes.filter(":eq(" + i + ")");
 					$control_color.removeClass("template");
-					$control_color.find("h4").html($palette.find("name").html());
+					$control_color.find("h4").html($palette.find("name").html()).remove();
 					$control_color.find("input").attr("id", ("inp-palette-" + i));
 					$control_color.find("input").attr("value", i);
 					$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
@@ -265,18 +265,18 @@
 				"color" : $palette.find("top>fore").html()
 			});
 			$template.find("#hero-content").css({
-				"background-color" : col_hero_content,
+				"background-color" : $palette.find("top>back").html(),
 				"color" : $palette.find("top>fore").html()
 			});
 			$template.find("#hero-content h1, #hero-content h2").css({
 				"color" : $palette.find("top>fore").html()
 			});
 			$template.find(".items").css({
-				"background-color" : $palette.find("middle>back").html(),
+				"background-color" : "transparent",
 				"color" : $palette.find("middle>fore").html()
 			});
 			$template.find(".items .item-content").css({
-				"background-color" : col_items,
+				"background-color" : $palette.find("middle>back").html(),
 				"color" : $palette.find("middle>fore").html()
 			});
 			$template.find("footer").css({

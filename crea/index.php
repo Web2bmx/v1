@@ -19,11 +19,11 @@
 					<div>
 						<img src="Templates/Thumb.png" />
 						<h1>Crea tu página web<br /> en 5 mínutos</h1>
-						<label>
+						<label style="display: none;">
 							Por favor compártenos tu nombre:<br />
 							<input type="text" name="nombre" id="nombre" value="Web2b" />
 						</label>
-						<label>
+						<label style="display: none;">
 							Y tu correo: <br />
 							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
 						</label>
@@ -83,10 +83,13 @@
 						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div class="control-desing-cont">
 							<div class="control-design-thumb">
-								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><label for="inp-design-001">Cuadrado</label><br />
+								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><label for="inp-design-001"></label><br />
 							</div>
 							<div class="control-design-thumb">
-								<img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><label for="inp-design-002">Circular</label><br /> 
+								<img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><label for="inp-design-002"></label><br /> 
+							</div>
+							<div class="control-design-thumb">
+								<img src="Templates/Template-003/Thumb.png" /><input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" /><label for="inp-design-003"></label><br /> 
 							</div>
 						</div>
 					</div>
@@ -191,6 +194,12 @@
 							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" class="optional" /><br />
 							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" class="optional" /><br />
 						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>¡Terminamos!</h2>
+						<p>Revisa tu sitio antes de continuar.</p>
 					</div>
 				</div>
 				<div id="app-control-nav">

@@ -51,9 +51,6 @@ input[type='button'] {
   cursor: pointer;
   font-size: 1.2em;
   padding: .4em 1em;
-  -moz-border-radius: 0.2em;
-  -ms-border-radius: 0.2em;
-  -webkit-border-radius: 0.2em;
   border-radius: 0.2em;
 }
 
@@ -192,9 +189,6 @@ input[type='button'] {
   overflow: hidden;
   padding: .2em .4em;
   width: auto;
-  -moz-border-radius: 0.2em;
-  -ms-border-radius: 0.2em;
-  -webkit-border-radius: 0.2em;
   border-radius: 0.2em;
 }
 
@@ -225,10 +219,11 @@ input[type='button'] {
 
 #app-control .control-color {
   float: left;
-  height: 160px;
+  height: 120px;
+  margin-bottom: 10px;
   overflow: visible;
   text-align: center;
-  width: 100px;
+  width: 80px;
 }
 
 #app-control .control-color-thumb {
@@ -371,9 +366,6 @@ input[type='button'] {
   margin: 1em .4em .6em 0;
   overflow: hidden;
   width: .4em;
-  -moz-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
 }
 
@@ -408,15 +400,13 @@ input[type='button'] {
   #app-control {
     border: 1px solid #DADADA;
     bottom: 5%;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     height: 40%;
     left: 5%;
     top: 55%;
     right: 5%;
     width: 90%;
-    -moz-border-radius: 0.2em;
-    -ms-border-radius: 0.2em;
-    -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
   }
   #app-control.top {
@@ -430,9 +420,6 @@ input[type='button'] {
   #app-control-nav a {
     margin-left: .4em;
     width: auto;
-    -moz-border-radius: 0.2em;
-    -ms-border-radius: 0.2em;
-    -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
   }
   #app-control-nav #control-view-index {
