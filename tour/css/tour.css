@@ -615,6 +615,11 @@ button:active,
   background-color: #60A9DE;
 }
 
+a.boton {
+  color: #fff;
+  text-decoration: none;
+}
+
 .space-man {
   width: 90px;
   z-index: 4;
@@ -1053,4 +1058,5 @@ textarea {
   color: red;
   font-weight: 100;
 }
+
 /*# sourceMappingURL=tour.css.map */
