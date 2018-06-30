@@ -73,7 +73,7 @@ main {
 	position: relative; z-index: 0;
 	clip-path: ellipse(100px 100px at 100px 100px);
 }
-.item h2 {
+.item .item-content {
 	width: 90%; height: auto;
 	margin: 0;
 	padding: 5%;
@@ -81,6 +81,12 @@ main {
 	display: block; overflow: hidden;
 	position: absolute; z-index: 1;
 	bottom: 0;
+}
+.item-content h2 {
+	font-size: 1em;
+}
+.item-content p {
+	font-family: sans-serif;
 }
 .map-container {
 	width: 100%; height: auto;

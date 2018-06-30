@@ -225,10 +225,10 @@ input[type='button'] {
 
 #app-control .control-color {
   float: left;
-  height: 200px;
+  height: 160px;
   overflow: visible;
   text-align: center;
-  width: 140px;
+  width: 100px;
 }
 
 #app-control .control-color-thumb {
@@ -236,6 +236,7 @@ input[type='button'] {
   display: block;
   height: auto;
   margin: 0 5%;
+  outline: 1px solid #DADADA;
   overflow: visible;
   padding: 1em 5%;
   width: 80%;
