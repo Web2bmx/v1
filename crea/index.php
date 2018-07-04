@@ -19,11 +19,11 @@
 					<div>
 						<img src="Templates/Thumb.png" />
 						<h1>Crea tu página web<br /> en 5 mínutos</h1>
-						<label>
+						<label style="display: none;">
 							Por favor compártenos tu nombre:<br />
 							<input type="text" name="nombre" id="nombre" value="Web2b" />
 						</label>
-						<label>
+						<label style="display: none;">
 							Y tu correo: <br />
 							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
 						</label>
@@ -73,8 +73,32 @@
 						<h2>Primero escribe el nombre de tu Negocio</h2>
 						<p class="app-control-step-tooltip-info">Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
 						<div>
-							<input type="text" id="inp-name" name="inp-name" value="" placeholder="El nombre de tu negocio" /> 
+							<input type="text" id="inp-content-name" name="inp-content-name" value="" placeholder="El nombre de tu negocio" /> 
 						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>Ahora elige el diseño de tu página</h2>
+						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
+						<div class="control-desing-cont">
+							<div class="control-design-thumb">
+								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><label for="inp-design-001"></label><br />
+							</div>
+							<div class="control-design-thumb">
+								<img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><label for="inp-design-002"></label><br /> 
+							</div>
+							<div class="control-design-thumb">
+								<img src="Templates/Template-003/Thumb.png" /><input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" /><label for="inp-design-003"></label><br /> 
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>Ahora elige los colores de tu página</h2>
+						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores</p>
+						<div id="app-control-palettes"></div>
 					</div>
 				</div>
 				<div class="app-control-step">
@@ -82,7 +106,7 @@
 						<h2>¿Tienes un eslogan?</h2>
 						<p class="app-control-step-tooltip-info">Escribe una frase breve que describa tu producto o servicio.</p>		
 						<div>
-						<input type="text" id="inp-content-slogan" name="inp-content-slogan" value="" placeholder="El eslógan de tu negocio" />
+						<input type="text" id="inp-content-slogan" name="inp-content-slogan" value="" placeholder="El eslógan de tu negocio" class="optional" />
 						</div>
 					</div>
 				</div>
@@ -120,7 +144,8 @@
 					<p>¿Cuál es tu principal producto o servicio?</p>
 					<div>	
 						<div>
-							<input type="text" value="" id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio" />
+							<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" /><br />
+							<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio"></textarea>
 						</div>
 					</div>
 				</div>
@@ -147,8 +172,8 @@
 					<div>
 						<p>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio</p>
 						<div>
-							<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" /><br />
-							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" /><br />
+							<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" class="optional" /><br />
+							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" class="optional" /><br />
 						</div>
 					</div>
 				</div>
@@ -156,8 +181,8 @@
 					<div>
 						<p>Coloca la dirección y horario de tu Negocio</p>
 						<div>
-							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" /><br />
-							<input type="text" id="inp-contact-schedule" name="inp-contact-schedule" value="" placeholder="El horario de tu negocio" /><br />
+							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
+							<input type="text" id="inp-contact-schedule" name="inp-contact-schedule" value="" placeholder="El horario de tu negocio" class="optional" /><br />
 							<!--<input type="text" id="inp-contact-map" name="inp-contact-map" value="" placeholder="" /><br />-->
 						</div>
 					</div>
@@ -166,35 +191,15 @@
 					<div>
 						<p>Escribe las redes sociales de tu Negocio</p>
 						<div>
-							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" /><br />
-							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" /><br />
+							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" class="optional" /><br />
+							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" class="optional" /><br />
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h2>¡Ya casi terminamos!</h2>
-					</div>
-				</div>	
-				<div class="app-control-step">
-					<div>
-						<h2>Ahora elige el diseño de tu página</h2>
-						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
-						<div class="control-desing-cont">
-							<div class="control-design-thumb">
-								<label for="inp-design-001">Cuadrado</label><img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><br />
-							</div>
-							<div class="control-design-thumb">
-								<label for="inp-design-002">Circular</label><img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><br /> 
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
-						<h2>Ahora elige los colores de tu página</h2>
-						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores o modificar cada color individualmente haciendo clic alguno.</p>
-						<div id="app-control-palettes"></div>
+						<h2>¡Terminamos!</h2>
+						<p>Revisa tu sitio antes de continuar.</p>
 					</div>
 				</div>
 				<div id="app-control-nav">

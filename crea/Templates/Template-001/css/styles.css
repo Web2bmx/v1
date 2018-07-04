@@ -2,10 +2,7 @@
     font-family: 'Modern Pics';
     src: url(../../Fonts/modernpics.otf);
 }
-body {
-	margin: 0; padding: 0;
-	text-align: center;
-}
+body { margin: 0; padding: 0; }
 /**/
 .img-L { background-size: auto 150%; }
 .img-S { background-size: auto 150%; }
@@ -26,38 +23,39 @@ body {
 /**/
 #template {
 	width: 100%; height: auto;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
 	display: block; overflow: hidden;
 }
 #template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
-	color: #444;
-	font-family: 'Gloria Hallelujah', cursive;
+	font-family: 'Markazi Text', serif;
 }
-main {
+#template main {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
 }
 .font-icon {
 	font-family: 'Modern Pics', cursive;
 }
+/**/
 #hero {
 	width: 100%; height: auto;
+	background-color: #666;
 	display: block; overflow: hidden;
 	position: relative;
 }
-#hero .img-cont {
-	width: 100%; height: 560px;
-	display: block; overflow: hidden;
-	position: relative; z-index: 0;
-}
 #hero-content {
 	width: 70%; height: auto;
-	margin: 20% 10% 0 10%;
-	padding: 5%;
-	background-color: rgba(255,255,255,.6);
+	padding: 2em 5%;
 	display: block; overflow: hidden;
-	position: absolute; z-index: 1;
+	position: absolute;
+	top: auto; right: 10%; bottom: 5%; left: 10%;
 }
+#hero .img-cont {
+	width: 100%; height: 550px;
+	display: block; overflow: hidden;
+}
+/**/
 .items {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
@@ -68,17 +66,14 @@ main {
 	position: relative; 
 }
 .item .img-cont {
-	width: 100%; height: 360px;
+	width: 100%; height: 400px;
 	display: block; overflow: hidden;
-	position: relative; z-index: 0;
 }
-.item h2 {
+.item .item-content {
 	width: 90%; height: auto;
-	margin: 0;
-	padding: 5%;
-	background-color: rgba(255,255,255,.6);
+	padding: 2em 5%;
 	display: block; overflow: hidden;
-	position: absolute; z-index: 1;
+	position: absolute;
 	bottom: 0;
 }
 .map-container {
@@ -89,31 +84,25 @@ main {
 	width: 100%; height: 600px;
 	display: block; overflow: hidden;
 }
+/**/
 footer {
 	width: 100%; height: auto;
 	padding: 2em 0;
-	background-color: #444;
+	background-color: #000000;
 	color: #FFF;
 	display: block; overflow: hidden;
 }
-footer h3 {
-	color: #FFF;
-}
 footer a, footer a:link, footer a:visited, footer a:hover, footer a:active {
-	color: #FFF;
+	color: inherit;
 }
 footer ul {
 	list-style: none;
 }
+/**/
 @media only screen and (min-width: 960px) {
-    main {
+    #template main {
 		width: 80%; max-width: 1440px;
 		margin: 0 auto;
-	}
-	#hero-content {
-		width: 60%;
-		margin: 5% 15% 0 15%;
-		padding: 3% 5%;
 	}
 	.items {
 		display: grid;

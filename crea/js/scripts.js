@@ -9,10 +9,11 @@
 	var sample_colors_ready = false;
 	var $images = null;
 	var $palettes = null;
+	var lastKeyPressed = 0;
 	var jd = getWeb2bJson();
 	
 	/* check data validation */
-	checkDataValidation(jd);
+	//checkDataValidation(jd);
 	/*EO GLOBAL VARIABLES*/
 	$(document).ready(function() {		
 		/*SET UP TEMPLATE*/
@@ -33,9 +34,9 @@
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { 
 			updateTemplate();
 		});
-		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function() {
+		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
+			lastKeyPressed = e.keyCode || e.which;
 			if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
-				console.log($(this).attr("name"));
 				goToByScroll($(document), 800);
 			} else {
 				goToByScroll($(document), 0);
@@ -56,10 +57,14 @@
 			number_of_items ++;
 			var $i_t = $(".app-control-step:eq(" + (current_step - 2) + ")").clone();
 			$i_t.find("p").html("Tu producto o servicio");
-			$i_t.find("input").attr("id", ("inp-content-item-" + number_of_items));
-			$i_t.find("input").attr("name", ("inp-content-item-" + number_of_items));
+			$i_t.find("input").attr("id", ("inp-content-title-item-" + number_of_items));
+			$i_t.find("input").attr("name", ("inp-content-title-item-" + number_of_items));
 			$i_t.find("input").attr("placeholder", "Tu producto o servicio");
 			$i_t.find("input").val("");
+			$i_t.find("textarea").attr("id", ("inp-content-item-" + number_of_items));
+			$i_t.find("textarea").attr("name", ("inp-content-item-" + number_of_items));
+			$i_t.find("textarea").attr("placeholder", "Tu producto o servicio");
+			$i_t.find("textarea").val("");
 			var $i_i = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
 			$i_i.find("p").html("Elige una imagen para tu producto o servicio");
 			$i_i.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
@@ -98,7 +103,7 @@
 					}
 					var $palette = $palettes.filter(":eq(" + i + ")");
 					$control_color.removeClass("template");
-					$control_color.find("h4").html($palette.find("name").html());
+					$control_color.find("h4").html($palette.find("name").html()).remove();
 					$control_color.find("input").attr("id", ("inp-palette-" + i));
 					$control_color.find("input").attr("value", i);
 					$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
@@ -180,6 +185,7 @@
 					break;
 				}
 				goToStep(current_step);
+				updateContent();
 			}	
 		});
 		for (i=0; i < $("#app-control>.app-control-step").length -1; i++) {
@@ -242,10 +248,8 @@
 	} 
 	function showAppCover() { $("#app-cover").show(); }
 	function updateContent() {
+		var $this = $(this);
 		var $template = $("#template");
-		if ($("[name^='inp-name']").val() != "") {
-			$template.find("#hero-content h1").html($("[name^='inp-name']").val());
-		}
 		/*Colores*/
 		if (sample_colors_ready) {
 			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
@@ -253,7 +257,6 @@
 			var col_hero_content = HexColorToRGBA(c1, .6);
 			var c2 = $palette.find("middle>back").html();
 			var col_items = HexColorToRGBA(c2, .6);
-			console.log(col_items);
 			$template.css({
 				"background-color" : $palette.find("bg>back").html()
 			});
@@ -262,18 +265,18 @@
 				"color" : $palette.find("top>fore").html()
 			});
 			$template.find("#hero-content").css({
-				"background-color" : col_hero_content,
+				"background-color" : $palette.find("top>back").html(),
 				"color" : $palette.find("top>fore").html()
 			});
 			$template.find("#hero-content h1, #hero-content h2").css({
 				"color" : $palette.find("top>fore").html()
 			});
 			$template.find(".items").css({
-				"background-color" : $palette.find("middle>back").html(),
+				"background-color" : "transparent",
 				"color" : $palette.find("middle>fore").html()
 			});
-			$template.find(".items h2").css({
-				"background-color" : col_items,
+			$template.find(".items .item-content").css({
+				"background-color" : $palette.find("middle>back").html(),
 				"color" : $palette.find("middle>fore").html()
 			});
 			$template.find("footer").css({
@@ -284,9 +287,10 @@
 		/*Content & Contacto*/
 		$("[id^='inp-contact-'], [id^='inp-content-']").each(function() {
 			var $this = $(this);
+			var i_id = $this.attr("id");
+			var v_id = i_id.replace("inp", "val");
 			if ($this.val() != "") {
-				var i_id = $this.attr("id");
-				var v_id = i_id.replace("inp", "val");
+				$template.find("#" + v_id).show().closest(".footer-column").show();
 				switch (i_id) {
 					case "inp-contact-email" :
 						$template.find("#val-contact-email").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
@@ -304,8 +308,22 @@
 						$template.find("#" + v_id).html($this.val());
 						break;
 				}
+			} else {
+				if ($this.hasClass("optional")) {
+					if ($(".app-control-step:eq(" + (current_step) + ")").has($this).length > 0) {
+						if (lastKeyPressed == 8) {
+							$template.find("#" + v_id).html($this.val());
+						}
+					}
+					if ($(".app-control-step:eq(" + (current_step - 1) + ")").has($this).length > 0) {
+						$template.find("#" + v_id).hide();
+					}
+				} else {
+					$template.find("#" + v_id).html($this.attr("placeholder"));
+				}
 			}
 		});
+		$template.find(".footer-column:not(:has(li:visible))").hide();
 		/*Images*/
 		$("[name^='inp-img-']:checked").each(function() {
 			var $this = $(this);
@@ -321,7 +339,7 @@
 		if (template_id != id) {
 			template_id = id;
 			$("#template").html("");
-			var src = "Templates/Template-" + template_id + "/index.html?foo"; 
+			var src = "Templates/Template-" + template_id + "/index.html?bar"; 
 			$("#template-cont").load("Templates/Template-" + id + "/index.html #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
@@ -338,6 +356,7 @@
 		if ($("#template .items:last .item").length == 3) { $("#template .items:last").after("<div class='items'></div>"); }
 		var $item_copy = $(".item:last").clone();
 		$item_copy.find("#img-item-" + i).attr("id", ("img-item-" + (i + 1)));
+		$item_copy.find("#val-content-title-item-" + i).attr("id", ("val-content-title-item-" + (i + 1)));
 		$item_copy.find("#val-content-item-" + i).attr("id", ("val-content-item-" + (i + 1)));
 		$("#template .items:last").append($item_copy);
 		var c = "";
