@@ -196,7 +196,7 @@
 				if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 				}else {
-					$.post("Scripts/guarda_datos.php",{
+					$.post("scripts/guarda_datos.php",{
 						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),
 						info: JSON.stringify(jd)
