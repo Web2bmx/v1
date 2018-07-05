@@ -415,129 +415,207 @@ footer menu {
 /**/
 }
 @media screen and (min-width: 1280px) {
-a.cta, input.cta {
-	padding: .8rem 1.8rem;
-	font-size: 1rem;
-	border-radius: .3rem;
-}
-/**/
-header {
-	height: 3rem;
-	padding: 1rem 0;
-}
-#branding {
+	a.cta, input.cta {
+		padding: .8rem 1.8rem;
+		font-size: 1rem;
+		border-radius: .3rem;
+	}
+	/**/
+	header {
+		height: 3rem;
+		padding: 1rem 0;
+	}
+	#branding {
+		width: auto;
+		padding-left: 5%;
+	}
+	#branding img { height: 3rem; }
+	#menuToggle input { display: none; }
+	#menuToggle span { display: none; }
+	#menu {
 	width: auto;
-	padding-left: 5%;
-}
-#branding img { height: 3rem; }
-#menuToggle input { display: none; }
-#menuToggle span { display: none; }
-#menu {
-  width: auto;
-  margin: 0;
-  padding: 0 5% 0 5%;
-  float: right;
-  position: static;
-  transform-origin: none;
-  transform: none;
-  transition: none;
-}
-#menu li {
-  padding: 0 1rem;
-  font-size: 1rem;
-  float: left;
-}
-/**/
-main {
-	padding-top: 5rem;
-}
-/**/
-#hero {
-	padding: 10rem 0;
-}
-#graph-rocket {
-	width: 8rem; 
-}
-/**/
-#steps {
-	padding: 6rem 0;
-}
-#list-steps li {
-	width: 21%; height: auto;
-	margin: 0 2%;
+	margin: 0;
+	padding: 0 5% 0 5%;
+	float: right;
+	position: static;
+	transform-origin: none;
+	transform: none;
+	transition: none;
+	}
+	#menu li {
+	padding: 0 1rem;
 	font-size: 1rem;
 	float: left;
+	}
+	/**/
+	main {
+		padding-top: 5rem;
+	}
+	/**/
+	#hero {
+		padding: 10rem 0;
+	}
+	#graph-rocket {
+		width: 8rem; 
+	}
+	/**/
+	#steps {
+		padding: 6rem 0;
+	}
+	#list-steps li {
+		width: 21%; height: auto;
+		margin: 0 2%;
+		font-size: 1rem;
+		float: left;
+	}
+	#list-steps img {
+		width: 5rem; 
+		margin: 0 auto;
+		display: block;
+	}
+	/**/
+	#services {
+		padding: 2rem 0 0 0;
+	}
+	#list-services {
+		font-size: 1rem;
+	}
+	#list-services>li {
+		width: 44%;
+		margin: 0 2% 3rem 2%;
+		float: left;
+	}
+	#list-services>li>img {
+		width: 30%; height: auto;
+		float: left;
+	}
+	#list-services>li>h3 {
+		font-size: 1.4rem;
+	}
+	#list-services>li>p {
+		font-size: 1rem;
+	}
+	/**/
+	#subscribe {
+		padding: 12rem 0 10rem 0;
+	}
+	#subscribe p {
+		font-size: 1.4rem;
+	}
+	#subscribe input[type="email"] {
+		padding: .6rem .8rem;
+		font-size: 1.3rem;
+	}
+	#gr_ship {
+		width: 20%; height: 20%;
+		top: 32%; left: 66%;
+	}
+	/**/
+	footer {
+		font-size: 1rem;
+	}
+	footer h6 {
+		margin: 0 0 1rem 0;
+	}
+	footer menu {
+		height: 16rem;
+		margin-bottom: 0;
+	}
+	footer menu li {
+		margin-bottom: .8rem;
+		padding-bottom: .8rem;
+		font-size: .8rem;
+		border-bottom: 1px solid #555;
+	}
+	#social {
+		width: auto;
+		margin-bottom: 0;
+		float: left;
+	}
+	#social span {
+		position: relative; top: -.4rem;
+	}
+	#copyright {
+		text-align: right;
+		float: right;
+	}
+/**/	
 }
-#list-steps img {
-	width: 5rem; 
-	margin: 0 auto;
-	display: block;
+
+/*Modal*/
+.ui-dialog-titlebar {
+	display: none;
+  }
+  
+  .ui-widget.ui-widget-content {
+	border: none;
+	padding: 0;
+  }
+  
+  @media (min-width: 660px) {
+	.ui-widget.ui-widget-content {
+	  max-width: 640px;
+	  max-height: 760px;
+	}
+  }
+  
+  .ui-dialog .ui-dialog-content.dialog {
+	max-height: 760px;
+  }
+  
+  @media (min-width: 660px) {
+	.ui-dialog .ui-dialog-content.dialog {
+	  max-width: 640px !important;
+	  max-height: 760px !important;
+	}
+  }
+  
+  @media (min-width: 1040px) {
+	.ui-dialog .ui-dialog-content.dialog {
+	  max-height: 600px !important;
+	}
+  }
+
+.ventana-login{
+	text-align: center;
 }
-/**/
-#services {
-	padding: 2rem 0 0 0;
+
+.ventana-login p {
+    font-weight: bold;
 }
-#list-services {
-	font-size: 1rem;
+
+.ventana-login input{
+    display: inline-block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 14px;
 }
-#list-services>li {
-	width: 44%;
-	margin: 0 2% 3rem 2%;
-	float: left;
+
+  /*Botones*/
+ button,
+.boton {
+  padding: 10px;
+  background-color: #cc2880;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  outline: none;
 }
-#list-services>li>img {
-	width: 30%; height: auto;
-	float: left;
-}
-#list-services>li>h3 {
-	font-size: 1.4rem;
-}
-#list-services>li>p {
-	font-size: 1rem;
-}
-/**/
-#subscribe {
-	padding: 12rem 0 10rem 0;
-}
-#subscribe p {
-	font-size: 1.4rem;
-}
-#subscribe input[type="email"] {
-	padding: .6rem .8rem;
-	font-size: 1.3rem;
-}
-#gr_ship {
-	width: 20%; height: 20%;
-	top: 32%; left: 66%;
-}
-/**/
-footer {
-	font-size: 1rem;
-}
-footer h6 {
-	margin: 0 0 1rem 0;
-}
-footer menu {
-	height: 16rem;
-	margin-bottom: 0;
-}
-footer menu li {
-	margin-bottom: .8rem;
-	padding-bottom: .8rem;
-	font-size: .8rem;
-	border-bottom: 1px solid #555;
-}
-#social {
-	width: auto;
-	margin-bottom: 0;
-	float: left;
-}
-#social span {
-	position: relative; top: -.4rem;
-}
-#copyright {
-	text-align: right;
+
+.right{
 	float: right;
 }
-/**/	
+
+.left{
+	float: left;
+}
+
+.error{
+	color: #ff0000;
+	font-size: 12px;
 }

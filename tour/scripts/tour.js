@@ -289,6 +289,14 @@ $(document).ready(function(){
             });
         }
     });
+
+    $(".back").click(function(e){
+        $(".dialog:visible").dialog("close");
+        var back = $(e.currentTarget).data("back");
+        if(back == 0){
+            $(".init").click();
+        }
+    });
     
 });
 

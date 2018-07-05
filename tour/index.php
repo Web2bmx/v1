@@ -112,7 +112,7 @@ function muestra_pregunta($numero_pregunta){
                                 <img src="images/nave.png">
                             </div>
                             <div class="septima-pregunta dialog">
-                                <?= muestra_pregunta(7);?>
+                                <?= muestra_pregunta(7);?>                             
                                 <button class="res_7 res">
                                     Siguiente
                                 </button>
@@ -180,6 +180,9 @@ function muestra_pregunta($numero_pregunta){
                             <img alt="" src="images/sun.png">
                             <div class="segunda-pregunta dialog" style="display: none">
                                 <?= muestra_pregunta(2);?>
+                                <button class="back" data-back="0">
+                                    Regresar
+                                </button>                                   
                                 <button class="res_2 res">
                                     Siguiente
                                 </button>

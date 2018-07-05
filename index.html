@@ -23,19 +23,24 @@
 			  gtag('config', 'UA-108388790-1');
 			</script>-->
 		<!---->
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<meta charset="utf-8">
 		<title>Web2b - Impulsa tu estrategia digital</title>
 		<meta name="description" content="Impulsa tu estrategia digital">
 		<meta name="author" content="Web2b">
-		<link rel="shortcut icon" href="landing/landing/img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/landing/landing/img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="landing/css/styles.css?v=1.0">
+        <link rel="stylesheet" href="/landing/css/jquery-ui.min.css" >
+        <link rel="stylesheet" href="/landing/css/jquery-ui.structure.min.css" >
+        <link rel="stylesheet" href="/landing/css/jquery-ui.theme.min.css" >  		
+		<link rel="stylesheet" href="/landing/css/styles.css?v=1.0">
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 		<script src="landing/js/scripts.js"></script>
 		<header>
 			<div id="branding"><img id="logo" src="landing/img/logo.png" /></div>
@@ -48,9 +53,7 @@
 							<li><a href="#hero">Home</a></li>
 							<li><a href="#services">Características</a></li>
 							<li><a href="/tour">Tour</a></li>
-							<li><a href="" class="comingsoon">Contacto</a></li>
-							<li><a id="login" href="" class="comingsoon">Ingreso</a></li>
-							<li><a id="signup" href="" class="comingsoon">Registro</a></li>
+							<li><a id="login" href="">Ingreso</a></li>
 						</ul>
 					</div>
 				</div>
@@ -132,9 +135,8 @@
 					<h6>Menú</h6>
 					<nav>
 						<li><a href="./">Web2b</a></li>
-						<li><a href="">Características</a></li>
+						<li><a href="#services">Características</a></li>
 						<li><a href="/tour">Tour</a></li>
-						<li><a href="">Contacto</a></li>
 					</nav>
 				</menu>	
 				<menu>
@@ -153,5 +155,39 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- Ingreso Modal -->
+		<div class="dialog ventana-login">
+			<div class="login-content">
+				<p>
+					¿Ya tienes una cuenta con nosotros?<br />
+					Por favor ingresa tu correo y te mandaremos un link para ingresar: <br />								
+				</p>			
+				<input type="email" name="email" id="email" /><br />
+				<span class="error" style="display: none">El correo es incorrecto</span>
+				<button class="left cerrar-ventana">
+					Salir
+				</button>			
+				<button class="right entrar">
+					Entrar
+				</button>				
+			</div>
+			<div class="login-success" style="display: none">
+					<p>
+						Por favor revisa tu correo electronico para acceder							
+					</p>			
+					<button class="cerrar-ventana">
+						¡Gracias!
+					</button>					
+			</div>
+			<div class="login-error" style="display: none">
+					<p>
+						Esta cuenta no se ha encontrado en el sistema						
+					</p>			
+					<button class="cerrar-ventana">
+						Cerrar
+					</button>					
+			</div>			
+		</div> 		
 	</body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/scripts.js",
+  "dependencies": {
+    "grunt": "1.0.3",
+    "grunt-sass": "2.1.0",
+    "grunt-contrib-watch": "1.0.0",
+    "normalize-scss": "7.0.0",
+    "breakpoint-sass": "2.7.1"
+  },
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}

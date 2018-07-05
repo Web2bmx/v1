@@ -148,6 +148,10 @@ button,
         float: right;
     }
 
+    &.back{ 
+        float: left;
+    }    
+
     &:active{
         background-color: #60A9DE;
     }
