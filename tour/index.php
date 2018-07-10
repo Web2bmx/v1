@@ -112,7 +112,12 @@ function muestra_pregunta($numero_pregunta){
                                 <img src="images/nave.png">
                             </div>
                             <div class="septima-pregunta dialog">
-                                <?= muestra_pregunta(7);?>                             
+                                <aside>
+                                    <?= muestra_pregunta(7);?>
+                                </aside>
+                                <button class="back" data-back="6">
+                                    Regresar
+                                </button>                                                              
                                 <button class="res_7 res">
                                     Siguiente
                                 </button>
@@ -120,7 +125,12 @@ function muestra_pregunta($numero_pregunta){
                         </div>                    
                         <div class="cinco">
                             <div class="sexta-pregunta dialog">
-                                <?= muestra_pregunta(6);?>
+                                <aside>
+                                    <?= muestra_pregunta(6);?>
+                                </aside>
+                                <button class="back" data-back="5">
+                                    Regresar
+                                </button>                                   
                                 <button class="res_6 res">
                                     Siguiente
                                 </button>
@@ -145,7 +155,12 @@ function muestra_pregunta($numero_pregunta){
                                 <img src="images/stars.png">
                             </div>
                                 <div class="quinta-pregunta dialog">
-                                    <?= muestra_pregunta(5);?>
+                                    <aside>
+                                        <?= muestra_pregunta(5);?>
+                                    </aside>
+                                    <button class="back" data-back="4">
+                                        Regresar
+                                    </button>                                       
                                     <button class="res_5 res">
                                         Siguiente
                                     </button>
@@ -154,6 +169,9 @@ function muestra_pregunta($numero_pregunta){
                         <div class="tercero">
                                 <div class="cuarta-pregunta dialog">
                                     <?= muestra_pregunta(4);?>
+                                    <button class="back" data-back="3">
+                                        Regresar
+                                    </button>                                       
                                     <button class="res_4 res">
                                         Siguiente
                                     </button>
@@ -171,6 +189,9 @@ function muestra_pregunta($numero_pregunta){
                                 <img class="planet-blue" alt="" src="images/planet_blue.png">
                                 <div class="tercera-pregunta dialog">
                                     <?= muestra_pregunta(3);?>
+                                    <button class="back" data-back="2">
+                                        Regresar
+                                    </button>                                      
                                     <button class="res_3 res">
                                         Siguiente
                                     </button>

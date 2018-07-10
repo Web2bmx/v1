@@ -610,6 +610,11 @@ button.res,
   float: right;
 }
 
+button.back,
+.boton.back {
+  float: left;
+}
+
 button:active,
 .boton:active {
   background-color: #60A9DE;
@@ -1009,6 +1014,11 @@ a.boton {
   margin-top: 0;
   line-height: 20px;
   margin-bottom: 40px;
+}
+
+.ui-dialog .ui-dialog-content.dialog aside {
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 textarea {

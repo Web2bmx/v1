@@ -16,17 +16,18 @@ $(document).ready(function() {
 		return false;
 	});
     $(".dialog").dialog({
-		autoOpen: false,
-		modal: true,
-		width: winWidth,
-		show: {
-		  effect: "fade",
-		  duration: 1000
-		},
-		hide: {
-		  effect: "fade",
-		  duration: 1000
-		}
+			autoOpen: false,
+			modal: true,
+			width: winWidth,
+			show: {
+				effect: "fade",
+				duration: 1000
+			},
+			hide: {
+				effect: "fade",
+				duration: 1000
+			},
+			closeOnEscape: false
 	  }); 
 	  $("#login").click(function(e){
 		  e.preventDefault();
