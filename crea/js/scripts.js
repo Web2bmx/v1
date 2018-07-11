@@ -210,6 +210,8 @@
 						$("#app-cover").hide();
 						$("#app-cover-start").hide();
 						$("#app-cover-finish").show();
+						localStorage.removeItem("web2b");
+						localStorage.setItem("web2b_template", JSON.stringify(jd));
 					});
 				}
 			}
