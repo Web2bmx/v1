@@ -8,10 +8,10 @@ $correo = filter_input(INPUT_POST,'correo');
 $info = filter_input(INPUT_POST,'info');
 $id = uniqid();
 
-// if($correo == "contacto@web2b.mx"){
-//     http_response_code(200);
-//     exit;
-// }
+if($correo == "contacto@web2b.mx"){
+    http_response_code(200);
+    exit;
+}
 
 if (!empty($_POST) && $nombre && $correo && $info){
 
