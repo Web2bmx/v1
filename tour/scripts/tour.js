@@ -47,7 +47,8 @@ function preguntaValida(selector){
         }
         return false;
     } else{
-        if($(selector + " p").data("type") == "1"){
+        var tipo = $(selector + " p").data("type");
+        if(tipo == "1"){
             localStorage.removeItem("web2b");
         }
         var jsonData = localStorage.getItem("web2b"),
@@ -61,19 +62,47 @@ function preguntaValida(selector){
         else{
             jsonData = JSON.parse(jsonData);
         }
+
         if($(selector + " textarea").length != 0){
             resp = $(selector + " textarea").val();
         } else {
             resp = $(selector + " input:checked").val();
         }
-        jsonData.respuestas.push({
-            "tipo": $(selector + " p").data("type"),
+
+        jsonData.respuestas[tipo-1] = {
+            "tipo": tipo,
             "Id" : $(selector + " p").data("id"),
             "respuesta" : resp,            
-        });
-        localStorage.setItem("web2b", JSON.stringify(jsonData))
+        };
+
+        localStorage.setItem("web2b", JSON.stringify(jsonData));
     }
     return true;
+}
+
+function paso1(){
+    var marginLeft;
+    $(".rocket img + img").animate({
+        opacity: 1
+    }, 50);
+    if(winWidth < 660){
+        marginLeft = '105px';
+    }
+    else if(winWidth < 1040){
+        marginLeft = '162px';         
+    } else{            
+        marginLeft = '122px';
+    }
+    $(".rocket").css("top","auto");
+    $(".rocket").animate({
+        left: '50%',
+        marginLeft: marginLeft
+    }, 2000, function(){
+        muestraPregunta('primera-pregunta');
+    });    
+    $('.main-container > div').animate({
+          'bottom': 0
+    }, 2000); 
 }
 
 function paso2(){
@@ -162,7 +191,8 @@ $(document).ready(function(){
       hide: {
         effect: "fade",
         duration: 1000
-      }
+      },
+      closeOnEscape: false
     });  
 
     var jsonData = localStorage.getItem("web2b");
@@ -182,7 +212,8 @@ $(document).ready(function(){
 
     $(".iniciar").click(function(){
         $(".datos-existentes").dialog( "close" );
-        $(".init").click();
+        localStorage.removeItem("web2b");
+        jsonData = {};
     });
 
     $(".continuar").click(function(){
@@ -287,6 +318,16 @@ $(document).ready(function(){
             $( ".septima-pregunta" ).on( "dialogclose", function() {  
                 $(".fin").dialog( "open" );
             });
+        }
+    });
+
+    $(".back").click(function(e){
+        $(".dialog:visible").dialog("close");
+        var back = $(e.currentTarget).data("back");
+        if(back == 0){
+            paso1();
+        } else{
+            window['paso' + back]();
         }
     });
     

@@ -148,6 +148,10 @@ button,
         float: right;
     }
 
+    &.back{ 
+        float: left;
+    }    
+
     &:active{
         background-color: #60A9DE;
     }
@@ -508,6 +512,11 @@ a.boton{
             margin-bottom: 40px;        
         }
     }    
+
+    aside{
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
 }
 
 textarea{

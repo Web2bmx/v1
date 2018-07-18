@@ -19,11 +19,11 @@
 					<div>
 						<img src="Templates/Thumb.png" />
 						<h1>Crea tu página web<br /> en 5 mínutos</h1>
-						<label style="display: none;">
+						<label>
 							Por favor compártenos tu nombre:<br />
 							<input type="text" name="nombre" id="nombre" value="Web2b" />
 						</label>
-						<label style="display: none;">
+						<label>
 							Y tu correo: <br />
 							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
 						</label>

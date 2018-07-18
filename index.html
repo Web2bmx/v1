@@ -23,19 +23,24 @@
 			  gtag('config', 'UA-108388790-1');
 			</script>-->
 		<!---->
+		<meta name="viewport" content="width=device-width, user-scalable=no">
 		<meta charset="utf-8">
 		<title>Web2b - Impulsa tu estrategia digital</title>
 		<meta name="description" content="Impulsa tu estrategia digital">
 		<meta name="author" content="Web2b">
-		<link rel="shortcut icon" href="landing/landing/img/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="/landing/landing/img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="landing/css/styles.css?v=1.0">
+        <link rel="stylesheet" href="/landing/css/jquery-ui.min.css" >
+        <link rel="stylesheet" href="/landing/css/jquery-ui.structure.min.css" >
+        <link rel="stylesheet" href="/landing/css/jquery-ui.theme.min.css" >  		
+		<link rel="stylesheet" href="/landing/css/styles.css?v=1.0">
 		<!--[if lt IE 9]>
 			<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
 		<![endif]-->
 	</head>
 	<body>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 		<script src="landing/js/scripts.js"></script>
 		<header>
 			<div id="branding"><img id="logo" src="landing/img/logo.png" /></div>
@@ -46,11 +51,10 @@
 					<div id="menu">
 						<ul>
 							<li><a href="#hero">Home</a></li>
-							<li><a href="#services">Características</a></li>
-							<li><a href="/tour">Tour</a></li>
-							<li><a href="" class="comingsoon">Contacto</a></li>
-							<li><a id="login" href="" class="comingsoon">Ingreso</a></li>
-							<li><a id="signup" href="" class="comingsoon">Registro</a></li>
+							<li><a href="#steps">¿Cómo funciona?</a></li>
+							<li><a href="#services">Nuestros servicios</a></li>
+							<li><a href="/tour">Comenzar</a></li>
+							<li><a id="login" href="">Ingreso</a></li>
 						</ul>
 					</div>
 				</div>
@@ -60,9 +64,10 @@
 			<section id="hero">
 				<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
 				<div class="container">	
-					<img id="graph-rocket" src="landing/img/rocket.png" />
-					<a class="cta" href="/tour">Toma el Tour</a>
+					<img id="graph-rocket" src="landing/img/rocket.png" />					
 					<h1><strong>Impulsa</strong> tu estrategia digital</h1>
+					<h2>Crea tu página web en minutos</h2>
+					<a class="cta" href="/tour">¡Comenzar!</a>
 				</div>
 				<span class="graph" id="gr_alien_side" style="background-image: url(landing/img/alien_side.png);"></span>
 				<span class="graph" id="gr_moon" style="background-image: url(landing/img/moon.png);"></span>
@@ -71,10 +76,11 @@
 			<section id="steps">
 				<div class="container">	
 					<ol id="list-steps">
-						<li><img src="landing/img/step_01.png" /><span>Paso 1</span>Tomar el tour Web2b para conocer más de tu Empresa.</li>
-						<li><img src="landing/img/step_02.png" /><span>Paso 2</span>Selecciona el paquete que más te guste.</li>
-						<li><img src="landing/img/step_03.png" /><span>Paso 3</span>Al terminar el tour te haremos algunas propuestas con las que comenzarás a construir una estrategia digital completa.</li>
-						<li><img src="landing/img/step_04.png" /><span>Paso 4</span>Te ayudaremos a agregar el contenido que necesites publicar en tu sitio web.</li>
+						<li><img src="landing/img/step_01.png" /><span>Paso 1</span>Da click en ¡Comenzar! en la sección de arriba para que podamos conocer más de tu Empresa.</li>
+						<li><img src="landing/img/step_03.png" /><span>Paso 2</span>Al terminar, te haremos algunas propuestas con las que comenzarás a construir una estrategia digital completa.</li>
+						<li><img src="landing/img/step_04.png" /><span>Paso 3</span>Te ayudaremos a agregar el contenido que necesites publicar en tu sitio web.</li>
+						<li><img src="landing/img/step_02.png" /><span>Paso 4</span>Selecciona el paquete que más te guste.</li>						
+						
 					</ol>
 				</div>	
 			</section>	
@@ -84,12 +90,12 @@
 						<li>
 							<img src="landing/img/guidance.jpg" />
 							<h3>Asesoría digital</h3>
-							<p>Te asesoramos para que tu empresa sea exitosa en medios digitales.</p>
+							<p>Te asesoramos para que tu empresa sea exitosa en medios digitales proponiendo la estrategia adecuada para tu negocio.</p>
 						</li>
 						<li>
 							<img src="landing/img/different.jpg" />
 							<h3>Diseño único</h3>
-							<p>Te ofrecemos un sitio web con las características que tu negocio necesita.</p>
+							<p>Te ofrecemos las opciones para tu sitio web con las características que tu negocio necesita.</p>
 						</li>
 						<li>
 							<img src="landing/img/grow.jpg" />
@@ -131,10 +137,10 @@
 				<menu>
 					<h6>Menú</h6>
 					<nav>
-						<li><a href="./">Web2b</a></li>
-						<li><a href="">Características</a></li>
-						<li><a href="/tour">Tour</a></li>
-						<li><a href="">Contacto</a></li>
+						<li><a href="#hero">Web2b</a></li>
+						<li><a href="#steps">¿Cómo funciona?</a></li>
+						<li><a href="#services">Nuestros servicios</a></li>
+						<li><a href="/tour">Comenzar</a></li>
 					</nav>
 				</menu>	
 				<menu>
@@ -153,5 +159,39 @@
 				</div>
 			</div>
 		</footer>
+
+		<!-- Ingreso Modal -->
+		<div class="dialog ventana-login">
+			<div class="login-content">
+				<p>
+					¿Ya tienes una cuenta con nosotros?<br />
+					Por favor ingresa tu correo y te mandaremos un link para ingresar: <br />								
+				</p>			
+				<input type="email" name="email" id="email" /><br />
+				<span class="error" style="display: none">El correo es incorrecto</span>
+				<button class="left cerrar-ventana">
+					Salir
+				</button>			
+				<button class="right entrar">
+					Entrar
+				</button>				
+			</div>
+			<div class="login-success" style="display: none">
+					<p>
+						Por favor revisa tu correo electronico para acceder							
+					</p>			
+					<button class="cerrar-ventana">
+						¡Gracias!
+					</button>					
+			</div>
+			<div class="login-error" style="display: none">
+					<p>
+						Esta cuenta no se ha encontrado en el sistema						
+					</p>			
+					<button class="cerrar-ventana">
+						Cerrar
+					</button>					
+			</div>			
+		</div> 		
 	</body>
 </html>

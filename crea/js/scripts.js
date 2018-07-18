@@ -15,7 +15,7 @@
 	/* check data validation */
 	//checkDataValidation(jd);
 	/*EO GLOBAL VARIABLES*/
-	$(document).ready(function() {		
+	$(document).ready(function() {	
 		/*SET UP TEMPLATE*/
 		updateTemplate();
 		/*EO SET UP TEMPLATE*/
@@ -127,7 +127,7 @@
 		/*IMAGENES*/
 		$("#inp-business-type").on("change", function() {
 			setImageSelection($(this).val());
-		});
+		});		
 		
 		/*DESIGN*/
 		$(".control-design-thumb img").on('click', function() {
@@ -193,16 +193,16 @@
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
 		$("[name='start']").on("click", function() {
-			$("#app-cover").hide();
-			$("#app-cover-start").hide();
-			$("#app-cover-finish").show();
+			// $("#app-cover").hide();
+			// $("#app-cover-start").hide();
+			// $("#app-cover-finish").show();
 			if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
 				$(".empty-fields").css("display","block");
 			} else {
 				if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 				}else {
-					$.post("Scripts/guarda_datos.php",{
+					$.post("scripts/guarda_datos.php",{
 						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),
 						info: JSON.stringify(jd)
@@ -210,6 +210,18 @@
 						$("#app-cover").hide();
 						$("#app-cover-start").hide();
 						$("#app-cover-finish").show();
+						//localStorage.removeItem("web2b");
+						localStorage.setItem("web2b_template", JSON.stringify(jd));
+						//translate data
+						translateData(jd);
+					}).always(function(){
+						$("#app-cover").hide();
+						$("#app-cover-start").hide();
+						$("#app-cover-finish").show();
+						//localStorage.removeItem("web2b");
+						localStorage.setItem("web2b_template", JSON.stringify(jd));
+						//translate data
+						translateData(jd);						
 					});
 				}
 			}
@@ -401,6 +413,21 @@
 	function HexColorToRGBA(c, a) {
 		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");
 		return s;
+	}
+	function translateData(data){
+		$.ajax({
+			url: "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=en",
+			headers: {
+				'Ocp-Apim-Subscription-Key': 'facf28fe7a39442883ab1970bc9348ac',
+				'Content-Type': 'application/json'
+			},
+			data: JSON.stringify ([{'Text' : data.respuestas[0].respuesta }]),
+			method: 'POST'
+		  }).done(function(data) {
+			if(data){
+				setImageSelection(data[0].translations[0].text);	
+			}
+		  });	
 	}
 	/*EO GENERAL FUNCTIONS*/
 })();
