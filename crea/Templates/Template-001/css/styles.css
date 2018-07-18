@@ -99,7 +99,7 @@ footer ul {
 	list-style: none;
 }
 /**/
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 560px) {
     #template main {
 		width: 80%; max-width: 1440px;
 		margin: 0 auto;

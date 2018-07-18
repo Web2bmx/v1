@@ -46,6 +46,7 @@
 								<li>Agregar mi logotipo.</li>
 								<li>Agregar nuevo contenido.</li>
 								<li>Actualizaciones ilimitadas.</li>
+								<li>Asesoría para crecer mi página.</li>
 								<li>$1,199.00</li>
 							</ul>
 						</div>
@@ -57,6 +58,7 @@
 								<li>Agregar mi logotipo.</li>
 								<li>Agregar nuevo contenido.</li>
 								<li>Actualizaciones ilimitadas.</li>
+								<li>Asesoría para crecer mi página.</li>
 								<li>$2,499.00</li>
 							</ul>
 						</div>	
@@ -208,14 +210,14 @@
 						<a id='switch-edit' style="display: none;">Edita tu sitio &target;</a>
 					</div>
 					<nav id='control-view-nav'>
-						<a href='#prev' class="disabled">&olt; Anterior</a>
+						<a href='#prev' class="disabled">&lt; Anterior</a>
 						<div id="control-view-index"><div class="control-view-index-item current"></div></div>
-						<a href='#next'>Siguiente &ogt;</a>
+						<a href='#next'>Siguiente &gt;</a>
 					</nav>
 				</div>	
 			</div>
 		</div>
 		<?php include_once("include/include_html_templates.php"); ?>
-		<?php //include_once("include/include_chat.php"); ?>
+		<?php include_once("include/include_chat.php"); ?>
 	</body>
 </html>
