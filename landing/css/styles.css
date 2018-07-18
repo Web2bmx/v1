@@ -669,6 +669,10 @@ main {
   position: relative;
 }
 
+#hero a.cta {
+  margin-top: 20px;
+}
+
 #graph-rocket {
   width: 12rem;
   margin: 0 auto;
@@ -678,6 +682,7 @@ main {
 #hero h1 {
   font-size: 3rem;
   font-weight: normal;
+  margin-bottom: 0;
 }
 
 #gr_alien_side {

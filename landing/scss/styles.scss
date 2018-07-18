@@ -155,6 +155,11 @@ main {
 	text-align: center;
 	display: block; overflow: hidden;
 	position: relative;
+
+	a.cta{
+		margin-top: 20px;
+	}
+
 }
 #graph-rocket {
 	width: 12rem; 
@@ -164,6 +169,7 @@ main {
 #hero h1 {
 	font-size: 3rem;
 	font-weight: normal;
+	margin-bottom: 0; 
 }
 #gr_alien_side {
 	width: 15%; height: 15%;
