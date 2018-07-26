@@ -135,7 +135,10 @@
 			$this.closest(".control-desing-cont").find(".control-design-thumb img").removeClass("thumb-selected");
 			$this.next("input").trigger("click");
 			$this.addClass("thumb-selected");
-		}).filter(":first").addClass("thumb-selected");		
+		}).filter(":first").addClass("thumb-selected");
+		
+		/* Upload image*/
+		
 	}
 	function setImageSelection (ide) {
 		$(".photo-container").html("");
@@ -428,6 +431,9 @@
 				setImageSelection(data[0].translations[0].text);	
 			}
 		  });	
+	}
+	function uploadImage(e){
+		e.preventDefault();
 	}
 	/*EO GENERAL FUNCTIONS*/
 })();

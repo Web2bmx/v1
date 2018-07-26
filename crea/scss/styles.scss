@@ -242,7 +242,7 @@ input[type='button'] {
 	}
 	.photo-container{
 		margin: 10px 0;
-		overflow: visible;
+		overflow: hidden;
 	}
 	.img-thumb {	
 		cursor: pointer;
@@ -381,5 +381,15 @@ input[type='button'] {
 			width: auto; 
 		}
 	}	
+}
+
+.file-upload{
+	display: block;
+	text-align: left;
+	margin-top: 20px;
+
+	span{
+		display: block;
+	}
 }
 /**/

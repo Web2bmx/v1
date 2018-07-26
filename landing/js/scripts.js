@@ -29,7 +29,7 @@ $(document).ready(function() {
 			},
 			closeOnEscape: false
 	  }); 
-	  $("#login").click(function(e){
+	  $(".login-btn").click(function(e){
 		  e.preventDefault();
 			$(".ventana-login").dialog( "open" ); 
 	  });	
