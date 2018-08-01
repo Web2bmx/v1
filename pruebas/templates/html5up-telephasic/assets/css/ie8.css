@@ -57,12 +57,14 @@ article.last-child {
 
 .dropotron {
   position: relative;
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
   -ms-behavior: url("assets/js/ie/PIE.htc");
 }
 
 .dropotron.level-0 {
-  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
 }
 
 .dropotron.level-0:before {
