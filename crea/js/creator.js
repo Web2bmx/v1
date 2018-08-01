@@ -383,16 +383,20 @@ var creator = function () {
 		if (template_id != id) {
 			template_id = id;
 			$("#template").html("");
-			var src = "Templates/Template-" + template_id + "/index.html?bar"; 
+			var src = "Templates/Template-" + template_id + "/index.html?" + Math.round(Math.random() * 10000); 
 			$("#template-cont").load("Templates/Template-" + id + "/index.html #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-				$template.find("script[src^='js/scripts.js']").attr("src", ("Templates/Template-" + id + "/js/scripts.js"));
 				$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
 				for (i = 1; i < number_of_items; i ++) {
 					addItems(i);		
 				}
 				updateContent();
+				$.ajax({
+					url: ("Templates/Template-" + id + "/js/scripts.js"),
+					dataType: "script",
+					success: function() {}
+				});
 			});
 		} else { updateContent(); }
 	};
@@ -453,7 +457,7 @@ var creator = function () {
 				'Ocp-Apim-Subscription-Key': 'facf28fe7a39442883ab1970bc9348ac',
 				'Content-Type': 'application/json'
 			},
-			data: JSON.stringify ([{'Text' : data.respuestas[0].respuesta }]),
+			data: JSON.stringify ([{'Text' : /*data.respuestas[0].respuesta*/"Abarrotes" }]),
 			method: 'POST'
 		  }).done(function(data) {
 			if(data){
