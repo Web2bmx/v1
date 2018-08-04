@@ -75,7 +75,12 @@ var creator = function () {
 			$i_i.find("p").html("Elige una imagen para tu producto o servicio");
 			$i_i.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
 			$i_i.find("input").each(function() {
-				$(this).attr("name", ("inp-img-item-" + number_of_items));
+				if($(this).attr("type") != "file" && $(this).attr("type") != "submit"){
+					$(this).attr("name", ("inp-img-item-" + number_of_items));
+				}
+				if($(this).attr("type") == "file"){
+					$(this).attr("name", ("item-" + number_of_items));
+				}
 			});
 			$this.closest(".app-control-step").before($i_t).before($i_i);
 			current_step = index;
@@ -498,7 +503,7 @@ var creator = function () {
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
 		//ONLY FOR TESTING PURPOSES
 		localStorage.setItem("web2b", JSON.stringify(jd));
-		//salvar en la BD
+		// PENDIENTE ---> salvar en la BD
 	};
     /*EO GENERAL FUNCTIONS*/
     

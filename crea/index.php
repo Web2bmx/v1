@@ -180,7 +180,11 @@
 								<div class="photo-container"></div>
 							</div>
 						</div>
-						
+						<form enctype="multipart/form-data" method="POST" class="file-upload">
+							<span class="one-line-text">O sube una imagen de tus archivos:</span>
+							<input accept=".png, .jpg, .jpeg" type="file" name="item-1" value="Selecciona imagen" />
+							<input type="submit" value="Subir foto"/>
+						</form>						
 					</div>
 				</div>
 				<div class="app-control-step">
