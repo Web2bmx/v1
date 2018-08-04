@@ -84,7 +84,7 @@
 						<h2>Ahora elige el diseño de tu página</h2>
 						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div class="control-desing-cont">
-						<div class="control-design-thumb">
+							<div class="control-design-thumb">
 								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" checked="checked" style="display: none;" /><label for="inp-design-005"></label><br />
 							</div>
 							<div class="control-design-thumb">
@@ -151,6 +151,16 @@
 							<input accept=".png, .jpg, .jpeg" type="file" name="hero" value="Selecciona imagen" />
 							<input type="submit" value="Subir foto"/>
 						</form>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<p>¿Te gustaría poner más información sobre tu empresa?</p>
+					<p class="app-control-step-tooltip-info">Aquí puedes escribir la historia de tu empresa o describir más a fondo quiénes son.</p>
+					<div>	
+						<div>
+							<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" /><br />
+							<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
+						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
