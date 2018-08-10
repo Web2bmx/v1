@@ -228,15 +228,19 @@ var creator = function () {
 			// $("#app-cover").hide();
 			// $("#app-cover-start").hide();
 			// $("#app-cover-finish").show();
-			if($("#nombre").val().trim() == "" || $("#correo").val().trim() == ""){
+			if($("#nombre").val().trim() == "" || 
+				$("#correo").val().trim() == "" || 
+				$("#password").val().trim() == ""){
 				$(".empty-fields").css("display","block");
-			} else {
-				if(!isEmail($("#correo").val())){
+			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
-				}else {
+				}else if(!validPassword($("#password").val())){
+					$(".password-invalid").css("display","block");
+				} else {
 					$.post("scripts/guarda_datos.php",{
 						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),
+						password: $("#password").val(),
 						info: JSON.stringify(jd)
 					}).done(function(result){
 						$("#app-cover").hide();
@@ -246,16 +250,12 @@ var creator = function () {
 						localStorage.setItem("web2b_template", JSON.stringify(jd));
 						//translate data
 						translateData(jd);
-					}).always(function(){
-						$("#app-cover").hide();
-						$("#app-cover-start").hide();
-						$("#app-cover-finish").show();
-						//localStorage.removeItem("web2b");
-						localStorage.setItem("web2b_template", JSON.stringify(jd));
-						//translate data
-						translateData(jd);						
+					}).fail(function(result){
+						response = JSON.parse(result.responseText);
+						$(".invalid-response").text("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + response.mensaje);
+						$(".invalid-response").css("display","block");						
 					});
-				}
+
 			}
 	
 		});
@@ -421,6 +421,10 @@ var creator = function () {
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		return regex.test(email);
 	}
+	function validPassword(password) {
+		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+		return regex.test(password);
+	}	
 	function openRequestedPopup(strUrl, strWindowName) {
 		if(windowObjectReference == null || windowObjectReference.closed) {
 		windowObjectReference = window.open(strUrl, strWindowName,

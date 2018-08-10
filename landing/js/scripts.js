@@ -40,9 +40,19 @@ $(document).ready(function() {
 			if($("#email").val().trim() == "" || !isEmail($("#email").val())){
 				$(".login-content .error").show();
 			} else {
-				$(".login-content .error").hide();
-				$(".login-content").fadeOut(100);
-				$(".login-success").fadeIn(100);
+				$.post("/landing/scripts/login.php",{
+					correo: $("#email").val()
+				})
+					.done(function(response){
+						$(".login-content .error").hide();
+						$(".login-content").fadeOut(100);
+						$(".login-success").fadeIn(100);
+					})
+					.fail(function(response){
+						$(".login-content .error").hide();
+						$(".login-content").fadeOut(100);
+						$(".login-error").fadeIn(100);
+					});
 			}
 		});		
 

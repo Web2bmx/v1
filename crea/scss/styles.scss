@@ -87,11 +87,12 @@ input[type='button'] {
 		display: block;
 		margin-bottom: 15px;
 	}
-	.empty-fields, .not-email {
+	.empty-fields, .not-email, 
+	.password-invalid, .invalid-response {
 		color: red;
 		display: none;
 		font-size: 12px;
-		margin-bottom: 10px;
+		margin-bottom: 10px; 
 	}
 	#app-cover-start img {
 		display: block;
@@ -394,5 +395,11 @@ input[type='button'] {
 	span{
 		display: block;
 	}
+}
+
+.form-label-note{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;	
 }
 /**/

@@ -5,15 +5,17 @@ include "../../lib/dbc.php";
 
 $nombre = filter_input(INPUT_POST,'nombre');
 $correo = filter_input(INPUT_POST,'correo');
+$password = filter_input(INPUT_POST,'password');
 $info = filter_input(INPUT_POST,'info');
 $id = uniqid();
 
 if($correo == "contacto@web2b.mx"){
+    echo '{"ok": 1}';
     http_response_code(200);
     exit;
 }
 
-if (!empty($_POST) && $nombre && $correo && $info){
+if (!empty($_POST) && $nombre && $correo && $info && $password){
 
     //buscar usuario existente
     $sql = "SELECT * FROM `usuarios` WHERE `correo` = '" . $correo . "'";
@@ -26,9 +28,10 @@ if (!empty($_POST) && $nombre && $correo && $info){
             $id = $fila["Id"];
         }  
     } else {
-        $sql = "INSERT INTO `usuarios` (`Id`, `nombre`, `correo`) VALUES ('" . $id . "', '" . $nombre . "', '" . $correo . "')";    
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO `usuarios` (`Id`, `nombre`, `correo`,`password` ) VALUES ('" . $id . "', '" . $nombre . "', '" . $correo . "','" . $hashed_password . "')";    
         if($dbh->query($sql)!==TRUE){ 
-            echo "Error al insertar usuario nuevo";
+            echo '{"ok": 0, "mensaje": "Error al insertar usuario nuevo"}';
             http_response_code(400);
             exit;
         } 
@@ -36,19 +39,16 @@ if (!empty($_POST) && $nombre && $correo && $info){
 
     //insertar informacion de nueva pagina
     $sql = "INSERT INTO `info_paginas` (`IdUsuario`, `info`) VALUES ('" . $id . "', '" . $info . "')";
-    echo $sql;
     if($dbh->query($sql)!==TRUE){ 
-        echo "5.1";
-        echo "Error al insertar información de nueva página";
+        echo '{"ok": 0, "mensaje": "Error al insertar información de nueva página"}';
         http_response_code(400);
         exit;
     } else{
-        echo "5.2";
-        echo json_encode($id);
+        echo '{"ok": 1, "id": "' . $id . '"}';
         http_response_code(200);
-    }  
-    echo "6";                
+    }                
 
 } else {
+    echo '{"ok": 0, "mensaje": "Error al recibir datos de formulario"}';
     http_response_code(400);
 }

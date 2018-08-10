@@ -166,10 +166,12 @@
 			<div class="login-content">
 				<p>
 					¿Ya tienes una cuenta con nosotros?<br />
-					Por favor ingresa tu correo y te mandaremos un link para ingresar: <br />								
+					Por favor ingresa tu correo y tu password: <br />								
 				</p>			
-				<input type="email" name="email" id="email" /><br />
-				<span class="error" style="display: none">El correo es incorrecto</span>
+				<input type="email" name="email" id="email" value="contacto@web2b.mx" /><br />
+				<input type="password" name="password" id="password" value="" />
+				<span class="error email" style="display: none">El correo es incorrecto</span>
+				<span class="error password" style="display: none">El password no puede estar vacío</span>
 				<button class="left cerrar-ventana">
 					Salir
 				</button>			

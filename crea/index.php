@@ -18,17 +18,29 @@
 				<div id="app-cover-start">
 					<div>
 						<img src="Templates/Thumb.png" />
-						<h1>Crea tu página web<br /> en 5 mínutos</h1>
+						<h1>Crea tu página web<br /> en 5 minutos</h1>
+						<p>Para continuar necesitamos una cuenta nueva para tí </p>
 						<label>
-							Por favor compártenos tu nombre:<br />
+							Nombre:<br />
 							<input type="text" name="nombre" id="nombre" value="Web2b" />
 						</label>
 						<label>
-							Y tu correo: <br />
+							Correo: <br />
 							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
 						</label>
+						<label>
+							Password: <br />
+							<span class="form-label-note">
+								(Mínimo 6 caracteres, con al menos una letra y un número)
+							</span>
+							<input type="password" name="password" id="password" value="" />
+						</label>						
 						<span class="empty-fields">Los campos están vacios</span>
 						<span class="not-email">El email is inválido</span>
+						<span class="password-invalid">
+							El password debe ser de al menos 6 carcateres incluyendo al menos un número y una letra
+						</span>
+						<span class="invalid-response"></span>
 						<input type="button" name="start" value="¡Comienza ya!" />						
 					</div>
 				</div>
@@ -84,7 +96,7 @@
 						<h2>Ahora elige el diseño de tu página</h2>
 						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div class="control-desing-cont">
-							<div class="control-design-thumb">
+						<div class="control-design-thumb">
 								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" checked="checked" style="display: none;" /><label for="inp-design-005"></label><br />
 							</div>
 							<div class="control-design-thumb">
@@ -154,7 +166,7 @@
 					</div>
 				</div>
 				<div class="app-control-step">
-					<p>¿Te gustaría poner más información sobre tu empresa?</p>
+				<p>¿Te gustaría poner más información sobre tu empresa?</p>
 					<p class="app-control-step-tooltip-info">Aquí puedes escribir la historia de tu empresa o describir más a fondo quiénes son.</p>
 					<div>	
 						<div>
@@ -163,7 +175,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="app-control-step">
+				<div class="app-control-step">				
 					<p>¿Cuál es tu principal producto o servicio?</p>
 					<div>	
 						<div>
