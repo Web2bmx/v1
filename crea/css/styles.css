@@ -108,8 +108,7 @@ input[type='button'] {
   margin-bottom: 15px;
 }
 
-#app-cover .empty-fields, #app-cover .not-email,
-#app-cover .password-invalid, #app-cover .invalid-response {
+#app-cover .form-error {
   color: red;
   display: none;
   font-size: 12px;

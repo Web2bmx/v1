@@ -21,7 +21,10 @@
 						<h1>Crea tu página web<br /> en 5 minutos</h1>
 						<p>Para continuar necesitamos una cuenta nueva para tí </p>
 						<label>
-							Nombre:<br />
+							Nombre de tu página:<br />
+							<span class="form-label-note">
+								(Solo números y leras, sin espacios.)
+							</span>							
 							<input type="text" name="nombre" id="nombre" value="Web2b" />
 						</label>
 						<label>
@@ -29,18 +32,19 @@
 							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
 						</label>
 						<label>
-							Password: <br />
+							Contraseña: <br />
 							<span class="form-label-note">
 								(Mínimo 6 caracteres, con al menos una letra y un número)
 							</span>
 							<input type="password" name="password" id="password" value="" />
-						</label>						
-						<span class="empty-fields">Los campos están vacios</span>
-						<span class="not-email">El email is inválido</span>
-						<span class="password-invalid">
-							El password debe ser de al menos 6 carcateres incluyendo al menos un número y una letra
+						</label>
+						<span class="form-error name-invalid">Nombre de página inválido</span>						
+						<span class="form-error empty-fields">Los campos están vacios</span>
+						<span class="form-error not-email">El email is inválido</span>
+						<span class="form-error password-invalid">
+							La contraseña debe ser de al menos 6 caracteres incluyendo al menos un número y una letra
 						</span>
-						<span class="invalid-response"></span>
+						<span class="form-error invalid-response"></span>
 						<input type="button" name="start" value="¡Comienza ya!" />						
 					</div>
 				</div>
