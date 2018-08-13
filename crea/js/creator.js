@@ -196,9 +196,15 @@ var creator = function () {
 				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
 				$this.next("input").trigger("click");
 				$this.parent().addClass("thumb-selected");
-			});		
+			});	
+			randomizeTemplate();	
 		}).fail(function(){});
 	};
+	var randomizeTemplate = function() {
+		var $color = $("[name^='inp-palette']");
+		$color.removeAttr("checked").filter(":eq(" + (Math.floor(Math.random() * $color.length)) + ")").attr("checked", "checked");
+		updateContent();
+	}
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();
 		$("#control-view-nav>a").on("click", function() {
@@ -236,9 +242,9 @@ var creator = function () {
 				$(".name-invalid").show();
 			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
-				}else if(!validPassword($("#password").val())){
+			}/*else if(!validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
-				} else {
+				}*/ else {
 					$.post("scripts/guarda_datos.php",{
 						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),

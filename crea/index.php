@@ -86,6 +86,26 @@
 				</div>
 			</div>
 			<div id="app-control">
+			<div class="app-control-step">
+					<div>
+						<p>¿De qué es tu Negocio?</p>
+						<div>
+							<select id="inp-business-type" name="inp-business-type">
+								<option value="people fun">&nbsp;</option>
+								<option value="architecture design">Despacho de Arquitectura o Diseño</option>
+								<option value="women beauty">Estética</option>
+								<option value="medicine health">Farmacia</option>
+								<option value="construction building materials">Ferretería</option>
+								<option value="italian food">Restaurante italiano</option>
+								<option value="mexican food">Restaurante mexicano</option>
+								<option value="business excecutive">Servicios profesionales</option>
+								<option value="car carshop">Taller mecánico</option>
+								<option value="groceries store">Tienda de abarrotes</option>
+								<option value="gift shop">Tienda de regalos</option>
+							</select>
+						</div>
+					</div>
+				</div>
 				<div class="app-control-step">
 					<div>
 						<h2>Primero escribe el nombre de tu Negocio</h2>
@@ -101,19 +121,19 @@
 						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
 						<div class="control-desing-cont">
 						<div class="control-design-thumb">
-								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" checked="checked" style="display: none;" /><label for="inp-design-005"></label><br />
+								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><label for="inp-design-001"></label><br />
 							</div>
 							<div class="control-design-thumb">
-								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" /><label for="inp-design-004"></label><br />
-							</div>
-							<div class="control-design-thumb">
-								<img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><label for="inp-design-002"></label><br /> 
+								<img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><label for="inp-design-002"></label><br />
 							</div>
 							<div class="control-design-thumb">
 								<img src="Templates/Template-003/Thumb.png" /><input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" /><label for="inp-design-003"></label><br /> 
 							</div>
 							<div class="control-design-thumb">
-								<img src="Templates/Template-003/Thumb.png" /><input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" /><label for="inp-design-003"></label><br /> 
+								<img src="Templates/Template-004/Thumb.png" /><input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" /><label for="inp-design-004"></label><br /> 
+							</div>
+							<div class="control-design-thumb">
+								<img src="Templates/Template-005/Thumb.png" /><input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" style="display: none;" /><label for="inp-design-005"></label><br /> 
 							</div>
 						</div>
 					</div>
@@ -136,26 +156,6 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>¿De qué es tu Negocio?</p>
-						<div>
-							<select id="inp-business-type" name="inp-business-type">
-								<option value="people fun">&nbsp;</option>
-								<option value="architecture design">Despacho de Arquitectura o Diseño</option>
-								<option value="women beauty">Estética</option>
-								<option value="medicine health">Farmacia</option>
-								<option value="construction building materials">Ferretería</option>
-								<option value="italian food">Restaurante italiano</option>
-								<option value="mexican food">Restaurante mexicano</option>
-								<option value="business excecutive">Servicios profesionales</option>
-								<option value="car carshop">Taller mecánico</option>
-								<option value="groceries store">Tienda de abarrotes</option>
-								<option value="gift shop">Tienda de regalos</option>
-							</select>
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
 						<p>Ahora elige la imagen principal para tu página</p>
 						<div class="app-control-images">
 							<div id='app-control-images-hero'>
@@ -170,12 +170,22 @@
 					</div>
 				</div>
 				<div class="app-control-step">
-				<p>¿Te gustaría poner más información sobre tu empresa?</p>
+					<h2>¿Te gustaría poner más información sobre tu empresa?</h2>
 					<p class="app-control-step-tooltip-info">Aquí puedes escribir la historia de tu empresa o describir más a fondo quiénes son.</p>
 					<div>	
 						<div>
 							<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" /><br />
 							<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<h2>¡Invita a tus clientes a realizar una acción!</h2>
+					<p class="app-control-step-tooltip-info">Invita a tus clientes a visitar tu negocio o a conocer tus productos o servicios.</p>
+					<div>	
+						<div>
+							<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" /><br />
+							<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
 						</div>
 					</div>
 				</div>
