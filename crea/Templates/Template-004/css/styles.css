@@ -80,6 +80,48 @@ body { margin: 0; padding: 0; }
 	padding: 5%;
 	display: block; overflow: hidden;
 }
+.aboutus-cont {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.aboutus {
+	width: 100%; height: 250px;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.aboutus .img-cont {
+	width: 100%; height: 250px;
+	display: block; overflow: hidden;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 1;
+}
+.aboutus .aboutus-content {
+	width: 90%; height: auto;
+	padding: 5%;
+	display: block; overflow: hidden;
+}
+.ctas {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.cta {
+	width: 100%; height: 250px;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.cta .img-cont {
+	width: 100%; height: 250px;
+	display: block; overflow: hidden;
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: 1;
+}
+.cta .cta-content {
+	width: 90%; height: auto;
+	padding: 5%;
+	display: block; overflow: hidden;
+}
 .map-container {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
