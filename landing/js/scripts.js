@@ -30,28 +30,43 @@ $(document).ready(function() {
 			closeOnEscape: false
 	  }); 
 	  $(".login-btn").click(function(e){
-		  e.preventDefault();
-			$(".ventana-login").dialog( "open" ); 
+		e.preventDefault();
+		$(".login-content").show();
+		$(".login-success").hide();
+		$(".login-error").hide();		
+		$(".ventana-login").dialog( "open" ); 
 	  });	
 		$(".cerrar-ventana").click(function(){
 			$(".ventana-login").dialog( "close" ); 
 		});
 		$(".entrar").click(function(){
 			if($("#email").val().trim() == "" || !isEmail($("#email").val())){
-				$(".login-content .error").show();
+				$(".login-content .email.error").show();
+			} if(!$("#password").val()){
+				$(".login-content .password.error").show();
 			} else {
 				$.post("/landing/scripts/login.php",{
-					correo: $("#email").val()
+					correo: $("#email").val().trim(),					
+					password: $("#password").val()
 				})
 					.done(function(response){
-						$(".login-content .error").hide();
-						$(".login-content").fadeOut(100);
-						$(".login-success").fadeIn(100);
+						if(response.ok){
+							$(".login-content .error").hide();
+							$(".login-content").fadeOut(100);
+							$(".login-success").fadeIn(100);
+							localStorage.setItem("web2b_template", JSON.stringify(response.paginas[0]));
+							localStorage.setItem("web2b_userId", JSON.stringify(response.userId));
+							window.location.href = "/crea";
+						} else {
+							$(".login-content .error").hide();
+							$(".login-content").fadeOut(100);
+							$(".login-error").fadeIn(100);
+						}
 					})
 					.fail(function(response){
+
+					}).always(function(){
 						$(".login-content .error").hide();
-						$(".login-content").fadeOut(100);
-						$(".login-error").fadeIn(100);
 					});
 			}
 		});		

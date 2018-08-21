@@ -239,6 +239,8 @@ var creator = function () {
 				$("#correo").val().trim() == "" || 
 				$("#password").val().trim() == ""){
 				$(".empty-fields").css("display","block");
+			} else if(!isValidDomain($("#nombre").val().trim().toLowerCase())){
+				$(".name-invalid").show();
 			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 			}/*else if(!validPassword($("#password").val())){
@@ -428,6 +430,10 @@ var creator = function () {
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		return regex.test(email);
 	}
+	function isValidDomain(name) {
+		var regex = /([a-z0-9])/;
+		return regex.test(name);
+	}	
 	function validPassword(password) {
 		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
 		return regex.test(password);

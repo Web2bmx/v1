@@ -1,17 +1,12 @@
 <?php
 header('Content-Type: application/json');
 
-//email to be sent
-ini_set("include_path", '/home1/nektuzco/php:' . ini_get("include_path"));
-require_once 'Mail.php';
-setlocale(LC_TIME, "es_MX");
-
-
 include "../../lib/dbc.php";
 
 $correo = filter_input(INPUT_POST,'correo');
+$password = filter_input(INPUT_POST,'password');
 
-if (!empty($_POST) && $correo){
+if (!empty($_POST) && $correo && $password){
 
     //buscar usuario existente
     $sql = "SELECT * FROM `usuarios` WHERE `correo` = '" . $correo . "'";
@@ -22,54 +17,42 @@ if (!empty($_POST) && $correo){
         //usuario encontrado
         while ($fila = $resultado->fetch_assoc()) {
             $id = $fila["Id"];
-            $nombre =$file["nombre"];
+            $nombre =$fila["nombre"];
+            $hashed_pass=$fila["password"];
         } 
 
-        // email de destino
-        $email = $correo;
+        if (!password_verify($password, $hashed_pass)) {
+            echo '{"ok":0,"error":"Contraseña incorrecta"}';
+            http_response_code(200);
+            exit;   
+        } else {
+            $sql = "SELECT * FROM `info_paginas` WHERE IdUsuario = '$id'";
+            $r = $dbh->query($sql);
 
-        // asunto del email
-        $subject = "Web2bmx - Ingreso";
+            if($r->num_rows > 0){
+                $paginas = [];
+                while ($fila = $r->fetch_assoc()) {
+                    $pagina = [];
+                    $pagina["id"] = $fila["id"];
+                    $pagina["info"] = $fila["info"];
+                    array_push($paginas,$pagina);
+                }
+                echo '{"ok":1,"paginas" : ' . json_encode($paginas) . ', "userId": "' . $id . '" }';
+                http_response_code(200);
+                exit;                 
+            } else {
+                echo '{"ok":1,"paginas" : "[]", "userId": "' . $id . '" }';
+                http_response_code(200);
+                exit;                  
+            }      
+        }
 
-        // Cuerpo del mensaje
-        $mensaje = "---------------------------------- <br />";
-        $mensaje.= "NOMBRE: " . $nombre. "<br />";
-        $mensaje.= "Link: http://www.web2b.mx/crea/?user=" . $id . "<br />";
-        $mensaje.= "---------------------------------- <br />";
-
-        // headers del email
-        $headers['MIME-Version'] = '1.0';
-        $headers['Content-type'] = 'text/html; charset=iso-8859-1';
-
-        // Cabeceras adicionales
-        $headers['To'] = $email;
-        $headers['From'] = 'contacto@web2b.mx';
-        $headers['Subject'] = $subject;
-
-        // Enviamos el mensaje
-//		if(!@mail($email, $subject, $mensaje, $headers)) echo "0m";		
-//		else echo "1m";
-
-
-
-        $mail = & Mail::factory("smtp", array(
-                    'host' => 'mail.web2b.mx',
-                    'port' => '26',
-                    'auth' => "PLAIN",
-                    'socket_options' => array('ssl' => array('verify_peer_name' => false)),
-                    'username' => 'contacto@web2b.mx',
-                    'password' => '@MiC0ntraw3b2b'));
-
-        echo $mail->send($email, $headers, $mensaje);
-        
-        echo "{ mensaje: 'Enviado correctamente', enviado: 1, link: 'http://www.web2b.mx/crea/?user=" . $id ."' }";
-        http_response_code(400);
-        exit;  
+          
 
 
     } else {
-        echo "Error al insertar usuario nuevo";
-        http_response_code(400);
+        echo '{"ok":0,"error":"Correo no existe"}';
+        http_response_code(200);
         exit;        
     }
 
