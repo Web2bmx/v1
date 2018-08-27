@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<img>../Images/placeholder.png</img>
+		<logotipo>img/Logo-Template-001.png</logotipo>
+		<name>Tienda de Doña Lupita</name>
+		<slogan>¡La más grande variedad!</slogan>
+	</hero>
+    <aboutus>
+        <img>../Images/placeholder.png</img>
+		<title>Nuestra Historia</title>
+		<text>Nuestra historia comienza en 1954, cuando pusimos nuestra primera sucursal en Santa Tere, en la cual hemos estado por más de 50 años, ahora contamos con 8 sucursales en la zona metropolitána de Guadalajara, una cerca de tí.</text>
+	</aboutus>
+	<cta>
+		<img>../Images/placeholder.png</img>
+        <title>¡Visítanos y compara!</title>
+		<text>Te invitamos a que nos conozcas, ¡no te arrepentirás!</text>
+        <links>
+            <link>
+                <description></description>
+                <url></url>
+                <target></target>
+                <text></text>
+            </link>
+        </links>
+	</cta>	
+	<items>
+		<row>
+        	<item>
+				<img>../Images/placeholder.png</img>
+				<title>Frutas y verduras</title>
+				<text>La mejor selección de frutas y verduras.</text>
+			</item>
+            <item>
+				<img>../Images/placeholder.png</img>
+				<title>Lácteos</title>
+				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
+			</item>
+        </row>
+    </items>		
+    <contact>
+        <communication>
+            <title>Información de contacto</title>
+            <email>tucorreoelectronico@correo.com</email>
+		    <phonelabel>Llamanos al</phonelabel>
+            <phone>331 893 8770</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Canutillo 3010, Col. Fraccionamiento Revolución</address>
+	    	<map>https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25669.182049294504!2d-103.39421939304526!3d20.62954019701506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2894659df4166e8d!2sSax+Cafe!5e0!3m2!1ses!2smx!4v1526266097611" frameborder="0" style="border:0" allowfullscreen></map>
+            <hours>Abierto de lunes a domingo de 8 de la mañana a 8 de la noche.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebook>https://www.facebook.com/AbarrotesAntonio</facebook>
+		    <twitter>https://www.twitter.com/AbarrotesAntonio</twitter>
+        </social> 
+	</contact>
+</content>

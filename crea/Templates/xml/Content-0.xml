@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<img>../Images/placeholder.png</img>
+		<logotipo>img/Logo-Template-001.png</logotipo>
+		<name>El nombre de tu negocio</name>
+		<slogan>El eslógan de tu negocio</slogan>
+	</hero>
+    <aboutus>
+        <img>../Images/placeholder.png</img>
+		<title>Acerca de nosotros</title>
+		<text>La historia de tu empresa o negocio</text>
+	</aboutus>
+	<cta>
+		<img>../Images/placeholder.png</img>
+        <title>Invita a tus Clientes</title>
+		<text>Detallales qué esperas de ellos.</text>
+        <links>
+            <link>
+                <description></description>
+                <url></url>
+                <target></target>
+                <text></text>
+            </link>
+        </links>
+	</cta>	
+	<items>
+		<row>
+        	<item>
+				<img>../Images/placeholder.png</img>
+				<title>Tu primer producto o servicio</title>
+				<text>La descripción de tu primer producto o servicio</text>
+			</item>	
+		</row>
+    </items>		
+    <contact>
+        <communication>
+            <title>Información de contacto</title>
+            <email>tucorreoelectronico@correo.com</email>
+		    <phonelabel>Llamanos al</phonelabel>
+            <phone>331 893 8770</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>La dirección de tu Negocio</address>
+	    	<map>https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25669.182049294504!2d-103.39421939304526!3d20.62954019701506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2894659df4166e8d!2sSax+Cafe!5e0!3m2!1ses!2smx!4v1526266097611" frameborder="0" style="border:0" allowfullscreen></map>
+            <hours>El horario de tu negocio</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebook>https://www.facebook.com/</facebook>
+		    <twitter>https://www.twitter.com/</twitter>
+        </social> 
+	</contact>
+</content>

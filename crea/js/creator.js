@@ -225,6 +225,7 @@ var creator = function () {
 	var randomizeTemplate = function() {
 		var $color = $("[name^='inp-palette']");
 		$color.removeAttr("checked").filter(":eq(" + (Math.floor(Math.random() * $color.length)) + ")").attr("checked", "checked");
+		
 		updateContent();
 	}
 	var setAppNavigation = function () {

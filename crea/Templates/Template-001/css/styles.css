@@ -76,6 +76,46 @@ body { margin: 0; padding: 0; }
 	position: absolute;
 	bottom: 0;
 }
+.aboutus-cont {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.aboutus {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.aboutus .img-cont {
+	width: 100%; height: 400px;
+	display: block; overflow: hidden;
+}
+.aboutus .aboutus-content {
+	width: 90%; height: auto;
+	padding: 2em 5%;
+	display: block; overflow: hidden;
+	position: absolute;
+	bottom: 0;
+}
+.ctas {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.cta {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.cta .img-cont {
+	width: 100%; height: 400px;
+	display: block; overflow: hidden;
+}
+.cta .cta-content {
+	width: 90%; height: auto;
+	padding: 2em 5%;
+	display: block; overflow: hidden;
+	position: absolute;
+	bottom: 0;
+}
 .map-container {
 	width: 100%; height: auto;
 	display: block; overflow: hidden;
