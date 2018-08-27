@@ -16,6 +16,7 @@ if($correo == "contacto@web2b.mx"){
 }
 
 if (!empty($_POST) && $nombre && $correo && $info && $password){
+    $exists = false;
 
     //buscar usuario existente
     $sql = "SELECT * FROM `usuarios` WHERE `correo` = '" . $correo . "'";
@@ -26,6 +27,7 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
         //ya existe usuario
         while ($fila = $resultado->fetch_assoc()) {
             $id = $fila["Id"];
+            $exists = true;
         }  
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -44,7 +46,7 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
         http_response_code(400);
         exit;
     } else{
-        echo '{"ok": 1, "id": "' . $id . '"}';
+        echo '{"ok": 1, "userId": "' . $id . '","idSitio":"' . $dbh->insert_id . '","exists":"' . $exists . '"}';
         http_response_code(200);
     }                
 

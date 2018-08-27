@@ -36,6 +36,6 @@
 
         echo $mail->send($email, $headers, $mensaje);
         
-        echo '{ "mensaje": "Enviado correctamente", "ok": 1, "link": 'http://www.web2b.mx/crea/?user=" . $id ."' }';
+        echo '{ "mensaje": "Enviado correctamente", "ok": 1, "link": "http://www.web2b.mx/crea/?user=' . $id . '" }';
         http_response_code(400);
         exit;

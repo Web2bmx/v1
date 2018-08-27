@@ -8,6 +8,9 @@
 		<meta name="author" content="Web2b">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="/css/jquery-ui.min.css" >
+        <link rel="stylesheet" href="/css/jquery-ui.structure.min.css" >
+        <link rel="stylesheet" href="/css/jquery-ui.theme.min.css" >  		
 		<link rel="stylesheet" href="css/styles.css?v=1.0">
 	</head>
 	<body>
@@ -269,6 +272,13 @@
 				</div>	
 			</div>
 		</div>
+		<div class="alert dialog">
+			<p class="mensaje">				
+			</p>
+			<a href="#" id="ok_btn" class="boton">
+				¡Entendido!
+			</a>                                    
+		</div> 		
 		<?php include_once("include/include_html_templates.php"); ?>
 		<?php include_once("include/include_chat.php"); ?>
 	</body>
