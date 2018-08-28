@@ -33,7 +33,7 @@ if (!empty($_POST) && $correo && $password){
                 $paginas = [];
                 while ($fila = $r->fetch_assoc()) {
                     $pagina = [];
-                    $pagina["id"] = $fila["id"];
+                    $pagina["idSitio"] = $fila["id"];
                     $pagina["info"] = $fila["info"];
                     array_push($paginas,$pagina);
                 }

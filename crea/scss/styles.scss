@@ -1,3 +1,9 @@
+@import "../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+ 
+@import "../../scss/components/_modal"; 
+@import "../../scss/components/_buttons"; 
+ 
  /*MIXINS*/
  @mixin border-radius($radius) {
 	-moz-border-radius: $radius;
@@ -7,7 +13,7 @@
 }
 $color-cta: #cc2880;
 /**/
-body {
+body { 
 	background-color: #666;
 	color: #444;
 	font-size: 1.2em;
@@ -22,14 +28,9 @@ ul, ol, nav {
 	padding: 0;
 }
 a {
-	color: #000000;
 	text-decoration: none;
 	cursor: pointer;
 }
-a:link { color: #000000; }
-a:visited { color: #000000; }
-a:hover { color: #000000; }
-a:active { color: #000000; }
 /**/
 .template { display: none; }
 input[type='button'] {

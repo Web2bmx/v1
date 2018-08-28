@@ -54,7 +54,11 @@ $(document).ready(function() {
 							$(".login-content .error").hide();
 							$(".login-content").fadeOut(100);
 							$(".login-success").fadeIn(100);
-							localStorage.setItem("web2b_template", JSON.stringify(response.paginas[0]));
+							// manejar varias paginas de un solo usuario??
+
+							//mostrar usuarios
+							localStorage.setItem("web2b_template", JSON.stringify(response.paginas[0].info));
+							localStorage.setItem("web2b_templateId", 1);
 							localStorage.setItem("web2b_userId", JSON.stringify(response.userId));
 							window.location.href = "/crea";
 						} else {

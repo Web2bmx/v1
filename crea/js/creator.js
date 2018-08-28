@@ -12,6 +12,8 @@ var creator = function () {
 	var $palettes = null;
 	var lastKeyPressed = 0;
 	var jd = null;	
+	var winWidth = $(window).width(),
+	winHeigth = $(window).height(); 	
 	
     var validation = function(){
 		jd = getWeb2bJson();
@@ -37,6 +39,21 @@ var creator = function () {
 	};
 
 	var setAppSteps = function () {
+		$(".dialog").dialog({
+			autoOpen: false,
+			modal: true,
+			width: winWidth,
+			show: {
+				effect: "fade",
+				duration: 1000
+			},
+			hide: {
+				effect: "fade",
+				duration: 1000
+			},
+			closeOnEscape: false
+	  	}); 
+
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { 
 			updateTemplate();
 		});
@@ -151,6 +168,11 @@ var creator = function () {
 		/* Upload image*/
 		var that = this;
 		$('.file-upload').on('submit',uploadImage);
+
+		/* manage dialog */
+		$("#ok_btn").click(function(){
+			$(".alert.dialog").dialog( "close" ); 
+		});		
 	};
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
@@ -246,17 +268,22 @@ var creator = function () {
 			}/*else if(!validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
 				}*/ else {
-					$.post("scripts/guarda_datos.php",{
+					$.post("scripts/crear_usuario.php",{
 						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),
 						password: $("#password").val(),
 						info: JSON.stringify(jd)
-					}).done(function(result){
-						$("#app-cover").hide();
-						$("#app-cover-start").hide();
-						$("#app-cover-finish").show();
-						//localStorage.removeItem("web2b");
-						localStorage.setItem("web2b_template", JSON.stringify(jd));
+					}).done(function(result){						
+						if(result.exists){
+							$(".alert.dialog p").html('Ya existe un usuario asociado a este correo. <br /> Se creara una página nueva asociada a este usuario y se ha actualizado la contraseña. <br/> Para seleccionar alguna de tus páginas asociadas a tu cuenta ingresa en la pagina e inicio dando click en &quot;Ingresar&quot;');
+							$(".alert.dialog").dialog( "open" );
+							$("#ok_btn").on("click.exists",function(){
+								startTemplateProcess(result);
+								$("#ok_btn").off("click.exists");
+							});
+						}else{
+							startTemplateProcess(result);
+						}				
 						//translate data
 						translateData(jd);
 					}).fail(function(result){
@@ -292,6 +319,18 @@ var creator = function () {
 		});
 		/*EO APP SWITCH*/
 	};
+
+	var startTemplateProcess = function(data){
+		$("#app-cover").hide();
+		$("#app-cover-start").hide();
+		$("#app-cover-finish").show();
+		//localStorage.removeItem("web2b");
+
+		localStorage.setItem("web2b_templateId", data.idSitio);
+		localStorage.setItem("web2b_userId", JSON.stringify(data.userId));			
+		localStorage.setItem("web2b_template", JSON.stringify(jd));
+	};
+
 	var goToStep = function(step) {
 		if (step < ($(".app-control-step").length)) {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();

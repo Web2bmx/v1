@@ -557,36 +557,36 @@ footer menu {
 /*Modal*/
 .ui-dialog-titlebar {
 	display: none;
-  }
+}
   
-  .ui-widget.ui-widget-content {
+.ui-widget.ui-widget-content {
 	border: none;
 	padding: 0;
-  }
-  
-  @media (min-width: 660px) {
+}
+
+@media (min-width: 660px) {
 	.ui-widget.ui-widget-content {
-	  max-width: 640px;
-	  max-height: 760px;
+		max-width: 640px;
+		max-height: 760px;
 	}
-  }
-  
-  .ui-dialog .ui-dialog-content.dialog {
+}
+
+.ui-dialog .ui-dialog-content.dialog {
 	max-height: 760px;
-  }
-  
-  @media (min-width: 660px) {
+}
+
+@media (min-width: 660px) {
 	.ui-dialog .ui-dialog-content.dialog {
-	  max-width: 640px !important;
-	  max-height: 760px !important;
+		max-width: 640px !important;
+		max-height: 760px !important;
 	}
-  }
-  
-  @media (min-width: 1040px) {
+}
+
+@media (min-width: 1040px) {
 	.ui-dialog .ui-dialog-content.dialog {
-	  max-height: 600px !important;
+		max-height: 600px !important;
 	}
-  }
+}
 
 .ventana-login{
 	text-align: center;
