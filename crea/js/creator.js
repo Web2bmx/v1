@@ -392,8 +392,8 @@ var creator = function () {
 		if (template_id != id) {
 			template_id = id;
 			$("#template").html("");
-			var src = "Templates/Template-" + template_id + "/index.html?" + Math.round(Math.random() * 10000); 
-			$("#template-cont").load("Templates/Template-" + id + "/index.html #template", function() {
+			var src = "Templates/Template-" + template_id + "/index.php?t=" + Math.floor(Math.random() * 4); 
+			$("#template-cont").load(src + " #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
 				$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
