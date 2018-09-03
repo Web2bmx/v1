@@ -175,9 +175,8 @@ function paso7(){
 }
 
 $(document).ready(function(){
-    winWidth = $(window).width();
-    
-    h = $(window).height();    
+    let winWidth = $(window).width(),    
+        h = $(window).height();    
     
     $(".dialog").dialog({
       autoOpen: false,

@@ -3,5 +3,4 @@
 <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<script src="js/creator.js"></script>
-<script src="js/scripts.js"></script>
+<script src="./js/crea.bundle.js"></script>

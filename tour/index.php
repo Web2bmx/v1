@@ -82,9 +82,9 @@ function muestra_pregunta($numero_pregunta){
     </head>
     <body>
     	<div class="background">
-            <div id='stars'></div>
-            <div id='stars2'></div>
-            <div id='stars3'></div>
+            <div class='stars'></div>
+            <div class='stars2'></div>
+            <div class='stars3'></div>
     	</div>
     	<div class="main-container">
             <div>
@@ -252,7 +252,7 @@ function muestra_pregunta($numero_pregunta){
             }
         </script>      
         <script src="scripts/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="scripts/tour.js">
+        <script type="text/javascript" src="./scripts/tour.bundle.js">
         </script>
     </body>
 </html>

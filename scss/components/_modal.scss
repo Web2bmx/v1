@@ -7,26 +7,28 @@
 	padding: 0;
 }
 
-@media (min-width: 660px) {
+@include breakpoint($tablet){
 	.ui-widget.ui-widget-content {
 		max-width: 640px;
 		max-height: 760px;
 	}
+	.ui-dialog .ui-dialog-content.dialog {
+		max-width: 640px !important;
+		max-height: 760px !important;
+	}	
 }
 
 .ui-dialog .ui-dialog-content.dialog {
 	max-height: 760px;
-}
 
-@media (min-width: 660px) {
-	.ui-dialog .ui-dialog-content.dialog {
+	@include breakpoint($tablet){
 		max-width: 640px !important;
 		max-height: 760px !important;
 	}
+
+	@include breakpoint($desktop){ 
+		max-height: 600px !important;
+	}	
+	
 }
 
-@media (min-width: 1040px) {
-	.ui-dialog .ui-dialog-content.dialog {
-		max-height: 600px !important;
-	}
-}

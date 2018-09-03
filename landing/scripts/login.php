@@ -32,12 +32,13 @@ if (!empty($_POST) && $correo && $password){
             if($r->num_rows > 0){
                 $paginas = [];
                 while ($fila = $r->fetch_assoc()) {
-                    $pagina = [];
+                    $pagina = [];                    
                     $pagina["idSitio"] = $fila["id"];
-                    $pagina["info"] = $fila["info"];
+                    $pagina["info"] = utf8_encode($fila["info"]);
                     array_push($paginas,$pagina);
                 }
-                echo '{"ok":1,"paginas" : ' . json_encode($paginas) . ', "userId": "' . $id . '" }';
+                echo json_encode(array("ok" => 1, "paginas" => $paginas, "userId" => $id));
+                //echo '{"ok":1,"paginas" : "' . json_encode(utf8json($paginas)) . '", "userId": "' . $id . '" }';
                 http_response_code(200);
                 exit;                 
             } else {
@@ -59,3 +60,31 @@ if (!empty($_POST) && $correo && $password){
 
 
 }
+
+function utf8json($inArray) { 
+
+    static $depth = 0; 
+
+    /* our return object */ 
+    $newArray = array(); 
+
+    /* safety recursion limit */ 
+    $depth ++; 
+    if($depth >= '30') { 
+        return false; 
+    } 
+
+    /* step through inArray */ 
+    foreach($inArray as $key=>$val) { 
+        if(is_array($val)) { 
+            /* recurse on array elements */ 
+            $newArray[$key] = utf8json($val); 
+        } else { 
+            /* encode string values */ 
+            $newArray[$key] = utf8_encode($val); 
+        } 
+    } 
+
+    /* return utf8 encoded array */ 
+    return $newArray; 
+} 

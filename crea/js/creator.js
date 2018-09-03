@@ -1,5 +1,5 @@
 
-var creator = function () {
+export default function creator () {
     /*GLOBAL VARIABLES*/
 	var windowObjectReference = null;
 	var image_types = ["hero", "item-1"];
@@ -120,10 +120,10 @@ var creator = function () {
 			url: "xml/sample_colors.xml",
 			dataType: "xml",
 			success: function(data) {
-				$xml = $(data);
-				$palettes = $xml.find("palette");
-				var t = $palettes.length;
-				for (i = 0; i < $palettes.length; i++) {
+				let $xml = $(data),
+					$palettes = $xml.find("palette"),
+					t = $palettes.length;
+				for (let i = 0; i < $palettes.length; i++) {
 					var $control_color = $(".template.control-color").clone();
 					if (i == 0) {
 						$control_color.find("input").attr("checked", "checked");
@@ -136,7 +136,7 @@ var creator = function () {
 					$control_color.find("input").attr("value", i);
 					$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
 					var blocks = ["top", "middle", "bottom"];
-					for (k = 0; k < 3; k++) {
+					for (let k = 0; k < 3; k++) {
 						$control_color.find(".control-color-thumb-bg:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">back").html() });
 						$control_color.find(".control-color-thumb-content:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">fore").html() });
 					}
@@ -179,9 +179,9 @@ var creator = function () {
 		//Check if there are already images upload from user
 		var imagenes = jd.imagenes;
 		if(imagenes){
-			for(var k in imagenes){
+			for(let k in imagenes){
 				var arr = imagenes[k].split("#");
-				for(var i = 0; i< arr.length; i++ ){
+				for(let i = 0; i< arr.length; i++ ){
 					var $img_thumb = $(".img-thumb.template").clone();
 					$img_thumb.removeClass("template").find(".img-thumb-cont").css({
 						"background-image" : ("url(/crea/client_images/" + arr[i] + ")")
@@ -200,13 +200,13 @@ var creator = function () {
 			per_page: 20,
 			orientation: 'landscape'
 		}).done(function(data){
-			for(x=0; x<data.length ; x++){
+			for(let x=0; x<data.length ; x++){
 				var $img_thumb = $(".img-thumb.template").clone();
 				$img_thumb.removeClass("template").find(".img-thumb-cont").css({
 					"background-image" : ("url(" + data[x]["urls"]["regular"] + ")")
 				});
 				$img_thumb.find("input").attr("value", data[x]["urls"]["regular"]);
-				for (i = 0; i < image_types.length; i++) {
+				for (let i = 0; i < image_types.length; i++) {
 					var $this_img_thumb = $img_thumb.clone();
 					$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));
 					$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
@@ -222,12 +222,14 @@ var creator = function () {
 			randomizeTemplate();	
 		}).fail(function(){});
 	};
+
 	var randomizeTemplate = function() {
 		var $color = $("[name^='inp-palette']");
 		$color.removeAttr("checked").filter(":eq(" + (Math.floor(Math.random() * $color.length)) + ")").attr("checked", "checked");
 		
 		updateContent();
-	}
+	};
+
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();
 		$("#control-view-nav>a").on("click", function() {
@@ -249,7 +251,7 @@ var creator = function () {
 				updateContent();
 			}	
 		});
-		for (i=0; i < $("#app-control>.app-control-step").length -1; i++) {
+		for (let i=0; i < $("#app-control>.app-control-step").length -1; i++) {
 			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
@@ -329,6 +331,18 @@ var creator = function () {
 		localStorage.setItem("web2b_templateId", data.idSitio);
 		localStorage.setItem("web2b_userId", JSON.stringify(data.userId));			
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
+
+		//load previous content
+		var selections = jd.selections;
+		if(selections){
+			for(var key in selections){
+				if(selections[key].type == "image"){
+					$(key).attr("class", ("img-cont img-MC img-L")).css({
+						"background-image" : ("url(" + selections[key].img + ")")
+					});					
+				}
+			}
+		}
 	};
 
 	var goToStep = function(step) {
@@ -424,6 +438,14 @@ var creator = function () {
 			$template.find(n_name).attr("class", ("img-cont img-MC img-L")).css({
 				"background-image" : ("url(" + img_src + ")")
 			});
+
+			//Save selection to object
+			var selections = jd.selections || {};
+			selections[n_name] = selections[n_name] || {};
+			selections[n_name].type = "image";
+			selections[n_name].img = img_src;
+			jd.selections = selections;
+			saveWeb2bJson();			
 		});
 	};
 	var updateTemplate = function () {
@@ -436,7 +458,7 @@ var creator = function () {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
 				$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
-				for (i = 1; i < number_of_items; i ++) {
+				for (let i = 1; i < number_of_items; i ++) {
 					addItems(i);		
 				}
 				updateContent();
@@ -489,6 +511,7 @@ var creator = function () {
 	function goToByScroll($element, target){
 		$element.scrollTop(target);
 	}
+
 	var getWeb2bJson = function (){
 		var jsonData = localStorage.getItem("web2b");
 	
@@ -502,10 +525,12 @@ var creator = function () {
 		}
 		return jsonData;
 	};	
+
 	function HexColorToRGBA(c, a) {
 		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");
 		return s;
 	}
+
 	var translateData = function(data){
 		$.ajax({
 			url: "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=en",
@@ -521,6 +546,7 @@ var creator = function () {
 			}
 		  });	
 	};
+
 	var uploadImage = function (e){
 		e.preventDefault();
 		var f = $("input[type=file]",e.currentTarget),
@@ -567,4 +593,4 @@ var creator = function () {
         validation: validation,
         init: init
     };
-};
+}

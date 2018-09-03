@@ -3,14 +3,15 @@
 .boton,
 a.boton,
 a.boton:visited
-a.boton:link {
+a.boton:link,
+input[type='button'] {
   padding: 10px;
   background-color: #cc2880;
   color: #FFFFFF;
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-  border-radius: 5px;
+  @include border-radius(5px);
   border: none;
   outline: none; 
 }

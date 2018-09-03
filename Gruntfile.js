@@ -14,14 +14,16 @@ module.exports = function (grunt) {
 		},
 		dist: {
 			files: {
-				'css/tour.css': 'scss/tour.scss'
+                'crea/css/styles.css': 'crea/scss/styles.scss',
+                'landing/css/styles.css': 'landing/scss/styles.scss',
+                'tour/css/tour.css': 'tour/scss/tour.scss'
 			}
 		}
 	},
         
         watch: {
             sass:{
-                files: ["scss/*"],
+                files: ["*/scss/*"],
                 tasks: ["sass"]
             }
         }

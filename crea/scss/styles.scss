@@ -1,17 +1,15 @@
-@import "../node_modules/normalize-scss/sass/normalize/import-now";
-@import "../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+@import "../../scss/base/_variables";
+@import "../../scss/base/_colors";
+
+@import "../../scss/mixins/_border-radius"; 
  
 @import "../../scss/components/_modal"; 
 @import "../../scss/components/_buttons"; 
- 
- /*MIXINS*/
- @mixin border-radius($radius) {
-	-moz-border-radius: $radius;
-	-ms-border-radius: $radius;
-	-webkit-border-radius: $radius;
-	border-radius: $radius;
-}
-$color-cta: #cc2880;
+
+
 /**/
 body { 
 	background-color: #666;
@@ -33,16 +31,6 @@ a {
 }
 /**/
 .template { display: none; }
-input[type='button'] {
-	background-color: $color-cta;
-	border: none;
-	color: #FFFFFF;
-	cursor: pointer;
-	font-size: 1.2em;
-	padding: .4em 1em;
-	@include border-radius(.2em);
-}
-/**/
 #template-cont {
 	display: block; 
 	height: auto;
