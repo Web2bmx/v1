@@ -468,6 +468,7 @@ and open the template in the editor.
 .ui-widget.ui-widget-content {
   border: none;
   padding: 0;
+  border-radius: 10px;
 }
 
 @media (min-width: 660px) {
@@ -475,14 +476,11 @@ and open the template in the editor.
     max-width: 640px;
     max-height: 760px;
   }
-  .ui-dialog .ui-dialog-content.dialog {
-    max-width: 640px !important;
-    max-height: 760px !important;
-  }
 }
 
 .ui-dialog .ui-dialog-content.dialog {
   max-height: 760px;
+  max-width: 100% !important;
 }
 
 @media (min-width: 660px) {
@@ -496,6 +494,11 @@ and open the template in the editor.
   .ui-dialog .ui-dialog-content.dialog {
     max-height: 600px !important;
   }
+}
+
+.ui-widget-overlay {
+  background: #000;
+  opacity: .5;
 }
 
 /*Botones*/
@@ -571,7 +574,7 @@ a {
 #app-cover {
   background-color: white;
   bottom: 0;
-  display: block;
+  display: none;
   height: 100%;
   left: 0;
   overflow-y: scroll;
@@ -597,14 +600,21 @@ a {
   margin-bottom: 15px;
 }
 
-#app-cover .form-error {
-  color: red;
-  display: none;
-  font-size: 12px;
-  margin-bottom: 10px;
+#app-cover .app-cover-finish-package {
+  border: 1px dotted #ADADAD;
+  margin: 1em 0;
+  padding: 2em;
 }
 
-#app-cover #app-cover-start img {
+.app-new-start {
+  margin: 20px;
+}
+
+.app-new-start * {
+  box-sizing: border-box;
+}
+
+.app-new-start img {
   display: block;
   height: auto;
   margin: 1em auto;
@@ -612,10 +622,49 @@ a {
   width: 10em;
 }
 
-#app-cover .app-cover-finish-package {
-  border: 1px dotted #ADADAD;
-  margin: 1em 0;
-  padding: 2em;
+.app-new-start input {
+  width: 100%;
+}
+
+.app-new-start input[type="text"], .app-new-start input[type="email"], .app-new-start input[type="password"] {
+  padding: 15px;
+  background-color: white;
+  float: left;
+  width: calc(100% - 62px);
+  border: none;
+  outline: none;
+}
+
+.app-new-start i {
+  line-height: 1.15;
+  font-size: 22px;
+  padding: 15px;
+  display: block;
+  float: left;
+  color: #999;
+  width: 62px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+}
+
+.app-new-start div {
+  border-radius: 10px;
+  background-color: #EEE;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #DDD;
+}
+
+.app-new-start p {
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.app-new-start [type="button"] {
+  font-size: 23px;
+  padding: 15px;
 }
 
 /**/
@@ -623,7 +672,7 @@ a {
   background-color: #FFF;
   bottom: 0;
   color: #666;
-  display: block;
+  display: none;
   height: 100%;
   left: 0;
   overflow: hidden;
@@ -952,6 +1001,13 @@ a {
 .form-label-note {
   display: block;
   font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.form-error {
+  color: red;
+  display: none;
+  font-size: 12px;
   margin-bottom: 10px;
 }
 

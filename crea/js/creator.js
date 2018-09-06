@@ -1,24 +1,25 @@
 
 export default function creator () {
     /*GLOBAL VARIABLES*/
-	var windowObjectReference = null;
-	var image_types = ["hero", "item-1"];
-	var template_id = "";
-	var sample_images_ready = false;
-	var current_step = 0;
-	var number_of_items = 1;
-	var sample_colors_ready = false;
-	var $images = null;
-	var $palettes = null;
-	var lastKeyPressed = 0;
-	var jd = null;	
-	var winWidth = $(window).width(),
-	winHeigth = $(window).height(); 	
+	let windowObjectReference = null,
+		image_types = ["hero", "item-1"],
+		template_id = "",
+		sample_images_ready = false,
+		current_step = 0,
+		number_of_items = 1,
+		sample_colors_ready = false,
+		$images = null,
+		$palettes = null,
+		lastKeyPressed = 0,
+		jd = null,	
+		winWidth = $(window).width(),
+		winHeigth = $(window).height(),
+		isNew = false;
 	
     var validation = function(){
-		jd = getWeb2bJson();
-        /* check data validation */
-        //checkDataValidation();
+		jd = getObjFromLocalStorage("web2b");
+		/* check data validation */
+        checkDataValidation();
     };
 
     var init = function() {
@@ -33,16 +34,18 @@ export default function creator () {
 
 	/*APPLICATION FUNCTIONS*/
 	var checkDataValidation = function(){			
-		if(jd.respuestas.length < 7){
-			location.href = "/tour";
+		if(jd.respuestas && jd.respuestas.length < 7){
+			//location.href = "/tour";
+		} else {
+			isNew = true;
 		}
+
 	};
 
 	var setAppSteps = function () {
 		$(".dialog").dialog({
 			autoOpen: false,
 			modal: true,
-			width: winWidth,
 			show: {
 				effect: "fade",
 				duration: 1000
@@ -52,7 +55,14 @@ export default function creator () {
 				duration: 1000
 			},
 			closeOnEscape: false
-	  	}); 
+		  }); 
+		  
+		if(isNew){											
+			$(document).ready(function(){				
+				$(".app-new-start.dialog").dialog( "option", "width", 400 );
+				$(".app-new-start.dialog").dialog( "open" );
+			});
+		}
 
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { 
 			updateTemplate();
@@ -244,7 +254,7 @@ export default function creator () {
 						$("#control-view-nav>a:eq(0)").removeClass("disabled");
 						break;
 					case ($("#app-control>.app-control-step").length) :
-						showAppCover();
+						//showAppCover();
 					break;
 				}
 				goToStep(current_step);
@@ -276,11 +286,10 @@ export default function creator () {
 						password: $("#password").val(),
 						info: JSON.stringify(jd)
 					}).done(function(result){						
-						if(result.exists){
-							$(".alert.dialog p").html('Ya existe un usuario asociado a este correo. <br /> Se creara una página nueva asociada a este usuario y se ha actualizado la contraseña. <br/> Para seleccionar alguna de tus páginas asociadas a tu cuenta ingresa en la pagina e inicio dando click en &quot;Ingresar&quot;');
+						if(!result.ok){
+							$(".alert.dialog p").html(result.error);
 							$(".alert.dialog").dialog( "open" );
 							$("#ok_btn").on("click.exists",function(){
-								startTemplateProcess(result);
 								$("#ok_btn").off("click.exists");
 							});
 						}else{
@@ -329,7 +338,7 @@ export default function creator () {
 		//localStorage.removeItem("web2b");
 
 		localStorage.setItem("web2b_templateId", data.idSitio);
-		localStorage.setItem("web2b_userId", JSON.stringify(data.userId));			
+		localStorage.setItem("web2b_userId", data.userId);		
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
 
 		//load previous content
@@ -512,17 +521,16 @@ export default function creator () {
 		$element.scrollTop(target);
 	}
 
-	var getWeb2bJson = function (){
+	var getObjFromLocalStorage = function (key){
 		var jsonData = localStorage.getItem("web2b");
 	
 		if(jsonData == null)
 			{
-				jsonData = {};
-				jsonData.respuestas = [];                
+				jsonData = {};           
 			}
 		else{
 			jsonData = JSON.parse(jsonData);
-		}
+			}
 		return jsonData;
 	};	
 
@@ -582,10 +590,29 @@ export default function creator () {
 		});
 	};
 	var saveWeb2bJson = function(){
-		localStorage.setItem("web2b_template", JSON.stringify(jd));
+		let strJD = JSON.stringify(jd),
+			userId = getObjFromLocalStorage("web2b_userId"),
+			idSitio = getObjFromLocalStorage("web2b_templateId");
+
+		localStorage.setItem("web2b_template", strJD);
 		//ONLY FOR TESTING PURPOSES
-		localStorage.setItem("web2b", JSON.stringify(jd));
+		localStorage.setItem("web2b", strJD);
 		// PENDIENTE ---> salvar en la BD
+		
+		if(strJD && Object.keys(userId).length && Object.keys(idSitio).length){
+			$.post("scripts/salvar_datos.php",{
+				userId: $("#nombre").val().trim(),
+				idSitio: $("#correo").val().trim(),
+				info: JSON.stringify(jd)
+			}).done(function(result){						
+				if(!result.ok){
+					console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + response.mensaje);					
+				}
+			}).fail(function(result){
+				console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result);					
+			});		
+		}
+
 	};
     /*EO GENERAL FUNCTIONS*/
     

@@ -53,7 +53,7 @@ a {
 #app-cover {
 	background-color: rgba(255, 255, 255, 1);
 	bottom: 0;
-	display: block;
+	display: none;
 	height: 100%;
 	left: 0;
 	overflow-y: scroll;
@@ -76,31 +76,82 @@ a {
 		display: block;
 		margin-bottom: 15px;
 	}
-	.form-error{
-		color: red;
-		display: none;
-		font-size: 12px;
-		margin-bottom: 10px;
-	}
-	#app-cover-start img {
-		display: block;
-		height: auto;
-		margin: 1em auto;
-		max-width: 50%;
-		width: 10em;
-	}
 	.app-cover-finish-package {
 		border: 1px dotted #ADADAD;
 		margin: 1em 0;
 		padding: 2em;
 	}
 }
+
+.app-new-start { 
+	margin: 20px;
+
+	*{
+		box-sizing: border-box;
+	}
+	
+	img {
+	display: block;
+	height: auto;
+	margin: 1em auto;
+	max-width: 50%;
+	width: 10em;
+	}
+
+	input{
+		width: 100%;
+
+		&[type="text"],
+		&[type="email"],
+		&[type="password"]{
+			padding: 15px;
+			background-color: white;
+			float: left;
+			width: calc(100% - 62px);
+			border: none;
+			outline: none;
+		}
+	}
+
+	i{
+		line-height: 1.15;
+		font-size: 22px;
+		padding: 15px;
+		display: block;
+		float: left;
+		color: #999;
+		width: 62px;
+		border-right: 1px solid #DDD;
+		text-align: center;
+	}
+
+	div{
+		border-radius: 10px;
+		background-color: #EEE;
+		margin-bottom: 10px;
+		overflow: hidden;
+		border: 1px solid #DDD;
+	}
+
+	p{
+		text-align: center;
+		font-size: 18px;
+		color: #000;
+		margin: 25px 0;		
+	}
+
+	[type="button"]{
+		font-size: 23px;
+		padding: 15px;		
+	}
+
+}
 /**/
 #app-control {
 	background-color: #FFF;
 	bottom: 0;
 	color: #666;
-	display: block;
+	display: none;
 	height: 100%;
 	left: 0;
 	overflow: hidden;
@@ -389,5 +440,12 @@ a {
     display: block;
     font-size: 14px;
     margin-bottom: 10px;	
+}
+
+.form-error{
+	color: red;
+	display: none;
+	font-size: 12px;
+	margin-bottom: 10px;
 }
 /**/

@@ -10,47 +10,40 @@
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="/css/jquery-ui.min.css" >
         <link rel="stylesheet" href="/css/jquery-ui.structure.min.css" >
-        <link rel="stylesheet" href="/css/jquery-ui.theme.min.css" >  		
+		<link rel="stylesheet" href="/css/jquery-ui.theme.min.css" >
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">				
 		<link rel="stylesheet" href="css/styles.css?v=1.0">
 	</head>
 	<body>
 		<?php include_once("include/include_libraries.php"); ?>
 		<div id="template-cont"></div>
 		<div id="app">
-			<div id="app-cover">
-				<div id="app-cover-start">
-					<div>
-						<img src="Templates/Thumb.png" />
-						<h1>Crea tu página web<br /> en 5 minutos</h1>
-						<p>Para continuar necesitamos una cuenta nueva para tí </p>
-						<label>
-							Nombre de tu página:<br />
-							<span class="form-label-note">
-								(Solo números y leras, sin espacios.)
-							</span>							
-							<input type="text" name="nombre" id="nombre" value="Web2b" />
-						</label>
-						<label>
-							Correo: <br />
-							<input type="email" name="correo" id="correo" value="contacto@web2b.mx" />
-						</label>
-						<label>
-							Contraseña: <br />
-							<span class="form-label-note">
-								(Mínimo 6 caracteres, con al menos una letra y un número)
-							</span>
-							<input type="password" name="password" id="password" value="" />
-						</label>
-						<span class="form-error name-invalid">Nombre de página inválido</span>						
-						<span class="form-error empty-fields">Los campos están vacios</span>
-						<span class="form-error not-email">El email is inválido</span>
-						<span class="form-error password-invalid">
-							La contraseña debe ser de al menos 6 caracteres incluyendo al menos un número y una letra
-						</span>
-						<span class="form-error invalid-response"></span>
-						<input type="button" name="start" value="¡Comienza ya!" />						
-					</div>
+			<div class="app-new-start dialog" style="display: none">
+				<img src="/img/logo.png" />	
+				<div>
+					<i class="fas fa-font"></i>		
+					<input type="text" name="nombre" id="nombre" value="Web2b" placeholder="Nombre de tu página" />
 				</div>
+				<div>
+					<i class="fas fa-envelope"></i>
+					<input type="email" name="correo" id="correo" value="contacto@web2b.mx" placeholder="Correo" />
+				</div>
+				<div>
+					<i class="fas fa-asterisk"></i>
+					<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+				</div>
+				<p>Crea tu página web en 5 minutos </p>
+				<span class="form-error name-invalid">Nombre de página inválido: Solo números y letras, sin espacios son permitidos.</span>						
+				<span class="form-error empty-fields">Los campos están vacios</span>
+				<span class="form-error not-email">El email is inválido</span>
+				<span class="form-error password-invalid">
+					La contraseña debe ser de al menos 6 caracteres incluyendo al menos un número y una letra
+				</span>
+				<span class="form-error invalid-response"></span>
+				<input type="button" name="start" value="¡Comienza ya!" />						
+			</div>			
+			<div id="app-cover">
 				<div id="app-cover-finish" style="display: none;">
 					<div>
 						<h1>¡Terminamos!</h1>

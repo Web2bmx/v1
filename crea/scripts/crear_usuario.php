@@ -27,14 +27,23 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
         //ya existe usuario
         while ($fila = $resultado->fetch_assoc()) {
             $id = $fila["Id"];
+            $nombre =$fila["nombre"];
+            $hashed_pass=$fila["password"];            
             $exists = true;
         }  
+
+        if (!password_verify($password, $hashed_pass)) {
+            echo '{"ok":0,"error":"Este usuario ya existe, pero la contraseña es incorrecta."}';
+            http_response_code(200);
+            exit;   
+        }    
+
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO `usuarios` (`Id`, `nombre`, `correo`,`password` ) VALUES ('" . $id . "', '" . $nombre . "', '" . $correo . "','" . $hashed_password . "')";    
         if($dbh->query($sql)!==TRUE){ 
             echo '{"ok": 0, "mensaje": "Error al insertar usuario nuevo"}';
-            http_response_code(400);
+            http_response_code(200);
             exit;
         } 
     }
@@ -43,7 +52,7 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
     $sql = "INSERT INTO `info_paginas` (`IdUsuario`, `info`) VALUES ('" . $id . "', '" . $info . "')";
     if($dbh->query($sql)!==TRUE){ 
         echo '{"ok": 0, "mensaje": "Error al insertar información de nueva página"}';
-        http_response_code(400);
+        http_response_code(200);
         exit;
     } else{
         echo '{"ok": 1, "userId": "' . $id . '","idSitio":"' . $dbh->insert_id . '","exists":"' . $exists . '"}';
@@ -52,5 +61,5 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
 
 } else {
     echo '{"ok": 0, "mensaje": "Error al recibir datos de formulario"}';
-    http_response_code(400);
+    http_response_code(200);
 }

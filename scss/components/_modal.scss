@@ -5,21 +5,18 @@
 .ui-widget.ui-widget-content {
 	border: none;
 	padding: 0;
-}
+	border-radius: 10px;
 
-@include breakpoint($tablet){
-	.ui-widget.ui-widget-content {
+	@include breakpoint($tablet){
 		max-width: 640px;
 		max-height: 760px;
 	}
-	.ui-dialog .ui-dialog-content.dialog {
-		max-width: 640px !important;
-		max-height: 760px !important;
-	}	
+	
 }
 
 .ui-dialog .ui-dialog-content.dialog {
 	max-height: 760px;
+	max-width: 100% !important;
 
 	@include breakpoint($tablet){
 		max-width: 640px !important;
@@ -30,5 +27,10 @@
 		max-height: 600px !important;
 	}	
 	
+}
+
+.ui-widget-overlay {
+    background: #000;
+	opacity: .5;
 }
 

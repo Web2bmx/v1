@@ -21,8 +21,7 @@ if (!empty($_POST) && $id && $info){
             exit;
         } 
 
-
-        echo '{"ok":1,"paginas" : ' . json_encode($paginas) . ', "userId": "' . $id . '" }';
+        echo '{"ok":1}';
         http_response_code(200);
         exit;                 
     } else {

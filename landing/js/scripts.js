@@ -34,7 +34,9 @@ $(document).ready(function() {
 		$(".login-content").show();
 		$(".login-success").hide();
 		$(".login-error").hide();		
-		$(".ventana-login").dialog( "open" ); 
+		$(".ventana-login").dialog( "open" );
+		$("#email").val("contacto@web2b.mx");
+		$("#password").val("");
 	  });	
 		$(".cerrar-ventana").click(function(){
 			$(".ventana-login").dialog( "close" ); 
@@ -42,7 +44,7 @@ $(document).ready(function() {
 		$(".entrar").click(function(){
 			if($("#email").val().trim() == "" || !isEmail($("#email").val())){
 				$(".login-content .email.error").show();
-			} if(!$("#password").val()){
+			} if(!$("#password").val().trim()){
 				$(".login-content .password.error").show();
 			} else {
 				$.post("/landing/scripts/login.php",{
@@ -57,13 +59,14 @@ $(document).ready(function() {
 							// manejar varias paginas de un solo usuario??
 
 							//mostrar usuarios
-							localStorage.setItem("web2b_template", JSON.stringify(response.paginas[0].info));
+							localStorage.setItem("web2b_template", response.paginas[0].info);
 							localStorage.setItem("web2b_templateId", 1);
-							localStorage.setItem("web2b_userId", JSON.stringify(response.userId));
+							localStorage.setItem("web2b_userId", response.userId);
 							window.location.href = "/crea";
 						} else {
 							$(".login-content .error").hide();
 							$(".login-content").fadeOut(100);
+							$(".login-error p").html(response.error);
 							$(".login-error").fadeIn(100);
 						}
 					})

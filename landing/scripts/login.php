@@ -22,7 +22,7 @@ if (!empty($_POST) && $correo && $password){
         } 
 
         if (!password_verify($password, $hashed_pass)) {
-            echo '{"ok":0,"error":"Contraseña incorrecta"}';
+            echo '{"ok":0,"error":"Usuario o Contraseña incorrecta."}';
             http_response_code(200);
             exit;   
         } else {
@@ -52,7 +52,7 @@ if (!empty($_POST) && $correo && $password){
 
 
     } else {
-        echo '{"ok":0,"error":"Correo no existe"}';
+        echo '{"ok":0,"error":"Usuario o Contraseña incorrecta."}';
         http_response_code(200);
         exit;        
     }
