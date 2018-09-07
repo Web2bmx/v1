@@ -266,9 +266,7 @@ export default function creator () {
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
 		$("[name='start']").on("click", function() {
-			// $("#app-cover").hide();
-			// $("#app-cover-start").hide();
-			// $("#app-cover-finish").show();
+			$(".form-error").hide();
 			if($("#nombre").val().trim() == "" || 
 				$("#correo").val().trim() == "" || 
 				$("#password").val().trim() == ""){
@@ -277,9 +275,9 @@ export default function creator () {
 				$(".name-invalid").show();
 			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
-			}/*else if(!validPassword($("#password").val())){
+			}else if(!validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
-				}*/ else {
+				} else {
 					$.post("scripts/crear_usuario.php",{
 						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),
@@ -287,11 +285,8 @@ export default function creator () {
 						info: JSON.stringify(jd)
 					}).done(function(result){						
 						if(!result.ok){
-							$(".alert.dialog p").html(result.error);
-							$(".alert.dialog").dialog( "open" );
-							$("#ok_btn").on("click.exists",function(){
-								$("#ok_btn").off("click.exists");
-							});
+							$(".otherMsgs").html(result.error);
+							$(".otherMsgs").css("display","block");
 						}else{
 							startTemplateProcess(result);
 						}				

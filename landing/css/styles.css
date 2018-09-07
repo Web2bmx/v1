@@ -535,8 +535,7 @@ and open the template in the editor.
 button,
 .boton,
 a.boton,
-a.boton:visited
-a.boton:link,
+a.boton:visited a.boton:link,
 input[type='button'] {
   padding: 10px;
   background-color: #cc2880;
@@ -590,6 +589,92 @@ input[type='button'] {
 .ui-widget-overlay {
   background: #000;
   opacity: .5;
+}
+
+.modal-login, .ventana-login {
+  margin: 20px;
+}
+
+.modal-login *, .ventana-login * {
+  box-sizing: border-box;
+}
+
+.modal-login img, .ventana-login img {
+  display: block;
+  height: auto;
+  margin: 1em auto;
+  max-width: 50%;
+  width: 10em;
+}
+
+.modal-login input, .ventana-login input, .modal-login button, .ventana-login button {
+  width: 100%;
+}
+
+.modal-login p, .ventana-login p {
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.modal-login [type="button"], .ventana-login [type="button"] {
+  font-size: 23px;
+  padding: 15px;
+}
+
+.modal-login .x-close, .ventana-login .x-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #CCC;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-login .x-close:hover, .ventana-login .x-close:hover {
+  color: #999;
+}
+
+.inputWihIcons {
+  border-radius: 10px;
+  background-color: #EEE;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #DDD;
+}
+
+.inputWihIcons [type="text"],
+.inputWihIcons [type="email"],
+.inputWihIcons [type="password"] {
+  padding: 15px;
+  background-color: white;
+  float: left;
+  width: calc(100% - 62px);
+  border: none;
+  outline: none;
+  height: 55px;
+}
+
+.inputWihIcons i {
+  line-height: 1.15;
+  font-size: 22px;
+  padding: 15px;
+  display: block;
+  float: left;
+  color: #999;
+  width: 62px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  height: 55px;
+}
+
+.form-error {
+  color: red;
+  display: none;
+  font-size: 12px;
+  margin: 10px 0;
+  text-align: center;
 }
 
 /*1920x1080*/
@@ -1048,7 +1133,7 @@ footer menu li {
   /**/
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1040px) {
   a.cta, input.cta {
     padding: .8rem 1.8rem;
     font-size: 1rem;
@@ -1185,21 +1270,17 @@ footer menu li {
 }
 
 /*Modal*/
-.ventana-login {
-  text-align: center;
+.ventana-login .login-paginas li {
+  padding: 5px 0;
 }
 
-.ventana-login p {
-  font-weight: bold;
+.ventana-login .login-paginas li a {
+  color: #666;
+  cursor: pointer;
 }
 
-.ventana-login input {
-  display: inline-block;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 5px;
-  font-size: 14px;
+.ventana-login .login-paginas li a:hover {
+  color: #333;
 }
 
 /*Botones*/
@@ -1209,11 +1290,6 @@ footer menu li {
 
 .left {
   float: left;
-}
-
-.error {
-  color: #ff0000;
-  font-size: 12px;
 }
 
 /*# sourceMappingURL=styles.css.map */

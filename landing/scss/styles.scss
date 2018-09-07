@@ -9,6 +9,9 @@
 @import "../../scss/components/_stars";
 @import "../../scss/components/_buttons";
 @import "../../scss/components/_modal";
+@import "../../scss/components/_inputFields"; 
+
+@import "../../scss/partials/_errors";
 
 /*1920x1080*/
 /*1366x768*/
@@ -325,7 +328,6 @@ body {
 	p {
 	  font-size: 2rem;
 	}
-	form {}
 	input[type="email"] {
 	  width: 24rem;
 	  padding: .6rem .8rem;
@@ -458,7 +460,7 @@ body {
 	/**/
   }
   
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 1040px) {
 	a.cta, input.cta {
 	  padding: .8rem 1.8rem;
 	  font-size: 1rem;
@@ -602,21 +604,22 @@ body {
   
   /*Modal*/  
   .ventana-login {
-		text-align: center;
+		@extend .modal-login;
 
-		p {
-			font-weight: bold;
-		}
+		.login-paginas li{
+			padding: 5px 0;
 
-		input {
-			display: inline-block;
-			margin-bottom: 20px;
-			border-radius: 5px;
-			border: 1px solid #ccc;
-			padding: 5px;
-			font-size: 14px;
+			a{
+				color: #666;
+				cursor: pointer;
+
+				&:hover{
+					color: #333;
+				}
+
+			}
+
 		}
-		
   }
   
   /*Botones*/  
@@ -628,7 +631,3 @@ body {
 	float: left;
   }
   
-  .error {
-	color: #ff0000;
-	font-size: 12px;
-  }

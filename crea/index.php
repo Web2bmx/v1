@@ -21,22 +21,23 @@
 		<div id="app">
 			<div class="app-new-start dialog" style="display: none">
 				<img src="/img/logo.png" />	
-				<div>
+				<div class="inputWihIcons">
 					<i class="fas fa-font"></i>		
 					<input type="text" name="nombre" id="nombre" value="Web2b" placeholder="Nombre de tu página" />
 				</div>
-				<div>
+				<div class="inputWihIcons">
 					<i class="fas fa-envelope"></i>
 					<input type="email" name="correo" id="correo" value="contacto@web2b.mx" placeholder="Correo" />
 				</div>
-				<div>
+				<div class="inputWihIcons">
 					<i class="fas fa-asterisk"></i>
 					<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
 				</div>
 				<p>Crea tu página web en 5 minutos </p>
 				<span class="form-error name-invalid">Nombre de página inválido: Solo números y letras, sin espacios son permitidos.</span>						
-				<span class="form-error empty-fields">Los campos están vacios</span>
+				<span class="form-error empty-fields">Alguno de los campos están vacios</span>
 				<span class="form-error not-email">El email is inválido</span>
+				<span class="form-error otherMsgs"></span>
 				<span class="form-error password-invalid">
 					La contraseña debe ser de al menos 6 caracteres incluyendo al menos un número y una letra
 				</span>
@@ -264,14 +265,7 @@
 					</nav>
 				</div>	
 			</div>
-		</div>
-		<div class="alert dialog">
-			<p class="mensaje">				
-			</p>
-			<a href="#" id="ok_btn" class="boton">
-				¡Entendido!
-			</a>                                    
-		</div> 		
+		</div>	
 		<?php include_once("include/include_html_templates.php"); ?>
 		<?php include_once("include/include_chat.php"); ?>
 	</body>

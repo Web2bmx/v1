@@ -6,10 +6,11 @@
 
 @import "../../scss/mixins/_border-radius"; 
  
-@import "../../scss/components/_modal"; 
+@import "../../scss/components/_modal";
 @import "../../scss/components/_buttons"; 
+@import "../../scss/components/_inputFields"; 
 
-
+@import "../../scss/partials/_errors";
 /**/
 body { 
 	background-color: #666;
@@ -84,74 +85,14 @@ a {
 }
 
 .app-new-start { 
-	margin: 20px;
-
-	*{
-		box-sizing: border-box;
-	}
-	
-	img {
-	display: block;
-	height: auto;
-	margin: 1em auto;
-	max-width: 50%;
-	width: 10em;
-	}
-
-	input{
-		width: 100%;
-
-		&[type="text"],
-		&[type="email"],
-		&[type="password"]{
-			padding: 15px;
-			background-color: white;
-			float: left;
-			width: calc(100% - 62px);
-			border: none;
-			outline: none;
-		}
-	}
-
-	i{
-		line-height: 1.15;
-		font-size: 22px;
-		padding: 15px;
-		display: block;
-		float: left;
-		color: #999;
-		width: 62px;
-		border-right: 1px solid #DDD;
-		text-align: center;
-	}
-
-	div{
-		border-radius: 10px;
-		background-color: #EEE;
-		margin-bottom: 10px;
-		overflow: hidden;
-		border: 1px solid #DDD;
-	}
-
-	p{
-		text-align: center;
-		font-size: 18px;
-		color: #000;
-		margin: 25px 0;		
-	}
-
-	[type="button"]{
-		font-size: 23px;
-		padding: 15px;		
-	}
-
+	@extend .modal-login;
 }
 /**/
 #app-control {
 	background-color: #FFF;
 	bottom: 0;
 	color: #666;
-	display: none;
+	display: block;
 	height: 100%;
 	left: 0;
 	overflow: hidden;
@@ -442,10 +383,4 @@ a {
     margin-bottom: 10px;	
 }
 
-.form-error{
-	color: red;
-	display: none;
-	font-size: 12px;
-	margin-bottom: 10px;
-}
 /**/

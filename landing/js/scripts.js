@@ -32,8 +32,8 @@ $(document).ready(function() {
 	  $(".login-btn").click(function(e){
 		e.preventDefault();
 		$(".login-content").show();
-		$(".login-success").hide();
-		$(".login-error").hide();		
+		$(".login-error").hide();
+		$(".ventana-login").dialog( "option", "width", 400 );		
 		$(".ventana-login").dialog( "open" );
 		$("#email").val("contacto@web2b.mx");
 		$("#password").val("");
@@ -43,28 +43,40 @@ $(document).ready(function() {
 		});
 		$(".entrar").click(function(){
 			if($("#email").val().trim() == "" || !isEmail($("#email").val())){
-				$(".login-content .email.error").show();
+				$(".login-content .email.form-error").css("display","block");
 			} if(!$("#password").val().trim()){
-				$(".login-content .password.error").show();
+				$(".login-content .password.form-error").css("display","block");
 			} else {
 				$.post("/landing/scripts/login.php",{
 					correo: $("#email").val().trim(),					
 					password: $("#password").val()
 				})
 					.done(function(response){
-						if(response.ok){
-							$(".login-content .error").hide();
-							$(".login-content").fadeOut(100);
-							$(".login-success").fadeIn(100);
-							// manejar varias paginas de un solo usuario??
-
-							//mostrar usuarios
-							localStorage.setItem("web2b_template", response.paginas[0].info);
-							localStorage.setItem("web2b_templateId", 1);
-							localStorage.setItem("web2b_userId", response.userId);
-							window.location.href = "/crea";
+						if(response.ok && response.paginas.length > 0){
+							// si solo tiene una pagina
+							if(response.paginas.length == 1) {
+								//mostrar usuarios
+								localStorage.setItem("web2b_template", response.paginas[0].info);
+								localStorage.setItem("web2b_templateId", 1);
+								localStorage.setItem("web2b_userId", response.userId);
+								window.location.href = "/crea";
+							} else {
+								// manejar varias paginas de un solo usuario??
+								let html = "";
+								let pags = response.paginas;
+								for(let i=0; i < pags.length; i++){
+									html += 
+									`<li>
+										<a data-sitio="${pags[i].idSitio}">
+											Pagina: ${pags[i].idSitio}
+										</a>
+									</li>`;
+								}
+								$(".login-paginas ul").html(html);
+								$(".ventana-login > div").hide();
+								$(".login-paginas").show();
+							}
 						} else {
-							$(".login-content .error").hide();
 							$(".login-content").fadeOut(100);
 							$(".login-error p").html(response.error);
 							$(".login-error").fadeIn(100);
@@ -73,7 +85,7 @@ $(document).ready(function() {
 					.fail(function(response){
 
 					}).always(function(){
-						$(".login-content .error").hide();
+						$(".login-content .form-error").hide();
 					});
 			}
 		});		

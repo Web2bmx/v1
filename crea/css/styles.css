@@ -501,12 +501,56 @@ and open the template in the editor.
   opacity: .5;
 }
 
+.modal-login, .app-new-start {
+  margin: 20px;
+}
+
+.modal-login *, .app-new-start * {
+  box-sizing: border-box;
+}
+
+.modal-login img, .app-new-start img {
+  display: block;
+  height: auto;
+  margin: 1em auto;
+  max-width: 50%;
+  width: 10em;
+}
+
+.modal-login input, .app-new-start input, .modal-login button, .app-new-start button {
+  width: 100%;
+}
+
+.modal-login p, .app-new-start p {
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.modal-login [type="button"], .app-new-start [type="button"] {
+  font-size: 23px;
+  padding: 15px;
+}
+
+.modal-login .x-close, .app-new-start .x-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #CCC;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-login .x-close:hover, .app-new-start .x-close:hover {
+  color: #999;
+}
+
 /*Botones*/
 button,
 .boton,
 a.boton,
-a.boton:visited
-a.boton:link,
+a.boton:visited a.boton:link,
 input[type='button'] {
   padding: 10px;
   background-color: #cc2880;
@@ -520,6 +564,47 @@ input[type='button'] {
   border-radius: 5px;
   border: none;
   outline: none;
+}
+
+.inputWihIcons {
+  border-radius: 10px;
+  background-color: #EEE;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #DDD;
+}
+
+.inputWihIcons [type="text"],
+.inputWihIcons [type="email"],
+.inputWihIcons [type="password"] {
+  padding: 15px;
+  background-color: white;
+  float: left;
+  width: calc(100% - 62px);
+  border: none;
+  outline: none;
+  height: 55px;
+}
+
+.inputWihIcons i {
+  line-height: 1.15;
+  font-size: 22px;
+  padding: 15px;
+  display: block;
+  float: left;
+  color: #999;
+  width: 62px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  height: 55px;
+}
+
+.form-error {
+  color: red;
+  display: none;
+  font-size: 12px;
+  margin: 10px 0;
+  text-align: center;
 }
 
 /**/
@@ -606,73 +691,12 @@ a {
   padding: 2em;
 }
 
-.app-new-start {
-  margin: 20px;
-}
-
-.app-new-start * {
-  box-sizing: border-box;
-}
-
-.app-new-start img {
-  display: block;
-  height: auto;
-  margin: 1em auto;
-  max-width: 50%;
-  width: 10em;
-}
-
-.app-new-start input {
-  width: 100%;
-}
-
-.app-new-start input[type="text"], .app-new-start input[type="email"], .app-new-start input[type="password"] {
-  padding: 15px;
-  background-color: white;
-  float: left;
-  width: calc(100% - 62px);
-  border: none;
-  outline: none;
-}
-
-.app-new-start i {
-  line-height: 1.15;
-  font-size: 22px;
-  padding: 15px;
-  display: block;
-  float: left;
-  color: #999;
-  width: 62px;
-  border-right: 1px solid #DDD;
-  text-align: center;
-}
-
-.app-new-start div {
-  border-radius: 10px;
-  background-color: #EEE;
-  margin-bottom: 10px;
-  overflow: hidden;
-  border: 1px solid #DDD;
-}
-
-.app-new-start p {
-  text-align: center;
-  font-size: 18px;
-  color: #000;
-  margin: 25px 0;
-}
-
-.app-new-start [type="button"] {
-  font-size: 23px;
-  padding: 15px;
-}
-
 /**/
 #app-control {
   background-color: #FFF;
   bottom: 0;
   color: #666;
-  display: none;
+  display: block;
   height: 100%;
   left: 0;
   overflow: hidden;
@@ -1001,13 +1025,6 @@ a {
 .form-label-note {
   display: block;
   font-size: 14px;
-  margin-bottom: 10px;
-}
-
-.form-error {
-  color: red;
-  display: none;
-  font-size: 12px;
   margin-bottom: 10px;
 }
 

@@ -592,6 +592,59 @@ input[type='button'] {
   opacity: .5;
 }
 
+.modal-login {
+  margin: 20px;
+}
+
+.modal-login * {
+  box-sizing: border-box;
+}
+
+.modal-login img {
+  display: block;
+  height: auto;
+  margin: 1em auto;
+  max-width: 50%;
+  width: 10em;
+}
+
+.modal-login input, .modal-login button {
+  width: 100%;
+}
+
+.modal-login p {
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.modal-login [type="button"] {
+  font-size: 23px;
+  padding: 15px;
+}
+
+.modal-login .x-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #CCC;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-login .x-close:hover {
+  color: #999;
+}
+
+.form-error {
+  color: red;
+  display: none;
+  font-size: 12px;
+  margin: 10px 0;
+  text-align: center;
+}
+
 .background,
 .main-container {
   position: fixed;
@@ -1081,14 +1134,6 @@ textarea {
 
 .dialog p {
   font-weight: bold;
-}
-
-.error {
-  display: block;
-  font-size: 12px;
-  margin-top: 5px;
-  color: red;
-  font-weight: 100;
 }
 
 /*# sourceMappingURL=tour.css.map */

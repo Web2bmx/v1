@@ -34,3 +34,47 @@
 	opacity: .5;
 }
 
+.modal-login{
+	margin: 20px;
+
+	*{
+		box-sizing: border-box;
+	}
+	
+	img {
+		display: block;
+		height: auto;
+		margin: 1em auto;
+		max-width: 50%;
+		width: 10em;
+	}
+
+	input, button{
+		width: 100%;
+	}
+
+	p{
+		text-align: center;
+		font-size: 18px;
+		color: #000;
+		margin: 25px 0;		
+	}
+
+	[type="button"]{
+		font-size: 23px;
+		padding: 15px;		
+	}
+
+	.x-close{
+		position: absolute;
+		right: 0;
+		top: 0;
+		color: #CCC;
+		font-size: 22px;
+		cursor: pointer;
+
+		&:hover{
+			color: #999;
+		}
+	}
+}

@@ -10,7 +10,9 @@
 @import "../../scss/components/_stars";
 @import "../../scss/components/_buttons";
 @import "../../scss/components/_modal"; 
- 
+
+@import "../../scss/partials/_errors";
+
 .background,
 .main-container{
 	position: fixed;
@@ -464,12 +466,4 @@ textarea{
         font-weight: bold;
     }
 
-}
-
-.error{
-    display: block;
-    font-size: 12px;
-    margin-top: 5px;
-    color: red;
-    font-weight: 100;    
 }
