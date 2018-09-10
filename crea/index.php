@@ -83,26 +83,6 @@
 				</div>
 			</div>
 			<div id="app-control">
-			<div class="app-control-step">
-					<div>
-						<p>¿De qué es tu Negocio?</p>
-						<div>
-							<select id="inp-business-type" name="inp-business-type">
-								<option value="people fun">&nbsp;</option>
-								<option value="architecture design">Despacho de Arquitectura o Diseño</option>
-								<option value="women beauty">Estética</option>
-								<option value="medicine health">Farmacia</option>
-								<option value="construction building materials">Ferretería</option>
-								<option value="italian food">Restaurante italiano</option>
-								<option value="mexican food">Restaurante mexicano</option>
-								<option value="business excecutive">Servicios profesionales</option>
-								<option value="car carshop">Taller mecánico</option>
-								<option value="groceries store">Tienda de abarrotes</option>
-								<option value="gift shop">Tienda de regalos</option>
-							</select>
-						</div>
-					</div>
-				</div>
 				<div class="app-control-step">
 					<div>
 						<h2>Primero escribe el nombre de tu Negocio</h2>

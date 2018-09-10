@@ -69,7 +69,7 @@ export default function creator () {
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
 			lastKeyPressed = e.keyCode || e.which;
-			if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
+			/* if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
 				goToByScroll($(document), 800);
 			} else {
 				goToByScroll($(document), 0);
@@ -78,7 +78,7 @@ export default function creator () {
 				$("#app-control").addClass("top");
 			} else {
 				$("#app-control").removeClass("top");
-			}
+			} */
 			updateTemplate();
 		});
 		/*ADD ITEMS*/
@@ -130,9 +130,10 @@ export default function creator () {
 			url: "xml/sample_colors.xml",
 			dataType: "xml",
 			success: function(data) {
-				let $xml = $(data),
-					$palettes = $xml.find("palette"),
-					t = $palettes.length;
+				let $xml, t; 
+				$xml =$(data);
+				$palettes = $xml.find("palette");
+				t = $palettes.length;
 				for (let i = 0; i < $palettes.length; i++) {
 					var $control_color = $(".template.control-color").clone();
 					if (i == 0) {
@@ -160,12 +161,7 @@ export default function creator () {
 				});
 				sample_colors_ready = true;
 			}
-		});			
-
-		/*IMAGENES*/
-		$("#inp-business-type").on("change", function() {
-			setImageSelection($(this).val());
-		});		
+		});	
 		
 		/*DESIGN*/
 		$(".control-design-thumb img").on('click', function() {
@@ -288,10 +284,9 @@ export default function creator () {
 							$(".otherMsgs").html(result.error);
 							$(".otherMsgs").css("display","block");
 						}else{
+							$(".app-new-start.dialog").dialog('close');
 							startTemplateProcess(result);
 						}				
-						//translate data
-						translateData(jd);
 					}).fail(function(result){
 						response = JSON.parse(result.responseText);
 						$(".invalid-response").text("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + response.mensaje);
@@ -335,6 +330,9 @@ export default function creator () {
 		localStorage.setItem("web2b_templateId", data.idSitio);
 		localStorage.setItem("web2b_userId", data.userId);		
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
+
+		//translate data
+		translateData(jd);		
 
 		//load previous content
 		var selections = jd.selections;
@@ -534,14 +532,14 @@ export default function creator () {
 		return s;
 	}
 
-	var translateData = function(data){
+	var translateData = function(info){
 		$.ajax({
 			url: "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=en",
 			headers: {
 				'Ocp-Apim-Subscription-Key': 'facf28fe7a39442883ab1970bc9348ac',
 				'Content-Type': 'application/json'
 			},
-			data: JSON.stringify ([{'Text' : /*data.respuestas[0].respuesta*/"Abarrotes" }]),
+			data: JSON.stringify ([{'Text' : info.respuestas[5].respuesta }]),
 			method: 'POST'
 		  }).done(function(data) {
 			if(data){
