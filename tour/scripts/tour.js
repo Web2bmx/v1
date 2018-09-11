@@ -16,16 +16,16 @@ function muestraPregunta(pregunta){
 
 
 function darSalto(selector, pregunta){
-    selOffset = $(selector).offset();
-    selHeight = $(selector).height();
-    selWidth = $(selector).width();
-    dheight = $(document).height();
-    dif = dheight-selWidth;
-    rocketHeight = $(".rocket > img").height();
-    rocketWidth = $(".rocket > img").width();
-    containerBottom = $('.main-container > div').css("bottom").replace("px","");
+    let selOffset = $(selector).offset();
+    let selHeight = $(selector).height();
+    let selWidth = $(selector).width();
+    let dheight = $(document).height();
+    let dif = dheight-selWidth;
+    let rocketHeight = $(".rocket > img").height();
+    let rocketWidth = $(".rocket > img").width();
+    let containerBottom = $('.main-container > div').css("bottom").replace("px","");
     
-    selPos = $(selector).position();
+    let selPos = $(selector).position();
 
     $(".rocket").animate({
         top: selPos.top + ((selHeight/2)-(rocketHeight/2)),

@@ -7,8 +7,8 @@
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "breakpoint-sass": "2.7.1",
-    "grunt": "1.0.3",
-    "grunt-contrib-watch": "1.0.0",
+    "grunt": "^1.0.3",
+    "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "2.1.0",
     "normalize-scss": "7.0.0"
   },

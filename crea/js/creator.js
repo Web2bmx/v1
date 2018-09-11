@@ -1,4 +1,3 @@
-
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let windowObjectReference = null,
@@ -262,6 +261,7 @@ export default function creator () {
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
 		$("[name='start']").on("click", function() {
+			console.log("click");
 			$(".form-error").hide();
 			if($("#nombre").val().trim() == "" || 
 				$("#correo").val().trim() == "" || 
@@ -272,6 +272,7 @@ export default function creator () {
 			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 			}else if(!validPassword($("#password").val())){
+					console.log("pass");
 					$(".password-invalid").css("display","block");
 				} else {
 					$.post("scripts/crear_usuario.php",{
@@ -280,6 +281,7 @@ export default function creator () {
 						password: $("#password").val(),
 						info: JSON.stringify(jd)
 					}).done(function(result){						
+						console.log(result);
 						if(!result.ok){
 							$(".otherMsgs").html(result.error);
 							$(".otherMsgs").css("display","block");
@@ -358,6 +360,7 @@ export default function creator () {
 	var updateContent = function () {
 		var $this = $(this);
 		var $template = $("#template");
+		var selections = jd.selections || {};
 		/*Colores*/
 		if (sample_colors_ready) {
 			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
@@ -397,23 +400,30 @@ export default function creator () {
 			var $this = $(this);
 			var i_id = $this.attr("id");
 			var v_id = i_id.replace("inp", "val");
-			if ($this.val() != "") {
-				$template.find("#" + v_id).show().closest(".footer-column").show();
+			selections[i_id] = selections[i_id] || {};
+			selections[i_id].type = "text";
+			if (($this.val() != "") || (selections[i_id].text != undefined)) {
+				if (($this.val() != "")) {
+					selections[i_id].text = $this.val();
+					$template.find("#" + v_id).show().closest(".footer-column").show();
+				} else {
+					$this.val(selections[i_id].text);
+				}
 				switch (i_id) {
 					case "inp-contact-email" :
-						$template.find("#val-contact-email").html("<a href='mailto:" + $this.val() + "'>" + $this.val() + "</a>");
+						$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id].text + "'>" + selections[i_id].text + "</a>");
 						break;
 					case "inp-contact-map" :
-						$template.find("#val-contact-map").html($this.val());
+						$template.find("#val-contact-map").html(selections[i_id].text);
 						break;	
 					case "inp-contact-facebook" :
-						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + selections[i_id].text + '</a>');
 						break;	
 					case "inp-contact-twitter" :
-						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
+						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + selections[i_id].text + '</a>');
 						break;	
 					default : 
-						$template.find("#" + v_id).html($this.val());
+						$template.find("#" + v_id).html(selections[i_id].text);
 						break;
 				}
 			} else {
@@ -440,15 +450,13 @@ export default function creator () {
 			$template.find(n_name).attr("class", ("img-cont img-MC img-L")).css({
 				"background-image" : ("url(" + img_src + ")")
 			});
-
 			//Save selection to object
-			var selections = jd.selections || {};
 			selections[n_name] = selections[n_name] || {};
 			selections[n_name].type = "image";
 			selections[n_name].img = img_src;
-			jd.selections = selections;
-			saveWeb2bJson();			
 		});
+		jd.selections = selections;
+		saveWeb2bJson();
 	};
 	var updateTemplate = function () {
 		var id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
