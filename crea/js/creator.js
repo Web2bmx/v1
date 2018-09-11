@@ -115,6 +115,7 @@ export default function creator () {
 			$this.prop('checked', false);
 			$("#inp-content-item-add-n").trigger("click");
 		});
+
 		/*TOOLTIPS*/
 		$(".app-control-step-tooltip-info").prev("*").append($(".app-control-step-tooltip.template").clone().removeClass("template"));
 		$(".app-control-step-tooltip").click(function() {
@@ -126,6 +127,8 @@ export default function creator () {
 			}
 		});
 		/*EO TOOLTIPS*/
+
+		/* LOAD COLORS */
 		$.ajax({
 			url: "xml/sample_colors.xml",
 			dataType: "xml",
@@ -163,7 +166,7 @@ export default function creator () {
 			}
 		});	
 		
-		/*DESIGN*/
+		/* TEMPLATE DESIGN*/
 		$(".control-design-thumb img").on('click', function() {
 			var $this = $(this);
 			$this.closest(".control-desing-cont").find(".control-design-thumb img").removeClass("thumb-selected");
@@ -182,6 +185,7 @@ export default function creator () {
 	};
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
+
 		//Check if there are already images upload from user
 		var imagenes = jd.imagenes;
 		if(imagenes){
@@ -199,6 +203,8 @@ export default function creator () {
 				}
 			}
 		}
+
+		/* LOAD IMAGES FROM UNSPLASH */
 		$.getJSON("https://api.unsplash.com/photos/search",{
 			client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
 			query: ide,
@@ -261,6 +267,8 @@ export default function creator () {
 			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
+
+		/* ON NEW PAGE */
 		$("[name='start']").on("click", function() {
 			$(".form-error").hide();
 			if($("#nombre").val().trim() == "" || 
@@ -296,6 +304,7 @@ export default function creator () {
 			}
 	
 		});
+
 		$("[name='finish']").on("click", function() {
 			current_step --;
 			$("#app-cover").hide();
@@ -338,10 +347,16 @@ export default function creator () {
 		var selections = jd.selections;
 		if(selections){
 			for(var key in selections){
-				if(selections[key].type == "image"){
-					$(key).attr("class", ("img-cont img-MC img-L")).css({
-						"background-image" : ("url(" + selections[key].img + ")")
-					});					
+				switch(selections[key].type){
+					case "image":
+						$(key).attr("class", ("img-cont img-MC img-L")).css({
+							"background-image" : ("url(" + selections[key].img + ")")
+						});	
+					break;
+					case "text":
+						let input = key.replace("val", "inp");
+						$(input).html(selections[key].text);
+					break;
 				}
 			}
 		}
@@ -355,9 +370,11 @@ export default function creator () {
 		goToByScroll($("#app-control"), 0);
 	}; 
 	var showAppCover = function () { $("#app-cover").show(); };
+
 	var updateContent = function () {
 		var $this = $(this);
 		var $template = $("#template");
+
 		/*Colores*/
 		if (sample_colors_ready) {
 			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
@@ -392,6 +409,7 @@ export default function creator () {
 				"color" : $palette.find("bottom>fore").html()
 			});
 		}
+
 		/*Content & Contacto*/
 		$("[id^='inp-contact-'], [id^='inp-content-']").each(function() {
 			var $this = $(this);
@@ -412,8 +430,9 @@ export default function creator () {
 					case "inp-contact-twitter" :
 						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + $this.val() + '">' + $this.val() + '</a>');
 						break;	
-					default : 
+					default :
 						$template.find("#" + v_id).html($this.val());
+						saveSelected("#" + i_id,$this.val(),'text');
 						break;
 				}
 			} else {
@@ -440,16 +459,10 @@ export default function creator () {
 			$template.find(n_name).attr("class", ("img-cont img-MC img-L")).css({
 				"background-image" : ("url(" + img_src + ")")
 			});
-
-			//Save selection to object
-			var selections = jd.selections || {};
-			selections[n_name] = selections[n_name] || {};
-			selections[n_name].type = "image";
-			selections[n_name].img = img_src;
-			jd.selections = selections;
-			saveWeb2bJson();			
+			saveSelected(n_name,img_src,'image');		
 		});
 	};
+
 	var updateTemplate = function () {
 		var id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
 		if (template_id != id) {
@@ -472,6 +485,7 @@ export default function creator () {
 			});
 		} else { updateContent(); }
 	};
+
 	var addItems = function (i) {
 		if ($("#template .items:last .item").length == 3) { $("#template .items:last").after("<div class='items'></div>"); }
 		var $item_copy = $(".item:last").clone();
@@ -488,6 +502,7 @@ export default function creator () {
 		$("#template .items:last").attr("class", "items").addClass(c);
 	};
 	/*EO APPLICATION FUNCTIONS*/
+
 	/*GENERAL FUNCTIONS*/
 	function isEmail(email) {
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -515,14 +530,18 @@ export default function creator () {
 	}
 
 	var getObjFromLocalStorage = function (key){
-		var jsonData = localStorage.getItem("web2b");
+		var jsonData = localStorage.getItem(key);
 	
 		if(jsonData == null)
 			{
 				jsonData = {};           
 			}
 		else{
-			jsonData = JSON.parse(jsonData);
+				try{
+					jsonData = JSON.parse(jsonData);
+				} catch(e){
+					return jsonData;
+				}
 			}
 		return jsonData;
 	};	
@@ -582,6 +601,7 @@ export default function creator () {
 			}
 		});
 	};
+
 	var saveWeb2bJson = function(){
 		let strJD = JSON.stringify(jd),
 			userId = getObjFromLocalStorage("web2b_userId"),
@@ -592,14 +612,14 @@ export default function creator () {
 		localStorage.setItem("web2b", strJD);
 		// PENDIENTE ---> salvar en la BD
 		
-		if(strJD && Object.keys(userId).length && Object.keys(idSitio).length){
+		if(strJD && (Object.keys(userId).length || userId) && (Object.keys(idSitio).length || idSitio)){
 			$.post("scripts/salvar_datos.php",{
-				userId: $("#nombre").val().trim(),
-				idSitio: $("#correo").val().trim(),
+				userId: userId,
+				idSitio: idSitio,
 				info: JSON.stringify(jd)
 			}).done(function(result){						
 				if(!result.ok){
-					console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + response.mensaje);					
+					console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result.mensaje);					
 				}
 			}).fail(function(result){
 				console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result);					
@@ -607,6 +627,24 @@ export default function creator () {
 		}
 
 	};
+
+	var saveSelected = function(name, value,type) {
+		let selections = jd.selections || {};
+		selections[name] = selections[name] || {};
+		selections[name].type = type;
+		switch(type){
+			case 'image':				
+				selections[name].img = value;
+			break;
+			case 'text':
+			selections[name].text = value;
+			break;
+		}
+		//Save selection to object
+		jd.selections = selections;
+		saveWeb2bJson();
+	};
+
     /*EO GENERAL FUNCTIONS*/
     
     return {
