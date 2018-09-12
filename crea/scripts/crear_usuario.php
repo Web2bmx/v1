@@ -3,7 +3,6 @@ header('Content-Type: application/json');
 
 include "../../lib/dbc.php";
 
-$nombre = filter_input(INPUT_POST,'nombre');
 $correo = filter_input(INPUT_POST,'correo');
 $password = filter_input(INPUT_POST,'password');
 $info = filter_input(INPUT_POST,'info');
@@ -15,7 +14,7 @@ if($correo == "contacto@web2b.mx"){
     exit;
 }
 
-if (!empty($_POST) && $nombre && $correo && $info && $password){
+if (!empty($_POST) && $correo && $info && $password){
     $exists = false;
 
     //buscar usuario existente
@@ -27,7 +26,6 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
         //ya existe usuario
         while ($fila = $resultado->fetch_assoc()) {
             $id = $fila["Id"];
-            $nombre =$fila["nombre"];
             $hashed_pass=$fila["password"];            
             $exists = true;
         }  
@@ -40,7 +38,7 @@ if (!empty($_POST) && $nombre && $correo && $info && $password){
 
     } else {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $sql = "INSERT INTO `usuarios` (`Id`, `nombre`, `correo`,`password` ) VALUES ('" . $id . "', '" . $nombre . "', '" . $correo . "','" . $hashed_password . "')";    
+        $sql = "INSERT INTO `usuarios` (`Id`, `correo`,`password` ) VALUES ('" . $id . "', '" . $correo . "','" . $hashed_password . "')";    
         if($dbh->query($sql)!==TRUE){ 
             echo '{"ok": 0, "mensaje": "Error al insertar usuario nuevo"}';
             http_response_code(200);

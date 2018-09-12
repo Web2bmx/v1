@@ -17,7 +17,6 @@ if (!empty($_POST) && $correo && $password){
         //usuario encontrado
         while ($fila = $resultado->fetch_assoc()) {
             $id = $fila["Id"];
-            $nombre =$fila["nombre"];
             $hashed_pass=$fila["password"];
         } 
 

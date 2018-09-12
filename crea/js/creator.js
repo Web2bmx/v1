@@ -32,11 +32,20 @@ export default function creator () {
     };
 
 	/*APPLICATION FUNCTIONS*/
-	var checkDataValidation = function(){			
-		if(jd.respuestas && jd.respuestas.length < 7){
-			//location.href = "/tour";
+	var checkDataValidation = function(){
+		if(Object.keys(jd).length){
+			if(jd.respuestas && jd.respuestas.length < 7){
+				location.href = "/tour";
+			} else {
+				isNew = true;
+			}
 		} else {
-			isNew = true;
+			let web2bTemplate = getObjFromLocalStorage("web2b_template");
+			if(Object.keys(web2bTemplate).length){
+				jd = getObjFromLocalStorage("web2b_template");
+			} else {
+				location.href = "/";
+			}
 		}
 
 	};
@@ -182,6 +191,7 @@ export default function creator () {
 			$(".alert.dialog").dialog( "close" ); 
 		});		
 	};
+
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
 
@@ -269,7 +279,6 @@ export default function creator () {
 
 		/* ON NEW PAGE */
 		$("[name='start']").on("click", function() {
-			console.log("click");
 			$(".form-error").hide();
 			if($("#nombre").val().trim() == "" || 
 				$("#correo").val().trim() == "" || 
@@ -280,16 +289,14 @@ export default function creator () {
 			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 			}else if(!validPassword($("#password").val())){
-					console.log("pass");
 					$(".password-invalid").css("display","block");
 				} else {
+					jd.nombre = $("#nombre").val().trim();
 					$.post("scripts/crear_usuario.php",{
-						nombre: $("#nombre").val().trim(),
 						correo: $("#correo").val().trim(),
 						password: $("#password").val(),
 						info: JSON.stringify(jd)
-					}).done(function(result){						
-						console.log(result);
+					}).done(function(result){
 						if(!result.ok){
 							$(".otherMsgs").html(result.error);
 							$(".otherMsgs").css("display","block");
@@ -336,12 +343,15 @@ export default function creator () {
 		$("#app-cover").hide();
 		$("#app-cover-start").hide();
 		$("#app-cover-finish").show();
-		//localStorage.removeItem("web2b");
+		localStorage.removeItem("web2b");
 
 		localStorage.setItem("web2b_templateId", data.idSitio);
 		localStorage.setItem("web2b_userId", data.userId);		
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
 
+	};
+
+	var onTemplateLoaded = function(){
 		//translate data
 		translateData(jd);		
 
@@ -355,10 +365,6 @@ export default function creator () {
 							"background-image" : ("url(" + selections[key].img + ")")
 						});	
 					break;
-					case "text":
-						let input = key.replace("val", "inp");
-						$(input).html(selections[key].text);
-					break;
 				}
 			}
 		}
@@ -370,13 +376,15 @@ export default function creator () {
 			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		}
 		goToByScroll($("#app-control"), 0);
-	}; 
+	};
+
 	var showAppCover = function () { $("#app-cover").show(); };
 
 	var updateContent = function () {
-		var $this = $(this);
-		var $template = $("#template");
-		var selections = jd.selections || {};
+		let $this = $(this),
+			$template = $("#template"),
+			selections = jd.selections || {};
+
 		/*Colores*/
 		if (sample_colors_ready) {
 			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
@@ -414,14 +422,14 @@ export default function creator () {
 
 		/*Content & Contacto*/
 		$("[id^='inp-contact-'], [id^='inp-content-']").each(function() {
-			var $this = $(this);
-			var i_id = $this.attr("id");
-			var v_id = i_id.replace("inp", "val");
+			let $this = $(this),
+				i_id = $this.attr("id"),
+				v_id = i_id.replace("inp", "val");
+
 			selections[i_id] = selections[i_id] || {};
-			selections[i_id].type = "text";
 			if (($this.val() != "") || (selections[i_id].text != undefined)) {
 				if (($this.val() != "")) {
-					selections[i_id].text = $this.val();
+					saveSelected(i_id,$this.val(),'text');
 					$template.find("#" + v_id).show().closest(".footer-column").show();
 				} else {
 					$this.val(selections[i_id].text);
@@ -468,11 +476,8 @@ export default function creator () {
 				"background-image" : ("url(" + img_src + ")")
 			});
 			//Save selection to object
-			selections[n_name] = selections[n_name] || {};
-			selections[n_name].type = "image";
-			selections[n_name].img = img_src;
+			saveSelected(n_name,img_src,'image');
 		});
-		jd.selections = selections;
 		saveWeb2bJson();
 	};
 
@@ -493,7 +498,7 @@ export default function creator () {
 				$.ajax({
 					url: ("Templates/Template-" + id + "/js/scripts.js"),
 					dataType: "script",
-					success: function() {}
+					success: onTemplateLoaded
 				});
 			});
 		} else { updateContent(); }
@@ -565,17 +570,16 @@ export default function creator () {
 	}
 
 	var translateData = function(info){
-		$.ajax({
-			url: "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=en",
-			headers: {
-				'Ocp-Apim-Subscription-Key': 'facf28fe7a39442883ab1970bc9348ac',
-				'Content-Type': 'application/json'
-			},
-			data: JSON.stringify ([{'Text' : info.respuestas[5].respuesta }]),
-			method: 'POST'
-		  }).done(function(data) {
+		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+			{
+				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+				lang: 'es-en',
+				text: info.respuestas[5].respuesta,
+				format: 'plain'
+			}
+		  ).done(function(data) {
 			if(data){
-				setImageSelection(data[0].translations[0].text);	
+				setImageSelection(decodeURIComponent(data.text[0]));	
 			}
 		  });	
 	};
@@ -618,14 +622,10 @@ export default function creator () {
 	var saveWeb2bJson = function(){
 		let strJD = JSON.stringify(jd),
 			userId = getObjFromLocalStorage("web2b_userId"),
-			idSitio = getObjFromLocalStorage("web2b_templateId");
-
-		localStorage.setItem("web2b_template", strJD);
-		//ONLY FOR TESTING PURPOSES
-		localStorage.setItem("web2b", strJD);
-		// PENDIENTE ---> salvar en la BD
+			idSitio = getObjFromLocalStorage("web2b_templateId");		
 		
-		if(strJD && (Object.keys(userId).length || userId) && (Object.keys(idSitio).length || idSitio)){
+		if(strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
+			localStorage.setItem("web2b_template", strJD);
 			$.post("scripts/salvar_datos.php",{
 				userId: userId,
 				idSitio: idSitio,
@@ -654,8 +654,7 @@ export default function creator () {
 			break;
 		}
 		//Save selection to object
-		jd.selections = selections;
-		saveWeb2bJson();
+		jd.selections = selections;		
 	};
 
     /*EO GENERAL FUNCTIONS*/

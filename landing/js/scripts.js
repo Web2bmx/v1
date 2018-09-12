@@ -57,24 +57,36 @@ $(document).ready(function() {
 							if(response.paginas.length == 1) {
 								//mostrar usuarios
 								localStorage.setItem("web2b_template", response.paginas[0].info);
-								localStorage.setItem("web2b_templateId", 1);
+								localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
 								localStorage.setItem("web2b_userId", response.userId);
 								window.location.href = "/crea";
 							} else {
 								// manejar varias paginas de un solo usuario??
 								let html = "";
 								let pags = response.paginas;
-								for(let i=0; i < pags.length; i++){
+								for(let i=0, jd; i < pags.length; i++){
+									jd = JSON.parse(pags[i].info);
 									html += 
 									`<li>
-										<a data-sitio="${pags[i].idSitio}">
-											Pagina: ${pags[i].idSitio}
+										<a data-pagina="${i}">
+											${jd.nombre}
 										</a>
 									</li>`;
-								}
+								}																
 								$(".login-paginas ul").html(html);
 								$(".ventana-login > div").hide();
 								$(".login-paginas").show();
+								$("[data-pagina]").click({
+									pags: pags,
+									userId: response.userId
+								},function(e){
+									let pagina = $(this).data("pagina"),
+										d = e.data;
+									localStorage.setItem("web2b_template", d.pags[pagina].info);
+									localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
+									localStorage.setItem("web2b_userId", d.userId);
+									window.location.href = "/crea";
+								});
 							}
 						} else {
 							$(".login-content").fadeOut(100);
