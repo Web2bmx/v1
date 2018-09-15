@@ -175,12 +175,12 @@ export default function creator () {
 		});	
 		
 		/* TEMPLATE DESIGN*/
-		$(".control-design-thumb img").on('click', function() {
+		$(".control-design-thumb aside").on('click', function() {
 			var $this = $(this);
-			$this.closest(".control-desing-cont").find(".control-design-thumb img").removeClass("thumb-selected");
-			$this.next("input").trigger("click");
+			$this.closest(".control-desing-cont").find(".control-design-thumb aside").removeClass("thumb-selected");
+			$("input",$this.parent()).trigger("click");
 			$this.addClass("thumb-selected");
-		}).filter(":first").addClass("thumb-selected");
+		});
 		
 		/* Upload image*/
 		var that = this;
@@ -319,6 +319,9 @@ export default function creator () {
 			$("#app-cover").hide();
 		});
 		/*NAV BUTTONS*/
+		$(".app-cover-start .next").click(function(){
+			closeAppCover();
+		});
 		/*APP SWITCH*/
 		var $appControl_h = $("#app-control").css("height");
 		$("[id^='switch-']").on('click', function() {
@@ -339,10 +342,15 @@ export default function creator () {
 		/*EO APP SWITCH*/
 	};
 
-	var startTemplateProcess = function(data){
+	var closeAppCover = function(){
 		$("#app-cover").hide();
 		$("#app-cover-start").hide();
 		$("#app-cover-finish").show();
+		$("body").removeClass("init");
+	};
+
+	var startTemplateProcess = function(data){
+		closeAppCover();
 		localStorage.removeItem("web2b");
 
 		localStorage.setItem("web2b_templateId", data.idSitio);
@@ -389,9 +397,9 @@ export default function creator () {
 		if (sample_colors_ready) {
 			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
 			var c1 = $palette.find("top>back").html();
-			var col_hero_content = HexColorToRGBA(c1, .6);
+			var col_hero_content = HexColorToRGBA(c1, 0.6);
 			var c2 = $palette.find("middle>back").html();
-			var col_items = HexColorToRGBA(c2, .6);
+			var col_items = HexColorToRGBA(c2, 0.6);
 			$template.css({
 				"background-color" : $palette.find("bg>back").html()
 			});
@@ -466,7 +474,9 @@ export default function creator () {
 				}
 			}
 		});
+
 		$template.find(".footer-column:not(:has(li:visible))").hide();
+
 		/*Images*/
 		$("[name^='inp-img-']:checked").each(function() {
 			var $this = $(this);
@@ -481,10 +491,30 @@ export default function creator () {
 		saveWeb2bJson();
 	};
 
-	var updateTemplate = function () {
-		var id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
-		if (template_id != id) {
+	var updateTemplate = function () {		
+		let primeraVez = false,	
+			id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
+		
+		// si es la primera vez
+		if(template_id == ""){		
+			if(jd.selections.templateTypeId){
+				let newInp;
+				primeraVez = true;
+				template_id =jd.selections.templateTypeId.value;
+				$("[name^='inp-design']").removeAttr("checked");
+				newInp = $("input[value='inp-design-" + template_id + "']");
+				newInp.attr("checked","checked");
+				$("aside", newInp.parent()).addClass("thumb-selected");
+				id = template_id;
+			} else {
+				$(".control-desing-cont .control-design-thumb:first-child aside").addClass("thumb-selected");
+			}
+		}
+							
+		if (primeraVez || template_id != id) {
 			template_id = id;
+			saveSelected("templateTypeId",id,"config");
+			
 			$("#template").html("");
 			var src = "Templates/Template-" + template_id + "/index.php?t=" + Math.floor(Math.random() * 4); 
 			$("#template-cont").load(src + " #template", function() {
@@ -501,7 +531,9 @@ export default function creator () {
 					success: onTemplateLoaded
 				});
 			});
-		} else { updateContent(); }
+		} else {
+			updateContent(); 
+		}
 	};
 
 	var addItems = function (i) {
@@ -650,7 +682,10 @@ export default function creator () {
 				selections[name].img = value;
 			break;
 			case 'text':
-			selections[name].text = value;
+				selections[name].text = value;
+			break;
+			case 'config':
+				selections[name].value = value;
 			break;
 		}
 		//Save selection to object

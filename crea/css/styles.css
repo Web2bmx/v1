@@ -616,6 +616,10 @@ body {
   padding: 0;
 }
 
+body.init {
+  overflow: hidden;
+}
+
 body, input, textarea, select, button {
   font-family: 'Open Sans', sans-serif;
 }
@@ -659,22 +663,28 @@ a {
 #app-cover {
   background-color: white;
   bottom: 0;
-  display: none;
+  display: block;
   height: 100%;
   left: 0;
-  overflow-y: scroll;
   pointer-events: auto;
   position: fixed;
   right: 0;
   top: 0;
   width: 100%;
   z-index: 1001;
+  overflow-y: scroll;
+}
+
+@media (min-width: 1040px) {
+  #app-cover {
+    overflow: hidden;
+  }
 }
 
 #app-cover > div {
   display: block;
   height: auto;
-  margin: 3em auto;
+  margin: 7em auto;
   overflow: hidden;
   text-align: center;
   width: 80%;
@@ -689,6 +699,65 @@ a {
   border: 1px dotted #ADADAD;
   margin: 1em 0;
   padding: 2em;
+}
+
+#app-cover .control-design-thumb {
+  float: left;
+  padding: 0 10px;
+  overflow: visible;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+#app-cover .control-design-thumb aside {
+  overflow: hidden;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+#app-cover .control-design-thumb img {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+}
+
+#app-cover .app-cover-start {
+  width: 400px;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-start {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-start {
+    width: 1000px;
+  }
+}
+
+#app-cover .app-cover-start img.logo {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 100px;
+}
+
+#app-cover .app-cover-start .thumb-selected + i::before {
+  content: "\f192";
+}
+
+#app-cover .app-cover-start .control-desing-cont {
+  overflow: hidden;
+}
+
+#app-cover .app-cover-start .next {
+  display: block;
+  text-align: center;
+  font-size: 35px;
+  margin-top: 100px;
 }
 
 /**/
@@ -771,21 +840,6 @@ a {
 
 #app-control .app-control-step > div .app-control-step-tooltip-info.active {
   display: block;
-}
-
-#app-control .control-design-thumb {
-  height: 160px;
-  float: left;
-  margin-right: 20px;
-  overflow: visible;
-  width: 100px;
-}
-
-#app-control .control-design-thumb img {
-  cursor: pointer;
-  display: block;
-  height: auto;
-  width: 100%;
 }
 
 #app-control .control-color {

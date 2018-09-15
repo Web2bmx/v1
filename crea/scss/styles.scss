@@ -18,6 +18,11 @@ body {
 	font-size: 1.2em;
 	margin: 0;
 	padding: 0;
+
+	&.init{
+		overflow: hidden;
+	}
+	
 }
 body, input, textarea, select, button {
 	font-family: 'Open Sans', sans-serif;
@@ -54,21 +59,25 @@ a {
 #app-cover {
 	background-color: rgba(255, 255, 255, 1);
 	bottom: 0;
-	display: none;
+	display: block;
 	height: 100%;
 	left: 0;
-	overflow-y: scroll;
 	pointer-events: auto;
 	position: fixed; 
 	right: 0;
 	top: 0;   
 	width: 100%;
 	z-index: 1001;
+	overflow-y: scroll; 
+
+	@include breakpoint($desktop){
+		overflow: hidden;
+	}
 
     > div {
 		display: block;
 		height: auto;
-		margin: 3em auto;
+		margin: 7em auto;
 		overflow: hidden;
 		text-align: center;
 		width: 80%; 
@@ -81,6 +90,60 @@ a {
 		border: 1px dotted #ADADAD;
 		margin: 1em 0;
 		padding: 2em;
+	}
+	.control-design-thumb {
+		float: left;
+		padding: 0 10px;
+		overflow: visible;
+		box-sizing: border-box;
+		width: 200px;
+
+		aside{
+			overflow: hidden;
+			width: 180px;
+			height: 180px;
+			margin-bottom: 20px;
+		}
+
+		img {
+			cursor: pointer;
+			display: block;
+			height: 100%;
+		}
+			
+	}
+	.app-cover-start{
+		width: 400px;
+
+		@include breakpoint($tablet){
+			width: 600px;
+		}
+
+		@include breakpoint($desktop){
+			width: 1000px;
+		}
+
+		img.logo{
+			position: absolute;
+			top: 20px;
+			left: 50px;
+			width: 100px;			
+		}
+
+		.thumb-selected +  i::before{
+			content: "\f192";
+		}
+
+		.control-desing-cont{
+			overflow: hidden;
+		}
+
+		.next{
+			display: block;
+			text-align: center;
+			font-size: 35px;
+			margin-top: 100px;
+		}
 	}
 }
 
@@ -156,19 +219,6 @@ a {
 		.app-control-step-tooltip-info.active {
 			display: block;
 		}
-	}
-	.control-design-thumb {
-		height: 160px;
-		float: left;
-		margin-right: 20px;
-		overflow: visible;
-		width: 100px;
-	}
-	.control-design-thumb img {
-		cursor: pointer;
-		display: block;
-		height: auto;
-		width: 100%;
 	}
 	.control-color {
 		float: left;

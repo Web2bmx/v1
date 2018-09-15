@@ -12,10 +12,11 @@
         <link rel="stylesheet" href="/css/jquery-ui.structure.min.css" >
 		<link rel="stylesheet" href="/css/jquery-ui.theme.min.css" >
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">				
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/regular.css" integrity="sha384-ZlNfXjxAqKFWCwMwQFGhmMh3i89dWDnaFU2/VZg9CvsMGA7hXHQsPIqS+JIAmgEq" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/styles.css?v=1.0">
 	</head>
-	<body>
+	<body class="init">
 		<?php include_once("include/include_libraries.php"); ?>
 		<div id="template-cont"></div>
 		<div id="app">
@@ -45,6 +46,56 @@
 				<input type="button" name="start" value="¡Comienza ya!" />						
 			</div>			
 			<div id="app-cover">
+				<div class="app-cover-start">
+					<img src="/img/logo.png" class="logo" />	
+					<h2>Elige el diseño de tu página</h2>					
+					<div class="control-desing-cont">
+						<div class="control-design-thumb">
+							<aside>
+								<img src="Templates/Template-001/Thumb.png" />
+							</aside>							
+							<i class="far fa-circle"></i>
+							<input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" />
+							<label for="inp-design-001"></label>
+						</div>
+						<div class="control-design-thumb">
+							<aside>
+								<img src="Templates/Template-002/Thumb.png" />
+								</aside>
+							<i class="far fa-circle"></i>
+							<input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" />
+							<label for="inp-design-002"></label>							
+						</div>
+						<div class="control-design-thumb">
+							<aside>
+								<img src="Templates/Template-003/Thumb.png" />
+							</aside>
+							<i class="far fa-circle"></i>
+							<input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" />
+							<label for="inp-design-003"></label>
+							
+						</div>
+						<div class="control-design-thumb">
+							<aside>
+								<img src="Templates/Template-004/Thumb.png" />
+							</aside>
+							<i class="far fa-circle"></i>
+							<input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" />
+							<label for="inp-design-004"></label>
+						</div>
+						<div class="control-design-thumb">
+							<aside>
+								<img src="Templates/Template-005/Thumb.png" />
+							</aside>
+							<i class="far fa-circle"></i>
+							<input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" style="display: none;" />
+							<label for="inp-design-005"></label> 
+						</div>
+					</div>
+					<a class="next">
+						<i class="fas fa-arrow-circle-right"></i>
+					</a>
+				</div>			
 				<div id="app-cover-finish" style="display: none;">
 					<div>
 						<h1>¡Terminamos!</h1>
@@ -83,38 +134,6 @@
 				</div>
 			</div>
 			<div id="app-control">
-				<div class="app-control-step">
-					<div>
-						<h2>Primero escribe el nombre de tu Negocio</h2>
-						<p class="app-control-step-tooltip-info">Recuerda escribirlo tal cual como quieres que lo vean tus clientes.</p>
-						<div>
-							<input type="text" id="inp-content-name" name="inp-content-name" value="" placeholder="El nombre de tu negocio" /> 
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
-						<h2>Ahora elige el diseño de tu página</h2>
-						<p class="app-control-step-tooltip-info">Tenemos un catálogo de plantillas con diseños diferentes disponibles para tí.</p>
-						<div class="control-desing-cont">
-						<div class="control-design-thumb">
-								<img src="Templates/Template-001/Thumb.png" /><input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" /><label for="inp-design-001"></label><br />
-							</div>
-							<div class="control-design-thumb">
-								<img src="Templates/Template-002/Thumb.png" /><input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" /><label for="inp-design-002"></label><br />
-							</div>
-							<div class="control-design-thumb">
-								<img src="Templates/Template-003/Thumb.png" /><input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" /><label for="inp-design-003"></label><br /> 
-							</div>
-							<div class="control-design-thumb">
-								<img src="Templates/Template-004/Thumb.png" /><input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" /><label for="inp-design-004"></label><br /> 
-							</div>
-							<div class="control-design-thumb">
-								<img src="Templates/Template-005/Thumb.png" /><input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" style="display: none;" /><label for="inp-design-005"></label><br /> 
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="app-control-step">
 					<div>
 						<h2>Ahora elige los colores de tu página</h2>
