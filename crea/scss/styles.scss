@@ -380,16 +380,16 @@ a {
 	}
 }
 /**/
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 660px) {
 	#app-control {
 		border: 1px solid #DADADA;
-		bottom: 5%;
 		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-		height: 40%;
-		left: 5%;
-		top: 55%;
-		right: 5%; 
-		width: 90%;
+		height: 500px;
+		left: 50%;
+		top: 50%; 
+		width: 75%;
+		margin-left: -37%;
+		margin-top: -250px;		
 		@include border-radius(.2em);
 	}
 	#app-control.top {

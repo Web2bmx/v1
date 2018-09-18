@@ -350,7 +350,6 @@ export default function creator () {
 	};
 
 	var startTemplateProcess = function(data){
-		closeAppCover();
 		localStorage.removeItem("web2b");
 
 		localStorage.setItem("web2b_templateId", data.idSitio);
@@ -497,7 +496,7 @@ export default function creator () {
 		
 		// si es la primera vez
 		if(template_id == ""){		
-			if(jd.selections.templateTypeId){
+			if(jd.selections  && jd.selections.templateTypeId){
 				let newInp;
 				primeraVez = true;
 				template_id =jd.selections.templateTypeId.value;

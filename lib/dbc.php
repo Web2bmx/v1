@@ -1,22 +1,22 @@
 <?php
 
-$dbh = new mysqli("localhost", "root", "", "nektuzco_web2b");
+$dbh = new mysqli("localhost", "nektuzco_web2bUr", "@Wb2bUsr010", "nektuzco_web2b");
 
-// ¡Oh, no! Existe un error 'connect_errno', fallando así el intento de conexión
+// ï¿½Oh, no! Existe un error 'connect_errno', fallando asï¿½ el intento de conexiï¿½n
 if ($dbh->connect_errno) {
-    // La conexión falló. ¿Que vamos a hacer? 
-    // Se podría contactar con uno mismo (¿email?), registrar el error, mostrar una bonita página, etc.
-    // No se debe revelar información delicada
+    // La conexiï¿½n fallï¿½. ï¿½Que vamos a hacer? 
+    // Se podrï¿½a contactar con uno mismo (ï¿½email?), registrar el error, mostrar una bonita pï¿½gina, etc.
+    // No se debe revelar informaciï¿½n delicada
 
     // Probemos esto:
-    echo "Lo sentimos, este sitio web está experimentando problemas.";
+    echo "Lo sentimos, este sitio web estÃ¡ experimentando problemas.";
 
-    // Algo que no se debería de hacer en un sitio público, aunque este ejemplo lo mostrará
-    // de todas formas, es imprimir información relacionada con errores de MySQL -- se podría registrar
+    // Algo que no se deberï¿½a de hacer en un sitio pï¿½blico, aunque este ejemplo lo mostrarï¿½
+    // de todas formas, es imprimir informaciï¿½n relacionada con errores de MySQL -- se podrï¿½a registrar
     echo "Error: Fallo al conectarse a MySQL debido a: \n";
     echo "Errno: " . $dbh->connect_errno . "\n";
     echo "Error: " . $dbh->connect_error . "\n";
     
-    // Podría ser conveniente mostrar algo interesante, aunque nosotros simplemente saldremos
+    // Podrï¿½a ser conveniente mostrar algo interesante, aunque nosotros simplemente saldremos
     exit;
 }
