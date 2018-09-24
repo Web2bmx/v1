@@ -152,10 +152,6 @@ export default function creator () {
 				t = $palettes.length;
 				for (let i = 0; i < $palettes.length; i++) {
 					var $control_color = $(".template.control-color").clone();
-					if (i == 0) {
-						$control_color.find("input").attr("checked", "checked");
-						$control_color.find(".control-color-thumb").addClass("thumb-selected");
-					}
 					var $palette = $palettes.filter(":eq(" + i + ")");
 					$control_color.removeClass("template");
 					$control_color.find("h4").html($palette.find("name").html()).remove();
@@ -250,8 +246,8 @@ export default function creator () {
 	};
 
 	var randomizeTemplate = function() {
-		var $color = $("[name^='inp-palette']");
-		$color.removeAttr("checked").filter(":eq(" + (Math.floor(Math.random() * $color.length)) + ")").attr("checked", "checked");
+		/*var $color = $("[name^='inp-palette']");
+		$color.removeAttr("checked").filter(":eq(" + (Math.floor(Math.random() * $color.length)) + ")").attr("checked", "checked");*/
 		
 		updateContent();
 	};
@@ -275,7 +271,7 @@ export default function creator () {
 						break;
 					case totalItems:
 						//showAppCover();
-					break;
+					break; 
 				}
 				goToStep(current_step);
 				updateContent();
@@ -413,7 +409,23 @@ export default function creator () {
 
 		/*Colores*/
 		if (sample_colors_ready) {
-			var $palette = $palettes.filter(":eq(" + $("[name='inp-palette']:checked").val() + ")");
+			let palette_id = 0;
+			if ($("[name='inp-palette']:checked").length == 0) {
+				if (selections["palette"]) {
+					palette_id = selections["palette"].value;
+				} else {
+					selections["palette"] = { "name": "palette", "type": "id", "value":"0" };
+					palette_id = selections["palette"].value;
+				}
+				$(".control-color-thumb:eq(" + palette_id + ")").addClass("thumb-selected");
+				$("[name='inp-palette']:eq(" + palette_id + ")").attr("checked", "checked");
+			} else {
+				palette_id = $("[name='inp-palette']:checked").val();
+				selections["palette"].value = palette_id;
+			}
+			saveSelected("palette",palette_id,'id');
+			/**/
+			var $palette = $palettes.filter(":eq(" + palette_id + ")");
 			var c1 = $palette.find("top>back").html();
 			var col_hero_content = HexColorToRGBA(c1, 0.6);
 			var c2 = $palette.find("middle>back").html();
@@ -673,7 +685,6 @@ export default function creator () {
 		let strJD = JSON.stringify(jd),
 			userId = getObjFromLocalStorage("web2b_userId"),
 			idSitio = getObjFromLocalStorage("web2b_templateId");		
-		
 		if(strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
 			localStorage.setItem("web2b_template", strJD);
 			$.post("scripts/salvar_datos.php",{
