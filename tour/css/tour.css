@@ -657,6 +657,9 @@ input[type='button'] {
 body {
   background-color: #273654;
   position: relative;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body > div {
@@ -1134,6 +1137,43 @@ textarea {
 
 .dialog p {
   font-weight: bold;
+}
+
+.back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  background: none;
+}
+
+.back:hover {
+  opacity: 0.7;
+}
+
+.back i {
+  color: #cc2880;
+  font-size: 24px;
+}
+
+@media (min-width: 660px) {
+  .back i {
+    font-size: 30px;
+  }
+}
+
+.back span {
+  color: #fff;
+  line-height: 24px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+@media (min-width: 660px) {
+  .back span {
+    line-height: 30px;
+  }
 }
 
 /*# sourceMappingURL=tour.css.map */

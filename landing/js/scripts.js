@@ -37,6 +37,8 @@ $(document).ready(function() {
 		$(".ventana-login").dialog( "open" );
 		$("#email").val("contacto@web2b.mx");
 		$("#password").val("");
+		$(".login-paginas").hide();
+		$(".form-error").hide();		
 	  });	
 		$(".cerrar-ventana").click(function(){
 			$(".ventana-login").dialog( "close" ); 
@@ -67,25 +69,28 @@ $(document).ready(function() {
 								for(let i=0, jd; i < pags.length; i++){
 									jd = JSON.parse(pags[i].info);
 									html += 
-									`<li>
-										<a data-pagina="${i}">
-											${jd.nombre}
-										</a>
-									</li>`;
-								}																
-								$(".login-paginas ul").html(html);
+									`<option class="inserted" value="${i}">
+										${jd.nombre}
+									</option>`;
+								}						
+								$(".proyectos-disponibles .inserted").remove();									
+								$(".proyectos-disponibles").append(html);
 								$(".ventana-login > div").hide();
 								$(".login-paginas").show();
-								$("[data-pagina]").click({
+								$(".llevame").click({
 									pags: pags,
 									userId: response.userId
 								},function(e){
-									let pagina = $(this).data("pagina"),
+									let pagina = $(".proyectos-disponibles option:selected" ).val(),
 										d = e.data;
-									localStorage.setItem("web2b_template", d.pags[pagina].info);
-									localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
-									localStorage.setItem("web2b_userId", d.userId);
-									window.location.href = "/crea";
+									if(pagina != ""){
+										localStorage.setItem("web2b_template", d.pags[pagina].info);
+										localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
+										localStorage.setItem("web2b_userId", d.userId);
+										window.location.href = "/crea";
+									} else {
+										$(".login-paginas .form-error").css("display","block");
+									}
 								});
 							}
 						} else {

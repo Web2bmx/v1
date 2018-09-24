@@ -706,14 +706,21 @@ a {
   padding: 0 10px;
   overflow: visible;
   box-sizing: border-box;
-  width: 200px;
+  width: 50%;
+}
+
+@media (min-width: 660px) {
+  #app-cover .control-design-thumb {
+    width: 200px;
+  }
 }
 
 #app-cover .control-design-thumb aside {
   overflow: hidden;
   width: 180px;
   height: 180px;
-  margin-bottom: 20px;
+  max-width: 100%;
+  margin: 0 auto 20px auto;
 }
 
 #app-cover .control-design-thumb img {
@@ -723,7 +730,7 @@ a {
 }
 
 #app-cover .app-cover-start {
-  width: 400px;
+  width: 100%;
 }
 
 @media (min-width: 660px) {
@@ -754,9 +761,6 @@ a {
 }
 
 #app-cover .app-cover-start .next {
-  display: block;
-  text-align: center;
-  font-size: 35px;
   margin-top: 100px;
 }
 
@@ -775,12 +779,14 @@ a {
   top: 0;
   width: 100%;
   z-index: 2;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #app-control > .app-control-step {
   display: block;
   height: 70%;
-  margin: 1em 2% auto 2%;
+  margin: 40px 2% auto 2%;
   overflow-y: auto;
   text-align: center;
   width: 96%;
@@ -844,11 +850,35 @@ a {
 
 #app-control .control-color {
   float: left;
-  height: 120px;
-  margin-bottom: 10px;
+  padding: 5px;
   overflow: visible;
   text-align: center;
-  width: 80px;
+  width: 33.33%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 660px) {
+  #app-control .control-color {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-control .control-color {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-control .control-color {
+    width: 16.66%;
+  }
+}
+
+@media (min-width: 1560px) {
+  #app-control .control-color {
+    width: 14.28%;
+  }
 }
 
 #app-control .control-color-thumb {
@@ -869,6 +899,30 @@ a {
   width: 100%;
 }
 
+@media (min-width: 660px) {
+  #app-control .control-color-thumb-bg {
+    height: 27px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-control .control-color-thumb-bg {
+    height: 30px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-control .control-color-thumb-bg {
+    height: 35px;
+  }
+}
+
+@media (min-width: 1560px) {
+  #app-control .control-color-thumb-bg {
+    height: 40px;
+  }
+}
+
 #app-control .control-color-thumb-content {
   display: block;
   height: 8px;
@@ -879,6 +933,7 @@ a {
 
 #app-control #app-control-palettes {
   text-align: left;
+  overflow: hidden;
 }
 
 #app-control .palette-color {
@@ -941,56 +996,63 @@ a {
   display: block;
   height: auto;
   overflow: hidden;
-  padding: .2em 0;
   position: absolute;
-  width: 100%;
-}
-
-#app-control-nav a {
-  background-color: #cc2880;
-  color: #FFF;
-  float: left;
-  height: auto;
-  overflow: hidden;
-  padding: .4em .6em;
-  vertical-align: middle;
-  width: 100%;
-}
-
-#app-control-nav a.disabled {
-  background-color: #999;
-  cursor: default;
-}
-
-#app-control-nav #app-switch {
-  float: left;
-  height: auto;
-  overflow: hidden;
   width: 100%;
 }
 
 #app-control-nav #control-view-nav {
   float: left;
-  height: auto;
+  height: 50px;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  padding-top: 10px;
+}
+
+@media (min-width: 660px) {
+  #app-control-nav #control-view-nav {
+    margin-bottom: 0;
+  }
+}
+
+#app-control-nav #control-view-nav a {
+  position: absolute;
+  bottom: 0;
+  margin: .4em;
+  z-index: 100;
+}
+
+#app-control-nav #control-view-nav a.prev {
+  left: 0;
+}
+
+#app-control-nav #control-view-nav a.next {
+  right: 0;
+}
+
+#app-control-nav #control-view-nav a.disabled {
+  background-color: #999;
+  cursor: default;
 }
 
 #app-control-nav #control-view-index {
   display: none;
-  height: auto;
-  margin-left: .4em;
   overflow: hidden;
   width: auto;
+}
+
+#app-control-nav #control-view-index + a {
+  float: right;
 }
 
 #app-control-nav .control-view-index-item {
   background-color: #DADADA;
   float: left;
-  height: .4em;
+  height: 1em;
   margin: 1em .4em .6em 0;
   overflow: hidden;
-  width: .4em;
+  width: 1em;
   -moz-border-radius: 0.5em;
   -ms-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
@@ -1001,65 +1063,75 @@ a {
   background-color: #cc2880;
 }
 
+#app-switch {
+  height: 40px;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  background-color: #cc2880;
+}
+
+#app-switch a {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 40px;
+  width: 100%;
+  display: block;
+}
+
+#app-switch a.switch-edit i {
+  font-size: 25px;
+  vertical-align: initial;
+}
+
+#app-switch a.switch-view {
+  font-size: 40px;
+  vertical-align: bottom;
+}
+
 #app-control.view {
-  bottom: auto !important;
-  border: none;
-  left: 0 !important;
-  height: auto;
-  position: fixed;
-  right: auto !important;
-  top: 0 !important;
-  width: auto;
+  height: 40px;
+  overflow: hidden;
+  margin-top: 0;
+  top: 0;
 }
 
-#app-control.view #app-control-nav {
-  height: auto;
-  position: static;
-  padding: 0;
-  width: auto;
-}
-
-#app-control.view #app-control-nav a {
-  margin-left: 0;
+@media (min-width: 1040px) {
+  #app-control.view {
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+  }
 }
 
 /**/
 @media screen and (min-width: 660px) {
   #app-control {
-    border: 1px solid #DADADA;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    height: 500px;
+    height: 600px;
     left: 50%;
     top: 50%;
-    width: 75%;
-    margin-left: -37%;
-    margin-top: -250px;
-    -moz-border-radius: 0.2em;
-    -ms-border-radius: 0.2em;
-    -webkit-border-radius: 0.2em;
-    border-radius: 0.2em;
+    width: 85%;
+    margin-left: -42.5%;
+    margin-top: -300px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
   }
   #app-control.top {
     bottom: 55%;
     top: 5%;
   }
-  #app-control-nav {
-    padding: .2em 2%;
-    width: 96%;
-  }
-  #app-control-nav a {
-    margin-left: .4em;
-    width: auto;
-    -moz-border-radius: 0.2em;
-    -ms-border-radius: 0.2em;
-    -webkit-border-radius: 0.2em;
-    border-radius: 0.2em;
-  }
   #app-control-nav #control-view-index {
-    display: inline-block;
-  }
-  #app-control-nav #control-view-nav {
-    width: auto;
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
   }
   #app-control-nav #app-switch {
     width: auto;
@@ -1080,6 +1152,13 @@ a {
   display: block;
   font-size: 14px;
   margin-bottom: 10px;
+}
+
+.nav-btns {
+  display: block;
+  text-align: center;
+  font-size: 35px;
+  color: #cc2880;
 }
 
 /**/

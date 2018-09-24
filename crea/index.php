@@ -92,7 +92,7 @@
 							<label for="inp-design-005"></label> 
 						</div>
 					</div>
-					<a class="next">
+					<a class="next nav-btns">
 						<i class="fas fa-arrow-circle-right"></i>
 					</a>
 				</div>			
@@ -253,15 +253,25 @@
 					</div>
 				</div>
 				<div id="app-control-nav">
-					<div id='app-switch'>
-						<a id='switch-view'>Mira tu sitio &check;</a>
-						<a id='switch-edit' style="display: none;">Edita tu sitio &target;</a>
-					</div>
 					<nav id='control-view-nav'>
-						<a href='#prev' class="disabled">&lt; Anterior</a>
+						<a href='#prev' class="nav-btns prev">
+							<i class="fas fa-arrow-circle-left"></i>
+						</a>
 						<div id="control-view-index"><div class="control-view-index-item current"></div></div>
-						<a href='#next'>Siguiente &gt;</a>
+						<a href='#next' class="nav-btns next">
+							<i class="fas fa-arrow-circle-right"></i>
+						</a>
 					</nav>
+				</div>
+				<div id='app-switch'>
+					<a id='switch-view'>
+						<i class="far fa-eye"></i>
+						Vista Previa
+					</a>
+					<a id='switch-edit' style="display: none;">
+						<i class="fas fa-wrench"></i>
+						Editar
+					</a>
 				</div>	
 			</div>
 		</div>	

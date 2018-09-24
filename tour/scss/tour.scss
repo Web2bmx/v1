@@ -25,6 +25,10 @@
 body{
     background-color: #273654;
     position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
     
     > div{
             overflow: hidden;
@@ -466,4 +470,39 @@ textarea{
         font-weight: bold;
     }
 
+}
+
+.back{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: none;
+
+    &:hover{
+        opacity: 0.7;
+    }
+
+    i{
+        color: #cc2880;
+        font-size: 24px;
+
+        @include breakpoint($tablet){
+            font-size: 30px;
+        }
+        
+    }
+
+    span{
+        color: #fff;
+        line-height: 24px;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 5px;
+
+        @include breakpoint($tablet){
+            line-height: 30px;
+        }
+
+    }
 }

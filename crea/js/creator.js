@@ -29,6 +29,10 @@ export default function creator () {
 		setAppNavigation();
 		setAppSteps();
 		/*EO SET UP APP*/
+
+		$(window).resize(function(){
+			centerNav();
+		});
     };
 
 	/*APPLICATION FUNCTIONS*/
@@ -122,6 +126,7 @@ export default function creator () {
 			goToStep(current_step);
 			$this.prop('checked', false);
 			$("#inp-content-item-add-n").trigger("click");
+			centerNav();
 		});
 
 		/*TOOLTIPS*/
@@ -252,19 +257,23 @@ export default function creator () {
 	};
 
 	var setAppNavigation = function () {
-		$(".app-control-step:gt(0)").hide();
+		$(".app-control-step:gt(0)").hide();		
 		$("#control-view-nav>a").on("click", function() {
+			let totalItems = $("#app-control>.app-control-step").length;
 			if (!$(this).hasClass("disabled")) {
 				var inc = $(this).attr("href") == "#next" ? 1 : -1;
 				current_step += inc;
+				if(current_step == totalItems) {
+					current_step = totalItems -1;
+				}
 				switch (current_step) {
-					case 0 :
+/* 					case 0 :
 						$("#control-view-nav>a:eq(0)").addClass("disabled");
-						break;
+						break; */
 					case 1 :
 						$("#control-view-nav>a:eq(0)").removeClass("disabled");
 						break;
-					case ($("#app-control>.app-control-step").length) :
+					case totalItems:
 						//showAppCover();
 					break;
 				}
@@ -276,6 +285,7 @@ export default function creator () {
 			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
+		centerNav();
 
 		/* ON NEW PAGE */
 		$("[name='start']").on("click", function() {
@@ -330,7 +340,7 @@ export default function creator () {
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
 				$("#app-control>.app-control-step").hide();
-				$("#app-control").addClass("view");
+				$("#app-control").addClass("view");				
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
@@ -338,6 +348,7 @@ export default function creator () {
 				$("#app-control>.app-control-step:eq(" + current_step + ")").show();
 				$("#app-control").removeClass("view");
 			}
+			$("body").toggleClass("init");
 		});
 		/*EO APP SWITCH*/
 	};
@@ -346,7 +357,13 @@ export default function creator () {
 		$("#app-cover").hide();
 		$("#app-cover-start").hide();
 		$("#app-cover-finish").show();
-		$("body").removeClass("init");
+		current_step = 0;	
+	};
+
+	var openAppCover = function(){
+		$("#app-cover").show();
+		$("#app-cover-start").show();
+		$("#app-cover-finish").hide();			
 	};
 
 	var startTemplateProcess = function(data){
@@ -378,7 +395,9 @@ export default function creator () {
 	};
 
 	var goToStep = function(step) {
-		if (step < ($(".app-control-step").length)) {
+		if(step == -1){
+			openAppCover();
+		} else if (step < ($(".app-control-step").length)) {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
 			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		}
@@ -689,6 +708,11 @@ export default function creator () {
 		}
 		//Save selection to object
 		jd.selections = selections;		
+	};
+
+	var centerNav= function() {
+		let parentW = $("#control-view-index").parent().width();
+		$("#control-view-index").css("padding-left",parentW/2 - $("#control-view-index").width()/2);
 	};
 
     /*EO GENERAL FUNCTIONS*/

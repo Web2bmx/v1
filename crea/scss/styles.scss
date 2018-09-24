@@ -96,13 +96,18 @@ a {
 		padding: 0 10px;
 		overflow: visible;
 		box-sizing: border-box;
-		width: 200px;
+		width: 50%;
+
+		@include breakpoint($tablet){
+			width: 200px;
+		}
 
 		aside{
 			overflow: hidden;
 			width: 180px;
 			height: 180px;
-			margin-bottom: 20px;
+			max-width: 100%;
+			margin: 0 auto 20px auto;
 		}
 
 		img {
@@ -113,7 +118,7 @@ a {
 			
 	}
 	.app-cover-start{
-		width: 400px;
+		width: 100%;
 
 		@include breakpoint($tablet){
 			width: 600px;
@@ -139,9 +144,6 @@ a {
 		}
 
 		.next{
-			display: block;
-			text-align: center;
-			font-size: 35px;
 			margin-top: 100px;
 		}
 	}
@@ -165,11 +167,13 @@ a {
 	top: 0; 
 	width: 100%; 
 	z-index: 2;
+	max-width: 100%;
+	max-height: 100%;
 	
 	> .app-control-step {
 		display: block;
 		height: 70%;
-		margin: 1em 2% auto 2%;
+		margin: 40px 2% auto 2%;
 		overflow-y: auto;
 		text-align: center;
 		width: 96%;
@@ -222,11 +226,28 @@ a {
 	}
 	.control-color {
 		float: left;
-		height: 120px;
-		margin-bottom: 10px;
+		padding: 5px;
 		overflow: visible;
 		text-align: center;
-		width: 80px;
+		width: 33.33%;
+		box-sizing: border-box;
+
+		@include breakpoint($tablet){
+			width: 25%;
+		}
+
+		@include breakpoint($desktop){
+			width: 20%;
+		}
+
+		@include breakpoint($ext-desktop){
+			width: 16.66%;
+		}		
+		
+		@include breakpoint($ext-ext-desktop){
+			width: 14.28%;
+		}			
+
 	}
 	.control-color-thumb {
 		cursor: pointer;
@@ -243,6 +264,23 @@ a {
 		height: 24px;
 		overflow: hidden;
 		width: 100%; 
+
+		@include breakpoint($tablet){
+			height: 27px;
+		}		
+
+		@include breakpoint($desktop){
+			height: 30px;
+		}
+
+		@include breakpoint($ext-desktop){
+			height: 35px;
+		}		
+		
+		@include breakpoint($ext-ext-desktop){
+			height: 40px;
+		}	
+
 	}
 	.control-color-thumb-content {
 		display: block;
@@ -253,6 +291,7 @@ a {
 	} 
 	#app-control-palettes {
 		text-align: left;
+		overflow: hidden;
 	}
 	.palette-color {
 		display: inline-block;
@@ -308,108 +347,130 @@ a {
 	display: block;
 	height: auto;
 	overflow: hidden;
-	padding: .2em 0;
 	position: absolute;
 	width: 100%;
 
-	a {
-		background-color: $color-cta;
-		color: #FFF;
-		float: left;
-		height: auto;
-		overflow: hidden;
-		padding: .4em .6em;
-		vertical-align: middle;
-		width: 100%;
-	}
-	a.disabled {
-		background-color: #999;
-		cursor: default;
-	}
-	#app-switch {
-		float: left;
-		height: auto;
-		overflow: hidden;
-		width: 100%; 
-	}
 	#control-view-nav {
 		float: left;
-		height: auto;
+		height: 50px;
 		overflow: hidden;
 		width: 100%;
+		margin-bottom: 30px;
+		position: relative;
+		padding-top: 10px;
+
+		@include breakpoint($tablet){
+			margin-bottom: 0;
+		}
+
+		a {
+			position: absolute;
+			bottom: 0;
+			margin: .4em;
+			z-index: 100;
+
+			&.prev{
+				left: 0;
+			}
+	
+			&.next{
+				right: 0;
+			}
+
+		}
+
+
+		a.disabled {
+			background-color: #999;
+			cursor: default;
+		}
+
 	}
 	#control-view-index {
 		display: none;
-		height: auto;
-		margin-left: .4em;
 		overflow: hidden;
 		width: auto;
+
+		+ a {
+			float: right;
+		}
 	}
 	.control-view-index-item {
 		background-color: #DADADA;
 		float: left;
-		height: .4em;
+		height: 1em;
 		margin: 1em .4em .6em 0;
 		overflow: hidden;
-		width: .4em;
+		width: 1em;
 		@include border-radius(.5em);
 	}
 	.control-view-index-item.current {
 		background-color: $color-cta;
 	}
 }
-#app-control.view {
-	bottom: auto !important;
-	border: none;
-	left: 0 !important;
-	height: auto;
-	position: fixed;
-	right: auto !important;
-	top: 0 !important;
-	width: auto;
+#app-switch {
+    height: 40px;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    text-align: center;
+	background-color: #cc2880;
 	
-	#app-control-nav {
-		height: auto;
-		position: static;
-		padding: 0;
-		width: auto;
-		
-		a {
-			margin-left: 0;
+	a{
+		font-size: 22px;
+		font-weight: bold;
+		line-height: 40px;
+		width: 100%;
+		display: block;
+
+		&.switch-edit i{
+			font-size: 25px;
+			vertical-align: initial;			
 		}
+
+		&.switch-view{
+			font-size: 40px;
+			vertical-align: bottom;
+		}
+
 	}
+
+}
+#app-control.view {
+    height: 40px;
+    overflow: hidden;
+    margin-top: 0;
+    top: 0;
+	
+	@include breakpoint($desktop){		
+		@include border-radius(0 0 10px 10px);
+	}
+
 }
 /**/
 @media screen and (min-width: 660px) {
 	#app-control {
-		border: 1px solid #DADADA;
 		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-		height: 500px;
+		height: 600px;
 		left: 50%;
-		top: 50%; 
-		width: 75%;
-		margin-left: -37%;
-		margin-top: -250px;		
-		@include border-radius(.2em);
+		top: 50%;
+		width: 85%;
+		margin-left: -42.5%;
+		margin-top: -300px;			
+		@include border-radius(10px);
 	}
 	#app-control.top {
 		bottom: 55%;
 		top: 5%;
 	}
 	#app-control-nav {
-		padding: .2em 2%;
-		width: 96%;
-	
-		a {
-			margin-left: .4em;
-			width: auto;
-			@include border-radius(.2em);
-		}
 		#control-view-index {
-			display: inline-block;
-		}
-		#control-view-nav {
-			width: auto;
+			display: block;
+			position: absolute;
+			bottom: 20px;
+			left: 0;
 		}
 		#app-switch {
 			width: auto; 
@@ -431,6 +492,13 @@ a {
     display: block;
     font-size: 14px;
     margin-bottom: 10px;	
+}
+
+.nav-btns{
+    display: block;
+    text-align: center;
+	font-size: 35px;
+	color: $color-cta;	
 }
 
 /**/

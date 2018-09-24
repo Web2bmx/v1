@@ -626,18 +626,25 @@ footer {
 .ventana-login {
 	@extend .modal-login;
 
-	.login-paginas li {
-		padding: 5px 0;
+	.login-paginas {
 
-		a {
-			color: #666;
-			cursor: pointer;
-
-			&:hover {
-				color: #333;
-			}
+		&,p{
+			color: #aaa;
+			text-align: left;
 		}
+
+		select{
+			width: 100%;
+			padding: 10px;
+			border-radius: 10px;
+		}
+
+		.form-error{
+			text-align: left;
+		}
+
 	}
+
 }
 
 /*Botones*/
