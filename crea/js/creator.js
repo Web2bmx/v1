@@ -259,8 +259,8 @@ export default function creator () {
 			if (!$(this).hasClass("disabled")) {
 				var inc = $(this).attr("href") == "#next" ? 1 : -1;
 				current_step += inc;
-				if(current_step == totalItems) {
-					current_step = totalItems -1;
+				if(current_step >= totalItems) {
+					current_step = totalItems;
 				}
 				switch (current_step) {
 /* 					case 0 :
@@ -351,15 +351,20 @@ export default function creator () {
 
 	var closeAppCover = function(){
 		$("#app-cover").hide();
-		$("#app-cover-start").hide();
-		$("#app-cover-finish").show();
+		$(".app-cover-start").hide();
+		$(".app-cover-finish").show();
 		current_step = 0;	
 	};
 
-	var openAppCover = function(){
+	var openAppCover = function(pos){
 		$("#app-cover").show();
-		$("#app-cover-start").show();
-		$("#app-cover-finish").hide();			
+		if(pos=='start'){
+			$(".app-cover-start").show();
+			$(".app-cover-finish").hide();			
+		} else {
+			$(".app-cover-start").hide();
+			$(".app-cover-finish").show();					
+		}
 	};
 
 	var startTemplateProcess = function(data){
@@ -392,10 +397,12 @@ export default function creator () {
 
 	var goToStep = function(step) {
 		if(step == -1){
-			openAppCover();
+			openAppCover("start");
 		} else if (step < ($(".app-control-step").length)) {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
 			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
+		} else {
+			openAppCover("final");
 		}
 		goToByScroll($("#app-control"), 0);
 	};

@@ -96,7 +96,7 @@
 						<i class="fas fa-arrow-circle-right"></i>
 					</a>
 				</div>			
-				<div id="app-cover-finish" style="display: none;">
+				<div class="app-cover-finish" style="display: none;">
 					<div>
 						<h1>¡Terminamos!</h1>
 						<p>Puedes ver tu sitio aquí*, y puedes compartir este enlace con quien tú quieras.</p>
