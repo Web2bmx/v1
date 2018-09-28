@@ -6,11 +6,11 @@ $preguntas = [];
 $i=1;
 
 //obtener tipos
-$result =$dbh->query('SELECT tipo, count(*) as total FROM preguntas GROUP BY tipo');
+$result =$dbh->query('SELECT tipo, count(*) as total FROM preguntas WHERE isActive = 1 GROUP BY tipo');
 while ($arr = $result->fetch_assoc()) {
 
     //Obtener una pregunta random de tipo especifico
-    $r2 = $dbh->query('SELECT * FROM preguntas WHERE `tipo` = ' .  $arr['tipo'] . ' ORDER BY RAND() LIMIT 1');
+    $r2 = $dbh->query('SELECT * FROM preguntas WHERE `tipo` = ' .  $arr['tipo'] . ' AND isActive = 1 ORDER BY RAND() LIMIT 1');
     $arr2 = $r2->fetch_assoc();
 
     if($arr2['tiene_opciones']) {
@@ -175,12 +175,12 @@ function muestra_pregunta($numero_pregunta){
                                 </div>
                         </div>
                         <div class="tercero">
-                                <div class="cuarta-pregunta dialog">
-                                    <?= muestra_pregunta(4);?>
+                                <div class="tercera-pregunta dialog">
+                                    <?= muestra_pregunta(3);?>
                                     <button class="back" data-back="3">
                                         Regresar
                                     </button>                                       
-                                    <button class="res_4 res">
+                                    <button class="res_3 res">
                                         Siguiente
                                     </button>
                                 </div>
@@ -195,24 +195,24 @@ function muestra_pregunta($numero_pregunta){
                                         <img alt="" src="images/comet_2.png">
                                 </aside>                        
                                 <img class="planet-blue" alt="" src="images/planet_blue.png">
-                                <div class="tercera-pregunta dialog">
-                                    <?= muestra_pregunta(3);?>
+                                <div class="segunda-pregunta dialog">
+                                    <?= muestra_pregunta(2);?>
                                     <button class="back" data-back="2">
                                         Regresar
                                     </button>                                      
-                                    <button class="res_3 res">
+                                    <button class="res_2 res">
                                         Siguiente
                                     </button>
                                 </div>
                         </div>
                         <div class="sun">
                             <img alt="" src="images/sun.png">
-                            <div class="segunda-pregunta dialog" style="display: none">
-                                <?= muestra_pregunta(2);?>
+                            <div class="primera-pregunta dialog" style="display: none">
+                                <?= muestra_pregunta(1);?>
                                 <button class="back" data-back="0">
                                     Regresar
                                 </button>                                   
-                                <button class="res_2 res">
+                                <button class="res_1 res">
                                     Siguiente
                                 </button>
                             </div>                            
@@ -223,12 +223,12 @@ function muestra_pregunta($numero_pregunta){
                                     <img alt="" src="images/rocket.png">
                                     <img src="images/rocket_fire.png">
                             </aside>                                  
-                            <div class="primera-pregunta dialog" style="display: none">
+                            <!-- <div class="primera-pregunta dialog" style="display: none">
                                 <?= muestra_pregunta(1);?>                                
                                 <button class="res_1 res">
                                     Siguiente
                                 </button>
-                            </div>
+                            </div> -->
                             <img class="right space-man" src="images/spaceman.png">
                             <img class="right luna" alt="luna" src="images/land.png">
                         </div>

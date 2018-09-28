@@ -703,16 +703,21 @@ a {
 
 #app-cover .control-design-thumb {
   float: left;
-  padding: 0 10px;
+  padding: 5px 10px;
   overflow: visible;
   box-sizing: border-box;
   width: 50%;
+  cursor: pointer;
 }
 
 @media (min-width: 660px) {
   #app-cover .control-design-thumb {
     width: 200px;
   }
+}
+
+#app-cover .control-design-thumb:hover {
+  background-color: #EEE;
 }
 
 #app-cover .control-design-thumb aside {
@@ -724,7 +729,6 @@ a {
 }
 
 #app-cover .control-design-thumb img {
-  cursor: pointer;
   display: block;
   height: 100%;
 }

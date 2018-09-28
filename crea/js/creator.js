@@ -38,7 +38,7 @@ export default function creator () {
 	/*APPLICATION FUNCTIONS*/
 	var checkDataValidation = function(){
 		if(Object.keys(jd).length){
-			if(jd.respuestas && jd.respuestas.length < 7){
+			if(jd.respuestas && Object.keys(jd.respuestas).length < 3){
 				location.href = "/tour";
 			} else {
 				isNew = true;
@@ -176,11 +176,12 @@ export default function creator () {
 		});	
 		
 		/* TEMPLATE DESIGN*/
-		$(".control-design-thumb aside").on('click', function() {
-			var $this = $(this);
-			$this.closest(".control-desing-cont").find(".control-design-thumb aside").removeClass("thumb-selected");
-			$("input",$this.parent()).trigger("click");
-			$this.addClass("thumb-selected");
+		$(".control-design-thumb").on('click', function() {
+			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
+			$("aside",this).addClass("thumb-selected");
+			$("[name^='inp-design']").removeAttr("checked");
+			$("input",this).attr("checked","checked");
+			updateTemplate();			
 		});
 		
 		/* Upload image*/
@@ -639,11 +640,18 @@ export default function creator () {
 	}
 
 	var translateData = function(info){
+		let text = '',
+			arr = Object.keys(info.respuestas);
+		for(let i = 0; i < arr.length; i++){
+			if(info.respuestas[arr[i]].tipo == 6){
+				text = info.respuestas[arr[i]].respuesta;
+			}
+		}
 		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
 			{
 				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
 				lang: 'es-en',
-				text: info.respuestas[5].respuesta,
+				text: text,
 				format: 'plain'
 			}
 		  ).done(function(data) {
