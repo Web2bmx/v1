@@ -81,16 +81,6 @@ export default function creator () {
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
 			lastKeyPressed = e.keyCode || e.which;
-			/* if (($(this).attr("name").indexOf("-contact-") > -1) || ($(this).attr("name").indexOf("-item-") > -1)) {
-				goToByScroll($(document), 800);
-			} else {
-				goToByScroll($(document), 0);
-			}
-			if ($(this).attr("name").indexOf("-contact-") > -1) {
-				$("#app-control").addClass("top");
-			} else {
-				$("#app-control").removeClass("top");
-			} */
 			updateTemplate();
 		});
 		/*ADD ITEMS*/
@@ -154,7 +144,7 @@ export default function creator () {
 					var $control_color = $(".template.control-color").clone();
 					var $palette = $palettes.filter(":eq(" + i + ")");
 					$control_color.removeClass("template");
-					$control_color.find("h4").html($palette.find("name").html()).remove();
+					$control_color.find("h4").html($palette.find("name").html());
 					$control_color.find("input").attr("id", ("inp-palette-" + i));
 					$control_color.find("input").attr("value", i);
 					$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
@@ -281,6 +271,13 @@ export default function creator () {
 		for (let i=0; i < $("#app-control>.app-control-step").length -1; i++) {
 			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
+		$(document).on("click", ".control-view-index-item", function() {
+			let $this = $(this);
+			let index = $(".control-view-index-item").index($this);
+			current_step = index;
+			goToStep(current_step);
+			updateContent();
+		});
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
 		centerNav();
 
@@ -601,7 +598,7 @@ export default function creator () {
 		return regex.test(name);
 	}	
 	function validPassword(password) {
-		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{6,}$/;
 		return regex.test(password);
 	}	
 	function openRequestedPopup(strUrl, strWindowName) {

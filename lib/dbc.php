@@ -1,6 +1,5 @@
 <?php
 
-//$dbh = new mysqli("localhost", "root", "", "nektuzco_web2b");
 $dbh = new mysqli("localhost", "nektuzco_web2bUr", "@Wb2bUsr010", "nektuzco_web2b");
 
 // �Oh, no! Existe un error 'connect_errno', fallando as� el intento de conexi�n
