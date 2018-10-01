@@ -524,6 +524,17 @@ export default function creator () {
 			saveSelected(n_name,img_src,'image');
 		});
 		saveWeb2bJson();
+		topStepMargin();		
+	};
+
+	var topStepMargin = function(){
+		let actual = $(".app-control-step:visible > div"),
+			remain = $("#app-control").height() - 
+			$("#app-control-nav").height() -
+			$("#app-switch").height() -
+			actual.height();
+		
+		actual.css("padding-top",remain > 0 ? remain/2 + "px" : "0");
 	};
 
 	var updateTemplate = function () {		

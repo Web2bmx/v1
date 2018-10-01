@@ -166,37 +166,43 @@
 					</div>
 				</div>
 				<div class="app-control-step">
-					<h2>¿Te gustaría poner más información sobre tu empresa?</h2>
-					<p class="app-control-step-tooltip-info">Aquí puedes escribir la historia de tu empresa o describir más a fondo quiénes son.</p>
-					<div>	
-						<div>
-							<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" /><br />
-							<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<h2>¡Invita a tus clientes a realizar una acción!</h2>
-					<p class="app-control-step-tooltip-info">Invita a tus clientes a visitar tu negocio o a conocer tus productos o servicios.</p>
-					<div>	
-						<div>
-							<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" /><br />
-							<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
-						</div>
-					</div>
-				</div>
-				<div class="app-control-step">				
-					<p>¿Cuál es tu principal producto o servicio?</p>
-					<div>	
-						<div>
-							<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" /><br />
-							<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio"></textarea>
+					<div>
+						<h2>¿Te gustaría poner más información sobre tu empresa?</h2>
+						<p class="app-control-step-tooltip-info">Aquí puedes escribir la historia de tu empresa o describir más a fondo quiénes son.</p>
+						<div>	
+							<div>
+								<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" /><br />
+								<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Elige una imagen para tu principal producto o servicio</p>
+						<h2>¡Invita a tus clientes a realizar una acción!</h2>
+						<p class="app-control-step-tooltip-info">Invita a tus clientes a visitar tu negocio o a conocer tus productos o servicios.</p>
+						<div>	
+							<div>
+								<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" /><br />
+								<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>¿Cuál es tu principal producto o servicio?</h2>
+						<div>	
+							<div>
+								<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" /><br />
+								<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>Elige una imagen para tu principal producto o servicio</h2>
 						<div class="app-control-images">
 							<div id='app-control-images-item-1'>
 								<div class="photo-container"></div>
@@ -211,7 +217,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>¿Tienes otro producto o servicio que agregar?</p>
+						<h2>¿Tienes otro producto o servicio que agregar?</h2>
 						<div>
 							<label for="inp-content-item-add-y">Sí</label><input type="radio" id="inp-content-item-add-y" name="inp-content-item-add" value="y" />
 							<label for="inp-content-item-add-n">No</label><input type="radio" id="inp-content-item-add-n" name="inp-content-item-add" value="n" checked="checked" />
@@ -220,7 +226,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio</p>
+						<h2>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio</h2>
 						<div>
 							<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" class="optional" /><br />
 							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" class="optional" /><br />
@@ -229,7 +235,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Coloca la dirección y horario de tu Negocio</p>
+						<h2>Coloca la dirección y horario de tu Negocio</h2>
 						<div>
 							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
 							<input type="text" id="inp-contact-schedule" name="inp-contact-schedule" value="" placeholder="El horario de tu negocio" class="optional" /><br />
@@ -239,7 +245,7 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Escribe las redes sociales de tu Negocio</p>
+						<h2>Escribe las redes sociales de tu Negocio</h2>
 						<div>
 							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" class="optional" /><br />
 							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" class="optional" /><br />

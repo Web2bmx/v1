@@ -789,8 +789,8 @@ a {
 
 #app-control > .app-control-step {
   display: block;
-  height: 70%;
-  margin: 40px 2% auto 2%;
+  height: calc(100% - 100px);
+  margin: 40px 2% 60px 2%;
   overflow-y: auto;
   text-align: center;
   width: 96%;
@@ -942,18 +942,51 @@ a {
 }
 
 #app-control .photo-container {
-  margin: 10px 0;
+  margin: 10px auto;
   overflow: hidden;
+  width: 300px;
+}
+
+@media (min-width: 660px) {
+  #app-control .photo-container {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-control .photo-container {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-control .photo-container {
+    width: 800px;
+  }
 }
 
 #app-control .img-thumb {
   cursor: pointer;
   float: left;
-  height: 120px;
+  height: 100px;
   overflow: visible;
   position: relative;
-  width: 120px;
+  width: 100px;
   z-index: 1;
+}
+
+@media (min-width: 1040px) {
+  #app-control .img-thumb {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1560px) {
+  #app-control .img-thumb {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 #app-control .thumb-selected {
@@ -970,6 +1003,11 @@ a {
   height: 100%;
   overflow: hidden;
   width: 100%;
+}
+
+#app-control h2 {
+  color: #000000;
+  font-size: 24px;
 }
 
 #app-control-nav {
