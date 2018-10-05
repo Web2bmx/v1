@@ -77,7 +77,7 @@ a {
     > div {
 		display: block;
 		height: auto;
-		margin: 7em auto;
+		margin: 4em auto;
 		overflow: hidden;
 		text-align: center;
 		width: 80%; 
@@ -85,11 +85,6 @@ a {
 	label{
 		display: block;
 		margin-bottom: 15px;
-	}
-	.app-cover-finish-package {
-		border: 1px dotted #ADADAD;
-		margin: 1em 0;
-		padding: 2em;
 	}
 	.control-design-thumb {
 		float: left;
@@ -151,6 +146,120 @@ a {
 			margin-top: 100px;
 		}
 	}
+	.app-cover-finish{
+		> div {
+
+			> img{
+				width: 100px;
+			}
+
+			.extra-info{								
+				display: block;
+				font-size: 14px;
+				line-height: 24px;
+				margin: 25px 0;
+			}
+
+		}
+
+		h3{
+			color: #58595B;
+			font-size: 28px;
+			margin-bottom: 0;
+		}
+
+		p{
+			font-size: 24px;
+			font-weight: bold;
+			margin: 0;	
+			line-height: 30px;		
+		}
+
+		.url{
+			color: #cc2880;
+			font-size: 24px;
+			margin: 10px 0;
+		}
+
+		.paquetes{
+			overflow: hidden;
+		}
+
+		.app-cover-finish-package {
+			width: 100%;
+			margin: 1em 0;
+			padding: 2em;
+			float: left;
+			background-color: #9E1F63;
+			color: white;
+			box-sizing: border-box;
+
+			@include breakpoint($tablet){
+				width: calc(50% - 20px);
+				margin: 1em 10px;
+			}
+
+			@include breakpoint($desktop){
+				width: calc(33.33% - 40px);
+				margin: 1em 20px;
+			}	
+			
+			@include breakpoint($ext-desktop){
+				width: calc(33.33% - 60px);
+				margin: 1em 30px;
+			}	
+			
+			hr{
+				width: 10%;
+			}
+
+			.price{
+				display: block;
+				font-weight: bold;
+				font-size: 50px;
+				margin: 40px 0;	
+				
+				@include breakpoint($tablet){
+					font-size: 60px;
+				}
+
+				@include breakpoint($desktop){
+					font-size: 70px;
+				}
+
+				@include breakpoint($ext-desktop){
+					font-size: 80px;
+				}				
+			}
+
+			ul{
+				text-decoration: none;
+				text-align: left;
+				margin-bottom: 40px;
+				font-size: 13px;
+				height: 70px;				
+			}
+
+			button{
+				background: none;
+				border: 1px solid white;
+				width: 100%;
+				padding: 10px 20px;
+				border-radius: 0;
+				font-size: 13px;
+				font-weight: normal;
+				letter-spacing: 2px;
+				cursor: pointer;
+				
+				&:hover{
+					background: white;
+					color: #9E1F63;
+				}
+
+			}
+		}		
+
+	}
 }
 
 .app-new-start { 
@@ -162,7 +271,8 @@ a {
 	bottom: 0;
 	color: #666;
 	display: block;
-	height: 100%;
+	height: 95%;
+	max-height: 95%;
 	left: 0;
 	overflow: hidden;
 	pointer-events: auto;
@@ -470,12 +580,11 @@ a {
 @media screen and (min-width: 660px) {
 	#app-control {
 		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-		height: 600px;
 		left: 50%;
-		top: 50%;
+		top: 3%;
 		width: 85%;
 		margin-left: -42.5%;
-		margin-top: -300px;			
+		margin-top: 0;			
 		@include border-radius(10px);
 	}
 	#app-control.top {

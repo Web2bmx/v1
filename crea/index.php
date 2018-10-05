@@ -98,38 +98,53 @@
 				</div>			
 				<div class="app-cover-finish" style="display: none;">
 					<div>
-						<h1>¡Terminamos!</h1>
-						<p>Puedes ver tu sitio aquí*, y puedes compartir este enlace con quien tú quieras.</p>
+						<img src="/img/logo.png" />
+						<h3>Tu sitio web está listo</h3>
+						<p>Puedes verlo en:</p>
+						<p class="url">tusitio.web2b.mx</p>
 						<p>Tu sitio estará disponible durante 14 días.</p>
-						<p>¿Deseas conservar y crecer tu sitio?</p>
-						<h2>Conoce nuestros paquetes.</h2>
-						<div class="app-cover-finish-package">
-							<h3>Paquete Básico</h3>
-							<ul>
-								<li>Conservar mi sitio por un año.</li>
-								<li>Agregar mi logotipo.</li>
-								<li>Agregar nuevo contenido.</li>
-								<li>Actualizaciones ilimitadas.</li>
-								<li>Asesoría para crecer mi página.</li>
-								<li>$1,199.00</li>
-							</ul>
-						</div>
-						<div class="app-cover-finish-package">	
-							<h3>Paquete Premium</h3>
-							<ul>
-								<li>Dominio, elnombredeminegocio.mx</li>
-								<li>Conservar mi sitio por un año.</li>
-								<li>Agregar mi logotipo.</li>
-								<li>Agregar nuevo contenido.</li>
-								<li>Actualizaciones ilimitadas.</li>
-								<li>Asesoría para crecer mi página.</li>
-								<li>$2,499.00</li>
-							</ul>
-						</div>	
-						<h2>Escribe un correo donde podamos contactarte</h2>
-						<input type="text" placeholder="Tu correo" />
-						<h3>Recibirás un correo en los próximos mínutos con los siguientes pasos.</h3>
-						<input type="button" name="finish" value="Aceptar" />
+						<p class="extra-info">
+							¿Deseas conservar y crecer tu sitio?<br />
+							Conoce nuestros paquetes.
+						</p>
+						<div class="paquetes">
+							<div class="app-cover-finish-package">
+								<h4>GRATUITO</h4>
+								<hr />
+								<span class="price">$0</span>
+								<ul>
+									<li>Demo por 14 días</li>
+									<li>Edición de prueba</li>
+									<li>Panel de control</li>
+								</ul>
+								<button class="finish">FINALIZAR</button>
+							</div>
+							<div class="app-cover-finish-package">
+								<h4>BÁSICO</h4>
+								<hr />
+								<span class="price">$899</span>
+								<ul>
+									<li>Conservar mi sitio por un año</li>
+									<li>Agregar mi logotipo</li>
+									<li>Agregar nuevo contenido</li>
+									<li>Actualizaciones ilimitadas</li>
+								</ul>
+								<button class="finish">FINALIZAR</button>
+							</div>
+							<div class="app-cover-finish-package">
+								<h4>PREMIUM</h4>
+								<hr />
+								<span class="price">$1599</span>
+								<ul>
+									<li>Dominio .com o .mx</li>
+									<li>Conservar mi sitio por un año</li>
+									<li>Agregar mi logotipo</li>
+									<li>Agregar nuevo contenido</li>
+									<li>Actualizaciones ilimitadas</li>
+								</ul>
+								<button class="finish">FINALIZAR</button>
+							</div>
+						</div>												
 					</div>
 				</div>
 			</div>

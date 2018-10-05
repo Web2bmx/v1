@@ -1,4 +1,3 @@
-- Aplicar diseño al paso final
 - Hacer responsivo el modal
 - Mejorar el blog
 - Optimizar salvado de datos solo cuando haya cambios
@@ -12,3 +11,4 @@
 - Que los templates por default ya tengan contenido
 - Hardcodear traducciones de tipo de negocio
 - Investigar conectamx
+- Agregar etiqueta (precio por año) a los precios del final

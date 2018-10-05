@@ -318,7 +318,7 @@ export default function creator () {
 	
 		});
 
-		$("[name='finish']").on("click", function() {
+		$(".finish").on("click", function() {
 			current_step --;
 			$("#app-cover").hide();
 		});

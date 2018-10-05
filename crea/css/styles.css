@@ -684,7 +684,7 @@ a {
 #app-cover > div {
   display: block;
   height: auto;
-  margin: 7em auto;
+  margin: 4em auto;
   overflow: hidden;
   text-align: center;
   width: 80%;
@@ -693,12 +693,6 @@ a {
 #app-cover label {
   display: block;
   margin-bottom: 15px;
-}
-
-#app-cover .app-cover-finish-package {
-  border: 1px dotted #ADADAD;
-  margin: 1em 0;
-  padding: 2em;
 }
 
 #app-cover .control-design-thumb {
@@ -768,13 +762,133 @@ a {
   margin-top: 100px;
 }
 
+#app-cover .app-cover-finish > div > img {
+  width: 100px;
+}
+
+#app-cover .app-cover-finish > div .extra-info {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 25px 0;
+}
+
+#app-cover .app-cover-finish h3 {
+  color: #58595B;
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+#app-cover .app-cover-finish p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 30px;
+}
+
+#app-cover .app-cover-finish .url {
+  color: #cc2880;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#app-cover .app-cover-finish .paquetes {
+  overflow: hidden;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package {
+  width: 100%;
+  margin: 1em 0;
+  padding: 2em;
+  float: left;
+  background-color: #9E1F63;
+  color: white;
+  box-sizing: border-box;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-finish .app-cover-finish-package {
+    width: calc(50% - 20px);
+    margin: 1em 10px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-finish .app-cover-finish-package {
+    width: calc(33.33% - 40px);
+    margin: 1em 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-cover .app-cover-finish .app-cover-finish-package {
+    width: calc(33.33% - 60px);
+    margin: 1em 30px;
+  }
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package hr {
+  width: 10%;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package .price {
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+  margin: 40px 0;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .price {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .price {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .price {
+    font-size: 80px;
+  }
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package ul {
+  text-decoration: none;
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 13px;
+  height: 70px;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button {
+  background: none;
+  border: 1px solid white;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button:hover {
+  background: white;
+  color: #9E1F63;
+}
+
 /**/
 #app-control {
   background-color: #FFF;
   bottom: 0;
   color: #666;
   display: block;
-  height: 100%;
+  height: 95%;
+  max-height: 95%;
   left: 0;
   overflow: hidden;
   pointer-events: auto;
@@ -1133,12 +1247,11 @@ a {
 @media screen and (min-width: 660px) {
   #app-control {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    height: 600px;
     left: 50%;
-    top: 50%;
+    top: 3%;
     width: 85%;
     margin-left: -42.5%;
-    margin-top: -300px;
+    margin-top: 0;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -webkit-border-radius: 10px;
