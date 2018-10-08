@@ -1,6 +1,4 @@
-var winWidth = $(window).width(),
-	winHeigth = $(window).height(); 
-
+import dialogHandler from '../../js/dialog';
 
 $(document).ready(function() {
 	$(".comingsoon").click(function() {
@@ -15,21 +13,10 @@ $(document).ready(function() {
 		
 		return false;
 	});
-    $(".dialog").dialog({
-			autoOpen: false,
-			modal: true,
-			width: winWidth,
-			show: {
-				effect: "fade",
-				duration: 1000
-			},
-			hide: {
-				effect: "fade",
-				duration: 1000
-			},
-			closeOnEscape: false
-	  }); 
-	  $(".login-btn").click(function(e){
+	
+	dialogHandler();
+		
+	$(".login-btn").click(function(e){
 		e.preventDefault();
 		$(".login-content").show();
 		$(".login-error").hide();
@@ -39,73 +26,75 @@ $(document).ready(function() {
 		$("#password").val("");
 		$(".login-paginas").hide();
 		$(".form-error").hide();		
-	  });	
-		$(".cerrar-ventana").click(function(){
-			$(".ventana-login").dialog( "close" ); 
-		});
-		$(".entrar").click(function(){
-			if($("#email").val().trim() == "" || !isEmail($("#email").val())){
-				$(".login-content .email.form-error").css("display","block");
-			} if(!$("#password").val().trim()){
-				$(".login-content .password.form-error").css("display","block");
-			} else {
-				$.post("/landing/scripts/login.php",{
-					correo: $("#email").val().trim(),					
-					password: $("#password").val()
-				})
-					.done(function(response){
-						if(response.ok && response.paginas.length > 0){
-							// si solo tiene una pagina
-							if(response.paginas.length == 1) {
-								//mostrar usuarios
-								localStorage.setItem("web2b_template", response.paginas[0].info);
-								localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
-								localStorage.setItem("web2b_userId", response.userId);
-								window.location.href = "/crea";
-							} else {
-								// manejar varias paginas de un solo usuario??
-								let html = "";
-								let pags = response.paginas;
-								for(let i=0, jd; i < pags.length; i++){
-									jd = JSON.parse(pags[i].info);
-									html += 
-									`<option class="inserted" value="${i}">
-										${jd.nombre}
-									</option>`;
-								}						
-								$(".proyectos-disponibles .inserted").remove();									
-								$(".proyectos-disponibles").append(html);
-								$(".ventana-login > div").hide();
-								$(".login-paginas").show();
-								$(".llevame").click({
-									pags: pags,
-									userId: response.userId
-								},function(e){
-									let pagina = $(".proyectos-disponibles option:selected" ).val(),
-										d = e.data;
-									if(pagina != ""){
-										localStorage.setItem("web2b_template", d.pags[pagina].info);
-										localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
-										localStorage.setItem("web2b_userId", d.userId);
-										window.location.href = "/crea";
-									} else {
-										$(".login-paginas .form-error").css("display","block");
-									}
-								});
-							}
-						} else {
-							$(".login-content").fadeOut(100);
-							$(".login-error p").html(response.error);
-							$(".login-error").fadeIn(100);
-						}
-					})
-					.fail(function(response){
+	});	
 
-					}).always(function(){
-						$(".login-content .form-error").hide();
-					});
-			}
-		});		
+	$(".cerrar-ventana").click(function(){
+		$(".ventana-login").dialog( "close" ); 
+	});
+
+	$(".entrar").click(function(){
+		if($("#email").val().trim() == "" || !isEmail($("#email").val())){
+			$(".login-content .email.form-error").css("display","block");
+		} if(!$("#password").val().trim()){
+			$(".login-content .password.form-error").css("display","block");
+		} else {
+			$.post("/landing/scripts/login.php",{
+				correo: $("#email").val().trim(),					
+				password: $("#password").val()
+			})
+				.done(function(response){
+					if(response.ok && response.paginas.length > 0){
+						// si solo tiene una pagina
+						if(response.paginas.length == 1) {
+							//mostrar usuarios
+							localStorage.setItem("web2b_template", response.paginas[0].info);
+							localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
+							localStorage.setItem("web2b_userId", response.userId);
+							window.location.href = "/crea";
+						} else {
+							// manejar varias paginas de un solo usuario??
+							let html = "";
+							let pags = response.paginas;
+							for(let i=0, jd; i < pags.length; i++){
+								jd = JSON.parse(pags[i].info);
+								html += 
+								`<option class="inserted" value="${i}">
+									${jd.nombre}
+								</option>`;
+							}						
+							$(".proyectos-disponibles .inserted").remove();									
+							$(".proyectos-disponibles").append(html);
+							$(".ventana-login > div").hide();
+							$(".login-paginas").show();
+							$(".llevame").click({
+								pags: pags,
+								userId: response.userId
+							},function(e){
+								let pagina = $(".proyectos-disponibles option:selected" ).val(),
+									d = e.data;
+								if(pagina != ""){
+									localStorage.setItem("web2b_template", d.pags[pagina].info);
+									localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
+									localStorage.setItem("web2b_userId", d.userId);
+									window.location.href = "/crea";
+								} else {
+									$(".login-paginas .form-error").css("display","block");
+								}
+							});
+						}
+					} else {
+						$(".login-content").fadeOut(100);
+						$(".login-error p").html(response.error);
+						$(".login-error").fadeIn(100);
+					}
+				})
+				.fail(function(response){
+
+				}).always(function(){
+					$(".login-content .form-error").hide();
+				});
+		}
+	});		
 
 	/*GENERAL FUNCTIONS*/
 	function isEmail(email) {

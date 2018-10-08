@@ -84,8 +84,7 @@ function muestra_pregunta($numero_pregunta){
     </head>
     <body>
         <a href="/" class="back">
-            <i class="fas fa-arrow-circle-left"></i> 
-            <span>
+            <i class="fas fa-arrow-circle-left"></i><span>
                 Regresar
             </span>
         </a>        

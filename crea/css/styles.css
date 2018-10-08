@@ -469,6 +469,7 @@ and open the template in the editor.
   border: none;
   padding: 0;
   border-radius: 10px;
+  max-width: 100%;
 }
 
 @media (min-width: 660px) {

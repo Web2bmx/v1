@@ -6,6 +6,7 @@
 	border: none;
 	padding: 0;
 	border-radius: 10px;
+	max-width: 100%;
 
 	@include breakpoint($tablet){
 		max-width: 640px;

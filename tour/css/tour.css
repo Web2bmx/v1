@@ -560,6 +560,7 @@ input[type='button'] {
   border: none;
   padding: 0;
   border-radius: 10px;
+  max-width: 100%;
 }
 
 @media (min-width: 660px) {
@@ -1139,12 +1140,23 @@ textarea {
   font-weight: bold;
 }
 
+.dialog p:first-child {
+  margin-top: 25px;
+}
+
+@media (min-width: 660px) {
+  .dialog p:first-child {
+    margin-top: inherit;
+  }
+}
+
 .back {
   position: fixed;
   top: 10px;
   left: 10px;
   z-index: 1000;
   background: none;
+  padding: 0;
 }
 
 .back:hover {

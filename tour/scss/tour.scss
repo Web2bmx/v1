@@ -468,6 +468,14 @@ textarea{
 
     p{
         font-weight: bold;
+        
+        &:first-child{
+            margin-top: 25px;
+
+            @include breakpoint($tablet){
+                margin-top: inherit;
+            }
+        }
     }
 
 }
@@ -478,6 +486,7 @@ textarea{
     left: 10px;
     z-index: 1000;
     background: none;
+    padding: 0;
 
     &:hover{
         opacity: 0.7;

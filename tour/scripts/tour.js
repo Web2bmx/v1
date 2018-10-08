@@ -1,3 +1,5 @@
+import dialogHandler from '../../js/dialog';
+
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -177,21 +179,7 @@ $(document).ready(function(){
     let winWidth = $(window).width(),    
         h = $(window).height();    
     
-    $(".dialog").dialog({
-      autoOpen: false,
-      modal: true,
-      width: winWidth,
-      height: h,
-      show: {
-        effect: "fade",
-        duration: 1000
-      },
-      hide: {
-        effect: "fade",
-        duration: 1000
-      },
-      closeOnEscape: false
-    });  
+    dialogHandler(true);  
 
     var jsonData = localStorage.getItem("web2b");
 
