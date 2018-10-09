@@ -1,5 +1,3 @@
-- Aplicar diseño al paso final
-- Hacer responsivo el modal
 - Mejorar el blog
 - Optimizar salvado de datos solo cuando haya cambios
 - Aplicar estilos a los modales (50%)
@@ -10,3 +8,5 @@
 - Investigar terceros níveles subdomain vs folder para el nombre del negocio
 - Hardcodear traducciones de tipo de negocio
 - Investigar conectamx
+- Agregar etiqueta (precio por año) a los precios del final
+- Revisar comportamiento resposive del tour
