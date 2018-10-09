@@ -90,8 +90,8 @@ export default function creator () {
 			$("#control-view-index").prepend(($(".control-view-index-item.current").clone().removeClass("current"))).append(($(".control-view-index-item.current").clone().removeClass("current")));
 			addItems(number_of_items);
 			number_of_items ++;
-			var $i_t = $(".app-control-step:eq(" + (current_step - 2) + ")").clone();
-			$i_t.find("p").html("Tu producto o servicio");
+			var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
+			$i_t.find("h2:eq(0)").html("Tu producto o servicio");
 			$i_t.find("input").attr("id", ("inp-content-title-item-" + number_of_items));
 			$i_t.find("input").attr("name", ("inp-content-title-item-" + number_of_items));
 			$i_t.find("input").attr("placeholder", "Tu producto o servicio");
@@ -100,10 +100,9 @@ export default function creator () {
 			$i_t.find("textarea").attr("name", ("inp-content-item-" + number_of_items));
 			$i_t.find("textarea").attr("placeholder", "Tu producto o servicio");
 			$i_t.find("textarea").val("");
-			var $i_i = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
-			$i_i.find("p").html("Elige una imagen para tu producto o servicio");
-			$i_i.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
-			$i_i.find("input").each(function() {
+			$i_t.find("h2:eq(1)").html("Elige una imagen para tu producto o servicio");
+			$i_t.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
+			$i_t.find("input").each(function() {
 				if($(this).attr("type") != "file" && $(this).attr("type") != "submit"){
 					$(this).attr("name", ("inp-img-item-" + number_of_items));
 				}
@@ -111,7 +110,7 @@ export default function creator () {
 					$(this).attr("name", ("item-" + number_of_items));
 				}
 			});
-			$this.closest(".app-control-step").before($i_t).before($i_i);
+			$this.closest(".app-control-step").before($i_t);
 			current_step = index;
 			goToStep(current_step);
 			$this.prop('checked', false);
@@ -119,7 +118,7 @@ export default function creator () {
 			centerNav();
 		});
 
-		/*TOOLTIPS*/
+		/*TOOLTIPS****/
 		$(".app-control-step-tooltip-info").prev("*").append($(".app-control-step-tooltip.template").clone().removeClass("template"));
 		$(".app-control-step-tooltip").click(function() {
 			var $target = $(this).parent().next(".app-control-step-tooltip-info");

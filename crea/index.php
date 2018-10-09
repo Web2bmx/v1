@@ -213,10 +213,6 @@
 								<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio"></textarea>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="app-control-step">
-					<div>
 						<h2>Elige una imagen para tu principal producto o servicio</h2>
 						<div class="app-control-images">
 							<div id='app-control-images-item-1'>
