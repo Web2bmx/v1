@@ -188,7 +188,7 @@ a {
 		.app-cover-finish-package {
 			width: 100%;
 			margin: 1em 0;
-			padding: 2em;
+			padding: 1.7em;
 			float: left;
 			background-color: #9E1F63;
 			color: white;
@@ -217,7 +217,7 @@ a {
 				display: block;
 				font-weight: bold;
 				font-size: 50px;
-				margin: 40px 0;	
+				margin-top: 40px;	
 				
 				@include breakpoint($tablet){
 					font-size: 60px;
@@ -229,7 +229,13 @@ a {
 
 				@include breakpoint($ext-desktop){
 					font-size: 80px;
-				}				
+				}	
+				
+				+ span{
+					margin-bottom: 40px;
+					display: block;
+					font-size: 14px;
+				}
 			}
 
 			ul{
@@ -267,7 +273,7 @@ a {
 }
 /**/
 #app-control {
-	background-color: #FFF;
+	background-color: #f7f7f7;
 	bottom: 0;
 	color: #666;
 	display: block;
@@ -468,7 +474,6 @@ a {
 	}
 }
 #app-control-nav {
-	background-color: #FFF;
 	bottom: 0;
 	display: block;
 	height: auto;
@@ -522,7 +527,7 @@ a {
 		}
 	}
 	.control-view-index-item {
-		background-color: #DADADA;
+		background-color: $gray;
 		cursor: pointer;
 		float: left;
 		height: 1em;
@@ -532,7 +537,7 @@ a {
 		@include border-radius(.5em);
 	}
 	.control-view-index-item.current {
-		background-color: $color-cta;
+		background-color: $darker-pink;
 	}
 }
 #app-switch {
@@ -543,7 +548,7 @@ a {
     top: 0;
     color: #fff;
     text-align: center;
-	background-color: #cc2880;
+	background-color: $darker-pink;
 	
 	a{
 		font-size: 22px;
@@ -624,7 +629,7 @@ a {
     display: block;
     text-align: center;
 	font-size: 35px;
-	color: $color-cta;	
+	color: $darker-pink;	
 }
 
 /**/

@@ -112,6 +112,7 @@
 								<h4>GRATUITO</h4>
 								<hr />
 								<span class="price">$0</span>
+								<span>anual</span>
 								<ul>
 									<li>Demo por 14 días</li>
 									<li>Edición de prueba</li>
@@ -123,6 +124,7 @@
 								<h4>BÁSICO</h4>
 								<hr />
 								<span class="price">$899</span>
+								<span>anual</span>
 								<ul>
 									<li>Conservar mi sitio por un año</li>
 									<li>Agregar mi logotipo</li>
@@ -135,6 +137,7 @@
 								<h4>PREMIUM</h4>
 								<hr />
 								<span class="price">$1599</span>
+								<span>anual</span>
 								<ul>
 									<li>Dominio .com o .mx</li>
 									<li>Conservar mi sitio por un año</li>

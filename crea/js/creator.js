@@ -706,13 +706,15 @@ export default function creator () {
 	var saveWeb2bJson = function(){
 		let strJD = JSON.stringify(jd),
 			userId = getObjFromLocalStorage("web2b_userId"),
-			idSitio = getObjFromLocalStorage("web2b_templateId");		
-		if(strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
+			idSitio = getObjFromLocalStorage("web2b_templateId"),
+			savedJD = localStorage.getItem("web2b_template");	
+				
+		if(strJD && savedJD != strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
 			localStorage.setItem("web2b_template", strJD);
 			$.post("scripts/salvar_datos.php",{
 				userId: userId,
 				idSitio: idSitio,
-				info: JSON.stringify(jd)
+				info: strJD
 			}).done(function(result){						
 				if(!result.ok){
 					console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result.mensaje);					
