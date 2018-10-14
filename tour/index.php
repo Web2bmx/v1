@@ -22,10 +22,13 @@ while ($arr = $result->fetch_assoc()) {
         if($arr3['respuesta'] == "[categorias]"){            
             $r4 =$dbh->query('SELECT * FROM `categorias_negocio`');
             while ($arr4 = $r4->fetch_assoc()) {
-                array_push($opciones,$arr4['Categoria']);
+                array_push($opciones,array($arr4['Categoria'], $arr4['Categoria_en']));
             }
         } else {
-            $opciones = explode("#",$arr3['respuesta']);            
+            $arr_t = explode("#",$arr3['respuesta']);            
+            foreach ($arr_t as $v) {
+                array_push($opciones,array($v, ""));
+            }
         }
     } else {
         $opciones = "";
@@ -58,8 +61,8 @@ function muestra_pregunta($numero_pregunta){
         foreach($opciones as $opcion){            
             $html .= ' 
             <label for="rb' . $numero_pregunta . '-' . $x . '">           
-            <input id="rb' . $numero_pregunta . '-' . $x . '" type="radio" name="pregunta' . $numero_pregunta . '" value="' . utf8_encode($opcion) . '">
-            ' . utf8_encode($opcion) . (strpos($opcion,"Otra") !== false ? ': <input type="text">' : "") . '
+            <input id="rb' . $numero_pregunta . '-' . $x . '" type="radio" name="pregunta' . $numero_pregunta . '" value="' . utf8_encode($opcion[0]) . '" data-loc-en="' . $opcion[1] . '">
+            ' . utf8_encode($opcion[0]) . (strpos($opcion[0],"Otra") !== false ? ': <input type="text">' : "") . '
             </label>
             ';
 

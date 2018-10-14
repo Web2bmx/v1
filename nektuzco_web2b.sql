@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-10-2018 a las 05:16:57
--- Versión del servidor: 5.7.19
--- Versión de PHP: 7.0.23
+-- Host: 127.0.0.1:3306
+-- Generation Time: Oct 14, 2018 at 04:42 PM
+-- Server version: 5.7.21
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,47 +19,48 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `nektuzco_web2b`
+-- Database: `nektuzco_web2b`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `categorias_negocio`
+-- Table structure for table `categorias_negocio`
 --
 
 DROP TABLE IF EXISTS `categorias_negocio`;
 CREATE TABLE IF NOT EXISTS `categorias_negocio` (
   `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Categoria` varchar(100) NOT NULL,
+  `Categoria_en` varchar(127) NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `categoria` (`Id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `categorias_negocio`
+-- Dumping data for table `categorias_negocio`
 --
 
-INSERT INTO `categorias_negocio` (`Id`, `Categoria`) VALUES
-(1, 'Arte y Creatividad'),
-(2, 'Automóviles'),
-(3, 'Moda y belleza'),
-(4, 'Servicios profesionales'),
-(5, 'Computación'),
-(6, 'Restaurantes y cafeterías'),
-(7, 'Deportes y recreación'),
-(8, 'Hogar'),
-(9, 'Eventos y banquetes'),
-(10, 'Mascotas y veterinarias'),
-(11, 'Viajes'),
-(12, 'Salud y bienestar'),
-(13, 'Comercios'),
-(14, 'Bienes raíces');
+INSERT INTO `categorias_negocio` (`Id`, `Categoria`, `Categoria_en`) VALUES
+(1, 'Arte y Creatividad', 'Arts and creativity'),
+(2, 'Automóviles', 'Cars'),
+(3, 'Moda y belleza', 'Fashion and Beauty'),
+(4, 'Servicios profesionales', 'Professional Services'),
+(5, 'Computación', 'Computers and Technology'),
+(6, 'Restaurantes y cafeterías', 'Restaurants, coffee shops and food'),
+(7, 'Deportes y recreación', 'Sports and recreation'),
+(8, 'Hogar', 'Home'),
+(9, 'Eventos y banquetes', 'Events and banquets'),
+(10, 'Mascotas y veterinarias', 'Pets and pet stores'),
+(11, 'Viajes', 'Travel and Leisure'),
+(12, 'Salud y bienestar', 'Health and Wellness'),
+(13, 'Comercios', 'Shops, stores, grocery store'),
+(14, 'Bienes raíces', 'Real State');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `info_paginas`
+-- Table structure for table `info_paginas`
 --
 
 DROP TABLE IF EXISTS `info_paginas`;
@@ -72,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `info_paginas` (
 ) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `info_paginas`
+-- Dumping data for table `info_paginas`
 --
 
 INSERT INTO `info_paginas` (`IdUsuario`, `info`, `id`) VALUES
@@ -87,7 +88,7 @@ INSERT INTO `info_paginas` (`IdUsuario`, `info`, `id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `opciones_respuesta`
+-- Table structure for table `opciones_respuesta`
 --
 
 DROP TABLE IF EXISTS `opciones_respuesta`;
@@ -100,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `opciones_respuesta` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `opciones_respuesta`
+-- Dumping data for table `opciones_respuesta`
 --
 
 INSERT INTO `opciones_respuesta` (`Id`, `tipo_pregunta`, `respuesta`) VALUES
@@ -111,7 +112,7 @@ INSERT INTO `opciones_respuesta` (`Id`, `tipo_pregunta`, `respuesta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `preguntas`
+-- Table structure for table `preguntas`
 --
 
 DROP TABLE IF EXISTS `preguntas`;
@@ -125,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `preguntas` (
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `preguntas`
+-- Dumping data for table `preguntas`
 --
 
 INSERT INTO `preguntas` (`Id`, `pregunta`, `tipo`, `tiene_opciones`, `isActive`) VALUES
@@ -152,7 +153,7 @@ INSERT INTO `preguntas` (`Id`, `pregunta`, `tipo`, `tiene_opciones`, `isActive`)
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `respuestas`
+-- Table structure for table `respuestas`
 --
 
 DROP TABLE IF EXISTS `respuestas`;
@@ -165,7 +166,7 @@ CREATE TABLE IF NOT EXISTS `respuestas` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `templates`
+-- Table structure for table `templates`
 --
 
 DROP TABLE IF EXISTS `templates`;
@@ -187,7 +188,7 @@ CREATE TABLE IF NOT EXISTS `templates` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `templates`
+-- Dumping data for table `templates`
 --
 
 INSERT INTO `templates` (`folder`, `width`, `height`, `font`, `fontsize`, `color`, `posx`, `posy`, `uppercase`, `align`, `id`) VALUES
@@ -201,7 +202,7 @@ INSERT INTO `templates` (`folder`, `width`, `height`, `font`, `fontsize`, `color
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 DROP TABLE IF EXISTS `usuarios`;
@@ -213,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`Id`, `correo`, `password`) VALUES

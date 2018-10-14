@@ -70,10 +70,11 @@ function preguntaValida(selector){
         } else {
             resp = $(selector + " input:checked").val();
         }
-
+        var loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
         jsonData.respuestas[id] = {
             "tipo": $(selector + " p").data("type"),
-            "respuesta" : resp,            
+            "respuesta" : resp,
+            "localizacion_en" : loc_en,
         };
 
         localStorage.setItem("web2b", JSON.stringify(jsonData));

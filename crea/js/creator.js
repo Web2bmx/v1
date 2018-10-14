@@ -374,9 +374,14 @@ export default function creator () {
 	};
 
 	var onTemplateLoaded = function(){
-		//translate data
-		translateData(jd);		
+		let text = '', arr = Object.keys(jd.respuestas);
+		for(let i = 0; i < arr.length; i++){
+			if(jd.respuestas[arr[i]].tipo == 6){
+				text = jd.respuestas[arr[i]].localizacion_en;
+			}
+		}
 
+		setImageSelection(text);
 		//load previous content
 		var selections = jd.selections;
 		if(selections){
@@ -467,14 +472,30 @@ export default function creator () {
 			let $this = $(this),
 				i_id = $this.attr("id"),
 				v_id = i_id.replace("inp", "val");
-
-			selections[i_id] = selections[i_id] || {};
+				if (i_id == "inp-content-slogan") {
+					if (!selections[i_id]) {
+						selections[i_id] = {};
+						let web2bTemplate = getObjFromLocalStorage("web2b");
+						let slogan_from_tour = "";
+						for (let key in web2bTemplate.respuestas) {
+							if(web2bTemplate.respuestas[key].tipo == 3) {
+								slogan_from_tour = web2bTemplate.respuestas[key].respuesta;
+								break;
+							}
+						}
+						saveSelected("inp-content-slogan",slogan_from_tour,'text');
+					}
+				} else {
+					selections[i_id] = selections[i_id] || {};
+				}
+				
 			if (($this.val() != "") || (selections[i_id].text != undefined)) {
 				if (($this.val() != "")) {
 					saveSelected(i_id,$this.val(),'text');
 					$template.find("#" + v_id).show().closest(".footer-column").show();
 				} else {
 					$this.val(selections[i_id].text);
+
 				}
 				switch (i_id) {
 					case "inp-contact-email" :
