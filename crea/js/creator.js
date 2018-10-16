@@ -244,7 +244,8 @@ export default function creator () {
 
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();		
-		$("#control-view-nav>a").on("click", function() {
+		$("#control-view-nav>a").on("click", function(e) {
+			e.preventDefault();
 			let totalItems = $("#app-control>.app-control-step").length;
 			if (!$(this).hasClass("disabled")) {
 				var inc = $(this).attr("href") == "#next" ? 1 : -1;
@@ -708,7 +709,7 @@ export default function creator () {
 			userId = getObjFromLocalStorage("web2b_userId"),
 			idSitio = getObjFromLocalStorage("web2b_templateId"),
 			savedJD = localStorage.getItem("web2b_template");	
-				
+
 		if(strJD && savedJD != strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
 			localStorage.setItem("web2b_template", strJD);
 			$.post("scripts/salvar_datos.php",{

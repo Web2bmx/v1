@@ -297,7 +297,59 @@ a {
 		overflow-y: auto;
 		text-align: center;
 		width: 96%;
+
+		&[style=""]:first-child ~ #app-switch{
+			display: none;
+		}
+
+		.site-name-container{
+			text-align: left;
+			color: #121111;
+			font-size: 16px;
+			position: relative;
+
+			h2{
+				margin: 0;
+			}
+
+			input[type="text"]{
+				width: 100px;
+				padding: 5px;
+			}
+
+			div{
+				margin: 60px 0;				
+
+				> span{
+					color: #9b035a;
+					font-weight: bold;
+					display: block;
+					margin-bottom: 10px;
+				}
+			}
+			
+			p{
+				span{
+					font-weight: bold;
+				}
+			}
+
+			img{
+				display: none;
+
+				@include breakpoint($tablet){
+					display: block;
+					position: absolute;
+					top: 200px;
+					right: 0;
+					width: 200px;				
+				}
+			}
+
+		}
+
 	}
+
 	.app-control-step>div {
 		margin: auto;
 		width: 80%;

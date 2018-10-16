@@ -152,6 +152,25 @@
 				</div>
 			</div>
 			<div id="app-control">
+				<div class="app-control-step" style>
+					<div class="site-name-container">
+						<h2>Comienza a editar tu sitio web</h2>
+						<div>
+							<span>
+								Dirección de tu página web:
+							</span>
+							<aside>
+								<input type="text" name="siteName" placeholder="tuSitio" />
+								<span>.web2b.mx</span>
+							</aside>
+						</div>
+						<p>
+							<span>Nota:</span>
+							Puedes cambiarla por tu propio nombre de sitio
+						</p>
+						<img src="/img/logo.png" />
+					</div>
+				</div>
 				<div class="app-control-step">
 					<div>
 						<h2>Ahora elige los colores de tu página</h2>
