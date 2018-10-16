@@ -3,7 +3,7 @@ export default function dialogHandler(setHeight = false){
     var winWidth = $(window).width(),
 	winHeigth = $(window).height();     
 
-    $(".dialog").dialog({
+    $(".dialog").dialog({ 
         autoOpen: false,
         modal: true,
         width: winWidth,
