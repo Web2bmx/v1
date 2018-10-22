@@ -24,7 +24,7 @@
 				<img src="/img/logo.png" />	
 				<div class="inputWihIcons">
 					<i class="fas fa-font"></i>		
-					<input type="text" name="nombre" id="nombre" value="Web2b" placeholder="Nombre de tu página" />
+					<input type="text" name="nombre" id="nombrePagina" value="Web2b" placeholder="Nombre de tu página" />
 				</div>
 				<div class="inputWihIcons">
 					<i class="fas fa-envelope"></i>
@@ -160,8 +160,11 @@
 								Dirección de tu página web:
 							</span>
 							<aside>
-								<input type="text" name="siteName" placeholder="tuSitio" />
+								<input pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]+$" type="text" id="siteName" name="inp-siteName" placeholder="tuSitio" />
 								<span>.web2b.mx</span>
+								<p class="form-error">
+									La dirección de tu página solo puede contener números, letras y guiones medios. Mínimo 3 caracteres.
+								</p>
 							</aside>
 						</div>
 						<p>
@@ -173,9 +176,17 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h2>Ahora elige los colores de tu página</h2>
-						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores</p>
-						<div id="app-control-palettes"></div>
+						<h2>Coloca el nombre de tu negocio</h2>
+						<div>	
+							<div>
+								<input type="text" id="inp-content-name" name="inp-content-name" placeholder="Tu primer producto o servicio" /><br />								
+							</div>
+						</div>
+						<form enctype="multipart/form-data" method="POST" class="file-upload">
+							<span class="one-line-text">Sube tu logotipo en formato png o jpg con un mínimo de 400px</span>
+							<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
+							<input type="submit" value="Subir foto"/>
+						</form>						
 					</div>
 				</div>
 				<div class="app-control-step">
@@ -285,6 +296,13 @@
 						</div>
 					</div>
 				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>Ahora elige los colores de tu página</h2>
+						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores</p>
+						<div id="app-control-palettes"></div>
+					</div>
+				</div>				
 				<div class="app-control-step">
 					<div>
 						<h2>¡Terminamos!</h2>

@@ -32,6 +32,7 @@ export default function creator () {
 
 		$(window).resize(function(){
 			centerNav();
+			topStepMargin();
 		});
     };
 
@@ -46,7 +47,7 @@ export default function creator () {
 		} else {
 			let web2bTemplate = getObjFromLocalStorage("web2b_template");
 			if(Object.keys(web2bTemplate).length){
-				jd = getObjFromLocalStorage("web2b_template");
+				jd = web2bTemplate;
 			} else {
 				location.href = "/";
 			}
@@ -81,7 +82,12 @@ export default function creator () {
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
 			lastKeyPressed = e.keyCode || e.which;
-			updateTemplate();
+			if(!$(e.currentTarget).attr('pattern') || isValidinput($(e.currentTarget))){
+				updateTemplate();
+				$(".form-error",$(e.currentTarget).parent()).hide();
+			} else {
+				$(".form-error",$(e.currentTarget).parent()).show();
+			}
 		});
 		/*ADD ITEMS*/
 		$("#inp-content-item-add-y").on("click", function() {
@@ -293,18 +299,18 @@ export default function creator () {
 		/* ON NEW PAGE */
 		$("[name='start']").on("click", function() {
 			$(".form-error").hide();
-			if($("#nombre").val().trim() == "" || 
+			if($("#nombrePagina").val().trim() == "" || 
 				$("#correo").val().trim() == "" || 
 				$("#password").val().trim() == ""){
 				$(".empty-fields").css("display","block");
-			} else if(!isValidDomain($("#nombre").val().trim().toLowerCase())){
+			} else if(!isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
 				$(".name-invalid").show();
 			} else if(!isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
 			}else if(!validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
 				} else {
-					jd.nombre = $("#nombre").val().trim();
+					saveSelected('inp-content-name',$("#nombrePagina").val().trim(),'text');
 					$.post("scripts/crear_usuario.php",{
 						correo: $("#correo").val().trim(),
 						password: $("#password").val(),
@@ -426,6 +432,9 @@ export default function creator () {
 			$template = $("#template"),
 			selections = jd.selections || {};
 
+		// set top margin
+		topStepMargin();
+
 		/*Colores*/
 		if (sample_colors_ready) {
 			let palette_id = 0;
@@ -478,7 +487,7 @@ export default function creator () {
 		}
 
 		/*Content & Contacto*/
-		$("[id^='inp-contact-'], [id^='inp-content-']").each(function() {
+		$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
 			let $this = $(this),
 				i_id = $this.attr("id"),
 				v_id = i_id.replace("inp", "val");
@@ -553,8 +562,7 @@ export default function creator () {
 			//Save selection to object
 			saveSelected(n_name,img_src,'image');
 		});
-		saveWeb2bJson();
-		topStepMargin();		
+		saveWeb2bJson();				
 	};
 
 	var topStepMargin = function(){
@@ -564,7 +572,7 @@ export default function creator () {
 			$("#app-switch").height() -
 			actual.height();
 		
-		actual.css("padding-top",remain > 0 ? remain/2 + "px" : "0");
+		actual.css("margin-top",remain > 0 ? remain/2 + "px" : "0");
 	};
 
 	var updateTemplate = function () {		
@@ -779,6 +787,12 @@ export default function creator () {
 	var centerNav= function() {
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left",parentW/2 - $("#control-view-index").width()/2);
+	};
+
+	var isValidinput = function(element){
+		let value = element.val();
+		let regex = new RegExp(element.attr("pattern"));
+		return regex.test(value);
 	};
 
     /*EO GENERAL FUNCTIONS*/

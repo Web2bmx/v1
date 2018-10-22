@@ -315,10 +315,11 @@ a {
 			input[type="text"]{
 				width: 100px;
 				padding: 5px;
+				margin: 0;
 			}
 
 			div{
-				margin: 60px 0;				
+				margin: 80px 0;				
 
 				> span{
 					color: #9b035a;
@@ -340,10 +341,14 @@ a {
 				@include breakpoint($tablet){
 					display: block;
 					position: absolute;
-					top: 200px;
+					top: 100px;
 					right: 0;
 					width: 200px;				
 				}
+			}
+
+			.form-error{
+				text-align: left;
 			}
 
 		}
