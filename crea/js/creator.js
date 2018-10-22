@@ -129,7 +129,11 @@ export default function creator () {
 			}
 		});
 		/*EO TOOLTIPS*/
-
+		$("#single-modal i").on("click", function() {
+			$("#single-modal").fadeOut();
+		});
+		/*SINGLE MODAL */
+		/*EO SINGLE MODAL */
 		/* LOAD COLORS */
 		$.ajax({
 			url: "xml/sample_colors.xml",
@@ -216,7 +220,7 @@ export default function creator () {
 				var $img_thumb = $(".img-thumb.template").clone();
 				$img_thumb.removeClass("template").find(".img-thumb-cont").css({
 					"background-image" : ("url(" + data[x]["urls"]["regular"] + ")")
-				});
+				}).attr("data-img-url", data[x]["urls"]["regular"]);
 				$img_thumb.find("input").attr("value", data[x]["urls"]["regular"]);
 				for (let i = 0; i < image_types.length; i++) {
 					var $this_img_thumb = $img_thumb.clone();
@@ -231,6 +235,11 @@ export default function creator () {
 				$this.next("input").trigger("click");
 				$this.parent().addClass("thumb-selected");
 			});	
+			$(document.body).on('click', '.img-thumb-cont-zoom', function() {
+				let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
+				$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
+				$("#single-modal").fadeIn();
+			});
 			randomizeTemplate();	
 		}).fail(function(){});
 	};

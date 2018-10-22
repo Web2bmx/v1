@@ -1175,9 +1175,29 @@ a {
   width: 100%;
 }
 
+#app-control .img-thumb-cont-zoom {
+  background-color: #FFF;
+  bottom: 0;
+  height: 2em;
+  position: absolute;
+  right: 0;
+  width: 2em;
+}
+
+#app-control .img-thumb-cont-zoom i {
+  padding-top: .5em;
+}
+
 #app-control h2 {
   color: #000000;
   font-size: 24px;
+}
+
+.img-thumb-zoomed {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 96%;
 }
 
 #app-control-nav {
@@ -1348,6 +1368,33 @@ a {
   text-align: center;
   font-size: 35px;
   color: #9b035a;
+}
+
+/**/
+#single-modal {
+  background-color: #FFF;
+  bottom: auto;
+  display: none;
+  height: auto;
+  left: 5%;
+  overflow: hidden;
+  padding: 2em 0;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 90%;
+  z-index: 100000000;
+}
+
+#single-modal i {
+  cursor: pointer;
+  height: 2em;
+  padding-top: .5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2em;
+  z-index: 101;
 }
 
 /**/
