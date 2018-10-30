@@ -185,6 +185,14 @@ export default function creator () {
 		
 		/* Upload image*/
 		var that = this;
+		$('.file-upload button').on("click", (e) =>{
+			$(e.currentTarget).next("input").click();
+		});
+		$('.file-upload input[type=file]').on('change',(e) => {
+			let file = $(e.currentTarget)[0].files[0].name;
+			$("span",$(e.currentTarget).parent()).text(file);
+			$("input[type=submit]",$(e.currentTarget).closest("form")).attr("disabled",false);
+		});
 		$('.file-upload').on('submit',uploadImage);
 
 		/* manage dialog */
@@ -349,13 +357,16 @@ export default function creator () {
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
 				$("#app-control>.app-control-step").hide();
-				$("#app-control").addClass("view");				
+				$("#app-control").addClass("view");
+							
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
 				$("#control-view-nav").show();
 				$("#app-control>.app-control-step:eq(" + current_step + ")").show();
 				$("#app-control").removeClass("view");
+				centerNav();
+				topStepMargin();				
 			}
 			$("body").toggleClass("init");
 		});
@@ -713,6 +724,8 @@ export default function creator () {
 			formData = new FormData(),
 			ide = f.data("ide"),
 			name = f.attr("name");
+		
+		$("input[type=submit],button",e.currentTarget).attr("disabled",true);
 
 		formData.append(f.attr("name"), f[0].files[0]);		
 		$.ajax({
@@ -739,6 +752,8 @@ export default function creator () {
 				jd.imagenes = imagenes;
 				saveWeb2bJson();
 			}
+		}).always(function(){
+			$("button",e.currentTarget).attr("disabled",false);
 		});
 	};
 

@@ -182,10 +182,16 @@
 								<input type="text" id="inp-content-name" name="inp-content-name" placeholder="Tu primer producto o servicio" /><br />								
 							</div>
 						</div>
+						<h2>ó</h2>
 						<form enctype="multipart/form-data" method="POST" class="file-upload">
-							<span class="one-line-text">Sube tu logotipo en formato png o jpg con un mínimo de 400px</span>
-							<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
-							<input type="submit" value="Subir foto"/>
+							<p class="one-line-text">
+								<span>
+									Sube tu logotipo en formato png o jpg con un mínimo de 400px
+								</span>
+								<button>Carga tu imagen</button>
+								<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
+							</p>														
+							<input type="submit" disabled value="Subir foto"/>
 						</form>						
 					</div>
 				</div>
@@ -207,9 +213,12 @@
 							</div>
 						</div>
 						<form enctype="multipart/form-data" method="POST" class="file-upload">
-							<span class="one-line-text">O sube una imagen de tus archivos:</span>
-							<input accept=".png, .jpg, .jpeg" type="file" name="hero" value="Selecciona imagen" />
-							<input type="submit" value="Subir foto"/>
+							<p class="one-line-text">
+								<span class="one-line-text">Sube tus propias imágenes para personalizar tu sitio web.</span>
+								<button>Carga tu imagen</button>
+								<input accept=".png, .jpg, .jpeg" type="file" name="hero" value="Selecciona imagen" />
+							</p>
+							<input disabled type="submit" value="Subir foto"/>
 						</form>
 					</div>
 				</div>
@@ -253,8 +262,11 @@
 							</div>
 						</div>
 						<form enctype="multipart/form-data" method="POST" class="file-upload">
-							<span class="one-line-text">O sube una imagen de tus archivos:</span>
-							<input accept=".png, .jpg, .jpeg" type="file" name="item-1" value="Selecciona imagen" />
+							<p class="one-line-text">
+								<span>Sube tus propias imágenes para personalizar tu sitio web.</span>
+								<button>Carga tu imagen</button>
+								<input accept=".png, .jpg, .jpeg" type="file" name="item-1" value="Selecciona imagen" />
+							</p>
 							<input type="submit" value="Subir foto"/>
 						</form>						
 					</div>
