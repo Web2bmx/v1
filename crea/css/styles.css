@@ -924,7 +924,7 @@ a {
 #app-control > .app-control-step .site-name-container {
   text-align: left;
   color: #121111;
-  font-size: 16px;
+  font-size: 22px;
   position: relative;
 }
 
@@ -976,29 +976,31 @@ a {
   width: 80%;
 }
 
-#app-control .app-control-step > div textarea {
-  width: 96%;
-  height: 8em;
-  margin: 0 0 5% 0;
-  padding: .5em 2%;
+#app-control .app-control-step > div textarea,
+#app-control .app-control-step > div input[type="text"],
+#app-control .app-control-step > div select {
+  padding: 15px;
   font-size: 1em;
+  border-radius: 5px;
+  border-color: #d5d1cf;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+#app-control .app-control-step > div textarea {
+  width: 100%;
+  height: 8em;
 }
 
 #app-control .app-control-step > div input[type="text"] {
   height: auto;
-  font-size: 1.2em;
-  margin: 0 0 5% 0;
-  padding: .5em 4%;
-  width: 92%;
 }
 
 #app-control .app-control-step > div select {
-  border-style: solid;
   height: auto;
-  font-size: 1.2em;
   margin: 0 0 5% 0;
-  padding: .5em 4%;
-  width: 92%;
 }
 
 #app-control .app-control-step > div .app-control-step-tooltip {
@@ -1190,6 +1192,10 @@ a {
   color: #000000;
   font-size: 30px;
   margin-bottom: 50px;
+}
+
+#app-control h2.middle {
+  margin: 10px 0 30px 0;
 }
 
 .img-thumb-zoomed {
