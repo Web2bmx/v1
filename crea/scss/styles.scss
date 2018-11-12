@@ -301,7 +301,14 @@ a {
 		&[style=""]:first-child ~ #app-switch{
 			display: none;
 		}
-
+		.inp-cont {
+			position: relative;
+		}
+		.inp-cont i {
+			left: 15px;
+			position: absolute;
+			top: 20px;
+		}
 		.site-name-container{
 			text-align: left;
 			color: #121111;
@@ -364,8 +371,8 @@ a {
 			height: auto;
 			font-size: 1.2em;
 			margin: 0 0 5% 0;
-			padding: .5em 4%;
-			width: 92%; 
+			padding: .5em 4% .5em 6%;
+			width: 90%; 
 		}
 		select {
 			border-style: solid;

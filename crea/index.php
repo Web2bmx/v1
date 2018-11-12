@@ -183,7 +183,10 @@
 						<h2>¿Tienes un eslogan?</h2>
 						<p class="app-control-step-tooltip-info">Escribe una frase breve que describa tu producto o servicio.</p>		
 						<div>
-						<input type="text" id="inp-content-slogan" name="inp-content-slogan" value="" placeholder="El eslógan de tu negocio" class="optional" />
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-content-slogan" name="inp-content-slogan" value="" placeholder="El eslógan de tu negocio" class="optional" />
+							</div>	
 						</div>
 					</div>
 				</div>
@@ -208,7 +211,10 @@
 						<p class="app-control-step-tooltip-info">Aquí puedes escribir la historia de tu empresa o describir más a fondo quiénes son.</p>
 						<div>	
 							<div>
-								<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" /><br />
+								<div class="inp-cont">
+									<i class="fas fa-pen"></i>
+									<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" /><br />
+								</div>
 								<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
 							</div>
 						</div>
@@ -220,7 +226,10 @@
 						<p class="app-control-step-tooltip-info">Invita a tus clientes a visitar tu negocio o a conocer tus productos o servicios.</p>
 						<div>	
 							<div>
-								<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" /><br />
+								<div class="inp-cont">
+									<i class="fas fa-pen"></i>
+									<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" /><br />
+								</div>
 								<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
 							</div>
 						</div>
@@ -231,7 +240,10 @@
 						<h2>¿Cuál es tu principal producto o servicio?</h2>
 						<div>	
 							<div>
-								<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" /><br />
+								<div class="inp-cont">
+									<i class="fas fa-pen"></i>
+									<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" /><br />
+								</div>
 								<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio"></textarea>
 							</div>
 						</div>
@@ -261,8 +273,14 @@
 					<div>
 						<h2>Coloca los datos de contacto que deseas que tus Clientes vean sobre tu Negocio</h2>
 						<div>
-							<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" class="optional" /><br />
-							<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" class="optional" /><br />
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-contact-email" name="inp-contact-email" value="" placeholder="El correo electrónico de tu Negocio" class="optional" /><br />
+							</div>
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-contact-phone" name="inp-contact-phone" value="" placeholder="El teléfono de tu Negocio" class="optional" /><br />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -270,8 +288,14 @@
 					<div>
 						<h2>Coloca la dirección y horario de tu Negocio</h2>
 						<div>
-							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
-							<input type="text" id="inp-contact-schedule" name="inp-contact-schedule" value="" placeholder="El horario de tu negocio" class="optional" /><br />
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
+							</div>
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-contact-schedule" name="inp-contact-schedule" value="" placeholder="El horario de tu negocio" class="optional" /><br />
+							</div>
 							<!--<input type="text" id="inp-contact-map" name="inp-contact-map" value="" placeholder="" /><br />-->
 						</div>
 					</div>
@@ -280,8 +304,14 @@
 					<div>
 						<h2>Escribe las redes sociales de tu Negocio</h2>
 						<div>
-							<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" class="optional" /><br />
-							<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" class="optional" /><br />
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-contact-facebook" name="inp-contact-facebook" value="" placeholder="La página de Facebook de tu Negocio" class="optional" /><br />
+							</div>
+							<div class="inp-cont">
+								<i class="fas fa-pen"></i>
+								<input type="text" id="inp-contact-twitter" name="inp-contact-twitter" value="" placeholder="La página de Twitter de tu Negocio" class="optional" /><br />
+							</div>
 						</div>
 					</div>
 				</div>
@@ -315,6 +345,6 @@
 			</div>
 		</div>	
 		<?php include_once("include/include_html_templates.php"); ?>
-		<?php /*include_once("include/include_chat.php");*/ ?>
+		<?php include_once("include/include_chat.php"); ?>
 	</body>
 </html>
