@@ -24,7 +24,7 @@
 				<img src="/img/logo.png" />	
 				<div class="inputWihIcons">
 					<i class="fas fa-font"></i>		
-					<input type="text" name="nombre" id="nombre" value="Web2b" placeholder="Nombre de tu página" />
+					<input type="text" name="nombre" id="nombrePagina" value="Web2b" placeholder="Nombre de tu página" />
 				</div>
 				<div class="inputWihIcons">
 					<i class="fas fa-envelope"></i>
@@ -160,8 +160,11 @@
 								Dirección de tu página web:
 							</span>
 							<aside>
-								<input type="text" name="siteName" placeholder="tuSitio" />
+								<input pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]+$" type="text" id="siteName" name="inp-siteName" placeholder="tuSitio" />
 								<span>.web2b.mx</span>
+								<p class="form-error">
+									La dirección de tu página solo puede contener números, letras y guiones medios. Mínimo 3 caracteres.
+								</p>
 							</aside>
 						</div>
 						<p>
@@ -173,14 +176,28 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h2>Ahora elige los colores de tu página</h2>
-						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores</p>
-						<div id="app-control-palettes"></div>
+						<h2>Primero coloca el nombre de tu negocio</h2>
+						<div>	
+							<div>
+								<input type="text" id="inp-content-name" name="inp-content-name" placeholder="Tu primer producto o servicio" /><br />								
+							</div>
+						</div>
+						<h2 class="middle">ó</h2>
+						<form enctype="multipart/form-data" method="POST" class="file-upload">
+							<p class="one-line-text">
+								<span>
+									Sube tu logotipo en formato png o jpg con un mínimo de 400px
+								</span>
+								<button>Carga tu imagen</button>
+								<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
+							</p>														
+							<input type="submit" disabled value="Subir foto"/>
+						</form>						
 					</div>
 				</div>
 				<div class="app-control-step">
 					<div>
-						<h2>¿Tienes un eslogan?</h2>
+						<h2>Ahora coloca tu eslogan</h2>
 						<p class="app-control-step-tooltip-info">Escribe una frase breve que describa tu producto o servicio.</p>		
 						<div>
 							<div class="inp-cont">
@@ -192,16 +209,19 @@
 				</div>
 				<div class="app-control-step">
 					<div>
-						<p>Ahora elige la imagen principal para tu página</p>
+						<h2>Elige la imagen de cabecera</h2>
 						<div class="app-control-images">
 							<div id='app-control-images-hero'>
 								<div class="photo-container"></div>
 							</div>
 						</div>
 						<form enctype="multipart/form-data" method="POST" class="file-upload">
-							<span class="one-line-text">O sube una imagen de tus archivos:</span>
-							<input accept=".png, .jpg, .jpeg" type="file" name="hero" value="Selecciona imagen" />
-							<input type="submit" value="Subir foto"/>
+							<p class="one-line-text">
+								<span class="one-line-text">Sube tus propias imágenes para personalizar tu sitio web.</span>
+								<button>Carga tu imagen</button>
+								<input accept=".png, .jpg, .jpeg" type="file" name="hero" value="Selecciona imagen" />
+							</p>
+							<input disabled type="submit" value="Subir foto"/>
 						</form>
 					</div>
 				</div>
@@ -247,15 +267,18 @@
 								<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Tu primer producto o servicio"></textarea>
 							</div>
 						</div>
-						<h2>Elige una imagen para tu principal producto o servicio</h2>
+						<!-- <h2>Elige una imagen para tu principal producto o servicio</h2> -->
 						<div class="app-control-images">
 							<div id='app-control-images-item-1'>
 								<div class="photo-container"></div>
 							</div>
 						</div>
 						<form enctype="multipart/form-data" method="POST" class="file-upload">
-							<span class="one-line-text">O sube una imagen de tus archivos:</span>
-							<input accept=".png, .jpg, .jpeg" type="file" name="item-1" value="Selecciona imagen" />
+							<p class="one-line-text">
+								<span>Sube tus propias imágenes para personalizar tu sitio web.</span>
+								<button>Carga tu imagen</button>
+								<input accept=".png, .jpg, .jpeg" type="file" name="item-1" value="Selecciona imagen" />
+							</p>
 							<input type="submit" value="Subir foto"/>
 						</form>						
 					</div>
@@ -315,6 +338,13 @@
 						</div>
 					</div>
 				</div>
+				<div class="app-control-step">
+					<div>
+						<h2>Ahora elige los colores de tu página</h2>
+						<p class="app-control-step-tooltip-info">Puedes elegir de nuestras combinaciones de colores</p>
+						<div id="app-control-palettes"></div>
+					</div>
+				</div>				
 				<div class="app-control-step">
 					<div>
 						<h2>¡Terminamos!</h2>

@@ -312,7 +312,7 @@ a {
 		.site-name-container{
 			text-align: left;
 			color: #121111;
-			font-size: 16px;
+			font-size: 22px;
 			position: relative;
 
 			h2{
@@ -322,10 +322,11 @@ a {
 			input[type="text"]{
 				width: 100px;
 				padding: 5px;
+				margin: 0;
 			}
 
 			div{
-				margin: 60px 0;				
+				margin: 80px 0;				
 
 				> span{
 					color: #9b035a;
@@ -347,10 +348,14 @@ a {
 				@include breakpoint($tablet){
 					display: block;
 					position: absolute;
-					top: 200px;
+					top: 100px;
 					right: 0;
 					width: 200px;				
 				}
+			}
+
+			.form-error{
+				text-align: left;
 			}
 
 		}
@@ -360,27 +365,36 @@ a {
 	.app-control-step>div {
 		margin: auto;
 		width: 80%;
-		
-		textarea {
-			width: 96%; height: 8em;
-			margin: 0 0 5% 0;
-			padding: .5em 2%;
+
+		textarea,
+		input[type="text"],
+		select{
+			padding: 15px;
 			font-size: 1em;
+			border-radius: 5px;
+			border-color: #d5d1cf;
+			box-sizing: border-box;
+			border-style: solid;
+			width: 100%;
+			margin: 0 0 20px 0;
+		}
+
+		textarea {
+			width: 100%; height: 8em;			
 		}
 		input[type="text"] {
 			height: auto;
+<<<<<<< HEAD
 			font-size: 1.2em;
 			margin: 0 0 5% 0;
 			padding: .5em 4% .5em 6%;
 			width: 90%; 
+=======
+>>>>>>> 94a1c789b8e3ffc95674731f346b3fbde452e912
 		}
 		select {
-			border-style: solid;
 			height: auto;
-			font-size: 1.2em;
 			margin: 0 0 5% 0;
-			padding: .5em 4%;
-			width: 92%; 
 		}
 		.app-control-step-tooltip {
 			background-color: $color-cta;
@@ -469,27 +483,22 @@ a {
 		width: auto;
 	}
 	[id^="app-control-images"] {
-		display: block;
-		height: auto;
-		overflow: visible;
-		position: relative;
-		width: auto;
-	}
-	.photo-container{
 		margin: 10px auto;
+		overflow: auto;	
+	}
+	.photo-container{		
 		overflow: hidden;
-		width: 300px;
-
-		@include breakpoint($tablet){
-			width: 400px;
-		}
+		width: #{100*20}px;
+		height: 100px;
 
 		@include breakpoint($desktop){
-			width: 600px;
+			width: #{150*20}px;
+			height: 150px;
 		}
 
-		@include breakpoint($ext-desktop){
-			width: 800px;
+		@include breakpoint($ext-ext-desktop){
+			width: #{200*20}px;
+			height: 200px;
 		}					
 
 	}
@@ -539,7 +548,13 @@ a {
 	}
 	h2{
 		color: #000000;
-		font-size: 24px;
+		font-size: 30px;
+		margin-bottom: 50px;
+
+		&.middle{
+			margin: 10px 0 30px 0;
+		}
+
 	}
 }
 .img-thumb-zoomed {
@@ -686,11 +701,50 @@ a {
 
 .file-upload{
 	display: block;
-	text-align: left;
-	margin-top: 20px;
+    text-align: left;
+    margin: 20px 0;    
+    overflow: hidden;
+	
+	input[type=file]{
+		display: none;
+	}
 
-	span{
-		display: block;
+	input[type=submit]{		
+		margin: 10px 0 0 0;
+		padding: 10px;		
+		line-height: 18px;
+		font-size: 16px;		
+	}
+
+	input[type=submit],button{
+		background-color: #fff;
+		border: 1px solid #d5d1cf;
+		border-radius: 5px;
+		float: right;
+		color: #121111;
+		cursor: pointer;
+		font-weight: normal;	
+
+		&:disabled{
+			opacity: 0.3;
+		}
+
+	}
+
+	input[type=submit]{
+		margin: 20px;
+	}
+
+	p{
+		margin: 0;
+		overflow: hidden;
+		background-color: #fbfbfb;
+		padding: 20px;
+
+		span{
+			margin-top: 10px;
+			display: inline-block;
+		}
 	}
 }
 
