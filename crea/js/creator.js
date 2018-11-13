@@ -29,7 +29,6 @@ export default function creator () {
 		setAppNavigation();
 		setAppSteps();
 		/*EO SET UP APP*/
-
 		$(window).resize(function(){
 			centerNav();
 			topStepMargin();
