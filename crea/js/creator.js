@@ -1,40 +1,29 @@
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let windowObjectReference = null,
-		image_types = ["hero", "item-1"],
 		template_id = "",
-		sample_images_ready = false,
 		current_step = 0,
 		number_of_items = 1,
 		sample_colors_ready = false,
-		$images = null,
 		$palettes = null,
 		lastKeyPressed = 0,
 		jd = null,	
-		winWidth = $(window).width(),
-		winHeigth = $(window).height(),
 		isNew = false;
-	
-    var validation = function(){
+	var validation = function(){
 		jd = getObjFromLocalStorage("web2b");
-		/* check data validation */
-        checkDataValidation();
+		checkDataValidation();
     };
-
-    var init = function() {
+	var init = function() {
 		/*SET UP TEMPLATE*/
 		updateTemplate();
-		/*EO SET UP TEMPLATE*/
 		/*SET UP APP*/
 		setAppNavigation();
 		setAppSteps();
-		/*EO SET UP APP*/
 		$(window).resize(function(){
 			centerNav();
 			topStepMargin();
 		});
     };
-
 	/*APPLICATION FUNCTIONS*/
 	var checkDataValidation = function(){
 		if(Object.keys(jd).length){
@@ -53,7 +42,6 @@ export default function creator () {
 		}
 
 	};
-
 	var setAppSteps = function () {
 		$(".dialog").dialog({
 			autoOpen: false,
@@ -122,7 +110,6 @@ export default function creator () {
 			$("#inp-content-item-add-n").trigger("click");
 			centerNav();
 		});
-
 		/*TOOLTIPS****/
 		$(".app-control-step-tooltip-info").prev("*").append($(".app-control-step-tooltip.template").clone().removeClass("template"));
 		$(".app-control-step-tooltip").click(function() {
@@ -137,8 +124,6 @@ export default function creator () {
 		$("#single-modal i").on("click", function() {
 			$("#single-modal").fadeOut();
 		});
-		/*SINGLE MODAL */
-		/*EO SINGLE MODAL */
 		/* LOAD COLORS */
 		$.ajax({
 			url: "xml/sample_colors.xml",
@@ -172,7 +157,6 @@ export default function creator () {
 				sample_colors_ready = true;
 			}
 		});	
-		
 		/* TEMPLATE DESIGN*/
 		$(".control-design-thumb").on('click', function() {
 			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
@@ -181,7 +165,6 @@ export default function creator () {
 			$("input",this).attr("checked","checked");
 			updateTemplate();			
 		});
-		
 		/* Upload image*/
 		var that = this;
 		$('.file-upload button').on("click", (e) =>{
@@ -199,10 +182,8 @@ export default function creator () {
 			$(".alert.dialog").dialog( "close" ); 
 		});		
 	};
-
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
-
 		//Check if there are already images upload from user
 		var imagenes = jd.imagenes;
 		if(imagenes){
@@ -220,7 +201,6 @@ export default function creator () {
 				}
 			}
 		}
-
 		/* LOAD IMAGES FROM UNSPLASH */
 		$.getJSON("https://api.unsplash.com/photos/search",{
 			client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
@@ -229,6 +209,7 @@ export default function creator () {
 			per_page: 20,
 			orientation: 'landscape'
 		}).done(function(data){
+			let image_types = ["hero", "item-1"];
 			for(let x=0; x<data.length ; x++){
 				var $img_thumb = $(".img-thumb.template").clone();
 				$img_thumb.removeClass("template").find(".img-thumb-cont").css({
@@ -241,7 +222,6 @@ export default function creator () {
 					$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
 				}
 			}
-			
 			$(document.body).on('click', '.img-thumb-cont', function() {
 				var $this = $(this);
 				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
@@ -253,17 +233,9 @@ export default function creator () {
 				$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
 				$("#single-modal").fadeIn();
 			});
-			randomizeTemplate();	
+			updateContent();	
 		}).fail(function(){});
 	};
-
-	var randomizeTemplate = function() {
-		/*var $color = $("[name^='inp-palette']");
-		$color.removeAttr("checked").filter(":eq(" + (Math.floor(Math.random() * $color.length)) + ")").attr("checked", "checked");*/
-		
-		updateContent();
-	};
-
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();		
 		$("#control-view-nav>a").on("click", function(e) {
@@ -275,16 +247,8 @@ export default function creator () {
 				if(current_step >= totalItems) {
 					current_step = totalItems;
 				}
-				switch (current_step) {
-/* 					case 0 :
-						$("#control-view-nav>a:eq(0)").addClass("disabled");
-						break; */
-					case 1 :
-						$("#control-view-nav>a:eq(0)").removeClass("disabled");
-						break;
-					case totalItems:
-						//showAppCover();
-					break; 
+				if(current_step == 1) {
+					$("#control-view-nav>a:eq(0)").removeClass("disabled");
 				}
 				goToStep(current_step);
 				updateContent();
@@ -339,7 +303,6 @@ export default function creator () {
 			}
 	
 		});
-
 		$(".finish").on("click", function() {
 			current_step --;
 			$("#app-cover").hide();
@@ -371,14 +334,12 @@ export default function creator () {
 		});
 		/*EO APP SWITCH*/
 	};
-
 	var closeAppCover = function(){
 		$("#app-cover").hide();
 		$(".app-cover-start").hide();
 		$(".app-cover-finish").show();
 		current_step = 0;	
 	};
-
 	var openAppCover = function(pos){
 		$("#app-cover").show();
 		if(pos=='start'){
@@ -389,16 +350,12 @@ export default function creator () {
 			$(".app-cover-finish").show();					
 		}
 	};
-
 	var startTemplateProcess = function(data){
 		localStorage.removeItem("web2b");
-
 		localStorage.setItem("web2b_templateId", data.idSitio);
 		localStorage.setItem("web2b_userId", data.userId);		
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
-
 	};
-
 	var onTemplateLoaded = function(){
 		let text = '', arr = Object.keys(jd.respuestas);
 		for(let i = 0; i < arr.length; i++){
@@ -406,7 +363,6 @@ export default function creator () {
 				text = jd.respuestas[arr[i]].localizacion_en;
 			}
 		}
-
 		setImageSelection(text);
 		//load previous content
 		var selections = jd.selections;
@@ -422,7 +378,6 @@ export default function creator () {
 			}
 		}
 	};
-
 	var goToStep = function(step) {
 		if(step == -1){
 			openAppCover("start");
@@ -432,19 +387,13 @@ export default function creator () {
 		} else {
 			openAppCover("final");
 		}
-		goToByScroll($("#app-control"), 0);
 	};
-
 	var showAppCover = function () { $("#app-cover").show(); };
-
 	var updateContent = function () {
 		let $this = $(this),
-			$template = $("#template"),
-			selections = jd.selections || {};
-
-		// set top margin
+		$template = $("#template"),
+		selections = jd.selections || {};
 		topStepMargin();
-
 		/*Colores*/
 		if (sample_colors_ready) {
 			let palette_id = 0;
@@ -495,7 +444,6 @@ export default function creator () {
 				"color" : $palette.find("bottom>fore").html()
 			});
 		}
-
 		/*Content & Contacto*/
 		$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
 			let $this = $(this),
@@ -558,9 +506,7 @@ export default function creator () {
 				}
 			}
 		});
-
 		$template.find(".footer-column:not(:has(li:visible))").hide();
-
 		/*Images*/
 		$("[name^='inp-img-']:checked").each(function() {
 			var $this = $(this);
@@ -574,21 +520,17 @@ export default function creator () {
 		});
 		saveWeb2bJson();				
 	};
-
 	var topStepMargin = function(){
 		let actual = $(".app-control-step:visible > div"),
 			remain = $("#app-control").height() - 
 			$("#app-control-nav").height() -
 			$("#app-switch").height() -
 			actual.height();
-		
 		actual.css("margin-top",remain > 0 ? remain/2 + "px" : "0");
 	};
-
 	var updateTemplate = function () {		
 		let primeraVez = false,	
 			id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
-		
 		// si es la primera vez
 		if(template_id == ""){		
 			if(jd.selections  && jd.selections.templateTypeId){
@@ -604,11 +546,9 @@ export default function creator () {
 				$(".control-desing-cont .control-design-thumb:first-child aside").addClass("thumb-selected");
 			}
 		}
-							
 		if (primeraVez || template_id != id) {
 			template_id = id;
 			saveSelected("templateTypeId",id,"config");
-			
 			$("#template").html("");
 			var src = "Templates/Template-" + template_id + "/index.php?t=" + Math.floor(Math.random() * 4); 
 			$("#template-cont").load(src + " #template", function() {
@@ -629,7 +569,6 @@ export default function creator () {
 			updateContent(); 
 		}
 	};
-
 	var addItems = function (i) {
 		if ($("#template .items:last .item").length == 3) { $("#template .items:last").after("<div class='items'></div>"); }
 		var $item_copy = $(".item:last").clone();
@@ -646,20 +585,7 @@ export default function creator () {
 		$("#template .items:last").attr("class", "items").addClass(c);
 	};
 	/*EO APPLICATION FUNCTIONS*/
-
 	/*GENERAL FUNCTIONS*/
-	function isEmail(email) {
-		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		return regex.test(email);
-	}
-	function isValidDomain(name) {
-		var regex = /([a-z0-9])/;
-		return regex.test(name);
-	}	
-	function validPassword(password) {
-		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{6,}$/;
-		return regex.test(password);
-	}	
 	function openRequestedPopup(strUrl, strWindowName) {
 		if(windowObjectReference == null || windowObjectReference.closed) {
 		windowObjectReference = window.open(strUrl, strWindowName,
@@ -669,63 +595,30 @@ export default function creator () {
 		windowObjectReference.focus();
 		}
 	}
-	function goToByScroll($element, target){
-		$element.scrollTop(target);
-	}
-
 	var getObjFromLocalStorage = function (key){
 		var jsonData = localStorage.getItem(key);
-	
-		if(jsonData == null)
-			{
-				jsonData = {};           
+		if(jsonData == null) {
+			jsonData = {};           
+		} else {
+			try{
+				jsonData = JSON.parse(jsonData);
+			} catch(e){
+				return jsonData;
 			}
-		else{
-				try{
-					jsonData = JSON.parse(jsonData);
-				} catch(e){
-					return jsonData;
-				}
-			}
+		}
 		return jsonData;
 	};	
-
 	function HexColorToRGBA(c, a) {
 		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");
 		return s;
 	}
-
-	var translateData = function(info){
-		let text = '',
-			arr = Object.keys(info.respuestas);
-		for(let i = 0; i < arr.length; i++){
-			if(info.respuestas[arr[i]].tipo == 6){
-				text = info.respuestas[arr[i]].respuesta;
-			}
-		}
-		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
-			{
-				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
-				lang: 'es-en',
-				text: text,
-				format: 'plain'
-			}
-		  ).done(function(data) {
-			if(data){
-				setImageSelection(decodeURIComponent(data.text[0]));	
-			}
-		  });	
-	};
-
 	var uploadImage = function (e){
 		e.preventDefault();
 		var f = $("input[type=file]",e.currentTarget),
 			formData = new FormData(),
 			ide = f.data("ide"),
 			name = f.attr("name");
-		
 		$("input[type=submit],button",e.currentTarget).attr("disabled",true);
-
 		formData.append(f.attr("name"), f[0].files[0]);		
 		$.ajax({
 			url: "scripts/uploadImage.php",
@@ -755,13 +648,11 @@ export default function creator () {
 			$("button",e.currentTarget).attr("disabled",false);
 		});
 	};
-
 	var saveWeb2bJson = function(){
 		let strJD = JSON.stringify(jd),
 			userId = getObjFromLocalStorage("web2b_userId"),
 			idSitio = getObjFromLocalStorage("web2b_templateId"),
 			savedJD = localStorage.getItem("web2b_template");	
-
 		if(strJD && savedJD != strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
 			localStorage.setItem("web2b_template", strJD);
 			$.post("scripts/salvar_datos.php",{
@@ -776,9 +667,7 @@ export default function creator () {
 				console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result);					
 			});		
 		}
-
 	};
-
 	var saveSelected = function(name, value,type) {
 		let selections = jd.selections || {};
 		selections[name] = selections[name] || {};
@@ -797,22 +686,54 @@ export default function creator () {
 		//Save selection to object
 		jd.selections = selections;		
 	};
-
 	var centerNav= function() {
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left",parentW/2 - $("#control-view-index").width()/2);
 	};
-
 	var isValidinput = function(element){
 		let value = element.val();
 		let regex = new RegExp(element.attr("pattern"));
 		return regex.test(value);
 	};
-
-    /*EO GENERAL FUNCTIONS*/
-    
+	function isEmail(email) {
+		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		return regex.test(email);
+	}
+	function isValidDomain(name) {
+		var regex = /([a-z0-9])/;
+		return regex.test(name);
+	}	
+	function validPassword(password) {
+		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{6,}$/;
+		return regex.test(password);
+	}	
+	/*EO GENERAL FUNCTIONS*/
     return {
         validation: validation,
         init: init
     };
 }
+/*DEPRECATED*/
+/*
+	var translateData = function(info){
+		let text = '',
+			arr = Object.keys(info.respuestas);
+		for(let i = 0; i < arr.length; i++){
+			if(info.respuestas[arr[i]].tipo == 6){
+				text = info.respuestas[arr[i]].respuesta;
+			}
+		}
+		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+			{
+				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+				lang: 'es-en',
+				text: text,
+				format: 'plain'
+			}
+		  ).done(function(data) {
+			if(data){
+				setImageSelection(decodeURIComponent(data.text[0]));	
+			}
+		  });	
+	};
+*/
