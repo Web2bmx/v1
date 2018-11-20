@@ -11,8 +11,8 @@
 <!--img-thumb-->
 <div class="img-thumb template">
 	<div class='img-thumb-cont'></div>
-	<div class='img-thumb-cont-zoom'><i class="fas fa-search-plus"></i></div>
 	<input type="radio" name="" value="" style="display: none;" />		
+	<div class='img-thumb-cont-zoom'><i class="fas fa-search-plus"></i></div>
 </div> 
 <!--app-control-step-tooltip-->
 <span class="app-control-step-tooltip template">?</span>

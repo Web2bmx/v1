@@ -1,3 +1,4 @@
+import validator from "./validator";
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let windowObjectReference = null,
@@ -9,6 +10,7 @@ export default function creator () {
 		lastKeyPressed = 0,
 		jd = null,	
 		isNew = false;
+	var new_validator = new validator();
 	var validation = function(){
 		jd = getObjFromLocalStorage("web2b");
 		checkDataValidation();
@@ -69,7 +71,7 @@ export default function creator () {
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
 			lastKeyPressed = e.keyCode || e.which;
-			if(!$(e.currentTarget).attr('pattern') || isValidinput($(e.currentTarget))){
+			if(!$(e.currentTarget).attr('pattern') || validator.isValidinput($(e.currentTarget))){
 				updateTemplate();
 				$(".form-error",$(e.currentTarget).parent()).hide();
 			} else {
@@ -85,14 +87,16 @@ export default function creator () {
 			number_of_items ++;
 			var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
 			$i_t.find("h2:eq(0)").html("Tu producto o servicio");
-			$i_t.find("input").attr("id", ("inp-content-title-item-" + number_of_items));
-			$i_t.find("input").attr("name", ("inp-content-title-item-" + number_of_items));
-			$i_t.find("input").attr("placeholder", "Tu producto o servicio");
-			$i_t.find("input").val("");
-			$i_t.find("textarea").attr("id", ("inp-content-item-" + number_of_items));
-			$i_t.find("textarea").attr("name", ("inp-content-item-" + number_of_items));
-			$i_t.find("textarea").attr("placeholder", "Tu producto o servicio");
-			$i_t.find("textarea").val("");
+			$i_t.find("input").attr({
+						"id" : ("inp-content-title-item-" + number_of_items),
+						"name" : ("inp-content-title-item-" + number_of_items),
+						"placeholder" : "Tu producto o servicio"
+					}).val("");
+			$i_t.find("textarea").attr({
+						"id" : ("inp-content-item-" + number_of_items),
+						"name" : ("inp-content-item-" + number_of_items),
+						"placeholder" : "Tu producto o servicio"
+					}).val("");
 			$i_t.find("h2:eq(1)").html("Elige una imagen para tu producto o servicio");
 			$i_t.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
 			$i_t.find("input").each(function() {
@@ -274,11 +278,11 @@ export default function creator () {
 				$("#correo").val().trim() == "" || 
 				$("#password").val().trim() == ""){
 				$(".empty-fields").css("display","block");
-			} else if(!isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
+			} else if(!validator.isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
 				$(".name-invalid").show();
-			} else if(!isEmail($("#correo").val())){
+			} else if(!validator.isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
-			}else if(!validPassword($("#password").val())){
+			}else if(!validator.validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
 				} else {
 					saveSelected('inp-content-name',$("#nombrePagina").val().trim(),'text');
@@ -690,50 +694,9 @@ export default function creator () {
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left",parentW/2 - $("#control-view-index").width()/2);
 	};
-	var isValidinput = function(element){
-		let value = element.val();
-		let regex = new RegExp(element.attr("pattern"));
-		return regex.test(value);
-	};
-	function isEmail(email) {
-		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		return regex.test(email);
-	}
-	function isValidDomain(name) {
-		var regex = /([a-z0-9])/;
-		return regex.test(name);
-	}	
-	function validPassword(password) {
-		var regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!$%@#£€*?&]{6,}$/;
-		return regex.test(password);
-	}	
 	/*EO GENERAL FUNCTIONS*/
     return {
         validation: validation,
         init: init
     };
 }
-/*DEPRECATED*/
-/*
-	var translateData = function(info){
-		let text = '',
-			arr = Object.keys(info.respuestas);
-		for(let i = 0; i < arr.length; i++){
-			if(info.respuestas[arr[i]].tipo == 6){
-				text = info.respuestas[arr[i]].respuesta;
-			}
-		}
-		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
-			{
-				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
-				lang: 'es-en',
-				text: text,
-				format: 'plain'
-			}
-		  ).done(function(data) {
-			if(data){
-				setImageSelection(decodeURIComponent(data.text[0]));	
-			}
-		  });	
-	};
-*/
