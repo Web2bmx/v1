@@ -491,6 +491,10 @@ export default function creator () {
 					case "inp-contact-twitter" :
 						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + selections[i_id].text + '</a>');
 						break;	
+					case "siteName":
+						$(".siteName span").text(selections[i_id].text);
+						$(".siteName").attr("href","http://" + selections[i_id].text + ".web2b.mx");
+					/* falls through */
 					default : 
 						$template.find("#" + v_id).html(selections[i_id].text);
 						break;
