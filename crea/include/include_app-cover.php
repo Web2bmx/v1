@@ -54,7 +54,11 @@
 						<img src="/img/logo.png" />
 						<h3>Tu sitio web está listo</h3>
 						<p>Puedes verlo en:</p>
-						<p class="url">tusitio.web2b.mx</p>
+						<p class="url">
+							<a href="" target="_blank" class="siteName">
+								<span></span>.web2b.mx
+							</a>
+						</p>
 						<p>Tu sitio estará disponible durante 14 días.</p>
 						<p class="extra-info">
 							¿Deseas conservar y crecer tu sitio?<br />
