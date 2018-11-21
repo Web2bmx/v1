@@ -1,4 +1,5 @@
 import validator from "./validator";
+
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let windowObjectReference = null,
@@ -71,7 +72,7 @@ export default function creator () {
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
 			lastKeyPressed = e.keyCode || e.which;
-			if(!$(e.currentTarget).attr('pattern') || validator.isValidinput($(e.currentTarget))){
+			if(!$(e.currentTarget).attr('pattern') || new_validator.isValidinput($(e.currentTarget))){
 				updateTemplate();
 				$(".form-error",$(e.currentTarget).parent()).hide();
 			} else {
@@ -278,11 +279,11 @@ export default function creator () {
 				$("#correo").val().trim() == "" || 
 				$("#password").val().trim() == ""){
 				$(".empty-fields").css("display","block");
-			} else if(!validator.isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
+			} else if(!new_validator.isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
 				$(".name-invalid").show();
-			} else if(!validator.isEmail($("#correo").val())){
+			} else if(!new_validator.isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
-			}else if(!validator.validPassword($("#password").val())){
+			}else if(!new_validator.validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
 				} else {
 					saveSelected('inp-content-name',$("#nombrePagina").val().trim(),'text');
@@ -361,13 +362,22 @@ export default function creator () {
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
 	};
 	var onTemplateLoaded = function(){
-		let text = '', arr = Object.keys(jd.respuestas);
+
+		let text = '', arr = Object.keys(jd.respuestas), originaltext = '';
 		for(let i = 0; i < arr.length; i++){
 			if(jd.respuestas[arr[i]].tipo == 6){
 				text = jd.respuestas[arr[i]].localizacion_en;
+				originaltext = jd.respuestas[arr[i]].respuesta;
 			}
 		}
-		setImageSelection(text);
+
+		//check if translation already exists
+		if(text != ''){
+			setImageSelection(text);
+		} else {
+			translateData(originaltext);
+		}
+		
 		//load previous content
 		var selections = jd.selections;
 		if(selections){
@@ -698,6 +708,20 @@ export default function creator () {
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left",parentW/2 - $("#control-view-index").width()/2);
 	};
+	var translateData = function(text){
+		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+			{
+				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+				lang: 'es-en',
+				text: text,
+				format: 'plain'
+			}
+		  ).done(function(data) {
+			if(data){
+				setImageSelection(decodeURIComponent(data.text[0]));
+			}
+		  });	
+	};	
 	/*EO GENERAL FUNCTIONS*/
     return {
         validation: validation,

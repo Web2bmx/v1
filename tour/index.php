@@ -86,7 +86,7 @@ function muestra_pregunta($numero_pregunta){
         <link rel="stylesheet" href="css/tour.css" >
     </head>
     <body>
-        <a href="/" class="back">
+        <a href="/" class="global-back">
             <i class="fas fa-arrow-circle-left"></i><span>
                 Regresar
             </span>
@@ -167,7 +167,7 @@ function muestra_pregunta($numero_pregunta){
                                 <div class="quinta-pregunta dialog">
                                     <aside>
                                         <?= muestra_pregunta(5);?>
-                                    </aside>
+                                    </aside>                                    
                                     <button class="back" data-back="4">
                                         Regresar
                                     </button>                                       
@@ -179,12 +179,14 @@ function muestra_pregunta($numero_pregunta){
                         <div class="tercero">
                                 <div class="tercera-pregunta dialog">
                                     <?= muestra_pregunta(3);?>
-                                    <button class="back" data-back="3">
-                                        Regresar
-                                    </button>                                       
-                                    <button class="res_3 res">
-                                        Siguiente
-                                    </button>
+                                    <div>
+                                        <button class="back" data-back="3">
+                                            Regresar
+                                        </button>                                       
+                                        <button class="res_3 res">
+                                            Siguiente
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <img class="earth" src="images/earth.png">
@@ -199,24 +201,28 @@ function muestra_pregunta($numero_pregunta){
                                 <img class="planet-blue" alt="" src="images/planet_blue.png">
                                 <div class="segunda-pregunta dialog">
                                     <?= muestra_pregunta(2);?>
-                                    <button class="back" data-back="2">
-                                        Regresar
-                                    </button>                                      
-                                    <button class="res_2 res">
-                                        Siguiente
-                                    </button>
+                                    <div>
+                                        <button class="back" data-back="2">
+                                            Regresar
+                                        </button>                                      
+                                        <button class="res_2 res">
+                                            Siguiente
+                                        </button>
+                                    </div>
                                 </div>
                         </div>
                         <div class="sun">
                             <img alt="" src="images/sun.png">
                             <div class="primera-pregunta dialog" style="display: none">
                                 <?= muestra_pregunta(1);?>
-                                <button class="back" data-back="0">
-                                    Regresar
-                                </button>                                   
-                                <button class="res_1 res">
-                                    Siguiente
-                                </button>
+                                <div>
+                                    <!-- <button class="back" data-back="0">
+                                        Regresar
+                                    </button>                                    -->
+                                    <button class="res_1 res">
+                                        Siguiente
+                                    </button>
+                                </div>
                             </div>                            
                         </div>
                         <div class="inicio">

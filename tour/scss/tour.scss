@@ -478,9 +478,15 @@ textarea{
         }
     }
 
+    > div{
+        width: 100%;
+        overflow: hidden;
+        padding-top: 10px;
+    }
+
 }
 
-.back{
+.global-back{
     position: fixed;
     top: 10px;
     left: 10px;
