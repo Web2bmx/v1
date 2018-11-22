@@ -1150,7 +1150,13 @@ textarea {
   }
 }
 
-.back {
+.dialog > div {
+  width: 100%;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.global-back {
   position: fixed;
   top: 10px;
   left: 10px;
@@ -1159,22 +1165,22 @@ textarea {
   padding: 0;
 }
 
-.back:hover {
+.global-back:hover {
   opacity: 0.7;
 }
 
-.back i {
+.global-back i {
   color: #cc2880;
   font-size: 24px;
 }
 
 @media (min-width: 660px) {
-  .back i {
+  .global-back i {
     font-size: 30px;
   }
 }
 
-.back span {
+.global-back span {
   color: #fff;
   line-height: 24px;
   display: inline-block;
@@ -1183,7 +1189,7 @@ textarea {
 }
 
 @media (min-width: 660px) {
-  .back span {
+  .global-back span {
     line-height: 30px;
   }
 }

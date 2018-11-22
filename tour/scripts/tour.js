@@ -7,6 +7,7 @@ import dialogHandler from '../../js/dialog';
  */
 var winWidth;
 var spanError = '<span class="error">Aún no has respondida esta pregunta</span>';
+var positionActual = '';
 
 function muestraPregunta(pregunta){
     $(".rocket img + img").animate({
@@ -17,28 +18,57 @@ function muestraPregunta(pregunta){
 }
 
 
-function darSalto(selector, pregunta){
-    let selOffset = $(selector).offset();
-    let selHeight = $(selector).height();
-    let selWidth = $(selector).width();
-    let dheight = $(document).height();
-    let dif = dheight-selWidth;
-    let rocketHeight = $(".rocket > img").height();
-    let rocketWidth = $(".rocket > img").width();
-    let containerBottom = $('.main-container > div').css("bottom").replace("px","");
-    
-    let selPos = $(selector).position();
+function darSalto(selector, pregunta){    
 
-    $(".rocket").animate({
-        top: selPos.top + ((selHeight/2)-(rocketHeight/2)),
-        left: selPos.left + ((selWidth/2)-(rocketWidth/2)),
-        margin: 0
-    }, 2000, function(){
+    let cb = () => {
         muestraPregunta(pregunta);
-    });    
+    };
+    positionActual = selector;    
+    rePositionRocket(cb,true);
+    
+    let selOffset = $(selector).offset();
+    let selWidth = $(selector).width();
+    let dif = $(document).height() - selWidth;
+    let containerBottom = $('.main-container > div').css("bottom").replace("px","");
     $('.main-container > div').animate({
           'bottom': (containerBottom*1)+selOffset.top-(dif > 0 ? dif/2 : 0)
     }, 2000);    
+}
+
+function rePositionRocket(callback,animate){
+
+    if(callback == undefined){
+        callback = () => {};
+    }
+
+    if(animate == undefined){
+        animate=false;
+    }
+
+    let selHeight = $(positionActual).height();
+    let selWidth = $(positionActual).width();
+
+    let rocketHeight = $(".rocket > img").height();
+    let rocketWidth = $(".rocket > img").width();
+        
+    let selPos = $(positionActual).position();
+
+    //obtener posicion actual
+    positionActual = positionActual;
+
+    if(animate){
+        $(".rocket").animate({
+            top: selPos.top + ((selHeight/2)-(rocketHeight/2)),
+            left: selPos.left + ((selWidth/2)-(rocketWidth/2)),
+            margin: 0
+        }, 2000, callback);    
+    } else {
+        $(".rocket").css({
+            "top": selPos.top + ((selHeight/2)-(rocketHeight/2)) + "px",
+            "left":selPos.left + ((selWidth/2)-(rocketWidth/2)) + "px",
+            "margin" : 0
+        });        
+    }
 }
 
 function preguntaValida(selector){
@@ -67,8 +97,11 @@ function preguntaValida(selector){
 
         if($(selector + " textarea").length != 0){
             resp = $(selector + " textarea").val();
-        } else {
+        } else {            
             resp = $(selector + " input:checked").val();
+            if(resp.search(new RegExp("otra"),"i")) {
+                resp = $(selector + " input:checked + input").val();
+            }
         }
         var loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
         jsonData.respuestas[id] = {
@@ -234,6 +267,9 @@ $(document).ready(function(){
     
     $(window).resize(function(){
         winWidth = $(window).width();
+        if(positionActual != ''){
+            rePositionRocket();
+        }
     });   
     
     $(".init").click(function(e){
