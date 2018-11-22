@@ -99,11 +99,11 @@ export default function creator () {
 			$this.prop('checked', false);
 			$("#inp-content-item-add-n").trigger("click");
 			centerNav();
-			$(window).resize(function(){
+			$(window).resize(function(){ 
 				centerNav();
 			});
 		});
-	}
+	};
 	var setAppSteps = function () {
 		/*TOOLTIPS****/
 		$(".app-control-step-tooltip-info").prev("*").append($(".app-control-step-tooltip.template").clone().removeClass("template"));
@@ -173,7 +173,7 @@ export default function creator () {
 			$("#app-control-palettes").append($control_color);
 		}
 		$(".control-color-thumb").on('click', function() {
-			var $this = $(this);
+			let $this = $(this);
 			$this.closest("#app-control-palettes").find(".control-color-thumb").removeClass("thumb-selected");
 			$this.next("input").trigger("click");
 			$this.addClass("thumb-selected");
