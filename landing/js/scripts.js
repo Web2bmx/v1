@@ -57,9 +57,10 @@ $(document).ready(function() {
 							let pags = response.paginas;
 							for(let i=0, jd; i < pags.length; i++){
 								jd = JSON.parse(pags[i].info);
+								let name = jd.nombre || jd.selections.siteName.text || "no name";
 								html += 
 								`<option class="inserted" value="${i}">
-									${jd.nombre}
+									${name}
 								</option>`;
 							}						
 							$(".proyectos-disponibles .inserted").remove();									

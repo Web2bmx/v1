@@ -9,7 +9,9 @@ export default function creator () {
 		lastKeyPressed = 0, /*Used to compare last pressed key for updating values*/
 		jd = null,	/*Used to store main data object, JasonData*/
 		isNew = false; /*Used to flag whether is a new user */
+
 	var new_validator = new validator(); /* adds validator helper object, contains string validation capabilities */
+
 	var validation = function(){/*Public function, invoked before init by scripts*/
 		jd = getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
 		if(Object.keys(jd).length){/*If at least one question has been answered*/
@@ -45,10 +47,11 @@ export default function creator () {
 			$(".app-new-start.dialog").dialog("option", "width", 400);
 			$(".app-new-start.dialog").dialog("open");
 		}
-		updateTemplate();/*Updates template*/
+		
 		setAppNavigation();/*Sets up the navigation for App*/
 		setAppControls();/*Set the controls of the app so they update the template values*/
 		setAppSteps();/*Sets up the steps*/
+		updateTemplate();/*Updates template*/
 	};
 	/*APPLICATION FUNCTIONS*/
 	var setAppControls = function () {
@@ -73,7 +76,7 @@ export default function creator () {
 			number_of_items ++;
 			var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
 			$i_t.find("h2:eq(0)").html("Tu producto o servicio");
-			$i_t.find("input").attr({
+			$i_t.find("input[type=text]").attr({
 						"id" : ("inp-content-title-item-" + number_of_items),
 						"name" : ("inp-content-title-item-" + number_of_items),
 						"placeholder" : "Tu producto o servicio"
@@ -123,7 +126,7 @@ export default function creator () {
 		$.ajax({
 			url: "xml/sample_colors.xml",
 			dataType: "xml",
-			success: function(data) {
+			success: (data) => {
 				let $xml; 
 				$xml =$(data);
 				$palettes = $xml.find("palette");

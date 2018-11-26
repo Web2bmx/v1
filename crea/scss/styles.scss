@@ -304,11 +304,6 @@ a {
 		.inp-cont {
 			position: relative;
 		}
-		.inp-cont i {
-			left: 15px;
-			position: absolute;
-			top: 20px;
-		}
 		.site-name-container{
 			text-align: left;
 			color: #121111;
@@ -323,6 +318,9 @@ a {
 				width: 100px;
 				padding: 5px;
 				margin: 0;
+				background: none;
+				border: none;
+				border-bottom: 1px solid;
 			}
 
 			div{
@@ -367,7 +365,7 @@ a {
 		width: 80%;
 
 		textarea,
-		input[type="text"],
+		input[type="text"].noIcon,
 		select{
 			padding: 15px;
 			font-size: 1em;
@@ -382,7 +380,7 @@ a {
 		textarea {
 			width: 100%; height: 8em;			
 		}
-		input[type="text"] {
+		input[type="text"].noIcon {
 			height: auto;
 		}
 		select {

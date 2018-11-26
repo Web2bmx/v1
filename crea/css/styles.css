@@ -575,6 +575,10 @@ input[type='button'] {
   border: 1px solid #DDD;
 }
 
+.inputWihIcons * {
+  box-sizing: border-box;
+}
+
 .inputWihIcons [type="text"],
 .inputWihIcons [type="email"],
 .inputWihIcons [type="password"] {
@@ -925,12 +929,6 @@ a {
   position: relative;
 }
 
-#app-control > .app-control-step .inp-cont i {
-  left: 15px;
-  position: absolute;
-  top: 20px;
-}
-
 #app-control > .app-control-step .site-name-container {
   text-align: left;
   color: #121111;
@@ -946,6 +944,9 @@ a {
   width: 100px;
   padding: 5px;
   margin: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
 }
 
 #app-control > .app-control-step .site-name-container div {
@@ -987,7 +988,7 @@ a {
 }
 
 #app-control .app-control-step > div textarea,
-#app-control .app-control-step > div input[type="text"],
+#app-control .app-control-step > div input[type="text"].noIcon,
 #app-control .app-control-step > div select {
   padding: 15px;
   font-size: 1em;
@@ -1004,7 +1005,7 @@ a {
   height: 8em;
 }
 
-#app-control .app-control-step > div input[type="text"] {
+#app-control .app-control-step > div input[type="text"].noIcon {
   height: auto;
 }
 

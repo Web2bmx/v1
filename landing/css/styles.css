@@ -645,6 +645,10 @@ input[type='button'] {
   border: 1px solid #DDD;
 }
 
+.inputWihIcons * {
+  box-sizing: border-box;
+}
+
 .inputWihIcons [type="text"],
 .inputWihIcons [type="email"],
 .inputWihIcons [type="password"] {

@@ -5,6 +5,10 @@
     overflow: hidden;
     border: 1px solid #DDD;
 
+    *{
+        box-sizing: border-box;
+    }
+
     [type="text"],
     [type="email"],
     [type="password"]{
