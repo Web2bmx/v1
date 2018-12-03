@@ -1,5 +1,6 @@
 import validator from "./validator";
 import colorManager from "./colorManager";
+import imageManager from "./imageManager";
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let template_id = "", /* Stores the value of the current template id, needed to compare when it changes, used on updateTemplate*/
@@ -8,9 +9,11 @@ export default function creator () {
 		lastKeyPressed = 0, /*Used to compare last pressed key for updating values*/
 		jd = null,	/*Used to store main data object, JasonData*/
 		isNew = false; /*Used to flag whether is a new user */
-
+	var _this = this;
+	
 	var new_validator = new validator(); /* adds validator helper object, contains string validation capabilities */
 	var new_colorManager = new colorManager(); /* adds color manager object */
+	var new_imageManager = new imageManager(); /* adds image manager object */
 
 	var validation = function(){/*Public function, invoked before init by scripts*/
 		jd = getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
@@ -148,60 +151,7 @@ export default function creator () {
 			$(".alert.dialog").dialog( "close" ); 
 		});		
 	};
-	var setImageSelection = function (ide) {
-		$(".photo-container").html("");
-		//Check if there are already images upload from user
-		var imagenes = jd.imagenes;
-		if(imagenes){
-			for(let k in imagenes){
-				var arr = imagenes[k].split("#");
-				for(let i = 0; i< arr.length; i++ ){
-					var $img_thumb = $(".img-thumb.template").clone();
-					$img_thumb.removeClass("template").find(".img-thumb-cont").css({
-						"background-image" : ("url(/crea/client_images/" + arr[i] + ")")
-					});
-					$img_thumb.find("input").attr("value", "/crea/client_images/" + arr[i]);
-					var $this_img_thumb = $img_thumb.clone();
-					$this_img_thumb.find("input").attr("name", ("inp-img-" + k));
-					$("#app-control-images-" + k + " .photo-container").append($this_img_thumb);				
-				}
-			}
-		}
-		/* LOAD IMAGES FROM UNSPLASH */
-		$.getJSON("https://api.unsplash.com/photos/search",{
-			client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
-			query: ide,
-			page: 1,
-			per_page: 20,
-			orientation: 'landscape'
-		}).done(function(data){
-			let image_types = ["hero", "item-1"];
-			for(let x=0; x<data.length ; x++){
-				var $img_thumb = $(".img-thumb.template").clone();
-				$img_thumb.removeClass("template").find(".img-thumb-cont").css({
-					"background-image" : ("url(" + data[x]["urls"]["regular"] + ")")
-				}).attr("data-img-url", data[x]["urls"]["regular"]);
-				$img_thumb.find("input").attr("value", data[x]["urls"]["regular"]);
-				for (let i = 0; i < image_types.length; i++) {
-					var $this_img_thumb = $img_thumb.clone();
-					$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));
-					$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
-				}
-			}
-			$(document.body).on('click', '.img-thumb-cont', function() {
-				var $this = $(this);
-				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
-				$this.next("input").trigger("click");
-				$this.parent().addClass("thumb-selected");
-			});	
-			$(document.body).on('click', '.img-thumb-cont-zoom', function() {
-				let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
-				$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
-				$("#single-modal").fadeIn();
-			});
-			updateContent();	
-		}).fail(function(){});
-	};
+	
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();		
 		$("#control-view-nav>a").on("click", function(e) {
@@ -337,7 +287,8 @@ export default function creator () {
 
 		//check if translation already exists
 		if(text != ''){
-			setImageSelection(text);
+			new_imageManager.setImageSelection(jd, text);
+			updateContent();
 		} else {
 			translateData(originaltext);
 		}
@@ -632,13 +583,15 @@ export default function creator () {
 			}
 		  ).done(function(data) {
 			if(data){
-				setImageSelection(decodeURIComponent(data.text[0]));
+				new_imageManager.setImageSelection(jd,decodeURIComponent(data.text[0]));
+				updateContent();
 			}
 		  });	
 	};	
 	/*EO GENERAL FUNCTIONS*/
     return {
         validation: validation,
-        init: init
+		init: init,
+		updateContent : updateContent
     };
 }
