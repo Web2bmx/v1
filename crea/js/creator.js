@@ -1,16 +1,16 @@
 import validator from "./validator";
-
+import colorManager from "./colorManager";
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let template_id = "", /* Stores the value of the current template id, needed to compare when it changes, used on updateTemplate*/
 		current_step = 0, /* Stores the value of the current step in the app-control, used on many functions */
 		number_of_items = 1, /*WORK, number of items should come from jd*/
-		$palettes = null, /*Stores the color palettes from XML, used when loading colors and when updating template*/
 		lastKeyPressed = 0, /*Used to compare last pressed key for updating values*/
 		jd = null,	/*Used to store main data object, JasonData*/
 		isNew = false; /*Used to flag whether is a new user */
 
 	var new_validator = new validator(); /* adds validator helper object, contains string validation capabilities */
+	var new_colorManager = new colorManager(); /* adds color manager object */
 
 	var validation = function(){/*Public function, invoked before init by scripts*/
 		jd = getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
@@ -122,17 +122,7 @@ export default function creator () {
 		$("#single-modal i").on("click", function() {
 			$("#single-modal").fadeOut();
 		});
-		/* LOAD COLORS */
-		$.ajax({
-			url: "xml/sample_colors.xml",
-			dataType: "xml",
-			success: (data) => {
-				let $xml; 
-				$xml =$(data);
-				$palettes = $xml.find("palette");
-				setColors();
-			}
-		});	
+		new_colorManager.loadColors();	
 		/* TEMPLATE DESIGN*/
 		$(".control-design-thumb").on('click', function() {
 			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
@@ -158,30 +148,6 @@ export default function creator () {
 			$(".alert.dialog").dialog( "close" ); 
 		});		
 	};
-	var setColors = function() {
-		let t = $palettes.length;
-		for (let i = 0; i < $palettes.length; i++) {
-			var $control_color = $(".template.control-color").clone();
-			var $palette = $palettes.filter(":eq(" + i + ")");
-			$control_color.removeClass("template");
-			$control_color.find("h4").html($palette.find("name").html());
-			$control_color.find("input").attr("id", ("inp-palette-" + i));
-			$control_color.find("input").attr("value", i);
-			$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
-			var blocks = ["top", "middle", "bottom"];
-			for (let k = 0; k < 3; k++) {
-				$control_color.find(".control-color-thumb-bg:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">back").html() });
-				$control_color.find(".control-color-thumb-content:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">fore").html() });
-			}
-			$("#app-control-palettes").append($control_color);
-		}
-		$(".control-color-thumb").on('click', function() {
-			let $this = $(this);
-			$this.closest("#app-control-palettes").find(".control-color-thumb").removeClass("thumb-selected");
-			$this.next("input").trigger("click");
-			$this.addClass("thumb-selected");
-		});
-	}
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
 		//Check if there are already images upload from user
@@ -406,54 +372,9 @@ export default function creator () {
 		$template = $("#template"),
 		selections = jd.selections || {};
 		topStepMargin();
-		/*Colores*/
-		let palette_id = 0;
-		if ($("[name='inp-palette']:checked").length == 0) {
-			if (selections["palette"]) {
-				palette_id = selections["palette"].value;
-			} else {
-				selections["palette"] = { "name": "palette", "type": "id", "value":"0" };
-				palette_id = selections["palette"].value;
-			}
-			$(".control-color-thumb:eq(" + palette_id + ")").addClass("thumb-selected");
-			$("[name='inp-palette']:eq(" + palette_id + ")").attr("checked", "checked");
-		} else {
-			palette_id = $("[name='inp-palette']:checked").val();
-			selections["palette"].value = palette_id;
-		}
-		saveSelected("palette",palette_id,'id');
-		/**/
-		var $palette = $palettes.filter(":eq(" + palette_id + ")");
-		var c1 = $palette.find("top>back").html();
-		var col_hero_content = HexColorToRGBA(c1, 0.6);
-		var c2 = $palette.find("middle>back").html();
-		var col_items = HexColorToRGBA(c2, 0.6);
-		$template.css({
-			"background-color" : $palette.find("bg>back").html()
-		});
-		$template.find("#hero").css({
-			"background-color" : $palette.find("top>back").html(),
-			"color" : $palette.find("top>fore").html()
-		});
-		$template.find("#hero-content").css({
-			"background-color" : $palette.find("top>back").html(),
-			"color" : $palette.find("top>fore").html()
-		});
-		$template.find("#hero-content h1, #hero-content h2").css({
-			"color" : $palette.find("top>fore").html()
-		});
-		$template.find(".items").css({
-			"background-color" : "transparent",
-			"color" : $palette.find("middle>fore").html()
-		});
-		$template.find(".items .item-content").css({
-			"background-color" : $palette.find("middle>back").html(),
-			"color" : $palette.find("middle>fore").html()
-		});
-		$template.find("footer").css({
-			"background-color" : $palette.find("bottom>back").html(),
-			"color" : $palette.find("bottom>fore").html()
-		});
+		
+		saveSelected("palette",new_colorManager.changeColors(selections),'id');
+		new_colorManager.updateColors($template);
 		/*Content & Contacto*/
 		$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
 			let $this = $(this),
@@ -623,10 +544,6 @@ export default function creator () {
 		}
 		return jsonData;
 	};	
-	function HexColorToRGBA(c, a) {
-		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");
-		return s;
-	}
 	var uploadImage = function (e){
 		e.preventDefault();
 		var f = $("input[type=file]",e.currentTarget),
