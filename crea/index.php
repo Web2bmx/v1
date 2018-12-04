@@ -29,5 +29,6 @@
 		</div>		
 		<?php include_once("include/include_html_templates.php"); ?>
 		<?php include_once("include/include_chat.php"); ?>
+		<?php include_once("include/include_modal-page-switcher.php"); ?>
 	</body>
 </html>

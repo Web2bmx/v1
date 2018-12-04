@@ -502,15 +502,15 @@ and open the template in the editor.
   opacity: .5;
 }
 
-.modal-login, .app-new-start {
+.modal-login, .app-new-start, .ventana-login {
   margin: 20px;
 }
 
-.modal-login *, .app-new-start * {
+.modal-login *, .app-new-start *, .ventana-login * {
   box-sizing: border-box;
 }
 
-.modal-login img, .app-new-start img {
+.modal-login img, .app-new-start img, .ventana-login img {
   display: block;
   height: auto;
   margin: 1em auto;
@@ -518,23 +518,23 @@ and open the template in the editor.
   width: 10em;
 }
 
-.modal-login input, .app-new-start input, .modal-login button, .app-new-start button {
+.modal-login input, .app-new-start input, .ventana-login input, .modal-login button, .app-new-start button, .ventana-login button {
   width: 100%;
 }
 
-.modal-login p, .app-new-start p {
+.modal-login p, .app-new-start p, .ventana-login p {
   text-align: center;
   font-size: 18px;
   color: #000;
   margin: 25px 0;
 }
 
-.modal-login [type="button"], .app-new-start [type="button"] {
+.modal-login [type="button"], .app-new-start [type="button"], .ventana-login [type="button"] {
   font-size: 23px;
   padding: 15px;
 }
 
-.modal-login .x-close, .app-new-start .x-close {
+.modal-login .x-close, .app-new-start .x-close, .ventana-login .x-close {
   position: absolute;
   right: 0;
   top: 0;
@@ -543,7 +543,7 @@ and open the template in the editor.
   cursor: pointer;
 }
 
-.modal-login .x-close:hover, .app-new-start .x-close:hover {
+.modal-login .x-close:hover, .app-new-start .x-close:hover, .ventana-login .x-close:hover {
   color: #999;
 }
 
@@ -748,11 +748,21 @@ a {
   }
 }
 
-#app-cover .app-cover-start img.logo {
+#app-cover .app-cover-start img.logo,
+#app-cover .app-cover-start .change-page {
   position: absolute;
+}
+
+#app-cover .app-cover-start img.logo {
   top: 20px;
-  left: 50px;
+  left: 20px;
   width: 100px;
+}
+
+#app-cover .app-cover-start .change-page {
+  top: 30px;
+  right: 20px;
+  color: #9b035a;
 }
 
 #app-cover .app-cover-start .thumb-selected + i::before {
@@ -1453,5 +1463,20 @@ a {
 }
 
 /**/
+/*Modal*/
+.ventana-login, .ventana-login p {
+  color: #aaa;
+  text-align: left;
+}
+
+.ventana-login select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.ventana-login .form-error {
+  text-align: left;
+}
 
 /*# sourceMappingURL=styles.css.map */

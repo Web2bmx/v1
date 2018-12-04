@@ -1294,18 +1294,18 @@ footer menu li {
 }
 
 /*Modal*/
-.ventana-login .login-paginas, .ventana-login .login-paginas p {
+.ventana-login, .ventana-login p {
   color: #aaa;
   text-align: left;
 }
 
-.ventana-login .login-paginas select {
+.ventana-login select {
   width: 100%;
   padding: 10px;
   border-radius: 10px;
 }
 
-.ventana-login .login-paginas .form-error {
+.ventana-login .form-error {
   text-align: left;
 }
 

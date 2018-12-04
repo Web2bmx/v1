@@ -1,0 +1,18 @@
+@mixin login-paginas {
+
+    &,p{
+        color: #aaa;
+        text-align: left;
+    }
+
+    select{
+        width: 100%;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .form-error{
+        text-align: left;
+    }
+
+}

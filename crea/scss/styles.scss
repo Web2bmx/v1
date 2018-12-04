@@ -9,6 +9,7 @@
 @import "../../scss/components/_modal";
 @import "../../scss/components/_buttons"; 
 @import "../../scss/components/_inputFields"; 
+@import "../../scss/components/login-paginas";
 
 @import "../../scss/partials/_errors";
 /**/
@@ -127,11 +128,21 @@ a {
 			width: 1000px;
 		}
 
-		img.logo{
+		img.logo,
+		.change-page{
 			position: absolute;
+		}		
+
+		img.logo{
 			top: 20px;
-			left: 50px;
+			left: 20px;
 			width: 100px;			
+		}
+
+		.change-page{
+			top:30px;
+			right: 20px;
+			color: $darker-pink;
 		}
 
 		.thumb-selected +  i::before{
@@ -778,3 +789,9 @@ a {
 	z-index: 101;
 }
 /**/
+
+/*Modal*/
+.ventana-login {
+	@extend .modal-login;
+	@include login-paginas;
+}
