@@ -1,6 +1,7 @@
 import validator from "./validator";
 import colorManager from "./colorManager";
 import imageManager from "./imageManager";
+import tooltipManager from "./tooltipManager";
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let template_id = "", /* Stores the value of the current template id, needed to compare when it changes, used on updateTemplate*/
@@ -9,11 +10,11 @@ export default function creator () {
 		lastKeyPressed = 0, /*Used to compare last pressed key for updating values*/
 		jd = null,	/*Used to store main data object, JasonData*/
 		isNew = false; /*Used to flag whether is a new user */
-	var _this = this;
 	
 	var new_validator = new validator(); /* adds validator helper object, contains string validation capabilities */
 	var new_colorManager = new colorManager(); /* adds color manager object */
 	var new_imageManager = new imageManager(); /* adds image manager object */
+	var new_tooltipManager = new tooltipManager(); /* adds tooltip manager object */
 
 	var validation = function(){/*Public function, invoked before init by scripts*/
 		jd = getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
@@ -111,17 +112,7 @@ export default function creator () {
 		});
 	};
 	var setAppSteps = function () {
-		/*TOOLTIPS****/
-		$(".app-control-step-tooltip-info").prev("*").append($(".app-control-step-tooltip.template").clone().removeClass("template"));
-		$(".app-control-step-tooltip").click(function() {
-			var $target = $(this).parent().next(".app-control-step-tooltip-info");
-			if ($target.is(":visible")) {
-				$target.removeClass("active");
-			} else {
-				$target.addClass("active");
-			}
-		});
-		/*EO TOOLTIPS*/
+		new_tooltipManager.setTooltips();
 		$("#single-modal i").on("click", function() {
 			$("#single-modal").fadeOut();
 		});
