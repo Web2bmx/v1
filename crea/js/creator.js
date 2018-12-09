@@ -2,11 +2,12 @@ import validator from "./validator";
 import colorManager from "./colorManager";
 import imageManager from "./imageManager";
 import tooltipManager from "./tooltipManager";
+import itemManager from "./itemManager";
+import dataManager from "./dataManager";
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let template_id = "", /* Stores the value of the current template id, needed to compare when it changes, used on updateTemplate*/
 		current_step = 0, /* Stores the value of the current step in the app-control, used on many functions */
-		number_of_items = 1, /*WORK, number of items should come from jd*/
 		lastKeyPressed = 0, /*Used to compare last pressed key for updating values*/
 		jd = null,	/*Used to store main data object, JasonData*/
 		isNew = false; /*Used to flag whether is a new user */
@@ -15,9 +16,11 @@ export default function creator () {
 	var new_colorManager = new colorManager(); /* adds color manager object */
 	var new_imageManager = new imageManager(); /* adds image manager object */
 	var new_tooltipManager = new tooltipManager(); /* adds tooltip manager object */
-
+	var new_itemManager = new itemManager(); /* adds item manager object */
+	var new_dataManager = new dataManager();
+	
 	var validation = function(){/*Public function, invoked before init by scripts*/
-		jd = getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
+		jd = new_dataManager.getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
 		if(Object.keys(jd).length){/*If at least one question has been answered*/
 			if(jd.respuestas && Object.keys(jd.respuestas).length < 3){/*Incomplete tour*/
 				location.href = "/tour";/*takes user to the tour*/
@@ -25,7 +28,7 @@ export default function creator () {
 				isNew = true;/*it's a new user (?)*/
 			}
 		} else {/*jd has something on it, so it's a returning visitor*/
-			let web2bTemplate = getObjFromLocalStorage("web2b_template");/*get template from local storage*/
+			let web2bTemplate = new_dataManager.getObjFromLocalStorage("web2b_template");/*get template from local storage*/
 			if(Object.keys(web2bTemplate).length){/*template has any key*/
 				jd = web2bTemplate;/*why does jd gets replaced by webtemplate?*/
 			} else {
@@ -56,6 +59,17 @@ export default function creator () {
 		setAppControls();/*Set the controls of the app so they update the template values*/
 		setAppSteps();/*Sets up the steps*/
 		updateTemplate();/*Updates template*/
+		$("#app-control").on("itemWasAdded", function() {
+			current_step = new_itemManager.getIndex();
+			goToStep(current_step);
+			centerNav();
+		});
+		new_itemManager.setItems();
+		new_tooltipManager.setTooltips();
+		new_colorManager.loadColors();
+		$("#single-modal i").on("click", function() {
+			$("#single-modal").fadeOut();
+		});
 	};
 	/*APPLICATION FUNCTIONS*/
 	var setAppControls = function () {
@@ -71,52 +85,10 @@ export default function creator () {
 				$(".form-error",$(e.currentTarget).parent()).show();
 			}
 		});
-		/*ADD ITEMS*/
-		$("#inp-content-item-add-y").on("click", function() {
-			var $this = $(this);
-			var index = $(".app-control-step").index($this.closest(".app-control-step"));
-			$("#control-view-index").prepend(($(".control-view-index-item.current").clone().removeClass("current"))).append(($(".control-view-index-item.current").clone().removeClass("current")));
-			addItems(number_of_items);
-			number_of_items ++;
-			var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
-			$i_t.find("h2:eq(0)").html("Tu producto o servicio");
-			$i_t.find("input[type=text]").attr({
-						"id" : ("inp-content-title-item-" + number_of_items),
-						"name" : ("inp-content-title-item-" + number_of_items),
-						"placeholder" : "Tu producto o servicio"
-					}).val("");
-			$i_t.find("textarea").attr({
-						"id" : ("inp-content-item-" + number_of_items),
-						"name" : ("inp-content-item-" + number_of_items),
-						"placeholder" : "Tu producto o servicio"
-					}).val("");
-			$i_t.find("h2:eq(1)").html("Elige una imagen para tu producto o servicio");
-			$i_t.find("#app-control-images-item-" + (number_of_items - 1)).attr("id", ("app-control-images-item-" + number_of_items));
-			$i_t.find("input").each(function() {
-				if($(this).attr("type") != "file" && $(this).attr("type") != "submit"){
-					$(this).attr("name", ("inp-img-item-" + number_of_items));
-				}
-				if($(this).attr("type") == "file"){
-					$(this).attr("name", ("item-" + number_of_items));
-				}
-			});
-			$this.closest(".app-control-step").before($i_t);
-			current_step = index;
-			goToStep(current_step);
-			$this.prop('checked', false);
-			$("#inp-content-item-add-n").trigger("click");
-			centerNav();
-			$(window).resize(function(){ 
-				centerNav();
-			});
-		});
 	};
 	var setAppSteps = function () {
-		new_tooltipManager.setTooltips();
-		$("#single-modal i").on("click", function() {
-			$("#single-modal").fadeOut();
-		});
-		new_colorManager.loadColors();	
+		
+			
 		/* TEMPLATE DESIGN*/
 		$(".control-design-thumb").on('click', function() {
 			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
@@ -126,7 +98,6 @@ export default function creator () {
 			updateTemplate();			
 		});
 		/* Upload image*/
-		var that = this;
 		$('.file-upload button').on("click", (e) =>{
 			$(e.currentTarget).next("input").click();
 		});
@@ -173,7 +144,9 @@ export default function creator () {
 		});
 		$(".control-view-nav-display-mark:eq(" + current_step + ")").addClass("control-view-nav-display-mark-active");
 		centerNav();
-
+		$(window).resize(function(){ 
+			centerNav();
+		});
 		/* ON NEW PAGE */
 		$("[name='start']").on("click", function() {
 			$(".form-error").hide();
@@ -188,7 +161,7 @@ export default function creator () {
 			}else if(!new_validator.validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
 				} else {
-					saveSelected('inp-content-name',$("#nombrePagina").val().trim(),'text');
+					new_dataManager.saveSelected(jd,'inp-content-name',$("#nombrePagina").val().trim(),'text');
 					$.post("scripts/crear_usuario.php",{
 						correo: $("#correo").val().trim(),
 						password: $("#password").val(),
@@ -315,7 +288,7 @@ export default function creator () {
 		selections = jd.selections || {};
 		topStepMargin();
 		
-		saveSelected("palette",new_colorManager.changeColors(selections),'id');
+		new_dataManager.saveSelected(jd,"palette",new_colorManager.changeColors(selections),'id');
 		new_colorManager.updateColors($template);
 		/*Content & Contacto*/
 		$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
@@ -325,7 +298,7 @@ export default function creator () {
 				if (i_id == "inp-content-slogan") {
 					if (!selections[i_id]) {
 						selections[i_id] = {};
-						let web2bTemplate = getObjFromLocalStorage("web2b");
+						let web2bTemplate = new_dataManager.getObjFromLocalStorage("web2b");
 						let slogan_from_tour = "";
 						for (let key in web2bTemplate.respuestas) {
 							if(web2bTemplate.respuestas[key].tipo == 3) {
@@ -333,7 +306,7 @@ export default function creator () {
 								break;
 							}
 						}
-						saveSelected("inp-content-slogan",slogan_from_tour,'text');
+						new_dataManager.saveSelected(jd,"inp-content-slogan",slogan_from_tour,'text');
 					}
 				} else {
 					selections[i_id] = selections[i_id] || {};
@@ -341,7 +314,7 @@ export default function creator () {
 				
 			if (($this.val() != "") || (selections[i_id].text != undefined)) {
 				if (($this.val() != "")) {
-					saveSelected(i_id,$this.val(),'text');
+					new_dataManager.saveSelected(jd,i_id,$this.val(),'text');
 					$template.find("#" + v_id).show().closest(".footer-column").show();
 				} else {
 					$this.val(selections[i_id].text);
@@ -393,9 +366,9 @@ export default function creator () {
 				"background-image" : ("url(" + img_src + ")")
 			});
 			//Save selection to object
-			saveSelected(n_name,img_src,'image');
+			new_dataManager.saveSelected(jd,n_name,img_src,'image');
 		});
-		saveWeb2bJson();				
+		new_dataManager.saveWeb2bJson(jd);				
 	};
 	var topStepMargin = function(){
 		let actual = $(".app-control-step:visible > div"),
@@ -425,15 +398,15 @@ export default function creator () {
 		}
 		if (primeraVez || template_id != id) {
 			template_id = id;
-			saveSelected("templateTypeId",id,"config");
+			new_dataManager.saveSelected(jd,"templateTypeId",id,"config");
 			$("#template").html("");
 			var src = "Templates/Template-" + template_id + "/index.php?t=" + Math.floor(Math.random() * 4); 
 			$("#template-cont").load(src + " #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
 				$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
-				for (let i = 1; i < number_of_items; i ++) {
-					addItems(i);		
+				for (let i = 1; i < new_itemManager.getNumberOfItems(); i ++) {
+					new_itemManager.addItems(i);		
 				}
 				updateContent();
 				$.ajax({
@@ -446,21 +419,7 @@ export default function creator () {
 			updateContent(); 
 		}
 	};
-	var addItems = function (i) {
-		if ($("#template .items:last .item").length == 3) { $("#template .items:last").after("<div class='items'></div>"); }
-		var $item_copy = $(".item:last").clone();
-		$item_copy.find("#img-item-" + i).attr("id", ("img-item-" + (i + 1)));
-		$item_copy.find("#val-content-title-item-" + i).attr("id", ("val-content-title-item-" + (i + 1)));
-		$item_copy.find("#val-content-item-" + i).attr("id", ("val-content-item-" + (i + 1)));
-		$("#template .items:last").append($item_copy);
-		var c = "";
-		switch ($("#template .items:last .item").length % 3) {
-			case 0 : c = "three"; break;
-			case 1 : c = "one"; break;
-			case 2 : c = "two"; break;
-		}
-		$("#template .items:last").attr("class", "items").addClass(c);
-	};
+	
 	/*EO APPLICATION FUNCTIONS*/
 	/*GENERAL FUNCTIONS*/
 	function openRequestedPopup(strUrl, strWindowName) {
@@ -473,19 +432,6 @@ export default function creator () {
 		windowObjectReference.focus();
 		}
 	}
-	var getObjFromLocalStorage = function (key){
-		var jsonData = localStorage.getItem(key);
-		if(jsonData == null) {
-			jsonData = {};           
-		} else {
-			try{
-				jsonData = JSON.parse(jsonData);
-			} catch(e){
-				return jsonData;
-			}
-		}
-		return jsonData;
-	};	
 	var uploadImage = function (e){
 		e.preventDefault();
 		var f = $("input[type=file]",e.currentTarget),
@@ -516,49 +462,11 @@ export default function creator () {
 				$this_img_thumb.find("input").attr("name", ("inp-img-" + name));
 				$("#app-control-images-" + name + " .photo-container").prepend($this_img_thumb);
 				jd.imagenes = imagenes;
-				saveWeb2bJson();
+				new_dataManager.saveWeb2bJson(jd);
 			}
 		}).always(function(){
 			$("button",e.currentTarget).attr("disabled",false);
 		});
-	};
-	var saveWeb2bJson = function(){
-		let strJD = JSON.stringify(jd),
-			userId = getObjFromLocalStorage("web2b_userId"),
-			idSitio = getObjFromLocalStorage("web2b_templateId"),
-			savedJD = localStorage.getItem("web2b_template");	
-		if(strJD && savedJD != strJD && !(userId instanceof Object) && !(idSitio instanceof Object)){
-			localStorage.setItem("web2b_template", strJD);
-			$.post("scripts/salvar_datos.php",{
-				userId: userId,
-				idSitio: idSitio,
-				info: strJD
-			}).done(function(result){						
-				if(!result.ok){
-					console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result.mensaje);					
-				}
-			}).fail(function(result){
-				console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result);					
-			});		
-		}
-	};
-	var saveSelected = function(name, value,type) {
-		let selections = jd.selections || {};
-		selections[name] = selections[name] || {};
-		selections[name].type = type;
-		switch(type){
-			case 'image':				
-				selections[name].img = value;
-			break;
-			case 'text':
-				selections[name].text = value;
-			break;
-			case 'config':
-				selections[name].value = value;
-			break;
-		}
-		//Save selection to object
-		jd.selections = selections;		
 	};
 	var centerNav= function() {
 		let parentW = $("#control-view-index").parent().width();
