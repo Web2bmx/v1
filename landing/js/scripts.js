@@ -1,6 +1,9 @@
 import dialogHandler from '../../js/dialog';
+import pageManager from '../../js/pageManager';
 
 $(document).ready(function() {
+	let new_PageManager = new pageManager();
+
 	$(".comingsoon").click(function() {
 		alert("Proximamente");
 	});
@@ -52,36 +55,11 @@ $(document).ready(function() {
 							localStorage.setItem("web2b_userId", response.userId);
 							window.location.href = "/crea";
 						} else {
-							// manejar varias paginas de un solo usuario??
-							let html = "";
-							let pags = response.paginas;
-							for(let i=0, jd; i < pags.length; i++){
-								jd = JSON.parse(pags[i].info);
-								let name = jd.nombre || jd.selections.siteName.text || "no name";
-								html += 
-								`<option class="inserted" value="${i}">
-									${name}
-								</option>`;
-							}						
-							$(".proyectos-disponibles .inserted").remove();									
-							$(".proyectos-disponibles").append(html);
-							$(".ventana-login > div").hide();
-							$(".login-paginas").show();
-							$(".llevame").click({
-								pags: pags,
-								userId: response.userId
-							},function(e){
-								let pagina = $(".proyectos-disponibles option:selected" ).val(),
-									d = e.data;
-								if(pagina != ""){
-									localStorage.setItem("web2b_template", d.pags[pagina].info);
-									localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
-									localStorage.setItem("web2b_userId", d.userId);
-									window.location.href = "/crea";
-								} else {
-									$(".login-paginas .form-error").css("display","block");
-								}
-							});
+							// show pages and redirect on success
+							new_PageManager.setPaginasInfoFromExternal(response.paginas);
+							new_PageManager.fillModal(response.userId, () => {
+								window.location.href = "/crea";
+							});						
 						}
 					} else {
 						$(".login-content").fadeOut(100);

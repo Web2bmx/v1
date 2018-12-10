@@ -1,7 +1,7 @@
 <div id="app-cover">
 	<div class="app-cover-start">
 		<img src="/img/logo.png" class="logo" />
-		<a href='' class='change-page'>
+		<a class='change-page' style='display: none'>
 			<i class="fas fa-redo-alt"></i>
 		</a>		
 		<h2>Elige el diseño de tu página</h2>					

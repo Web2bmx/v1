@@ -3,7 +3,9 @@ import colorManager from "./colorManager";
 import imageManager from "./imageManager";
 import tooltipManager from "./tooltipManager";
 import itemManager from "./itemManager";
-import dataManager from "./dataManager";
+import dataManager from "../../js/dataManager";
+import pageManager from '../../js/pageManager';
+
 export default function creator () {
     /*GLOBAL VARIABLES*/
 	let template_id = "", /* Stores the value of the current template id, needed to compare when it changes, used on updateTemplate*/
@@ -11,6 +13,7 @@ export default function creator () {
 		lastKeyPressed = 0, /*Used to compare last pressed key for updating values*/
 		jd = null,	/*Used to store main data object, JasonData*/
 		isNew = false; /*Used to flag whether is a new user */
+		
 	
 	var new_validator = new validator(); /* adds validator helper object, contains string validation capabilities */
 	var new_colorManager = new colorManager(); /* adds color manager object */
@@ -18,6 +21,7 @@ export default function creator () {
 	var new_tooltipManager = new tooltipManager(); /* adds tooltip manager object */
 	var new_itemManager = new itemManager(); /* adds item manager object */
 	var new_dataManager = new dataManager();
+	var new_PageManger = new pageManager();
 	
 	var validation = function(){/*Public function, invoked before init by scripts*/
 		jd = new_dataManager.getObjFromLocalStorage("web2b");/*Retrieves Json Data from local Storage*/
@@ -50,9 +54,13 @@ export default function creator () {
 			},
 			closeOnEscape: false
 		  }); 
+
 		if(isNew){/*If is a new User, open Dialog*/											
 			$(".app-new-start.dialog").dialog("option", "width", 400);
 			$(".app-new-start.dialog").dialog("open");
+		} else {
+			new_PageManger.getPaginasFromLS();
+			if (new_PageManger.hasPages()) $(".change-page").show();
 		}
 		
 		setAppNavigation();/*Sets up the navigation for App*/
@@ -238,6 +246,8 @@ export default function creator () {
 		localStorage.setItem("web2b_templateId", data.idSitio);
 		localStorage.setItem("web2b_userId", data.userId);		
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
+		localStorage.setItem("web2b_pages", JSON.stringify(data.paginas));
+		if(data.paginas.length > 1) $(".change-page").show();
 	};
 	var onTemplateLoaded = function(){
 
