@@ -7,8 +7,10 @@
 		<h2 id="val-content-slogan"><?php echo($content->hero[0]->slogan); ?></h2>
 		<h1 id="val-content-name"><?php echo($content->hero[0]->name); ?></h1>
 		<div class="seemore">
-			<h3>Conozca Más</h3>
-			<p>&darr;</p>
+			<a href="#">
+				<h3>Conozca Más</h3>
+				<p><i class="fas fa-angle-down"></i></p>
+			</a>
 		</div>
 	</div>
 </div>
