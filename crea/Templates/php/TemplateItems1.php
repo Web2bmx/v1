@@ -8,14 +8,14 @@
 	}
 ?>
 <div class="items <?php echo($row_class); ?>">
-	<?php foreach ($row->item as $item) : ?>
+	<?php for ($i = 1; $i <= count($row->item); $i++) : ?>
 	<div class="item">
-        <div id="img-item-1" class="img-cont img-MC" style="background-image: url('<?php echo($item->img[0]); ?>')"></div>
+        <div id="img-item-1" class="img-cont img-MC" style="background-image: url('<?php echo($row->item[$i - 1]->img[0]); ?>')"></div>
 		<div class="item-content">
-			<h2 id="val-content-title-cta"><?php echo($item->title); ?></h2>
-			<p id="val-content-cta"><?php echo($item->text); ?></p>
+			<h2 id="val-content-title-item-1"><?php echo($row->item[$i - 1]->title); ?></h2>
+			<p id="val-content-item-1"><?php echo($row->item[$i - 1]->text); ?></p>
 		</div>
 	</div>
-	<?php endforeach; ?>
+	<?php endfor; ?>
 </div>
 <?php endforeach; ?>
