@@ -62,6 +62,8 @@ export default function creator () {
 			new_PageManger.getPaginasFromLS();
 			if (new_PageManger.hasPages()) $(".change-page").show();
 		}
+
+		new_colorManager.loadColors(); // This one needs to be here
 		
 		setAppNavigation();/*Sets up the navigation for App*/
 		setAppControls();/*Set the controls of the app so they update the template values*/
@@ -74,7 +76,7 @@ export default function creator () {
 		});
 		new_itemManager.setItems();
 		new_tooltipManager.setTooltips();
-		new_colorManager.loadColors();
+		
 		$("#single-modal i").on("click", function() {
 			$("#single-modal").fadeOut();
 		});
@@ -195,6 +197,19 @@ export default function creator () {
 			current_step --;
 			$("#app-cover").hide();
 		});
+		/* SWITCH TEMPLATE */
+		$(".change-page").click((e) => {
+			e.preventDefault();
+			let userId = new_dataManager.getObjFromLocalStorage("web2b_userId");
+			new_PageManger.fillModal(userId, () => {
+				location.reload();
+			});
+			$(".ventana-login").dialog( "option", "width", 400 );		
+			$(".ventana-login").dialog( "open" );
+		});		
+		$(".cerrar-ventana").click(function(){
+			$(".ventana-login").dialog( "close" ); 
+		});		
 		/*NAV BUTTONS*/
 		$(".app-cover-start .next").click(function(){
 			closeAppCover();
