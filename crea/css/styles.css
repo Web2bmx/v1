@@ -891,12 +891,20 @@ a {
   background: none;
   border: 1px solid white;
   width: 100%;
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 0;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
   letter-spacing: 2px;
   cursor: pointer;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button i, #app-cover .app-cover-finish .app-cover-finish-package button span {
+  vertical-align: middle;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button i {
+  font-size: 30px;
 }
 
 #app-cover .app-cover-finish .app-cover-finish-package button:hover {
