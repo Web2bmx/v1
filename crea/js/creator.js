@@ -63,7 +63,7 @@ export default function creator () {
 			if (new_PageManger.hasPages()) $(".change-page").show();
 		}
 
-		new_colorManager.loadColors(); // This one needs to be here
+		
 		
 		setAppNavigation();/*Sets up the navigation for App*/
 		setAppControls();/*Set the controls of the app so they update the template values*/
@@ -425,7 +425,7 @@ export default function creator () {
 			template_id = id;
 			new_dataManager.saveSelected(jd,"templateTypeId",id,"config");
 			$("#template").html("");
-			var src = "Templates/Template-" + template_id + "/index.php?t=" + Math.floor(Math.random() * 4); 
+			var src = "Templates/Template-" + template_id + "/index.php?t=4"; 
 			$("#template-cont").load(src + " #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
@@ -433,12 +433,14 @@ export default function creator () {
 				for (let i = 1; i < new_itemManager.getNumberOfItems(); i ++) {
 					new_itemManager.addItems(i);		
 				}
+				new_colorManager.loadColors($template);
 				updateContent();
-				$.ajax({
+				onTemplateLoaded();
+				/*$.ajax({
 					url: ("Templates/Template-" + id + "/js/scripts.js"),
 					dataType: "script",
 					success: onTemplateLoaded
-				});
+				});*/
 			});
 		} else {
 			updateContent(); 

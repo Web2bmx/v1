@@ -50,14 +50,14 @@ body { margin: 0; padding: 0; }
 #hero {
 	background-color: #666;
 	display: block;
-	height: 250px;
+	height: 240px;
 	overflow: hidden;
 	position: relative;
 	width: 100%; 
 }
 #hero .img-cont {
 	display: block; 
-	height: 250px;
+	height: 240px;
 	opacity: .3;
 	overflow: hidden;
 	position: absolute;
@@ -77,14 +77,31 @@ body { margin: 0; padding: 0; }
 	z-index: 1;
 }
 #template h1 {
-	color: #FFE600;
 	font-size: 2em;
 }
+#template.color-orange h1 {
+	color: #F0AA00;
+}
+#template.color-yellow h1 {
+	color: #FFE600;
+}
+#template.color-green h1 {
+	color: #D4FF00;
+}
 .seemore h3 {
-	border: 1px solid #FFE600;
+	border: 1px solid #444444;
 	display: inline-block;
 	font-variant: small-caps;
 	padding: 1em 2em;
+}
+#template.color-orange .seemore h3 {
+	border-color: #F0AA00;
+}
+#template.color-yellow .seemore h3 {
+	border-color: #FFE600;
+}
+#template.color-green .seemore h3 {
+	border-color: #D4FF00;
 }
 @media only screen and (min-width: 560px) {
 	#hero {
@@ -103,11 +120,20 @@ body { margin: 0; padding: 0; }
 /*HERO*/
 /*MENU*/
 .menu-cont {
-	border-bottom: 1px solid #FFE600;
+	border-bottom: 1px solid #444444;
 	display: block;
 	height: auto;
 	padding: 2em 0;
 	width: 100%;
+}
+#template.color-orange .menu-cont {
+	border-color: #F0AA00;
+}
+#template.color-yellow .menu-cont {
+	border-color: #FFE600;
+}
+#template.color-green .menu-cont {
+	border-color: #D4FF00;
 }
 #menu {
 	display: block;
@@ -134,7 +160,16 @@ body { margin: 0; padding: 0; }
 	border: 1px solid #FFFFFF;
 }
 #menu ul li a:hover, #menu ul li a:active {
-	border: 1px solid #FFE600;
+	border: 1px solid #444444;
+}
+#template.color-orange #menu ul li a:hover, #template.color-orange #menu ul li a:active {
+	border-color: #F0AA00;
+}
+#template.color-yellow #menu ul li a:hover, #template.color-yellow #menu ul li a:active {
+	border-color: #FFE600;
+}
+#template.color-green #menu ul li a:hover, #template.color-green #menu ul li a:active {
+	border-color: #D4FF00;
 }
 @media only screen and (min-width: 560px) {
 	#menu ul li {
@@ -182,32 +217,53 @@ body { margin: 0; padding: 0; }
 		display: grid;
 	}
 	.items.one { grid-template-columns: auto; }
-	.items.two { grid-template-columns: auto auto; }
-	.items.three { grid-template-columns: auto auto auto; }
+	.items.two { grid-template-columns: 46% 46%; }
+	.items.three { grid-template-columns: 33% 34% 33%; }
 	.item { width: auto; margin: 0 2%; }
 }
 /*ITEMS*/
 /*ABOUT US*/
 .aboutus-cont {
-	background-color: #FFE600;
+	background-color: #444444;
 	color: #000000;
 	display: block; 
 	height: auto;
 	overflow: visible;
 	width: 100%; 
 }
+#template.color-orange .aboutus-cont {
+	background-color: #F0AA00;
+}
+#template.color-yellow .aboutus-cont {
+	background-color: #FFE600;
+}
+#template.color-green .aboutus-cont {
+	background-color: #D4FF00;
+}
 .aboutus {
 	display: block;
-	height: 350px;
+	height: 500px;
 	overflow: visible;
+	position: relative;
+}
+.aboutus .img-cont {
+	display: block; 
+	height: 500px;
+	overflow: hidden;
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
 }
 .aboutus .aboutus-content {
 	display: block;
 	text-align: center;
 	margin: 0 auto;
 	overflow: hidden;
+	position: relative;
 	padding: 4em 0 0 0;
 	width: 92%; max-width: 1180px;
+	z-index: 1;
 }
 @media only screen and (min-width: 560px) {
 	.aboutus {
@@ -235,7 +291,16 @@ body { margin: 0; padding: 0; }
 	font-variant: small-caps;
 }
 .galeria-header h3 {
+	color: #444444;
+}
+#template.color-orange .galeria-header h3 {
+	color: #F0AA00;
+}
+#template.color-yellow .galeria-header h3 {
 	color: #FFE600;
+}
+#template.color-green .galeria-header h3 {
+	color: #D4FF00;
 }
 .galeria {
 	margin: 0 auto;
@@ -281,7 +346,7 @@ body { margin: 0; padding: 0; }
 	z-index: 0;
 }
 .cta .cta-content {
-	color: #FFE600;
+	color: #444444;
 	display: block;
 	height: auto;
 	margin: 0 auto;
@@ -290,6 +355,15 @@ body { margin: 0; padding: 0; }
 	text-align: center;
 	width: 92%; max-width: 1086px; 
 	z-index: 1;
+}
+#template.color-orange .cta .cta-content {
+	color: #F0AA00;
+}
+#template.color-yellow .cta .cta-content {
+	color: #FFE600;
+}
+#template.color-green .cta .cta-content {
+	color: #D4FF00;
 }
 .cta .cta-content h2 {
 	font-size: 2em;
@@ -340,7 +414,16 @@ footer {
 	font-variant: small-caps;
 }
 .footer-header p {
+	color: #444444;
+}
+#template.color-orange .footer-header p {
+	color: #F0AA00;
+}
+#template.color-yellow .footer-header p {
 	color: #FFE600;
+}
+#template.color-green .footer-header p {
+	color: #A4DD00;
 }
 .footer-contact-info {
 	margin: 0 auto;
@@ -366,12 +449,21 @@ footer ul {
 /*DISCLAIMER*/
 #disclaimer {
 	background-color: #000000;
-	color: #FFE600;
+	color: #444444;
 	display: block;
 	height: auto;
 	overflow: hiddden;
 	padding: 2em 0;
 	width: 100%;
+}
+#template.color-orange #disclaimer {
+	color: #F0AA00;
+}
+#template.color-yellow #disclaimer {
+	color: #FFE600;
+}
+#template.color-green #disclaimer {
+	color: #A4DD00;
 }
 #disclaimer p {
 	margin: 0 auto;

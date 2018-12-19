@@ -4,32 +4,23 @@ export default function colorManager () {
     var getPalettes = function () {
         return $palettes;
     }
-    var loadColors = function () {
-        $.ajax({
-		    url: "xml/sample_colors.xml",
-			dataType: "xml",
-			success: (data) => {
-				let $xml; 
-				$xml =$(data);
-				$palettes = $xml.find("palette");
-				setColors();
-			}
-        });
+    var loadColors = function ($template) {
+        $palettes = $template.find(".template-color");
+		setColors();
     }
     var setColors = function() {
+		$("#app-control-palettes").find(">*").remove().detach();
 		let t = $palettes.length;
 		for (let i = 0; i < $palettes.length; i++) {
 			var $control_color = $(".template.control-color").clone();
 			var $palette = $palettes.filter(":eq(" + i + ")");
 			$control_color.removeClass("template");
-			$control_color.find("h4").html($palette.find("name").html());
+			$control_color.find("h4").html($palette.find("h1").html());
 			$control_color.find("input").attr("id", ("inp-palette-" + i));
 			$control_color.find("input").attr("value", i);
-			$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("bg>back").html() });
-			var blocks = ["top", "middle", "bottom"];
+			//$control_color.find(".control-color-thumb").css({ "background-color" : $palette.find("p:eq(0)").html() });
 			for (let k = 0; k < 3; k++) {
-				$control_color.find(".control-color-thumb-bg:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">back").html() });
-				$control_color.find(".control-color-thumb-content:eq(" + k + ")").css({ "background-color" : $palette.find(blocks[k] + ">fore").html() });
+				$control_color.find(".control-color-thumb-bg:eq(" + k + ")").css({ "background-color" : $palette.find("p:eq(" + k + ")").html() });
 			}
 			$("#app-control-palettes").append($control_color);
 		}
@@ -54,40 +45,10 @@ export default function colorManager () {
 			palette_id = $("[name='inp-palette']:checked").val();
 			selections["palette"].value = palette_id;
         }
-        return palette_id;
-    }
+		return palette_id;
+	}
     var updateColors = function($template) {
-        var $palette = $palettes.filter(":eq(" + palette_id + ")");
-		var c1 = $palette.find("top>back").html();
-		var col_hero_content = HexColorToRGBA(c1, 0.6);
-		var c2 = $palette.find("middle>back").html();
-		var col_items = HexColorToRGBA(c2, 0.6);
-		$template.css({
-			"background-color" : $palette.find("bg>back").html()
-		});
-		$template.find("#hero").css({
-			"background-color" : $palette.find("top>back").html(),
-			"color" : $palette.find("top>fore").html()
-		});
-		$template.find("#hero-content").css({
-			"background-color" : $palette.find("top>back").html(),
-			"color" : $palette.find("top>fore").html()
-		});
-		$template.find("#hero-content h1, #hero-content h2").css({
-			"color" : $palette.find("top>fore").html()
-		});
-		$template.find(".items").css({
-			"background-color" : "transparent",
-			"color" : $palette.find("middle>fore").html()
-		});
-		$template.find(".items .item-content").css({
-			"background-color" : $palette.find("middle>back").html(),
-			"color" : $palette.find("middle>fore").html()
-		});
-		$template.find("footer").css({
-			"background-color" : $palette.find("bottom>back").html(),
-			"color" : $palette.find("bottom>fore").html()
-		});
+        $template.attr("class", $palettes.filter(":eq(" + palette_id + ")").attr("id"));
     }
     var HexColorToRGBA = function (c, a) {
 		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");

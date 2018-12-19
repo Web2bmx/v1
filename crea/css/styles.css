@@ -645,6 +645,8 @@ a {
 }
 
 #template-cont {
+  background-color: #FFFFFF;
+  color: #000000;
   display: block;
   height: auto;
   width: 100%;

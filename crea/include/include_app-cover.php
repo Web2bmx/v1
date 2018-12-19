@@ -19,33 +19,8 @@
 					<img src="Templates/Template-002/Thumb.png" />
 					</aside>
 				<i class="far fa-circle"></i>
-				<input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" />
-				<label for="inp-design-002"></label>							
-			</div>
-			<div class="control-design-thumb">
-				<aside>
-					<img src="Templates/Template-003/Thumb.png" />
-				</aside>
-				<i class="far fa-circle"></i>
-				<input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" />
-				<label for="inp-design-003"></label>
-				
-			</div>
-			<div class="control-design-thumb">
-				<aside>
-					<img src="Templates/Template-004/Thumb.png" />
-				</aside>
-				<i class="far fa-circle"></i>
-				<input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" />
-				<label for="inp-design-004"></label>
-			</div>
-			<div class="control-design-thumb">
-				<aside>
-					<img src="Templates/Template-005/Thumb.png" />
-				</aside>
-				<i class="far fa-circle"></i>
-				<input type="radio" id="inp-design-005" name="inp-design" value="inp-design-005" style="display: none;" />
-				<label for="inp-design-005"></label> 
+				<input type="radio" id="inp-design-006" name="inp-design" value="inp-design-006" style="display: none;" />
+				<label for="inp-design-006"></label>							
 			</div>
 		</div>
 		<a class="next nav-btns">

@@ -1,5 +1,5 @@
 <div id="hero">
-	<div id="img-hero" class="img-cont img-MC" style="background-image: url(<?php echo($content->hero[0]->img[0]); ?>);"></div>
+	<div id="img-hero" class="img-cont img-MC img-L" style="background-image: url(<?php echo($content->hero[0]->img[0]); ?>);"></div>
 	<div id="hero-content">
 		<!--<img id="val-image-logotipo" src="<?php echo($content->hero[0]->logotipo); ?>" alt="Logotipo" />-->
 		<h1 id="val-content-name"><?php echo($content->hero[0]->name); ?></h1>
