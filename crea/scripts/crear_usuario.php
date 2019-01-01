@@ -2,6 +2,7 @@
 header('Content-Type: application/json');
 
 include "../../lib/dbc.php";
+include "../../scripts/getPages.php";
 
 $correo = filter_input(INPUT_POST,'correo');
 $password = filter_input(INPUT_POST,'password');
