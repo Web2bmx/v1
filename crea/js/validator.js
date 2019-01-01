@@ -30,7 +30,7 @@ export default function validator () {
 			}
 		  ).done(function(data) {
 			if(data){
-				_ctrl.new_imageManager.setImageSelection(_ctrl.jd,decodeURIComponent(data.text[0]));
+				_ctrl.new_imageManager.setImageSelection(decodeURIComponent(data.text[0]));
 				_ctrl.new_templateManager.updateContent();
 			}
 		  });	

@@ -1,7 +1,7 @@
 export default function imageUploader () {
-    var _this = null;
+    var _ctrl = null;
     var init = function(_that) {
-        _this = _that;
+        _ctrl = _that;
     }
     var uploadImage = function (e){
 		e.preventDefault();
@@ -21,8 +21,7 @@ export default function imageUploader () {
 		})
 		.done(function(res){
 			if(res.upload == 1){			
-                /*Esto va a fallar por què no hay referencia para jd */
-                var imagenes = jd.imagenes || {};
+                var imagenes = _ctrl.jd.imagenes || {};
 				imagenes[name] = (imagenes[name] ? imagenes[name] + "#" + res.texto : res.texto);
 
 				var $img_thumb = $(".img-thumb.template").clone();
@@ -33,10 +32,9 @@ export default function imageUploader () {
 				var $this_img_thumb = $img_thumb.clone();
 				$this_img_thumb.find("input").attr("name", ("inp-img-" + name));
 				$("#app-control-images-" + name + " .photo-container").prepend($this_img_thumb);
-				jd.imagenes = imagenes;
-                new_dataManager.saveWeb2bJson(jd);
-                /*Esto va a fallar por què no hay referencia para jd */
-			}
+				_ctrl.jd.imagenes = imagenes;
+                _ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
+            }
 		}).always(function(){
 			$("button",e.currentTarget).attr("disabled",false);
 		});

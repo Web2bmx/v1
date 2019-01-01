@@ -1,9 +1,9 @@
 export default function toolTipManager () {
-	var _this = null;
+	var _ctrl = null;
 	var number_of_items = 1; /*WORK, number of items should come from jd*/
 	var index = 0;
 	var init = function(_that) {
-		_this = _that;
+		_ctrl = _that;
 	}
     var setItems = function() {
 		$("#inp-content-item-add-y").on("click", function() {

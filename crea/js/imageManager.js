@@ -1,12 +1,12 @@
 export default function imageManager () {
-	var _this = null;
+	var _ctrl = null;
 	var init = function (_that) {
-		_this = _that;
+		_ctrl = _that;
 	}
-	var setImageSelection = function (jd,ide) {
+	var setImageSelection = function (ide) {
         $(".photo-container").html("");
 		//Check if there are already images upload from user
-		var imagenes = jd.imagenes;
+		var imagenes = _ctrl.jd.imagenes;
 		if(imagenes){
 			for(let k in imagenes){
 				var arr = imagenes[k].split("#");

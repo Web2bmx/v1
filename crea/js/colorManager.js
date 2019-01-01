@@ -1,12 +1,9 @@
 export default function colorManager () {
-	var _this = null;
+	var _ctrl = null;
 	var $palettes = null;
 	var palette_id = 0;
 	var init = function(_that) {
-		_this = _that;
-	}
-	var getTemplateId = function() {
-		console.log(_this.template_id)
+		_ctrl = _that;
 	}
 	var getPalettes = function () {
         return $palettes;
