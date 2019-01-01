@@ -1,5 +1,9 @@
 export default function imageManager () {
-    var setImageSelection = function (jd,ide) {
+	var _this = null;
+	var init = function (_that) {
+		_this = _that;
+	}
+	var setImageSelection = function (jd,ide) {
         $(".photo-container").html("");
 		//Check if there are already images upload from user
 		var imagenes = jd.imagenes;
@@ -53,6 +57,7 @@ export default function imageManager () {
 		}).fail(function(){});
 	};
     return {
-        setImageSelection : setImageSelection
+		init : init,
+		setImageSelection : setImageSelection
     };
 }

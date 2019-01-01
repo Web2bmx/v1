@@ -19,3 +19,13 @@ var translateData = function(info){
         }
       });	
 };
+function openRequestedPopup(strUrl, strWindowName) {
+    let windowObjectReference = null;
+    if(windowObjectReference == null || windowObjectReference.closed) {
+    windowObjectReference = window.open(strUrl, strWindowName,
+            "resizable,scrollbars,status");
+    windowObjectReference.focus();
+    } else {
+    windowObjectReference.focus();
+    }
+}

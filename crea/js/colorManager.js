@@ -1,10 +1,17 @@
 export default function colorManager () {
-    var $palettes = null;
-    var palette_id = 0;
-    var getPalettes = function () {
+	var _this = null;
+	var $palettes = null;
+	var palette_id = 0;
+	var init = function(_that) {
+		_this = _that;
+	}
+	var getTemplateId = function() {
+		console.log(_this.template_id)
+	}
+	var getPalettes = function () {
         return $palettes;
     }
-    var loadColors = function ($template) {
+	var loadColors = function ($template) {
         $palettes = $template.find(".template-color");
 		setColors();
     }
@@ -55,7 +62,8 @@ export default function colorManager () {
 		return s;
 	}
     return {
-        loadColors : loadColors,
+		init : init,
+		loadColors : loadColors,
         changeColors : changeColors,
         updateColors : updateColors
     };

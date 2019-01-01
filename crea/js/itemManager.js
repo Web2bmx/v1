@@ -1,6 +1,10 @@
 export default function toolTipManager () {
-    var number_of_items = 1; /*WORK, number of items should come from jd*/
-    var index = 0;
+	var _this = null;
+	var number_of_items = 1; /*WORK, number of items should come from jd*/
+	var index = 0;
+	var init = function(_that) {
+		_this = _that;
+	}
     var setItems = function() {
 		$("#inp-content-item-add-y").on("click", function() {
             var current_step = $(".control-view-index-item").index($(".current"));
@@ -60,7 +64,8 @@ export default function toolTipManager () {
         return index;
     }
     return {
-        setItems : setItems,
+		init : init,
+		setItems : setItems,
         addItems : addItems,
         getNumberOfItems : getNumberOfItems,
         getIndex : getIndex
