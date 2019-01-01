@@ -1,6 +1,8 @@
+import validator from "./validator";
 export default function appManager () { 
-    var _ctrl = null;
-    var init = function(_that) {
+	var _ctrl = null;
+	var new_validator = new validator();
+	var init = function(_that) {
         _ctrl = _that;
     }
     var setAppNavigation = function () {
@@ -43,11 +45,11 @@ export default function appManager () {
 				$("#correo").val().trim() == "" || 
 				$("#password").val().trim() == ""){
 				$(".empty-fields").css("display","block");
-			} else if(!_ctrl.new_validator.isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
+			} else if(!new_validator.isValidDomain($("#nombrePagina").val().trim().toLowerCase())){
 				$(".name-invalid").show();
-			} else if(!_ctrl.new_validator.isEmail($("#correo").val())){
+			} else if(!new_validator.isEmail($("#correo").val())){
 					$(".not-email").css("display","block");
-			}else if(!_ctrl.new_validator.validPassword($("#password").val())){
+			}else if(!new_validator.validPassword($("#password").val())){
 					$(".password-invalid").css("display","block");
 				} else {
 					_ctrl.new_dataManager.saveSelected(_ctrl.jd,'inp-content-name',$("#nombrePagina").val().trim(),'text');
@@ -123,7 +125,7 @@ export default function appManager () {
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function(e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
-			if(!$(e.currentTarget).attr('pattern') || _ctrl.new_validator.isValidinput($(e.currentTarget))){
+			if(!$(e.currentTarget).attr('pattern') || new_validator.isValidinput($(e.currentTarget))){
 				_ctrl.new_templateManager.updateTemplate();
 				$(".form-error",$(e.currentTarget).parent()).hide();
 			} else {
@@ -154,7 +156,7 @@ export default function appManager () {
 			$("span",$(e.currentTarget).parent()).text(file);
 			$("input[type=submit]",$(e.currentTarget).closest("form")).attr("disabled",false);
 		});
-		$('.file-upload').on('submit',_ctrl.new_imageUploader.uploadImage);
+		$('.file-upload').on('submit',_ctrl.new_imageManager.uploadImage);
         /* manage dialog */
 		$("#ok_btn").click(function(){
 			$(".alert.dialog").dialog( "close" ); 

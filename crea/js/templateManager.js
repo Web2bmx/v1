@@ -21,10 +21,10 @@ export default function templateManager () {
 		}
         //check if translation already exists
 		if(text != ''){
-			_ctrl.new_imageManager.setImageSelection(_ctrl.jd, text);
+			_ctrl.new_imageManager.setImageSelection(text);
 			updateContent();
 		} else {
-			_ctrl.new_validator.translateData(originaltext);
+			translateData(originaltext);
 		}
 		//load previous content
 		var selections = _ctrl.jd.selections;
@@ -168,7 +168,22 @@ export default function templateManager () {
 			_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
 		});
         _ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
-    };
+	};
+	var translateData = function(text){
+		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+			{
+				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+				lang: 'es-en',
+				text: text,
+				format: 'plain'
+			}
+		  ).done(function(data) {
+			if(data){
+				_ctrl.new_imageManager.setImageSelection(decodeURIComponent(data.text[0]));
+				updateContent();
+			}
+		  });	
+	};	
     return {
         init : init,
         onTemplateLoaded: onTemplateLoaded,

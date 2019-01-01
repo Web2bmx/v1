@@ -1,9 +1,7 @@
-import validator from "./validator";
 import colorManager from "./colorManager";
 import imageManager from "./imageManager";
 import tooltipManager from "./tooltipManager";
 import itemManager from "./itemManager";
-import imageUploader from "./imageUploader";
 import templateManager from "./templateManager";
 import appManager from "./appManager";
 import dataManager from "../../js/dataManager";
@@ -17,16 +15,12 @@ export default function creator () {
 	_this.jd = null;
 	_this.isNew = false;
 	/*Objects*/	
-	_this.new_validator = new validator();
-	_this.new_validator.init(_this);
 	_this.new_colorManager = new colorManager();
 	_this.new_colorManager.init(_this);
 	_this.new_imageManager = new imageManager();
 	_this.new_imageManager.init(_this);
 	_this.new_itemManager = new itemManager();
 	_this.new_itemManager.init(_this);
-	_this.new_imageUploader = new imageUploader();
-	_this.new_imageUploader.init(_this);
 	_this.new_templateManager = new templateManager();
 	_this.new_templateManager.init(_this);
 	_this.new_appManager = new appManager();
