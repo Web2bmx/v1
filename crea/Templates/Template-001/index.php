@@ -28,21 +28,21 @@
 			<div id="template-colors" style="display: none;">
 				<div class="template-color" id="color-orange">
 					<h1>Naranja</h1>
-					<p>#FA9900</p>
-					<p>#000000</p>
-					<p>#FFFFFF</p>
+					<p>rgba(250, 153, 0, 1)</p>
+					<p>rgba(0,0,0,1)</p>
+					<p>rgba(255,255,255,1)</p>
 				</div>
 				<div class="template-color" id="color-yellow">
 					<h1>Amarillo</h1>
-					<p>#FAD400</p>
-					<p>#000000</p>
-					<p>#FFFFFF</p>
+					<p>rgba(250, 212, 0, 1)</p>
+					<p>rgba(0,0,0,1)</p>
+					<p>rgba(255,255,255,1)</p>
 				</div>
 				<div class="template-color" id="color-green">
 					<h1>Verde</h1>
-					<p>#A4BC00</p>
-					<p>#000000</p>
-					<p>#FFFFFF</p>
+					<p>rgba(164, 188, 0, 1)</p>
+					<p>rgba(0,0,0,1)</p>
+					<p>rgba(255,255,255,1)</p>
 				</div>
 			</div>
 		</div>	

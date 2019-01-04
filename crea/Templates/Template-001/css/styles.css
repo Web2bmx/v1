@@ -19,7 +19,7 @@ body { margin: 0; padding: 0; }
 .img-BC { background-position: bottom center; }
 .img-BR { background-position: bottom right; }
 .img-cont {
-	background-color: #CCCCCC;
+	background-color: rgba(204, 204, 204, 1);
 	background-repeat: no-repeat;
 }
 /*IMAGES CONTROL*/
@@ -48,7 +48,7 @@ body { margin: 0; padding: 0; }
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
 #hero {
-	background-color: #666;
+	background-color: rgba(102, 102, 102, 1);
 	display: block;
 	height: 240px;
 	overflow: hidden;
@@ -65,8 +65,8 @@ body { margin: 0; padding: 0; }
 	z-index: 0;
 }
 #hero-content {
-	background-color: #444444;
-	color: #000000;
+	background-color: rgba(68, 68, 68, 1);
+	color: rgba(0,0,0,1);
 	display: inline-block; 
 	height: auto;
 	margin: 2em auto;
@@ -77,13 +77,13 @@ body { margin: 0; padding: 0; }
 	z-index: 1;
 }
 #template.color-orange #hero-content {
-	background-color: #FA9900;
+	background-color: rgba(250, 153, 0, 1);
 }
 #template.color-yellow #hero-content {
-	background-color: #FAD400;
+	background-color: rgba(250, 212, 0, 1);
 }
 #template.color-green #hero-content {
-	background-color: #D4FF00;
+	background-color: rgba(212, 255, 0, 1);
 }
 #template h1 {
 	font-size: 2em;
@@ -147,13 +147,13 @@ body { margin: 0; padding: 0; }
 	z-index: 1;
 }
 #template.color-orange .item .item-content {
-	background-color: #FA9900;
+	background-color: rgba(250, 153, 0, 1);
 }
 #template.color-yellow .item .item-content {
-	background-color: #FAD400;
+	background-color: rgba(250, 212, 0, 1);
 }
 #template.color-green .item .item-content {
-	background-color: #D4FF00;
+	background-color: rgba(212, 255, 0, 1);
 }
 @media only screen and (min-width: 560px) {
 	.items {
@@ -167,21 +167,21 @@ body { margin: 0; padding: 0; }
 /*ITEMS*/
 /*ABOUT US*/
 .aboutus-cont {
-	background-color: #444444;
-	color: #000000;
+	background-color: rgba(68, 68, 68, 1);
+	color: rgba(0,0,0,1);
 	display: block; 
 	height: auto;
 	overflow: hidden;
 	width: 100%; 
 }
 #template.color-orange .aboutus-cont {
-	background-color: #FA9900;
+	background-color: rgba(250, 153, 0, 1);
 }
 #template.color-yellow .aboutus-cont {
-	background-color: #FAD400;
+	background-color: rgba(250, 212, 0, 1);
 }
 #template.color-green .aboutus-cont {
-	background-color: #D4FF00;
+	background-color: rgba(212, 255, 0, 1);
 }
 .aboutus {
 	display: block;
@@ -272,8 +272,8 @@ body { margin: 0; padding: 0; }
 	z-index: 0;
 }
 .cta .cta-content {
-	background-color: #444444;
-	color: #000000;
+	background-color: rgba(68, 68, 68, 1);
+	color: rgba(0,0,0,1);
 	display: inline-block; 
 	height: auto;
 	margin: 2em auto;
@@ -284,13 +284,13 @@ body { margin: 0; padding: 0; }
 	z-index: 1;
 }
 #template.color-orange .cta .cta-content {
-	background-color: #FA9900;
+	background-color: rgba(250, 153, 0, 1);
 }
 #template.color-yellow .cta .cta-content {
-	background-color: #FAD400;
+	background-color: rgba(250, 212, 0, 1);
 }
 #template.color-green .cta .cta-content {
-	background-color: #D4FF00;
+	background-color: rgba(212, 255, 0, 1);
 }
 .cta .cta-content h2 {
 	font-size: 2em;
@@ -326,8 +326,8 @@ body { margin: 0; padding: 0; }
 /*MAP*/
 /*FOOTER*/
 footer {
-	background-color: #000000;
-	color: #FFFFFF;
+	background-color: rgba(0,0,0,1);
+	color: rgba(255,255,255,1);
 	height: auto;
 	display: block;
 	overflow: hidden;
@@ -343,16 +343,16 @@ footer {
 	font-variant: small-caps;
 }
 .footer-header p {
-	color: #444444;
+	color: rgba(68, 68, 68, 1);
 }
 #template.color-orange .footer-header p {
-	color: #FA9900;
+	color: rgba(250, 153, 0, 1);
 }
 #template.color-yellow .footer-header p {
-	color: #FAD400;
+	color: rgba(250, 212, 0, 1);
 }
 #template.color-green .footer-header p {
-	color: #A4BC00;
+	color: rgba(164, 188, 0, 1);
 }
 .footer-contact-info {
 	margin: 0 auto;
@@ -377,8 +377,8 @@ footer ul {
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
-	background-color: #000000;
-	color: #444444;
+	background-color: rgba(0,0,0,1);
+	color: rgba(68, 68, 68, 1);
 	display: block;
 	height: auto;
 	overflow: hiddden;
@@ -386,13 +386,13 @@ footer ul {
 	width: 100%;
 }
 #template.color-orange #disclaimer {
-	color: #FA9900;
+	color: rgba(250, 153, 0, 1);
 }
 #template.color-yellow #disclaimer {
-	color: #FAD400;
+	color: rgba(250, 212, 0, 1);
 }
 #template.color-green #disclaimer {
-	color: #A4BC00;
+	color: rgba(164, 188, 0, 1);
 }
 #disclaimer p {
 	margin: 0 auto;

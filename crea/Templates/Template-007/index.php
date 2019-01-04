@@ -23,31 +23,31 @@
 				<?php include_once("../php/TemplateMenu2.php"); ?>
 				<?php include_once("../php/TemplateHero3.php"); ?>
 				<?php include_once("../php/TemplateAboutus2.php"); ?>	
-				<?php include_once("../php/TemplateItems2.php"); ?>	
-				<?php include_once("../php/TemplateGaleria1.php"); ?>	
-				<?php include_once("../php/TemplateCta1.php"); ?>
+				<?php include_once("../php/TemplateCta2.php"); ?>
+				<?php include_once("../php/TemplateItems3.php"); ?>	
 				<?php include_once("../php/TemplateMap1.php"); ?>	
+				<?php include_once("../php/TemplateGaleria1.php"); ?>	
 				<?php include_once("../php/TemplateFooter2.php"); ?>
 				<?php include_once("../php/TemplateDisclaimer1.php"); ?>
 			</main>
 			<div id="template-colors" style="display: none;">
 				<div class="template-color" id="color-orange">
 					<h1>Naranja</h1>
-					<p>#F0AA00</p>
-					<p>#000000</p>
-					<p>#FFFFFF</p>
+					<p>rgba(240, 170, 0, 1)</p>
+					<p>rgba(0,0,0,1)</p>
+					<p>rgba(255,255,255,1)</p>
 				</div>
 				<div class="template-color" id="color-yellow">
 					<h1>Amarillo</h1>
-					<p>#FFE600</p>
-					<p>#000000</p>
-					<p>#FFFFFF</p>
+					<p>rgba(255, 230, 0, 1)</p>
+					<p>rgba(0,0,0,1)</p>
+					<p>rgba(255,255,255,1)</p>
 				</div>
 				<div class="template-color" id="color-green">
 					<h1>Verde</h1>
-					<p>#4CBE74</p>
-					<p>#28374B</p>
-					<p>#FFFFFF</p>
+					<p>rgba(76, 190, 116, 1)</p>
+					<p>rgba(40, 55, 75, 1)</p>
+					<p>rgba(255,255,255,1)</p>
 				</div>
 			</div>
 		</div>	

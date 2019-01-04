@@ -12,9 +12,9 @@
 		<text>Nuestra historia comienza en 1954, cuando pusimos nuestra primera sucursal en Santa Tere, en la cual hemos estado por más de 50 años, ahora contamos con 8 sucursales en la zona metropolitána de Guadalajara, una cerca de tí.</text>
 	</aboutus>
 	<cta>
-		<img>https://images.unsplash.com/photo-1506617564039-2f3b650b7010?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-        <title>¡Visítanos y compara!</title>
-		<text>Te invitamos a que nos conozcas, ¡no te arrepentirás!</text>
+		<img>https://images.unsplash.com/photo-1414235077428-338989a2e8c0??ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Fondita Nais</title>
+		<text>La mejor comida regional de la zona</text>
         <links>
             <link>
                 <description></description>
@@ -26,24 +26,45 @@
 	</cta>	
 	<items>
 		<header>
-			<title>Nuestros Productos</title>
-			<text>Encuentra aquí nuestro amplio surtido de productos.</text>
+			<title>Menú</title>
+			<text></text>
 		</header>
 		<row>
         	<item>
-				<img>https://images.unsplash.com/photo-1516594798947-e65505dbb29d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Frutas y verduras</title>
+				<img>https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Tacos</title>
 				<text>La mejor selección de frutas y verduras.</text>
+				<precio>$79.00</precio>
 			</item>
             <item>
-				<img>https://images.unsplash.com/photo-1506617420156-8e4536971650?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Lácteos</title>
+				<img>https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Nachos</title>
 				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
+				<precio>$89.00</precio>
 			</item>
 			<item>
-				<img>https://images.unsplash.com/photo-1536755668196-cf1fa5822f98?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Enlatados</title>
+				<img>https://images.unsplash.com/photo-1542088895-973cb1ba1c39?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Salsas</title>
 				<text>El mejor surtido de enlatados y alimentos.</text>
+				<precio>Al gusto</precio>
+			</item>
+			<item>
+				<img>https://images.unsplash.com/photo-1529704640551-eef9ba5d774a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Carne asada</title>
+				<text>La mejor selección de frutas y verduras.</text>
+				<precio>$79.00</precio>
+			</item>
+            <item>
+				<img>https://images.unsplash.com/photo-1541636921808-1e2d8ddf0803?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Esquites</title>
+				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
+				<precio>$89.00</precio>
+			</item>
+			<item>
+				<img>https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Postres</title>
+				<text>El mejor surtido de enlatados y alimentos.</text>
+				<precio>$15.00</precio>
 			</item>
         </row>
     </items>		
@@ -72,18 +93,13 @@
 	</contact>
 	<galeria>
 		<header>
-			<title>Galería</title>
+			<title>Ven a comer</title>
 			<text>Conoce nuestro espacio.</text>
 		</header>
 		<images>
-			<img>https://images.unsplash.com/photo-1467825487722-2a7c4cd62e75?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1473648717346-73c9c15cbad6?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1519397028973-5dbbdaecd2f8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1519609511997-d8ef5b010fba?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1520451214409-ba3eed10dc52?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1499881696443-e66dd9a7b496?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1529335934975-2e2114d38406?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img>https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img>https://images.unsplash.com/photo-1525575674331-70638740994c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img>https://images.unsplash.com/photo-1533142146849-4620b8191531?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img>https://images.unsplash.com/photo-1421622548261-c45bfe178854?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		</images>
 	</galeria>
 </content>
