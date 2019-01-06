@@ -1,18 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
     <hero>
-		<img>https://images.unsplash.com/photo-1514792368985-f80e9d482a02?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1514792368985-f80e9d482a02?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<logotipo>img/Logo-Template-001.png</logotipo>
 		<name>Abarrotes don Antonio</name>
 		<slogan>¡Los mejores precios!</slogan>
 	</hero>
     <aboutus>
-        <img>https://images.unsplash.com/photo-1418669112725-fb499fb61127?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1418669112725-fb499fb61127?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Nuestra Historia</title>
 		<text>Nuestra historia comienza en 1954, cuando pusimos nuestra primera sucursal en Santa Tere, en la cual hemos estado por más de 50 años, ahora contamos con 8 sucursales en la zona metropolitána de Guadalajara, una cerca de tí.</text>
 	</aboutus>
-	<cta>
-		<img>https://images.unsplash.com/photo-1519397028972-5dbbdaecd2f8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+	<items>
+        <header>
+			<title>Nuestros Productos</title>
+			<text></text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1418669112725-fb499fb61127?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Frutas y verduras</title>
+				<text>La mejor selección de frutas y verduras.</text>
+                <precio>$35.00</precio>
+			</item>	
+		</row>
+    </items>
+    <galeria>
+		<header>
+			<title>Ven a comer</title>
+			<text>Conoce nuestro espacio.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1525575674331-70638740994c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533142146849-4620b8191531?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1421622548261-c45bfe178854?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</galeria>		
+    <cta>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1519397028972-5dbbdaecd2f8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
         <title>¡Visítanos y compara!</title>
 		<text>Te invitamos a que nos conozcas, ¡no te arrepentirás!</text>
         <links>
@@ -24,16 +49,11 @@
             </link>
         </links>
 	</cta>	
-	<items>
-		<row>
-        	<item>
-				<img>https://images.unsplash.com/photo-1418669112725-fb499fb61127?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Frutas y verduras</title>
-				<text>La mejor selección de frutas y verduras.</text>
-			</item>	
-		</row>
-    </items>		
-    <contact>
+	<contact>
+        <header>
+			<title>Contáctanos</title>
+			<text>Estamos para servirte.</text>
+		</header>
         <communication>
             <title>Información de contacto</title>
             <email>tucorreoelectronico@correo.com</email>
