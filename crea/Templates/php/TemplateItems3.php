@@ -15,7 +15,7 @@
     <div class="items <?php echo($row_class); ?>">
         <?php for ($i = 1; $i <= count($row->item); $i++) : ?>
         <div class="item">
-            <div id="img-item-<?php echo($i); ?>" class="img-cont img-MC" style="background-image: url('<?php echo($row->item[$i - 1]->img[0]); ?>')"></div>
+            <div id="img-item-<?php echo($i); ?>" class="img-cont <?php echo(getImgClasses($row->item[$i - 1]->img[0])); ?>" style="background-image: url('<?php echo($row->item[$i - 1]->img[0]); ?>')"></div>
             <div class="item-content">
                 <h2 id="val-content-title-item-<?php echo($i); ?>"><?php echo($row->item[$i - 1]->title); ?></h2>
                 <p id="val-content-item-<?php echo($i); ?>"><?php echo($row->item[$i - 1]->text); ?></p>

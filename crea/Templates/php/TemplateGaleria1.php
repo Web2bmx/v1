@@ -6,7 +6,7 @@
         </div>
         <div class="galeria">
             <?php for ($i = 0; $i < count($content->galeria->images[0]->img); $i ++) : ?>
-                <div class="galeria-img-cont"><img src="<?php echo($content->galeria->images[0]->img[$i]); ?>" /></div>
+                <div class="galeria-img-cont <?php echo(getImgClasses($content->galeria->images[0]->img[$i])); ?>"><img src="<?php echo($content->galeria->images[0]->img[$i]); ?>" /></div>
             <?php endfor; ?>
         </div>
     </div>
