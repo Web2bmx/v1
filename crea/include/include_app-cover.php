@@ -70,15 +70,8 @@
 						<li>Actualizaciones ilimitadas</li>
 					</ul>
 
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="DKA3NKQKRKB3Y">
-						<!-- <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea."> -->
-						<button type="submit" class="pagar">
-							<i class="fab fa-paypal"></i>
-							<span>PAGAR</span>
-						</button>						
-					</form>					
+					<div class="paypal-button-container" data-total='899' data-desc='Básico'>
+					</div>			
 				</div>
 				<div class="app-cover-finish-package">
 					<h4>PREMIUM</h4>
@@ -93,19 +86,8 @@
 						<li>Actualizaciones ilimitadas</li>
 					</ul>
 
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-						<input type="hidden" name="cmd" value="_s-xclick">
-						<input type="hidden" name="hosted_button_id" value="XXD8R8A6FM456">
-						<input type="hidden" name="item_name" value="Paquete Premium" />
-						<input type="hidden" name="quantity" value="1" />
-						<input type="hidden" name="on0" value="user_id" />
-						<input type="hidden" name="os0" value="###" />
-						<!-- <input type="image" src="https://www.paypalobjects.com/es_XC/MX/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, la forma más segura y rápida de pagar en línea."> -->
-						<button type="submit" class="pagar">
-							<i class="fab fa-paypal"></i>
-							<span>PAGAR</span>
-						</button>						
-					</form>
+					<div class="paypal-button-container" data-total='1599' data-desc='Premium'>
+					</div>	
 				</div>
 			</div>												
 		</div>

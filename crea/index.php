@@ -17,8 +17,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/styles.css?v=1.0">
 	</head>
-	<body class="init">
-		<?php include_once("include/include_libraries.php"); ?>
+	<body class="init">		
 		<div id="template-cont"></div>
 		<div id="app">
 			<?php
@@ -30,5 +29,6 @@
 		<?php include_once("include/include_html_templates.php"); ?>
 		<?php include_once("include/include_chat.php"); ?>
 		<?php include_once("include/include_modal-page-switcher.php"); ?>
+		<?php include_once("include/include_libraries.php"); ?>		
 	</body>
 </html>

@@ -3,4 +3,6 @@
 <![endif]-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script src="./js/pp.js"></script>
 <script src="./js/crea.bundle.js"></script>
