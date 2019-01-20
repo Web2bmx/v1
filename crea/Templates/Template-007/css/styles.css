@@ -7,8 +7,8 @@ body { margin: 0; padding: 0; }
 /*BODY LEVEL*/
 /*IMAGES CONTROL*/
 .img-L { background-size: 100% auto; }
-.img-S { background-size: auto 150%; }
-.img-P { background-size: 150% auto; }
+.img-S { background-size: auto 100%; }
+.img-P { background-size: auto 100%; }
 .img-TL { background-position: top left; }
 .img-TC { background-position: top center; }
 .img-TR { background-position: top right; }
@@ -183,7 +183,7 @@ body { margin: 0; padding: 0; }
 	margin: 0 auto;
 	overflow: visible;
 	position: relative;
-	top: -250px;
+	top: -150px;
 	width: 500px;
 }
 .aboutus .img-cont {
@@ -227,6 +227,7 @@ body { margin: 0; padding: 0; }
 	width: auto; max-width: 1180px;
 }
 .items {
+	color: rgba(255,255,255,1);
 	margin: 0 auto;
 	text-align: left;
 	padding: 0 4%;
@@ -234,7 +235,7 @@ body { margin: 0; padding: 0; }
 }
 .item {
 	display: block;
-	height: 320px;
+	height: auto;
 	position: relative;
 	width: 100%; 
 }
@@ -253,9 +254,15 @@ body { margin: 0; padding: 0; }
 	overflow: hidden;
 	width: 100%; 
 }
+.item .img-cont.img-L { background-size: auto 100%; }
+.item .img-cont.img-S { background-size: auto 100%; }
+.item .img-cont.img-P { background-size: 100% auto; }
 .item .item-content {
 	display: block;
+	font-size: small;
 	text-align: center;
+	padding: 1em 5%;
+	width: 90%;
 }
 @media only screen and (min-width: 560px) {
 	.item .img-cont {
@@ -265,7 +272,13 @@ body { margin: 0; padding: 0; }
 	}
 	.item .item-content {
 		float: right;
-		width: 50%;
+		width: 40%;
+	}
+	.items:nth-child(even) .item .img-cont {
+		float: right;
+	}
+	.items:nth-child(even) .item .item-content {
+		float: left;
 	}
 	.items {
 		display: grid;

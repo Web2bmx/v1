@@ -18,7 +18,7 @@
 		</header>
 		<row>
         	<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 				<title>Tacos</title>
 				<text>La mejor selección de frutas y verduras.</text>
 				<precio>$79.00</precio>
@@ -35,6 +35,8 @@
 				<text>El mejor surtido de enlatados y alimentos.</text>
 				<precio>Al gusto</precio>
 			</item>
+		</row>
+		<row>
 			<item>
 				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1529704640551-eef9ba5d774a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 				<title>Carne asada</title>
@@ -42,13 +44,13 @@
 				<precio>$79.00</precio>
 			</item>
             <item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1541636921808-1e2d8ddf0803?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1541636921808-1e2d8ddf0803?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 				<title>Esquites</title>
 				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
 				<precio>$89.00</precio>
 			</item>
 			<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 				<title>Postres</title>
 				<text>El mejor surtido de enlatados y alimentos.</text>
 				<precio>$15.00</precio>
