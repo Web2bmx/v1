@@ -22,6 +22,14 @@
 				<input type="radio" id="inp-design-006" name="inp-design" value="inp-design-006" style="display: none;" />
 				<label for="inp-design-006"></label>							
 			</div>
+			<div class="control-design-thumb">
+				<aside>
+					<img src="Templates/Template-002/Thumb.png" />
+					</aside>
+				<i class="far fa-circle"></i>
+				<input type="radio" id="inp-design-007" name="inp-design" value="inp-design-007" style="display: none;" />
+				<label for="inp-design-007"></label>							
+			</div>
 		</div>
 		<a class="next nav-btns">
 			<i class="fas fa-arrow-circle-right"></i>

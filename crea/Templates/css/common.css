@@ -1,0 +1,25 @@
+/*BODY LEVEL*/
+@font-face {
+    font-family: 'Modern Pics';
+    src: url(../../Fonts/modernpics.otf);
+}
+body { margin: 0; padding: 0; }
+/*BODY LEVEL*/
+/*IMAGES CONTROL*/
+.img-L { background-size: 100% auto; }
+.img-S { background-size: auto 100%; }
+.img-P { background-size: auto 100%; }
+.img-TL { background-position: top left; }
+.img-TC { background-position: top center; }
+.img-TR { background-position: top right; }
+.img-ML { background-position: center left; }
+.img-MC { background-position: center center; }
+.img-MR { background-position: center right; }
+.img-BL { background-position: bottom left; }
+.img-BC { background-position: bottom center; }
+.img-BR { background-position: bottom right; }
+.img-cont {
+	background-color: rgba(204, 204, 204, 1);
+	background-repeat: no-repeat;
+}
+/*IMAGES CONTROL*/

@@ -56,7 +56,7 @@ a {
 	top: 0;
 	right: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: 101;
 }
 /**/
 #app-cover {
@@ -70,7 +70,7 @@ a {
 	right: 0;
 	top: 0;   
 	width: 100%;
-	z-index: 1001;
+	z-index: 102;
 	overflow-y: scroll; 
 
 	@include breakpoint($desktop){
@@ -307,7 +307,7 @@ a {
 	right: 0; 
 	top: 0; 
 	width: 100%; 
-	z-index: 2;
+	z-index: 103;
 	max-width: 100%;
 	max-height: 100%;
 	
@@ -521,7 +521,7 @@ a {
 		overflow: visible;
 		position: relative;
 		width: 100px;
-		z-index: 1;
+		z-index: 101;
 
 		@include breakpoint($desktop){
 			width: 150px;
@@ -535,7 +535,7 @@ a {
 	}
 	.thumb-selected {
 		outline: 3px solid blue;
-		z-index: 2;
+		z-index: 102;
 	}
 	.img-thumb-cont {
 		background-color: #000000;
@@ -600,7 +600,7 @@ a {
 			position: absolute;
 			bottom: 0;
 			margin: .4em;
-			z-index: 100;
+			z-index: 101;
 
 			&.prev{
 				left: 0;
@@ -786,7 +786,7 @@ a {
 	right: 5%;
 	top: 5%;
 	width: 90%;
-	z-index: 100000000;
+	z-index: 104;
 }
 #single-modal i {
 	cursor: pointer;

@@ -1,28 +1,4 @@
-/*BODY LEVEL*/
-@font-face {
-    font-family: 'Modern Pics';
-    src: url(../../Fonts/modernpics.otf);
-}
-body { margin: 0; padding: 0; }
-/*BODY LEVEL*/
-/*IMAGES CONTROL*/
-.img-L { background-size: 100% auto; }
-.img-S { background-size: auto 100%; }
-.img-P { background-size: auto 100%; }
-.img-TL { background-position: top left; }
-.img-TC { background-position: top center; }
-.img-TR { background-position: top right; }
-.img-ML { background-position: center left; }
-.img-MC { background-position: center center; }
-.img-MR { background-position: center right; }
-.img-BL { background-position: bottom left; }
-.img-BC { background-position: bottom center; }
-.img-BR { background-position: bottom right; }
-.img-cont {
-	background-color: rgba(204, 204, 204, 1);
-	background-repeat: no-repeat;
-}
-/*IMAGES CONTROL*/
+@import url("../../css/common.css");
 /*TEMPLATE LEVEL*/
 #template {
 	width: 100%; height: auto;
@@ -56,7 +32,7 @@ body { margin: 0; padding: 0; }
 	position: fixed;
 	top: 0;
 	width: 100%;
-	z-index: 1;
+	z-index: 2;
 }
 #menu {
 	display: block;
@@ -172,43 +148,55 @@ body { margin: 0; padding: 0; }
 .aboutus-cont {
 	color: rgba(0,0,0,1);
 	display: block; 
-	height: 500px;
-	overflow: visible;
-	width: 100%; 
 }
 .aboutus {
 	background-color: rgba(255,255,255,1);
 	display: block;
-	height: 1000px;
-	margin: 0 auto;
-	overflow: visible;
-	position: relative;
-	top: -150px;
-	width: 500px;
+	height: auto;
+	overflow: hidden;
+	width: 100%;
 }
 .aboutus .img-cont {
 	display: block; 
-	height: 500px;
+	height: 350px;
 	overflow: hidden;
 	width: 100%;
 }
 .aboutus .aboutus-content {
+	background-color: rgba(255,255,255,1);
 	display: block;
+	height: auto;
 	margin: 0 auto;
 	overflow: hidden;
-	padding: 4em 4% 0 4%;
+	padding: 2em 4% 0 4%;
 	width: 92%; 
 }
 @media only screen and (min-width: 560px) {
+	.aboutus-cont {
+		height: 300px;
+		overflow: visible;
+		position: relative;
+		z-index: 1;
+	}
 	.aboutus {
+		background-color: rgba(255,255,255,1);
+		display: block;
+		height: 500px;
+		margin: 0 auto;
+		overflow: visible;
+		position: relative;
+		top: -150px;
 		width: 1000px;
 	}
 	.aboutus .img-cont {
 		float: left;
+		height: 500px;
 		width: 50%;
 	}
 	.aboutus .aboutus-content {
 		float: right;
+		height: 420px;
+		padding: 80px 4% 0 4%;
 		width: 42%;
 	}
 }
@@ -236,8 +224,9 @@ body { margin: 0; padding: 0; }
 .item {
 	display: block;
 	height: auto;
+	margin: 0 auto;
 	position: relative;
-	width: 100%; 
+	width: 80%; 
 }
 #template.color-orange .item {
 	background-color: rgba(240, 170, 0, 1);
@@ -261,8 +250,8 @@ body { margin: 0; padding: 0; }
 	display: block;
 	font-size: small;
 	text-align: center;
-	padding: 1em 5%;
-	width: 90%;
+	padding: 1em 10%;
+	width: 80%;
 }
 @media only screen and (min-width: 560px) {
 	.item .img-cont {
@@ -272,6 +261,7 @@ body { margin: 0; padding: 0; }
 	}
 	.item .item-content {
 		float: right;
+		padding: 1em 5%;
 		width: 40%;
 	}
 	.items:nth-child(even) .item .img-cont {
@@ -286,7 +276,10 @@ body { margin: 0; padding: 0; }
 	.items.one { grid-template-columns: auto; }
 	.items.two { grid-template-columns: 46% 46%; }
 	.items.three { grid-template-columns: 33% 34% 33%; }
-	.item { width: auto; }
+	.item {
+		margin: 0;
+		width: auto;
+	}
 }
 /*ITEMS*/
 /*MAP*/
@@ -308,7 +301,7 @@ body { margin: 0; padding: 0; }
 	display: block;
 	height: auto;
 	overflow: hidden;
-	padding: 4em 0 2em 0;
+	padding: 4em 0 0 0;
 	width: 100%; 
 }
 .galeria-header {
@@ -337,7 +330,8 @@ body { margin: 0; padding: 0; }
 	width: auto; max-width: 1180px;
 }
 .galeria-img-cont {
-	margin-top: 1em;
+	height: 220px;
+	overflow: hidden;
 }
 .galeria-img-cont img {
 	display: block;
@@ -348,7 +342,7 @@ body { margin: 0; padding: 0; }
 	.galeria-img-cont {
 		height: 220px;
 		float: right; 
-		margin: 1em 0;
+		margin: 1em 0 0 0;
 		width: 33.3%; 
 	}
 }
@@ -357,7 +351,9 @@ body { margin: 0; padding: 0; }
 .cta-cont {
 	display: block;
 	height: 200px;
+	position: relative;
 	width: 100%; 
+	z-index: 0;
 }
 .cta {
 	display: block;
@@ -370,6 +366,7 @@ body { margin: 0; padding: 0; }
 	display: block; 
 	height: 200px;
 	overflow: hidden;
+	opacity: .3;
 	position: absolute;
 	width: 100%;
 	z-index: 0;
@@ -417,7 +414,7 @@ footer {
 	height: auto;
 	display: block;
 	overflow: hidden;
-	padding: 4em 0 2em 0;
+	padding: 2em 0 1em 0;
 	width: 100%;
 }
 #template.color-orange footer {
