@@ -27,7 +27,7 @@
 				<?php include_once("../php/TemplateItems3.php"); ?>	
 				<?php include_once("../php/TemplateMap1.php"); ?>	
 				<?php include_once("../php/TemplateGaleria1.php"); ?>	
-				<?php include_once("../php/TemplateFooter2.php"); ?>
+				<?php include_once("../php/TemplateFooter3.php"); ?>
 				<?php include_once("../php/TemplateDisclaimer1.php"); ?>
 			</main>
 			<div id="template-colors" style="display: none;">
