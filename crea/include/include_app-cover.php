@@ -70,7 +70,7 @@
 						<li>Actualizaciones ilimitadas</li>
 					</ul>
 
-					<div class="paypal-button-container" data-total='899' data-desc='Básico'>
+					<div id="paypal-button-container" data-total='899' data-desc='Básico'>
 					</div>			
 				</div>
 				<div class="app-cover-finish-package">
@@ -86,7 +86,7 @@
 						<li>Actualizaciones ilimitadas</li>
 					</ul>
 
-					<div class="paypal-button-container" data-total='1599' data-desc='Premium'>
+					<div id="paypal-button-container2" data-total='1599' data-desc='Premium'>
 					</div>	
 				</div>
 			</div>												
