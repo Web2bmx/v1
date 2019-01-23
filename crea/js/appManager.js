@@ -1,10 +1,12 @@
 import validator from "./validator";
+import paypalBtn from './pp';
+
 export default function appManager () { 
 	var _ctrl = null;
 	var new_validator = new validator();
 	var init = function(_that) {
         _ctrl = _that;
-    }
+    };
     var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();		
 		$("#control-view-nav>a").on("click", function(e) {
@@ -118,6 +120,11 @@ export default function appManager () {
 			}
 			$("body").toggleClass("init");
 		});
+		/* PAYPAL Buttons */
+		let new_paypalBtn1 = new paypalBtn();
+		new_paypalBtn1.init('#paypal-button-container','basico');
+		let new_paypalBtn2 = new paypalBtn();
+		new_paypalBtn2.init('#paypal-button-container2','premium');
 	};
     var setAppControls = function () {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function() { 
