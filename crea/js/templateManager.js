@@ -161,9 +161,17 @@ export default function templateManager () {
 			var $this = $(this);
 			var img_src = $this.val();
 			var n_name = $this.attr("name").replace("inp-", "#");
-			$template.find(n_name).attr("class", ("img-cont img-MC img-L")).css({
-				"background-image" : ("url(" + img_src + ")")
-			});
+			//
+			var img = new Image();
+			img.onload = function() {
+				var o = "S";
+  				if(this.width > this.height) { o = "L"; }
+				  if(this.width < this.height) { o = "P"; }
+				$template.find(n_name).attr("class", ("img-cont img-MC img-" + o)).css({
+					"background-image" : ("url(" + img_src + ")")
+				});
+			}
+			img.src = img_src;
 			//Save selection to object
 			_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
 		});
