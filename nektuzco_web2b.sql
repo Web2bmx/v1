@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 14, 2018 at 04:42 PM
--- Server version: 5.7.21
--- PHP Version: 5.6.35
+-- Servidor: 127.0.0.1:3306
+-- Tiempo de generación: 29-01-2019 a las 01:47:24
+-- Versión del servidor: 5.7.23
+-- Versión de PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `nektuzco_web2b`
+-- Base de datos: `nektuzco_web2b`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorias_negocio`
+-- Estructura de tabla para la tabla `categorias_negocio`
 --
 
 DROP TABLE IF EXISTS `categorias_negocio`;
@@ -35,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `categorias_negocio` (
   `Categoria_en` varchar(127) NOT NULL,
   PRIMARY KEY (`Id`),
   KEY `categoria` (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categorias_negocio`
+-- Volcado de datos para la tabla `categorias_negocio`
 --
 
 INSERT INTO `categorias_negocio` (`Id`, `Categoria`, `Categoria_en`) VALUES
@@ -55,12 +55,13 @@ INSERT INTO `categorias_negocio` (`Id`, `Categoria`, `Categoria_en`) VALUES
 (11, 'Viajes', 'Travel and Leisure'),
 (12, 'Salud y bienestar', 'Health and Wellness'),
 (13, 'Comercios', 'Shops, stores, grocery store'),
-(14, 'Bienes raíces', 'Real State');
+(14, 'Bienes raíces', 'Real State'),
+(15, 'Otra', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `info_paginas`
+-- Estructura de tabla para la tabla `info_paginas`
 --
 
 DROP TABLE IF EXISTS `info_paginas`;
@@ -70,25 +71,21 @@ CREATE TABLE IF NOT EXISTS `info_paginas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id`),
   KEY `IdUsuario` (`IdUsuario`)
-) ENGINE=MyISAM AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `info_paginas`
+-- Volcado de datos para la tabla `info_paginas`
 --
 
 INSERT INTO `info_paginas` (`IdUsuario`, `info`, `id`) VALUES
-('5b6d90f875a4e', '{\"respuestas\":{\"10\":{\"tipo\":3,\"respuesta\":\"Somos los mejores\"},\"21\":{\"tipo\":5,\"respuesta\":\"Que mis clientes conozcan mi ubicaciÃ³n\"},\"22\":{\"tipo\":6,\"respuesta\":\"AutomÃ³viles\"}},\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"004\"},\"inp-content-slogan\":{},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"7\"}},\"nombre\":\"Test3\"}', 42),
-('5b6d90f875a4e', '{\"respuestas\":{\"10\":{\"tipo\":3,\"respuesta\":\"Somos los mejores\"},\"21\":{\"tipo\":5,\"respuesta\":\"Que mis clientes conozcan mi ubicaciÃ³n\"},\"22\":{\"tipo\":6,\"respuesta\":\"AutomÃ³viles\"}},\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"001\"},\"inp-content-slogan\":{},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"0\"}}}', 41),
-('5b6d90f875a4e', '{\"respuestas\":{\"9\":{\"tipo\":3,\"respuesta\":\"Somos los mas chingones\"},\"21\":{\"tipo\":5,\"respuesta\":\"Que mis clientes se comuniquen conmigo\"},\"22\":{\"tipo\":6,\"respuesta\":\"Salud y bienestar\"}},\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"001\"},\"inp-content-slogan\":{},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"0\"}}}', 40),
-('5b6d90f875a4e', '{\"respuestas\":[{\"tipo\":1,\"Id\":1,\"respuesta\":\"arte, canvas, cuadros, decoracion, hogar\"},{\"tipo\":2,\"Id\":8,\"respuesta\":\"afsckj\"},{\"tipo\":3,\"Id\":10,\"respuesta\":\"esdsihksk\"},{\"tipo\":4,\"Id\":15,\"respuesta\":\"kdkdskas\"},{\"tipo\":5,\"Id\":21,\"respuesta\":\"Que mis clientes conozcan mi ubicaciÃƒÂƒÃ‚Â³n\"},{\"tipo\":6,\"Id\":22,\"respuesta\":\"Servicios profesionales\"},{\"tipo\":7,\"Id\":23,\"respuesta\":\"Producto\"}],\"imagenes\":{\"hero\":\"5b5c79d19d631_Logo.png\",\"item-1\":\"5b5f7126a194f_googlelogo_color_272x92dp.png\"},\"selections\":{\"#img-hero\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1528290648619-aaaf24139673?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=1d47a6ff81c84fa3fe796fc8b08ec8b7\"},\"#img-item-1\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1532665137004-b7aeb6a9cab1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=bd52a1483f0dd54f3ebe5c6e5cb5975d\"},\"#img-item-2\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=3ac09c30eef36e9db82c032163c00db4\"},\"inp-content-name\":{},\"inp-content-slogan\":{},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"templateTypeId\":{\"type\":\"config\",\"value\":\"003\"}},\"nombre\":\"Web2b\"}', 38),
-('5b6d90f875a4e', '{\"respuestas\":[{\"tipo\":1,\"Id\":2,\"respuesta\":\"qgqrg\"},{\"tipo\":2,\"Id\":8,\"respuesta\":\"ewrqwerqewr\"},{\"tipo\":3,\"Id\":11,\"respuesta\":\"qwerewrewr\"},{\"tipo\":4,\"Id\":16,\"respuesta\":\"weqreqwrewrwr\"},{\"tipo\":5,\"Id\":19,\"respuesta\":\"Que mis clientes conozcan mi ubicaciÃƒÂ³n\"},{\"tipo\":6,\"Id\":22,\"respuesta\":\"Deportes y recreaciÃƒÂ³n\"},{\"tipo\":7,\"Id\":23,\"respuesta\":\"Ambos\"}],\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"004\"},\"inp-content-slogan\":{},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"#img-hero\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1521633602573-190eaa25b787?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=50198909c6377c8995d96bbb2bdb0b8c\"},\"inp-content-title-item-2\":{},\"inp-content-item-2\":{},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"0\"}},\"nombre\":\"Pagina 3\"}', 39),
-('5b6d90f875a4e', '{\"respuestas\":[{\"tipo\":1,\"Id\":1,\"respuesta\":\"arte, canvas, cuadros, decoracion, hogar\"},{\"tipo\":2,\"Id\":8,\"respuesta\":\"afsckj\"},{\"tipo\":3,\"Id\":10,\"respuesta\":\"esdsihksk\"},{\"tipo\":4,\"Id\":15,\"respuesta\":\"kdkdskas\"},{\"tipo\":5,\"Id\":21,\"respuesta\":\"Que mis clientes conozcan mi ubicaciÃƒÂƒÃ‚ÂƒÃƒÂ‚Ã‚ÂƒÃƒÂƒÃ‚Â‚ÃƒÂ‚Ã‚Â³n\"},{\"tipo\":6,\"Id\":22,\"respuesta\":\"Servicios profesionales\"},{\"tipo\":7,\"Id\":23,\"respuesta\":\"Producto\"}],\"imagenes\":{\"hero\":\"5b5c79d19d631_Logo.png#5b98595d82a4e_Logo.png\",\"item-1\":\"5b5f7126a194f_googlelogo_color_272x92dp.png\"},\"selections\":{\"#img-hero\":{\"type\":\"image\",\"img\":\"/crea/client_images/5b5c79d19d631_Logo.png\"},\"#img-item-1\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1532665137004-b7aeb6a9cab1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=bd52a1483f0dd54f3ebe5c6e5cb5975d\"},\"#img-item-2\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=3ac09c30eef36e9db82c032163c00db4\"},\"#val-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"#val-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"#val-content-name\":{\"type\":\"text\",\"text\":\"mi nombre\"},\"#inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"#inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-content-name\":{\"type\":\"text\",\"text\":\"MI pagina web\"},\"inp-content-slogan\":{\"type\":\"text\"},\"inp-content-title-aboutus\":{\"type\":\"text\"},\"inp-content-aboutus\":{\"type\":\"text\"},\"inp-content-title-cta\":{\"type\":\"text\"},\"inp-content-cta\":{\"type\":\"text\"},\"inp-content-title-item-1\":{\"type\":\"text\"},\"inp-content-item-1\":{\"type\":\"text\"},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{\"type\":\"text\"},\"inp-contact-phone\":{\"type\":\"text\"},\"inp-contact-address\":{\"type\":\"text\"},\"inp-contact-schedule\":{\"type\":\"text\"},\"inp-contact-facebook\":{\"type\":\"text\"},\"inp-contact-twitter\":{\"type\":\"text\"},\"templateTypeId\":{\"type\":\"config\",\"value\":\"003\"}},\"nombre\":\"otra pagina\"}', 36),
-('5b6d90f875a4e', '{\"respuestas\":[{\"tipo\":1,\"Id\":1,\"respuesta\":\"arte, canvas, cuadros, decoracion, hogar\"},{\"tipo\":2,\"Id\":8,\"respuesta\":\"afsckj\"},{\"tipo\":3,\"Id\":10,\"respuesta\":\"esdsihksk\"},{\"tipo\":4,\"Id\":15,\"respuesta\":\"kdkdskas\"},{\"tipo\":5,\"Id\":21,\"respuesta\":\"Que mis clientes conozcan mi ubicaciÃƒÂƒÃ‚ÂƒÃƒÂ‚Ã‚ÂƒÃƒÂƒÃ‚Â‚ÃƒÂ‚Ã‚Â³n\"},{\"tipo\":6,\"Id\":22,\"respuesta\":\"Servicios profesionales\"},{\"tipo\":7,\"Id\":23,\"respuesta\":\"Producto\"}],\"imagenes\":{\"hero\":\"5b5c79d19d631_Logo.png#5b984fe79ede1_Logo.png\",\"item-1\":\"5b5f7126a194f_googlelogo_color_272x92dp.png\"},\"selections\":{\"#img-hero\":{\"type\":\"image\",\"img\":\"/crea/client_images/5b5c79d19d631_Logo.png\"},\"#img-item-1\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1532665137004-b7aeb6a9cab1?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=bd52a1483f0dd54f3ebe5c6e5cb5975d\"},\"#img-item-2\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ&s=3ac09c30eef36e9db82c032163c00db4\"},\"#val-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"#val-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"#val-content-name\":{\"type\":\"text\",\"text\":\"mi nombre\"},\"#inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"#inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-content-name\":{\"type\":\"text\",\"text\":\"Otra web\"},\"inp-content-slogan\":{\"type\":\"text\"},\"inp-content-title-aboutus\":{\"type\":\"text\"},\"inp-content-aboutus\":{\"type\":\"text\"},\"inp-content-title-cta\":{\"type\":\"text\"},\"inp-content-cta\":{\"type\":\"text\"},\"inp-content-title-item-1\":{\"type\":\"text\"},\"inp-content-item-1\":{\"type\":\"text\"},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{\"type\":\"text\"},\"inp-contact-phone\":{\"type\":\"text\"},\"inp-contact-address\":{\"type\":\"text\"},\"inp-contact-schedule\":{\"type\":\"text\"},\"inp-contact-facebook\":{\"type\":\"text\"},\"inp-contact-twitter\":{\"type\":\"text\"}},\"nombre\":\"Web2b1\"}', 37);
+('5b6d90f875a4e', '{\"respuestas\":{\"9\":{\"tipo\":3,\"respuesta\":\"Mi slogan favorito\",\"localizacion_en\":\"\"},\"21\":{\"tipo\":5,\"respuesta\":\"Que se enteren de mis novedades\",\"localizacion_en\":\"\"},\"22\":{\"tipo\":6,\"respuesta\":\"Desarrollo de software\",\"localizacion_en\":\"\"}},\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"001\"},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"0\"},\"siteName\":{\"type\":\"text\",\"text\":\"sitio2\"},\"inp-content-name\":{},\"inp-content-slogan\":{\"type\":\"text\",\"text\":\"Mi slogan favorito\"},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{}}}', 47),
+('5b6d90f875a4e', '{\"respuestas\":{\"10\":{\"tipo\":3,\"respuesta\":\"Somos la mejor empresa de software\",\"localizacion_en\":\"\"},\"21\":{\"tipo\":5,\"respuesta\":\"Que sepan mis novedades\",\"localizacion_en\":\"\"},\"22\":{\"tipo\":6,\"respuesta\":\"Software\",\"localizacion_en\":\"\"}},\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"004\"},\"siteName\":{\"type\":\"text\",\"text\":\"mysite\"},\"inp-content-name\":{\"type\":\"text\",\"text\":\"Mi primer negocio\"},\"inp-content-slogan\":{\"type\":\"text\",\"text\":\"Somos la mejor empresa de software\"},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"0\"}}}', 46),
+('5b6d90f875a4e', '{\"respuestas\":{\"10\":{\"tipo\":3,\"respuesta\":\"Somos la mejor empresa de software\",\"localizacion_en\":\"\"},\"21\":{\"tipo\":5,\"respuesta\":\"Que sepan mis novedades\",\"localizacion_en\":\"\"},\"22\":{\"tipo\":6,\"respuesta\":\"Software\",\"localizacion_en\":\"\"}},\"selections\":{\"templateTypeId\":{\"type\":\"config\",\"value\":\"008\"},\"siteName\":{\"type\":\"text\",\"text\":\"otroSitio\"},\"inp-content-name\":{\"type\":\"text\",\"text\":\"Mi primer negocio\"},\"inp-content-slogan\":{\"type\":\"text\",\"text\":\"Somos la mejor empresa de software\"},\"inp-content-title-aboutus\":{},\"inp-content-aboutus\":{},\"inp-content-title-cta\":{},\"inp-content-cta\":{},\"inp-content-title-item-1\":{},\"inp-content-item-1\":{},\"inp-content-item-add-y\":{\"type\":\"text\",\"text\":\"y\"},\"inp-content-item-add-n\":{\"type\":\"text\",\"text\":\"n\"},\"inp-contact-email\":{},\"inp-contact-phone\":{},\"inp-contact-address\":{},\"inp-contact-schedule\":{},\"inp-contact-facebook\":{},\"inp-contact-twitter\":{},\"palette\":{\"name\":\"palette\",\"type\":\"id\",\"value\":\"0\"},\"#img-hero\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1533709752211-118fcaf03312?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ\"},\"#img-item-1\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1514428631868-a400b561ff44?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ\"},\"inp-content-title-item-2\":{},\"inp-content-item-2\":{},\"#img-item-2\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1515524738708-327f6b0037a7?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ\"},\"inp-content-title-item-3\":{},\"inp-content-item-3\":{},\"#img-item-3\":{\"type\":\"image\",\"img\":\"https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjI2NzYxfQ\"}}}', 48);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `opciones_respuesta`
+-- Estructura de tabla para la tabla `opciones_respuesta`
 --
 
 DROP TABLE IF EXISTS `opciones_respuesta`;
@@ -101,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `opciones_respuesta` (
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `opciones_respuesta`
+-- Volcado de datos para la tabla `opciones_respuesta`
 --
 
 INSERT INTO `opciones_respuesta` (`Id`, `tipo_pregunta`, `respuesta`) VALUES
@@ -112,7 +109,25 @@ INSERT INTO `opciones_respuesta` (`Id`, `tipo_pregunta`, `respuesta`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `preguntas`
+-- Estructura de tabla para la tabla `pagos`
+--
+
+DROP TABLE IF EXISTS `pagos`;
+CREATE TABLE IF NOT EXISTS `pagos` (
+  `id` varchar(13) NOT NULL,
+  `paquete` varchar(100) NOT NULL,
+  `id_usuario` varchar(13) NOT NULL,
+  `fecha_inicio` varchar(50) NOT NULL,
+  `info_pago` text NOT NULL,
+  `id_pagina` int(11) NOT NULL,
+  `id_paypal` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `preguntas`
 --
 
 DROP TABLE IF EXISTS `preguntas`;
@@ -126,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `preguntas` (
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `preguntas`
+-- Volcado de datos para la tabla `preguntas`
 --
 
 INSERT INTO `preguntas` (`Id`, `pregunta`, `tipo`, `tiene_opciones`, `isActive`) VALUES
@@ -153,7 +168,7 @@ INSERT INTO `preguntas` (`Id`, `pregunta`, `tipo`, `tiene_opciones`, `isActive`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `respuestas`
+-- Estructura de tabla para la tabla `respuestas`
 --
 
 DROP TABLE IF EXISTS `respuestas`;
@@ -166,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `respuestas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `templates`
+-- Estructura de tabla para la tabla `templates`
 --
 
 DROP TABLE IF EXISTS `templates`;
@@ -188,7 +203,7 @@ CREATE TABLE IF NOT EXISTS `templates` (
 ) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `templates`
+-- Volcado de datos para la tabla `templates`
 --
 
 INSERT INTO `templates` (`folder`, `width`, `height`, `font`, `fontsize`, `color`, `posx`, `posy`, `uppercase`, `align`, `id`) VALUES
@@ -202,7 +217,7 @@ INSERT INTO `templates` (`folder`, `width`, `height`, `font`, `fontsize`, `color
 -- --------------------------------------------------------
 
 --
--- Table structure for table `usuarios`
+-- Estructura de tabla para la tabla `usuarios`
 --
 
 DROP TABLE IF EXISTS `usuarios`;
@@ -214,7 +229,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `usuarios`
+-- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`Id`, `correo`, `password`) VALUES

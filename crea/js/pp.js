@@ -1,3 +1,4 @@
+import dataManager from "../../js/dataManager";
 
 export default function paypalBtn() {
 
@@ -7,6 +8,8 @@ export default function paypalBtn() {
   let description;
   let name;
   let tax;
+
+  let new_dataManager = new dataManager();
 
   let paquetes ={
     'basico':
@@ -30,7 +33,7 @@ export default function paypalBtn() {
       }
   };
 
-  let init = function(element, tipo){
+  let init = (element, tipo) => {
     this.element = element;
     this.subtotal = paquetes[tipo].precio;
     this.tax = (Number(this.subtotal) * 0.16).toFixed(2).toString();
@@ -38,7 +41,7 @@ export default function paypalBtn() {
     this.name = paquetes[tipo].nombre;
     this.description = paquetes[tipo].description;
     // Render the PayPal button
-    paypal.Button.render({
+    return paypal.Button.render({
       // Set your environment
       env: 'sandbox', // sandbox | production
       client: {
@@ -107,18 +110,35 @@ export default function paypalBtn() {
         });
       },
       
-      onAuthorize: function (data, actions) {
+      onAuthorize: (data, actions) => {
         return actions.payment.execute()
-          .then(function () {
-            window.alert('Payment Complete!');
+          .then((PaymentDetails) => {
+            let id_pagina = new_dataManager.getObjFromLocalStorage('web2b_templateId');
+            let id_usuario = new_dataManager.getObjFromLocalStorage('web2b_userId');
+            let info_pago = PaymentDetails;
+
+            //Crear pago
+            $.post("scripts/crear_pago.php",{
+              id_usuario: id_usuario,
+              // paquete: info_pago.transactions[0].item_list.items[0].name,
+              // fecha_inicio: info_pago.create_time,
+              // info_pago: info_pago,
+              // id_pagina: id_pagina,
+              id_paypal: info_pago.id
+            }).done(function(result){
+                window.alert('Payment Complete!');		
+            }).fail(function(result){
+              window.alert('Algo salio mal!');
+            });            
+            
           });
       },
 
-      onCancel: function (data, actions) {
+      onCancel: (data, actions) => {
         // Show a cancel page or return to cart
       },
 
-      onError: function (err) {
+      onError: (err) => {
         // Show an error page here, when an error occurs
       }
 

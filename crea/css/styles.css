@@ -678,7 +678,7 @@ a {
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 102;
+  z-index: 1002;
   overflow-y: scroll;
 }
 
@@ -891,12 +891,51 @@ a {
   background: none;
   border: 1px solid white;
   width: 100%;
-  padding: 5px 20px;
+  padding: 0px 20px;
   border-radius: 0;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 2px;
   cursor: pointer;
+  line-height: 48px;
+  height: 50px;
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 660px) {
+  #app-cover .app-cover-finish .app-cover-finish-package button {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 730px) {
+  #app-cover .app-cover-finish .app-cover-finish-package button {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  #app-cover .app-cover-finish .app-cover-finish-package button {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (min-width: 1040px) {
+  #app-cover .app-cover-finish .app-cover-finish-package button {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 1160px) {
+  #app-cover .app-cover-finish .app-cover-finish-package button {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 1610px) {
+  #app-cover .app-cover-finish .app-cover-finish-package button {
+    margin-bottom: 40px;
+  }
 }
 
 #app-cover .app-cover-finish .app-cover-finish-package button i, #app-cover .app-cover-finish .app-cover-finish-package button span {
@@ -1458,7 +1497,7 @@ a {
   right: 5%;
   top: 5%;
   width: 90%;
-  z-index: 104;
+  z-index: 1004;
 }
 
 #single-modal i {

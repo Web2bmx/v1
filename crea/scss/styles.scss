@@ -70,7 +70,7 @@ a {
 	right: 0;
 	top: 0;   
 	width: 100%;
-	z-index: 102;
+	z-index: 1002;
 	overflow-y: scroll; 
 
 	@include breakpoint($desktop){
@@ -219,8 +219,8 @@ a {
 			
 			@include breakpoint($ext-desktop){
 				width: calc(33.33% - 60px);
-				margin: 1em 30px;
-			}	
+				margin: 1em 30px; 
+			}
 			
 			hr{
 				width: 10%;
@@ -263,12 +263,39 @@ a {
 				background: none;
 				border: 1px solid white;
 				width: 100%;
-				padding: 5px 20px;
+				padding: 0px 20px;
 				border-radius: 0;
 				font-size: 14px;
 				font-weight: normal;
 				letter-spacing: 2px;
 				cursor: pointer;
+				line-height: 48px;
+				height: 50px;
+				margin-bottom: 0px;
+
+				@media only screen and (min-width: 660px){
+					margin-bottom: 0px;
+				}				
+
+				@media only screen and (min-width: 730px){
+					margin-bottom: 20px;
+				}								
+
+				@media only screen and (min-width: 980px){
+					margin-bottom: 40px;
+				}				
+
+				@media only screen and (min-width: 1040px){
+					margin-bottom: 0px;
+				}						
+					
+				@media only screen and (min-width: 1160px){
+					margin-bottom: 20px;
+				}				
+				
+				@media only screen and (min-width: 1610px){
+					margin-bottom: 40px;
+				}				
 
 				i, span{
 					vertical-align: middle;						
@@ -284,6 +311,7 @@ a {
 				}
 
 			}
+
 		}		
 
 	}
@@ -786,7 +814,7 @@ a {
 	right: 5%;
 	top: 5%;
 	width: 90%;
-	z-index: 104;
+	z-index: 1004;
 }
 #single-modal i {
 	cursor: pointer;
