@@ -46,7 +46,6 @@ if (!empty($_POST) &&
             http_response_code(400);
             exit;
         } else{
-            $paginas = getPages($dbh, $id);
             echo '{"ok": 1, "pagoId": "' . $id . '"}';
             http_response_code(200);
         }     

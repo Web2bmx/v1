@@ -115,20 +115,32 @@ export default function paypalBtn() {
           .then((PaymentDetails) => {
             let id_pagina = new_dataManager.getObjFromLocalStorage('web2b_templateId');
             let id_usuario = new_dataManager.getObjFromLocalStorage('web2b_userId');
-            let info_pago = PaymentDetails;
-
+            let template_info = new_dataManager.getObjFromLocalStorage('web2b_template');
+            let info_pago = JSON.stringify(PaymentDetails); 
+            let paquete = PaymentDetails.transactions[0].item_list.items[0].name.search('Básico') != -1 ?
+              'basico' : 'premium';
             //Crear pago
             $.post("scripts/crear_pago.php",{
               id_usuario: id_usuario,
-              // paquete: info_pago.transactions[0].item_list.items[0].name,
-              // fecha_inicio: info_pago.create_time,
-              // info_pago: info_pago,
-              // id_pagina: id_pagina,
-              id_paypal: info_pago.id
+              paquete: paquete,
+              fecha_inicio: PaymentDetails.create_time,
+              info_pago: info_pago,
+              id_pagina: id_pagina,
+              id_paypal: PaymentDetails.id
             }).done(function(result){
-                window.alert('Payment Complete!');		
+              // Crear página
+              $.post("scripts/publicar_pagina.php",{
+                site_name: template_info.selections.siteName.text,
+                contenido: $('#template')[0].outerHTML,
+                title: template_info.selections['inp-content-name'].text,
+                description: template_info.selections['inp-content-slogan'].text
+              }).done(function(result){
+                  window.alert('Complete!');
+              }).fail(function(result){
+                window.alert('Algo salio mal!');
+              });               
             }).fail(function(result){
-              window.alert('Algo salio mal!');
+              // Algo salio mal
             });            
             
           });

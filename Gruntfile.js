@@ -16,14 +16,22 @@ module.exports = function (grunt) {
 			files: {
                 'crea/css/styles.css': 'crea/scss/styles.scss',
                 'landing/css/styles.css': 'landing/scss/styles.scss',
-                'tour/css/tour.css': 'tour/scss/tour.scss'
+                'tour/css/tour.css': 'tour/scss/tour.scss',
+                'crea/Templates/Template-001/css/styles.css' : 'crea/Templates/Template-001/scss/styles.scss',
+                'crea/Templates/Template-002/css/styles.css' : 'crea/Templates/Template-002/scss/styles.scss',
+                'crea/Templates/Template-003/css/styles.css' : 'crea/Templates/Template-003/scss/styles.scss',
+                'crea/Templates/Template-004/css/styles.css' : 'crea/Templates/Template-004/scss/styles.scss',
+                'crea/Templates/Template-005/css/styles.css' : 'crea/Templates/Template-005/scss/styles.scss',
+                'crea/Templates/Template-006/css/styles.css' : 'crea/Templates/Template-006/scss/styles.scss',
+                'crea/Templates/Template-007/css/styles.css' : 'crea/Templates/Template-007/scss/styles.scss',
+                'crea/Templates/Template-008/css/styles.css' : 'crea/Templates/Template-008/scss/styles.scss'
 			}
 		}
 	},
         
         watch: {
             sass:{
-                files: ["*/scss/*"],
+                files: ["**/scss/**.scss","**/node_modules/**"],
                 tasks: ["sass"]
             }
         }

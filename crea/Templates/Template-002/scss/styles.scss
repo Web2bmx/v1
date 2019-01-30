@@ -1,0 +1,157 @@
+@import "./crea/Templates/scss/_common"; 
+/**/
+#template {
+	width: 100%; height: auto;
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	display: block; overflow: hidden;
+}
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
+	font-family: 'Markazi Text', serif;
+}
+#template main {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.font-icon {
+	font-family: 'Modern Pics', cursive;
+}
+/**/
+#hero {
+	width: 100%; height: auto;
+	background-color: #666;
+	display: block; overflow: hidden;
+	position: relative;
+}
+#hero-content {
+	width: 70%; height: auto;
+	padding: 2em 5%;
+	display: block; overflow: hidden;
+	position: absolute;
+	top: auto; right: 10%; bottom: 5%; left: 10%;
+}
+#hero .img-cont {
+	width: 100%; height: 400px;
+	display: block; overflow: hidden;
+}
+/**/
+.items {
+	width: 100%; height: auto;
+	margin: 1em 0;
+	display: block; overflow: hidden;
+}
+.item {
+	width: 100%; height: auto;
+	margin: 1em 0;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.item .img-cont {
+	width: 100%; height: 200px;
+	display: block; overflow: hidden;
+}
+.item .item-content {
+	width: 90%; height: auto;
+	padding: 5%;
+	display: block; overflow: hidden;
+}
+.aboutus-cont {
+	width: 100%; height: auto;
+	margin: 1em 0;
+	display: block; overflow: hidden;
+}
+.aboutus {
+	width: 100%; height: auto;
+	margin: 1em 0;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.aboutus .img-cont {
+	width: 100%; height: 200px;
+	display: block; overflow: hidden;
+}
+.aboutus .aboutus-content {
+	width: 90%; height: auto;
+	padding: 5%;
+	display: block; overflow: hidden;
+}
+.ctas {
+	width: 100%; height: auto;
+	margin: 1em 0;
+	display: block; overflow: hidden;
+}
+.cta {
+	width: 100%; height: auto;
+	margin: 1em 0;
+	display: block; overflow: hidden;
+	position: relative; 
+}
+.cta .img-cont {
+	width: 100%; height: 200px;
+	display: block; overflow: hidden;
+}
+.cta .cta-content {
+	width: 90%; height: auto;
+	padding: 5%;
+	display: block; overflow: hidden;
+}
+.map-container {
+	width: 100%; height: auto;
+	display: block; overflow: hidden;
+}
+.map-container>iframe {
+	width: 100%; height: 600px;
+	display: block; overflow: hidden;
+}
+/**/
+footer {
+	width: 100%; height: auto;
+	padding: 2em 0;
+	background-color: #000000;
+	color: #FFF;
+	display: block; overflow: hidden;
+}
+footer a, footer a:link, footer a:visited, footer a:hover, footer a:active {
+	color: inherit;
+}
+footer ul {
+	list-style: none;
+}
+/**/
+@media only screen and (min-width: 560px) {
+    #template main {
+		width: 80%; max-width: 1440px;
+		margin: 0 auto;
+	}
+	.items {
+		display: grid;
+	}
+	.items.one {
+		grid-template-columns: auto;
+	}
+	.items.two {
+		grid-template-columns: auto;
+	}
+	.items.three {
+		grid-template-columns: auto;
+	}
+	.item {
+		width: auto;
+	}
+	.item .img-cont {
+		height: 270px;
+		width: 50%;
+		float: left;
+	}
+	.item .item-content {
+		height: 240px;
+		padding: 15px 5%;
+		width: 40%;
+		float: right;
+	}
+	.footer-column {
+		width: 25%;
+		padding: 0 4%;
+		float: left;
+	}
+}
