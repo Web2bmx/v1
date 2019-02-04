@@ -77,8 +77,38 @@ export default function appManager () {
 	
 		});
 		$(".finish").on("click", function() {
-			_ctrl.current_step --;
-			$("#app-cover").hide();
+			// _ctrl.current_step --;
+			// $("#app-cover").hide();
+            let id_pagina = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_templateId');
+            let id_usuario = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_userId');			
+			let template_info = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_template');
+
+			let fecha = new Date();
+            fecha.setDate(fecha.getDate() + 15);
+
+            //Crear pago
+            $.post("scripts/crear_pago.php",{
+				id_usuario: id_usuario,
+				paquete: 'gratuito',
+				fecha_inicio: fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate(),
+				info_pago: 'N/A',
+				id_pagina: id_pagina,
+				id_paypal: 'N/A'
+			  }).done(function(result){
+				// Crear página
+				$.post("scripts/publicar_pagina.php",{
+				  site_name: template_info.selections.siteName.text,
+				  contenido: $('#template')[0].outerHTML,
+				  title: template_info.selections['inp-content-name'].text,
+				  description: template_info.selections['inp-content-slogan'].text
+				}).done(function(result){
+					window.alert('Complete!');
+				}).fail(function(result){
+				  window.alert('Algo salio mal!');
+				});               
+			  }).fail(function(result){
+				// Algo salio mal
+			  });  			
         });
         /* SWITCH TEMPLATE */
         $(".change-page").click((e) => {

@@ -119,11 +119,15 @@ export default function paypalBtn() {
             let info_pago = JSON.stringify(PaymentDetails); 
             let paquete = PaymentDetails.transactions[0].item_list.items[0].name.search('Básico') != -1 ?
               'basico' : 'premium';
+            let fecha = PaymentDetails.create_time.split('T')[0].split('-');
+            fecha = new Date(Number(fecha[0]), Number(fecha[1]) ,Number(fecha[2]));
+            fecha.setDate(fecha.getDate() + 366);
+
             //Crear pago
             $.post("scripts/crear_pago.php",{
               id_usuario: id_usuario,
               paquete: paquete,
-              fecha_inicio: PaymentDetails.create_time,
+              fecha_inicio: fecha.getFullYear() + '-' + (fecha.getMonth() + 1) + '-' + fecha.getDate(),
               info_pago: info_pago,
               id_pagina: id_pagina,
               id_paypal: PaymentDetails.id
