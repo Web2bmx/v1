@@ -41,6 +41,7 @@ export default function pageManager(){
                 localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
                 localStorage.setItem("web2b_userId", d.userId);
                 localStorage.setItem("web2b_pages", JSON.stringify(d.pags));
+                localStorage.setItem("web2b_actualPage", d.pags[pagina]);
                 callback();
             } else {
                 $(".login-paginas .form-error").css("display","block");
