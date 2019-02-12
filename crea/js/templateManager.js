@@ -90,7 +90,36 @@ export default function templateManager () {
 		_ctrl.new_appManager.topStepMargin();
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
         _ctrl.new_colorManager.updateColors($template);
-        /*Content & Contacto*/
+		/*Remover secciones*/
+		$("[id^='inp-rem-']").each(function() {
+			let $this = $(this);
+			let sec = "";
+			let v = "N";
+			switch ($this.attr("id")) {
+				case "inp-rem-content-cta" :
+					sec = ".cta-cont";
+					break;
+				case "inp-rem-content-aboutus" :
+					sec = ".aboutus-cont";
+					break;	 
+			}
+			if ($this.is(":checked")) {
+				v = "Y";
+				$template.find(sec).show();
+			} else {
+				$template.find(sec).hide();
+			}
+			if (!selections[$this.attr("id")]) {
+				selections[$this.attr("id")] = {};
+				_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');
+			} else {
+				let jdv = selections[$this.attr("id")].text;
+				if (v != jdv) {
+					//_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');
+				}
+			}
+		});
+		/*Content & Contacto*/
         $("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
 			let $this = $(this),
 				i_id = $this.attr("id"),

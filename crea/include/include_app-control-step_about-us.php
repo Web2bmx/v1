@@ -7,5 +7,7 @@
 			<input type="text" value="" id="inp-content-title-aboutus" name="inp-content-title-aboutus" placeholder="Acerca de nosotros" />
 		</div>
 		<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
+		<input type="checkbox" id="inp-rem-content-aboutus" name="inp-rem-content-aboutus" class="remove-content" value="y" checked="checked" />
+		<label for="inp-rem-content-aboutus">Mostrar sección</label> 
 	</div>
 </div>
