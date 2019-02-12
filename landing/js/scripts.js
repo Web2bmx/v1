@@ -53,6 +53,7 @@ $(document).ready(function() {
 							localStorage.setItem("web2b_template", response.paginas[0].info);
 							localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
 							localStorage.setItem("web2b_userId", response.userId);
+							localStorage.setItem("web2b_actualPage", response.paginas[0]);
 							window.location.href = "/crea";
 						} else {
 							// show pages and redirect on success
