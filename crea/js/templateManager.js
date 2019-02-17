@@ -12,7 +12,9 @@ export default function templateManager () {
 		if(data.paginas.length > 1) $(".change-page").show();
 	};
     var onTemplateLoaded = function(){
-        let text = '', arr = Object.keys(_ctrl.jd.respuestas), originaltext = '';
+		let text = '',
+			arr = Object.keys(_ctrl.jd.respuestas),
+			originaltext = '';
 		for(let i = 0; i < arr.length; i++){
 			if(_ctrl.jd.respuestas[arr[i]].tipo == 6){
 				text = _ctrl.jd.respuestas[arr[i]].localizacion_en;
@@ -26,20 +28,7 @@ export default function templateManager () {
 		} else {
 			translateData(originaltext);
 		}
-		//load previous content
-		var selections = _ctrl.jd.selections;
-		if(selections){
-			for(var key in selections){
-				switch(selections[key].type){
-					case "image":
-						$(key).attr("class", ("img-cont img-MC img-L")).css({
-							"background-image" : ("url(" + selections[key].img + ")")
-						});	
-					break;
-				}
-			}
-		}
-    };
+	};
     var updateTemplate = function () {		
         let primeraVez = false,	
 			id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
@@ -87,6 +76,20 @@ export default function templateManager () {
         let $this = $(this),
 		$template = $("#template"),
 		selections = _ctrl.jd.selections || {};
+		/* */
+		//load previous content
+		if(selections){
+			for(var key in selections){
+				switch(selections[key].type){
+					case "image":
+						$(key).attr("class", ("img-cont img-MC img-L")).css({
+							"background-image" : ("url(" + selections[key].img + ")")
+						});	
+					break;
+				}
+			}
+		}
+		/* */
 		_ctrl.new_appManager.topStepMargin();
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
         _ctrl.new_colorManager.updateColors($template);

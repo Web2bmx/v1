@@ -104,13 +104,34 @@ function preguntaValida(selector){
             }
         }
         var loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
-        jsonData.respuestas[id] = {
-            "tipo": $(selector + " p").data("type"),
-            "respuesta" : resp,
-            "localizacion_en" : loc_en,
-        };
+        if (loc_en == '') {
+            $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+                {
+                    key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+                    lang: 'es-en',
+                    text: resp,
+                    format: 'plain'
+                }
+            ).done(function(data) {
+                if(data){
+                    jsonData.respuestas[id] = {
+                        "tipo": $(selector + " p").data("type"),
+                        "respuesta" : resp,
+                        "localizacion_en" : decodeURIComponent(data.text[0]),
+                    };
+        
+                    localStorage.setItem("web2b", JSON.stringify(jsonData));
+                }
+            });	
+        } else {
+            jsonData.respuestas[id] = {
+                "tipo": $(selector + " p").data("type"),
+                "respuesta" : resp,
+                "localizacion_en" : loc_en,
+            };
 
-        localStorage.setItem("web2b", JSON.stringify(jsonData));
+            localStorage.setItem("web2b", JSON.stringify(jsonData));
+        }
     }
     return true;
 }
