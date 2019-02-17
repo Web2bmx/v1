@@ -208,28 +208,19 @@ export default function appManager() {
 		$(".app-cover-finish").show();
 		_ctrl.current_step = 0;
 	};
-	var openAppCover = function (pos) {
-		$("#app-cover").show();
-		if (pos == 'start') {
-			$(".app-cover-start").show();
-			$(".app-cover-finish").hide();
-		} else {
-			$(".app-cover-start").hide();
-			$(".app-cover-finish").show();
-		}
-	};
 	var goToStep = function (step) {
 		if (step == -1) {
-			openAppCover("start");
+			$("#app-cover").show();
+			$(".app-cover-start").show();
+			$(".app-cover-finish").hide();
 		} else if (step < ($(".app-control-step").length)) {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
 			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		} else {
-			openAppCover("final");
+			$("#app-cover").show();
+			$(".app-cover-start").hide();
+			$(".app-cover-finish").show();
 		}
-	};
-	var showAppCover = function () {
-		$("#app-cover").show();
 	};
 	var topStepMargin = function () {
 		let actual = $(".app-control-step:visible > div"),
@@ -237,6 +228,7 @@ export default function appManager() {
 			$("#app-control-nav").height() -
 			$("#app-switch").height() -
 			actual.height();
+
 		actual.css("margin-top", remain > 0 ? remain / 2 + "px" : "0");
 	};
 	var centerNav = function () {
