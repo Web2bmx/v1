@@ -18,7 +18,9 @@ export default function pageManager(){
     let fillModal = function(userId, callback){
         // manejar varias paginas de un solo usuario??
         let html = "";
+        let actualPage = new_Datamanager.getObjFromLocalStorage("web2b_actualPage");
         for(let i=0, jd; i < paginas.length; i++){
+            if(paginas[i].idSitio === actualPage.idSitio) continue;
             jd = JSON.parse(paginas[i].info);
             let name = jd.nombre || jd.selections.siteName.text || "no name";
             html += 
@@ -41,7 +43,7 @@ export default function pageManager(){
                 localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
                 localStorage.setItem("web2b_userId", d.userId);
                 localStorage.setItem("web2b_pages", JSON.stringify(d.pags));
-                localStorage.setItem("web2b_actualPage", d.pags[pagina]);
+                localStorage.setItem("web2b_actualPage", JSON.stringify(d.pags[pagina]));        
                 callback();
             } else {
                 $(".login-paginas .form-error").css("display","block");

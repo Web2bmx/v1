@@ -482,6 +482,7 @@ and open the template in the editor.
 .ui-dialog .ui-dialog-content.dialog {
   max-height: 760px;
   max-width: 100% !important;
+  z-index: 1003;
 }
 
 @media (min-width: 660px) {
@@ -500,6 +501,7 @@ and open the template in the editor.
 .ui-widget-overlay {
   background: #000;
   opacity: .5;
+  z-index: 1002;
 }
 
 .modal-login, .app-new-start, .ventana-login {
