@@ -1,5 +1,6 @@
 export default function templateManager () { 
-    var _ctrl = null;
+	var _ctrl = null;
+	var _rem = [];
 	var init = function(_that) {
         _ctrl = _that;
     }
@@ -83,8 +84,9 @@ export default function templateManager () {
 		/*Remover secciones*/
 		$("[id^='inp-rem-']").each(function() {
 			let $this = $(this);
+			let v = "Y";
+			let jdv = selections[$this.attr("id")] ? selections[$this.attr("id")].text : "";
 			let sec = "";
-			let v = "N";
 			switch ($this.attr("id")) {
 				case "inp-rem-content-cta" :
 					sec = ".cta-cont";
@@ -93,19 +95,29 @@ export default function templateManager () {
 					sec = ".aboutus-cont";
 					break;	 
 			}
-			if ($this.is(":checked")) {
-				v = "Y";
-				$template.find(sec).show();
-			} else {
-				$template.find(sec).hide();
-			}
-			if (!selections[$this.attr("id")]) {
+			if (jdv == "") {
 				selections[$this.attr("id")] = {};
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');
 			} else {
-				let jdv = selections[$this.attr("id")].text;
-				if (v != jdv) {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');
+				if(!_rem[$this.attr("id")]) {
+					v = selections[$this.attr("id")].text;
+					_rem[$this.attr("id")] = v;
+					if (v == "N") {
+						$this.prop("checked", false);		
+						$template.find(sec).hide();
+					}
+				} else{
+					if ($this.is(":checked")) { v = "Y"; } else { v = "N"; }
+					if (v != _rem[$this.attr("id")]) {
+						_rem[$this.attr("id")] = v;
+						selections[$this.attr("id")].text = v;
+						_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');		
+						if (v == "N") {
+							$template.find(sec).hide();
+						} else {
+							$template.find(sec).show();
+						}
+					}
 				}
 			}
 		});
