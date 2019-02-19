@@ -7,6 +7,7 @@ export default function appManager() {
 	var init = function (_that) {
 		_ctrl = _that;
 	};
+	var firstTime = true;
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();
 		$("#control-view-nav>a").on("click", function (e) {
@@ -145,19 +146,13 @@ export default function appManager() {
 				});
 			}
 			$("body").toggleClass("init");
+		});	
+
+		/* Go back */
+		$("#back").click(() => {
+			_ctrl.current_step --;
+			$("#app-cover").hide();
 		});
-
-		// Hide buttons when already a page is built
-		let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
-		if(actual_page.paquete !== null) {
-			$(".finish").css('visibility','hidden');
-		}
-
-		/* PAYPAL Buttons */
-		let new_paypalBtn1 = new paypalBtn();
-		new_paypalBtn1.init('#paypal-button-container', 'basico');
-		let new_paypalBtn2 = new paypalBtn();
-		new_paypalBtn2.init('#paypal-button-container2', 'premium');		
 	};
 	var setAppControls = function () {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function () {
@@ -220,6 +215,21 @@ export default function appManager() {
 			$("#app-cover").show();
 			$(".app-cover-start").hide();
 			$(".app-cover-finish").show();
+
+			if(firstTime) {
+				// Hide buttons when already a page is built
+				let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
+				if(actual_page.paquete !== null) {
+					$(".finish").css('visibility','hidden');
+				}
+
+				/* PAYPAL Buttons */ 
+				let new_paypalBtn1 = new paypalBtn();
+				new_paypalBtn1.init('#paypal-button-container', 'basico');
+				let new_paypalBtn2 = new paypalBtn();
+				new_paypalBtn2.init('#paypal-button-container2', 'premium');
+				firstTime = false;				
+			}
 		}
 	};
 	var topStepMargin = function () {

@@ -105,7 +105,10 @@
 					<div id="paypal-button-container2" data-total='1599' data-desc='Premium'>
 					</div>	
 				</div>
-			</div>												
+			</div>		
+			<button id="back">
+				Seguir editando
+			</button>										
 		</div>
 	</div>
 </div>
