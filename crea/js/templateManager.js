@@ -1,6 +1,6 @@
 export default function templateManager () { 
     var _ctrl = null;
-    var init = function(_that) {
+	var init = function(_that) {
         _ctrl = _that;
     }
     var startTemplateProcess = function(data){
@@ -11,30 +11,13 @@ export default function templateManager () {
 		localStorage.setItem("web2b_pages", JSON.stringify(data.paginas));
 		if(data.paginas.length > 1) $(".change-page").show();
 	};
-    var onTemplateLoaded = function(){
-		let text = '',
-			arr = Object.keys(_ctrl.jd.respuestas),
-			originaltext = '';
-		for(let i = 0; i < arr.length; i++){
-			if(_ctrl.jd.respuestas[arr[i]].tipo == 6){
-				text = _ctrl.jd.respuestas[arr[i]].localizacion_en;
-				originaltext = _ctrl.jd.respuestas[arr[i]].respuesta;
-			}
-		}
-        //check if translation already exists
-		if(text != ''){
-			_ctrl.new_imageManager.setImageSelection(text);
-			updateContent();
-		} else {
-			translateData(originaltext);
-		}
-	};
     var updateTemplate = function () {		
         let primeraVez = false,	
 			id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
+			/*ID lo toma del radio para seleccionar diseno */
 		// si es la primera vez
 		if(_ctrl.template_id == ""){		
-			if(_ctrl.jd.selections  && _ctrl.jd.selections.templateTypeId){
+			if(_ctrl.jd.selections && _ctrl.jd.selections.templateTypeId){
 				let newInp;
 				primeraVez = true;
 				_ctrl.template_id = _ctrl.jd.selections.templateTypeId.value;
@@ -46,7 +29,8 @@ export default function templateManager () {
 			} else {
 				$(".control-desing-cont .control-design-thumb:first-child aside").addClass("thumb-selected");
 			}
-        }
+		}
+		/*Si el template es nuevo o acaba de cambiar */
         if (primeraVez || _ctrl.template_id != id) {
             _ctrl.template_id = id;
 			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
@@ -60,8 +44,8 @@ export default function templateManager () {
 					_ctrl.new_itemManager.addItems(i);		
 				}
 				_ctrl.new_colorManager.loadColors($template);
+				_ctrl.new_imageManager.setImageSelection(text);
 				updateContent();
-                onTemplateLoaded();
                 /*$.ajax({
 					url: ("Templates/Template-" + id + "/js/scripts.js"),
 					dataType: "script",
@@ -209,24 +193,8 @@ export default function templateManager () {
 		});
         _ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 	};
-	var translateData = function(text){
-		$.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
-			{
-				key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
-				lang: 'es-en',
-				text: text,
-				format: 'plain'
-			}
-		  ).done(function(data) {
-			if(data){
-				_ctrl.new_imageManager.setImageSelection(decodeURIComponent(data.text[0]));
-				updateContent();
-			}
-		  });	
-	};	
-    return {
+	return {
         init : init,
-        onTemplateLoaded: onTemplateLoaded,
         updateTemplate: updateTemplate,
         updateContent: updateContent,
         startTemplateProcess : startTemplateProcess

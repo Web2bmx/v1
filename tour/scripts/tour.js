@@ -104,7 +104,7 @@ function preguntaValida(selector){
             }
         }
         var loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
-        if (loc_en == '') {
+        if (loc_en == '' && $(selector + " p").data("type") == 6) {
             $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
                 {
                     key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
