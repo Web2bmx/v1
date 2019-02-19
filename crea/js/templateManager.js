@@ -16,7 +16,7 @@ export default function templateManager () {
 			id = $("[name^='inp-design']:checked").val().replace("inp-design-", "");
 			/*ID lo toma del radio para seleccionar diseno */
 		// si es la primera vez
-		if(_ctrl.template_id == ""){		
+		if(_ctrl.template_id == ""){
 			if(_ctrl.jd.selections && _ctrl.jd.selections.templateTypeId){
 				let newInp;
 				primeraVez = true;
@@ -33,7 +33,13 @@ export default function templateManager () {
 		/*Si el template es nuevo o acaba de cambiar */
         if (primeraVez || _ctrl.template_id != id) {
             _ctrl.template_id = id;
-			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
+			loadTemplate(id);	
+		} else {
+			updateContent(); 
+		}
+	};
+	var loadTemplate = function(id) {
+		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
 			$("#template").html("");
 			var src = "Templates/Template-" + _ctrl.template_id + "/index.php?t=4"; 
 			$("#template-cont").load(src + " #template", function() {
@@ -44,7 +50,7 @@ export default function templateManager () {
 					_ctrl.new_itemManager.addItems(i);		
 				}
 				_ctrl.new_colorManager.loadColors($template);
-				_ctrl.new_imageManager.setImageSelection(text);
+				_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 				updateContent();
                 /*$.ajax({
 					url: ("Templates/Template-" + id + "/js/scripts.js"),
@@ -52,10 +58,7 @@ export default function templateManager () {
 					success: onTemplateLoaded
 				});*/
 			});
-		} else {
-			updateContent(); 
-		}
-    };
+	};
     var updateContent = function () {
         let $this = $(this),
 		$template = $("#template"),
@@ -102,7 +105,7 @@ export default function templateManager () {
 			} else {
 				let jdv = selections[$this.attr("id")].text;
 				if (v != jdv) {
-					//_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');
 				}
 			}
 		});
