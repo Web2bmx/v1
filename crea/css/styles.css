@@ -504,15 +504,15 @@ and open the template in the editor.
   z-index: 1002;
 }
 
-.modal-login, .app-new-start, .ventana-login {
+.modal-login, .app-new-start, .ventana-login, .final-msgs {
   margin: 20px;
 }
 
-.modal-login *, .app-new-start *, .ventana-login * {
+.modal-login *, .app-new-start *, .ventana-login *, .final-msgs * {
   box-sizing: border-box;
 }
 
-.modal-login img, .app-new-start img, .ventana-login img {
+.modal-login img, .app-new-start img, .ventana-login img, .final-msgs img {
   display: block;
   height: auto;
   margin: 1em auto;
@@ -520,23 +520,23 @@ and open the template in the editor.
   width: 10em;
 }
 
-.modal-login input, .app-new-start input, .ventana-login input, .modal-login button, .app-new-start button, .ventana-login button {
+.modal-login input, .app-new-start input, .ventana-login input, .final-msgs input, .modal-login button, .app-new-start button, .ventana-login button, .final-msgs button {
   width: 100%;
 }
 
-.modal-login p, .app-new-start p, .ventana-login p {
+.modal-login p, .app-new-start p, .ventana-login p, .final-msgs p {
   text-align: center;
   font-size: 18px;
   color: #000;
   margin: 25px 0;
 }
 
-.modal-login [type="button"], .app-new-start [type="button"], .ventana-login [type="button"] {
+.modal-login [type="button"], .app-new-start [type="button"], .ventana-login [type="button"], .final-msgs [type="button"] {
   font-size: 23px;
   padding: 15px;
 }
 
-.modal-login .x-close, .app-new-start .x-close, .ventana-login .x-close {
+.modal-login .x-close, .app-new-start .x-close, .ventana-login .x-close, .final-msgs .x-close {
   position: absolute;
   right: 0;
   top: 0;
@@ -545,7 +545,7 @@ and open the template in the editor.
   cursor: pointer;
 }
 
-.modal-login .x-close:hover, .app-new-start .x-close:hover, .ventana-login .x-close:hover {
+.modal-login .x-close:hover, .app-new-start .x-close:hover, .ventana-login .x-close:hover, .final-msgs .x-close:hover {
   color: #999;
 }
 

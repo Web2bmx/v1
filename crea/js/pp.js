@@ -32,7 +32,25 @@ export default function paypalBtn() {
         'precio':'1599'
       }
   };
+  
+	var manageFinalData= function(fecha) {
+		$(".finish").css('visibility','hidden');
 
+		// number of days
+		let today = new Date();
+		let finArr = fecha.split("-");
+		let fin = new Date(Number(finArr[0]), Number(finArr[1])-1,Number(finArr[2]));
+		let diff;
+		if(fin >= today) {
+			diff = Math.ceil((Math.abs(today-fin)) / (1000 * 3600 * 24));
+			$(".daysLeft").text(diff);
+			$(".created").fadeIn(400);
+		} else {
+			diff = 0;
+			$(".created").hide();
+		}	
+  };
+  
   let init = (element, tipo) => {
     this.element = element;
     this.subtotal = paquetes[tipo].precio;
@@ -127,17 +145,20 @@ export default function paypalBtn() {
               info_pago: info_pago,
               id_pagina: id_pagina,
               id_paypal: PaymentDetails.id
-            }).done(function(result){
+            }).done((PagoResult) => {
               // Crear página
               $.post("scripts/publicar_pagina.php",{
                 site_name: template_info.selections.siteName.text,
                 contenido: $('#template')[0].outerHTML,
                 title: template_info.selections['inp-content-name'].text,
                 description: template_info.selections['inp-content-slogan'].text
-              }).done(function(result){
-                  window.alert('Complete!');
+              }).done((PublishResult) => {
+                $('.final-msgs p').text('La página se ha publicado exitosamente');
+                $('.final-msgs').dialog("open");
+                manageFinalData(PagoResult.fecha);
               }).fail(function(result){
-                window.alert('Algo salio mal!');
+                $('.final-msgs p').text('Algo ha salido al tratar de publicar tu página. Por favor, intenta más tarde');
+                $('.final-msgs').dialog("open");
               });               
             }).fail(function(result){
               // Algo salio mal

@@ -46,14 +46,16 @@
 	<div class="app-cover-finish" style="display: none;">
 		<div>
 			<img src="/img/logo.png" />
-			<h3>Tu sitio web está listo</h3>
-			<p>Puedes verlo en:</p>
-			<p class="url">
-				<a href="" target="_blank" class="siteName">
-					<span></span>.web2b.mx
-				</a>
-			</p>
-			<p>Tu sitio estará disponible durante 14 días.</p>
+			<div class='created'>
+				<h3>Tu sitio web está listo</h3>
+				<p>Puedes verlo en:</p>
+				<p class="url">
+					<a href="" target="_blank" class="siteName">
+						<span></span>.web2b.mx
+					</a>
+				</p>
+				<p>Tu sitio estará disponible durante <span class='daysLeft'>0</span> días.</p>
+			</div>
 			<p class="extra-info">
 				¿Deseas conservar y crecer tu sitio?<br />
 				Conoce nuestros paquetes.
@@ -111,4 +113,11 @@
 			</button>										
 		</div>
 	</div>
+	<div class="dialog final-msgs">
+		<a class="cerrar-final-msgs x-close">
+			<i class="fas fa-times"></i>
+		</a>    
+		<p>
+		</p>		
+	</div> 	
 </div>

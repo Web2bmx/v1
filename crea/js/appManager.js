@@ -91,35 +91,42 @@ export default function appManager() {
 				info_pago: 'N/A',
 				id_pagina: id_pagina,
 				id_paypal: 'N/A'
-			}).done(function (result) {
+			}).done((PagoResult) => {
 				// Crear página
 				$.post("scripts/publicar_pagina.php", {
 					site_name: template_info.selections.siteName.text,
 					contenido: $('#template')[0].outerHTML,
 					title: template_info.selections['inp-content-name'].text,
 					description: template_info.selections['inp-content-slogan'].text
-				}).done(function (result) {
-					window.alert('Complete!');
+				}).done((PublishResult) => {
+					$('.final-msgs p').text('La página se ha publicado exitosamente');
+					$('.final-msgs').dialog("open");
+					manageFinalData(PagoResult.fecha);
 				}).fail(function (result) {
-					window.alert('Algo salio mal!');
+					$('.final-msgs p').text('Algo ha salido al tratar de publicar tu página. Por favor, intenta más tarde');
+					$('.final-msgs').dialog("open");
 				});
 			}).fail(function (result) {
 				// Algo salio mal
 			});
 		});
 		/* SWITCH TEMPLATE */
+		$(".ventana-login").dialog("option", "width", 400);
+		$(".final-msgs").dialog("option", "width", 400);
 		$(".change-page").click((e) => {
 			e.preventDefault();
 			let userId = _ctrl.new_dataManager.getObjFromLocalStorage("web2b_userId");
 			_ctrl.new_PageManager.fillModal(userId, () => {
 				location.reload();
-			});
-			$(".ventana-login").dialog("option", "width", 400);
+			});			
 			$(".ventana-login").dialog("open");
 		});
 		$(".cerrar-ventana").click(function () {
 			$(".ventana-login").dialog("close");
 		});
+		$(".cerrar-final-msgs").click(function () {
+			$(".final-msgs").dialog("close");
+		});		
 		/*NAV BUTTONS*/
 		$(".app-cover-start .next").click(function () {
 			closeAppCover();
@@ -212,15 +219,13 @@ export default function appManager() {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
 			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		} else {
-			$("#app-cover").show();
-			$(".app-cover-start").hide();
-			$(".app-cover-finish").show();
-
 			if(firstTime) {
 				// Hide buttons when already a page is built
 				let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
 				if(actual_page.paquete !== null) {
-					$(".finish").css('visibility','hidden');
+					manageFinalData(actual_page.fecha_fin);
+				} else {
+					$(".created").hide();
 				}
 
 				/* PAYPAL Buttons */ 
@@ -229,8 +234,32 @@ export default function appManager() {
 				let new_paypalBtn2 = new paypalBtn();
 				new_paypalBtn2.init('#paypal-button-container2', 'premium');
 				firstTime = false;				
+				
 			}
+
+			$("#app-cover").show();
+			$(".app-cover-start").hide();
+			$(".app-cover-finish").show();
+
+
 		}
+	};
+	var manageFinalData= function(fecha) {
+		$(".finish").css('visibility','hidden');
+
+		// number of days
+		let today = new Date();
+		let finArr = fecha.split("-");
+		let fin = new Date(Number(finArr[0]), Number(finArr[1])-1,Number(finArr[2]));
+		let diff;
+		if(fin >= today) {
+			diff = Math.ceil((Math.abs(today-fin)) / (1000 * 3600 * 24));
+			$(".daysLeft").text(diff);
+			$(".created").fadeIn(400);
+		} else {
+			diff = 0;
+			$(".created").hide();
+		}	
 	};
 	var topStepMargin = function () {
 		let actual = $(".app-control-step:visible > div"),

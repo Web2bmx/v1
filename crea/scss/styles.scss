@@ -836,3 +836,7 @@ a {
 	@extend .modal-login;
 	@include login-paginas;
 }
+
+.final-msgs{
+	@extend .modal-login;
+}

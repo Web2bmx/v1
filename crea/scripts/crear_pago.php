@@ -87,7 +87,7 @@ if (!empty($_POST) &&
             http_response_code(400);
             exit;
         } else{
-            echo '{"ok": 1, "pagoId": "' . $id . '"}';
+            echo '{"ok": 1, "pagoId": "' . $id . '", "fecha": "' . $fecha->format('Y-m-d') . '"}';
             http_response_code(200);
         }
 
