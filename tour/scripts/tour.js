@@ -72,8 +72,11 @@ function rePositionRocket(callback,animate){
 }
 
 function preguntaValida(selector){
+    var jsonData = localStorage.getItem("web2b");
+    var resp = "";
+    var loc_en = "";
     if( ($(selector + " textarea").length != 0 && $.trim($(selector + " textarea").val()) == "") ||
-    ($(selector + " input").length != 0 && $(selector + " input:checked").length == 0)){
+    ($(selector + " input").length != 0 && $(selector + " input:checked").length == 0 && $(selector + " input.otra").val() == "")){
         if($(selector + " p span").length == 0){
             $(selector + " p").append(spanError); 
         }
@@ -83,8 +86,7 @@ function preguntaValida(selector){
         if(selector == ".primera-pregunta"){
             localStorage.removeItem("web2b");
         }
-        var jsonData = localStorage.getItem("web2b"),
-            resp = "";
+        
 
         if(jsonData == null)
             {
@@ -99,11 +101,14 @@ function preguntaValida(selector){
             resp = $(selector + " textarea").val();
         } else {            
             resp = $(selector + " input:checked").val();
-            if(resp.search(new RegExp("otra"),"i")) {
-                resp = $(selector + " input:checked + input").val();
+            loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
+            if($(selector + " input.otra").val() != "") {
+                resp = $(selector + " input.otra").val();
+                loc_en = "";
             }
         }
-        var loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
+        
+        
         if (loc_en == '' && $(selector + " p").data("type") == 6) {
             $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
                 {
@@ -269,20 +274,7 @@ $(document).ready(function(){
             break;
             case 4:
                 $(".fin").dialog( "open" );
-                //paso4();
             break;
-            case 5:
-                paso5();
-            break;
-            case 6:
-                paso6();
-            break; 
-            case 7:
-                paso7();
-            break;
-            case 8:
-                $(".fin").dialog( "open" );
-            break;                                                                      
         }
     });    
     
@@ -377,6 +369,15 @@ $(document).ready(function(){
             window['paso' + back]();
         }
     });
-    
+    /*GRUPOS DE RESPUESTAS */
+    $(".group_answers").hide();
+    $(".cont_answers>label>input[type='radio']").change(function() {
+        var $this = $(this);
+        $this.parent().parent().parent().find(".group_answers").hide();
+        $this.parent().parent().parent().find(".cont_answers>label").show();
+        $this.parent().next(".group_answers").show().find("input:first").trigger("click");
+        $this.parent().hide();
+        return false;
+    });
 });
 
