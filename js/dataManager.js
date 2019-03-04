@@ -11,8 +11,22 @@ export default function dataManager () {
 			}
 		}
 		return jsonData;
-	};	
-    var saveWeb2bJson = function(jd){
+	};
+	var getPagesFromDB = function() {
+		let userId = getObjFromLocalStorage("web2b_userId");
+		return $.get("scripts/getActualPages.php",{
+			userId: userId
+		}).done(function(result){						
+			if(!result.ok){
+				console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result.mensaje);					
+			}
+			return result.paginas;
+		}).fail(function(result){
+			console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result);					
+			return {};
+		});			
+	};
+  var saveWeb2bJson = function(jd){
 		let strJD = JSON.stringify(jd),
 			userId = getObjFromLocalStorage("web2b_userId"),
 			idSitio = getObjFromLocalStorage("web2b_templateId"),
@@ -50,9 +64,10 @@ export default function dataManager () {
 		//Save selection to object
 		jd.selections = selections;		
 	};
-    return {
-        getObjFromLocalStorage : getObjFromLocalStorage,
-        saveWeb2bJson : saveWeb2bJson,
-        saveSelected : saveSelected
-    };
+	return {
+		getObjFromLocalStorage : getObjFromLocalStorage,
+		saveWeb2bJson : saveWeb2bJson,
+		saveSelected : saveSelected,
+		getPagesFromDB: getPagesFromDB
+	};
 }

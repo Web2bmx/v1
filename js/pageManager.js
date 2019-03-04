@@ -10,9 +10,17 @@ export default function pageManager(){
         paginas = p;
     };
 
-    let getPaginasFromLS = function(){
-        let p = new_Datamanager.getObjFromLocalStorage("web2b_pages");
-        paginas = p;
+    let getPaginas = function() {
+      new_Datamanager.getPagesFromDB().then((p) => {
+            let templateId = new_Datamanager.getObjFromLocalStorage("web2b_templateId");
+            paginas = p.paginas;
+            localStorage.setItem("web2b_pages", p.paginas);
+            p.paginas.forEach((value) => {
+                if(Number(value.idSitio) === templateId) {
+                    localStorage.setItem("web2b_actualPage", JSON.stringify(value));
+                }
+            });                          
+        });               
     };
 
     let fillModal = function(userId, callback){
@@ -57,7 +65,7 @@ export default function pageManager(){
 
     return{
         setPaginasInfoFromExternal: setPaginasInfoFromExternal,
-        getPaginasFromLS: getPaginasFromLS,
+        getPaginas: getPaginas,
         fillModal: fillModal,
         hasPages: hasPages
     };
