@@ -11,7 +11,7 @@ export default function pageManager(){
     };
 
     let getPaginas = function() {
-      new_Datamanager.getPagesFromDB().then((p) => {
+      return new_Datamanager.getPagesFromDB().then((p) => {
             let templateId = new_Datamanager.getObjFromLocalStorage("web2b_templateId");
             paginas = p.paginas;
             localStorage.setItem("web2b_pages", p.paginas);

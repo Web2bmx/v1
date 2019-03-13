@@ -46,7 +46,7 @@
 	<div class="app-cover-finish" style="display: none;">
 		<div>
 			<img src="/img/logo.png" />
-			<div class='created'>
+			<div class='created' style='display: none'>
 				<h3>Tu sitio web está listo</h3>
 				<p>Puedes verlo en:</p>
 				<p class="url">
@@ -55,6 +55,9 @@
 					</a>
 				</p>
 				<p>Tu sitio estará disponible durante <span class='daysLeft'>0</span> días.</p>
+			</div>
+			<div class='caduco' style='display: none'>
+				<h3>Tu sitio web ya no esta disponible</h3>
 			</div>
 			<p class="extra-info">
 				¿Deseas conservar y crecer tu sitio?<br />
@@ -88,7 +91,7 @@
 						<li>Actualizaciones ilimitadas</li>
 					</ul>
 
-					<div id="paypal-button-container" data-total='899' data-desc='Básico'>
+					<div class="finish" id="paypal-button-container" data-total='899' data-desc='Básico'>
 					</div>			
 				</div>
 				<div class="app-cover-finish-package">
@@ -104,7 +107,7 @@
 						<li>Actualizaciones ilimitadas</li>
 					</ul>
 
-					<div id="paypal-button-container2" data-total='1599' data-desc='Premium'>
+					<div class="finish" id="paypal-button-container2" data-total='1599' data-desc='Premium'>
 					</div>	
 				</div>
 			</div>		

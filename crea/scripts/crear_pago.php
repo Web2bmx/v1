@@ -34,7 +34,15 @@ if (!empty($_POST) &&
                     http_response_code(400);
                     exit;
                 }
-                $fecha = new DateTime($fecha_actual);
+                $fecha_guardada = new DateTime($fecha_actual);
+                $hoy = new DateTime();
+                
+                if($fecha_actual < $hoy) {
+                    $fecha = $hoy;
+                } else {
+                    $fecha = $fecha_actual;
+                }
+
                 $fecha->add(new DateInterval('P366D'));
 
                 //insertar informacion de nueva pagina
@@ -44,7 +52,7 @@ if (!empty($_POST) &&
                     `info_pago` = '" . $fila['info_pago'] . " -> " . $info_pago . "',
                     `id_paypal` = '" . $fila['id_paypal'] . " -> " . $id_paypal . "'
                     WHERE 
-                    id = " . $fila['id'];
+                    id = '" . $fila['id'] . "'";
 
             }
 
@@ -81,7 +89,6 @@ if (!empty($_POST) &&
                 '" . $id_paypal . "')";
 
         }
-        
         if($dbh->query($sql2)!==TRUE){ 
             echo '{"ok": 0, "error": "Error al insertar información de nueva página"}';
             http_response_code(400);

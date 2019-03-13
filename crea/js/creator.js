@@ -66,8 +66,9 @@ export default function creator () {
 			$(".app-new-start.dialog").dialog("option", "width", 400);
 			$(".app-new-start.dialog").dialog("open");
 		} else {
-			_this.new_PageManager.getPaginas();
-			if (_this.new_PageManager.hasPages()) $(".change-page").show();
+			_this.new_PageManager.getPaginas().then(() => {
+				if (_this.new_PageManager.hasPages()) $(".change-page").show();
+			});			
 		}
 		$("#single-modal i").on("click", function() {
 			$("#single-modal").fadeOut();

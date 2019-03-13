@@ -33,9 +33,25 @@ export default function paypalBtn() {
       }
   };
   
-	var manageFinalData= function(fecha) {
-		$(".finish").css('visibility','hidden');
+	var manageFinalData= function(fecha, paquete) {
+		$(".app-cover-finish-package:first-child .finish").css('visibility','hidden');
+    $('#paypal-button-container').empty();
+    $('#paypal-button-container').attr("style","");
+    $('#paypal-button-container2').empty();
+    $('#paypal-button-container2').attr("style","");
 
+		if(paquete === 'premium') {
+			let new_paypalBtn2 = new paypalBtn();
+			new_paypalBtn2.init('#paypal-button-container2', 'premium');	
+			$('#paypal-button-container2').css('margin-bottom','0');
+		} else {
+			let new_paypalBtn1 = new paypalBtn();
+			new_paypalBtn1.init('#paypal-button-container', 'basico');
+			let new_paypalBtn2 = new paypalBtn();
+			new_paypalBtn2.init('#paypal-button-container2', 'premium');
+			$('#paypal-button-container').css('margin-bottom','0');
+			$('#paypal-button-container2').css('margin-bottom','0');
+    }
 		// number of days
 		let today = new Date();
 		let finArr = fecha.split("-");
@@ -47,9 +63,10 @@ export default function paypalBtn() {
 			$(".created").fadeIn(400);
 		} else {
 			diff = 0;
+			$(".caduco").fadeIn(400);
 			$(".created").hide();
 		}	
-  };
+	};
   
   let init = (element, tipo) => {
     this.element = element;
@@ -155,7 +172,7 @@ export default function paypalBtn() {
               }).done((PublishResult) => {
                 $('.final-msgs p').text('La página se ha publicado exitosamente');
                 $('.final-msgs').dialog("open");
-                manageFinalData(PagoResult.fecha);
+                manageFinalData(PagoResult.fecha, paquete);
               }).fail(function(result){
                 $('.final-msgs p').text('Algo ha salido al tratar de publicar tu página. Por favor, intenta más tarde');
                 $('.final-msgs').dialog("open");
