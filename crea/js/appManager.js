@@ -1,9 +1,7 @@
-import validator from "./validator";
 import paypalBtn from './pp';
 
 export default function appManager() {
 	var _ctrl = null;
-	var new_validator = new validator();
 	var init = function (_that) {
 		_ctrl = _that;
 	};
@@ -41,42 +39,7 @@ export default function appManager() {
 		$(window).resize(function () {
 			centerNav();
 		});
-		/* ON NEW PAGE */
-		$("[name='start']").on("click", function () {
-			$(".form-error").hide();
-			if ($("#nombrePagina").val().trim() == "" ||
-				$("#correo").val().trim() == "" ||
-				$("#password").val().trim() == "") {
-				$(".empty-fields").css("display", "block");
-			} else if (!new_validator.isValidDomain($("#nombrePagina").val().trim().toLowerCase())) {
-				$(".name-invalid").show();
-			} else if (!new_validator.isEmail($("#correo").val())) {
-				$(".not-email").css("display", "block");
-			} else if (!new_validator.validPassword($("#password").val())) {
-				$(".password-invalid").css("display", "block");
-			} else {
-				_ctrl.new_dataManager.saveSelected(_ctrl.jd, 'inp-content-name', $("#nombrePagina").val().trim(), 'text');
-				$.post("scripts/crear_usuario.php", {
-					correo: $("#correo").val().trim(),
-					password: $("#password").val(),
-					info: JSON.stringify(_ctrl.jd)
-				}).done(function (result) {
-					if (!result.ok) {
-						$(".otherMsgs").html(result.error);
-						$(".otherMsgs").css("display", "block");
-					} else {
-						$(".app-new-start.dialog").dialog('close');
-						_ctrl.new_templateManager.startTemplateProcess(result);
-					}
-				}).fail(function (result) {
-					response = JSON.parse(result.responseText);
-					$(".invalid-response").text("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + response.mensaje);
-					$(".invalid-response").css("display", "block");
-				});
-
-			}
-
-		});
+		
 		$(".finish").on("click", function () {
 			// _ctrl.current_step --;
 			// $("#app-cover").hide();
@@ -163,12 +126,12 @@ export default function appManager() {
 	};
 	var setAppControls = function () {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function () {
-			_ctrl.new_templateManager.updateTemplate();
+			_ctrl.new_templateManager.updateContent();
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
-			if (!$(e.currentTarget).attr('pattern') || new_validator.isValidinput($(e.currentTarget))) {
-				_ctrl.new_templateManager.updateTemplate();
+			if (!$(e.currentTarget).attr('pattern') || _ctrl.new_validator.isValidinput($(e.currentTarget))) {
+				_ctrl.new_templateManager.updateContent();
 				$(".form-error", $(e.currentTarget).parent()).hide();
 			} else {
 				$(".form-error", $(e.currentTarget).parent()).show();
@@ -187,7 +150,7 @@ export default function appManager() {
 			$("aside", this).addClass("thumb-selected");
 			$("[name^='inp-design']").removeAttr("checked");
 			$("input", this).attr("checked", "checked");
-			_ctrl.new_templateManager.updateTemplate();
+			_ctrl.new_templateManager.loadTemplate();
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {

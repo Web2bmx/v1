@@ -1,7 +1,6 @@
 import creator from "./creator";
-
-var new_template = new creator();
-new_template.validation();
+var new_creator = new creator();
+new_creator.validation();
 $(document).ready(function() {	
-	new_template.init();
+	new_creator.init();
 });

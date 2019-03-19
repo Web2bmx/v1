@@ -8,8 +8,7 @@ function getPages($dbh, $id)
         LEFT JOIN pagos ON (info_paginas.id = pagos.id_pagina) WHERE IdUsuario = '$id'";
     $r = $dbh->query($sql);
     $paginas = [];
-
-    if ($r->num_rows > 0) {
+    if ((is_object($r)) && ($r->num_rows > 0)) {
         while ($fila = $r->fetch_assoc()) {
             $pagina = [];
             $pagina["idSitio"] = $fila["id"];
