@@ -53,37 +53,41 @@ export default function templateManager () {
 		_ctrl.new_appManager.topStepMargin();
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
         _ctrl.new_colorManager.updateColors($template);
-		/*Content & Contacto*/
-        $("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
-			let $this = $(this),
-				i_id = $this.attr("id"),
-				v_id = i_id.replace("inp", "val");
+		updateTexts($template, selections);
+		updateRemoveControls($template, selections);
+		updateImages($template, selections);
+		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
+		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
+		
+	};
+	var updateTexts = function ($template, selections) {
+		if (_ctrl.sessionStatus == "START SESSION") {
+			$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
+				let $this = $(this);
+				let i_id = $this.attr("id");
+				let v_id = i_id.replace("inp", "val");
+				selections[i_id] = {};	
 				if (i_id == "inp-content-slogan") {
-					if (!selections[i_id]) {
-						selections[i_id] = {};
-						let web2bTemplate = _ctrl.new_dataManager.getObjFromLocalStorage("web2b");
-						//console.log(web2bTemplate);
-						let slogan_from_tour = "";
-						for (let key in web2bTemplate.respuestas) {
-							if(web2bTemplate.respuestas[key].tipo == 3) {
-								slogan_from_tour = web2bTemplate.respuestas[key].respuesta;
-								break;
-							}
+					let slogan_from_tour = "";
+					for (let key in _ctrl.jd.respuestas) {
+						if(_ctrl.jd.respuestas[key].tipo == 3) {
+							slogan_from_tour = _ctrl.jd.respuestas[key].respuesta;
+							break;
 						}
-						_ctrl.new_dataManager.saveSelected(_ctrl.jd,"inp-content-slogan",slogan_from_tour,'text');
 					}
-				} else {
-					selections[i_id] = selections[i_id] || {};
-				}
-				
-			if (($this.val() != "") || (selections[i_id].text != undefined)) {
-				if (($this.val() != "")) {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,$this.val(),'text');
-					$template.find("#" + v_id).show().closest(".footer-column").show();
-				} else {
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,"inp-content-slogan",slogan_from_tour,'text');
 					$this.val(selections[i_id].text);
-
+					$template.find("#" + v_id).html(selections[i_id].text);
 				}
+			});	
+		}
+		if (_ctrl.sessionStatus == "RESUME SESSION") {
+			$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
+				let $this = $(this);
+				let i_id = $this.attr("id");
+				let v_id = i_id.replace("inp", "val");
+				$this.val(selections[i_id].text);
+				console.log(i_id + " = " + selections[i_id].text);
 				switch (i_id) {
 					case "inp-contact-email" :
 						$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id].text + "'>" + selections[i_id].text + "</a>");
@@ -104,29 +108,55 @@ export default function templateManager () {
 						$template.find("#" + v_id).html(selections[i_id].text);
 						break;
 				}
-			} else {
-				if ($this.hasClass("optional")) {
-					if ($(".app-control-step:eq(" + (_ctrl.current_step) + ")").has($this).length > 0) {
-						if (_ctrl.lastKeyPressed == 8) {
-							$template.find("#" + v_id).html($this.val());
-						}
-					}
-					if ($(".app-control-step:eq(" + (_ctrl.current_step - 1) + ")").has($this).length > 0) {
-						$template.find("#" + v_id).hide();
+			});
+			$template.find(".footer-column:not(:has(li:visible))").hide();
+		}
+		if (_ctrl.sessionStatus == "UPDATE SESSION") {
+			$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
+				let $this = $(this);
+				let i_id = $this.attr("id");
+				let v_id = i_id.replace("inp", "val");
+				if ($this.val() != "") {
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,$this.val(),'text');
+					$template.find("#" + v_id).show().closest(".footer-column").show();
+					switch (i_id) {
+						case "inp-contact-email" :
+							$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id].text + "'>" + selections[i_id].text + "</a>");
+							break;
+						case "inp-contact-map" :
+							$template.find("#val-contact-map").html(selections[i_id].text);
+							break;	
+						case "inp-contact-facebook" :
+							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + selections[i_id].text + '</a>');
+							break;	
+						case "inp-contact-twitter" :
+							$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + selections[i_id].text + '</a>');
+							break;	
+						case "siteName":
+							$(".siteName span").text(selections[i_id].text);
+							$(".siteName").attr("href","http://" + selections[i_id].text + ".web2b.mx");
+						default : 
+							$template.find("#" + v_id).html(selections[i_id].text);
+							break;
 					}
 				} else {
-					$template.find("#" + v_id).html($this.attr("placeholder"));
+					if ($this.hasClass("optional")) {
+						if ($(".app-control-step:eq(" + (_ctrl.current_step) + ")").has($this).length > 0) {
+							if (_ctrl.lastKeyPressed == 8) {
+								$template.find("#" + v_id).html($this.val());
+							}
+						}
+						if ($(".app-control-step:eq(" + (_ctrl.current_step - 1) + ")").has($this).length > 0) {
+							$template.find("#" + v_id).hide();
+						}
+					} else {
+						$template.find("#" + v_id).html($this.attr("placeholder"));
+					}
 				}
-			}
-		});
-        $template.find(".footer-column:not(:has(li:visible))").hide();
-		/**/
-		updateRemoveControls($template, selections);
-		updateImages($template, selections);
-		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
-		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
-		
-	};
+			});
+			$template.find(".footer-column:not(:has(li:visible))").hide();
+		}
+	}
 	var updateRemoveControls = function ($template, selections) {
 		if (_ctrl.sessionStatus == "START SESSION") {
 			$("[id^='inp-rem-']").each(function() {
