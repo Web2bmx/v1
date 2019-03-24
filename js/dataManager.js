@@ -64,10 +64,18 @@ export default function dataManager () {
 		//Save selection to object
 		jd.selections = selections;		
 	};
+	var setDataObjects = function(data, jd){
+		localStorage.removeItem("web2b");
+		localStorage.setItem("web2b_templateId", data.idSitio);
+		localStorage.setItem("web2b_userId", data.userId);		
+		localStorage.setItem("web2b_template", JSON.stringify(jd));
+		localStorage.setItem("web2b_pages", JSON.stringify(data.paginas));
+	};
 	return {
 		getObjFromLocalStorage : getObjFromLocalStorage,
 		saveWeb2bJson : saveWeb2bJson,
 		saveSelected : saveSelected,
-		getPagesFromDB: getPagesFromDB
+		getPagesFromDB: getPagesFromDB,
+		setDataObjects: setDataObjects
 	};
 }

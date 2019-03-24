@@ -53,7 +53,10 @@ export default function userValidator () {
                         $(".otherMsgs").css("display", "block");
                     } else {
                         $(".app-new-start.dialog").dialog('close');
-                        _ctrl.new_templateManager.startTemplateProcess(result);
+                        _ctrl.new_dataManager.setDataObjects(result, _ctrl.jd);
+                        if(result.paginas.length > 1) {
+                            $(".change-page").show();
+                        }
                     }
                 }).fail(function (result) {
                     response = JSON.parse(result.responseText);

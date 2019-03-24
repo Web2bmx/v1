@@ -3,14 +3,6 @@ export default function templateManager () {
 	var init = function(_that) {
         _ctrl = _that;
     }
-    var startTemplateProcess = function(data){
-        localStorage.removeItem("web2b");
-		localStorage.setItem("web2b_templateId", data.idSitio);
-		localStorage.setItem("web2b_userId", data.userId);		
-		localStorage.setItem("web2b_template", JSON.stringify(_ctrl.jd));
-		localStorage.setItem("web2b_pages", JSON.stringify(data.paginas));
-		if(data.paginas.length > 1) $(".change-page").show();
-	};
     var loadTemplate = function() {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
@@ -245,7 +237,6 @@ export default function templateManager () {
 	return {
 		init : init,
 		loadTemplate : loadTemplate,
-        updateContent: updateContent,
-        startTemplateProcess : startTemplateProcess
+        updateContent: updateContent
     };
 }

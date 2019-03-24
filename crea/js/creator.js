@@ -11,7 +11,12 @@ import userValidator from "./userValidator";
 
 export default function creator () {
 	var _this = this;
-	_this.sessionStatus = "START SESSION";/*START SESSION, RESUME SESSION, UPDATE SESSION*/
+	_this.sessionStatus = "START SESSION";
+	//Esta variable determina el estatus de la sesión y tiene tres valores:
+	//START SESSION quiere decir que el objeto web2b_template no ha sido creado, por lo tanto es una sesión completamente nueva
+	//RESUME SESSION quiere decir que el objeto web2b_template sí existe, por lo tanto se está retomando una sesión anterior
+	//UPDATE SESSION se asigna al final de la función updateContent solo la primera vez que esta corre, esto quiere decir que al inicio de la sesión, 
+	//una vez que el template se ha cargado y el contenido se ha actualizado por primera vez, el estatus siempre será UPDATE SESSION
 	_this.current_step = 0;
 	_this.lastKeyPressed = 0;
 	_this.jd = {};
