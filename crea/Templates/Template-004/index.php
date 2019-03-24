@@ -24,7 +24,7 @@
 				<?php include_once("../php/TemplateHero4.php"); ?>
 				<?php include_once("../php/TemplateItems3.php"); ?>	
 				<?php include_once("../php/TemplateGaleria1.php"); ?>	
-				<?php include_once("../php/TemplateAboutus2.php"); ?>	
+				<?php include_once("../php/TemplateAboutus1.php"); ?>	
 				<?php include_once("../php/TemplateCta3.php"); ?>
 				<?php include_once("../php/TemplateMap1.php"); ?>	
 				<?php include_once("../php/TemplateFooter3.php"); ?>

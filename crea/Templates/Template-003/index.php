@@ -22,7 +22,7 @@
 			<main>
 				<?php include_once("../php/TemplateMenu2.php"); ?>
 				<?php include_once("../php/TemplateHero3.php"); ?>
-				<?php include_once("../php/TemplateAboutus2.php"); ?>	
+				<?php include_once("../php/TemplateAboutus1.php"); ?>	
 				<?php include_once("../php/TemplateCta2.php"); ?>
 				<?php include_once("../php/TemplateItems3.php"); ?>	
 				<?php include_once("../php/TemplateMap1.php"); ?>	
