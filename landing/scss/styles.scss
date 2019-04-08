@@ -219,7 +219,7 @@ main {
 }
 
 #hero h1 {
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: normal;
 	margin-bottom: 0;
 }
@@ -254,8 +254,9 @@ main {
 	padding: 2rem 0;
 	background-color: #ffffff;
 	color: #555;
-	font-size: 1.8rem;
-	text-align: center;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5rem;
 }
 
 #list-steps {
@@ -396,6 +397,7 @@ footer {
 	color: #727a82;
 	font-size: 0.8rem;
 	text-align: center;
+	clear: both;
 }
 
 /**/
@@ -432,7 +434,7 @@ footer {
 	#list-steps {
 		li {
 			width: 42%;
-			height: 26rem;
+			height: 16rem;
 			margin: 0 4% 2rem 4%;
 			float: left;
 		}
@@ -442,7 +444,7 @@ footer {
 	}
 	/**/
 	#list-services {
-		font-size: 1.6rem;
+		font-size: 1.1rem;
 		> li {
 			margin: 1rem 0;
 			> {
@@ -451,7 +453,7 @@ footer {
 					height: auto;
 				}
 				h3 {
-					font-size: 2rem;
+					font-size: 1.2rem;
 				}
 			}
 		}
@@ -462,6 +464,7 @@ footer {
 		margin: 0 4% 2rem 4%;
 		padding: 0;
 		float: left;
+		overflow: hidden;
 	}
 	#social {
 		font-size: 0.8em;
@@ -534,6 +537,7 @@ footer {
 		padding: 6rem 0;
 	}
 	#list-steps {
+
 		li {
 			width: 21%;
 			height: auto;
@@ -552,7 +556,8 @@ footer {
 		padding: 2rem 0 0 0;
 	}
 	#list-services {
-		font-size: 1rem;
+		font-size: 1rem; 
+
 		> li {
 			width: 44%;
 			margin: 0 2% 3rem 2%;
@@ -564,10 +569,11 @@ footer {
 					float: left;
 				}
 				h3 {
-					font-size: 1.4rem;
+					font-size: 1.4rem; 
 				}
 				p {
 					font-size: 1rem;
+					height: 90px;
 				}
 			}
 		}
@@ -610,6 +616,8 @@ footer {
 		width: auto;
 		margin-bottom: 0;
 		float: left;
+		margin-top: 10px;
+
 		span {
 			position: relative;
 			top: -0.4rem;

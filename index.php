@@ -62,7 +62,8 @@
 							<span></span><span></span><span></span>
 							<div id="menu">
 								<ul>
-									<li><a href="#hero">Home</a></li>
+									<li><a href="#hero">Inicio</a></li>
+									<li><a href="/blog">Blog</a></li>
 									<li><a href="#steps">¿Cómo funciona?</a></li>
 									<li><a href="#services">Nuestros servicios</a></li>
 									<li><a href="/tour">Comenzar</a></li>
@@ -149,7 +150,8 @@
 						<menu>
 							<h6>Menú</h6>
 							<nav>
-								<li><a href="#hero">Web2b</a></li>
+								<li><a href="#hero">Inicio</a></li>
+								<li><a href="/blog">Blog</a></li>
 								<li><a href="#steps">¿Cómo funciona?</a></li>
 								<li><a href="#services">Nuestros servicios</a></li>
 								<li><a href="/tour">Comenzar</a></li>
@@ -159,16 +161,16 @@
 						<menu>
 							<h6>Blog</h6>
 							<nav>
-								<li><a href="http://web2b.mx/2018/01/06/como-llegar-al-corazon-de-tus-clientes/">¿Cómo llegar al corazón de tus clientes?</a></li>
-								<li><a href="http://web2b.mx/2017/12/06/3-estrategias-para-aprovechar-en-internet-en-un-negocio-local/">3 estrategias para aprovechar en internet en un negocio local</a></li>
-								<li><a href="http://web2b.mx/2017/11/28/3-consejos-para-potencializar-digitalmente-tu-negocio/">3 consejos para potencializar digitalmente tu negocio</a></li>
+								<li><a href="/blog/como-puedo-hacer-yo-mismo-mi-pagina-web/">¿Cómo puedo hacer yo mismo mi página web?</a></li>
+								<li><a href="/blog/como-puedo-evaluar-cual-es-el-mejor-servicio-para-crear-mi-propia-pagina-web/">¿Cómo puedo evaluar cuál es el mejor servicio para crear mi propia página web?</a></li>
+								<li><a href="/blog/quien-es-la-persona-indicada-para-ayudarme-a-crear-mi-pagina-web/">¿Quién es la persona indicada para ayudarme a crear mi página web?</a></li>
 							</nav>
 						</menu>	
 						<div id="social">
 							<a href="https://www.facebook.com/web2bmx/" target="_blank"><img src="landing/img/facebook.png" /> <span>Síguenos en Facebook</span></a>
 						</div>
 						<div id="copyright">
-							<p>&copy;2018 Web2b<br />Todos los derechos reservados</p>
+							<p>&copy;2019 Web2b<br />Todos los derechos reservados</p>
 						</div>
 					</div>
 				</footer>
