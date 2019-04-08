@@ -10,6 +10,4 @@
 
 #### Agregar control para galería [Antonio]
 
-#### Aventa el codigo a PROD [Carlos]
-
-#### Mejorar templates [Carlos]
+#### Mejorar templates [Carlos - 20%]
