@@ -1,0 +1,36 @@
+.inputWihIcons{
+    border-radius: 10px;
+    background-color: #EEE;
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 1px solid #DDD;
+
+    *{
+        box-sizing: border-box;
+    }
+
+    [type="text"],
+    [type="email"],
+    [type="password"]{
+        padding: 15px;
+        background-color: white;
+        float: left;
+        width: calc(100% - 62px);
+        border: none;
+        outline: none;
+        height: 55px;
+    }
+
+    i{
+        line-height: 1.15;
+        font-size: 22px;
+        padding: 15px;
+        display: block;
+        float: left;
+        color: #999;
+        width: 62px;
+        border-right: 1px solid #DDD;
+        text-align: center;
+        height: 55px;
+    }		
+}

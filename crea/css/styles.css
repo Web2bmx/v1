@@ -1,202 +1,1536 @@
+/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+/* Document
+       ========================================================================== */
+/**
+     * 1. Correct the line height in all browsers.
+     * 2. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+     */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/* Sections
+       ========================================================================== */
+/**
+     * Remove the margin in all browsers (opinionated).
+     */
+body {
+  margin: 0;
+}
+
+/**
+     * Add the correct display in IE 9-.
+     */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+     * Correct the font size and margin on `h1` elements within `section` and
+     * `article` contexts in Chrome, Firefox, and Safari.
+     */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+figcaption,
+figure {
+  display: block;
+}
+
+/**
+     * Add the correct margin in IE 8.
+     */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+     * 1. Add the correct box sizing in Firefox.
+     * 2. Show the overflow in Edge and IE.
+     */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+     * Add the correct display in IE.
+     */
+main {
+  display: block;
+}
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Links
+       ========================================================================== */
+/**
+     * 1. Remove the gray background on active links in IE 10.
+     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+     */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/* Text-level semantics
+       ========================================================================== */
+/**
+     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+     */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+     */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+     * Add the correct font weight in Chrome, Edge, and Safari.
+     */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+     * Add the correct font style in Android 4.3-.
+     */
+dfn {
+  font-style: italic;
+}
+
+/**
+     * Add the correct background and color in IE 9-.
+     */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+     * Add the correct font size in all browsers.
+     */
+small {
+  font-size: 80%;
+}
+
+/**
+     * Prevent `sub` and `sup` elements from affecting the line height in
+     * all browsers.
+     */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+     * Add the correct display in iOS 4-7.
+     */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+     * Remove the border on images inside links in IE 10-.
+     */
+img {
+  border-style: none;
+}
+
+/**
+     * Hide the overflow in IE.
+     */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+       ========================================================================== */
+/**
+     * 1. Change the font styles in all browsers (opinionated).
+     * 2. Remove the margin in Firefox and Safari.
+     */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+     * Show the overflow in IE.
+     */
+button {
+  overflow: visible;
+}
+
+/**
+     * Remove the inheritance of text transform in Edge, Firefox, and IE.
+     * 1. Remove the inheritance of text transform in Firefox.
+     */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+     *    controls in Android 4.
+     * 2. Correct the inability to style clickable types in iOS and Safari.
+     */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  /**
+       * Remove the inner border and padding in Firefox.
+       */
+  /**
+       * Restore the focus styles unset by the previous rule.
+       */
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+     * Show the overflow in Edge.
+     */
+input {
+  overflow: visible;
+}
+
+/**
+     * 1. Add the correct box sizing in IE 10-.
+     * 2. Remove the padding in IE 10-.
+     */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+     * Correct the cursor style of increment and decrement buttons in Chrome.
+     */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+     * 1. Correct the odd appearance in Chrome and Safari.
+     * 2. Correct the outline style in Safari.
+     */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+  /**
+       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+       */
+}
+
+[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+     * 1. Correct the inability to style clickable types in iOS and Safari.
+     * 2. Change font properties to `inherit` in Safari.
+     */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/**
+     * Correct the padding in Firefox.
+     */
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+     * 1. Correct the text wrapping in Edge and IE.
+     * 2. Correct the color inheritance from `fieldset` elements in IE.
+     * 3. Remove the padding so developers are not caught out when they zero out
+     *    `fieldset` elements in all browsers.
+     */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  color: inherit;
+  /* 2 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+     * 1. Add the correct display in IE 9-.
+     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+     * Remove the default vertical scrollbar in IE.
+     */
+textarea {
+  overflow: auto;
+}
+
+/* Interactive
+       ========================================================================== */
+/*
+     * Add the correct display in Edge, IE, and Firefox.
+     */
+details {
+  display: block;
+}
+
+/*
+     * Add the correct display in all browsers.
+     */
+summary {
+  display: list-item;
+}
+
+/*
+     * Add the correct display in IE 9-.
+     */
+menu {
+  display: block;
+}
+
+/* Scripting
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+canvas {
+  display: inline-block;
+}
+
+/**
+     * Add the correct display in IE.
+     */
+template {
+  display: none;
+}
+
+/* Hidden
+       ========================================================================== */
+/**
+     * Add the correct display in IE 10-.
+     */
+[hidden] {
+  display: none;
+}
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 10, 2018, 1:18:48 PM
+    Author     : cmend
+*/
+.ui-dialog-titlebar {
+  display: none;
+}
+
+.ui-widget.ui-widget-content {
+  border: none;
+  padding: 0;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+@media (min-width: 660px) {
+  .ui-widget.ui-widget-content {
+    max-width: 640px;
+    max-height: 760px;
+  }
+}
+
+.ui-dialog .ui-dialog-content.dialog {
+  max-height: 760px;
+  max-width: 100% !important;
+  z-index: 1003;
+}
+
+@media (min-width: 660px) {
+  .ui-dialog .ui-dialog-content.dialog {
+    max-width: 640px !important;
+    max-height: 760px !important;
+  }
+}
+
+@media (min-width: 1040px) {
+  .ui-dialog .ui-dialog-content.dialog {
+    max-height: 600px !important;
+  }
+}
+
+.ui-widget-overlay {
+  background: #000;
+  opacity: .5;
+  z-index: 1002;
+}
+
+.modal-login, .app-new-start, .ventana-login, .final-msgs {
+  margin: 20px;
+}
+
+.modal-login *, .app-new-start *, .ventana-login *, .final-msgs * {
+  box-sizing: border-box;
+}
+
+.modal-login img, .app-new-start img, .ventana-login img, .final-msgs img {
+  display: block;
+  height: auto;
+  margin: 1em auto;
+  max-width: 50%;
+  width: 10em;
+}
+
+.modal-login input, .app-new-start input, .ventana-login input, .final-msgs input, .modal-login button, .app-new-start button, .ventana-login button, .final-msgs button {
+  width: 100%;
+}
+
+.modal-login p, .app-new-start p, .ventana-login p, .final-msgs p {
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.modal-login [type="button"], .app-new-start [type="button"], .ventana-login [type="button"], .final-msgs [type="button"] {
+  font-size: 23px;
+  padding: 15px;
+}
+
+.modal-login .x-close, .app-new-start .x-close, .ventana-login .x-close, .final-msgs .x-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #CCC;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-login .x-close:hover, .app-new-start .x-close:hover, .ventana-login .x-close:hover, .final-msgs .x-close:hover {
+  color: #999;
+}
+
+/*Botones*/
+button,
+.boton,
+a.boton,
+a.boton:visited a.boton:link,
+input[type='button'] {
+  padding: 10px;
+  background-color: #cc2880;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.inputWihIcons {
+  border-radius: 10px;
+  background-color: #EEE;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #DDD;
+}
+
+.inputWihIcons * {
+  box-sizing: border-box;
+}
+
+.inputWihIcons [type="text"],
+.inputWihIcons [type="email"],
+.inputWihIcons [type="password"] {
+  padding: 15px;
+  background-color: white;
+  float: left;
+  width: calc(100% - 62px);
+  border: none;
+  outline: none;
+  height: 55px;
+}
+
+.inputWihIcons i {
+  line-height: 1.15;
+  font-size: 22px;
+  padding: 15px;
+  display: block;
+  float: left;
+  color: #999;
+  width: 62px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  height: 55px;
+}
+
+.form-error {
+  color: red;
+  display: none;
+  font-size: 12px;
+  margin: 10px 0;
+  text-align: center;
+}
+
 /**/
 body {
-	margin: 0;
-	padding: 0;
-	background-color: #666;
-	font-family: 'Open Sans', sans-serif;
-	overflow: hidden;
+  background-color: #666;
+  color: #444;
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
 }
+
+body.init {
+  overflow: hidden;
+}
+
+body, input, textarea, select, button {
+  font-family: 'Open Sans', sans-serif;
+}
+
 ul, ol, nav {
-	padding: 0;
-	list-style-type: none;
+  list-style-type: none;
+  padding: 0;
 }
+
 a {
-	color: #000000;
-	text-decoration: none;
-	cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
-a:link { color: #000000; }
-a:visited { color: #000000; }
-a:hover { color: #000000; }
-a:active { color: #000000; }
+
 /**/
 .template {
-	display: none;
+  display: none;
 }
-/**/
-main {
-	width: 100%; height: 100%;
-	display: block; overflow: hidden;
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
+
+#template-cont {
+  background-color: #FFFFFF;
+  color: #000000;
+  display: block;
+  height: auto;
+  width: 100%;
 }
-#app-control {
-	width: 100%; height: 95%;
-	background-color: #EFEFEF;
-	display: block; overflow-y: scroll;
-	position: absolute;
-	top: 5%; right: 0; bottom: 0; left: 0;
-	z-index: 2;
+
+#app {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 101;
 }
-#app-control>.app-control-step {
-	width: 100%; height: auto;
-	padding-bottom: 5em;
-	text-align: center;
-	display: block; overflow: hidden;
-	outline: 1px solid #cc2880;
-}
-#app-control>div.appview {
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-}
-#app-control>div>div {
-	width: 80%;
-	margin: auto;
-}
-#app-control>div>div input[type="text"] {
-	width: 92%; height: auto;
-	margin: 0 0 5% 0;
-	padding: .5em 4%;
-	font-size: 1.2em;
-}
-#app-control>div>div textarea {
-	width: 96%; height: 8em;
-	margin: 0 0 5% 0;
-	padding: .5em 2%;
-	font-size: 1em;
-}
-#app-control-palettes {
-	text-align: left;
-}
-.palette-color {
-	width: 1em; height: 1em;
-	display: inline-block; float: left; overflow: hidden;
-}
-.img-thumb {
-	width: 25%; height: auto;
-	float: left; overflow: visible;
-}
-.img-thumb>img {
-	width: 100%; height: auto;
-	display: block;
-	cursor: pointer;
-	position: relative; z-index: 0;
-}
-.img-thumb>img.thumb-selected {
-	outline: 3px solid blue;
-	z-index: 2;
-}
-/**/
-#control-view-nav {
-	width: 100%; height: auto;
-	text-align: center;
-	display: block; overflow: hidden;
-	position: fixed; z-index: 1000;
-	top: auto; right: 0; bottom: 0; left: auto;
-}
-#control-view-nav>a {
-	width: 50%; height: auto;
-	padding: 1em 0;
-	background-color: #666;
-	color: #FFF;
-	vertical-align: middle;
-	display: inline-block; overflow: hidden;
-}
-/**/
-#app-preview {
-	width: 100%; height: 95%;
-	display: none; overflow: hidden;
-	position: fixed;
-	top: 5%; right: 0; bottom: 0; left: 0;
-	z-index: 0;
-}
-#app-preview>div {
-	width: 80%; height: auto;
-	padding: 5% 10% 5% 10%;
-	display: block; overflow: hidden;
-}
-/**/
-#app-preview {
-	width: 100%; height: 95%;
-	display: block; overflow: hidden;
-	position: fixed;
-	top: 5%; right: 0; bottom: 0; left: 0;
-	z-index: 1;
-}
-#app-preview>iframe {
-	width: 100%; height: 100%;
-	display: block; overflow-y: scroll;
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-	border: none;
-}
-/**/
-#app-switch {
-	width: 100%; height: 5%;
-	background-color: #666;
-	display: block; overflow: hidden;
-	position: fixed;
-	top: 0; right: 0; bottom: 95%; left: 0;
-}
-a[id^='switch'] {
-	color: #FFF;
-	text-align: center;
-	display: block;
-}
+
 /**/
 #app-cover {
-	width: 100%; height: 100%;
-	background-color: rgba(255, 255, 255, .95);
-	display: block; overflow-y: scroll;
-	position: fixed; z-index: 1001;
-	top: 0; right: 0; bottom: 0; left: 0;
+  background-color: white;
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1002;
+  overflow-y: scroll;
 }
-#app-cover>div {
-	width: 80%; height: auto;
-	margin: 3em auto;
-	text-align: center;
-	display: block; overflow: hidden;
+
+@media (min-width: 1040px) {
+  #app-cover {
+    /*overflow: hidden;*/
+  }
 }
-#app-cover input[type='button'] {
-	padding: 1em;
-	background-color: #cc2880;
-	color: #FFFFFF;
-	border: none;
-	cursor: pointer;
+
+#app-cover > div {
+  display: block;
+  height: auto;
+  margin: 4em auto;
+  overflow: hidden;
+  text-align: center;
+  width: 80%;
 }
-.app-cover-finish-package {
-	margin: 1em 0;
-	padding: 2em;
-	border: 1px dotted #ADADAD;
+
+#app-cover label {
+  display: block;
+  margin-bottom: 15px;
 }
+
+#app-cover .control-design-thumb {
+  float: left;
+  padding: 5px 10px;
+  overflow: visible;
+  box-sizing: border-box;
+  width: 50%;
+  cursor: pointer;
+}
+
+@media (min-width: 660px) {
+  #app-cover .control-design-thumb {
+    width: 200px;
+  }
+}
+
+#app-cover .control-design-thumb:hover {
+  background-color: #EEE;
+}
+
+#app-cover .control-design-thumb aside {
+  overflow: hidden;
+  width: 180px;
+  height: 180px;
+  max-width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+#app-cover .control-design-thumb img {
+  display: block;
+  height: 100%;
+}
+
+#app-cover .app-cover-start {
+  width: 100%;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-start {
+    width: 600px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-start {
+    width: 1000px;
+  }
+}
+
+#app-cover .app-cover-start img.logo,
+#app-cover .app-cover-start .change-page {
+  position: absolute;
+}
+
+#app-cover .app-cover-start img.logo {
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+
+#app-cover .app-cover-start .change-page {
+  top: 30px;
+  right: 20px;
+  color: #9b035a;
+}
+
+#app-cover .app-cover-start .thumb-selected + i::before {
+  content: "\f192";
+}
+
+#app-cover .app-cover-start .control-desing-cont {
+  overflow: hidden;
+}
+
+#app-cover .app-cover-start .next {
+  margin-top: 100px;
+}
+
+#app-cover .app-cover-finish > div > img {
+  width: 100px;
+}
+
+#app-cover .app-cover-finish > div .extra-info {
+  display: block;
+  font-size: 14px;
+  line-height: 24px;
+  margin: 25px 0;
+}
+
+#app-cover .app-cover-finish h3 {
+  color: #58595B;
+  font-size: 28px;
+  margin-bottom: 0;
+}
+
+#app-cover .app-cover-finish p {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 30px;
+}
+
+#app-cover .app-cover-finish .url .siteName {
+  color: #cc2880;
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+#app-cover .app-cover-finish .paquetes {
+  overflow: hidden;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package {
+  width: 100%;
+  margin: 1em 0;
+  padding: 1.7em;
+  float: left;
+  background-color: #9E1F63;
+  color: white;
+  box-sizing: border-box;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-finish .app-cover-finish-package {
+    width: calc(50% - 20px);
+    margin: 1em 10px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-finish .app-cover-finish-package {
+    width: calc(33.33% - 40px);
+    margin: 1em 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-cover .app-cover-finish .app-cover-finish-package {
+    width: calc(33.33% - 60px);
+    margin: 1em 30px;
+  }
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package hr {
+  width: 10%;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package .price {
+  display: block;
+  font-weight: bold;
+  font-size: 50px;
+  margin-top: 40px;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .price {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .price {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .price {
+    font-size: 80px;
+  }
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package .price + span {
+  margin-bottom: 40px;
+  display: block;
+  font-size: 14px;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package ul {
+  text-decoration: none;
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 13px;
+  height: 70px;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package .finish {
+  background: none;
+  width: 100%;
+  border-radius: 0;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 2px;
+  cursor: pointer;
+  line-height: 48px;
+  min-height: 50px;
+  margin-bottom: 0px;
+}
+
+@media only screen and (min-width: 660px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 730px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (min-width: 1040px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+    margin-bottom: 0px;
+  }
+}
+
+@media only screen and (min-width: 1160px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (min-width: 1610px) {
+  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+    margin-bottom: 40px;
+  }
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button {
+  padding: 0px 20px;
+  border: 1px solid white;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button i, #app-cover .app-cover-finish .app-cover-finish-package button span {
+  vertical-align: middle;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button i {
+  font-size: 30px;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button:hover {
+  background: white;
+  color: #9E1F63;
+}
+
 /**/
-@media screen and (min-width: 1280px) {
-	#app-switch {
-		display: none;
-	}
-	#app-preview {
-		width: 80%; height: 100%;
-		display: none; overflow: hidden;
-		position: fixed;
-		top: 0; right: 20%; bottom: 0; left: 0;
-		z-index: 0;
-	}
-	#app-preview {
-		width: 80%; height: 100%;
-		display: block; overflow: hidden;
-		position: fixed;
-		top: 0; right: 20%; bottom: 0; left: 0;
-		z-index: 1;
-	}
-	#app-control {
-		width: 20%; height: 100%;
-		background-color: #EFEFEF;
-		display: block; overflow-y: scroll;
-		position: absolute;
-		top: 0; right: 0; bottom: 0; left: 80%;
-		z-index: 2;
-	}
-	#control-view-nav {
-		width: 20%;
-	}
+#app-control {
+  background-color: #f7f7f7;
+  bottom: 0;
+  color: #666;
+  display: block;
+  height: 95%;
+  max-height: 95%;
+  left: 0;
+  overflow: hidden;
+  pointer-events: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 103;
+  max-width: 100%;
+  max-height: 100%;
 }
+
+#app-control > .app-control-step {
+  display: block;
+  height: calc(100% - 100px);
+  margin: 40px 2% 60px 2%;
+  overflow-y: auto;
+  text-align: center;
+  width: 96%;
+}
+
+#app-control > .app-control-step[style=""]:first-child ~ #app-switch {
+  display: none;
+}
+
+#app-control > .app-control-step .inp-cont {
+  position: relative;
+}
+
+#app-control > .app-control-step .site-name-container {
+  text-align: left;
+  color: #121111;
+  font-size: 22px;
+  position: relative;
+}
+
+#app-control > .app-control-step .site-name-container h2 {
+  margin: 0;
+}
+
+#app-control > .app-control-step .site-name-container input[type="text"] {
+  width: 100px;
+  padding: 5px;
+  margin: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+#app-control > .app-control-step .site-name-container div {
+  margin: 80px 0;
+}
+
+#app-control > .app-control-step .site-name-container div > span {
+  color: #9b035a;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+#app-control > .app-control-step .site-name-container p span {
+  font-weight: bold;
+}
+
+#app-control > .app-control-step .site-name-container img {
+  display: none;
+}
+
+@media (min-width: 660px) {
+  #app-control > .app-control-step .site-name-container img {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 200px;
+  }
+}
+
+#app-control > .app-control-step .site-name-container .form-error {
+  text-align: left;
+}
+
+#app-control .app-control-step > div {
+  margin: auto;
+  width: 80%;
+}
+
+#app-control .app-control-step > div textarea,
+#app-control .app-control-step > div input[type="text"].noIcon,
+#app-control .app-control-step > div select {
+  padding: 15px;
+  font-size: 1em;
+  border-radius: 5px;
+  border-color: #d5d1cf;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+#app-control .app-control-step > div textarea {
+  width: 100%;
+  height: 8em;
+}
+
+#app-control .app-control-step > div input[type="text"].noIcon {
+  height: auto;
+}
+
+#app-control .app-control-step > div select {
+  height: auto;
+  margin: 0 0 5% 0;
+}
+
+#app-control .app-control-step > div .app-control-step-tooltip {
+  background-color: #cc2880;
+  color: #FFF;
+  cursor: pointer;
+  font-size: .8em;
+  height: auto;
+  margin-left: .4em;
+  overflow: hidden;
+  padding: .2em .4em;
+  width: auto;
+  -moz-border-radius: 0.2em;
+  -ms-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
+  border-radius: 0.2em;
+}
+
+#app-control .app-control-step > div .app-control-step-tooltip-info {
+  background-color: #FFFFDA;
+  display: none;
+  padding: .2em;
+}
+
+#app-control .app-control-step > div .app-control-step-tooltip-info.active {
+  display: block;
+}
+
+#app-control .control-color {
+  float: left;
+  margin: 5px 2%;
+  overflow: visible;
+  text-align: center;
+  width: 29.33%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 660px) {
+  #app-control .control-color {
+    width: 21%;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-control .control-color {
+    width: 16%;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-control .control-color {
+    width: 12.66%;
+  }
+}
+
+@media (min-width: 1560px) {
+  #app-control .control-color {
+    width: 10.28%;
+  }
+}
+
+#app-control .control-color h4 {
+  font-weight: normal;
+  margin: 0 0 .4em 0;
+}
+
+#app-control .control-color-thumb {
+  cursor: pointer;
+  display: block;
+  outline: 1px solid #444444;
+  overflow: hidden;
+}
+
+#app-control .control-color-thumb-bg {
+  display: block;
+  float: left;
+  height: 72px;
+  overflow: hidden;
+  width: 33.3%;
+}
+
+#app-control .control-color-thumb-content {
+  display: none;
+  height: 8px;
+  margin: 8px 10%;
+  overflow: hidden;
+  width: 80%;
+}
+
+#app-control #app-control-palettes {
+  text-align: left;
+  overflow: hidden;
+}
+
+#app-control .palette-color {
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  width: 1em;
+}
+
+#app-control .app-control-images {
+  display: block;
+  height: auto;
+  overflow: visible;
+  position: relative;
+  width: auto;
+}
+
+#app-control [id^="app-control-images"] {
+  margin: 10px auto;
+  overflow: auto;
+}
+
+#app-control .photo-container {
+  overflow: hidden;
+  width: 2000px;
+  height: 100px;
+}
+
+@media (min-width: 1040px) {
+  #app-control .photo-container {
+    width: 3000px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1560px) {
+  #app-control .photo-container {
+    width: 4000px;
+    height: 200px;
+  }
+}
+
+#app-control .img-thumb {
+  cursor: pointer;
+  float: left;
+  height: 100px;
+  overflow: visible;
+  position: relative;
+  width: 100px;
+  z-index: 101;
+}
+
+@media (min-width: 1040px) {
+  #app-control .img-thumb {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 1560px) {
+  #app-control .img-thumb {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+#app-control .thumb-selected {
+  outline: 3px solid blue;
+  z-index: 102;
+}
+
+#app-control .img-thumb-cont {
+  background-color: #000000;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: auto 200%;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+#app-control .img-thumb-cont-zoom {
+  background-color: #FFF;
+  bottom: 0;
+  height: 2em;
+  position: absolute;
+  right: 0;
+  width: 2em;
+}
+
+#app-control .img-thumb-cont-zoom i {
+  padding-top: .5em;
+}
+
+#app-control h2 {
+  color: #000000;
+  font-size: 30px;
+  margin-bottom: 50px;
+}
+
+#app-control h2.middle {
+  margin: 10px 0 30px 0;
+}
+
+.img-thumb-zoomed {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  width: 96%;
+}
+
+#app-control-nav {
+  bottom: 0;
+  display: block;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+#app-control-nav #control-view-nav {
+  float: left;
+  height: 50px;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 30px;
+  position: relative;
+  padding-top: 10px;
+}
+
+@media (min-width: 660px) {
+  #app-control-nav #control-view-nav {
+    margin-bottom: 0;
+  }
+}
+
+#app-control-nav #control-view-nav a {
+  position: absolute;
+  bottom: 0;
+  margin: .4em;
+  z-index: 101;
+}
+
+#app-control-nav #control-view-nav a.prev {
+  left: 0;
+}
+
+#app-control-nav #control-view-nav a.next {
+  right: 0;
+}
+
+#app-control-nav #control-view-nav a.disabled {
+  background-color: #999;
+  cursor: default;
+}
+
+#app-control-nav #control-view-index {
+  display: none;
+  overflow: hidden;
+  width: auto;
+}
+
+#app-control-nav #control-view-index + a {
+  float: right;
+}
+
+#app-control-nav .control-view-index-item {
+  background-color: #a19d99;
+  cursor: pointer;
+  float: left;
+  height: 1em;
+  margin: 1em .4em .6em 0;
+  overflow: hidden;
+  width: 1em;
+  -moz-border-radius: 0.5em;
+  -ms-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+}
+
+#app-control-nav .control-view-index-item.current {
+  background-color: #9b035a;
+}
+
+#app-switch {
+  height: 40px;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  color: #fff;
+  text-align: center;
+  background-color: #9b035a;
+}
+
+#app-switch a {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 40px;
+  width: 100%;
+  display: block;
+}
+
+#app-switch a.switch-edit i {
+  font-size: 25px;
+  vertical-align: initial;
+}
+
+#app-switch a.switch-view {
+  font-size: 40px;
+  vertical-align: bottom;
+}
+
+#app-control.view {
+  height: 40px;
+  overflow: hidden;
+  margin-top: 0;
+  top: 0;
+}
+
+@media (min-width: 1040px) {
+  #app-control.view {
+    -moz-border-radius: 0 0 10px 10px;
+    -ms-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+/**/
+@media screen and (min-width: 660px) {
+  #app-control {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    left: 50%;
+    top: 3%;
+    width: 85%;
+    margin-left: -42.5%;
+    margin-top: 0;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+  }
+  #app-control.top {
+    bottom: 55%;
+    top: 5%;
+  }
+  #app-control-nav #control-view-index {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+  }
+  #app-control-nav #app-switch {
+    width: auto;
+  }
+}
+
+.file-upload {
+  display: block;
+  text-align: left;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.file-upload input[type=file] {
+  display: none;
+}
+
+.file-upload input[type=submit] {
+  margin: 10px 0 0 0;
+  padding: 10px;
+  line-height: 18px;
+  font-size: 16px;
+}
+
+.file-upload input[type=submit], .file-upload button {
+  background-color: #fff;
+  border: 1px solid #d5d1cf;
+  border-radius: 5px;
+  float: right;
+  color: #121111;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.file-upload input[type=submit]:disabled, .file-upload button:disabled {
+  opacity: 0.3;
+}
+
+.file-upload input[type=submit] {
+  margin: 20px;
+}
+
+.file-upload p {
+  margin: 0;
+  overflow: hidden;
+  background-color: #fbfbfb;
+  padding: 20px;
+}
+
+.file-upload p span {
+  margin-top: 10px;
+  display: inline-block;
+  width: calc(100% - 145px);
+}
+
+.form-label-note {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.nav-btns {
+  display: block;
+  text-align: center;
+  font-size: 35px;
+  color: #9b035a;
+}
+
+/**/
+#single-modal {
+  background-color: #FFF;
+  bottom: auto;
+  display: none;
+  height: auto;
+  left: 5%;
+  overflow: hidden;
+  padding: 2em 0;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  width: 90%;
+  z-index: 1004;
+}
+
+#single-modal i {
+  cursor: pointer;
+  height: 2em;
+  padding-top: .5em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2em;
+  z-index: 101;
+}
+
+/**/
+/*Modal*/
+.ventana-login, .ventana-login p {
+  color: #aaa;
+  text-align: left;
+}
+
+.ventana-login select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.ventana-login .form-error {
+  text-align: left;
+}
+
+/*# sourceMappingURL=styles.css.map */

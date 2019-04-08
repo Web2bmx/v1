@@ -1,0 +1,845 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+@import "../../scss/base/_variables";
+@import "../../scss/base/_colors";
+
+@import "../../scss/mixins/_border-radius"; 
+ 
+@import "../../scss/components/_modal";
+@import "../../scss/components/_buttons"; 
+@import "../../scss/components/_inputFields"; 
+@import "../../scss/components/login-paginas";
+
+@import "../../scss/partials/_errors";
+/**/
+body { 
+	background-color: #666;
+	color: #444;
+	font-size: 1.2em;
+	margin: 0;
+	padding: 0;
+
+	&.init{
+		overflow: hidden;
+	}
+	
+}
+body, input, textarea, select, button {
+	font-family: 'Open Sans', sans-serif;
+}
+ul, ol, nav {
+	list-style-type: none;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+/**/
+.template { display: none; }
+#template-cont {
+	background-color: #FFFFFF;
+	color: #000000;
+	display: block; 
+	height: auto;
+	width: 100%; 
+}
+#app {
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	pointer-events: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	z-index: 101;
+}
+/**/
+#app-cover {
+	background-color: rgba(255, 255, 255, 1);
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
+	pointer-events: auto;
+	position: fixed; 
+	right: 0;
+	top: 0;   
+	width: 100%;
+	z-index: 1002;
+	overflow-y: scroll; 
+
+	@include breakpoint($desktop){
+		/*overflow: hidden;*/
+	}
+
+    > div {
+		display: block;
+		height: auto;
+		margin: 4em auto;
+		overflow: hidden;
+		text-align: center;
+		width: 80%; 
+    }
+	label{
+		display: block;
+		margin-bottom: 15px;
+	}
+	.control-design-thumb {
+		float: left;
+		padding: 5px 10px;
+		overflow: visible;
+		box-sizing: border-box;
+		width: 50%;
+		cursor: pointer;
+
+		@include breakpoint($tablet){
+			width: 200px;
+		}
+
+		&:hover{
+			background-color: #EEE;
+		}
+
+		aside{
+			overflow: hidden;
+			width: 180px;
+			height: 180px;
+			max-width: 100%;
+			margin: 0 auto 20px auto;
+		}
+
+		img {			
+			display: block;
+			height: 100%;
+		}
+			
+	}
+	.app-cover-start{
+		width: 100%;
+
+		@include breakpoint($tablet){
+			width: 600px;
+		}
+
+		@include breakpoint($desktop){
+			width: 1000px;
+		}
+
+		img.logo,
+		.change-page{
+			position: absolute;
+		}		
+
+		img.logo{
+			top: 20px;
+			left: 20px;
+			width: 100px;			
+		}
+
+		.change-page{
+			top:30px;
+			right: 20px;
+			color: $darker-pink;
+		}
+
+		.thumb-selected +  i::before{
+			content: "\f192";
+		}
+
+		.control-desing-cont{
+			overflow: hidden;
+		}
+
+		.next{
+			margin-top: 100px;
+		}
+	}
+	.app-cover-finish{
+		> div {
+
+			> img{
+				width: 100px;
+			}
+
+			.extra-info{								
+				display: block;
+				font-size: 14px;
+				line-height: 24px;
+				margin: 25px 0;
+			}
+
+		}
+
+		h3{
+			color: #58595B;
+			font-size: 28px;
+			margin-bottom: 0;
+		}
+
+		p{
+			font-size: 24px;
+			font-weight: bold;
+			margin: 0;	
+			line-height: 30px;		
+		}
+
+		.url .siteName{
+			color: #cc2880;
+			font-size: 24px;
+			margin: 10px 0;
+		}
+
+		.paquetes{
+			overflow: hidden;
+		}
+
+		.app-cover-finish-package {
+			width: 100%;
+			margin: 1em 0;
+			padding: 1.7em;
+			float: left;
+			background-color: #9E1F63;
+			color: white;
+			box-sizing: border-box;
+
+			@include breakpoint($tablet){
+				width: calc(50% - 20px);
+				margin: 1em 10px;
+			}
+
+			@include breakpoint($desktop){
+				width: calc(33.33% - 40px);
+				margin: 1em 20px;
+			}	
+			
+			@include breakpoint($ext-desktop){
+				width: calc(33.33% - 60px);
+				margin: 1em 30px; 
+			}
+			
+			hr{
+				width: 10%;
+			}
+
+			.price{
+				display: block;
+				font-weight: bold;
+				font-size: 50px;
+				margin-top: 40px;	
+				
+				@include breakpoint($tablet){
+					font-size: 60px;
+				}
+
+				@include breakpoint($desktop){
+					font-size: 70px;
+				}
+
+				@include breakpoint($ext-desktop){
+					font-size: 80px;
+				}	
+				
+				+ span{
+					margin-bottom: 40px;
+					display: block;
+					font-size: 14px;
+				}
+			}
+
+			ul{
+				text-decoration: none;
+				text-align: left;
+				margin-bottom: 40px;
+				font-size: 13px;
+				height: 70px;				
+			}
+
+			.finish{
+				background: none;				
+				width: 100%;					
+				border-radius: 0;
+				font-size: 14px;
+				font-weight: normal;
+				letter-spacing: 2px;
+				cursor: pointer;
+				line-height: 48px;
+				min-height: 50px;
+				margin-bottom: 0px;
+
+				@media only screen and (min-width: 660px){
+					margin-bottom: 0px;
+				}				
+
+				@media only screen and (min-width: 730px){
+					margin-bottom: 20px;
+				}								
+
+				@media only screen and (min-width: 980px){
+					margin-bottom: 40px;
+				}				
+
+				@media only screen and (min-width: 1040px){
+					margin-bottom: 0px;
+				}						
+					
+				@media only screen and (min-width: 1160px){
+					margin-bottom: 20px;
+				}				
+				
+				@media only screen and (min-width: 1610px){
+					margin-bottom: 40px;
+				}	
+
+			}
+
+			button{
+				padding: 0px 20px;
+				border: 1px solid white; 
+		
+				i, span{
+					vertical-align: middle;						
+				}
+
+				i{
+					font-size: 30px;
+				}
+
+				&:hover{
+					background: white;
+					color: #9E1F63;
+				}
+			}
+
+		}		
+
+	}
+}
+
+.app-new-start { 
+	@extend .modal-login;
+}
+/**/
+#app-control {
+	background-color: #f7f7f7;
+	bottom: 0;
+	color: #666;
+	display: block;
+	height: 95%;
+	max-height: 95%;
+	left: 0;
+	overflow: hidden;
+	pointer-events: auto;
+	position: fixed;
+	right: 0; 
+	top: 0; 
+	width: 100%; 
+	z-index: 103;
+	max-width: 100%;
+	max-height: 100%;
+	
+	> .app-control-step {
+		display: block;
+		height: calc(100% - 100px);
+		margin: 40px 2% 60px 2%;
+		overflow-y: auto;
+		text-align: center;
+		width: 96%;
+
+		&[style=""]:first-child ~ #app-switch{
+			display: none;
+		}
+		.inp-cont {
+			position: relative;
+		}
+		.site-name-container{
+			text-align: left;
+			color: #121111;
+			font-size: 22px;
+			position: relative;
+
+			h2{
+				margin: 0;
+			}
+
+			input[type="text"]{
+				width: 100px;
+				padding: 5px;
+				margin: 0;
+				background: none;
+				border: none;
+				border-bottom: 1px solid;
+			}
+
+			div{
+				margin: 80px 0;				
+
+				> span{
+					color: #9b035a;
+					font-weight: bold;
+					display: block;
+					margin-bottom: 10px;
+				}
+			}
+			
+			p{
+				span{
+					font-weight: bold;
+				}
+			}
+
+			img{
+				display: none;
+
+				@include breakpoint($tablet){
+					display: block;
+					position: absolute;
+					top: 100px;
+					right: 0;
+					width: 200px;				
+				}
+			}
+
+			.form-error{
+				text-align: left;
+			}
+
+		}
+
+	}
+
+	
+	.app-control-step>div {
+		margin: auto;
+		width: 80%;
+
+		textarea,
+		input[type="text"].noIcon,
+		select{
+			padding: 15px;
+			font-size: 1em;
+			border-radius: 5px;
+			border-color: #d5d1cf;
+			box-sizing: border-box;
+			border-style: solid;
+			width: 100%;
+			margin: 0 0 20px 0;
+		}
+
+		textarea {
+			width: 100%; height: 8em;			
+		}
+		input[type="text"].noIcon {
+			height: auto;
+		}
+		select {
+			height: auto;
+			margin: 0 0 5% 0;
+		}
+		.app-control-step-tooltip {
+			background-color: $color-cta;
+			color: #FFF;
+			cursor: pointer;
+			font-size: .8em;
+			height: auto;
+			margin-left: .4em;
+			overflow: hidden;
+			padding: .2em .4em;
+			width: auto;
+			@include border-radius(.2em);	
+		}
+		.app-control-step-tooltip-info {
+			background-color: #FFFFDA;
+			display: none;
+			padding: .2em;
+		}
+		.app-control-step-tooltip-info.active {
+			display: block;
+		}
+	}
+	.control-color {
+		float: left;
+		margin: 5px 2%;
+		overflow: visible;
+		text-align: center;
+		width: 29.33%;
+		box-sizing: border-box;
+
+		@include breakpoint($tablet){
+			width: 21%;
+		}
+
+		@include breakpoint($desktop){
+			width: 16%;
+		}
+
+		@include breakpoint($ext-desktop){
+			width: 12.66%;
+		}		
+		
+		@include breakpoint($ext-ext-desktop){
+			width: 10.28%;
+		}			
+		h4 {
+			font-weight: normal;
+			margin: 0 0 .4em 0;
+		}
+	}
+	.control-color-thumb {
+		cursor: pointer;
+		display: block; 
+		outline: 1px solid #444444;
+		overflow: hidden;
+	}
+	.control-color-thumb-bg {
+		display: block;
+		float: left;
+		height: 72px;
+		overflow: hidden;
+		width: 33.3%; 
+	}
+	.control-color-thumb-content {
+		display: none;
+		height: 8px;
+		margin: 8px 10%;
+		overflow: hidden;
+		width: 80%;
+	} 
+	#app-control-palettes {
+		text-align: left;
+		overflow: hidden;
+	}
+	.palette-color {
+		display: inline-block;
+		height: 1em;
+		overflow: hidden;
+		width: 1em;
+	}
+	.app-control-images {
+		display: block;
+		height: auto;
+		overflow: visible;
+		position: relative;
+		width: auto;
+	}
+	[id^="app-control-images"] {
+		margin: 10px auto;
+		overflow: auto;	
+	}
+	.photo-container{		
+		overflow: hidden;
+		width: #{100*20}px;
+		height: 100px;
+
+		@include breakpoint($desktop){
+			width: #{150*20}px;
+			height: 150px;
+		}
+
+		@include breakpoint($ext-ext-desktop){
+			width: #{200*20}px;
+			height: 200px;
+		}					
+
+	}
+	.img-thumb {	
+		cursor: pointer;
+		float: left;
+		height: 100px;
+		overflow: visible;
+		position: relative;
+		width: 100px;
+		z-index: 101;
+
+		@include breakpoint($desktop){
+			width: 150px;
+			height: 150px;
+		}	
+		
+		@include breakpoint($ext-ext-desktop){
+			width: 200px;
+			height: 200px;
+		}			
+	}
+	.thumb-selected {
+		outline: 3px solid blue;
+		z-index: 102;
+	}
+	.img-thumb-cont {
+		background-color: #000000;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: auto 200%;
+		display: block;
+		height: 100%;
+		overflow: hidden;
+		width: 100%;
+	}
+	.img-thumb-cont-zoom {
+		background-color: #FFF;
+		bottom: 0;
+		height: 2em;
+		position: absolute;
+		right: 0;
+		width: 2em;
+	}
+	.img-thumb-cont-zoom i {
+		padding-top: .5em;
+	}
+	h2{
+		color: #000000;
+		font-size: 30px;
+		margin-bottom: 50px;
+
+		&.middle{
+			margin: 10px 0 30px 0;
+		}
+
+	}
+} 
+.img-thumb-zoomed {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	width: 96%;
+}
+#app-control-nav {
+	bottom: 0;
+	display: block;
+	height: auto;
+	overflow: hidden;
+	position: absolute;
+	width: 100%;
+
+	#control-view-nav {
+		float: left;
+		height: 50px;
+		overflow: hidden;
+		width: 100%;
+		margin-bottom: 30px;
+		position: relative;
+		padding-top: 10px;
+
+		@include breakpoint($tablet){
+			margin-bottom: 0;
+		}
+
+		a {
+			position: absolute;
+			bottom: 0;
+			margin: .4em;
+			z-index: 101;
+
+			&.prev{
+				left: 0;
+			}
+	
+			&.next{
+				right: 0;
+			}
+
+		}
+
+
+		a.disabled {
+			background-color: #999;
+			cursor: default;
+		}
+
+	}
+	#control-view-index {
+		display: none;
+		overflow: hidden;
+		width: auto;
+
+		+ a {
+			float: right;
+		}
+	}
+	.control-view-index-item {
+		background-color: $gray;
+		cursor: pointer;
+		float: left;
+		height: 1em;
+		margin: 1em .4em .6em 0;
+		overflow: hidden;
+		width: 1em;
+		@include border-radius(.5em);
+	}
+	.control-view-index-item.current {
+		background-color: $darker-pink;
+	}
+}
+#app-switch {
+    height: 40px;
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    text-align: center;
+	background-color: $darker-pink;
+	
+	a{
+		font-size: 22px;
+		font-weight: bold;
+		line-height: 40px;
+		width: 100%;
+		display: block;
+
+		&.switch-edit i{
+			font-size: 25px;
+			vertical-align: initial;			
+		}
+
+		&.switch-view{
+			font-size: 40px;
+			vertical-align: bottom;
+		}
+
+	}
+
+}
+#app-control.view {
+    height: 40px;
+    overflow: hidden;
+    margin-top: 0;
+    top: 0;
+	
+	@include breakpoint($desktop){		
+		@include border-radius(0 0 10px 10px);
+	}
+
+}
+/**/
+@media screen and (min-width: 660px) {
+	#app-control {
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		left: 50%;
+		top: 3%;
+		width: 85%;
+		margin-left: -42.5%;
+		margin-top: 0;			
+		@include border-radius(10px);
+	}
+	#app-control.top {
+		bottom: 55%;
+		top: 5%;
+	}
+	#app-control-nav {
+		#control-view-index {
+			display: block;
+			position: absolute;
+			bottom: 20px;
+			left: 0;
+		}
+		#app-switch {
+			width: auto; 
+		}
+	}	
+}
+
+.file-upload{
+	display: block;
+    text-align: left;
+    margin: 20px 0;    
+    overflow: hidden;
+	
+	input[type=file]{
+		display: none;
+	}
+
+	input[type=submit]{		
+		margin: 10px 0 0 0;
+		padding: 10px;		
+		line-height: 18px;
+		font-size: 16px;		
+	}
+
+	input[type=submit],button{
+		background-color: #fff;
+		border: 1px solid #d5d1cf;
+		border-radius: 5px;
+		float: right;
+		color: #121111;
+		cursor: pointer;
+		font-weight: normal;	
+
+		&:disabled{
+			opacity: 0.3;
+		}
+
+	}
+
+	input[type=submit]{
+		margin: 20px;
+	}
+
+	p{
+		
+		margin: 0;
+		overflow: hidden;
+		background-color: #fbfbfb;
+		padding: 20px;
+
+		span{
+			margin-top: 10px;
+			display: inline-block;
+			width: calc(100% - 145px);
+		}
+
+	}
+}
+
+.form-label-note{
+    display: block;
+    font-size: 14px;
+    margin-bottom: 10px;	
+}
+
+.nav-btns{
+    display: block;
+    text-align: center;
+	font-size: 35px;
+	color: $darker-pink;	
+}
+/**/
+#single-modal {
+	background-color: #FFF;
+	bottom: auto;
+	display: none;
+	height: auto;
+	left: 5%;
+	overflow: hidden;
+	padding: 2em 0;
+	position: absolute;
+	right: 5%;
+	top: 5%;
+	width: 90%;
+	z-index: 1004; 
+}
+#single-modal i {
+	cursor: pointer;
+	height: 2em;
+	padding-top: .5em;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 2em;
+	z-index: 101;
+}
+/**/
+
+/*Modal*/
+.ventana-login {
+	@extend .modal-login;
+	@include login-paginas;
+}
+
+.final-msgs{
+	@extend .modal-login;
+}

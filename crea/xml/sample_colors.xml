@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palettes>
+   <palette>
+        <name>Blanco</name>
+        <bg><back>#FFFFFF</back><fore>#000000</fore></bg>
+        <top><back>#FFFFFF</back><fore>#444444</fore></top>
+        <middle><back>#FFFFFF</back><fore>#444444</fore></middle>
+        <bottom><back>#DADADA</back><fore>#444444</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Negro</name>
+        <bg><back>#000000</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#000000</fore></top>
+        <middle><back>#FFFFFF</back><fore>#000000</fore></middle>
+        <bottom><back>#333333</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Azul 1</name>
+        <bg><back>#067ec4</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#1c6473</fore></top>
+        <middle><back>#004a7d</back><fore>#9cdeed</fore></middle>
+        <bottom><back>#0f2c40</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Azul 2</name>
+        <bg><back>#0f2c40</back><fore>#FFFFFF</fore></bg>
+        <top><back>#1ea7ba</back><fore>#29383b</fore></top>
+        <middle><back>#c9e9ff</back><fore>#000000</fore></middle>
+        <bottom><back>#12364f</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Verde 1</name>
+        <bg><back>#06c429</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#1d731c</fore></top>
+        <middle><back>#007d1c</back><fore>#9ced9c</fore></middle>
+        <bottom><back>#0f401a</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Verde 2</name>
+        <bg><back>#247333</back><fore>#FFFFFF</fore></bg>
+        <top><back>#28ba1e</back><fore>#293b29</fore></top>
+        <middle><back>#c9ffd5</back><fore>#000000</fore></middle>
+        <bottom><back>#124f20</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Amarillo 1</name>
+        <bg><back>#e2cd00</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#bd9600</fore></top>
+        <middle><back>#b0a400</back><fore>#9ced9c</fore></middle>
+        <bottom><back>#8b8200</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Amarillo 2</name>
+        <bg><back>#c2b100</back><fore>#FFFFFF</fore></bg>
+        <top><back>#eab200</back><fore>#9d7e00</fore></top>
+        <middle><back>#fffb9f</back><fore>#000000</fore></middle>
+        <bottom><back>#9b9100</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Naranja 1</name>
+        <bg><back>#ef7500</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#d35100</fore></top>
+        <middle><back>#d75a00</back><fore>#fac509</fore></middle>
+        <bottom><back>#b84700</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Naranja 2</name>
+        <bg><back>#d36a00</back><fore>#FFFFFF</fore></bg>
+        <top><back>#ec5800</back><fore>#ffffff</fore></top>
+        <middle><back>#ffe934</back><fore>#000000</fore></middle>
+        <bottom><back>#c15100</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Rojo 1</name>
+        <bg><back>#c41606</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#731c26</fore></top>
+        <middle><back>#7d1000</back><fore>#ed9ca4</fore></middle>
+        <bottom><back>#40150f</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Rojo 2</name>
+        <bg><back>#732b24</back><fore>#FFFFFF</fore></bg>
+        <top><back>#ba1e37</back><fore>#ffffff</fore></top>
+        <middle><back>#ffd0c9</back><fore>#000000</fore></middle>
+        <bottom><back>#4f1a12</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Morado 1</name>
+        <bg><back>#c40681</back><fore>#FFFFFF</fore></bg>
+        <top><back>#FFFFFF</back><fore>#731c65</fore></top>
+        <middle><back>#7d004b</back><fore>#FFFFFF</fore></middle>
+        <bottom><back>#400f2d</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+    <palette>
+        <name>Morado 2</name>
+        <bg><back>#732457</back><fore>#FFFFFF</fore></bg>
+        <top><back>#ba1ea9</back><fore>#ffffff</fore></top>
+        <middle><back>#ffc9e9</back><fore>#000000</fore></middle>
+        <bottom><back>#4f1237</back><fore>#FFFFFF</fore></bottom>   
+    </palette>
+</palettes>

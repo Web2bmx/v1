@@ -1,0 +1,535 @@
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+@import "../../scss/base/_variables";
+@import "../../scss/base/_colors";
+
+@import "../../scss/mixins/_border-radius";
+@import "../../scss/mixins/_border-radius";
+
+@import "../../scss/components/_stars";
+@import "../../scss/components/_buttons";
+@import "../../scss/components/_modal"; 
+
+@import "../../scss/partials/_errors";
+
+.background,
+.main-container{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+body{
+    background-color: #273654;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+
+    
+    > div{
+            overflow: hidden;
+    }    
+    
+}
+
+.right{
+	float: right;
+}
+
+.left{
+	float: left;
+}
+
+img{
+	position: relative;
+}
+
+.main-container > div{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    > div{
+        width: $mobile;
+        margin: 0 auto;
+        
+        @include breakpoint($tablet){
+            width: $tablet;
+        }
+        @include breakpoint($desktop){
+            width: $desktop;
+        }
+/*        @include breakpoint($ext-desktop){
+            width: $ext-desktop;
+        }*/
+        
+        > div{
+            overflow: hidden;
+        }
+                
+    }    
+}
+
+button,
+.boton{
+    padding: 20px 10px; 
+    
+    &.init{
+        top: 50%;
+        left: 50%;
+        margin-left: -50px;  
+        position: fixed;
+    }
+    
+    &.res{ 
+        float: right;
+    }
+
+    &.back{ 
+        float: left;
+    }    
+
+    &:active{
+        background-color: #60A9DE;
+    }
+    
+}
+
+.space-man{
+    width: 90px;
+    z-index: 4;
+    position: absolute;
+    bottom: 49px;
+    left: 50%;
+    margin-left: -52px;
+    
+    @include breakpoint($tablet){
+        width: auto;
+        bottom: 104px;
+        margin-left: -88px;
+    }     
+    
+    @include breakpoint($desktop){
+        margin-left: 194px;
+        bottom: 80px;
+    }   
+    
+}
+
+.inicio{
+    height: 185px;
+    
+    @include breakpoint($tablet){
+        height: 348px;
+    }     
+    
+}
+
+.luna{
+    width: 100%;
+    margin-top: 133px;
+    
+    @include breakpoint($tablet){
+        margin-top: 240px;
+    }
+    
+    @include breakpoint($desktop){
+        width: auto;
+        margin-top: 266px;
+    }        
+}
+
+.rocket{
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    z-index: 0;
+    width: 100px;
+    margin-left: -105px;
+      
+    @include breakpoint($tablet){
+        width: 150px;
+        left: 50%;
+        margin-left: -162px;
+        bottom: -23px;
+    }         
+    
+    @include breakpoint($desktop){
+        left: 50%;
+        bottom: -48px;
+        margin-left: 122px;
+    }      
+    
+    img{
+       width: 100%; 
+    }
+       
+}
+
+.sun{
+    margin-top: 1000px;
+    margin-bottom: 1000px; 
+    text-align: right;
+    
+    img{
+        width: 150px;
+        
+        @include breakpoint($tablet){
+            width: 250px;
+        }          
+        
+    }     
+    
+}
+
+.segundo{
+    margin-top: 1500px;    
+}
+
+.planet-blue{
+    width: 200px;
+    
+    @include breakpoint($tablet){
+        width: 350px;
+    }      
+    
+    @include breakpoint($desktop){
+        width: 450px;
+    }      
+    
+}
+
+.comets{
+    position: relative;
+    right: -70px;    
+    
+    img:first-child{
+        width: 100px; 
+        
+        @include breakpoint($tablet){
+            width: 200px;
+        }
+        
+    }
+            
+    img + img{
+        position: relative;
+        left: -70px;
+        top: 18px;
+        width: 80px;
+       
+        @include breakpoint($tablet){
+            width: 160px;
+            top: 3px;
+            left: -130px;    
+        }                 
+        
+    }     
+    
+}
+
+.earth{
+    width: 200px;
+    left: 30px;    
+    
+    @include breakpoint($tablet){
+        width: 400px;
+    }    
+}
+
+.satellite{
+    width: 100px;
+    display: block;
+    
+    @include breakpoint($tablet){
+        width: 200px;
+    }       
+    
+    @include breakpoint($desktop){
+        margin-right: 385px;
+    }       
+    
+}
+
+.full_moon{
+    text-align: right;
+    
+    img{
+        width: 230px;
+        
+        @include breakpoint($tablet){
+            width: 400px;
+        }          
+    }
+    
+}
+
+.stars_img{
+    text-align: left;
+    margin: 1000px 0;
+
+    img{
+        width: 100px;
+        margin-left: 100px; 
+        
+        @include breakpoint($tablet){
+            width: 200px;
+        }        
+        
+    }
+    
+}
+
+.cometas{
+    margin-bottom: 50px;
+    text-align: right;
+
+    img{
+        width: 130px;
+    }
+    
+}
+
+.cinco{
+    margin-bottom: 1300px;
+}
+
+.alien{
+    position: absolute;
+    left: 0;
+    img{
+        width: 70px;
+        @include breakpoint($tablet){
+            width: 150px;
+        }     
+    }
+}
+
+.planet_ring{
+    text-align: center;
+    margin: 1300px 0px;
+    
+        img{width: 240px;
+        
+            @include breakpoint($tablet){
+                width: 350px;
+            }      
+            
+            @include breakpoint($desktop){
+                width: 400px;
+            }                 
+        }
+}
+
+.nave{
+    margin: 1000px 50px;
+    text-align: right;
+    
+    img{
+        width: 100px; 
+        
+        @include breakpoint($tablet){
+            width: 180px;
+        }         
+        
+        @include breakpoint($desktop){
+            width: 200px;
+        }          
+        
+    }
+}
+
+.planet_red{    
+    img{width: 300px;
+    
+        @include breakpoint($tablet){
+            width: 400px;
+        }         
+        
+        @include breakpoint($desktop){
+            width: 500px;
+        }          
+        
+    }
+}
+
+.ui-dialog .ui-dialog-content.dialog{ 
+    
+    &.datos-existentes{
+        max-height: none !important; 
+        height: auto !important; 
+    }
+    
+    &.primera-pregunta{
+        background: url(../images/p1_bg.jpg) bottom center no-repeat;
+    }    
+    
+    &.segunda-pregunta{
+        background: url(../images/p2_bg.jpg) bottom center no-repeat;
+    } 
+
+    &.tercera-pregunta{
+        background: url(../images/p3_bg.jpg) bottom center no-repeat;
+    } 
+
+    &.cuarta-pregunta{
+        background: url(../images/p4_bg.jpg) bottom center no-repeat;
+    } 
+
+    &.quinta-pregunta{
+        background: url(../images/p5_bg.jpg) bottom center no-repeat;
+    } 
+    
+    &.sexta-pregunta{
+        background: url(../images/p1_bg.jpg) bottom center no-repeat;
+    }    
+    
+    &.septima-pregunta{
+        background: url(../images/p2_bg.jpg) bottom center no-repeat;
+    }  
+    
+    &.fin{
+        text-align: center;
+        background-color: #1f2c43;
+        color: white;
+        text-transform: uppercase;    
+    
+        aside{
+            margin-top: 25%;
+        }
+    
+        img{
+            display: block;
+            margin: 0 auto;
+            height: 20%;
+    
+            + img{
+                height: 12%;
+            }
+        }
+    
+        h2{
+            margin-bottom: 10px;        
+        }
+    
+        p{
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 0;
+            line-height: 20px;
+            margin-bottom: 40px;        
+        }
+    }    
+
+    aside{
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+}
+
+textarea{
+    margin: 15px 0px;
+    height: 200px;
+    display: block;
+    border: none;
+    background: #DDD;
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;    
+}
+
+.dialog{
+
+    input[type=radio]{
+        position: absolute;
+        left: 5px;
+        top: 10px;        
+    }
+
+    label{        
+        width: 100%;
+        display: block;
+        float: left;
+        padding: 8px 10px 8px 25px;
+        box-sizing: border-box;
+        line-height: 18px;
+        position: relative;
+        font-size: 16px;  
+        
+        @include breakpoint($tablet){
+            width: 50%;
+        }
+    }
+
+    p{
+        font-weight: bold;
+        
+        &:first-child{
+            margin-top: 25px;
+
+            @include breakpoint($tablet){
+                margin-top: inherit;
+            }
+        }
+    }
+
+    > div{
+        width: 100%;
+        overflow: hidden;
+        padding-top: 10px;
+    }
+
+}
+
+.global-back{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: none;
+    padding: 0;
+
+    &:hover{
+        opacity: 0.7;
+    }
+
+    i{
+        color: #cc2880;
+        font-size: 24px;
+
+        @include breakpoint($tablet){
+            font-size: 30px;
+        }
+        
+    }
+
+    span{
+        color: #fff;
+        line-height: 24px;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 5px;
+
+        @include breakpoint($tablet){
+            line-height: 30px;
+        }
+
+    }
+}
+.cont_answers {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.group_answers {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
