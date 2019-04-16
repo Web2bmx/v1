@@ -897,7 +897,7 @@ main {
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: normal;
   margin-bottom: 0;
 }
@@ -931,8 +931,9 @@ main {
   padding: 2rem 0;
   background-color: #ffffff;
   color: #555;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   text-align: center;
+  line-height: 1.5rem;
 }
 
 #list-steps li {
@@ -1080,6 +1081,7 @@ footer menu li {
   color: #727a82;
   font-size: 0.8rem;
   text-align: center;
+  clear: both;
 }
 
 /**/
@@ -1113,7 +1115,7 @@ footer menu li {
   /**/
   #list-steps li {
     width: 42%;
-    height: 26rem;
+    height: 16rem;
     margin: 0 4% 2rem 4%;
     float: left;
   }
@@ -1122,7 +1124,7 @@ footer menu li {
   }
   /**/
   #list-services {
-    font-size: 1.6rem;
+    font-size: 1.1rem;
   }
   #list-services > li {
     margin: 1rem 0;
@@ -1132,7 +1134,7 @@ footer menu li {
     height: auto;
   }
   #list-services > li > h3 {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
   /**/
   footer menu {
@@ -1140,6 +1142,7 @@ footer menu li {
     margin: 0 4% 2rem 4%;
     padding: 0;
     float: left;
+    overflow: hidden;
   }
   #social {
     font-size: 0.8em;
@@ -1244,6 +1247,7 @@ footer menu li {
   }
   #list-services > li > p {
     font-size: 1rem;
+    height: 90px;
   }
   /**/
   #subscribe {
@@ -1283,6 +1287,7 @@ footer menu li {
     width: auto;
     margin-bottom: 0;
     float: left;
+    margin-top: 10px;
   }
   #social span {
     position: relative;
