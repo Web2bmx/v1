@@ -5,7 +5,7 @@
 			<img id="val-image-logotipo" src="<?php echo($content->hero[0]->logotipo); ?>" alt="Logotipo" />
 		<?php endif; ?>
 		<h2 id="val-content-slogan"><?php echo($content->hero[0]->slogan); ?></h2>
-		<h1 id="val-content-name"><?php echo($content->hero[0]->name); ?></h1>
+		<h1 id="val-content-name"><?php echo($content->hero[0]->title); ?></h1>
 		<div class="seemore">
 			<a href="#">
 				<h3>Conozca Más</h3>

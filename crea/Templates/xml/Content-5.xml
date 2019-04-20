@@ -1,107 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
     <hero>
-		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1524169394167-ed82ab06ac05?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		<logotipo></logotipo>
-		<name>Fondita Nais</name>
-		<slogan>¡Pida y coma delicioso!</slogan>
+		<name>Inicio</name>
+		<img orientation="square" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1466584241662-8cb021032c1a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<logotipo orientation="landscape" background="rgba(255,255,255,0)">../Images/Logos/manualidadesmarialuisa.png</logotipo>
+		<title>Manualidades María Luisa</title>
+		<slogan>Creatividad a tu servicio</slogan>
+		<button>Ver más</button>
 	</hero>
     <aboutus>
-        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1536791554-f3ee44c35c78?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1960&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		<title>Nosotros</title>
-		<text>Nuestra historia comienza en 1954, cuando pusimos nuestra primera sucursal en Santa Tere, en la cual hemos estado por más de 50 años, ahora contamos con 8 sucursales en la zona metropolitána de Guadalajara, una cerca de tí.</text>
+		<name>Acerca de</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1488274319148-051ed60a9404?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Sobre mí</title>
+		<text>Desde hace más de 20 años trabajo realizando manualidades, me apasiona el poder crear cosas nuevas y únicas. Busco siempre materiales nuevos y diferentes para poder llevar a cabo mis ideas.</text>
 	</aboutus>
 	<items>
+		<name>Servicios</name>
 		<header>
-			<title>Menú</title>
-			<text></text>
+			<title>Mis diseños</title>
+			<text>Puedo elaborar los siguientes tipos de trabajo:</text>
 		</header>
 		<row>
         	<item>
-				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Tacos</title>
-				<text>La mejor selección de frutas y verduras.</text>
-				<precio>$79.00</precio>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1512577494243-76d15311b357?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Costura creativa</title>
+				<text>Costura para aplicaciones creativas como disfraces o tapiceria especial.</text>
+				<precio></precio>
 			</item>
-            <item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Nachos</title>
-				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
-				<precio>$89.00</precio>
-			</item>
-			<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1542088895-973cb1ba1c39?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Salsas</title>
-				<text>El mejor surtido de enlatados y alimentos.</text>
-				<precio>Al gusto</precio>
-			</item>
-		</row>
+        </row>
 		<row>
-			<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1529704640551-eef9ba5d774a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Carne asada</title>
-				<text>La mejor selección de frutas y verduras.</text>
-				<precio>$79.00</precio>
+        	<item>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1466027449668-27f96b692ba4?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Bordado</title>
+				<text>Bordado para trabajos creativos, piezas únicas o patrones para producción.</text>
+				<precio></precio>
 			</item>
             <item>
-				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1541636921808-1e2d8ddf0803?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Esquites</title>
-				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
-				<precio>$89.00</precio>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1543334270-305dab05a6ab?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Productos tejidos</title>
+				<text>Creación de productos con distinto tipo de materiales y técnicas de bordado.</text>
+				<precio></precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1536429798428-5ac4dbebcc58?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Centros de mesa</title>
+				<text>Centros de mesa para eventos y decoración de interiores.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1512917733829-196bc8ea404a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Invitaciones</title>
+				<text>Diseño y producción de invitaciones únicas.</text>
+				<precio></precio>
 			</item>
 			<item>
-				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1484300681262-5cca666b0954?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Postres</title>
-				<text>El mejor surtido de enlatados y alimentos.</text>
-				<precio>$15.00</precio>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1512908593802-fc940f380825?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Envoltura de regalos</title>
+				<text>Envoltura creativa de regalos, presentaciones únicas.</text>
+				<precio></precio>
 			</item>
         </row>
     </items>
-	<galeria>
-		<header>
-			<title>Ven a comer</title>
-			<text>Conoce nuestro espacio.</text>
-		</header>
-		<images>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1525575674331-70638740994c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533142146849-4620b8191531?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1421622548261-c45bfe178854?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		</images>
-	</galeria>
 	<cta>
-		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1414235077428-338989a2e8c0??ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-        <title>Fondita Nais</title>
-		<text>La mejor comida regional de la zona</text>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1516783154360-123b392d0833?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbeme</title>
+		<text>Comunícate conmigo y cuéntame tu proyecto.</text>
         <links>
             <link>
-                <description></description>
-                <url></url>
-                <target></target>
-                <text></text>
+                <description>Escríbeme</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíame un correo, te contestaré tan pronto como me sea posible.</text>
+            </link>
+			<link>
+                <description>Llámame</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Márcame a mi teléfono.</text>
+            </link>
+			<link>
+                <description>Descarga una muestra de mi trabajo</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Conoce mi obra.</text>
             </link>
         </links>
 	</cta>	
-	<contact>
+	<gallery>
+		<name>Mi obra</name>
 		<header>
-			<title>Contáctanos</title>
-			<text>Estamos para servirte.</text>
+			<title>Mi obra</title>
+			<text>Te presento algunos de mis proyectos.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1516792372828-086d00d722f1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1551920330-c39e5b2812bb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1528041251223-bd0f58bb7b94?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1544955404-085f528bc52f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1512218946813-fb770726f07e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1545409584-ed7615e16a91?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="botttom">https://images.unsplash.com/photo-1517331028157-75de91e10628?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1417037129170-06a2750eaa47?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1525433019229-a2449628415e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctame</title>
+			<text>Cuéntame de tu proyecto.</text>
 		</header>
         <communication>
             <title>Información de contacto</title>
-            <email>tucorreoelectronico@correo.com</email>
-		    <phonelabel>Llamanos al</phonelabel>
-            <phone>331 893 8770</phone>
+            <emaillabel>Escríbeme a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámame al</phonelabel>
+            <phone>5555555555</phone>
 		</communication>
         <location>
-            <title>Nuestra dirección</title>
-            <address>Canutillo 3010, Col. Fraccionamiento Revolución</address>
-	    	<map>https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25669.182049294504!2d-103.39421939304526!3d20.62954019701506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2894659df4166e8d!2sSax+Cafe!5e0!3m2!1ses!2smx!4v1526266097611" frameborder="0" style="border:0" allowfullscreen></map>
-            <hours>Abierto de lunes a domingo de 8 de la mañana a 8 de la noche.</hours>
+            <title>Mi dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours></hours>
 		</location>
         <social>
-            <title>Síguenos en nuestras redes</title>
-            <facebook>https://www.facebook.com/TiendaDonJose</facebook>
-		    <twitter>https://www.twitter.com/TiendaDonJose</twitter>
+            <title>Sígueme en mis redes</title>
+            <facebooklabel>Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
         </social> 
 	</contact>
 </content>

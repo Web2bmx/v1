@@ -1,84 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
     <hero>
-		<nombre>Inicio</nombre>
+		<name>Inicio</name>
 		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1485996463739-9cb09adbe6c5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<logotipo orientation="landscape" background="rgba(255,255,255,1)">../Images/Logos/daa.png</logotipo>
-		<name>Despacho arquitectónico Arámbula</name>
+		<title>Despacho arquitectónico Arámbula</title>
 		<slogan>La mejor calidad</slogan>
-		<boton>Ver más</boton>
+		<button>Ver más</button>
 	</hero>
     <aboutus>
-		<nombre>Nosotros</nombre>
-        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1519609511997-d8ef5b010fba?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<name>Nosotros</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1510935813936-763eb6fbc613?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>Nuestra historia comienza en 1954, cuando pusimos nuestra primera sucursal en Santa Tere, en la cual hemos estado por más de 50 años, ahora contamos con 8 sucursales en la zona metropolitána de Guadalajara, una cerca de tí.</text>
+		<text>Nosotros somos un despacho jóven, comprometidos con la naturaleza y el medio ambiente, buscamos crear espacios únicos que se integren con el entorno de manera sustentable. Somos creativos que sabemos también cómo construir y hacer realidad tus proyectos, asesorandote desde la concepción de una idea para un espacio hasta su construcción y decoración.</text>
 	</aboutus>
 	<items>
+		<name>Servicios</name>
 		<header>
-			<title>Nuestros Productos</title>
-			<text></text>
+			<title>Nuestros servicios</title>
+			<text>Conoce nuestros servicios, podemos apoyarte tanto en la creación, como en la planeación y construcción de tu proyecto.</text>
 		</header>
 		<row>
         	<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1494515426402-f1980ace7a9c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Frutas y verduras</title>
-				<text>La mejor selección de frutas y verduras.</text>
-				<precio>$79.00</precio>
+				<img orientation="landscape" focus-hor="right" focus-ver="middle">https://images.unsplash.com/photo-1476763752342-d5cf7e5eb6cc?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Creación</title>
+				<text>Podemos ayudarte a plasmar tu idea, traduciendo tus necesidades y expectativas en imágenes adecuadas a tu espacio.</text>
+				<precio></precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Planificación</title>
+				<text>Te ofrecemos la creación de planes ejecutivos detallados con base en tu presupuesto, con calendarios de entrega y definición de alcances.</text>
+				<precio></precio>
 			</item>
             <item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1507215407641-a39a5d7b3192?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Lácteos</title>
-				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
-				<precio>$25.00</precio>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1511377107391-116a9d5d20b5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Presupuesto</title>
+				<text>Te asesoramos para crear el mejor presupuesto, te apoyamos en la elección de materiales y proveedores para que obtengas el mejor valor por tu inversión.</text>
+				<precio></precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1489515229412-1f3a8f08dc34?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Construcción</title>
+				<text>Nos encargamos de tu proyecto de inicio a fin, tenemos a un equipo de especialistas en la construcción de la más alta calidad.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1496262967815-132206202600?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Señalética</title>
+				<text>Contamos con especialistas urbanistas y diseñadores que pueden apoyarte para que tus proyectos de obra pública sean acorde a las necesidades de tus usuarios.</text>
+				<precio></precio>
+			</item>
+			<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1537726235470-8504e3beef77?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Decoración</title>
+				<text>Te ayudamos a darle vida y personalidad a tu espacio, tenemos un equipo de diseño que hará que tus sueños se vuelvan realidad.</text>
+				<precio></precio>
 			</item>
         </row>
     </items>
-	<galeria>
-		<header>
-			<title>Ven a comer</title>
-			<text>Conoce nuestro espacio.</text>
-		</header>
-		<images>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1525575674331-70638740994c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533142146849-4620b8191531?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1421622548261-c45bfe178854?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		</images>
-	</galeria>		
-    <cta>
-		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1522574970870-277fba960e0d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-        <title>¡Visítanos y compara!</title>
-		<text>Te invitamos a que nos conozcas, ¡no te arrepentirás!</text>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbenos</title>
+		<text>Comunícate con nosotros y cuéntanos tu proyecto.</text>
         <links>
             <link>
-                <description></description>
-                <url></url>
-                <target></target>
-                <text></text>
+                <description>Escríbenos</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíanos un correo, te contestaremos en máximo un día hábil.</text>
+            </link>
+			<link>
+                <description>Llámanos</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Marca a nuestro teléfono y con gusto tomaremos tu llamada.</text>
+            </link>
+			<link>
+                <description>Descarga nuestro portafolio de trabajo</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Descarga nuestro portafolio y conócenos mejor.</text>
             </link>
         </links>
 	</cta>	
-	<contact>
+	<gallery>
+		<name>Nuestro trabajo</name>
+		<header>
+			<title>Nuestro trabajo</title>
+			<text>Te presentamos algunos de nuestros proyectos.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1475855581690-80accde3ae2b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="square" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="square" focus-hor="center" focus-ver="botttom">https://images.unsplash.com/photo-1499916078039-922301b0eb9b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="bottom">https://images.unsplash.com/photo-1518733057094-95b53143d2a7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1512916194211-3f2b7f5f7de3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</gallery>		
+    <contact>
 		<header>
 			<title>Contáctanos</title>
-			<text>Estamos para servirte.</text>
+			<text>Queremos saber de tu proyecto.</text>
 		</header>
         <communication>
             <title>Información de contacto</title>
-            <email>tucorreoelectronico@correo.com</email>
-		    <phonelabel>Llamanos al</phonelabel>
-            <phone>331 893 8770</phone>
+            <emaillabel>Escríbenos a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámanos al</phonelabel>
+            <phone>5555555555</phone>
 		</communication>
         <location>
             <title>Nuestra dirección</title>
-            <address>Canutillo 3010, Col. Fraccionamiento Revolución</address>
-	    	<map>https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25669.182049294504!2d-103.39421939304526!3d20.62954019701506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2894659df4166e8d!2sSax+Cafe!5e0!3m2!1ses!2smx!4v1526266097611" frameborder="0" style="border:0" allowfullscreen></map>
-            <hours>Abierto de lunes a domingo de 8 de la mañana a 8 de la noche.</hours>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours>Nuestro horario de atención es de lunes a viernes de 9 de la mañana a 6 de la tarde.</hours>
 		</location>
         <social>
             <title>Síguenos en nuestras redes</title>
-            <facebook>https://www.facebook.com/AbarrotesAntonio</facebook>
-		    <twitter>https://www.twitter.com/AbarrotesAntonio</twitter>
+            <facebooklabel>Facebook: Nuestro Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter: @NuestroTwitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
         </social> 
 	</contact>
 </content>

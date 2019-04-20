@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<logotipo></logotipo>
+		<name>Luis Pacheco</name>
+		<slogan>Destaca tu marca</slogan>
+	</hero>
+    <aboutus>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1461344577544-4e5dc9487184?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1960&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Quién soy</title>
+		<text>Soy un diseñador tapatío, apasionado de la creación de marca y lenguage gráfico corporativo. Cuento con una Licenciatura en Diseño Gráfico y 10 años de experiencia en el desarrollo de imágen corporativa.</text>
+	</aboutus>
+	<items>
+		<header>
+			<title></title>
+			<text></text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1485340140625-c6edf4b069d6?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Diseño Digital e Impresión</title>
+				<text>Experiencia y profesionalismo para plasmar tus ideas y transformarlas a un lenguage visual claro y efectivo, trabajamos en soluciones completas que incluyen la producción de tus productos impresos con la mejor calidad en el mercado.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1498603911539-01ce6c9ad8f5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Diseño de Productos</title>
+				<text>Te ofrecemos la oportunidad de darle vida a tus ideas, contamos con un equipo de creativos altamente capacitado para hacer reales tus sueños, realizamos maquetas de productos incluyendo marca, empaque y embalaje.</text>
+				<precio></precio>
+			</item>
+		</row>
+	</items>
+	<galeria>
+		<header>
+			<title></title>
+			<text></text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1482876555840-f31c5ebbff1c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1501856777435-29877ed80a3d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1501569420805-e4dd535ec970?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1527958102177-f1d84edda9ac?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</galeria>
+	<cta>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle"></img>
+        <title>Salúdame</title>
+		<text>Envíame un correo y pide información a: </text>
+        <links>
+            <link>
+                <description></description>
+                <url>mailto:diseñador@gmail.com</url>
+                <target>_blank</target>
+                <text>diseñador@gmail.com</text>
+            </link>
+        </links>
+	</cta>	
+	<contact>
+		<header>
+			<title>Contáctanos</title>
+			<text>Estamos para servirte.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <email>tucorreoelectronico@correo.com</email>
+		    <phonelabel>Llamanos al</phonelabel>
+            <phone>331 893 8770</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Canutillo 3010, Col. Fraccionamiento Revolución</address>
+	    	<map>https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25669.182049294504!2d-103.39421939304526!3d20.62954019701506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2894659df4166e8d!2sSax+Cafe!5e0!3m2!1ses!2smx!4v1526266097611" frameborder="0" style="border:0" allowfullscreen></map>
+            <hours>Abierto de lunes a domingo de 8 de la mañana a 8 de la noche.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebook>https://www.facebook.com/TiendaDonJose</facebook>
+		    <twitter>https://www.twitter.com/TiendaDonJose</twitter>
+        </social> 
+	</contact>
+</content>
