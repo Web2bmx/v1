@@ -1,10 +1,10 @@
-<?php include_once("../php/TemplateMaster.php"); ?>
+<?php include_once("../php/Master.php"); ?>
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Template 008</title>
-		<meta name="description" content="Template 008">
+		<title>Template 04</title>
+		<meta name="description" content="Template 004">
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<meta name="author" content="Web2b">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -20,15 +20,15 @@
 			<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700|Roboto:400,400i,700" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
 			<main>
-				<?php include_once("../php/TemplateMenu2.php"); ?>
-				<?php include_once("../php/TemplateHero4.php"); ?>
-				<?php include_once("../php/TemplateItems3.php"); ?>	
-				<?php include_once("../php/TemplateGaleria1.php"); ?>	
-				<?php include_once("../php/TemplateAboutus1.php"); ?>	
-				<?php include_once("../php/TemplateCta3.php"); ?>
-				<?php include_once("../php/TemplateMap1.php"); ?>	
-				<?php include_once("../php/TemplateFooter3.php"); ?>
-				<?php include_once("../php/TemplateDisclaimer1.php"); ?>
+				<?php include_once("../php/Components/Menu.php"); ?>
+				<?php include_once("../php/Components/Hero.php"); ?>
+				<?php include_once("../php/Components/Items.php"); ?>	
+				<?php include_once("../php/Components/Gallery.php"); ?>	
+				<?php include_once("../php/Components/Aboutus.php"); ?>	
+				<?php include_once("../php/Components/CTA.php"); ?>
+				<?php include_once("../php/Components/Map.php"); ?>	
+				<?php include_once("../php/Components/Footer.php"); ?>
+				<?php include_once("../php/Components/Disclaimer.php"); ?>
 			</main>
 			<div id="template-colors" style="display: none;">
 				<div class="template-color" id="color-orange">

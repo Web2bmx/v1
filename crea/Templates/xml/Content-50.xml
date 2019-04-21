@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<name>Inicio</name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1479044769763-c28e05b5baa5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080</img>
+		<logotipo orientation="landscape" background="rgba (255,255,255,0)">../Images/Logos/restauranteramirez.png</logotipo>
+		<title>Restaurante Ramírez</title>
+		<slogan>El mejor sabor</slogan>
+		<button>Conozca Más</button>
+	</hero>
+    <aboutus>
+		<name>Nosotros</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1536570589770-e2402b43e390?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Acerca de nosotros</title>
+		<text>En Restaurante Ramírez tenemos el mejor sabor de la región para tí, ven y disfruta de nuestros deliciosos platillos. Nuestro placer es atenderte.</text>
+	</aboutus>
+	<items>
+		<name>Menú</name>
+		<header>
+			<title>Nuestro menú</title>
+			<text>Conoce nuestros platillos.</text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533606117812-0783e8e690f1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Platillo del día</title>
+				<text>Prueba nuestro platillo del día, incluye agua y tortillas.</text>
+				<precio>$80.00</precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1534352956036-cd81e27dd615?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Burritos</title>
+				<text>Conoce nuestros deliciosos burritos gratinados.</text>
+				<precio>$60.00</precio>
+			</item>
+			<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1464219222984-216ebffaaf85?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Nachos</title>
+				<text>No olvides preguntar por nuestros tradicionales nachos.</text>
+				<precio>$50.00</precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Tacos</title>
+				<text>Pide nuestros deliciosos tacos.</text>
+				<precio>$15.00</precio>
+			</item>
+        </row>
+    </items>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1531088908835-39526ed12409?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Contáctanos</title>
+		<text>Reserva con nosotros.</text>
+        <links>
+            <link>
+                <description>Escríbenos</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíanos un correo, te contestaremos inmediatamente dentro de nuestros horarios de atención.</text>
+            </link>
+			<link>
+                <description>Llámanos</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Marca a nuestro teléfono y con gusto tomaremos tu llamada.</text>
+            </link>
+			<link>
+                <description>Descarga nuestro menú</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Descarga nuestro menú y mira nuestra carta de postres y bebidas.</text>
+            </link>
+        </links>
+	</cta>	
+	<gallery>
+		<name>Galería</name>
+		<header>
+			<title>Galería</title>
+			<text>Conoce nuestro espacio.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1543352634-99a5d50ae78e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1536791985-e156f3dbbb9c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="right" focus-ver="middle">https://images.unsplash.com/photo-1541154567415-afd5c6fccf55?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1515668166700-4c11137632fc?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+         </images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctanos</title>
+			<text>Nuestro placer es atenderte.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <emaillabel>Escríbenos a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámanos al</phonelabel>
+            <phone>5555555555</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours>Te atendemos las 24 horas del día los 365 días del año.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebooklabel>Facebook: Nuestro Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter: @NuestroTwitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
+        </social> 
+	</contact>
+</content>

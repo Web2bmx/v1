@@ -1,30 +1,16 @@
 @import "./crea/Templates/scss/_common";
 /*TEMPLATE LEVEL*/
 #template {
-	width: 100%; height: auto;
 	font-family: 'Montserrat', sans-serif;
-	text-align: center;
-	display: block; overflow: hidden;
 }
 #template h1, #template h2, #template h3, #template h4 {
 	font-family: 'Lobster Two', cursive;
-}
-#template a, #template a:link, #template a:visited, #template a:hover, #template a:active {
-	color: inherit;
-	text-decoration: none;
-}
-#template main {
-	width: 100%; height: auto;
-	display: block; overflow: hidden;
-}
-.font-icon {
-	font-family: 'Modern Pics', cursive;
 }
 /*TEMPLATE LEVEL*/
 /*rgba(40, 55, 75, 1)*/
 /*--TEMPLATE COMPONENTS--*/
 /*MENU*/
-.menu-cont {
+#menu {
 	background-color: rgba(0,0,0,.5);
 	display: block;
 	height: auto;
@@ -34,7 +20,7 @@
 	width: 100%;
 	z-index: 2;
 }
-#menu {
+#menu>.wrapper {
 	display: block;
 	height: auto;
 	margin: 0 auto;
@@ -42,42 +28,42 @@
 	padding: 0 4%;
 	width: auto; max-width: 1180px;
 }
-#menu h5 {
+#menu h3 {
 	float: left;
 }
-#template.color-orange .menu-cont h5 {
+#template.color-orange .menu-cont h3 {
 	color: rgba(240, 170, 0, 1);
 }
-#template.color-yellow .menu-cont h5 {
+#template.color-yellow .menu-cont h3 {
 	color: rgba(255, 230, 0, 1);
 }
-#template.color-green .menu-cont h5 {
+#template.color-green .menu-cont h3 {
 	color: rgba(76, 190, 116, 1);
 }
-#menu ul {
+#menu menu {
 	float: right;
 	padding-right: 4%;
 }
-#menu ul li {
+#menu menu li {
 	color: rgba(255,255,255,1);
 	list-style-type: none;
 }
-#menu ul li a {
+#menu menu li a {
 	display: block;
 	font-variant: small-caps;
 	padding: .4em .8em;
 }
-#template.color-orange #menu ul li a:hover, #template.color-orange #menu ul li a:active {
+#template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
 	color: rgba(240, 170, 0, 1);
 }
-#template.color-yellow #menu ul li a:hover, #template.color-yellow #menu ul li a:active {
+#template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
 	color: rgba(255, 230, 0, 1);
 }
-#template.color-green #menu ul li a:hover, #template.color-green #menu ul li a:active {
+#template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
 	color: rgba(76, 190, 116, 1);
 }
 @media only screen and (min-width: 560px) {
-	#menu ul li {
+	#menu menu li {
 		float: left;
 		margin-left: 1em;
 	}
@@ -92,7 +78,18 @@
 	position: relative;
 	width: 100%; 
 }
-#hero .img-cont {
+#hero>.wrapper {
+	bottom: 0;
+	display: block;
+	left: 0;
+	height: auto;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%; 
+}
+#hero .img {
 	display: block; 
 	height: 240px;
 	opacity: .3;
@@ -101,7 +98,7 @@
 	width: 100%; 
 	z-index: 0;
 }
-#hero-content {
+#hero .wrapper-content {
 	background-color: transparent;
 	color: rgba(255,255,255,1);
 	display: block; 
@@ -133,10 +130,10 @@
 	#hero {
 		height: 800px;
 	}
-	#hero .img-cont {
+	#hero .img {
 		height: 800px;
 	}
-	#hero-content {
+	#hero .wrapper-content {
 		padding: 10em 4% 4em 4%;
 	}
 	#template h1 {
@@ -145,24 +142,24 @@
 }
 /*HERO*/
 /*ABOUT US*/
-.aboutus-cont {
+#aboutus {
 	color: rgba(0,0,0,1);
 	display: block; 
 }
-.aboutus {
+#aboutus>.wrapper {
 	background-color: rgba(255,255,255,1);
 	display: block;
 	height: auto;
 	overflow: hidden;
 	width: 100%;
 }
-.aboutus .img-cont {
+#aboutus .img {
 	display: block; 
 	height: 350px;
 	overflow: hidden;
 	width: 100%;
 }
-.aboutus .aboutus-content {
+#aboutus .wrapper-content {
 	background-color: rgba(255,255,255,1);
 	display: block;
 	height: auto;
@@ -172,13 +169,13 @@
 	width: 92%; 
 }
 @media only screen and (min-width: 560px) {
-	.aboutus-cont {
+	#aboutus {
 		height: 300px;
 		overflow: visible;
 		position: relative;
 		z-index: 1;
 	}
-	.aboutus {
+	#aboutus>.wrapper {
 		background-color: rgba(255,255,255,1);
 		display: block;
 		height: 500px;
@@ -188,12 +185,12 @@
 		top: -150px;
 		width: 1000px;
 	}
-	.aboutus .img-cont {
+	#aboutus .img {
 		float: left;
 		height: 500px;
 		width: 50%;
 	}
-	.aboutus .aboutus-content {
+	#aboutus .wrapper-content {
 		float: right;
 		height: 420px;
 		padding: 80px 4% 0 4%;
@@ -202,13 +199,13 @@
 }
 /*ABOUT US*/
 /*ITEMS*/
-.items-cont {
+#items {
 	display: block;
 	height: auto;
 	padding: 4em 0;
 	width: 100%; 
 }
-.items-header {
+#items header {
 	margin: 0 auto;
 	text-align: center;
 	padding: 0 4%;
@@ -237,16 +234,16 @@
 #template.color-green .item {
 	background-color: rgba(76, 190, 116, 1);
 }
-.item .img-cont {
+.item .img {
 	display: block;
 	height: 200px;
 	overflow: hidden;
 	width: 100%; 
 }
-.item .img-cont.img-L { background-size: auto 100%; }
-.item .img-cont.img-S { background-size: auto 100%; }
-.item .img-cont.img-P { background-size: 100% auto; }
-.item .item-content {
+.item .img.img-L { background-size: auto 100%; }
+.item .img.img-S { background-size: auto 100%; }
+.item .img.img-P { background-size: 100% auto; }
+.item .wrapper-content {
 	display: block;
 	font-size: small;
 	text-align: center;
@@ -254,20 +251,20 @@
 	width: 80%;
 }
 @media only screen and (min-width: 560px) {
-	.item .img-cont {
+	.item .img {
 		float: left;
 		height: 200px;
 		width: 50%; 
 	}
-	.item .item-content {
+	.item .wrapper-content {
 		float: right;
 		padding: 1em 5%;
 		width: 40%;
 	}
-	.items:nth-child(even) .item .img-cont {
+	.items:nth-child(even) .item .img {
 		float: right;
 	}
-	.items:nth-child(even) .item .item-content {
+	.items:nth-child(even) .item .wrapper-content {
 		float: left;
 	}
 	.items {
@@ -282,87 +279,93 @@
 	}
 }
 /*ITEMS*/
-/*MAP*/
-.map-container {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%;
-}
-.map-container>iframe {
-	display: block;
-	height: 600px;
-	overflow: hidden;
-	width: 100%; 
-}
-/*MAP*/
-/*GALERIA*/
-.galeria-cont {
+/*gallery*/
+#gallery {
 	display: block;
 	height: auto;
 	overflow: hidden;
 	padding: 4em 0 0 0;
 	width: 100%; 
 }
-.galeria-header {
+#gallery>.wrapper {
+	display: block;
+	height: auto;
+	overflow: hidden;
+	width: 100%; 
+}
+#gallery header {
 	margin: 0 auto;
 	text-align: center;
 	width: auto; max-width: 1180px;
 }
-.galeria-header h3 {
+#gallery header h2 {
 	font-variant: small-caps;
 }
-.galeria-header h3 {
+#gallery header h2 {
 	color: rgba(68, 68, 68, 1);
 }
-#template.color-orange .galeria-header h3 {
+#template.color-orange #gallery header h2 {
 	color: rgba(240, 170, 0, 1);
 }
-#template.color-yellow .galeria-header h3 {
+#template.color-yellow #gallery header h2 {
 	color: rgba(255, 230, 0, 1);
 }
-#template.color-green .galeria-header h3 {
+#template.color-green #gallery header h2 {
 	color: rgba(76, 190, 116, 1);
 }
-.galeria {
+.gallery {
 	margin: 0 auto;
 	padding: 2em 0 0 0;
 	width: auto; max-width: 1180px;
 }
-.galeria-img-cont {
-	height: 220px;
-	overflow: hidden;
-}
-.galeria-img-cont img {
+.gallery .img {
 	display: block;
-	height: auto;
+	height: 220px;
+	min-width: 220px; 
+	overflow: hidden;
 	width: 100%; 
 }
+.gallery .img.img-L { background-size: auto 100%; }
+.gallery .img.img-S { background-size: auto 100%; }
+.gallery .img.img-P { background-size: 100% auto; }
+@media only screen and (min-width: 220px) {
+	.gallery .img.img-L { background-size: 100% auto; }
+	.gallery .img.img-S { background-size: 100% auto; }
+}
 @media only screen and (min-width: 560px) {
-	.galeria-img-cont {
-		height: 220px;
-		float: right; 
-		margin: 1em 0 0 0;
-		width: 33.3%; 
+	.gallery .img {
+		float: left; 
+		width: 50%; 
+	}
+	.gallery .img.img-L { background-size: auto 100%; }
+	.gallery .img.img-S { background-size: auto 100%; }
+}
+@media only screen and (min-width: 720px) {
+	.gallery .img.img-L { background-size: 100% auto; }
+	.gallery .img.img-S { background-size: 100% auto; }
+}
+@media only screen and (min-width: 960px) {
+	.gallery .img {
+		width: 33.33%; 
 	}
 }
-/*GALERIA*/
+/*gallery*/
 /*CTA*/
-.cta-cont {
+#cta {
 	display: block;
 	height: 200px;
 	position: relative;
 	width: 100%; 
 	z-index: 0;
 }
-.cta {
+#cta>.wrapper {
 	display: block;
 	height: 200px;
 	width: 100%; 
 	overflow: visible;
 	position: relative;
 }
-.cta .img-cont {
+#cta .img {
 	display: block; 
 	height: 200px;
 	overflow: hidden;
@@ -371,7 +374,7 @@
 	width: 100%;
 	z-index: 0;
 }
-.cta .cta-content {
+#cta .wrapper-content {
 	color: rgba(68, 68, 68, 1);
 	display: block;
 	height: auto;
@@ -382,35 +385,35 @@
 	width: 92%; max-width: 1086px; 
 	z-index: 1;
 }
-#template.color-orange .cta .cta-content {
+#template.color-orange #cta .wrapper-content {
 	color: rgba(240, 170, 0, 1);
 }
-#template.color-yellow .cta .cta-content {
+#template.color-yellow #cta .wrapper-content {
 	color: rgba(255, 230, 0, 1);
 }
-#template.color-green .cta .cta-content {
+#template.color-green #cta .wrapper-content {
 	color: rgba(76, 190, 116, 1);
 }
-.cta .cta-content h2 {
+#cta .wrapper-content h2 {
 	font-size: 2em;
 }
 @media only screen and (min-width: 560px) {
-	.cta-cont {
+	#cta {
 		height: 350px;
 	}
-	.cta {
+	#cta>.wrapper {
 		height: 350px;
 	}
-	.cta .img-cont {
+	#cta .img {
 		height: 350px;
 	}
-	.cta .cta-content {
+	#cta .wrapper-content {
 		padding: 8em 0 4em 0;
 	}
 }
 /*CTA*/
 /*FOOTER*/
-footer {
+#template footer {
 	height: auto;
 	display: block;
 	overflow: hidden;
@@ -426,32 +429,32 @@ footer {
 #template.color-green footer {
 	background-color: rgba(76, 190, 116, 1);
 }
-.footer-header {
+#template footer header {
 	margin: 0 auto;
 	text-align: center;
 	width: 92%; max-width: 1086px;
 }
-.footer-header h3 {
+#template footer header h5 {
 	font-variant: small-caps;
 }
-.footer-header p {
+#template footer header p {
 	color: rgba(68, 68, 68, 1);
 }
-#template.color-orange .footer-header p {
+#template.color-orange footer header p {
 	color: rgba(240, 170, 0, 1);
 }
-#template.color-yellow .footer-header p {
+#template.color-yellow footer header p {
 	color: rgba(255, 230, 0, 1);
 }
-#template.color-green .footer-header p {
+#template.color-green .footer header p {
 	color: #A4DD00;
 }
-.footer-contact-info {
+#template footer section{
 	margin: 0 auto;
 	text-align: left;
 	width: auto; max-width: 1440px;
 }
-.footer-column {
+#template footer .column {
 	padding: 0 4%;
 	width: auto;
 }
@@ -461,7 +464,7 @@ footer ul {
 	padding: 0;
 }
 @media only screen and (min-width: 560px) {
-	.footer-column {
+	#template footer .column {
 		float: left;
 		width: 25%;
 	}

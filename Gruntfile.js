@@ -9,9 +9,9 @@ module.exports = function (grunt) {
 	sass: {
 		options: {
 			sourceMap: true,
-                        outputStyle: "expanded",
-                        includePaths: ["node_modules"]
-		},
+            outputStyle: "expanded",
+            includePaths: ["node_modules"]
+        },
 		dist: {
 			files: {
                 'crea/css/styles.css': 'crea/scss/styles.scss',
@@ -20,11 +20,7 @@ module.exports = function (grunt) {
                 'crea/Templates/Template-001/css/styles.css' : 'crea/Templates/Template-001/scss/styles.scss',
                 'crea/Templates/Template-002/css/styles.css' : 'crea/Templates/Template-002/scss/styles.scss',
                 'crea/Templates/Template-003/css/styles.css' : 'crea/Templates/Template-003/scss/styles.scss',
-                'crea/Templates/Template-004/css/styles.css' : 'crea/Templates/Template-004/scss/styles.scss',
-                'crea/Templates/Template-005/css/styles.css' : 'crea/Templates/Template-005/scss/styles.scss',
-                'crea/Templates/Template-006/css/styles.css' : 'crea/Templates/Template-006/scss/styles.scss',
-                'crea/Templates/Template-007/css/styles.css' : 'crea/Templates/Template-007/scss/styles.scss',
-                'crea/Templates/Template-008/css/styles.css' : 'crea/Templates/Template-008/scss/styles.scss'
+                'crea/Templates/Template-004/css/styles.css' : 'crea/Templates/Template-004/scss/styles.scss'
 			}
 		}
 	},
@@ -33,6 +29,9 @@ module.exports = function (grunt) {
             sass:{
                 files: ["**/scss/**.scss","**/node_modules/**"],
                 tasks: ["sass"]
+            },
+            options: {
+                interval: 1000 
             }
         }
     });
