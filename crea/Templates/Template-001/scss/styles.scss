@@ -6,6 +6,19 @@
 #template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
 	font-family: 'Markazi Text', serif;
 }
+#template h1 { font-size: 2em; }
+#template h2 { font-size: 1.6em; }
+#template h3 { font-size: 1.2em; }
+#template h4 { font-size: 1em; }
+#template h5 { font-size: 1em; }
+#template h6 { font-size: 1em; }
+@media only screen and (min-width: 560px) {
+	#template h1 { font-size: 3em; }
+	#template h2 { font-size: 2.2em; }
+	#template h3 { font-size: 1.8em; }
+	#template h4 { font-size: 1.2em; }
+}
+#template p { font-size: 1em; }
 /*TEMPLATE LEVEL*/
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
@@ -41,6 +54,12 @@
 	width: 100%; 
 	z-index: 0;
 }
+#hero div.img.img-L { background-size: auto 100%; }
+#hero div.img.img-S { background-size: auto 100%; }
+@media only screen and (min-width: 560px) {
+	#hero div.img.img-L { background-size: 100% auto; }
+	#hero div.img.img-S { background-size: 100% auto; }
+}
 #hero .wrapper-content {
 	background-color: rgba(68, 68, 68, 1);
 	color: rgba(0,0,0,1);
@@ -61,9 +80,6 @@
 }
 #template.color-green .wrapper-content {
 	background-color: rgba(212, 255, 0, 1);
-}
-#template h1 {
-	font-size: 2em;
 }
 #branding {
 	display: block;
@@ -90,9 +106,6 @@
 	}
 	#hero .wrapper-content {
 		margin: 8em auto 4em auto;
-	}
-	#template h1 {
-		font-size: 3em;
 	}
 }
 /*HERO*/
@@ -134,6 +147,13 @@
 	position: absolute;
 	width: 100%; 
 	z-index: 0;
+}
+.item div.img.img-L { background-size: auto 100%; }
+.item div.img.img-S { background-size: auto 100%; }
+.item .img.img-P { background-size: 100% auto; }
+@media only screen and (min-width: 560px) {
+	.item div.img.img-L { background-size: 100% auto; }
+	.item div.img.img-S { background-size: 100% auto; }
 }
 .item .wrapper-content {
 	bottom: 20px;
@@ -195,6 +215,7 @@
 	overflow: hidden;
 	width: 100%;
 }
+#aboutus .img.img-P { background-size: 100% auto; }
 #aboutus .wrapper-content {
 	float: right;
 	text-align: left;
@@ -233,9 +254,6 @@
 	text-align: center;
 	padding-bottom: 2em;
 	width: auto; max-width: 1180px;
-}
-#gallery header h3 {
-	font-variant: small-caps;
 }
 .gallery {
 	margin: 0 auto;
@@ -323,9 +341,6 @@
 #template.color-green #cta .wrapper-content {
 	background-color: rgba(212, 255, 0, 1);
 }
-#cta .wrapper-content h2 {
-	font-size: 2em;
-}
 @media only screen and (min-width: 560px) {
 	#cta {
 		height: 350px;
@@ -355,9 +370,6 @@
 	margin: 0 auto;
 	text-align: center;
 	width: 92%; max-width: 1086px;
-}
-#template footer header h5 {
-	font-variant: small-caps;
 }
 #template footer header p {
 	color: rgba(68, 68, 68, 1);

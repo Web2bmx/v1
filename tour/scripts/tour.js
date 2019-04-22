@@ -74,6 +74,7 @@ function rePositionRocket(callback,animate){
 function preguntaValida(selector){
     var jsonData = localStorage.getItem("web2b");
     var resp = "";
+    var resp_id = "";
     var loc_en = "";
     if( ($(selector + " textarea").length != 0 && $.trim($(selector + " textarea").val()) == "") ||
     ($(selector + " input").length != 0 && $(selector + " input:checked").length == 0 && $(selector + " input.otra").val() == "")){
@@ -102,6 +103,7 @@ function preguntaValida(selector){
         } else {            
             resp = $(selector + " input:checked").val();
             loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
+            resp_id = $(selector + " input:checked[data-id!='']").length > 0 ? $(selector + " input:checked[data-id!='']").attr("data-id") : "";
             if($(selector + " input.otra").val() != "") {
                 resp = $(selector + " input.otra").val();
                 loc_en = "";
@@ -123,6 +125,7 @@ function preguntaValida(selector){
                         "tipo": $(selector + " p").data("type"),
                         "respuesta" : resp,
                         "localizacion_en" : decodeURIComponent(data.text[0]),
+                        "resp_id" : resp_id
                     };
         
                     localStorage.setItem("web2b", JSON.stringify(jsonData));
@@ -133,6 +136,7 @@ function preguntaValida(selector){
                 "tipo": $(selector + " p").data("type"),
                 "respuesta" : resp,
                 "localizacion_en" : loc_en,
+                "resp_id" : resp_id
             };
 
             localStorage.setItem("web2b", JSON.stringify(jsonData));

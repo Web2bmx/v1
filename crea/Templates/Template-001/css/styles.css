@@ -116,6 +116,49 @@ body {
   font-family: 'Markazi Text', serif;
 }
 
+#template h1 {
+  font-size: 2em;
+}
+
+#template h2 {
+  font-size: 1.6em;
+}
+
+#template h3 {
+  font-size: 1.2em;
+}
+
+#template h4 {
+  font-size: 1em;
+}
+
+#template h5 {
+  font-size: 1em;
+}
+
+#template h6 {
+  font-size: 1em;
+}
+
+@media only screen and (min-width: 560px) {
+  #template h1 {
+    font-size: 3em;
+  }
+  #template h2 {
+    font-size: 2.2em;
+  }
+  #template h3 {
+    font-size: 1.8em;
+  }
+  #template h4 {
+    font-size: 1.2em;
+  }
+}
+
+#template p {
+  font-size: 1em;
+}
+
 /*TEMPLATE LEVEL*/
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
@@ -154,6 +197,23 @@ body {
   z-index: 0;
 }
 
+#hero div.img.img-L {
+  background-size: auto 100%;
+}
+
+#hero div.img.img-S {
+  background-size: auto 100%;
+}
+
+@media only screen and (min-width: 560px) {
+  #hero div.img.img-L {
+    background-size: 100% auto;
+  }
+  #hero div.img.img-S {
+    background-size: 100% auto;
+  }
+}
+
 #hero .wrapper-content {
   background-color: #444444;
   color: black;
@@ -177,10 +237,6 @@ body {
 
 #template.color-green .wrapper-content {
   background-color: #d4ff00;
-}
-
-#template h1 {
-  font-size: 2em;
 }
 
 #branding {
@@ -212,9 +268,6 @@ body {
   }
   #hero .wrapper-content {
     margin: 8em auto 4em auto;
-  }
-  #template h1 {
-    font-size: 3em;
   }
 }
 
@@ -263,6 +316,27 @@ body {
   position: absolute;
   width: 100%;
   z-index: 0;
+}
+
+.item div.img.img-L {
+  background-size: auto 100%;
+}
+
+.item div.img.img-S {
+  background-size: auto 100%;
+}
+
+.item .img.img-P {
+  background-size: 100% auto;
+}
+
+@media only screen and (min-width: 560px) {
+  .item div.img.img-L {
+    background-size: 100% auto;
+  }
+  .item div.img.img-S {
+    background-size: 100% auto;
+  }
 }
 
 .item .wrapper-content {
@@ -344,6 +418,10 @@ body {
   width: 100%;
 }
 
+#aboutus .img.img-P {
+  background-size: 100% auto;
+}
+
 #aboutus .wrapper-content {
   float: right;
   text-align: left;
@@ -387,10 +465,6 @@ body {
   padding-bottom: 2em;
   width: auto;
   max-width: 1180px;
-}
-
-#gallery header h3 {
-  font-variant: small-caps;
 }
 
 .gallery {
@@ -518,10 +592,6 @@ body {
   background-color: #d4ff00;
 }
 
-#cta .wrapper-content h2 {
-  font-size: 2em;
-}
-
 @media only screen and (min-width: 560px) {
   #cta {
     height: 350px;
@@ -554,10 +624,6 @@ body {
   text-align: center;
   width: 92%;
   max-width: 1086px;
-}
-
-#template footer header h5 {
-  font-variant: small-caps;
 }
 
 #template footer header p {

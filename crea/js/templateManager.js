@@ -20,7 +20,8 @@ export default function templateManager () {
 		/* */
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
 			$("#template").html("");
-			var src = "Templates/Template-" + id + "/index.php?t=4"; 
+			var content_id = _ctrl.jd.respuestas[22].resp_id == "" ? 2 : _ctrl.jd.respuestas[22].resp_id;
+			var src = "Templates/Template-" + id + "/index.php?t=" + content_id; 
 			$("#template-cont").load(src + " #template", function() {
 				var $template = $("#template");
 				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));

@@ -56,7 +56,7 @@ function muestra_pregunta($numero_pregunta){
         
             $html .= ' 
                 <label for="rb' . $o["ID"] . '">           
-                <input id="rb' . $o["ID"] . '" type="radio" name="pregunta' . $numero_pregunta . '" value="' . $o["TEXT"] . '" data-loc-en="' . $o["LOC_EN"] . '">
+                <input id="rb' . $o["ID"] . '" type="radio" name="pregunta' . $numero_pregunta . '" value="' . $o["TEXT"] . '" data-loc-en="' . $o["LOC_EN"] . '" data-id="' . $o["ID"] . '">
                 ' . $o["TEXT"] . 
                 '</label>';
 
