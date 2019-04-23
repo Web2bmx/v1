@@ -185,7 +185,7 @@ export default function appManager() {
 			if(firstTime) {
 				// Hide buttons when already a page is built
 				let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
-				if(actual_page.paquete !== null) {
+				if(actual_page && actual_page.paquete) {
 					manageFinalData(actual_page.fecha_fin, actual_page.paquete);
 				} else {
 					$(".created").hide();
