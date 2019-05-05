@@ -387,7 +387,7 @@ export default function tour() {
             $this.parent().parent().parent().find(".group_answers").hide();
             $this.parent().parent().parent().find(".cont_answers>label").show();
             $this.parent().next(".group_answers").show().find("input:first").trigger("click");
-            $this.parent().hide();
+            //$this.parent().hide();
             return false;
         });
                

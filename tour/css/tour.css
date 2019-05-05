@@ -1203,11 +1203,26 @@ textarea {
   width: 100%;
 }
 
+.cont_answers > label {
+  cursor: pointer;
+}
+
+.cont_answers > label > input[type='radio'] {
+  display: none;
+}
+
 .group_answers {
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+}
+
+.group_answers > label {
+  clear: both;
+  margin-left: 10%;
+  display: block;
+  font-size: .8em;
 }
 
 /*# sourceMappingURL=tour.css.map */
