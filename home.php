@@ -24,9 +24,9 @@
 			<![endif]-->
 		</head>
 		<body>
-			<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-			<script src="landing/js/landing.bundle.js"></script>-->
+			<script src="landing/js/landing.bundle.js"></script>
 			<header>
 				<div id="branding"><img id="logo" src="/img/logo.png" /></div>
 			</header>

@@ -447,7 +447,7 @@ textarea{
 
     input[type=radio]{
         position: absolute;
-        left: 5px;
+        left: 25px;
         top: 10px;        
     }
 
@@ -455,7 +455,7 @@ textarea{
         width: 100%;
         display: block;
         float: left;
-        padding: 8px 10px 8px 25px;
+        padding: 5px 10px 5px 25px;
         box-sizing: border-box;
         line-height: 18px;
         position: relative;
@@ -540,8 +540,8 @@ textarea{
     width: 100%;
 }
 .group_answers>label {
-    clear: both;
-    margin-left: 10%;
+    padding-left: 45px;
     display: block;
     font-size: .8em;
+    height: 52px;
 }

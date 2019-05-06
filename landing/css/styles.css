@@ -616,7 +616,6 @@ footer nav li {
     margin: 0 0 1rem 0;
   }
   footer nav {
-    height: 16rem;
     margin-bottom: 0;
   }
   footer nav li {
@@ -666,6 +665,7 @@ footer nav li {
     margin-top: 10px;
     margin-bottom: 0;
     width: auto;
+    clear: both;
   }
   #social span {
     position: relative;

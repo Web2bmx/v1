@@ -54,11 +54,11 @@
 	width: 100%; 
 	z-index: 0;
 }
-#hero div.img.img-L { background-size: auto 100%; }
-#hero div.img.img-S { background-size: auto 100%; }
+#hero div.img.img-L { background-size: cover; }
+#hero div.img.img-S { background-size: cover; }
 @media only screen and (min-width: 560px) {
-	#hero div.img.img-L { background-size: 100% auto; }
-	#hero div.img.img-S { background-size: 100% auto; }
+	#hero div.img.img-L { background-size: cover; }
+	#hero div.img.img-S { background-size: cover; }
 }
 #hero .wrapper-content {
 	background-color: rgba(68, 68, 68, 1);
@@ -136,34 +136,33 @@
 }
 .item {
 	display: block;
-	height: 320px;
 	position: relative;
-	width: 100%; 
+	width: 100%;
+	overflow: hidden;
 }
 .item .img {
 	display: block;
-	height: 320px;
+	height: 100%;
 	overflow: hidden;
 	position: absolute;
 	width: 100%; 
 	z-index: 0;
 }
-.item div.img.img-L { background-size: auto 100%; }
-.item div.img.img-S { background-size: auto 100%; }
-.item .img.img-P { background-size: 100% auto; }
+.item div.img.img-L { background-size: cover; }
+.item div.img.img-S { background-size: cover; }
+.item .img.img-P { background-size: cover; }
 @media only screen and (min-width: 560px) {
-	.item div.img.img-L { background-size: 100% auto; }
-	.item div.img.img-S { background-size: 100% auto; }
+	.item div.img.img-L { background-size:cover; }
+	.item div.img.img-S { background-size: cover; }
 }
 .item .wrapper-content {
-	bottom: 20px;
-	display: block;
-	left: 20%;
-	padding: 20px 5%;
-	position: absolute;
-	right: 20%;
-	top: 120px;
-	z-index: 1;
+    left: 20%;
+    padding: 20px 5%;
+    position: relative;
+    top: 0;
+    z-index: 1;
+    width: 50%;
+    margin: 50px 0;
 }
 #template.color-orange .item .wrapper-content {
 	background-color: rgba(250, 153, 0, 1);
@@ -214,8 +213,9 @@
 	height: 200px;
 	overflow: hidden;
 	width: 100%;
+	background-size: cover;
 }
-#aboutus .img.img-P { background-size: 100% auto; }
+#aboutus .img.img-P { background-size: cover; }
 #aboutus .wrapper-content {
 	float: right;
 	text-align: left;
@@ -266,12 +266,12 @@
 	overflow: hidden;
 	width: 100%; 
 }
-.gallery .img.img-L { background-size: auto 100%; }
-.gallery .img.img-S { background-size: auto 100%; }
-.gallery .img.img-P { background-size: 100% auto; }
+.gallery .img.img-L { background-size: cover; }
+.gallery .img.img-S { background-size: cover; }
+.gallery .img.img-P { background-size: cover; }
 @media only screen and (min-width: 220px) {
-	.gallery .img.img-L { background-size: 100% auto; }
-	.gallery .img.img-S { background-size: 100% auto; }
+	.gallery .img.img-L { background-size: cover; }
+	.gallery .img.img-S { background-size: cover; }
 }
 @media only screen and (min-width: 560px) {
 	.gallery .img {
@@ -279,19 +279,19 @@
 		margin: 0 2% 1em 2%;
 		width: 46%; 
 	}
-	.gallery .img.img-L { background-size: auto 100%; }
-	.gallery .img.img-S { background-size: auto 100%; }
+	.gallery .img.img-L { background-size: cover; }
+	.gallery .img.img-S { background-size: cover; }
 }
 @media only screen and (min-width: 720px) {
-	.gallery .img.img-L { background-size: 100% auto; }
-	.gallery .img.img-S { background-size: 100% auto; }
+	.gallery .img.img-L { background-size: cover; }
+	.gallery .img.img-S { background-size: cover; }
 }
 @media only screen and (min-width: 960px) {
 	.gallery .img {
 		width: 29.33%; 
 	}
-	.gallery .img.img-L { background-size: auto 100%; }
-	.gallery .img.img-S { background-size: auto 100%; }
+	.gallery .img.img-L { background-size: cover; }
+	.gallery .img.img-S { background-size: cover; }
 }
 @media only screen and (min-width: 960px) {
 	.gallery .img {
@@ -302,19 +302,17 @@
 /*CTA*/
 #cta {
 	display: block;
-	height: 200px;
 	width: 100%; 
 }
 #cta>.wrapper {
 	display: block;
-	height: 200px;
 	width: 100%; 
 	overflow: visible;
 	position: relative;
 }
 #cta .img {
 	display: block; 
-	height: 200px;
+	height: 100%;
 	overflow: hidden;
 	position: absolute;
 	width: 100%;
@@ -340,20 +338,6 @@
 }
 #template.color-green #cta .wrapper-content {
 	background-color: rgba(212, 255, 0, 1);
-}
-@media only screen and (min-width: 560px) {
-	#cta {
-		height: 350px;
-	}
-	#cta>.wrapper {
-		height: 350px;
-	}
-	#cta .img {
-		height: 350px;
-	}
-	#cta .wrapper-content {
-		margin: 8em auto 4em auto;
-	}
 }
 /*CTA*/
 /*FOOTER*/

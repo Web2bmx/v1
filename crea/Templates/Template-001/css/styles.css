@@ -198,19 +198,19 @@ body {
 }
 
 #hero div.img.img-L {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 #hero div.img.img-S {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 @media only screen and (min-width: 560px) {
   #hero div.img.img-L {
-    background-size: 100% auto;
+    background-size: cover;
   }
   #hero div.img.img-S {
-    background-size: 100% auto;
+    background-size: cover;
   }
 }
 
@@ -304,14 +304,14 @@ body {
 
 .item {
   display: block;
-  height: 320px;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .item .img {
   display: block;
-  height: 320px;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -319,35 +319,34 @@ body {
 }
 
 .item div.img.img-L {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .item div.img.img-S {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .item .img.img-P {
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 @media only screen and (min-width: 560px) {
   .item div.img.img-L {
-    background-size: 100% auto;
+    background-size: cover;
   }
   .item div.img.img-S {
-    background-size: 100% auto;
+    background-size: cover;
   }
 }
 
 .item .wrapper-content {
-  bottom: 20px;
-  display: block;
   left: 20%;
   padding: 20px 5%;
-  position: absolute;
-  right: 20%;
-  top: 120px;
+  position: relative;
+  top: 0;
   z-index: 1;
+  width: 50%;
+  margin: 50px 0;
 }
 
 #template.color-orange .item .wrapper-content {
@@ -416,10 +415,11 @@ body {
   height: 200px;
   overflow: hidden;
   width: 100%;
+  background-size: cover;
 }
 
 #aboutus .img.img-P {
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 #aboutus .wrapper-content {
@@ -481,23 +481,23 @@ body {
 }
 
 .gallery .img.img-L {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .gallery .img.img-S {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .gallery .img.img-P {
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 @media only screen and (min-width: 220px) {
   .gallery .img.img-L {
-    background-size: 100% auto;
+    background-size: cover;
   }
   .gallery .img.img-S {
-    background-size: 100% auto;
+    background-size: cover;
   }
 }
 
@@ -508,19 +508,19 @@ body {
     width: 46%;
   }
   .gallery .img.img-L {
-    background-size: auto 100%;
+    background-size: cover;
   }
   .gallery .img.img-S {
-    background-size: auto 100%;
+    background-size: cover;
   }
 }
 
 @media only screen and (min-width: 720px) {
   .gallery .img.img-L {
-    background-size: 100% auto;
+    background-size: cover;
   }
   .gallery .img.img-S {
-    background-size: 100% auto;
+    background-size: cover;
   }
 }
 
@@ -529,10 +529,10 @@ body {
     width: 29.33%;
   }
   .gallery .img.img-L {
-    background-size: auto 100%;
+    background-size: cover;
   }
   .gallery .img.img-S {
-    background-size: auto 100%;
+    background-size: cover;
   }
 }
 
@@ -546,13 +546,11 @@ body {
 /*CTA*/
 #cta {
   display: block;
-  height: 200px;
   width: 100%;
 }
 
 #cta > .wrapper {
   display: block;
-  height: 200px;
   width: 100%;
   overflow: visible;
   position: relative;
@@ -560,7 +558,7 @@ body {
 
 #cta .img {
   display: block;
-  height: 200px;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   width: 100%;
@@ -590,21 +588,6 @@ body {
 
 #template.color-green #cta .wrapper-content {
   background-color: #d4ff00;
-}
-
-@media only screen and (min-width: 560px) {
-  #cta {
-    height: 350px;
-  }
-  #cta > .wrapper {
-    height: 350px;
-  }
-  #cta .img {
-    height: 350px;
-  }
-  #cta .wrapper-content {
-    margin: 8em auto 4em auto;
-  }
 }
 
 /*CTA*/
