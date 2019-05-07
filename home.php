@@ -13,11 +13,11 @@
 			<meta name="author" content="Web2b">
 			<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 			<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-			<!--<link rel="stylesheet" href="/css/jquery-ui.min.css" >
+			<link rel="stylesheet" href="/css/jquery-ui.min.css" >
 			<link rel="stylesheet" href="/css/jquery-ui.structure.min.css" >
 			<link rel="stylesheet" href="/css/jquery-ui.theme.min.css" >
 			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
-			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">-->
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 			<link rel="stylesheet" href="landing/css/styles.css?v=1.0">
 			<!--[if lt IE 9]>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -47,7 +47,7 @@
 			</nav>
 			<main>
 				<section id="hero">
-					<!--<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>-->
+					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
 					<div class="container">	
 						<img id="graph-rocket" src="landing/img/rocket.png" />					
 						<h1><strong>Impulsa</strong> tu estrategia digital</h1>

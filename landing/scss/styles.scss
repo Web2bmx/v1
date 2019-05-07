@@ -1,4 +1,4 @@
-/*@import '../../node_modules/normalize-scss/sass/normalize/import-now';
+@import '../../node_modules/normalize-scss/sass/normalize/import-now';
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 @import '../../scss/base/_variables';
 @import '../../scss/base/_colors';
@@ -8,7 +8,8 @@
 @import '../../scss/components/_modal';
 @import '../../scss/components/_inputFields';
 @import '../../scss/components/login-paginas';
-@import '../../scss/partials/_errors';*/
+@import '../../scss/partials/_errors';
+
 /**/
 body {
 	font-family: 'Open Sans', sans-serif;
@@ -582,12 +583,12 @@ footer {
 	text-align: right;
 }}
 /*EO FOOTER*/
-/*MODAL
+// MODAL
 .ventana-login {
 	@extend .modal-login;
 	@include login-paginas;
 
-}*/
+}
 /*Botones*/
 .right {
 	float: right;
