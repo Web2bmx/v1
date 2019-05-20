@@ -107,6 +107,15 @@ body {
 }
 
 /*MAP*/
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 10, 2018, 1:18:48 PM
+    Author     : cmend
+*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Open Sans', sans-serif;
@@ -409,8 +418,11 @@ body {
 
 @media only screen and (min-width: 560px) {
   #aboutus .img {
-    height: 300px;
+    height: 100%;
     width: 40%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   #aboutus .wrapper-content {
     width: 40%;
@@ -584,9 +596,10 @@ body {
 }
 
 #template footer section {
-  margin: 0 auto 1em auto;
+  margin: 0 auto;
   width: auto;
   max-width: 1440px;
+  text-align: center;
 }
 
 #template footer .column {
@@ -601,7 +614,10 @@ body {
   padding: 0;
 }
 
-@media only screen and (min-width: 560px) {
+@media (min-width: 800px) {
+  #template footer section {
+    text-align: left;
+  }
   #template footer .column {
     float: left;
     width: 25%;
