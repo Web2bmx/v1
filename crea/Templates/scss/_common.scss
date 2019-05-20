@@ -6,9 +6,9 @@
 body { margin: 0; padding: 0; }
 /*BODY LEVEL*/
 /*IMAGES CONTROL*/
-.img-L { background-size: 100% auto; }
-.img-S { background-size: auto 100%; }
-.img-P { background-size: auto 100%; }
+.img-L { background-size: cover; }
+.img-S { background-size: cover; }
+.img-P { background-size: cover; }
 .img-TL { background-position: top left; }
 .img-TC { background-position: top center; }
 .img-TR { background-position: top right; }

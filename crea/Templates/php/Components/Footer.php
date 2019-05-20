@@ -21,8 +21,8 @@
 		<div class="column">	
 			<h6><?php echo($content->contact[0]->social[0]->title); ?></h6>
 			<ul>
-				<li id="val-contact-facebook"><span class="font-icon">g</span> <a href="<?php echo($content->contact[0]->social[0]->facebook); ?>"><?php echo($content->contact[0]->social[0]->facebook); ?></a></li>
-				<li id="val-contact-twitter"><span class="font-icon">t</span> <a href="<?php echo($content->contact[0]->social[0]->twitter); ?>"><?php echo($content->contact[0]->social[0]->twitter); ?></a></li>
+				<li id="val-contact-facebook"><span class="font-icon">g</span> <a href="<?php echo($content->contact[0]->social[0]->facebook); ?>"><?php echo($content->contact[0]->social[0]->facebooklabel); ?></a></li>
+				<li id="val-contact-twitter"><span class="font-icon">t</span> <a href="<?php echo($content->contact[0]->social[0]->twitter); ?>"><?php echo($content->contact[0]->social[0]->twitterlabel); ?></a></li>
 			</ul>
 		</div>
 	</section>

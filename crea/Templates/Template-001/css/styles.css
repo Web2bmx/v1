@@ -12,15 +12,15 @@ body {
 /*BODY LEVEL*/
 /*IMAGES CONTROL*/
 .img-L {
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .img-S {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .img-P {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .img-TL {
@@ -118,26 +118,37 @@ body {
 
 #template h1 {
   font-size: 2em;
+  margin: 0 0 .4em 0;
 }
 
 #template h2 {
   font-size: 1.6em;
+  margin: 0 0 .4em 0;
 }
 
 #template h3 {
-  font-size: 1.2em;
+  font-size: 1.4em;
+  margin: 0 .4em 0;
 }
 
 #template h4 {
   font-size: 1em;
+  margin: 0 .4em 0;
 }
 
 #template h5 {
   font-size: 1em;
+  margin: 0 .4em 0;
 }
 
 #template h6 {
   font-size: 1em;
+  margin: 0 .4em 0;
+}
+
+#template p, #template ul, #template ol {
+  font-size: 1em;
+  margin: 0 0 .4em 0;
 }
 
 @media only screen and (min-width: 560px) {
@@ -155,17 +166,13 @@ body {
   }
 }
 
-#template p {
-  font-size: 1em;
-}
-
 /*TEMPLATE LEVEL*/
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
 #hero {
   background-color: #666666;
   display: block;
-  height: 480px;
+  height: 620px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -197,33 +204,16 @@ body {
   z-index: 0;
 }
 
-#hero div.img.img-L {
-  background-size: cover;
-}
-
-#hero div.img.img-S {
-  background-size: cover;
-}
-
-@media only screen and (min-width: 560px) {
-  #hero div.img.img-L {
-    background-size: cover;
-  }
-  #hero div.img.img-S {
-    background-size: cover;
-  }
-}
-
 #hero .wrapper-content {
   background-color: #444444;
   color: black;
   display: inline-block;
   height: auto;
-  margin: 8em auto 0 auto;
+  margin: 16em auto 0 auto;
   overflow: hidden;
-  padding: 1em 4%;
+  padding: 4em 4%;
   position: relative;
-  width: auto;
+  width: 72%;
   z-index: 1;
 }
 
@@ -254,8 +244,11 @@ body {
   width: auto;
 }
 
-.seemore {
+.seemore, .seemore > a {
   display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
 }
 
 .seemore span {
@@ -278,7 +271,7 @@ body {
   display: block;
   height: auto;
   overflow: hidden;
-  padding: 1em 0 0 0;
+  padding: 2em 0 0 0;
   width: 100%;
 }
 
@@ -289,7 +282,7 @@ body {
   width: 100%;
 }
 
-#items > header {
+#items header {
   margin: 0 auto;
   text-align: center;
   padding: 0 4% 2em 4%;
@@ -304,6 +297,7 @@ body {
 
 .item {
   display: block;
+  height: 400px;
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -318,35 +312,15 @@ body {
   z-index: 0;
 }
 
-.item div.img.img-L {
-  background-size: cover;
-}
-
-.item div.img.img-S {
-  background-size: cover;
-}
-
-.item .img.img-P {
-  background-size: cover;
-}
-
-@media only screen and (min-width: 560px) {
-  .item div.img.img-L {
-    background-size: cover;
-  }
-  .item div.img.img-S {
-    background-size: cover;
-  }
-}
-
 .item .wrapper-content {
-  left: 20%;
-  padding: 20px 5%;
-  position: relative;
-  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2em 4% 1em 4%;
+  position: absolute;
+  right: 0;
+  top: auto;
+  width: 92%;
   z-index: 1;
-  width: 50%;
-  margin: 50px 0;
 }
 
 #template.color-orange .item .wrapper-content {
@@ -361,15 +335,16 @@ body {
   background-color: #d4ff00;
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 960px) {
   .items {
     display: grid;
+    grid-gap: 0 4%;
   }
   .items.one {
-    grid-template-columns: auto;
+    grid-template-columns: 92%;
   }
   .items.two {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 44% 44%;
   }
   .items.three {
     grid-template-columns: 33% 34% 33%;
@@ -385,14 +360,14 @@ body {
   background-color: #444444;
   color: black;
   display: block;
-  height: auto;
+  height: 620px;
   overflow: hidden;
   width: 100%;
 }
 
 #aboutus > .wrapper {
   display: block;
-  height: auto;
+  height: 620px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -411,23 +386,25 @@ body {
 }
 
 #aboutus .img {
-  float: left;
-  height: 200px;
+  height: 620px;
+  opacity: .6;
   overflow: hidden;
+  position: relative;
   width: 100%;
-  background-size: cover;
+  z-index: 1;
 }
 
-#aboutus .img.img-P {
-  background-size: cover;
-}
-
-#aboutus .wrapper-content {
-  float: right;
-  text-align: left;
+#template #aboutus div.wrapper-content {
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
   overflow: hidden;
-  padding: 2em 10% 2em 10%;
-  width: auto;
+  position: absolute;
+  padding: 8em 4% 2em 4%;
+  right: 0;
+  top: 0;
+  width: 92%;
+  z-index: 2;
 }
 
 @media only screen and (min-width: 560px) {
@@ -461,8 +438,7 @@ body {
 
 #gallery header {
   margin: 0 auto;
-  text-align: center;
-  padding-bottom: 2em;
+  padding: 0 4% 2em 0;
   width: auto;
   max-width: 1180px;
 }
@@ -474,31 +450,10 @@ body {
 
 .gallery .img {
   display: block;
-  height: 220px;
-  min-width: 220px;
+  height: 620px;
   overflow: hidden;
   width: 100%;
-}
-
-.gallery .img.img-L {
-  background-size: cover;
-}
-
-.gallery .img.img-S {
-  background-size: cover;
-}
-
-.gallery .img.img-P {
-  background-size: cover;
-}
-
-@media only screen and (min-width: 220px) {
-  .gallery .img.img-L {
-    background-size: cover;
-  }
-  .gallery .img.img-S {
-    background-size: cover;
-  }
+  min-width: 220px;
 }
 
 @media only screen and (min-width: 560px) {
@@ -507,32 +462,11 @@ body {
     margin: 0 2% 1em 2%;
     width: 46%;
   }
-  .gallery .img.img-L {
-    background-size: cover;
-  }
-  .gallery .img.img-S {
-    background-size: cover;
-  }
-}
-
-@media only screen and (min-width: 720px) {
-  .gallery .img.img-L {
-    background-size: cover;
-  }
-  .gallery .img.img-S {
-    background-size: cover;
-  }
 }
 
 @media only screen and (min-width: 960px) {
   .gallery .img {
     width: 29.33%;
-  }
-  .gallery .img.img-L {
-    background-size: cover;
-  }
-  .gallery .img.img-S {
-    background-size: cover;
   }
 }
 
@@ -545,67 +479,91 @@ body {
 /*GALERIA*/
 /*CTA*/
 #cta {
+  background-color: #444444;
+  color: black;
   display: block;
+  height: 620px;
+  overflow: hidden;
   width: 100%;
 }
 
 #cta > .wrapper {
   display: block;
-  width: 100%;
-  overflow: visible;
-  position: relative;
-}
-
-#cta .img {
-  display: block;
-  height: 100%;
+  height: 620px;
   overflow: hidden;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-}
-
-#cta .wrapper-content {
-  background-color: #444444;
-  color: black;
-  display: inline-block;
-  height: auto;
-  margin: 2em auto;
-  overflow: hidden;
-  padding: 1em 4%;
   position: relative;
-  width: auto;
-  z-index: 1;
+  width: 100%;
 }
 
-#template.color-orange #cta .wrapper-content {
+#template.color-orange #cta {
   background-color: #fa9900;
 }
 
-#template.color-yellow #cta .wrapper-content {
+#template.color-yellow #cta {
   background-color: #fad400;
 }
 
-#template.color-green #cta .wrapper-content {
+#template.color-green #cta {
   background-color: #d4ff00;
+}
+
+#cta .img {
+  height: 620px;
+  opacity: .6;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+#template #cta div.wrapper-content {
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  padding: 8em 4% 2em 4%;
+  right: 0;
+  top: 0;
+  width: 92%;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 560px) {
+  #cta .img {
+    height: 300px;
+    width: 40%;
+  }
+  #cta .wrapper-content {
+    width: 40%;
+  }
+}
+
+#template #cta div.wrapper-content ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /*CTA*/
 /*FOOTER*/
+#template footer p, #template footer ul, #template footer ol {
+  font-size: .8em;
+}
+
 #template footer {
   background-color: black;
   color: white;
   height: auto;
   display: block;
   overflow: hidden;
-  padding: 4em 0 2em 0;
+  padding: 2em 0 0 0;
   width: 100%;
 }
 
 #template footer header {
-  margin: 0 auto;
-  text-align: center;
-  width: 92%;
+  margin: 0 auto 1em auto;
+  width: 82%;
   max-width: 1086px;
 }
 
@@ -626,20 +584,20 @@ body {
 }
 
 #template footer section {
-  margin: 0 auto;
-  text-align: left;
+  margin: 0 auto 1em auto;
   width: auto;
   max-width: 1440px;
 }
 
 #template footer .column {
+  margin: 0 auto .4em auto;
   padding: 0 4%;
   width: auto;
 }
 
 #template footer .column ul {
-  margin: 0;
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
@@ -652,14 +610,18 @@ body {
 
 /*FOOTER*/
 /*DISCLAIMER*/
+#template #disclaimer p, #template #disclaimer ul, #template #disclaimer ol {
+  font-size: .8em;
+}
+
 #disclaimer {
   background-color: black;
   color: #444444;
   display: block;
   height: auto;
   overflow: hiddden;
-  padding: 2em 0;
-  width: 100%;
+  padding: .4em 4%;
+  width: auto;
 }
 
 #template.color-orange #disclaimer {
@@ -672,13 +634,6 @@ body {
 
 #template.color-green #disclaimer {
   color: #a4bc00;
-}
-
-#disclaimer p {
-  margin: 0 auto;
-  width: 90%;
-  font-size: .8em;
-  text-align: left;
 }
 
 /*DISCLAIMER*/
