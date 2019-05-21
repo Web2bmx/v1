@@ -348,15 +348,17 @@ and open the template in the editor.
   .items {
     display: grid;
     grid-gap: 0 4%;
+    margin: 1em auto;
+    width: 92%;
   }
   .items.one {
-    grid-template-columns: 92%;
+    grid-template-columns: 100%;
   }
   .items.two {
-    grid-template-columns: 44% 44%;
+    grid-template-columns: auto auto;
   }
   .items.three {
-    grid-template-columns: 33% 34% 33%;
+    grid-template-columns: auto auto auto;
   }
   .item {
     width: auto;
@@ -416,19 +418,6 @@ and open the template in the editor.
   z-index: 2;
 }
 
-@media only screen and (min-width: 560px) {
-  #aboutus .img {
-    height: 100%;
-    width: 40%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  #aboutus .wrapper-content {
-    width: 40%;
-  }
-}
-
 /*ABOUT US*/
 /*GALERIA*/
 #gallery {
@@ -468,23 +457,11 @@ and open the template in the editor.
   min-width: 220px;
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 960px) {
   .gallery .img {
     float: left;
     margin: 0 2% 1em 2%;
     width: 46%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .gallery .img {
-    width: 29.33%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .gallery .img {
-    width: 21%;
   }
 }
 
@@ -539,16 +516,6 @@ and open the template in the editor.
   top: 0;
   width: 92%;
   z-index: 2;
-}
-
-@media only screen and (min-width: 560px) {
-  #cta .img {
-    height: 300px;
-    width: 40%;
-  }
-  #cta .wrapper-content {
-    width: 40%;
-  }
 }
 
 #template #cta div.wrapper-content ul {
