@@ -2,7 +2,7 @@ export default function imageManager () {
 	var _ctrl = null;
 	var init = function (_that) {
 		_ctrl = _that;
-	}
+	};
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
 		//Check if there are already images upload from user
@@ -34,9 +34,9 @@ export default function imageManager () {
 			for(let x=0; x<data.length ; x++){
 				var $img_thumb = $(".img-thumb.template").clone();
 				$img_thumb.removeClass("template").find(".img-thumb-cont").css({
-					"background-image" : ("url(" + data[x]["urls"]["regular"] + ")")
-				}).attr("data-img-url", data[x]["urls"]["regular"]);
-				$img_thumb.find("input").attr("value", data[x]["urls"]["regular"]);
+					"background-image" : ("url(" + data[x].urls.regular + ")")
+				}).attr("data-img-url", data[x].urls.regular);
+				$img_thumb.find("input").attr("value", data[x].urls.regular);
 				for (let i = 0; i < image_types.length; i++) {
 					var $this_img_thumb = $img_thumb.clone();
 					$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));

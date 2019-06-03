@@ -2,7 +2,7 @@ export default function templateManager () {
 	var _ctrl = null;
 	var init = function(_that) {
         _ctrl = _that;
-    }
+    };
     var loadTemplate = function() {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
@@ -90,11 +90,11 @@ export default function templateManager () {
 						$template.find("#val-contact-map").html(selections[i_id].text);
 						break;	
 					case "inp-contact-facebook" :
-						arr = selections[i_id].text.toLowerCase().split('facebook.com/');
+						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
 						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
 						break;	
 					case "inp-contact-twitter" : 
-						arr = selections[i_id].text.toLowerCase().split('twitter.com/');
+						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('twitter.com/') : '';
 						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
 						break;	
 					case "siteName":
@@ -125,16 +125,17 @@ export default function templateManager () {
 							$template.find("#val-contact-map").html(selections[i_id].text);
 							break;	
 						case "inp-contact-facebook" :
-							arr = selections[i_id].text.toLowerCase().split('facebook.com/');
+							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
 							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
 							break;	
 						case "inp-contact-twitter" :
-							arr = selections[i_id].text.toLowerCase().split('twitter.com/');
+							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('twitter.com/') : '';
 							$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
 							break;	
 						case "siteName":
 							$(".siteName span").text(selections[i_id].text);
 							$(".siteName").attr("href","http://" + selections[i_id].text + ".web2b.mx");
+							break;
 						default : 
 							$template.find("#" + v_id).html(selections[i_id].text);
 							break;
@@ -156,7 +157,7 @@ export default function templateManager () {
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
 		}
-	}
+	};
 	var updateRemoveControls = function ($template, selections) {
 		if (_ctrl.sessionStatus == "START SESSION") {
 			$("[id^='inp-rem-']").each(function() {
@@ -207,14 +208,14 @@ export default function templateManager () {
 				}
 			});	
 		}
-	}
+	};
 	var updateImages = function ($template, selections) {
 		if(_ctrl.sessionStatus == "START SESSION"){}
 		if(_ctrl.sessionStatus == "RESUME SESSION"){
 			for(var key in selections){
 				switch(selections[key].type){
 					case "image":
-						$(key).attr("class", ("img-cont img-MC img-L")).css({
+						$(key).attr("class", ("img img-MC img-L")).css({
 							"background-image" : ("url(" + selections[key].img + ")")
 						});	
 					break;
@@ -232,16 +233,16 @@ export default function templateManager () {
 					let o = "S";
 					if(this.width > this.height) { o = "L"; }
 					if(this.width < this.height) { o = "P"; }
-					$template.find(n_name).attr("class", ("img-cont img-MC img-" + o)).css({
+					$template.find(n_name).attr("class", ("img img-cont img-MC img-" + o)).css({
 						"background-image" : ("url(" + img_src + ")")
 					});
-				}
+				};
 				img.src = img_src;
 				//Save selection to object
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
 			});
 		}
-	}
+	};
 	return {
 		init : init,
 		loadTemplate : loadTemplate,

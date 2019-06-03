@@ -49,18 +49,20 @@ export default function dataManager () {
 	var saveSelected = function(jd, name, value,type) {
 		let selections = jd.selections || {};
 		selections[name] = selections[name] || {};
-		selections[name].type = type;
 		switch(type){
 			case 'image':				
-				selections[name].img = value;
+				selections[name].img = value;				
+				selections[name].type = type;			
 			break;
 			case 'text':
-				selections[name].text = value;
+				selections[name].text = value;				
+				selections[name].type = type;					
 			break;
 			case 'config':
-				selections[name].value = value;
-			break;
-		}
+				selections[name].value = value;				
+				selections[name].type = type;					
+			break;		
+		}		
 		//Save selection to object
 		jd.selections = selections;		
 	};

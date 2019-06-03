@@ -4,7 +4,7 @@ export default function toolTipManager () {
 	var index = 0;
 	var init = function(_that) {
 		_ctrl = _that;
-	}
+	};
     var setItems = function() {
 		$("#inp-content-item-add-y").on("click", function() {
             var current_step = $(".control-view-index-item").index($(".current"));
@@ -38,10 +38,10 @@ export default function toolTipManager () {
 			$this.closest(".app-control-step").before($i_t);
 			$this.prop('checked', false);
 			$("#inp-content-item-add-n").trigger("click");
-			$("#app-control").trigger("itemWasAdded")
+			$("#app-control").trigger("itemWasAdded");
 			
         });
-    }
+    };
     var addItems = function (i) {
 		if ($("#template .items:last .item").length == 3) { $("#template .items:last").after("<div class='items'></div>"); }
 		var $item_copy = $(".item:last").clone();
@@ -59,10 +59,10 @@ export default function toolTipManager () {
     };
     var getNumberOfItems = function() {
         return number_of_items;
-    }
+    };
     var getIndex = function() {
         return index;
-    }
+    };
     return {
 		init : init,
 		setItems : setItems,

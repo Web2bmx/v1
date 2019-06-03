@@ -4,6 +4,6 @@
 
 #### Agregar control para galería [Antonio]
 
-#### Mejorar templates 
+#### Mejorar templates [Antonio]
 
-#### Arreglar secciones editables [Carlos]
+#### Arreglar secciones editables (Numero de items) [Carlos - 50%]

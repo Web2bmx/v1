@@ -1,6 +1,6 @@
 <section id="hero">
 	<div class="wrapper">
-		<div class="img <?php echo(getImgClasses($content->hero[0]->img[0])); ?>" style="background-image: url(<?php echo($content->hero[0]->img[0]); ?>);"></div>
+		<div id='img-hero' class="img <?php echo(getImgClasses($content->hero[0]->img[0])); ?>" style="background-image: url(<?php echo($content->hero[0]->img[0]); ?>);"></div>
 		<div class="wrapper-content">
 			<?php if ($content->hero[0]->logotipo != "") : ?>
 				<div id="branding">
