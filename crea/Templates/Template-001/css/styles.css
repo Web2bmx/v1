@@ -123,41 +123,35 @@ and open the template in the editor.
 
 #template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
   font-family: 'Markazi Text', serif;
+  margin: 0 0 .4em 0;
 }
 
 #template h1 {
   font-size: 2em;
-  margin: 0 0 .4em 0;
 }
 
 #template h2 {
   font-size: 1.6em;
-  margin: 0 0 .4em 0;
 }
 
 #template h3 {
   font-size: 1.4em;
-  margin: 0 .4em 0;
 }
 
 #template h4 {
   font-size: 1em;
-  margin: 0 .4em 0;
 }
 
 #template h5 {
   font-size: 1em;
-  margin: 0 .4em 0;
 }
 
 #template h6 {
   font-size: 1em;
-  margin: 0 .4em 0;
 }
 
 #template p, #template ul, #template ol {
   font-size: 1em;
-  margin: 0 0 .4em 0;
 }
 
 @media only screen and (min-width: 560px) {
@@ -181,21 +175,16 @@ and open the template in the editor.
 #hero {
   background-color: #666666;
   display: block;
-  height: 620px;
+  height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
 }
 
 #hero > .wrapper {
-  bottom: 0;
   display: block;
   height: auto;
-  left: 0;
   overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
+  position: relative;
   width: 100%;
 }
 
@@ -218,7 +207,7 @@ and open the template in the editor.
   color: black;
   display: inline-block;
   height: auto;
-  margin: 16em auto 0 auto;
+  margin: 16em auto 2em auto;
   overflow: hidden;
   padding: 4em 4%;
   position: relative;
@@ -264,15 +253,6 @@ and open the template in the editor.
   display: block;
 }
 
-@media only screen and (min-width: 560px) {
-  #hero {
-    height: 600px;
-  }
-  #hero .wrapper-content {
-    margin: 8em auto 4em auto;
-  }
-}
-
 /*HERO*/
 /*MENU*/
 /*ITEMS*/
@@ -280,7 +260,6 @@ and open the template in the editor.
   display: block;
   height: auto;
   overflow: hidden;
-  padding: 2em 0 0 0;
   width: 100%;
 }
 
@@ -288,11 +267,12 @@ and open the template in the editor.
   display: block;
   height: auto;
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
 
 #items header {
-  margin: 0 auto;
+  margin: 2em auto 0 auto;
   text-align: center;
   padding: 0 4% 2em 4%;
   width: auto;
@@ -371,14 +351,14 @@ and open the template in the editor.
   background-color: #444444;
   color: black;
   display: block;
-  height: 620px;
+  height: auto;
   overflow: hidden;
   width: 100%;
 }
 
 #aboutus > .wrapper {
   display: block;
-  height: 620px;
+  height: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -397,25 +377,25 @@ and open the template in the editor.
 }
 
 #aboutus .img {
-  height: 620px;
+  bottom: 0;
+  left: 0;
   opacity: .6;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 #template #aboutus div.wrapper-content {
   background-color: transparent;
-  bottom: 0;
-  left: 0;
+  height: auto;
   overflow: hidden;
-  position: absolute;
-  padding: 8em 4% 2em 4%;
-  right: 0;
-  top: 0;
+  position: relative;
+  margin: 12em 4% 6em 4%;
   width: 92%;
-  z-index: 2;
+  z-index: 1;
 }
 
 /*ABOUT US*/
@@ -458,6 +438,9 @@ and open the template in the editor.
 }
 
 @media only screen and (min-width: 960px) {
+  .gallery {
+    width: 96%;
+  }
   .gallery .img {
     float: left;
     margin: 0 2% 1em 2%;
@@ -471,14 +454,14 @@ and open the template in the editor.
   background-color: #444444;
   color: black;
   display: block;
-  height: 620px;
+  height: auto;
   overflow: hidden;
   width: 100%;
 }
 
 #cta > .wrapper {
   display: block;
-  height: 620px;
+  height: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -497,25 +480,25 @@ and open the template in the editor.
 }
 
 #cta .img {
-  height: 620px;
+  bottom: 0;
+  height: auto;
+  left: 0;
   opacity: .6;
   overflow: hidden;
-  position: relative;
+  position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 #template #cta div.wrapper-content {
   background-color: transparent;
-  bottom: 0;
-  left: 0;
   overflow: hidden;
-  position: absolute;
-  padding: 8em 4% 2em 4%;
-  right: 0;
-  top: 0;
+  position: relative;
+  margin: 16em 4% 8em 4%;
   width: 92%;
-  z-index: 2;
+  z-index: 1;
 }
 
 #template #cta div.wrapper-content ul {

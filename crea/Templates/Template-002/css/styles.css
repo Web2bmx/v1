@@ -114,6 +114,56 @@ body {
 
 #template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
   font-family: 'Roboto', sans-serif;
+  font-variant: small-caps;
+  font-weight: normal;
+  margin: 0 0 .4em 0;
+}
+
+#template h1 {
+  font-size: 2em;
+}
+
+#template h2 {
+  font-size: 1.6em;
+}
+
+#template h3 {
+  font-size: 1.4em;
+}
+
+#template h4 {
+  font-size: 1em;
+}
+
+#template h5 {
+  font-size: 1em;
+}
+
+#template h6 {
+  font-size: 1em;
+}
+
+#template p, #template ul, #template ol, #template menu, #template li {
+  font-size: 1em;
+}
+
+#template p, #template ul, #template ol {
+  margin: 0 0 .4em 0;
+}
+
+@media only screen and (min-width: 560px) {
+  #template h1 {
+    font-size: 3em;
+  }
+  #template h2 {
+    font-size: 2.2em;
+  }
+  #template h3 {
+    font-size: 1.8em;
+  }
+  #template h4 {
+    font-size: 1.2em;
+  }
 }
 
 /*TEMPLATE LEVEL*/
@@ -122,29 +172,28 @@ body {
 #hero {
   background-color: #666666;
   display: block;
-  height: 240px;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#hero > .wrapper {
+  display: block;
+  height: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
-#hero > .wrapper {
+#hero .img {
   bottom: 0;
   display: block;
   left: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-}
-
-#hero .img {
-  display: block;
-  height: 240px;
   opacity: .3;
   overflow: hidden;
   position: absolute;
+  top: 0;
+  right: 0;
   width: 100%;
   z-index: 0;
 }
@@ -154,17 +203,13 @@ body {
   color: white;
   display: block;
   height: auto;
-  margin: 0 auto;
+  margin: 16em auto 4em auto;
   overflow: hidden;
-  padding: 1em 4%;
+  padding: 0 4%;
   position: relative;
-  width: 92%;
+  width: 80%;
   max-width: 1180px;
   z-index: 1;
-}
-
-#template h1 {
-  font-size: 2em;
 }
 
 #template.color-orange h1 {
@@ -179,38 +224,29 @@ body {
   color: #d4ff00;
 }
 
-.seemore span {
+.seemore {
   border: 1px solid #444444;
   display: inline-block;
   font-variant: small-caps;
-  padding: 1em 2em;
+  margin: 1em auto 0 auto;
+  padding: 2em 8%;
+  width: auto;
 }
 
-#template.color-orange .seemore span {
+#template.color-orange .seemore {
   border-color: #f0aa00;
 }
 
-#template.color-yellow .seemore span {
+#template.color-yellow .seemore {
   border-color: #ffe600;
 }
 
-#template.color-green .seemore span {
+#template.color-green .seemore {
   border-color: #d4ff00;
 }
 
-@media only screen and (min-width: 560px) {
-  #hero {
-    height: 800px;
-  }
-  #hero .img {
-    height: 800px;
-  }
-  #hero .wrapper-content {
-    padding: 10em 4% 4em 4%;
-  }
-  #template h1 {
-    font-size: 3em;
-  }
+.seemore span {
+  display: block;
 }
 
 /*HERO*/
@@ -219,7 +255,7 @@ body {
   border-bottom: 1px solid #444444;
   display: block;
   height: auto;
-  padding: 2em 0;
+  padding: 1em 0;
   width: 100%;
 }
 
@@ -245,23 +281,24 @@ body {
   max-width: 1180px;
 }
 
-#menu h3 {
-  float: left;
+#menu h4 {
+  display: none;
 }
 
 #menu menu {
-  float: right;
-  padding-right: 4%;
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
 }
 
 #menu menu li {
-  list-style-type: none;
+  float: left;
 }
 
 #menu menu li a {
   display: block;
   font-variant: small-caps;
-  padding: .4em .8em;
+  padding: .6em 1.4em;
   border: 1px solid white;
 }
 
@@ -281,19 +318,12 @@ body {
   border-color: #d4ff00;
 }
 
-@media only screen and (min-width: 560px) {
-  #menu menu li {
-    float: left;
-    margin-left: 1em;
-  }
-}
-
 /*MENU*/
 /*ITEMS*/
 #items {
   display: block;
   height: auto;
-  padding: 4em 0;
+  padding: 2em 0 0 0;
   width: 100%;
 }
 
@@ -304,8 +334,7 @@ body {
 }
 
 #items header {
-  margin: 0 auto;
-  text-align: center;
+  margin: 0 auto 1em auto;
   padding: 0 4%;
   width: auto;
   max-width: 1180px;
@@ -313,7 +342,6 @@ body {
 
 .items {
   margin: 0 auto;
-  text-align: left;
   padding: 0 4%;
   width: auto;
   max-width: 1180px;
@@ -321,14 +349,15 @@ body {
 
 .item {
   display: block;
-  height: 320px;
+  height: auto;
+  margin: 0 auto 1em auto;
   position: relative;
   width: 100%;
 }
 
 .item .img {
   display: block;
-  height: 200px;
+  height: 150px;
   overflow: hidden;
   width: 100%;
 }
@@ -342,17 +371,15 @@ body {
     display: grid;
   }
   .items.one {
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
   }
   .items.two {
-    grid-template-columns: 46% 46%;
+    grid-gap: 0 4%;
+    grid-template-columns: 48% 48%;
   }
   .items.three {
-    grid-template-columns: 33% 34% 33%;
-  }
-  .item {
-    width: auto;
-    margin: 0 2%;
+    grid-gap: 0 4%;
+    grid-template-columns: 30.6% 30.7% 30.6%;
   }
 }
 
@@ -363,7 +390,7 @@ body {
   color: black;
   display: block;
   height: auto;
-  overflow: visible;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -381,40 +408,34 @@ body {
 
 #aboutus > .wrapper {
   display: block;
-  height: 500px;
-  overflow: visible;
+  height: auto;
+  overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 #aboutus .img {
+  bottom: 0;
   display: block;
-  height: 500px;
+  height: auto;
+  left: 0;
   overflow: hidden;
   opacity: 0;
   position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   z-index: 0;
 }
 
 #aboutus .wrapper-content {
   display: block;
-  text-align: center;
-  margin: 0 auto;
+  margin: 12em auto 12em auto;
   overflow: hidden;
   position: relative;
-  padding: 4em 0 0 0;
-  width: 92%;
+  width: 80%;
   max-width: 1180px;
   z-index: 1;
-}
-
-@media only screen and (min-width: 560px) {
-  #aboutus {
-    height: 500px;
-  }
-  #aboutus .wrapper-content {
-    padding: 10em 0 0 0;
-  }
 }
 
 /*ABOUT US*/
@@ -423,19 +444,13 @@ body {
   display: block;
   height: auto;
   overflow: hidden;
-  padding: 4em 0 2em 0;
   width: 100%;
 }
 
 #gallery header {
-  margin: 0 auto;
-  text-align: center;
-  width: auto;
+  margin: 2em auto 1em auto;
+  width: 80%;
   max-width: 1180px;
-}
-
-#gallery header h2 {
-  font-variant: small-caps;
 }
 
 #gallery header h2 {
@@ -455,35 +470,25 @@ body {
 }
 
 .gallery {
-  max-width: 1180px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 2em 0 0 0;
-  width: auto;
+  width: 92%;
+  max-width: 1180px;
 }
 
 .gallery .img {
   display: block;
-  height: 220px;
-  margin: 1em 21px;
-  width: 220px;
-}
-
-.gallery .img.img-L {
-  background-size: auto 100%;
-}
-
-.gallery .img.img-S {
-  background-size: auto 100%;
-}
-
-.gallery .img.img-P {
-  background-size: 100% auto;
+  height: 150px;
+  margin: 0 auto 1em auto;
+  width: 100%;
 }
 
 @media only screen and (min-width: 560px) {
   .gallery .img {
     float: left;
+    height: 200px;
+    margin: 0 2% 1em 2%;
+    width: 46%;
   }
 }
 
@@ -491,23 +496,28 @@ body {
 /*CTA*/
 #cta {
   display: block;
-  height: 200px;
+  height: auto;
+  overflow: hidden;
   width: 100%;
 }
 
 #cta > .wrapper {
   display: block;
-  height: 200px;
-  width: 100%;
-  overflow: visible;
+  height: auto;
+  overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 #cta .img {
+  bottom: 0;
   display: block;
-  height: 200px;
+  height: auto;
+  left: 0;
   overflow: hidden;
   position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   z-index: 0;
 }
@@ -516,13 +526,15 @@ body {
   color: #444444;
   display: block;
   height: auto;
-  margin: 0 auto;
-  padding: 1em 0 1em 0;
+  margin: 12em auto;
   position: relative;
-  text-align: center;
-  width: 92%;
+  width: 80%;
   max-width: 1086px;
   z-index: 1;
+}
+
+#cta .wrapper-content ul {
+  list-style-type: none;
 }
 
 #template.color-orange #cta .wrapper-content {
@@ -537,44 +549,19 @@ body {
   color: #d4ff00;
 }
 
-#cta .wrapper-content h2 {
-  font-size: 2em;
-}
-
-@media only screen and (min-width: 560px) {
-  #cta {
-    height: 350px;
-  }
-  #cta > wrapper {
-    height: 350px;
-  }
-  #cta .img {
-    height: 350px;
-  }
-  #cta .wrapper-content {
-    padding: 8em 0 4em 0;
-  }
-}
-
 /*CTA*/
 /*FOOTER*/
 #template footer {
   height: auto;
   display: block;
   overflow: hidden;
-  padding: 4em 0 2em 0;
   width: 100%;
 }
 
 #template footer header {
-  margin: 0 auto;
-  text-align: center;
-  width: 92%;
+  margin: 2em auto 1em auto;
+  width: 80%;
   max-width: 1086px;
-}
-
-#template footer header h5 {
-  font-variant: small-caps;
 }
 
 #template footer header p {
@@ -595,14 +582,12 @@ body {
 
 #template footer section {
   margin: 0 auto;
-  text-align: left;
-  width: auto;
-  max-width: 1440px;
+  width: 90%;
+  max-width: 1086px;
 }
 
 #template footer .column {
-  padding: 0 4%;
-  width: auto;
+  margin: 0 0 1em 0;
 }
 
 #template footer ul {
@@ -614,7 +599,9 @@ body {
 @media only screen and (min-width: 560px) {
   #template footer .column {
     float: left;
-    width: 25%;
+    margin: 0 2% 1em 2%;
+    text-align: left;
+    width: 29.3%;
   }
 }
 
@@ -626,8 +613,8 @@ body {
   display: block;
   height: auto;
   overflow: hiddden;
-  padding: 2em 0;
-  width: 100%;
+  padding: .6em 10%;
+  width: 80%;
 }
 
 #template.color-orange #disclaimer {
@@ -643,10 +630,7 @@ body {
 }
 
 #disclaimer p {
-  margin: 0 auto;
-  width: 92%;
-  max-width: 1086px;
-  text-align: left;
+  font-size: .8em;
 }
 
 /*DISCLAIMER*/
