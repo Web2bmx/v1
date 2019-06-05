@@ -114,6 +114,54 @@ body {
 
 #template h1, #template h2, #template h3, #template h4 {
   font-family: 'Lobster Two', cursive;
+  margin: 0 0 .4em 0;
+}
+
+#template h1 {
+  font-size: 2em;
+}
+
+#template h2 {
+  font-size: 1.6em;
+}
+
+#template h3 {
+  font-size: 1.4em;
+}
+
+#template h4 {
+  font-size: 1em;
+}
+
+#template h5 {
+  font-size: 1em;
+}
+
+#template h6 {
+  font-size: 1em;
+}
+
+#template p, #template ul, #template ol, #template menu, #template li {
+  font-size: 1em;
+}
+
+#template p, #template ul, #template ol {
+  margin: 0 0 .4em 0;
+}
+
+@media only screen and (min-width: 560px) {
+  #template h1 {
+    font-size: 3em;
+  }
+  #template h2 {
+    font-size: 2.2em;
+  }
+  #template h3 {
+    font-size: 1.8em;
+  }
+  #template h4 {
+    font-size: 1.2em;
+  }
 }
 
 /*TEMPLATE LEVEL*/
@@ -141,29 +189,34 @@ body {
   max-width: 1180px;
 }
 
-#menu h3 {
-  float: left;
+#template #menu h4 {
+  color: white;
 }
 
-#template.color-orange .menu-cont h3 {
+#template.color-orange #menu h4 {
   color: #f0aa00;
 }
 
-#template.color-yellow .menu-cont h3 {
+#template.color-yellow #menu h4 {
   color: #ffe600;
 }
 
-#template.color-green .menu-cont h3 {
+#template.color-green #menu h4 {
   color: #4cbe74;
 }
 
 #menu menu {
-  float: right;
-  padding-right: 4%;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 0;
+  width: 80%;
 }
 
 #menu menu li {
   color: white;
+  display: inline-block;
   list-style-type: none;
 }
 
@@ -186,9 +239,12 @@ body {
 }
 
 @media only screen and (min-width: 560px) {
-  #menu menu li {
+  #template #menu h4 {
     float: left;
-    margin-left: 1em;
+  }
+  #menu menu {
+    float: right;
+    text-align: right;
   }
 }
 
@@ -197,30 +253,29 @@ body {
 #hero {
   background-color: #666666;
   display: block;
-  height: 240px;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#hero > .wrapper {
+  display: block;
+  height: auto;
   overflow: hidden;
   position: relative;
   width: 100%;
 }
 
-#hero > .wrapper {
+#hero .img {
   bottom: 0;
   display: block;
-  left: 0;
   height: auto;
+  left: 0;
+  opacity: .3;
   overflow: hidden;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
-}
-
-#hero .img {
-  display: block;
-  height: 240px;
-  opacity: .3;
-  overflow: hidden;
-  position: absolute;
   width: 100%;
   z-index: 0;
 }
@@ -230,11 +285,11 @@ body {
   color: white;
   display: block;
   height: auto;
-  margin: 0 auto;
+  margin: 16em auto 8em auto;
   overflow: hidden;
   padding: 1em 4%;
   position: relative;
-  width: 92%;
+  width: 80%;
   max-width: 1180px;
   z-index: 1;
 }
@@ -242,9 +297,6 @@ body {
 #template h1 {
   border-bottom: 1px dashed white;
   color: white;
-  display: inline-block;
-  font-size: 2em;
-  margin: 0 auto;
   padding-bottom: .5em;
   width: auto;
 }
@@ -254,21 +306,17 @@ body {
   color: white;
   display: inline-block;
   font-variant: small-caps;
-  padding: .2em 1em;
+  margin-top: 2em;
+  padding: 1em 2em;
+}
+
+.seemore span {
+  display: block;
 }
 
 @media only screen and (min-width: 560px) {
-  #hero {
-    height: 800px;
-  }
-  #hero .img {
-    height: 800px;
-  }
   #hero .wrapper-content {
-    padding: 10em 4% 4em 4%;
-  }
-  #template h1 {
-    font-size: 4em;
+    margin: 12em auto 12em auto;
   }
 }
 
@@ -300,7 +348,7 @@ body {
   height: auto;
   margin: 0 auto;
   overflow: hidden;
-  padding: 2em 4% 0 4%;
+  padding: 4em 4%;
   width: 92%;
 }
 
@@ -387,18 +435,6 @@ body {
   width: 100%;
 }
 
-.item .img.img-L {
-  background-size: auto 100%;
-}
-
-.item .img.img-S {
-  background-size: auto 100%;
-}
-
-.item .img.img-P {
-  background-size: 100% auto;
-}
-
 .item .wrapper-content {
   display: block;
   font-size: small;
@@ -431,7 +467,7 @@ body {
     grid-template-columns: auto;
   }
   .items.two {
-    grid-template-columns: 46% 46%;
+    grid-template-columns: 50% 50%;
   }
   .items.three {
     grid-template-columns: 33% 34% 33%;
@@ -501,46 +537,10 @@ body {
   width: 100%;
 }
 
-.gallery .img.img-L {
-  background-size: auto 100%;
-}
-
-.gallery .img.img-S {
-  background-size: auto 100%;
-}
-
-.gallery .img.img-P {
-  background-size: 100% auto;
-}
-
-@media only screen and (min-width: 220px) {
-  .gallery .img.img-L {
-    background-size: 100% auto;
-  }
-  .gallery .img.img-S {
-    background-size: 100% auto;
-  }
-}
-
 @media only screen and (min-width: 560px) {
   .gallery .img {
     float: left;
     width: 50%;
-  }
-  .gallery .img.img-L {
-    background-size: auto 100%;
-  }
-  .gallery .img.img-S {
-    background-size: auto 100%;
-  }
-}
-
-@media only screen and (min-width: 720px) {
-  .gallery .img.img-L {
-    background-size: 100% auto;
-  }
-  .gallery .img.img-S {
-    background-size: 100% auto;
   }
 }
 
@@ -554,26 +554,30 @@ body {
 /*CTA*/
 #cta {
   display: block;
-  height: 200px;
+  height: auto;
+  overflow: hidden;
   position: relative;
   width: 100%;
-  z-index: 0;
 }
 
 #cta > .wrapper {
   display: block;
-  height: 200px;
-  width: 100%;
-  overflow: visible;
+  height: auto;
+  overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 #cta .img {
+  bottom: 0;
   display: block;
-  height: 200px;
+  height: auto;
+  left: 0;
   overflow: hidden;
   opacity: .3;
   position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   z-index: 0;
 }
@@ -582,11 +586,9 @@ body {
   color: #444444;
   display: block;
   height: auto;
-  margin: 0 auto;
-  padding: 1em 0 1em 0;
+  margin: 12em auto 6em auto;
   position: relative;
-  text-align: center;
-  width: 92%;
+  width: 80%;
   max-width: 1086px;
   z-index: 1;
 }
@@ -601,10 +603,6 @@ body {
 
 #template.color-green #cta .wrapper-content {
   color: #4cbe74;
-}
-
-#cta .wrapper-content h2 {
-  font-size: 2em;
 }
 
 @media only screen and (min-width: 560px) {
@@ -628,7 +626,7 @@ body {
   height: auto;
   display: block;
   overflow: hidden;
-  padding: 2em 0 1em 0;
+  padding: 1em 0;
   width: 100%;
 }
 
@@ -646,13 +644,8 @@ body {
 
 #template footer header {
   margin: 0 auto;
-  text-align: center;
   width: 92%;
   max-width: 1086px;
-}
-
-#template footer header h5 {
-  font-variant: small-caps;
 }
 
 #template footer header p {
@@ -673,14 +666,8 @@ body {
 
 #template footer section {
   margin: 0 auto;
-  text-align: left;
   width: auto;
   max-width: 1440px;
-}
-
-#template footer .column {
-  padding: 0 4%;
-  width: auto;
 }
 
 footer ul {
@@ -704,7 +691,7 @@ footer ul {
   display: block;
   height: auto;
   overflow: hiddden;
-  padding: 2em 0;
+  padding: 1em 0;
   width: 100%;
 }
 
@@ -722,9 +709,9 @@ footer ul {
 
 #disclaimer p {
   margin: 0 auto;
+  font-size: .8em;
   width: 92%;
   max-width: 1086px;
-  text-align: left;
 }
 
 /*DISCLAIMER*/
