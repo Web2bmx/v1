@@ -6,4 +6,4 @@
 
 #### Mejorar templates [Antonio]
 
-#### Arreglar secciones editables (Numero de items) [Carlos - 50%]
+#### Guardar secciones agregadas cargarlas de nuevo [Carlos]
