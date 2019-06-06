@@ -30,7 +30,11 @@ export default function imageManager () {
 			per_page: 20,
 			orientation: 'landscape'
 		}).done(function(data){
-			let image_types = ["hero", "item-1"];
+			let image_types = ["hero"];
+			let items = $("#template .item").length;
+			for(let i = 1; i <= items; i++ ){
+				image_types.push('item-' + i);
+			}
 			for(let x=0; x<data.length ; x++){
 				var $img_thumb = $(".img-thumb.template").clone();
 				$img_thumb.removeClass("template").find(".img-thumb-cont").css({

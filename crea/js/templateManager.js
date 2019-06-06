@@ -19,25 +19,26 @@ export default function templateManager () {
 		
 		/* */
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
-			$("#template").html("");
-			var content_id = _ctrl.jd.respuestas[22].resp_id == "" ? 2 : _ctrl.jd.respuestas[22].resp_id;
-			var src = "Templates/Template-" + id + "/index.php?t=" + content_id; 
-			$("#template-cont").load(src + " #template", function() {
-				var $template = $("#template");
-				$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-				//$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
-				for (let i = 1; i < _ctrl.new_itemManager.getNumberOfItems(); i ++) {
-					_ctrl.new_itemManager.addItems(i);		
-				}
-				_ctrl.new_colorManager.loadColors($template);
-				_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
-				updateContent();
-                /*$.ajax({
-					url: ("Templates/Template-" + id + "/js/scripts.js"),
-					dataType: "script",
-					success: onTemplateLoaded
-				});*/
-			});
+		$("#template").html("");
+		var content_id = _ctrl.jd.respuestas[22].resp_id == "" ? 2 : _ctrl.jd.respuestas[22].resp_id;
+		var src = "Templates/Template-" + id + "/index.php?t=" + content_id; 
+		$("#template-cont").load(src + " #template", function() {
+			var $template = $("#template");
+			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
+			//$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
+			for (let i = 1; i < _ctrl.new_itemManager.getNumberOfItems(); i ++) {
+				_ctrl.new_itemManager.addItems(i);
+			}			
+			_ctrl.new_itemManager.checkItemsNumber();
+			_ctrl.new_colorManager.loadColors($template);
+			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
+			updateContent();
+			/*$.ajax({
+				url: ("Templates/Template-" + id + "/js/scripts.js"),
+				dataType: "script",
+				success: onTemplateLoaded
+			});*/
+		});
 	};
 	var updateContent = function () {
         let $template = $("#template");
@@ -69,8 +70,8 @@ export default function templateManager () {
 						}
 					}
 					_ctrl.new_dataManager.saveSelected(_ctrl.jd,"inp-content-slogan",slogan_from_tour,'text');
-					$this.val(selections[i_id].text);
-					$template.find("#" + v_id).html(selections[i_id].text);
+					$this.val(selections[i_id] ? selections[i_id].text : '');
+					$template.find("#" + v_id).html(selections[i_id] ? selections[i_id].text : '');
 				}
 			});	
 		}
@@ -79,15 +80,15 @@ export default function templateManager () {
 				let $this = $(this);
 				let i_id = $this.attr("id");
 				let v_id = i_id.replace("inp", "val");
-				$this.val(selections[i_id].text);
-				console.log(i_id + " = " + selections[i_id].text);
+				$this.val(selections[i_id] ? selections[i_id].text : '');
+
 				let arr;
 				switch (i_id) {
 					case "inp-contact-email" :
-						$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id].text + "'>" + selections[i_id].text + "</a>");
+						$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id] ? selections[i_id].text : '' + "'>" + selections[i_id] ? selections[i_id].text : '' + "</a>");
 						break;
 					case "inp-contact-map" :
-						$template.find("#val-contact-map").html(selections[i_id].text);
+						$template.find("#val-contact-map").html(selections[i_id] ? selections[i_id].text : '');
 						break;	
 					case "inp-contact-facebook" :
 						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
@@ -95,14 +96,14 @@ export default function templateManager () {
 						break;	
 					case "inp-contact-twitter" : 
 						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('twitter.com/') : '';
-						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
+						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id] ? selections[i_id].text : '' + '">' + arr[1] + '</a>');
 						break;	
 					case "siteName":
-						$(".siteName span").text(selections[i_id].text);
-						$(".siteName").attr("href","http://" + selections[i_id].text + ".web2b.mx");
+						$(".siteName span").text(selections[i_id] ? selections[i_id].text : '');
+						$(".siteName").attr("href","http://" + selections[i_id] ? selections[i_id].text : '' + ".web2b.mx");
 						break;
 					default : 
-						$template.find("#" + v_id).html(selections[i_id].text);
+						$template.find("#" + v_id).html(selections[i_id] ? selections[i_id].text : '');
 						break;
 				}
 			});
@@ -119,25 +120,25 @@ export default function templateManager () {
 					$template.find("#" + v_id).show().closest(".footer-column").show();
 					switch (i_id) {
 						case "inp-contact-email" :
-							$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id].text + "'>" + selections[i_id].text + "</a>");
+							$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id] ? selections[i_id].text : '' + "'>" + selections[i_id] ? selections[i_id].text : '' + "</a>");
 							break;
 						case "inp-contact-map" :
-							$template.find("#val-contact-map").html(selections[i_id].text);
+							$template.find("#val-contact-map").html(selections[i_id] ? selections[i_id].text : '');
 							break;	
 						case "inp-contact-facebook" :
 							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
-							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
+							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id] ? selections[i_id].text : ''+ '">' + arr[1] + '</a>');
 							break;	
 						case "inp-contact-twitter" :
 							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('twitter.com/') : '';
-							$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
+							$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id] ? selections[i_id].text : '' + '">' + arr[1] + '</a>');
 							break;	
 						case "siteName":
-							$(".siteName span").text(selections[i_id].text);
-							$(".siteName").attr("href","http://" + selections[i_id].text + ".web2b.mx");
+							$(".siteName span").text(selections[i_id] ? selections[i_id].text : '');
+							$(".siteName").attr("href","http://" + selections[i_id] ? selections[i_id].text : '' + ".web2b.mx");
 							break;
 						default : 
-							$template.find("#" + v_id).html(selections[i_id].text);
+							$template.find("#" + v_id).html(selections[i_id] ? selections[i_id].text : '');
 							break;
 					}
 				} else {

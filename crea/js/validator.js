@@ -2,7 +2,7 @@ export default function validator () {
 	var _ctrl = null;
     var init = function(_that) {
         _ctrl = _that;
-    }
+    };
 	var isValidinput = function(element){
 		let value = element.val();
 		let regex = new RegExp(element.attr("pattern"));
