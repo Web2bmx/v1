@@ -2,7 +2,7 @@ export default function userValidator () {
 	var _ctrl = null;
 	var init = function(_that) {
         _ctrl = _that;
-    }
+    };
     var setUserValidation = function() {
         $(".dialog").dialog({
             autoOpen: false,

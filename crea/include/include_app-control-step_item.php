@@ -1,4 +1,4 @@
-<div>
+<div class="product">
 	<h2>¿Cuál es tu principal producto o servicio?</h2>
 	<div>	
 

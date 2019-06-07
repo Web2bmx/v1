@@ -350,9 +350,6 @@ a {
 		text-align: center;
 		width: 96%;
 
-		&[style=""]:first-child ~ #app-switch{
-			display: none;
-		}
 		.inp-cont {
 			position: relative;
 		}

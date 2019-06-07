@@ -17,6 +17,7 @@ export default function toolTipManager () {
 		$("#control-view-index").prepend(($(".control-view-index-item.current").clone().removeClass("current"))).append(($(".control-view-index-item.current").clone().removeClass("current")));
 		if (addItem) {
 			addItems(number_of_items);
+			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"products",number_of_items + 1,"text");
 		}
 		number_of_items ++;
 		var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
@@ -59,18 +60,22 @@ export default function toolTipManager () {
 			case 1 : c = "one"; break;
 			case 2 : c = "two"; break;
 		}
-		$("#template .items:last").attr("class", "items").addClass(c);
+		$("#template .items:last").attr("class", "items").addClass(c);		
     };
     var getNumberOfItems = function() {
+		if(_ctrl.jd && _ctrl.jd.selections && _ctrl.jd.selections.products) {
+			number_of_items = _ctrl.jd.selections.products.text;
+		}
         return number_of_items;
     };
     var getIndex = function() {
         return index;
 	};
 	var checkItemsNumber = function() {
-		let missing = $("#template .item").length -1;
-		if(number_of_items < missing) {
-			for(let i = 0; i< missing; i++) {
+		let actual_in_navigation = $("#app-control .product").length;
+		if(actual_in_navigation < number_of_items) {
+			let difference = number_of_items - actual_in_navigation;
+			for(let i = 0; i< difference; i++) {
 				includeProduct(false);
 			}
 		}

@@ -26,7 +26,9 @@ export default function templateManager () {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
 			//$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
-			for (let i = 1; i < _ctrl.new_itemManager.getNumberOfItems(); i ++) {
+			let items_in_jd = _ctrl.new_itemManager.getNumberOfItems();
+			let items_in_template = $("#template .item").length;
+			for (let i = items_in_template; i < items_in_jd; i ++) {
 				_ctrl.new_itemManager.addItems(i);
 			}			
 			_ctrl.new_itemManager.checkItemsNumber();

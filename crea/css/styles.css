@@ -985,10 +985,6 @@ a {
   width: 96%;
 }
 
-#app-control > .app-control-step[style=""]:first-child ~ #app-switch {
-  display: none;
-}
-
 #app-control > .app-control-step .inp-cont {
   position: relative;
 }
