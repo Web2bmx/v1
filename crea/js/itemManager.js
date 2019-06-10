@@ -21,7 +21,7 @@ export default function toolTipManager () {
 		}
 		number_of_items ++;
 		var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
-		$i_t.find("h2:eq(0)").html("Tu producto o servicio");
+		$i_t.find("h2:eq(0)").html("Tu producto o servicio (" + number_of_items + ")");
 		$i_t.find("input[type=text]").attr({
 					"id" : ("inp-content-title-item-" + number_of_items),
 					"name" : ("inp-content-title-item-" + number_of_items),
@@ -73,11 +73,16 @@ export default function toolTipManager () {
 	};
 	var checkItemsNumber = function() {
 		let actual_in_navigation = $("#app-control .product").length;
-		if(actual_in_navigation < number_of_items) {
-			let difference = number_of_items - actual_in_navigation;
+		if(_ctrl.jd && 
+			_ctrl.jd.selections &&
+			_ctrl.jd.selections.products &&
+			actual_in_navigation < _ctrl.jd.selections.products.text) {
+			let jd_items = _ctrl.jd.selections.products.text;
+			let difference = jd_items - actual_in_navigation;
 			for(let i = 0; i< difference; i++) {
 				includeProduct(false);
 			}
+			_ctrl.new_appManager.goToStep(0);
 		}
 	};
     return {

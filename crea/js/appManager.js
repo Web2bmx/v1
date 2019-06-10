@@ -257,6 +257,7 @@ export default function appManager() {
 		setAppNavigation: setAppNavigation,
 		setAppControls: setAppControls,
 		setAppSteps: setAppSteps,
-		topStepMargin: topStepMargin
+		topStepMargin: topStepMargin,
+		goToStep: goToStep
 	};
 }
