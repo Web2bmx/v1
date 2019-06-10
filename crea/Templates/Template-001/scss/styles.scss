@@ -21,16 +21,21 @@
 	font-size: 1.4em;
 }
 #template h4 {
-	font-size: 1em;
+	font-size: 1.2em;
 }
 #template h5 { 
-	font-size: 1em;
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0;
 }
 #template h6 {
-	font-size: 1em;
+	font-size: 1.2em;
+	font-weight: normal;
+	margin: 0;
 }
 #template p, #template ul, #template ol {
 	font-size: 1em;
+	margin: 0 0 .4em 0;
 }
 @media only screen and (min-width: 560px) {
 	#template h1 { font-size: 3em; }
@@ -324,9 +329,6 @@
 }
 /*CTA*/
 /*FOOTER*/
-#template footer p, #template footer ul, #template footer ol {
-	font-size: .8em;
-}
 #template footer {
 	background-color: rgba(0,0,0,1);
 	color: rgba(255,255,255,1);
@@ -337,11 +339,12 @@
 	width: 100%;
 }
 #template footer header {
-	margin: 0 auto 1em auto;
-	width: 82%; max-width: 1086px;
+	margin: 0 auto;
+	width: 60%; max-width: 1086px;
 }
 #template footer header p {
 	color: rgba(68, 68, 68, 1);
+	font-size: .8em;
 }
 #template.color-orange footer header p {
 	color: rgba(250, 153, 0, 1);
@@ -353,48 +356,47 @@
 	color: rgba(164, 188, 0, 1);
 }
 #template footer section {
+	display: block;
+	height: auto;
 	margin: 0 auto;
-	width: auto; max-width: 1440px;
-	text-align: center;
-}
-#template footer .column {
-	margin: 0 auto .4em auto;
-	padding: 0 4%;
+	overflow: hidden;
 	width: auto;
 }
+@media only screen and (min-width: 760px) {
+	#template footer section {
+		width: 92%; max-width: 1280px;
+	}	
+}
+#template footer .column {
+	margin: 1em auto 0 auto;
+	width: auto;
+}
+@media only screen and (min-width: 760px) {
+	#template footer .column {
+		float: left;
+		margin-left: 4%;
+		text-align: left;
+		width: 30.6%;
+	}	
+	#template footer section div:first-child {
+		margin-left: 0;
+	}	
+}
 #template footer .column ul {
+	font-size: .8em;
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-@include breakpoint(800px) {
-	#template footer {
-
-		section {
-			text-align: left;			
-		}
-
-		.column {
-			float: left;
-			width: 25%;
-		}		
-
-	}
-
-}
 /*FOOTER*/
 /*DISCLAIMER*/
-#template #disclaimer p, #template #disclaimer ul, #template #disclaimer ol {
-	font-size: .8em;
-}
 #disclaimer {
 	background-color: rgba(0,0,0,1);
-	color: rgba(68, 68, 68, 1);
+	color: rgba(255, 255, 255, 1);
 	display: block;
 	height: auto;
 	overflow: hiddden;
-	padding: .4em 4%;
-	width: auto;
+	width: 100%;
 }
 #template.color-orange #disclaimer {
 	color: rgba(250, 153, 0, 1);
@@ -404,6 +406,19 @@
 }
 #template.color-green #disclaimer {
 	color: rgba(164, 188, 0, 1);
+}
+#disclaimer p {
+	font-size: .8em;
+	margin: 0 auto;
+	padding: 2em 0;
+	width: 16em;
+}
+@media only screen and (min-width: 760px) {
+	#disclaimer p {
+		padding: .4em 4%;
+		text-align: left;
+		width: auto;
+	}
 }
 /*DISCLAIMER*/
 /*--TEMPLATE COMPONENTS--*/

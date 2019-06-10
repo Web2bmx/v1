@@ -23,9 +23,11 @@
 }
 #template h5 { 
 	font-size: 1em;
+	margin: 0;
 }
 #template h6 {
 	font-size: 1em;
+	margin: 0;
 }
 #template p, #template ul, #template ol, #template menu, #template li {
 	font-size: 1em;
@@ -361,14 +363,16 @@
 	height: auto;
 	display: block;
 	overflow: hidden;
+	padding: 2em 0 1em 0;
 	width: 100%;
 }
 #template footer header {
-	margin: 2em auto 1em auto;
-	width: 80%; max-width: 1086px;
+	margin: 0 auto;
+	width: 60%; max-width: 1086px;
 }
 #template footer header p {
 	color: rgba(68, 68, 68, 1);
+	font-size: .8em;
 }
 #template.color-orange footer header p {
 	color: rgba(240, 170, 0, 1);
@@ -381,34 +385,50 @@
 }
 #template footer section {
 	margin: 0 auto;
-	width: 90%; max-width: 1086px;
+	width: 60%; max-width: 1086px;
+}
+#template footer section {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	overflow: hidden;
+	width: auto;
+}
+@media only screen and (min-width: 760px) {
+	#template footer section {
+		width: 92%; max-width: 1280px;
+	}	
 }
 #template footer .column {
-	margin: 0 0 1em 0;
+	margin: 1em auto 0 auto;
+	width: auto;
 }
-#template footer ul {
-	margin: 0;
-	list-style: none;
-	padding: 0;
-}
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 760px) {
 	#template footer .column {
 		float: left;
-		margin: 0 2% 1em 2%;
+		margin-left: 4%;
 		text-align: left;
-		width: 29.3%;
-	}
+		width: 30.6%;
+	}	
+	#template footer section div:first-child {
+		margin-left: 0;
+	}	
+}
+#template footer .column ul {
+	font-size: .8em;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
-	background-color: rgba(0,0,0,1);
-	color: rgba(68, 68, 68, 1);
+	background-color: rgba(30, 30, 30,1);
+	color: rgba(255, 255, 255, 1);
 	display: block;
 	height: auto;
 	overflow: hiddden;
-	padding: .6em 10%;
-	width: 80%;
+	width: 100%;
 }
 #template.color-orange #disclaimer {
 	color: rgba(240, 170, 0, 1);
@@ -421,6 +441,16 @@
 }
 #disclaimer p {
 	font-size: .8em;
+	margin: 0 auto;
+	padding: 1.4em 0;
+	width: 16em;
+}
+@media only screen and (min-width: 760px) {
+	#disclaimer p {
+		text-align: left;
+		padding: 1.4em 4%;
+		width: auto;
+	}
 }
 /*DISCLAIMER*/
 /*--TEMPLATE COMPONENTS--*/
