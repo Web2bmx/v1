@@ -1,4 +1,4 @@
-export default function toolTipManager () {
+export default function itemManager () {
 	var _ctrl = null;
 	var number_of_items = 1; /*WORK, number of items should come from jd*/
 	var index = 0;
@@ -14,7 +14,7 @@ export default function toolTipManager () {
 		var current_step = $("#inp-content-item-add-y").closest(".app-control-step").index();
 		var $this = $("#inp-content-item-add-y");
 		index = $(".app-control-step").index($this.closest(".app-control-step"));
-		$("#control-view-index").prepend(($(".control-view-index-item.current").clone().removeClass("current"))).append(($(".control-view-index-item.current").clone().removeClass("current")));
+		$("#control-view-index").prepend(($(".control-view-index-item.current").clone().removeClass("current")));
 		if (addItem) {
 			addItems(number_of_items);
 			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"products",number_of_items + 1,"text");
