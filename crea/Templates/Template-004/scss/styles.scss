@@ -404,17 +404,30 @@
 #cta {
 	background-color: rgba(45, 59, 63, 1);
 	display: block;
-	height: 200px;
-	position: relative;
+	height: auto;
+	overflow: hidden;
 	width: 100%; 
-	z-index: 0;
 }
 #cta>.wrapper {
 	display: block;
-	height: 200px;
-	width: 100%; 
-	overflow: visible;
+	height: auto;
+	margin: 16em auto 8em auto;
+	overflow: hidden;
 	position: relative;
+	width: 100%;
+	z-index: 1;
+}
+#cta .img {
+	bottom: 0;
+	display: block;
+	height: auto;
+	left: 0; 
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 0;
 }
 #cta .wrapper-content {
 	color: rgba(68, 68, 68, 1);
@@ -423,7 +436,6 @@
 	margin: 0 auto;
 	padding: 1em 0 1em 0;
 	position: relative;
-	text-align: center;
 	width: 92%; max-width: 1086px; 
 	z-index: 1;
 }
@@ -439,21 +451,13 @@
 #template.color-red #cta .wrapper-content {
 	color: rgba(255, 92, 92, 1);
 }
-#cta .wrapper-content h2 {
-	font-size: 2em;
+#cta .wrapper-content ul {
+	list-style-type: none;
 }
 @media only screen and (min-width: 560px) {
-	#cta {
-		height: 350px;
-	}
-	#cta>.wrapper {
-		height: 350px;
-	}
-	#cta .img {
-		height: 350px;
-	}
 	#cta .wrapper-content {
-		padding: 8em 0 4em 0;
+		margin: 8em auto 4em auto;
+		
 	}
 }
 /*CTA*/
