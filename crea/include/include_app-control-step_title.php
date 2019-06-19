@@ -2,7 +2,7 @@
 	<h2>Primero coloca el nombre de tu negocio</h2>
 	<div class="inputWihIcons">
 		<i class="fas fa-font"></i>			
-		<input type="text" id="inp-content-name" name="inp-content-name" placeholder="Tu primer producto o servicio" />
+		<input type="text" id="inp-content-name" name="inp-content-name" placeholder="Nombre de tu negocio" />
 	</div>	
 	<h2 class="middle">ó</h2>
 	<form enctype="multipart/form-data" method="POST" class="file-upload">

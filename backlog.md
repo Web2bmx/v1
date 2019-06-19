@@ -10,7 +10,7 @@
 
 #### Quitar productos [Carlos]
 
-#### Agregar control de imagen para Invita a tus clientes y Acerca de Nosotros [Carlos]
+#### Verificar que el contenido cargado de principio no cambie
 
 #### Control de busqueda en el mapa
 
