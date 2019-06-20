@@ -75,16 +75,30 @@ export default function itemManager () {
 		let actual_in_navigation = $("#app-control .product").length;
 		if(_ctrl.jd && 
 			_ctrl.jd.selections &&
-			_ctrl.jd.selections.products &&
-			actual_in_navigation < _ctrl.jd.selections.products.text) {
-			let jd_items = _ctrl.jd.selections.products.text;
-			let difference = jd_items - actual_in_navigation;
-			for(let i = 0; i< difference; i++) {
-				includeProduct(false);
+			_ctrl.jd.selections.products){
+
+				if(actual_in_navigation < _ctrl.jd.selections.products.text) {
+					let jd_items = _ctrl.jd.selections.products.text;
+					let difference = jd_items - actual_in_navigation;
+					for(let i = 0; i< difference; i++) {
+						includeProduct(false);
+					}
+					_ctrl.new_appManager.goToStep(0);
+				}
+
+			} else {
+				var items_in_template = $("#template .item").length;
+				if(actual_in_navigation < items_in_template) {
+					let difference = items_in_template - actual_in_navigation;
+					for(let i = 0; i< difference; i++) {
+						includeProduct(false);
+					}
+					_ctrl.new_appManager.goToStep(0);
+				}				
+				_ctrl.new_dataManager.saveSelected(_ctrl.jd,"products",items_in_template,"text");
 			}
-			_ctrl.new_appManager.goToStep(0);
-		}
 	};
+
     return {
 		init : init,
 		setItems : setItems,

@@ -15,5 +15,5 @@
 #### Control de busqueda en el mapa
 
 start session = primera visita
-resume session = refresh o visita posterios
+resume session = refresh o visita posterior
 update session = cualquier boton que guarde
