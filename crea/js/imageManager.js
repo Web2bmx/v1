@@ -30,7 +30,7 @@ export default function imageManager () {
 			per_page: 20,
 			orientation: 'landscape'
 		}).done(function(data){
-			let image_types = ["hero","aboutus"];
+			let image_types = ["hero","aboutus","cta"];
 			let items = $("#template .item").length;
 			for(let i = 1; i <= items; i++ ){
 				image_types.push('item-' + i);
