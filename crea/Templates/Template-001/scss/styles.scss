@@ -13,12 +13,16 @@
 }
 #template h1 {
 	font-size: 2em;
+	opacity: .8;
 }
 #template h2 {
 	font-size: 1.6em;
+	margin: 0;
 }
 #template h3 {
 	font-size: 1.4em;
+	margin: 0;
+	opacity: .8;
 }
 #template h4 {
 	font-size: 1.2em;
@@ -37,8 +41,8 @@
 	font-size: 1em;
 	margin: 0 0 .4em 0;
 }
-@media only screen and (min-width: 560px) {
-	#template h1 { font-size: 3em; }
+@media only screen and (min-width: $width_xxs) {
+	#template h1 { font-size: 3.4em; }
 	#template h2 { font-size: 2.2em; }
 	#template h3 { font-size: 1.8em; }
 	#template h4 { font-size: 1.2em; }
@@ -75,6 +79,7 @@
 }
 #hero .wrapper-content {
 	background-color: rgba(68, 68, 68, 1);
+	box-shadow: 0 10px 15px 10px rgba(0,0,0,0.75);
 	color: rgba(0,0,0,1);
 	display: inline-block; 
 	height: auto;
@@ -85,14 +90,24 @@
 	width: 72%;
 	z-index: 1;
 }
-#template.color-orange .wrapper-content {
+@media only screen and (min-width: $width_xs) {
+	#hero .wrapper-content {
+		margin: 20em auto 8em auto;
+		padding: 4em 8%;
+		width: auto;
+	}
+}
+#template.color-orange #hero .wrapper-content {
 	background-color: rgba(250, 153, 0, 1);
+	background: radial-gradient(circle, rgba(250, 153, 0, .7) 0%, rgba(250, 153, 0, 1) 100%);
 }
-#template.color-yellow .wrapper-content {
+#template.color-yellow #hero .wrapper-content {
 	background-color: rgba(250, 212, 0, 1);
+	background: radial-gradient(circle, rgba(250, 212, 0, .7) 0%, rgba(250, 212, 0, 1) 100%);
 }
-#template.color-green .wrapper-content {
+#template.color-green #hero .wrapper-content {
 	background-color: rgba(212, 255, 0, 1);
+	background: radial-gradient(circle, rgba(212, 255, 0, .7) 0%, rgba(212, 255, 0, 1) 100%);
 }
 #branding {
 	display: block;
@@ -133,9 +148,9 @@
 	width: 100%; 
 }
 #items header {
-	margin: 2em auto 0 auto;
+	margin: 1em auto;
 	text-align: center;
-	padding: 0 4% 2em 4%;
+	padding: 0 4%;
 	width: auto; max-width: 1180px;
 }
 .items {
@@ -159,29 +174,33 @@
 }
 .item .wrapper-content {
 	bottom: 0;
+	box-shadow: 0 -10px 15px 10px rgba(0,0,0,0.75);
 	left: 0;
-    padding: 2em 4% 1em 4%;
+    padding: 1em 8%;
 	position: absolute;
 	right: 0;
 	top: auto;
-	width: 92%;
+	width: 84%;
 	z-index: 1;
 }
 #template.color-orange .item .wrapper-content {
 	background-color: rgba(250, 153, 0, 1);
+	background: radial-gradient(circle, rgba(250, 153, 0, .7) 0%, rgba(250, 153, 0, 1) 100%);
 }
 #template.color-yellow .item .wrapper-content {
 	background-color: rgba(250, 212, 0, 1);
+	background: radial-gradient(circle, rgba(250, 212, 0, .7) 0%, rgba(250, 212, 0, 1) 100%);
 }
 #template.color-green .item .wrapper-content {
 	background-color: rgba(212, 255, 0, 1);
+	background: radial-gradient(circle, rgba(212, 255, 0, .7) 0%, rgba(212, 255, 0, 1) 100%);
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $width_xs) {
 	.items {
 		display: grid;
 		grid-gap: 0 4%;
-		margin: 1em auto;
-		width: 92%;
+		margin: 2em auto;
+		width: 80%; max-width: 1280px;
 	}
 	.items.one { grid-template-columns: 100%; }
 	.items.two { grid-template-columns: auto auto; }
@@ -205,15 +224,6 @@
 	position: relative;
 	width: 100%; 
 }
-#template.color-orange #aboutus {
-	background-color: rgba(250, 153, 0, 1);
-}
-#template.color-yellow #aboutus {
-	background-color: rgba(250, 212, 0, 1);
-}
-#template.color-green #aboutus {
-	background-color: rgba(212, 255, 0, 1);
-}
 #aboutus .img {
 	bottom: 0;
 	left: 0;
@@ -229,10 +239,35 @@
 	background-color: transparent;
 	height: auto;
 	overflow: hidden;
+	padding: 8em 12% 8em 12%;
 	position: relative;
-	margin: 12em 4% 6em 4%;
-	width: 92%;
+	margin: 0 auto;
+	width: auto;
 	z-index: 1;
+}
+@media only screen and (min-width: $width_xs) {
+	#template #aboutus div.wrapper-content {
+		padding: 12em 12%;
+	}	
+}
+#template #aboutus div.wrapper-content p {
+	margin: 0 auto;
+	width: auto; max-width: 24em;
+}
+#template.color-orange #aboutus div.wrapper-content {
+	background-color: rgba(0, 97, 250, 1);
+	background: radial-gradient(circle, rgba(0, 97, 250, .7) 0%, rgba(0, 97, 250, 1) 100%);
+	color: rgba(250, 153, 0, 1);
+}
+#template.color-yellow #aboutus div.wrapper-content {
+	background-color: rgba(132, 0, 85, 1);
+	background: radial-gradient(circle, rgba(132, 0, 85, .7) 0%, rgba(132, 0, 85, 1) 100%);
+	color: rgba(250, 212, 0, 1);
+}
+#template.color-green #aboutus div.wrapper-content {
+	background-color: rgba(43, 0, 255, 1);
+	background: radial-gradient(circle, rgba(43, 0, 255, .7) 0%, rgba(43, 0, 255, 1) 100%);
+	color: rgba(212, 255, 0, 1);
 }
 /*ABOUT US*/
 /*GALERIA*/
@@ -254,7 +289,7 @@
 #gallery header {
 	margin: 0 auto;
 	padding: 0 4% 2em 0;
-	width: auto; max-width: 1180px;
+	width: auto; max-width: 1280px;
 }
 .gallery {
 	margin: 0 auto;
@@ -266,7 +301,7 @@
 	overflow: hidden;
 	width: 100%; min-width: 220px; 
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $width_xs) {
 	.gallery {
 		width: 96%;
 	}
@@ -362,7 +397,7 @@
 	overflow: hidden;
 	width: auto;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#template footer section {
 		width: 92%; max-width: 1280px;
 	}	
@@ -371,7 +406,7 @@
 	margin: 1em auto 0 auto;
 	width: auto;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#template footer .column {
 		float: left;
 		margin-left: 4%;
@@ -385,8 +420,13 @@
 #template footer .column ul {
 	font-size: .8em;
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
+	width: auto; max-width: 240px;
+}
+#template footer .column h6 {
+	margin: 0 auto;
+	width: auto; max-width: 240px;
 }
 /*FOOTER*/
 /*DISCLAIMER*/
@@ -413,7 +453,7 @@
 	padding: 2em 0;
 	width: 16em;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#disclaimer p {
 		padding: .4em 4%;
 		text-align: left;

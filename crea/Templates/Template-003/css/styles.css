@@ -1,3 +1,5 @@
+/*VARIABLES*/
+/*VARIABLES*/
 /*BODY LEVEL*/
 @font-face {
   font-family: 'Modern Pics';
@@ -294,11 +296,12 @@ body {
   z-index: 1;
 }
 
-#template h1 {
-  border-bottom: 1px dashed white;
-  color: white;
-  padding-bottom: .5em;
+#hero h3 {
+  border-top: 1px dashed white;
+  margin: 0 auto;
+  padding-top: .5em;
   width: auto;
+  max-width: 240px;
 }
 
 .seemore {
@@ -327,6 +330,15 @@ body {
   display: block;
 }
 
+@media only screen and (min-width: 560px) {
+  #aboutus {
+    height: 300px;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+  }
+}
+
 #aboutus > .wrapper {
   background-color: white;
   display: block;
@@ -335,11 +347,33 @@ body {
   width: 100%;
 }
 
+@media only screen and (min-width: 560px) {
+  #aboutus > .wrapper {
+    background-color: white;
+    display: block;
+    height: auto;
+    margin: 0 auto 0 auto;
+    overflow: visible;
+    position: relative;
+    width: 1000px;
+  }
+}
+
 #aboutus .img {
   display: block;
   height: 350px;
   overflow: hidden;
   width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+  #aboutus .img {
+    float: left;
+    height: 500px;
+    width: 50%;
+    position: absolute;
+    top: -100px;
+  }
 }
 
 #aboutus .wrapper-content {
@@ -353,206 +387,29 @@ body {
 }
 
 @media only screen and (min-width: 560px) {
-  #aboutus {
-    height: 300px;
-    overflow: visible;
-    position: relative;
-    z-index: 1;
-  }
-  #aboutus > .wrapper {
-    background-color: white;
-    display: block;
-    height: 500px;
-    margin: 0 auto;
-    overflow: visible;
-    position: relative;
-    top: -150px;
-    width: 1000px;
-  }
-  #aboutus .img {
-    float: left;
-    height: 500px;
-    width: 50%;
-  }
   #aboutus .wrapper-content {
     float: right;
     height: 420px;
     padding: 80px 4% 0 4%;
     width: 42%;
+    position: absolute;
+    text-align: left;
+    top: -100px;
+    right: 0;
+  }
+}
+
+@media only screen and (min-width: 560px) {
+  #aboutus .wrapper-content h2 {
+    border-bottom: 1px dashed black;
+    padding-bottom: .5em;
   }
 }
 
 /*ABOUT US*/
-/*ITEMS*/
-#items {
-  display: block;
-  height: auto;
-  padding: 4em 0;
-  width: 100%;
-}
-
-#items header {
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 4%;
-  width: auto;
-  max-width: 1180px;
-}
-
-.items {
-  color: white;
-  margin: 0 auto;
-  text-align: left;
-  padding: 0 4%;
-  width: auto;
-  max-width: 1180px;
-}
-
-.item {
-  display: block;
-  height: auto;
-  margin: 0 auto;
-  position: relative;
-  width: 80%;
-}
-
-#template.color-orange .item {
-  background-color: #f0aa00;
-}
-
-#template.color-yellow .item {
-  background-color: #ffe600;
-}
-
-#template.color-green .item {
-  background-color: #4cbe74;
-}
-
-.item .img {
-  display: block;
-  height: 200px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.item .wrapper-content {
-  display: block;
-  font-size: small;
-  text-align: center;
-  padding: 1em 10%;
-  width: 80%;
-}
-
-@media only screen and (min-width: 560px) {
-  .item .img {
-    float: left;
-    height: 200px;
-    width: 50%;
-  }
-  .item .wrapper-content {
-    float: right;
-    padding: 1em 5%;
-    width: 40%;
-  }
-  .items:nth-child(even) .item .img {
-    float: right;
-  }
-  .items:nth-child(even) .item .wrapper-content {
-    float: left;
-  }
-  .items {
-    display: grid;
-  }
-  .items.one {
-    grid-template-columns: auto;
-  }
-  .items.two {
-    grid-template-columns: 50% 50%;
-  }
-  .items.three {
-    grid-template-columns: 33% 34% 33%;
-  }
-  .item {
-    margin: 0;
-    width: auto;
-  }
-}
-
-/*ITEMS*/
-/*gallery*/
-#gallery {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  padding: 4em 0 0 0;
-  width: 100%;
-}
-
-#gallery > .wrapper {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  width: 100%;
-}
-
-#gallery header {
-  margin: 0 auto;
-  text-align: center;
-  width: auto;
-  max-width: 1180px;
-}
-
-#gallery header h2 {
-  font-variant: small-caps;
-}
-
-#gallery header h2 {
-  color: #444444;
-}
-
-#template.color-orange #gallery header h2 {
-  color: #f0aa00;
-}
-
-#template.color-yellow #gallery header h2 {
-  color: #ffe600;
-}
-
-#template.color-green #gallery header h2 {
-  color: #4cbe74;
-}
-
-.gallery {
-  margin: 0 auto;
-  padding: 2em 0 0 0;
-  width: auto;
-  max-width: 1180px;
-}
-
-.gallery .img {
-  display: block;
-  height: 220px;
-  min-width: 220px;
-  overflow: hidden;
-  width: 100%;
-}
-
-@media only screen and (min-width: 560px) {
-  .gallery .img {
-    float: left;
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 960px) {
-  .gallery .img {
-    width: 33.33%;
-  }
-}
-
-/*gallery*/
 /*CTA*/
 #cta {
+  background-color: #444444;
   display: block;
   height: auto;
   overflow: hidden;
@@ -593,6 +450,12 @@ body {
   z-index: 1;
 }
 
+@media only screen and (min-width: 560px) {
+  #cta .wrapper-content {
+    margin: 12em auto 12em auto;
+  }
+}
+
 #template.color-orange #cta .wrapper-content {
   color: #f0aa00;
 }
@@ -605,22 +468,193 @@ body {
   color: #4cbe74;
 }
 
+/*CTA*/
+/*ITEMS*/
+#items {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+#items header {
+  margin: 0 auto;
+  padding: 2em 4% 0 4%;
+  width: auto;
+  max-width: 1180px;
+}
+
+.items {
+  color: white;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 4%;
+  width: auto;
+  max-width: 1180px;
+}
+
+.item {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  width: 80%;
+}
+
 @media only screen and (min-width: 560px) {
-  #cta {
-    height: 350px;
-  }
-  #cta > .wrapper {
-    height: 350px;
-  }
-  #cta .img {
-    height: 350px;
-  }
-  #cta .wrapper-content {
-    padding: 8em 0 4em 0;
+  .item {
+    height: 200px;
+    overflow: hidden;
   }
 }
 
-/*CTA*/
+#template.color-orange .item {
+  background-color: #f0aa00;
+}
+
+#template.color-yellow .item {
+  background-color: #ffe600;
+}
+
+#template.color-green .item {
+  background-color: #4cbe74;
+}
+
+.item .img {
+  display: block;
+  height: 200px;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+  .item .img {
+    height: 200px;
+    position: absolute;
+    width: 100%;
+    z-index: 0;
+  }
+}
+
+.item .wrapper-content {
+  display: block;
+  font-size: small;
+  padding: 1em 10%;
+  width: 80%;
+}
+
+@media only screen and (min-width: 560px) {
+  .item .wrapper-content {
+    float: right;
+    height: 160px;
+    overflow: hidden;
+    padding: 20px 20px;
+    position: relative;
+    width: 160px;
+    z-index: 1;
+  }
+  .items:nth-child(even) .item .wrapper-content {
+    float: left;
+  }
+  .items {
+    display: grid;
+  }
+  .items.one {
+    grid-template-columns: auto;
+  }
+  .items.two {
+    grid-template-columns: 50% 50%;
+  }
+  .items.three {
+    grid-template-columns: 33% 34% 33%;
+  }
+  .item {
+    margin: 0;
+    width: auto;
+  }
+}
+
+#template.color-orange .item .wrapper-content {
+  background-color: #f0aa00;
+}
+
+#template.color-yellow .item .wrapper-content {
+  background-color: #ffe600;
+}
+
+#template.color-green .item .wrapper-content {
+  background-color: #4cbe74;
+}
+
+/*ITEMS*/
+/*gallery*/
+#gallery {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#gallery > .wrapper {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#gallery header {
+  margin: 2em auto 1em auto;
+  width: auto;
+  max-width: 1180px;
+}
+
+#gallery header h2 {
+  font-variant: small-caps;
+}
+
+#gallery header h2 {
+  color: #444444;
+}
+
+#template.color-orange #gallery header h2 {
+  color: #f0aa00;
+}
+
+#template.color-yellow #gallery header h2 {
+  color: #ffe600;
+}
+
+#template.color-green #gallery header h2 {
+  color: #4cbe74;
+}
+
+.gallery {
+  margin: 0 auto;
+  width: auto;
+  max-width: 1180px;
+}
+
+.gallery .img {
+  display: block;
+  height: 220px;
+  min-width: 220px;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media only screen and (min-width: 560px) {
+  .gallery .img {
+    float: left;
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .gallery .img {
+    width: 33.33%;
+  }
+}
+
+/*gallery*/
 /*FOOTER*/
 #template footer {
   height: auto;
@@ -699,8 +733,16 @@ body {
 #template footer .column ul {
   font-size: .8em;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  width: auto;
+  max-width: 240px;
+}
+
+#template footer .column h6 {
+  margin: 0 auto;
+  width: auto;
+  max-width: 240px;
 }
 
 /*FOOTER*/

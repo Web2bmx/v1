@@ -417,8 +417,13 @@
 #template footer .column ul {
 	font-size: .8em;
 	list-style: none;
-	margin: 0;
+	margin: 0 auto;
 	padding: 0;
+	width: auto; max-width: 240px;
+}
+#template footer .column h6 {
+	margin: 0 auto;
+	width: auto; max-width: 240px;
 }
 /*FOOTER*/
 /*DISCLAIMER*/
