@@ -474,8 +474,10 @@ body {
 }
 
 .gallery {
+  height: auto;
   margin: 0 auto;
   overflow: hidden;
+  position: relative;
   width: 92%;
   max-width: 1180px;
 }
@@ -494,6 +496,40 @@ body {
     margin: 0 2% 1em 2%;
     width: 46%;
   }
+  .gallery.gallery_slider .img {
+    display: block;
+    margin: 0 2% 1em 2%;
+    width: 96%;
+  }
+}
+
+.gallery-nav {
+  bottom: 0;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.gallery-nav > span {
+  background-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  font-size: 2em;
+  padding: .2em .4em;
+  top: 48%;
+  position: absolute;
+}
+
+.gallery-nav-prev {
+  left: 5%;
+}
+
+.gallery-nav-next {
+  right: 5%;
 }
 
 /*GALERIA*/

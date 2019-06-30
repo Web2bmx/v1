@@ -35,7 +35,7 @@
 #template p, #template ul, #template ol {
 	margin: 0 0 .4em 0;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#template h1 { font-size: 3em; }
 	#template h2 { font-size: 2.2em; }
 	#template h3 { font-size: 1.8em; }
@@ -205,7 +205,7 @@
 .item .wrapper-content {
 	display: block;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	.items {
 		display: grid;
 	}
@@ -291,8 +291,10 @@
 	color: rgba(212, 255, 0, 1);
 }
 .gallery {
+	height: auto;
 	margin: 0 auto;
 	overflow: hidden;
+	position: relative;
 	width: 92%; max-width: 1180px;
 }
 .gallery .img {
@@ -301,14 +303,40 @@
 	margin: 0 auto 1em auto;
 	width: 100%; 
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	.gallery .img {
 		float: left; 
 		height: 200px;
 		margin: 0 2% 1em 2%;
 		width: 46%; 
 	}
+	.gallery.gallery_slider .img {
+		display: block; 
+		margin: 0 2% 1em 2%;
+		width: 96%; 
+	}
 }
+.gallery-nav {
+	bottom: 0;
+	height: auto;
+	left: 0;	
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.gallery-nav>span {
+	background-color: rgba(255,255,255,1);
+	border-radius: 1em;
+	cursor: pointer;
+	font-size: 2em;
+	padding: .2em .4em;
+	top: 48%;
+	position: absolute;
+}
+.gallery-nav-prev { left: 5%; }
+.gallery-nav-next { right: 5%; }
 /*GALERIA*/
 /*CTA*/
 #cta {
@@ -394,7 +422,7 @@
 	overflow: hidden;
 	width: auto;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#template footer section {
 		width: 92%; max-width: 1280px;
 	}	
@@ -403,7 +431,7 @@
 	margin: 1em auto 0 auto;
 	width: auto;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#template footer .column {
 		float: left;
 		margin-left: 4%;
@@ -450,7 +478,7 @@
 	padding: 1.4em 0;
 	width: 16em;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#disclaimer p {
 		text-align: left;
 		padding: 1.4em 4%;

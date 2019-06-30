@@ -495,6 +495,7 @@ body {
   display: block;
   height: auto;
   overflow: hidden;
+  position: relative;
   width: 100%;
 }
 
@@ -514,13 +515,13 @@ body {
   }
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 1024px) {
   .gallery .img {
     width: 33.33%;
   }
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 1024px) {
   .gallery .img {
     width: 25%;
   }
@@ -536,6 +537,40 @@ body {
   .gallery .img {
     width: 16.66%;
   }
+  .gallery.gallery_slider .img {
+    display: block;
+    margin: 0 2% 1em 2%;
+    width: 96%;
+  }
+}
+
+.gallery-nav {
+  bottom: 0;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.gallery-nav > span {
+  background-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  font-size: 2em;
+  padding: .2em .4em;
+  top: 48%;
+  position: absolute;
+}
+
+.gallery-nav-prev {
+  left: 5%;
+}
+
+.gallery-nav-next {
+  right: 5%;
 }
 
 /*gallery*/

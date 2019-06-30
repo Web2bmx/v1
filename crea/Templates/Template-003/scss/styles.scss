@@ -98,7 +98,7 @@
 #template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
 	color: rgba(76, 190, 116, 1);
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#template #menu h4 {
 		float: left;
 	}
@@ -165,7 +165,7 @@
 .seemore span {
 	display: block;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#hero .wrapper-content {
 		margin: 12em auto 12em auto;
 	}	
@@ -176,7 +176,7 @@
 	color: rgba(0,0,0,1);
 	display: block; 
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#aboutus {
 		height: 300px;
 		overflow: visible;
@@ -191,7 +191,7 @@
 	overflow: hidden;
 	width: 100%;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#aboutus>.wrapper {
 		background-color: rgba(255,255,255,1);
 		display: block;
@@ -208,7 +208,7 @@
 	overflow: hidden;
 	width: 100%;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#aboutus .img {
 		float: left;
 		height: 500px;
@@ -226,7 +226,7 @@
 	padding: 4em 4%;
 	width: 92%; 
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#aboutus .wrapper-content {
 		float: right;
 		height: 420px;
@@ -238,7 +238,7 @@
 		right: 0;
 	}
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#aboutus .wrapper-content h2 {
 		border-bottom: 1px dashed rgba(0, 0, 0, 1);
 		padding-bottom: .5em;
@@ -283,7 +283,7 @@
 	width: 80%; max-width: 1086px; 
 	z-index: 1;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	#cta .wrapper-content {
 		margin: 12em auto 12em auto;
 	}
@@ -323,7 +323,7 @@
 	position: relative;
 	width: 80%; 
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	.item {
 		height: 200px;
 		overflow: hidden;
@@ -344,7 +344,7 @@
 	overflow: hidden;
 	width: 100%; 
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	.item .img {
 		height: 200px;
 		position: absolute;
@@ -358,7 +358,7 @@
 	padding: 1em 10%;
 	width: 80%;
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	.item .wrapper-content {
 		float: right;
 		height: 160px;
@@ -425,7 +425,10 @@
 	color: rgba(76, 190, 116, 1);
 }
 .gallery {
+	height: auto;
 	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
 	width: auto; max-width: 1180px;
 }
 .gallery .img {
@@ -435,17 +438,43 @@
 	overflow: hidden;
 	width: 100%; 
 }
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: $width_xxs) {
 	.gallery .img {
 		float: left; 
 		width: 50%; 
 	}
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: $width_s) {
 	.gallery .img {
 		width: 33.33%; 
 	}
+	.gallery.gallery_slider .img {
+		display: block; 
+		margin: 0 2% 1em 2%;
+		width: 96%; 
+	}
 }
+.gallery-nav {
+	bottom: 0;
+	height: auto;
+	left: 0;	
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+.gallery-nav>span {
+	background-color: rgba(255,255,255,1);
+	border-radius: 1em;
+	cursor: pointer;
+	font-size: 2em;
+	padding: .2em .4em;
+	top: 48%;
+	position: absolute;
+}
+.gallery-nav-prev { left: 5%; }
+.gallery-nav-next { right: 5%; }
 /*gallery*/
 /*FOOTER*/
 #template footer {
@@ -487,7 +516,7 @@
 	overflow: hidden;
 	width: auto;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#template footer section {
 		width: 92%; max-width: 1280px;
 	}	
@@ -496,7 +525,7 @@
 	margin: 1em auto 0 auto;
 	width: auto;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#template footer .column {
 		float: left;
 		margin-left: 4%;
@@ -544,7 +573,7 @@
 	padding: 1.4em 0;
 	width: 16em;
 }
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: $width_xs) {
 	#disclaimer p {
 		padding: .4em 4%;
 		text-align: left;

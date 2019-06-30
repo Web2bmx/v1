@@ -8,6 +8,10 @@
             <?php for ($i = 0; $i < count($content->gallery->images[0]->img); $i ++) : ?>
                 <div class="img <?php echo(getImgClasses($content->gallery->images[0]->img[$i])); ?>" style="background-image: url(<?php echo($content->gallery->images[0]->img[$i]); ?>);"></div>
             <?php endfor; ?>
+            <div class="gallery-nav" style="display: none;">
+                <span class="gallery-nav-prev">&#9668;</span>
+                <span class="gallery-nav-next">&#9658;</span>
+            </div>
         </div>
     </div>
 </section>

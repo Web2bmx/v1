@@ -14,7 +14,7 @@
 			<link href="https://fonts.googleapis.com/css?family=Markazi+Text:400,700|Open+Sans:400,400i,700" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-			<!--<script src="js/scripts.js"></script>-->
+			<script src="js/scripts.js"></script>
 			<main>
 				<?php include_once("../php/Components/Hero.php"); ?>
 				<?php include_once("../php/Components/Items.php"); ?>
