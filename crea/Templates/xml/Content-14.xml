@@ -3,7 +3,7 @@
     <hero>
 		<name>Inicio</name>
 		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1541558191161-070d29caaf4b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080</img>
-		<logotipo orientation="" background=""></logotipo>
+		<logotipo>{src}/{template_name}/img/Logo-{template_name}.png</logotipo>
 		<title>Venta de casas Valencia</title>
 		<slogan>El mejor precio</slogan>
 		<button>Ver más</button>

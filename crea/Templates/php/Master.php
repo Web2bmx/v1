@@ -1,8 +1,11 @@
 <?php
     $content_ide = isset($_GET["t"]) ? $_GET["t"] : 0;
-    $content_file = "../xml/Content-" . $content_ide . ".xml";
+    $content_file = "../xml/Content-" . $content_ide . ".xml";    
     if (file_exists($content_file)) {
-        $content = simplexml_load_file($content_file);
+        $content = file_get_contents($content_file);
+        $content = str_replace("{src}","/crea/Templates",$content);
+        $content = str_replace("{template_name}",$template_name,$content);
+        $content = simplexml_load_string ($content);
     }
     function getImgClasses($xml) {
         $img_classes = "";

@@ -1,4 +1,7 @@
-<?php include_once("../php/Master.php"); ?>
+<?php 
+	$template_name = 'Template-002';
+	include_once("../php/Master.php"); 
+?>
 <!doctype html>
 <html lang="en">
 	<head>
