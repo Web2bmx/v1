@@ -29,7 +29,8 @@ export default function userValidator () {
             $("#single-modal").fadeOut();
         });
         /* ON NEW PAGE */
-        $("[name='start']").on("click", function () {
+        $(".app-new-start form").on("submit", function (e) {
+            e.preventDefault();
             $(".form-error").hide();
             if ($("#nombrePagina").val().trim() == "" ||
                 $("#correo").val().trim() == "" ||
