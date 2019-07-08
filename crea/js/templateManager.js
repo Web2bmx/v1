@@ -38,11 +38,10 @@ export default function templateManager () {
 			_ctrl.new_colorManager.loadColors($template);
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 			updateContent();
-			/*$.ajax({
+			$.ajax({
 				url: ("Templates/Template-" + id + "/js/scripts.js"),
-				dataType: "script",
-				success: onTemplateLoaded
-			});*/
+				dataType: "script"
+			});
 		});
 	};
 	var updateContent = function () {
