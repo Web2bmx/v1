@@ -38,7 +38,7 @@ export default function pageManager(){
         }						
         $(".proyectos-disponibles .inserted").remove();									
         $(".proyectos-disponibles").append(html);
-        $(".ventana-login > div").hide();
+        $(".ventana-login > form").hide();
         $(".login-paginas").show();
         $(".llevame").click({
             pags: paginas,

@@ -145,6 +145,6 @@
 					<div id="copyright"><p>&copy;2019 Web2b<br />Todos los derechos reservados</p></div>
 				</div>
 			</footer>
-			<?php /*include_once("include/include_modal-login.php");*/ ?>	
+			<?php include_once("include/include_modal-login.php"); ?>
 		</body>
 	</html>
