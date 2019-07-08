@@ -1,9 +1,16 @@
 /*VARIABLES*/
 /*VARIABLES*/
+/*MIXINS*/
+/*MIXINS*/
 /*BODY LEVEL*/
 @font-face {
   font-family: 'Modern Pics';
   src: url(/crea/Templates/Fonts/modernpics.otf);
+}
+
+@font-face {
+  font-family: 'Web Symbols';
+  src: url(/crea/Templates/Fonts/WebSymbols-Regular.otf);
 }
 
 body {
@@ -72,8 +79,8 @@ body {
   display: block;
   height: auto;
   overflow: hidden;
-  text-align: center;
   width: 100%;
+  text-align: center;
 }
 
 #template a, #template a:link, #template a:visited, #template a:hover, #template a:active {
@@ -118,6 +125,7 @@ and open the template in the editor.
     Created on : Feb 10, 2018, 1:18:48 PM
     Author     : cmend
 */
+/*Colors*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Open Sans', sans-serif;
@@ -184,32 +192,32 @@ and open the template in the editor.
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
 #hero {
-  background-color: #666666;
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+  background-color: #666666;
 }
 
 #hero > .wrapper {
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 #hero div.img {
-  bottom: 0;
   display: block;
   height: auto;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
   left: 0;
   opacity: 1;
-  overflow: hidden;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
   z-index: 0;
 }
 
@@ -290,8 +298,8 @@ and open the template in the editor.
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 #items header {
@@ -376,20 +384,20 @@ and open the template in the editor.
 /*ITEMS*/
 /*ABOUT US*/
 #aboutus {
-  background-color: #444444;
-  color: black;
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+  background-color: #444444;
+  color: black;
 }
 
 #aboutus > .wrapper {
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 #aboutus .img {
@@ -451,17 +459,17 @@ and open the template in the editor.
   display: block;
   height: auto;
   overflow: hidden;
-  padding: 2em 0 0 0;
   width: 100%;
+  padding: 2em 0 0 0;
 }
 
 #gallery > .wrapper {
   display: block;
   height: auto;
-  max-width: 1440px;
-  margin: 0 auto;
   overflow: hidden;
   width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 #gallery header {
@@ -472,11 +480,12 @@ and open the template in the editor.
 }
 
 .gallery {
-  margin: 0 auto;
+  display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .gallery .img {
@@ -539,20 +548,20 @@ and open the template in the editor.
 /*GALERIA*/
 /*CTA*/
 #cta {
-  background-color: #444444;
-  color: black;
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+  background-color: #444444;
+  color: black;
 }
 
 #cta > .wrapper {
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 #template.color-orange #cta {
@@ -598,13 +607,13 @@ and open the template in the editor.
 /*CTA*/
 /*FOOTER*/
 #template footer {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
   background-color: black;
   color: white;
-  height: auto;
-  display: block;
-  overflow: hidden;
   padding: 2em 0 0 0;
-  width: 100%;
 }
 
 #template footer header {
@@ -627,15 +636,15 @@ and open the template in the editor.
 }
 
 #template.color-green footer header p {
-  color: #a4bc00;
+  color: #d4ff00;
 }
 
 #template footer section {
   display: block;
   height: auto;
-  margin: 0 auto;
   overflow: hidden;
-  width: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 760px) {
@@ -680,12 +689,12 @@ and open the template in the editor.
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
-  background-color: black;
-  color: white;
   display: block;
   height: auto;
-  overflow: hiddden;
+  overflow: hidden;
   width: 100%;
+  background-color: black;
+  color: white;
 }
 
 #template.color-orange #disclaimer {
@@ -697,7 +706,7 @@ and open the template in the editor.
 }
 
 #template.color-green #disclaimer {
-  color: #a4bc00;
+  color: #d4ff00;
 }
 
 #disclaimer p {

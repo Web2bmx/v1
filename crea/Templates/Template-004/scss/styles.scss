@@ -1,4 +1,13 @@
 @import "./crea/Templates/scss/_common"; 
+/*Colors*/
+$color_orange_001 : rgba(240, 170, 0, 1);
+$color_orange_002 : rgba(0, 97, 250, 1);
+$color_yellow_001 : rgba(255, 230, 0, 1);
+$color_yellow_002 : rgba(132, 0, 85, 1);
+$color_green_001 : rgba(76, 190, 116, 1);
+$color_green_002 : rgba(43, 0, 255, 1);
+$color_red_001 : rgba(255, 92, 92, 1);
+$color_red_002 : rgba(127, 160, 127, 1);
 /*TEMPLATE LEVEL*/
 #template {
 	font-family: 'Roboto', sans-serif; 
@@ -42,13 +51,11 @@
 /*--TEMPLATE COMPONENTS--*/ 
 /*MENU*/
 #menu {
+	@include box_block();
 	background-color: rgba(255,255,255,.9);
-	display: block;
-	height: auto;
 	padding: .6em 0;
 	position: fixed;
 	top: 0;
-	width: 100%;
 	z-index: 2;
 }
 #menu>.wrapper {
@@ -63,16 +70,19 @@
 	color: rgba(255, 255, 255, 1);
 }
 #template.color-orange #menu h4 {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #menu h4 {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #menu h4 {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red #menu h4 {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
+}
+#template #menu.toggle h4 {
+	float: left;
 }
 @media only screen and (min-width: $width_xxs) {
 	#template #menu h4 {
@@ -87,6 +97,13 @@
 	padding: 0;
 	width: 80%;
 }
+#menu.toggle menu {
+	clear: both;
+	display: none;
+	float: right;
+	text-align: right;
+	width: auto;	
+}
 @media only screen and (min-width: $width_xxs) {
 	#menu menu {
 		float: right;
@@ -98,65 +115,69 @@
 	display: inline-block;
 	list-style-type: none;
 }
+#menu.toggle menu li {
+	display: block;
+}
 #menu menu li a {
 	display: block;
 	font-variant: small-caps;
 	padding: .4em .8em;
 }
 #template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red #menu menu li a:hover, #template.color-red #menu menu li a:active {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
+}
+#menu-icon {
+	cursor: pointer;
+	display: none;
+	font-family: 'Web Symbols';
+}
+#menu.toggle #menu-icon {
+	display: block;
+	float: right;
+	font-family: 'Web Symbols';
 }
 /*MENU*/
 /*HERO*/
 #hero {
+	@include box_block();
 	background-color: rgba(255, 255, 255, 1);
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #template #hero h1 {
 	width: 50%; min-width: 760px;
 }
 #template.color-orange #hero h1 {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #hero h1 {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #hero h1 {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red #hero h1 {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
 }
 #hero>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #hero .img {
+	@include box_block();
 	bottom: 0;
-	display: block; 
-	height: auto;
 	left: 0;
 	opacity: .3;
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%; 
 	z-index: 0;    
 }
 #hero .wrapper-content {
@@ -185,10 +206,7 @@
 /*HERO*/
 /*ITEMS*/
 #items {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
+	@include box_block();
 }
 #items header {
 	display: block;
@@ -213,16 +231,16 @@
 	width: 80%; 
 }
 #template.color-orange .item h3 {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow .item h3 {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green .item h3 {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red .item h3 {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
 }
 .item .img {
 	display: block;
@@ -292,24 +310,15 @@
 /*ITEMS*/
 /*gallery*/
 #gallery {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	padding: 4em 0 0 0;
-	width: 100%; 
 }
 #gallery>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
+	@include box_block();
 }
 .gallery {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 .gallery .img {
 	display: block;
@@ -351,13 +360,12 @@
 	}
 }
 .gallery-nav {
+	@include box_block();
 	bottom: 0;
-	height: auto;
 	left: 0;	
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%;
 	z-index: 1;
 }
 .gallery-nav>span {
@@ -380,23 +388,20 @@
 	overflow: hidden; 
 }
 #aboutus>.wrapper {
+	@include box_block();
 	background-color: rgba(255,255,255,1);
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%;
 }
 #template.color-orange #aboutus {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #aboutus {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #aboutus {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red #aboutus {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
 }
 #aboutus .img {
 	display: block; 
@@ -461,30 +466,21 @@
 /*ABOUT US*/
 /*CTA*/
 #cta {
+	@include box_block();
 	background-color: rgba(45, 59, 63, 1);
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #cta>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%;
 	z-index: 1;
 }
 #cta .img {
+	@include box_block();
 	bottom: 0;
-	display: block;
-	height: auto;
 	left: 0; 
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%;
 	z-index: 0;
 }
 #cta .wrapper-content {
@@ -498,16 +494,16 @@
 	z-index: 1;
 }
 #template.color-orange #cta .wrapper-content {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #cta .wrapper-content {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #cta .wrapper-content {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red #cta .wrapper-content {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
 }
 #cta .wrapper-content ul {
 	list-style-type: none;
@@ -521,24 +517,21 @@
 /*CTA*/
 /*FOOTER*/
 #template footer {
+	@include box_block();
 	background-color: rgba(68, 68, 68, 1);
-	height: auto;
-	display: block;
-	overflow: hidden;
 	padding: 2em 0 1em 0;
-	width: 100%;
 }
 #template.color-orange footer {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow footer {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green footer {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #template.color-red footer {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
 }
 #tempalte footer header {
 	margin: 0 auto;
@@ -548,11 +541,8 @@
 	font-variant: small-caps;
 }
 #template footer section {
-	display: block;
-	height: auto;
+	@include box_block();
 	margin: 0 auto;
-	overflow: hidden;
-	width: auto;
 }
 @media only screen and (min-width: $width_xs) {
 	#template footer section {
@@ -588,24 +578,21 @@
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
+	@include box_block();
 	background-color: rgba(0,0,0,1);
 	color: rgba(255, 255, 255, 1);
-	display: block;
-	height: auto;
-	overflow: hiddden;
-	width: 100%;
 }
 #template.color-orange #disclaimer {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 } 
 #template.color-yellow #disclaimer {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #disclaimer {
-	color: #A4DD00;
+	color: $color_green_001;
 }
 #template.color-red #disclaimer {
-	color: rgba(255, 92, 92, 1);
+	color: $color_red_001;
 }
 #disclaimer p {
 	font-size: .8em;

@@ -1,4 +1,12 @@
 @import "./crea/Templates/scss/_common";
+/*Colors*/
+$color_orange_001 : rgba(240, 170, 0, 1);
+$color_orange_002 : rgba(0, 97, 250, 1);
+$color_yellow_001 : rgba(255, 230, 0, 1);
+$color_yellow_002 : rgba(132, 0, 85, 1);
+$color_green_001 : rgba(76, 190, 116, 1);
+$color_green_002 : rgba(43, 0, 255, 1);
+
 /*TEMPLATE LEVEL*/
 #template {
 	font-family: 'Montserrat', sans-serif;
@@ -42,13 +50,11 @@
 /*--TEMPLATE COMPONENTS--*/
 /*MENU*/
 #menu {
+	@include box_block();
 	background-color: rgba(0,0,0,.9);
-	display: block;
-	height: auto;
 	padding: .6em 0;
 	position: fixed;
 	top: 0;
-	width: 100%;
 	z-index: 2;
 }
 #menu>.wrapper {
@@ -62,14 +68,22 @@
 #template #menu h4 {
 	color: rgba(255, 255, 255, 1);
 }
+#template #menu.toggle h4 {
+	float: left;
+}
+@media only screen and (min-width: $width_xxs) {
+	#template #menu h4 {
+		float: left;
+	}
+}
 #template.color-orange #menu h4 {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #menu h4 {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #menu h4 {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 #menu menu {
 	display: block;
@@ -79,10 +93,26 @@
 	padding: 0;
 	width: 80%;
 }
+@media only screen and (min-width: $width_xxs) {
+	#menu menu {
+		float: right;
+		text-align: right;
+	}
+}
+#menu.toggle menu {
+	clear: both;
+	display: none;
+	float: right;
+	text-align: right;
+	width: auto;	
+}
 #menu menu li {
 	color: rgba(255,255,255,1);
 	display: inline-block;
 	list-style-type: none;
+}
+#menu.toggle menu li {
+	display: block;
 }
 #menu menu li a {
 	display: block;
@@ -90,50 +120,43 @@
 	padding: .4em .8em;
 }
 #template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
-@media only screen and (min-width: $width_xxs) {
-	#template #menu h4 {
-		float: left;
-	}
-	#menu menu {
-		float: right;
-		text-align: right;
-	}
+#menu-icon {
+	color: rgba(255,255,255,1);
+	cursor: pointer;
+	display: none;
+	font-family: 'Web Symbols';
+}
+#menu.toggle #menu-icon {
+	display: block;
+	float: right;
+	font-family: 'Web Symbols';
 }
 /*MENU*/
 /*HERO*/
 #hero {
+	@include box_block();
 	background-color: rgba(102, 102, 102, 1);
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #hero>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #hero .img {
+	@include box_block();
 	bottom: 0;
-	display: block; 
-	height: auto;
 	left: 0;
 	opacity: .3;
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%; 
 	z-index: 0;
 }
 #hero .wrapper-content {
@@ -185,11 +208,8 @@
 	}
 }
 #aboutus>.wrapper {
+	@include box_block();
 	background-color: rgba(255,255,255,1);
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%;
 }
 @media only screen and (min-width: $width_xxs) {
 	#aboutus>.wrapper {
@@ -247,31 +267,22 @@
 /*ABOUT US*/
 /*CTA*/
 #cta {
+	@include box_block();
 	background-color: rgba(68, 68, 68, 1);
-	display: block;
-	height: auto;
-	overflow: hidden;
 	position: relative;
-	width: 100%; 
 }
 #cta>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #cta .img {
+	@include box_block();
 	bottom: 0;
-	display: block; 
-	height: auto;
 	left: 0;
-	overflow: hidden;
 	opacity: .3;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%;
 	z-index: 0;
 }
 #cta .wrapper-content {
@@ -289,20 +300,18 @@
 	}
 }
 #template.color-orange #cta .wrapper-content {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #cta .wrapper-content {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #cta .wrapper-content {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 /*CTA*/
 /*ITEMS*/
 #items {
-	display: block;
-	height: auto;
-	width: 100%; 
+	@include box_block();
 }
 #items header {
 	margin: 0 auto;
@@ -330,13 +339,13 @@
 	}
 }
 #template.color-orange .item {
-	background-color: rgba(240, 170, 0, 1);
+	background-color: $color_orange_001;
 }
 #template.color-yellow .item {
-	background-color: rgba(255, 230, 0, 1);
+	background-color: $color_yellow_001;
 }
 #template.color-green .item {
-	background-color: rgba(76, 190, 116, 1);
+	background-color: $color_green_001;
 }
 .item .img {
 	display: block;
@@ -383,27 +392,21 @@
 	}
 }
 #template.color-orange .item .wrapper-content {
-	background-color: rgba(240, 170, 0, 1);
+	background-color: $color_orange_001;
 }
 #template.color-yellow .item .wrapper-content {
-	background-color: rgba(255, 230, 0, 1);
+	background-color: $color_yellow_001;
 }
 #template.color-green .item .wrapper-content {
-	background-color: rgba(76, 190, 116, 1);
+	background-color: $color_green_001;
 }
 /*ITEMS*/
 /*gallery*/
 #gallery {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
+	@include box_block();
 }
 #gallery>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
+	@include box_block();
 }
 #gallery header {
 	margin: 2em auto 1em auto;
@@ -416,13 +419,13 @@
 	color: rgba(68, 68, 68, 1);
 }
 #template.color-orange #gallery header h2 {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #gallery header h2 {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #gallery header h2 {
-	color: rgba(76, 190, 116, 1);
+	color: $color_green_001;
 }
 .gallery {
 	height: auto;
@@ -455,13 +458,12 @@
 	}
 }
 .gallery-nav {
+	@include box_block();
 	bottom: 0;
-	height: auto;
 	left: 0;	
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%;
 	z-index: 1;
 }
 .gallery-nav>span {
@@ -478,20 +480,17 @@
 /*gallery*/
 /*FOOTER*/
 #template footer {
-	height: auto;
-	display: block;
-	overflow: hidden;
+	@include box_block();
 	padding: 1em 0;
-	width: 100%;
 }
 #template.color-orange footer {
-	background-color: rgba(240, 170, 0, 1);
+	background-color: $color_orange_001;
 }
 #template.color-yellow footer {
-	background-color: rgba(255, 230, 0, 1);
+	background-color: $color_yellow_001;
 }
 #template.color-green footer {
-	background-color: rgba(76, 190, 116, 1);
+	background-color: $color_green_001;
 }
 #template footer header {
 	margin: 0 auto;
@@ -501,20 +500,17 @@
 	color: rgba(68, 68, 68, 1);
 }
 #template.color-orange footer header p {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow footer header p {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green .footer header p {
-	color: #A4DD00;
+	color: $color_green_001;
 }
 #template footer section {
-	display: block;
-	height: auto;
+	@include box_block();
 	margin: 0 auto;
-	overflow: hidden;
-	width: auto;
 }
 @media only screen and (min-width: $width_xs) {
 	#template footer section {
@@ -550,21 +546,18 @@
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
+	@include box_block();
 	background-color: rgba(30, 30, 30,1);
 	color: rgba(255, 255, 255, 1);
-	display: block;
-	height: auto;
-	overflow: hiddden;
-	width: 100%;
 }
 #template.color-orange #disclaimer {
-	color: rgba(240, 170, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #disclaimer {
-	color: rgba(255, 230, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #disclaimer {
-	color: #A4DD00;
+	color: $color_green_001;
 }
 #disclaimer p {
 	font-size: .8em;

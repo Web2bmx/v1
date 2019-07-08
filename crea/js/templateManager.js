@@ -77,7 +77,11 @@ export default function templateManager () {
 					_ctrl.new_dataManager.saveSelected(_ctrl.jd,"inp-content-slogan",slogan_from_tour,'text');
 					$this.val(selections[i_id] ? selections[i_id].text : '');
 					$template.find("#" + v_id).html(selections[i_id] ? selections[i_id].text : '');
-				}
+				} 
+				if (i_id == "inp-content-title-aboutus" || i_id == "inp-content-aboutus") {
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,$template.find("#" + v_id).html(),'text');
+					$this.val(selections[i_id] ? selections[i_id].text : '');
+				} 
 			});	
 		}
 		if (_ctrl.sessionStatus == "RESUME SESSION") {

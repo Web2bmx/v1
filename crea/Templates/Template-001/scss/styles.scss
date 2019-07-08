@@ -1,6 +1,13 @@
 @import "./crea/Templates/scss/_common"; 
 @import "../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "../../../../scss/base/variables";
+/*Colors*/
+$color_orange_001 : rgba(250, 153, 0, 1);
+$color_orange_002 : rgba(0, 97, 250, 1);
+$color_yellow_001 : rgba(250, 212, 0, 1);
+$color_yellow_002 : rgba(132, 0, 85, 1);
+$color_green_001 : rgba(212, 255, 0, 1);
+$color_green_002 : rgba(43, 0, 255, 1);
 
 
 /*TEMPLATE LEVEL*/
@@ -51,30 +58,21 @@
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
 #hero {
+	@include box_block();
 	background-color: rgba(102, 102, 102, 1);
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #hero>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #hero div.img {
+	@include box_block();
 	bottom: 0;
-	display: block; 
-	height: auto;
 	left: 0;
 	opacity: 1;
-	overflow: hidden;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 100%; 
 	z-index: 0;
 }
 #hero .wrapper-content {
@@ -98,16 +96,16 @@
 	}
 }
 #template.color-orange #hero .wrapper-content {
-	background-color: rgba(250, 153, 0, 1);
-	background: radial-gradient(circle, rgba(250, 153, 0, .7) 0%, rgba(250, 153, 0, 1) 100%);
+	background-color: $color_orange_001;
+	background: radial-gradient(circle, rgba($color_orange_001, .7) 0%, $color_orange_001 100%);
 }
 #template.color-yellow #hero .wrapper-content {
-	background-color: rgba(250, 212, 0, 1);
-	background: radial-gradient(circle, rgba(250, 212, 0, .7) 0%, rgba(250, 212, 0, 1) 100%);
+	background-color: $color_yellow_001;
+	background: radial-gradient(circle, rgba($color_yellow_001, .7) 0%, $color_yellow_001 100%);
 }
 #template.color-green #hero .wrapper-content {
-	background-color: rgba(212, 255, 0, 1);
-	background: radial-gradient(circle, rgba(212, 255, 0, .7) 0%, rgba(212, 255, 0, 1) 100%);
+	background-color: $color_green_001;
+	background: radial-gradient(circle, rgba($color_green_001, .7) 0%, $color_green_001 100%);
 }
 #branding {
 	display: block;
@@ -123,10 +121,7 @@
 	width: auto;
 }
 .seemore, .seemore>a {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%;
+	@include box_block();
 }
 .seemore span{
 	display: block;
@@ -135,17 +130,11 @@
 /*MENU*/
 /*ITEMS*/
 #items {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
+	@include box_block();
 }
 #items>.wrapper {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #items header {
 	margin: 1em auto;
@@ -184,16 +173,16 @@
 	z-index: 1;
 }
 #template.color-orange .item .wrapper-content {
-	background-color: rgba(250, 153, 0, 1);
-	background: radial-gradient(circle, rgba(250, 153, 0, .7) 0%, rgba(250, 153, 0, 1) 100%);
+	background-color: $color_orange_001;
+	background: radial-gradient(circle, rgba($color_orange_001, .7) 0%, $color_orange_001 100%);
 }
 #template.color-yellow .item .wrapper-content {
-	background-color: rgba(250, 212, 0, 1);
-	background: radial-gradient(circle, rgba(250, 212, 0, .7) 0%, rgba(250, 212, 0, 1) 100%);
+	background-color: $color_yellow_001;
+	background: radial-gradient(circle, rgba($color_yellow_001, .7) 0%, $color_yellow_001 100%);
 }
 #template.color-green .item .wrapper-content {
-	background-color: rgba(212, 255, 0, 1);
-	background: radial-gradient(circle, rgba(212, 255, 0, .7) 0%, rgba(212, 255, 0, 1) 100%);
+	background-color: $color_green_001;
+	background: radial-gradient(circle, rgba($color_green_001, .7) 0%, $color_green_001 100%);
 }
 @media only screen and (min-width: $width_xs) {
 	.items {
@@ -210,19 +199,13 @@
 /*ITEMS*/
 /*ABOUT US*/
 #aboutus {
+	@include box_block();
 	background-color: rgba(68, 68, 68, 1);
 	color: rgba(0,0,0,1);
-	display: block; 
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #aboutus>.wrapper {
-	display: block; 
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #aboutus .img {
 	bottom: 0;
@@ -255,36 +238,30 @@
 	width: auto; max-width: 24em;
 }
 #template.color-orange #aboutus div.wrapper-content {
-	background-color: rgba(0, 97, 250, 1);
-	background: radial-gradient(circle, rgba(0, 97, 250, .7) 0%, rgba(0, 97, 250, 1) 100%);
-	color: rgba(250, 153, 0, 1);
+	background-color: $color_orange_002;
+	background: radial-gradient(circle, rgba($color_orange_002, .7) 0%, $color_orange_002 100%);
+	color: $color_orange_001;
 }
 #template.color-yellow #aboutus div.wrapper-content {
-	background-color: rgba(132, 0, 85, 1);
-	background: radial-gradient(circle, rgba(132, 0, 85, .7) 0%, rgba(132, 0, 85, 1) 100%);
-	color: rgba(250, 212, 0, 1);
+	background-color: $color_yellow_002;
+	background: radial-gradient(circle, rgba($color_yellow_002, .7) 0%, $color_yellow_002 100%);
+	color: $color_yellow_001;
 }
 #template.color-green #aboutus div.wrapper-content {
-	background-color: rgba(43, 0, 255, 1);
-	background: radial-gradient(circle, rgba(43, 0, 255, .7) 0%, rgba(43, 0, 255, 1) 100%);
-	color: rgba(212, 255, 0, 1);
+	background-color: $color_green_002;
+	background: radial-gradient(circle, rgba($color_green_002, .7) 0%, $color_green_002 100%);
+	color: $color_green_001;
 }
 /*ABOUT US*/
 /*GALERIA*/
 #gallery {
-	display: block;
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	padding: 2em 0 0 0;
-	width: 100%; 
 }
 #gallery>.wrapper {
-	display: block;
-	height: auto;
+	@include box_block();
 	max-width: 1440px;
 	margin: 0 auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #gallery header {
 	margin: 0 auto;
@@ -292,11 +269,9 @@
 	width: auto; max-width: 1280px;
 }
 .gallery {
+	@include box_block();
 	margin: 0 auto;
-	height: auto;
-	overflow: hidden;
 	position: relative;
-	width: 100%;
 }
 .gallery .img {
 	display: block;
@@ -346,28 +321,22 @@
 /*GALERIA*/
 /*CTA*/
 #cta {
+	@include box_block();
 	background-color: rgba(68, 68, 68, 1);
 	color: rgba(0,0,0,1);
-	display: block; 
-	height: auto;
-	overflow: hidden;
-	width: 100%; 
 }
 #cta>.wrapper {
-	display: block; 
-	height: auto;
-	overflow: hidden;
+	@include box_block();
 	position: relative;
-	width: 100%; 
 }
 #template.color-orange #cta {
-	background-color: rgba(250, 153, 0, 1);
+	background-color: $color_orange_001;
 }
 #template.color-yellow #cta {
-	background-color: rgba(250, 212, 0, 1);
+	background-color: $color_yellow_001;
 }
 #template.color-green #cta {
-	background-color: rgba(212, 255, 0, 1);
+	background-color: $color_green_001;
 }
 #cta .img {
 	bottom: 0;
@@ -397,13 +366,10 @@
 /*CTA*/
 /*FOOTER*/
 #template footer {
+	@include box_block();
 	background-color: rgba(0,0,0,1);
 	color: rgba(255,255,255,1);
-	height: auto;
-	display: block;
-	overflow: hidden;
 	padding: 2em 0 0 0;
-	width: 100%;
 }
 #template footer header {
 	margin: 0 auto;
@@ -414,20 +380,17 @@
 	font-size: .8em;
 }
 #template.color-orange footer header p {
-	color: rgba(250, 153, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow footer header p {
-	color: rgba(250, 212, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green footer header p {
-	color: rgba(164, 188, 0, 1);
+	color: $color_green_001;
 }
 #template footer section {
-	display: block;
-	height: auto;
+	@include box_block();
 	margin: 0 auto;
-	overflow: hidden;
-	width: auto;
 }
 @media only screen and (min-width: $width_xs) {
 	#template footer section {
@@ -463,21 +426,18 @@
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
+	@include box_block();
 	background-color: rgba(0,0,0,1);
 	color: rgba(255, 255, 255, 1);
-	display: block;
-	height: auto;
-	overflow: hiddden;
-	width: 100%;
 }
 #template.color-orange #disclaimer {
-	color: rgba(250, 153, 0, 1);
+	color: $color_orange_001;
 }
 #template.color-yellow #disclaimer {
-	color: rgba(250, 212, 0, 1);
+	color: $color_yellow_001;
 }
 #template.color-green #disclaimer {
-	color: rgba(164, 188, 0, 1);
+	color: $color_green_001;
 }
 #disclaimer p {
 	font-size: .8em;

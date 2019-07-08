@@ -1,9 +1,16 @@
 /*VARIABLES*/
 /*VARIABLES*/
+/*MIXINS*/
+/*MIXINS*/
 /*BODY LEVEL*/
 @font-face {
   font-family: 'Modern Pics';
   src: url(/crea/Templates/Fonts/modernpics.otf);
+}
+
+@font-face {
+  font-family: 'Web Symbols';
+  src: url(/crea/Templates/Fonts/WebSymbols-Regular.otf);
 }
 
 body {
@@ -72,8 +79,8 @@ body {
   display: block;
   height: auto;
   overflow: hidden;
-  text-align: center;
   width: 100%;
+  text-align: center;
 }
 
 #template a, #template a:link, #template a:visited, #template a:hover, #template a:active {
@@ -109,6 +116,7 @@ body {
 }
 
 /*MAP*/
+/*Colors*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Montserrat', sans-serif;
@@ -171,13 +179,14 @@ body {
 /*--TEMPLATE COMPONENTS--*/
 /*MENU*/
 #menu {
-  background-color: rgba(0, 0, 0, 0.9);
   display: block;
   height: auto;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
   padding: .6em 0;
   position: fixed;
   top: 0;
-  width: 100%;
   z-index: 2;
 }
 
@@ -193,6 +202,16 @@ body {
 
 #template #menu h4 {
   color: white;
+}
+
+#template #menu.toggle h4 {
+  float: left;
+}
+
+@media only screen and (min-width: 560px) {
+  #template #menu h4 {
+    float: left;
+  }
 }
 
 #template.color-orange #menu h4 {
@@ -216,10 +235,29 @@ body {
   width: 80%;
 }
 
+@media only screen and (min-width: 560px) {
+  #menu menu {
+    float: right;
+    text-align: right;
+  }
+}
+
+#menu.toggle menu {
+  clear: both;
+  display: none;
+  float: right;
+  text-align: right;
+  width: auto;
+}
+
 #menu menu li {
   color: white;
   display: inline-block;
   list-style-type: none;
+}
+
+#menu.toggle menu li {
+  display: block;
 }
 
 #menu menu li a {
@@ -240,45 +278,48 @@ body {
   color: #4cbe74;
 }
 
-@media only screen and (min-width: 560px) {
-  #template #menu h4 {
-    float: left;
-  }
-  #menu menu {
-    float: right;
-    text-align: right;
-  }
+#menu-icon {
+  color: white;
+  cursor: pointer;
+  display: none;
+  font-family: 'Web Symbols';
+}
+
+#menu.toggle #menu-icon {
+  display: block;
+  float: right;
+  font-family: 'Web Symbols';
 }
 
 /*MENU*/
 /*HERO*/
 #hero {
-  background-color: #666666;
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+  background-color: #666666;
 }
 
 #hero > .wrapper {
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 #hero .img {
-  bottom: 0;
   display: block;
   height: auto;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
   left: 0;
   opacity: .3;
-  overflow: hidden;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
   z-index: 0;
 }
 
@@ -340,11 +381,11 @@ body {
 }
 
 #aboutus > .wrapper {
-  background-color: white;
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+  background-color: white;
 }
 
 @media only screen and (min-width: 560px) {
@@ -409,33 +450,33 @@ body {
 /*ABOUT US*/
 /*CTA*/
 #cta {
-  background-color: #444444;
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  background-color: #444444;
+  position: relative;
 }
 
 #cta > .wrapper {
   display: block;
   height: auto;
   overflow: hidden;
-  position: relative;
   width: 100%;
+  position: relative;
 }
 
 #cta .img {
-  bottom: 0;
   display: block;
   height: auto;
-  left: 0;
   overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  left: 0;
   opacity: .3;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
   z-index: 0;
 }
 
@@ -473,6 +514,7 @@ body {
 #items {
   display: block;
   height: auto;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -663,13 +705,15 @@ body {
 }
 
 .gallery-nav {
-  bottom: 0;
+  display: block;
   height: auto;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
   z-index: 1;
 }
 
@@ -694,11 +738,11 @@ body {
 /*gallery*/
 /*FOOTER*/
 #template footer {
-  height: auto;
   display: block;
+  height: auto;
   overflow: hidden;
-  padding: 1em 0;
   width: 100%;
+  padding: 1em 0;
 }
 
 #template.color-orange footer {
@@ -732,15 +776,15 @@ body {
 }
 
 #template.color-green .footer header p {
-  color: #A4DD00;
+  color: #4cbe74;
 }
 
 #template footer section {
   display: block;
   height: auto;
-  margin: 0 auto;
   overflow: hidden;
-  width: auto;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 760px) {
@@ -785,12 +829,12 @@ body {
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
-  background-color: #1e1e1e;
-  color: white;
   display: block;
   height: auto;
-  overflow: hiddden;
+  overflow: hidden;
   width: 100%;
+  background-color: #1e1e1e;
+  color: white;
 }
 
 #template.color-orange #disclaimer {
@@ -802,7 +846,7 @@ body {
 }
 
 #template.color-green #disclaimer {
-  color: #A4DD00;
+  color: #4cbe74;
 }
 
 #disclaimer p {

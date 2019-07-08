@@ -5,10 +5,22 @@
 	$width_m: 1280px;
 	$width_l: 1440px;
 /*VARIABLES*/
+/*MIXINS*/
+@mixin box_block () {
+   display: block;
+   height: auto;
+   overflow: hidden;
+   width: 100%;
+}
+/*MIXINS*/
 /*BODY LEVEL*/
 @font-face {
     font-family: 'Modern Pics';
     src: url(/crea/Templates/Fonts/modernpics.otf);
+}
+@font-face {
+    font-family: 'Web Symbols';
+    src: url(/crea/Templates/Fonts/WebSymbols-Regular.otf);
 }
 body { margin: 0; padding: 0; }
 /*BODY LEVEL*/
@@ -32,21 +44,15 @@ body { margin: 0; padding: 0; }
 /*IMAGES CONTROL*/
 /*TEMPLATE LEVEL*/
 #template {
-    display: block;
-    height: auto;
-    overflow: hidden;
-    text-align: center;
-	width: 100%; 
+	@include box_block();
+	text-align: center;
 }
 #template a, #template a:link, #template a:visited, #template a:hover, #template a:active {
 	color: inherit;
 	text-decoration: none;
 }
 #template main {
-	display: block;
-    height: auto;
-    overflow: hidden;
-	width: 100%; 
+	@include box_block();
 }
 .font-icon {
 	font-family: 'Modern Pics', cursive;
@@ -54,10 +60,7 @@ body { margin: 0; padding: 0; }
 /*TEMPLATE LEVEL*/
 /*MAP*/
 #map, #map>.wrapper, #map>.wrapper>div {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: 100%;
+	@include box_block();
 }
 #map>.wrapper>div>iframe {
 	display: block;

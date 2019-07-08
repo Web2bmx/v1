@@ -24,4 +24,34 @@ $(document).ready(function() {
         $c_gallery_images.filter(":eq(" + c_gallery_count + ")").show();
     }
     /*Gallery*/
+    /*Menu*/
+    var setMenu = function() {
+        console.log($(window).width());
+        if ($(window).width() <= 560) {
+            $("#menu").addClass("toggle");
+            $("#menu-icon").show();
+            $("#menu-icon").removeClass("showing");
+            $("#menu menu").hide();  
+        } else {
+            $("#menu").removeClass("toggle");
+            $("#menu-icon").hide();
+            $("#menu-icon").addClass("showing");
+            $("#menu menu").show();
+        }
+    }
+    setMenu();
+    $(window).on("resize", function() {
+        setMenu();
+    });
+    $("#template").on("click", "#menu-icon", function() {
+        var $this = $(this);
+        if ($this.hasClass("showing")) {
+            $("#menu menu").hide();
+            $this.removeClass("showing");
+        } else {
+            $("#menu menu").show();
+            $this.addClass("showing");
+        }
+    });
+    /*Menu*/
 });
