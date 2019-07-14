@@ -6,6 +6,10 @@
 
 #### Quitar productos [Carlos]
 
+#### Botones para mostrar/ocultar logo o titulo
+
+#### Verificar que todas las secciones pedan editarse en los controles
+
 #### Verificar que el contenido cargado de principio no cambie [Antonio - 50%]
 
 #### Control de busqueda en el mapa
