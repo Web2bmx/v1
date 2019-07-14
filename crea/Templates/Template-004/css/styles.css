@@ -379,6 +379,22 @@ body {
   display: block;
 }
 
+#branding {
+  display: block;
+  height: 5em;
+  overflow: hidden;
+  width: 100%;
+}
+
+#branding > img {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  width: auto;
+  max-height: 100px;
+}
+
 /*HERO*/
 /*ITEMS*/
 #items {

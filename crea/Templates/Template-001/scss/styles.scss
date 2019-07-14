@@ -119,6 +119,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	margin: 0 auto;
 	overflow: hidden;
 	width: auto;
+	max-height: 100px;
 }
 .seemore, .seemore>a {
 	@include box_block();

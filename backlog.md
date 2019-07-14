@@ -1,7 +1,5 @@
 #### Página de términos y condiciones [Antonio]
 
-#### Generar logo [Carlos - 50%]
-
 #### Agregar control para galería [Antonio]
 
 #### Validar numero de secciones basado en la sesion [Carlos]

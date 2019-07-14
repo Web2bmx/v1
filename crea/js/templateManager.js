@@ -220,13 +220,18 @@ export default function templateManager () {
 	};
 	var updateImages = function ($template, selections) {
 		if(_ctrl.sessionStatus == "START SESSION"){}
-		if(_ctrl.sessionStatus == "RESUME SESSION"){
+		if(_ctrl.sessionStatus == "RESUME SESSION" ||
+		_ctrl.sessionStatus == "UPDATE SESSION"){
 			for(var key in selections){
 				switch(selections[key].type){
 					case "image":
-						$(key).attr("class", ("img img-MC img-L")).css({
-							"background-image" : ("url(" + selections[key].img + ")")
-						});	
+						if (key !== "#img-logo") {
+							$(key).attr("class", ("img img-MC img-L")).css({
+								"background-image" : ("url(" + selections[key].img + ")")
+							});	
+						} else {
+							$(key).attr('src',selections[key].img);
+						}
 					break;
 				}
 			}
@@ -239,12 +244,17 @@ export default function templateManager () {
 				//
 				let img = new Image();
 				img.onload = function() {
-					let o = "S";
-					if(this.width > this.height) { o = "L"; }
-					if(this.width < this.height) { o = "P"; }
-					$template.find(n_name).attr("class", ("img img-cont img-MC img-" + o)).css({
-						"background-image" : ("url(" + img_src + ")")
-					});
+					if (n_name !== "#img-logo") {
+						let o = "S";
+						if(this.width > this.height) { o = "L"; }
+						if(this.width < this.height) { o = "P"; }
+						$template.find(n_name).attr("class", ("img img-cont img-MC img-" + o)).css({
+							"background-image" : ("url(" + img_src + ")")
+						});
+					} else {
+						$(n_name).attr('src',img_src);
+					}
+
 				};
 				img.src = img_src;
 				//Save selection to object
