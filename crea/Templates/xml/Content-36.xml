@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>Grupo los Grandes Musicales tenemos 20 años de experiencia, tocamos música versatil para tus eventos y te ofrecemos animación, luz y sonido así como servicio de DJ, permitenos ser parte de tu gran día.</text>
+		<text>&lt;span class="name"&gt;Grupo los Grandes Musicales&lt;/span&gt; tenemos 20 años de experiencia, tocamos música versatil para tus eventos y te ofrecemos animación, luz y sonido así como servicio de DJ, permitenos ser parte de tu gran día.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

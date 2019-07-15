@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533629663071-038eb2b96fcf?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>Tenemos 20 años trabajando con la mejor calidad y el mejor servicio, te ofrecemos asesoría y atención a tu medida, agenda una cita con nosotros para un diagnóstico sin compromiso.</text>
+		<text>&lt;span class="name"&gt;En Reparación de autos Ramírez&lt;/span&gt; tenemos 20 años trabajando con la mejor calidad y el mejor servicio, te ofrecemos asesoría y atención a tu medida, agenda una cita con nosotros para un diagnóstico sin compromiso.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

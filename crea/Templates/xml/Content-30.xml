@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="left" focus-ver="middle">https://images.unsplash.com/photo-1484482340112-e1e2682b4856?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>Somos un grupo de apasionados del Basketbol que nos reúnimos desde hace 5 años semanalmente a practicar nuestro deporte, siempre estamos buscando por nuevos participantes y equipos para organizar torneos, esperamos verte pronto.</text>
+		<text>&lt;span class="name"&gt;Juegos de Basketbol Aguascalientes&lt;/span&gt;, somos un grupo de apasionados del Basketbol que nos reúnimos desde hace 5 años semanalmente a practicar nuestro deporte, siempre estamos buscando por nuevos participantes y equipos para organizar torneos, esperamos verte pronto.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

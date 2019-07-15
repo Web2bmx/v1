@@ -12,7 +12,7 @@
 		<name>Nuestra historia</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Nuestra historia</title>
-		<text>Llevamos 18 años en el negocio de la ferretería, tenemos para tí el mejor surtido en productos al mejor precio, ponemos nuestra experiencia a tus órdenes.</text>
+		<text>En &lt;span class="name"&gt;Ferretería Fuentes&lt;/span&gt; llevamos 18 años en el negocio de la ferretería, tenemos para tí el mejor surtido en productos al mejor precio, ponemos nuestra experiencia a tus órdenes.</text>
 	</aboutus>
 	<items>
 		<name>Productos</name>

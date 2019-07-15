@@ -12,7 +12,7 @@
 		<name>Sobre mí</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1494280257169-55829fedd76e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Sobre mí</title>
-		<text>Profesional de la alta costura, diseño y creo ropa de la más alta calidad a tu medida, me especializo en creación de vestidos de gala. Ponle un toque innolvidable a tus eventos.</text>
+		<text>Con &lt;span class="name"&gt;Costurera Carla Campos&lt;/span&gt;, cuentas con una profesional de la alta costura, diseño y creo ropa de la más alta calidad a tu medida, me especializo en creación de vestidos de gala. Ponle un toque innolvidable a tus eventos.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

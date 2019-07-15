@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1519236282064-01649736e20b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>En Inmobiliaria Valencia tenemos más de 15 años de experiencia en la compra y venta de casas, siempre con la mayor honestidad brindamos un servicio de calidad tanto para ayudarte a encontrar tu espacio ideal como para vender tu propiedad al mejor precio.</text>
+		<text>En &lt;span class="name"&gt;Inmobiliaria Valencia&lt;/span&gt; tenemos más de 15 años de experiencia en la compra y venta de casas, siempre con la mayor honestidad brindamos un servicio de calidad tanto para ayudarte a encontrar tu espacio ideal como para vender tu propiedad al mejor precio.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

@@ -12,7 +12,7 @@
 		<name>Historia</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1553531889-56cc480ac5cb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Nuestra historia</title>
-		<text>Nuestra historia comienza en 1982 cuándo abrimos por primera vez nuestro negocio, ahora con más de 30 años de experiencia, seguimos teniendo los mejores precios para tí y para tu familia.</text>
+		<text>La historia de &lt;span class="name"&gt;Abarrotes don Abelardo&lt;/span&gt; comienza en 1982 cuándo abrimos por primera vez nuestro negocio, ahora con más de 30 años de experiencia, seguimos teniendo los mejores precios para tí y para tu familia.</text>
 	</aboutus>
 	<items>
 		<name>Productos</name>

@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="right" focus-ver="bottom">https://images.unsplash.com/photo-1507070491081-c86dc15d6e12?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>Con la Podóloga Patricia Pérez te ofrecemos el mejor cuidado y atención para tus pies, tenemos 5 años de experiencia que nos avalan, visitanos y dejanos sorprenderte.</text>
+		<text>Con la &lt;span class="name"&gt;Podóloga Patricia Pérez&lt;/span&gt; te ofrecemos el mejor cuidado y atención para tus pies, tenemos 5 años de experiencia que nos avalan, visitanos y dejanos sorprenderte.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

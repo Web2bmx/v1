@@ -12,7 +12,7 @@
 		<name>Acerca de</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1488274319148-051ed60a9404?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Sobre mí</title>
-		<text>Artista apasionado por la ilustración y la expresión gráfica creativa, ilustro desde siempre y de manera profesional desde el 2009, creo obras únicas para tus proyectos.</text>
+		<text>&lt;span class="name"&gt;Ignacio Íñiguez, Ilustrador&lt;/span&gt;, soy un artista apasionado por la ilustración y la expresión gráfica creativa, ilustro desde siempre y de manera profesional desde el 2009, creo obras únicas para tus proyectos.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

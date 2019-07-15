@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1525909002-1b05e0c869d8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>La mejor calidad en pintura de interiores y exteriores, dale a tu espacio un toque de creatividad con colores únicos y vibrantes. Tenemos los mejores especialistas para tí.</text>
+		<text>En &lt;span class="name"&gt;Pablo Péres, pintor&lt;/span&gt;, tenemos la mejor calidad en pintura de interiores y exteriores, dale a tu espacio un toque de creatividad con colores únicos y vibrantes. Tenemos los mejores especialistas para tí.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

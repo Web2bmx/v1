@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1513135237078-98427911d825?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>Te invitamos a que conozcas nuestros cortes selectos. En carnicería Carlos, llevamos 10 años brindandote el mejor servicio y la mayor calidad e higiene en nuestros productos.</text>
+		<text>Te invitamos a que conozcas nuestros cortes selectos. En &lt;span class="name"&gt;carnicería Carlos&lt;/span&gt;, llevamos 10 años brindandote el mejor servicio y la mayor calidad e higiene en nuestros productos.</text>
 	</aboutus>
 	<items>
 		<name>Productos</name>

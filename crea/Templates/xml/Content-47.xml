@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1542295474-5e78124e5d59?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>En Aplicación de uñas Ana Urzua te ofrecemos el mejor cuidado y atención para tus manos, tenemos 5 años de experiencia que nos avalan, visitanos y dejanos sorprenderte.</text>
+		<text>En &lt;span class="name"&gt;Aplicación de uñas Ana Urzua&lt;/span&gt; te ofrecemos el mejor cuidado y atención para tus manos, tenemos 5 años de experiencia que nos avalan, visitanos y dejanos sorprenderte.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533629663071-038eb2b96fcf?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>En llantera Llanos tenemos el mejor servicio al mejor precio para tí, podemos apoyarte con llantas ponchadas y rines abollados, contamos con atención las 24 horas del día.</text>
+		<text>En &lt;span class="name"&gt;llantera Llanos&lt;/span&gt; tenemos el mejor servicio al mejor precio para tí, podemos apoyarte con llantas ponchadas y rines abollados, contamos con atención las 24 horas del día.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

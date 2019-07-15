@@ -126,6 +126,16 @@ export default function templateManager () {
 				if ($this.val() != "") {
 					_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,$this.val(),'text');
 					$template.find("#" + v_id).show().closest(".footer-column").show();
+					if (i_id == "inp-content-name") {
+						if($template.find("#val-content-aboutus>span").length > 0) {
+							$template.find("#val-content-aboutus>span").html(selections[i_id].text);
+							let t = $template.find("#val-content-aboutus").html();
+							t = t.replace("</span>","");
+							t = t.replace('<span class="name">',"");
+							$template.find("#val-content-aboutus").html(t);
+							$("#inp-content-aboutus").val($template.find("#val-content-aboutus").html());
+						}
+					}
 					switch (i_id) {
 						case "inp-contact-email" :
 							$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id] ? selections[i_id].text : '' + "'>" + selections[i_id] ? selections[i_id].text : '' + "</a>");

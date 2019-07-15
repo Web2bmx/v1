@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="right" focus-ver="middle">https://images.unsplash.com/photo-1500840216050-6ffa99d75160?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>En Maquillaje Marcela Marquez somos especialistas en encontrar el look adecuado, visitanos y conoce a nuestras expertas en imagen, quiénes podrán asesorarte y guiarte para encontrar el estilo que va contigo.</text>
+		<text>En &lt;span class="name"&gt;Maquillaje Marcela Marquez&lt;/span&gt; somos especialistas en encontrar el look adecuado, visitanos y conoce a nuestras expertas en imagen, quiénes podrán asesorarte y guiarte para encontrar el estilo que va contigo.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>

@@ -12,7 +12,7 @@
 		<name>Nosotros</name>
         <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
 		<title>Acerca de nosotros</title>
-		<text>En Eventos Olga Esther nos comprometemos a que tu evento sea innolvidable, queremos que no te preocupes por nada más que por disfrutar este día tan importante para tí. Organizamos eventos a tu medida y a tu presupuesto, siempre enfocandonos en ofrecer la mejor calidad.</text>
+		<text>En &lt;span class="name"&gt;Eventos Olga Esther&lt;/span&gt; nos comprometemos a que tu evento sea innolvidable, queremos que no te preocupes por nada más que por disfrutar este día tan importante para tí. Organizamos eventos a tu medida y a tu presupuesto, siempre enfocandonos en ofrecer la mejor calidad.</text>
 	</aboutus>
 	<items>
 		<name>Servicios</name>
