@@ -1,12 +1,14 @@
 #### Página de términos y condiciones [Antonio]
 
-#### Generar logo [Carlos - 50%]
-
 #### Agregar control para galería [Antonio]
 
 #### Validar numero de secciones basado en la sesion [Carlos]
 
 #### Quitar productos [Carlos]
+
+#### Botones para mostrar/ocultar logo o titulo
+
+#### Verificar que todas las secciones pedan editarse en los controles
 
 #### Verificar que el contenido cargado de principio no cambie [Antonio - 50%]
 

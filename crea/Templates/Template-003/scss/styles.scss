@@ -193,6 +193,20 @@ $color_green_002 : rgba(43, 0, 255, 1);
 		margin: 12em auto 12em auto;
 	}	
 }
+#branding {
+	display: block;
+	height: 5em;
+	overflow: hidden;
+	width: 100%;
+}
+#branding>img {
+	display: block;
+	height: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+	width: auto;
+	max-height: 100px;
+}
 /*HERO*/
 /*ABOUT US*/
 #aboutus {

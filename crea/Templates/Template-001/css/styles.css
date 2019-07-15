@@ -271,6 +271,7 @@ and open the template in the editor.
   margin: 0 auto;
   overflow: hidden;
   width: auto;
+  max-height: 100px;
 }
 
 .seemore, .seemore > a {
