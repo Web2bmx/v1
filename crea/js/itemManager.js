@@ -10,6 +10,12 @@ export default function itemManager () {
 			includeProduct();
         });
 	};
+    var removeItems = function() {
+		$(".remove-item").on("click", function(e) {
+			e.preventDefault();
+			
+        });
+	};	
 	var includeProduct = function(addItem = true) {
 		var current_step = $("#inp-content-item-add-y").closest(".app-control-step").index();
 		var $this = $("#inp-content-item-add-y");
@@ -21,7 +27,12 @@ export default function itemManager () {
 		}
 		number_of_items ++;
 		var $i_t = $(".app-control-step:eq(" + (current_step - 1) + ")").clone();
-		$i_t.find("h2:eq(0)").html("Tu producto o servicio (" + number_of_items + ")");
+		$i_t.find("h2:first-child span:eq(0)").html("Tu producto o servicio (" + number_of_items + ")");
+		$i_t.find("h2:first-child").addClass("children");
+		$i_t.find("h2 > a").attr({
+			"style": "",
+			"data-item": number_of_items
+		});
 		$i_t.find("input[type=text]").attr({
 					"id" : ("inp-content-title-item-" + number_of_items),
 					"name" : ("inp-content-title-item-" + number_of_items),

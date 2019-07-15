@@ -1,6 +1,10 @@
-#### Página de términos y condiciones [Antonio]
+* #### Página de términos y condiciones [Antonio]
 
-#### Agregar control para galería [Antonio]
+* #### Agregar control para galería [Antonio]
+
+* #### Verificar que todas las secciones pedan editarse en los controles
+
+* #### Control de busqueda en el mapa [Carlos]
 
 #### Validar numero de secciones basado en la sesion [Carlos]
 
@@ -8,11 +12,8 @@
 
 #### Botones para mostrar/ocultar logo o titulo
 
-#### Verificar que todas las secciones pedan editarse en los controles
 
-#### Verificar que el contenido cargado de principio no cambie [Antonio - 50%]
-
-#### Control de busqueda en el mapa
+#### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
 
 start session = primera visita
 resume session = refresh o visita posterior

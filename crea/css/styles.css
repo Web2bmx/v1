@@ -1269,6 +1269,19 @@ a {
   margin: 10px 0 30px 0;
 }
 
+#app-control .product h2.children {
+  position: relative;
+  padding-right: 25px;
+}
+
+#app-control .product h2 a {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  font-size: 16px;
+  color: darkred;
+}
+
 .img-thumb-zoomed {
   display: block;
   height: auto;

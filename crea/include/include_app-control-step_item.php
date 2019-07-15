@@ -1,5 +1,10 @@
 <div class="product">
-	<h2>¿Cuál es tu principal producto o servicio?</h2>
+	<h2>	
+		<span>¿Cuál es tu principal producto o servicio?</span>
+		<!-- <a style="display:none" class="remove-item">
+			<i class="fas fa-trash"></i>
+		</a> -->
+	</h2>
 	<div>	
 
 		<div class="inp-cont">
