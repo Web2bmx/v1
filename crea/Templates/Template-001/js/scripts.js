@@ -13,15 +13,15 @@ $(document).ready(function() {
     var change_gallery_item = function(b) {
         if (b == "prev") {
             c_gallery_count --;
-            if (c_gallery_count == -1) { c_gallery_count = ($c_gallery_images.length - 1); }
+            if (c_gallery_count == -1) { c_gallery_count = ($(".gallery div.img").length - 1); }
         }
         if (b == "next") {
             c_gallery_count ++;
-            if (c_gallery_count == $c_gallery_images.length) { c_gallery_count = 0; }
+            if (c_gallery_count == $(".gallery div.img").length) { c_gallery_count = 0; }
         }
         
-        $c_gallery_images.filter(":not(:eq(" + c_gallery_count + "))").hide();
-        $c_gallery_images.filter(":eq(" + c_gallery_count + ")").show();
+        $(".gallery div.img").filter(":not(:eq(" + c_gallery_count + "))").hide();
+        $(".gallery div.img").filter(":eq(" + c_gallery_count + ")").show();
     }
     /*Gallery*/
 });

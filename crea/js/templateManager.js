@@ -229,16 +229,38 @@ export default function templateManager () {
 		}
 	};
 	var updateImages = function ($template, selections) {
-		if(_ctrl.sessionStatus == "START SESSION"){}
-		if(_ctrl.sessionStatus == "RESUME SESSION" ||
-		_ctrl.sessionStatus == "UPDATE SESSION"){
+		if(_ctrl.sessionStatus == "START SESSION"){
+			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery","",'image');
+			$template.find("#gallery .gallery .img").each(function() {
+				let img_src = $(this).css("background-image");
+				img_src = img_src.replace('url("', '');
+				img_src = img_src.replace('")', '');
+				_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery",(selections["#img-gallery"].img + "," + img_src),'image');
+			});
+		}
+		if(_ctrl.sessionStatus == "RESUME SESSION" || _ctrl.sessionStatus == "UPDATE SESSION"){
 			for(var key in selections){
 				switch(selections[key].type){
 					case "image":
 						if (key !== "#img-logo") {
-							$(key).attr("class", ("img img-MC img-L")).css({
-								"background-image" : ("url(" + selections[key].img + ")")
-							});	
+							if(key == "#img-gallery") {
+								if (_ctrl.sessionStatus == "RESUME SESSION") {
+									$template.find("#gallery .gallery .img").remove().detach();
+									let imgs_str = selections["#img-gallery"].img;
+									let imgs_arr = imgs_str.split(",");
+									for (let i = 0; i < imgs_arr.length; i++){
+										let img = imgs_arr[i];
+										if (img != "") {
+											$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img + ');"></div>');
+										}
+									}
+									$template.find("#gallery .gallery .img:gt(0)").hide();
+								}
+							} else {
+								$(key).attr("class", ("img img-MC img-L")).css({
+									"background-image" : ("url(" + selections[key].img + ")")
+								});	
+							}
 						} else {
 							$(key).attr('src',selections[key].img);
 						}
@@ -268,7 +290,13 @@ export default function templateManager () {
 				};
 				img.src = img_src;
 				//Save selection to object
-				_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
+				if($this.closest("#app-control-images-gallery").length > -1) {
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(selections[n_name].img + "," + img_src),'image');
+					$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img_src + ');"></div>');
+					$template.find("#gallery .gallery .img:gt(0)").hide();
+				} else {
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
+				}
 			});
 		}
 	};
