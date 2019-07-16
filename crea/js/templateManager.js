@@ -290,7 +290,7 @@ export default function templateManager () {
 				};
 				img.src = img_src;
 				//Save selection to object
-				if($this.closest("#app-control-images-gallery").length > -1) {
+				if($this.closest("#app-control-images-gallery").length > 0) {
 					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(selections[n_name].img + "," + img_src),'image');
 					$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img_src + ');"></div>');
 					$template.find("#gallery .gallery .img:gt(0)").hide();
