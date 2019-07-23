@@ -5,7 +5,7 @@
 		<input type="text" id="inp-content-name" name="inp-content-name" placeholder="Nombre de tu negocio" />
 	</div>	
 	<h2 class="middle">ó</h2>
-	<div class="app-control-images">
+	<div class="app-control-images" style="display: none">
 		<div id='app-control-images-logo'>
 			<div class="photo-container"></div>
 		</div>

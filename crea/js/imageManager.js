@@ -18,7 +18,12 @@ export default function imageManager () {
 					$img_thumb.find("input").attr("value", "/crea/client_images/" + arr[i]);
 					var $this_img_thumb = $img_thumb.clone();
 					$this_img_thumb.find("input").attr("name", ("inp-img-" + k));
-					$("#app-control-images-" + k + " .photo-container").append($this_img_thumb);				
+					$("#app-control-images-" + k + " .photo-container").append($this_img_thumb);
+
+					// if logo
+					if(i == 0 && k == 'logo') {
+						showLogo();
+					}									
 				}
 			}
 		}
@@ -89,12 +94,19 @@ export default function imageManager () {
 				var $this_img_thumb = $img_thumb.clone();
 				$this_img_thumb.find("input").attr("name", ("inp-img-" + name));
 				$("#app-control-images-" + name + " .photo-container").prepend($this_img_thumb);
+
+				//if logo
+				showLogo();
+
 				_ctrl.jd.imagenes = imagenes;
                 _ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
             }
 		}).always(function(){
 			$("button",e.currentTarget).attr("disabled",false);
 		});
+	};
+	var showLogo = () => {
+		$("#app-control-images-logo").parent().attr('style','');
 	};
     return {
 		init : init,

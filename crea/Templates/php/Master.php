@@ -4,6 +4,7 @@
     if (file_exists($content_file)) {
         $content = file_get_contents($content_file);
         $content = str_replace("{src}","/crea/Templates",$content);
+        $content = str_replace("../Images/Logos","/crea/Templates/Images/Logos",$content);
         $content = str_replace("{template_name}",$template_name,$content);
         $content = simplexml_load_string ($content);
     }
