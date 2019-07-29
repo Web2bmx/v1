@@ -1,5 +1,6 @@
 export default function imageManager () {
 	var _ctrl = null;
+	var _loaded_images = [];
 	var init = function (_that) {
 		_ctrl = _that;
 	};
@@ -35,6 +36,70 @@ export default function imageManager () {
 			per_page: 20,
 			orientation: 'landscape'
 		}).done(function(data){
+			if (_loaded_images.length == 0) {
+				for(let x=0; x<data.length ; x++){
+					_loaded_images.push(data[x].urls.regular);
+				}
+			}
+			let image_types = ["hero","aboutus","cta","gallery"];
+			let items = $("#template .item").length;
+			for(let i = 1; i <= items; i++ ){ image_types.push('item-' + i); }
+			let current_images = [];
+			let loaded_images = _loaded_images;
+			for (let i = 0; i < image_types.length; i++) {
+				if (_ctrl.jd.selections[("#img-" + image_types[i])] && _ctrl.jd.selections[("#img-" + image_types[i])].img) {
+					current_images[image_types[i]] = [];
+					if (image_types[i] == "gallery") {
+						current_images[image_types[i]] = _ctrl.jd.selections[("#img-" + image_types[i])].img.split(",");
+					} else {
+						current_images[image_types[i]].push(_ctrl.jd.selections[("#img-" + image_types[i])].img);
+					}
+				}
+			}
+			for (let i = 0; i < loaded_images.length; i++) {
+				for (let j = 0; j < image_types.length; j++) {
+					if(current_images[image_types[j]]) {
+						let add_image = true;
+						for (let k = 0; k < current_images[image_types[j]].length; k++) {
+							if (current_images[image_types[j]][k] == loaded_images[i]) {
+								add_image = false; break;
+							}
+						}
+						if (add_image) { current_images[image_types[j]].push(loaded_images[i]); }
+					}
+				}
+			}
+			for (let i = 0; i < image_types.length; i++) {
+				if(current_images[image_types[i]]) {
+					for(let j=0; j < current_images[image_types[i]].length; j++){
+						let $img_thumb = $(".img-thumb.template").clone();
+						let img = current_images[image_types[i]][j];
+						if (img != "") {
+							 
+							$img_thumb.removeClass("template").find(".img-thumb-cont").css({
+								"background-image" : ("url(" + img + ")")
+							}).attr("data-img-url", img);
+							$img_thumb.find("input").attr("value", img);
+							var $this_img_thumb = $img_thumb.clone();
+							$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));
+							$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
+						}
+					}
+				}
+			}
+			$(document.body).on('click', '.img-thumb-cont', function() {
+				var $this = $(this);
+				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
+				$this.next("input").trigger("click");
+				$this.parent().addClass("thumb-selected");
+			});	
+			$(document.body).on('click', '.img-thumb-cont-zoom', function() {
+				let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
+				$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
+				$("#single-modal").fadeIn();
+			});
+
+			/*
 			let image_types = ["hero","aboutus","cta","gallery"];
 			let items = $("#template .item").length;
 			for(let i = 1; i <= items; i++ ){
@@ -63,6 +128,7 @@ export default function imageManager () {
 				$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
 				$("#single-modal").fadeIn();
 			});
+			*/
 		}).fail(function(){});
 	};
 	var uploadImage = function (e){

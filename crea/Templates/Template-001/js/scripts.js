@@ -7,7 +7,7 @@ $(document).ready(function() {
     $c_gallery_control.show();
     $(".gallery").addClass("gallery_slider");
     $(".gallery-nav>span").on("click", function() {
-        var b = $(this).hasClass(".gallery-nav-next") ? "next" : "prev";
+        var b = $(this).hasClass("gallery-nav-next") ? "next" : "prev";
         change_gallery_item(b);
     });
     var change_gallery_item = function(b) {
@@ -19,7 +19,6 @@ $(document).ready(function() {
             c_gallery_count ++;
             if (c_gallery_count == $(".gallery div.img").length) { c_gallery_count = 0; }
         }
-        
         $(".gallery div.img").filter(":not(:eq(" + c_gallery_count + "))").hide();
         $(".gallery div.img").filter(":eq(" + c_gallery_count + ")").show();
     }
