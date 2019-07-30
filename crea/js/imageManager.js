@@ -47,12 +47,17 @@ export default function imageManager () {
 			let current_images = [];
 			let loaded_images = _loaded_images;
 			for (let i = 0; i < image_types.length; i++) {
+				current_images[image_types[i]] = [];
 				if (_ctrl.jd.selections[("#img-" + image_types[i])] && _ctrl.jd.selections[("#img-" + image_types[i])].img) {
-					current_images[image_types[i]] = [];
 					if (image_types[i] == "gallery") {
-						current_images[image_types[i]] = _ctrl.jd.selections[("#img-" + image_types[i])].img.split(",");
+						let jd_images = _ctrl.jd.selections[("#img-" + image_types[i])].img.split(",");
+						for (let j = 0; j < jd_images.length; j++){
+							if (jd_images[j] != "") {
+								current_images[image_types[i]].push([jd_images[j], "selected"]);
+							}
+						}
 					} else {
-						current_images[image_types[i]].push(_ctrl.jd.selections[("#img-" + image_types[i])].img);
+						current_images[image_types[i]].push([_ctrl.jd.selections[("#img-" + image_types[i])].img, "selected"]);
 					}
 				}
 			}
@@ -65,7 +70,7 @@ export default function imageManager () {
 								add_image = false; break;
 							}
 						}
-						if (add_image) { current_images[image_types[j]].push(loaded_images[i]); }
+						if (add_image) { current_images[image_types[j]].push([loaded_images[i], ""]); }
 					}
 				}
 			}
@@ -73,7 +78,7 @@ export default function imageManager () {
 				if(current_images[image_types[i]]) {
 					for(let j=0; j < current_images[image_types[i]].length; j++){
 						let $img_thumb = $(".img-thumb.template").clone();
-						let img = current_images[image_types[i]][j];
+						let img = current_images[image_types[i]][j][0];
 						if (img != "") {
 							 
 							$img_thumb.removeClass("template").find(".img-thumb-cont").css({
@@ -82,6 +87,7 @@ export default function imageManager () {
 							$img_thumb.find("input").attr("value", img);
 							var $this_img_thumb = $img_thumb.clone();
 							$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));
+							if (current_images[image_types[i]][j][1] == "selected") { $this_img_thumb.addClass("selected"); }
 							$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
 						}
 					}

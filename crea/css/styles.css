@@ -1253,10 +1253,28 @@ a {
   position: absolute;
   right: 0;
   width: 2em;
+  z-index: 2;
 }
 
 #app-control .img-thumb-cont-zoom i {
   padding-top: .5em;
+}
+
+#app-control .img-thumb-overlay {
+  bottom: 0;
+  display: none;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#app-control .img-thumb.selected .img-thumb-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: block;
 }
 
 #app-control h2 {
