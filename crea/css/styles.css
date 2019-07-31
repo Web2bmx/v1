@@ -1277,6 +1277,15 @@ a {
   display: block;
 }
 
+#app-control .img-thumb-overlay > span {
+  color: black;
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  padding-top: 1em;
+  text-align: center;
+}
+
 #app-control h2 {
   color: #000000;
   font-size: 30px;
