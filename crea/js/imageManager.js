@@ -89,6 +89,9 @@ export default function imageManager () {
 							$this_img_thumb.find("input").attr("name", ("inp-img-" + image_types[i]));
 							if (current_images[image_types[i]][j][1] == "selected") { $this_img_thumb.addClass("selected"); }
 							$("#app-control-images-" + image_types[i] + " .photo-container").append($this_img_thumb);
+							if (image_types[i] == "gallery") {
+								$this_img_thumb.find(".img-thumb-overlay>span").html(j + 1);
+							}
 						}
 					}
 				}
@@ -98,6 +101,9 @@ export default function imageManager () {
 				$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
 				$this.next("input").trigger("click");
 				$this.parent().addClass("thumb-selected");
+				/*if($this.closest("#app-control-images-gallery").length > 0) {
+					$this.parent().find("");
+				}*/
 			});	
 			$(document.body).on('click', '.img-thumb-cont-zoom', function() {
 				let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
