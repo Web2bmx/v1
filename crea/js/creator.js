@@ -8,6 +8,7 @@ import dataManager from "../../js/dataManager";
 import pageManager from '../../js/pageManager';
 import validator from "./validator";
 import userValidator from "./userValidator";
+import mapsManager from "./mapsManager";
 
 export default function creator () {
 	var _this = this;
@@ -39,6 +40,7 @@ export default function creator () {
 	_this.new_dataManager = new dataManager();
 	_this.new_PageManager = new pageManager();
 	_this.new_validator = new validator();
+	_this.new_mapManager = new mapsManager();
 	/*FUNCTIONS*/
 	var validation = function(){/*1*/
 		/*This function does two things*/
@@ -64,6 +66,7 @@ export default function creator () {
 		_this.new_templateManager.loadTemplate();//6
 		_this.new_itemManager.setItems();//7
 		new_tooltipManager.setTooltips();//8
+		_this.new_mapManager.init('inp-contact-address', 'iMap');
 		
 	};
 	return {

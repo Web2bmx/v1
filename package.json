@@ -10,6 +10,7 @@
     "grunt": "^1.0.4",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "2.1.0",
+    "load-google-maps-api": "^2.0.1",
     "normalize-scss": "7.0.0"
   },
   "devDependencies": {
