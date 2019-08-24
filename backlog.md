@@ -4,8 +4,6 @@
 
 * #### Verificar que todas las secciones pedan editarse en los controles
 
-* #### Control de busqueda en el mapa [Carlos - 90%] Only pending load position when is already there
-
 #### Validar numero de secciones basado en la sesion [Carlos]
 
 #### Quitar productos [Carlos]

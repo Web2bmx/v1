@@ -34,13 +34,15 @@ export default function creator () {
 	_this.new_appManager.init(_this);
 	_this.new_userValidator = new userValidator();
 	_this.new_userValidator.init(_this);
+	_this.new_mapManager = new mapsManager();
+	_this.new_mapManager.init(_this);
 	/* */
 	var new_tooltipManager = new tooltipManager();
 	/*External objects*/
 	_this.new_dataManager = new dataManager();
 	_this.new_PageManager = new pageManager();
 	_this.new_validator = new validator();
-	_this.new_mapManager = new mapsManager();
+	
 	/*FUNCTIONS*/
 	var validation = function(){/*1*/
 		/*This function does two things*/
@@ -63,11 +65,12 @@ export default function creator () {
 		_this.new_appManager.setAppNavigation();//3
 		_this.new_appManager.setAppControls();//4
 		_this.new_appManager.setAppSteps();//5
-		_this.new_templateManager.loadTemplate();//6
+		_this.new_templateManager.loadTemplate(afterTemplateLoad);//6
 		_this.new_itemManager.setItems();//7
-		new_tooltipManager.setTooltips();//8
-		_this.new_mapManager.init('inp-contact-address', 'iMap');
-		
+		new_tooltipManager.setTooltips();//8				
+	};
+	var afterTemplateLoad = () => {
+		_this.new_mapManager.start('inp-contact-address', 'iMap');
 	};
 	return {
       validation: validation,

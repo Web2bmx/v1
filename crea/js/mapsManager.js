@@ -5,12 +5,23 @@ export default function mapsManager() {
     let mapId = '';
     let key = 'AIzaSyBR5kBWFTVAecBoW4IKDSjttophb4BC6fg';
     let autocomplete;
+    let _ctrl = null;
 
-    let init = (input, map) => {
+	let init = (_that) => {
+		_ctrl = _that;
+	};
+
+    let start = (input, map) => {
         inputId = input;
         mapId = map;
         initAutocomplete();
-        getInitialPos();
+        if(_ctrl.jd && 
+			_ctrl.jd.selections &&
+			_ctrl.jd.selections["inp-contact-address"]){
+            updateMapSrc(_ctrl.jd.selections["inp-contact-address"].text);
+        } else {
+            getInitialPos();
+        }  
     };
 
     let initAutocomplete = () => {
@@ -23,7 +34,7 @@ export default function mapsManager() {
                 (document.getElementById(inputId))/*,
                 {types: ['(cities)']}*/);
 
-            autocomplete.addListener('place_changed', fillInAddress);
+            autocomplete.addListener('place_changed', fillInAddress);            
         }).catch(function (error) {
             console.error(error);
         });
@@ -32,7 +43,9 @@ export default function mapsManager() {
 
     let fillInAddress = () => {
         var place = autocomplete.getPlace();
-        updateMapSrc('place_id:' + place.place_id);
+        if (place && place.place_id) {
+            updateMapSrc('place_id:' + place.place_id);
+        }        
     };
 
     let updateMapSrc = (query) => {
@@ -82,7 +95,8 @@ export default function mapsManager() {
     };
 
     return {
-        init
+        init,
+        start
     };
 
 }
