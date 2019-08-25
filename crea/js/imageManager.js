@@ -65,6 +65,11 @@ export default function imageManager () {
 			$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
 			$this.next("input").trigger("click");
 			$this.parent().addClass("thumb-selected");
+		});
+		$(document.body).on('click', '.img-thumb-overlay', function() {
+			var $this = $(this);
+			$this.closest(".img-thumb").find("input").trigger("click");
+			$this.closest(".img-thumb").removeClass("selected");
 		});	
 		$(document.body).on('click', '.img-thumb-cont-zoom', function() {
 			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");

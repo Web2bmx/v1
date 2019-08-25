@@ -269,34 +269,43 @@ export default function templateManager () {
 			}
 		}
 		if(_ctrl.sessionStatus == "UPDATE SESSION"){
-			$("[name^='inp-img-']:checked").each(function() {
+			$("[name^='inp-img-']").each(function() {
 				let $this = $(this);
 				let img_src = $this.val();
 				let n_name = $this.attr("name").replace("inp-", "#");
-				//
-				let img = new Image();
-				img.onload = function() {
-					if (n_name !== "#img-logo") {
-						let o = "S";
-						if(this.width > this.height) { o = "L"; }
-						if(this.width < this.height) { o = "P"; }
-						$template.find(n_name).attr("class", ("img img-cont img-MC img-" + o)).css({
-							"background-image" : ("url(" + img_src + ")")
-						});
-					} else {
-						$(n_name).attr('src',img_src);
-					}
+				
+				if ($this.prop('checked')) {
+					let img = new Image();
+					img.onload = function() {
+						if (n_name !== "#img-logo") {
+							let o = "S";
+							if(this.width > this.height) { o = "L"; }
+							if(this.width < this.height) { o = "P"; }
+							$template.find(n_name).attr("class", ("img img-cont img-MC img-" + o)).css({
+								"background-image" : ("url(" + img_src + ")")
+							});
+						} else {
+							$(n_name).attr('src',img_src);
+						}
 
-				};
-				img.src = img_src;
-				//Save selection to object
-				if($this.closest("#app-control-images-gallery").length > 0) {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(selections[n_name].img + "," + img_src),'image');
-					$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img_src + ');"></div>');
-					$template.find("#gallery .gallery .img:gt(0)").hide();
+					};
+					img.src = img_src;
+					//Save selection to object
+					if($this.closest("#app-control-images-gallery").length > 0) {
+						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(selections[n_name].img + "," + img_src),'image');
+						$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img_src + ');"></div>');
+						$template.find("#gallery .gallery .img:gt(0)").hide();
+					} else {
+						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
+					}
 				} else {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
-				}
+					if($this.closest("#app-control-images-gallery").length > 0) {
+						if (_ctrl.jd.selections[n_name].img.indexOf(img_src) > -1) {
+							var new_img = _ctrl.jd.selections[n_name].img.replace(img_src, "");
+							_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_img,'image');
+						}
+					}
+				}	
 			});
 		}
 	};
