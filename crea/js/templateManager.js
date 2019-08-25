@@ -3,7 +3,7 @@ export default function templateManager () {
 	var init = function(_that) {
         _ctrl = _that;
     };
-    var loadTemplate = function() {
+    var loadTemplate = function(callback) {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
 		if (_ctrl.sessionStatus == "START SESSION") {
@@ -42,6 +42,7 @@ export default function templateManager () {
 				url: ("Templates/Template-" + id + "/js/scripts.js"),
 				dataType: "script"
 			});
+			callback();
 		});
 	};
 	var updateContent = function () {

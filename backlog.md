@@ -4,8 +4,6 @@
 
 * #### Verificar que todas las secciones pedan editarse en los controles
 
-* #### Control de busqueda en el mapa [Carlos]
-
 #### Validar numero de secciones basado en la sesion [Carlos]
 
 #### Quitar productos [Carlos]
