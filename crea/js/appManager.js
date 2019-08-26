@@ -21,18 +21,18 @@ export default function appManager() {
 					$("#control-view-nav>a:eq(0)").removeClass("disabled");
 				}
 				goToStep(_ctrl.current_step);
-				_ctrl.new_templateManager.updateContent();
+				_ctrl.new_templateManager.updateContent(e.currentTarget);
 			}
 		});
 		for (let i = 0; i < $("#app-control>.app-control-step").length - 1; i++) {
 			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
-		$(document).on("click", ".control-view-index-item", function () {
+		$(document).on("click", ".control-view-index-item", function (e) {
 			let $this = $(this);
 			let index = $(".control-view-index-item").index($this);
 			_ctrl.current_step = index;
 			goToStep(_ctrl.current_step);
-			_ctrl.new_templateManager.updateContent();
+			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
 		$(".control-view-nav-display-mark:eq(" + _ctrl.current_step + ")").addClass("control-view-nav-display-mark-active");
 		centerNav();
@@ -125,13 +125,13 @@ export default function appManager() {
 		});
 	};
 	var setAppControls = function () {
-		$(document.body).on("change", "[name^='inp-'][type!='text']", function () {
-			_ctrl.new_templateManager.updateContent();
+		$(document.body).on("change", "[name^='inp-'][type!='text']", function (e) {
+			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
 			if (!$(e.currentTarget).attr('pattern') || _ctrl.new_validator.isValidinput($(e.currentTarget))) {
-				_ctrl.new_templateManager.updateContent();
+				_ctrl.new_templateManager.updateContent(e.currentTarget);
 				$(".form-error", $(e.currentTarget).parent()).hide();
 			} else {
 				$(".form-error", $(e.currentTarget).parent()).show();

@@ -37,7 +37,7 @@ export default function templateManager () {
 			_ctrl.new_itemManager.checkItemsNumber();
 			_ctrl.new_colorManager.loadColors($template);
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
-			updateContent();
+			updateContent('undefined');
 			$.ajax({
 				url: ("Templates/Template-" + id + "/js/scripts.js"),
 				dataType: "script"
@@ -45,7 +45,7 @@ export default function templateManager () {
 			callback();
 		});
 	};
-	var updateContent = function () {
+	var updateContent = function (target) {
         let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
 		/* */
@@ -54,7 +54,7 @@ export default function templateManager () {
         _ctrl.new_colorManager.updateColors($template);
 		updateTexts($template, selections);
 		updateRemoveControls($template, selections);
-		updateImages($template, selections);
+		updateImages($template, target);
 		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
 		
@@ -229,85 +229,15 @@ export default function templateManager () {
 			});	
 		}
 	};
-	var updateImages = function ($template, selections) {
+	var updateImages = function ($template, target) {
 		if(_ctrl.sessionStatus == "START SESSION"){
-			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery","",'image');
-			$template.find("#gallery .gallery .img").each(function() {
-				let img_src = $(this).css("background-image");
-				img_src = img_src.replace('url("', '');
-				img_src = img_src.replace('")', '');
-				_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery",(selections["#img-gallery"].img + "," + img_src),'image');
-			});
+			_ctrl.new_imageManager.setImagesOnStartSession($template);
 		}
-		if(_ctrl.sessionStatus == "RESUME SESSION" || _ctrl.sessionStatus == "UPDATE SESSION"){
-			for(var key in selections){
-				switch(selections[key].type){
-					case "image":
-						if (key !== "#img-logo") {
-							if(key == "#img-gallery") {
-								if (_ctrl.sessionStatus == "RESUME SESSION") {
-									$template.find("#gallery .gallery .img").remove().detach();
-									let imgs_str = selections["#img-gallery"].img;
-									let imgs_arr = imgs_str.split(",");
-									for (let i = 0; i < imgs_arr.length; i++){
-										let img = imgs_arr[i];
-										if (img != "") {
-											$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img + ');"></div>');
-										}
-									}
-									$template.find("#gallery .gallery .img:gt(0)").hide();
-								}
-							} else {
-								$(key).attr("class", ("img img-MC img-L")).css({
-									"background-image" : ("url(" + selections[key].img + ")")
-								});	
-							}
-						} else {
-							$(key).attr('src',selections[key].img);
-						}
-					break;
-				}
-			}
+		if(_ctrl.sessionStatus == "RESUME SESSION"){
+			_ctrl.new_imageManager.setImagesOnResumeSession($template);
 		}
 		if(_ctrl.sessionStatus == "UPDATE SESSION"){
-			$("[name^='inp-img-']").each(function() {
-				let $this = $(this);
-				let img_src = $this.val();
-				let n_name = $this.attr("name").replace("inp-", "#");
-				
-				if ($this.prop('checked')) {
-					let img = new Image();
-					img.onload = function() {
-						if (n_name !== "#img-logo") {
-							let o = "S";
-							if(this.width > this.height) { o = "L"; }
-							if(this.width < this.height) { o = "P"; }
-							$template.find(n_name).attr("class", ("img img-cont img-MC img-" + o)).css({
-								"background-image" : ("url(" + img_src + ")")
-							});
-						} else {
-							$(n_name).attr('src',img_src);
-						}
-
-					};
-					img.src = img_src;
-					//Save selection to object
-					if($this.closest("#app-control-images-gallery").length > 0) {
-						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(selections[n_name].img + "," + img_src),'image');
-						$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img_src + ');"></div>');
-						$template.find("#gallery .gallery .img:gt(0)").hide();
-					} else {
-						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
-					}
-				} else {
-					if($this.closest("#app-control-images-gallery").length > 0) {
-						if (_ctrl.jd.selections[n_name].img.indexOf(img_src) > -1) {
-							var new_img = _ctrl.jd.selections[n_name].img.replace(img_src, "");
-							_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_img,'image');
-						}
-					}
-				}	
-			});
+			_ctrl.new_imageManager.setImagesOnUpdateSession($template, target);
 		}
 	};
 	return {

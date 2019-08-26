@@ -8,7 +8,9 @@ import dataManager from "../../js/dataManager";
 import pageManager from '../../js/pageManager';
 import validator from "./validator";
 import userValidator from "./userValidator";
+/**/
 import mapsManager from "./mapsManager";
+/**/
 
 export default function creator () {
 	var _this = this;
@@ -34,6 +36,7 @@ export default function creator () {
 	_this.new_appManager.init(_this);
 	_this.new_userValidator = new userValidator();
 	_this.new_userValidator.init(_this);
+	/**/
 	_this.new_mapManager = new mapsManager();
 	_this.new_mapManager.init(_this);
 	/* */
@@ -70,7 +73,9 @@ export default function creator () {
 		new_tooltipManager.setTooltips();//8				
 	};
 	var afterTemplateLoad = () => {
+		/* */
 		_this.new_mapManager.start('inp-contact-address', 'iMap');
+		/* */
 	};
 	return {
       validation: validation,
