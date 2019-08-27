@@ -1,6 +1,6 @@
 * #### Página de términos y condiciones [Antonio]
 
-* #### Agregar control para galería [Antonio]
+* #### Agregar control para galería [Antonio - 80%]
 
 * #### Verificar que todas las secciones pedan editarse en los controles
 
@@ -8,7 +8,9 @@
 
 #### Quitar productos [Carlos]
 
-#### Botones para mostrar/ocultar logo o titulo
+#### Botones para mostrar/ocultar logo o titulo [Carlos]
+
+#### Ultimos detalles del mapa [Carlos]
 
 
 #### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
