@@ -1,36 +1,30 @@
 export default function imageManager () {
 	var _ctrl = null;
 	var _loaded_images = [];
-	var init = function (_that) {
-		_ctrl = _that;
-	};
+	var _api_url = "https://api.unsplash.com/photos/search";
+	var _api_id = "2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64";
+	var init = function (_that) { _ctrl = _that; };
 	var setImageSelection = function (ide) {
 		$(".photo-container").html("");
-		//Check if there are already images upload from user
-		var imagenes = _ctrl.jd.imagenes;
+		getImagesUploadedByUser();
+		loadImagesFromUnsplash(ide);
+	};
+	var getImagesUploadedByUser = function (){
+		//Check if there are images already uploaded by user
+		let imagenes = _ctrl.jd.imagenes;
 		if(imagenes){
 			for(let k in imagenes){
 				var arr = imagenes[k].split("#");
 				for(let i = 0; i< arr.length; i++ ){
-					var $img_thumb = $(".img-thumb.template").clone();
-					$img_thumb.removeClass("template").find(".img-thumb-cont").css({
-						"background-image" : ("url(/crea/client_images/" + arr[i] + ")")
-					});
-					$img_thumb.find("input").attr("value", "/crea/client_images/" + arr[i]);
-					var $this_img_thumb = $img_thumb.clone();
-					$this_img_thumb.find("input").attr("name", ("inp-img-" + k));
-					$("#app-control-images-" + k + " .photo-container").append($this_img_thumb);
-
-					// if logo
-					if(i == 0 && k == 'logo') {
-						showLogo();
-					}									
+					setUploadedImage(arr[i], k);
+					/*if logo*/ if(i == 0 && k == 'logo') { showLogo(); }									
 				}
 			}
 		}
-		/* LOAD IMAGES FROM UNSPLASH */
-		$.getJSON("https://api.unsplash.com/photos/search",{
-			client_id: '2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64',
+	}
+	var loadImagesFromUnsplash = function (ide){
+		$.getJSON(_api_url, {
+			client_id: _api_id,
 			query: ide,
 			page: 1,
 			per_page: 20,
@@ -38,7 +32,7 @@ export default function imageManager () {
 		}).done(function(data){
 			onImagesLoaded(data);
 		}).fail(function(){});
-	};
+	}
 	var onImagesLoaded = function (data){
 		if (_loaded_images.length == 0) {
 			for(let x=0; x<data.length ; x++){
@@ -68,8 +62,7 @@ export default function imageManager () {
 		});
 		$(document.body).on('click', '.img-thumb-overlay', function() {
 			var $this = $(this);
-			$this.closest(".img-thumb").find("input").trigger("click");
-			$this.closest(".img-thumb").removeClass("selected");
+			$this.closest(".img-thumb").removeClass("selected").find("input").trigger("click");
 		});	
 		$(document.body).on('click', '.img-thumb-cont-zoom', function() {
 			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
@@ -166,8 +159,9 @@ export default function imageManager () {
 						let imgs_arr = imgs_str.split(",");
 						for (let i = 0; i < imgs_arr.length; i++){
 							let img = imgs_arr[i];
+							let $img = $(".img.template").clone().removeClass("template").css({ "background-image" : ('url(' + img + ')') });
 							if (img != "") {
-								$template.find("#gallery .gallery").append('<div class="img img-L img-MC " style="background-image: url(' + img + ');"></div>');
+								$template.find("#gallery .gallery").append($img);
 							}
 						}
 						$template.find("#gallery .gallery .img:gt(0)").hide();
@@ -229,6 +223,16 @@ export default function imageManager () {
 		}
 		
 	}
+	var setUploadedImage = function(a, b) {
+		var $img_thumb = $(".img-thumb.template").clone();
+		$img_thumb.removeClass("template").find(".img-thumb-cont").css({
+			"background-image" : ("url(/crea/client_images/" + a + ")")
+		});
+		$img_thumb.find("input").attr("value", "/crea/client_images/" + a);
+		var $this_img_thumb = $img_thumb.clone();
+		$this_img_thumb.find("input").attr("name", ("inp-img-" + b));
+		$("#app-control-images-" + b + " .photo-container").append($this_img_thumb);
+	}
 	var uploadImage = function (e){
 		e.preventDefault();
 		var f = $("input[type=file]",e.currentTarget),
@@ -249,16 +253,7 @@ export default function imageManager () {
 			if(res.upload == 1){			
                 var imagenes = _ctrl.jd.imagenes || {};
 				imagenes[name] = (imagenes[name] ? imagenes[name] + "#" + res.texto : res.texto);
-
-				var $img_thumb = $(".img-thumb.template").clone();
-				$img_thumb.removeClass("template").find(".img-thumb-cont").css({
-					"background-image" : ("url(/crea/client_images/" + res.texto + ")")
-				});
-				$img_thumb.find("input").attr("value", "/crea/client_images/" + res.texto);
-				var $this_img_thumb = $img_thumb.clone();
-				$this_img_thumb.find("input").attr("name", ("inp-img-" + name));
-				$("#app-control-images-" + name + " .photo-container").prepend($this_img_thumb);
-
+				setUploadedImage(res.texto, name);
 				//if logo
 				showLogo();
 

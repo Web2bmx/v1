@@ -22,3 +22,5 @@
 	<i class="far fa-window-close"></i>
 	<div></div>
 </div>
+<!--img-->
+<div class="img img-L img-MC template" ></div>
