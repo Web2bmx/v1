@@ -139,11 +139,7 @@ export default function imageManager () {
 			let n_name = $this.attr("name").replace("inp-", "#");
 			if ($this.prop('checked')) {
 				/*SAVES IMAGE TO OBJECT*/
-				if($this.closest("#app-control-images-gallery").length > 0) {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(_ctrl.jd.selections[n_name].img + "," + img_src),'image');
-				} else {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
-				}
+				saveImageInStorage(img_url, n_name, (n_name == "#img-gallery"));
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, n_name.replace("#img-", ""));
 			} else {
@@ -155,9 +151,10 @@ export default function imageManager () {
 						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_img,'image');
 					}
 					/*REMOVES FROM DISPLAY*/
-					$template.find("#gallery .gallery .img[style*='" + img_src + "']").remove();
-					$template.find("#gallery .gallery .img:gt(0)").hide();
-					$template.find("#gallery .gallery .img:eq(0)").show();
+					let $gallery_imgs = $template.find("#gallery .gallery .img");
+					$gallery_imgs.filter("[style*='" + img_src + "']").remove();
+					/*RESTARTS PLAYER*/
+					$gallery_imgs.hide().filter(":eq(0)").show();
 				}
 			}	
 		}
@@ -204,22 +201,21 @@ export default function imageManager () {
 		.done(function(res){
 			if(res.upload == 1){			
 				/*SAVES IMAGE TO OBJECT*/
-				let n_name = "#img-" + name;
 				let img_src = _uploaded_images_url + res.texto;
-				if(name == "gallery") {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(_ctrl.jd.selections[n_name].img + "," + img_src),'image');
-				} else {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,img_src,'image');
-				}
+				saveImageInStorage(img_url, ("#img-" + name), (name == "gallery"));
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				/*ADDS THUMB*/
 				setUploadedImage(img_src, name, false, false, 0);
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, name);
-            }
+      }
 		}).always(function(){
 			$("button",e.currentTarget).attr("disabled",false);
 		});
+	};
+	var saveImageInStorage = (img_url, cont, isGallery) => {
+		let pre = isGallery ? (_ctrl.jd.selections[cont].img + ",") : "";
+		_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(pre + img_src),'image');
 	};
 	var displayImageOnTemplate = (img_url, cont) => {
 		/*DISPLAYS IMAGE*/
@@ -234,9 +230,7 @@ export default function imageManager () {
 				$(cont_tag).attr('src',img_url);
 			} else if (cont == "gallery") {
 				let $img = $(".img.template").clone().removeClass("template").css({ "background-image" : ('url(' + img_url + ')') });
-				$template.find("#gallery .gallery").append($img);
-				$template.find("#gallery .gallery .img:gt(0)").hide();
-				$template.find("#gallery .gallery .img:eq(0)").show();
+				$template.find("#gallery .gallery").append($img).find(".img").hide().filter(":eq(0)").show();
 			} else {
 				$template.find(cont_tag).attr("class", ("img img-cont img-MC img-" + o)).css({
 					"background-image" : ("url(" + img_url + ")")
