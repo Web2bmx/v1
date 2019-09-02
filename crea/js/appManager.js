@@ -137,10 +137,28 @@ export default function appManager() {
 				$(".form-error", $(e.currentTarget).parent()).show();
 			}
 		});
+		$(document.body).on('click', '.img-thumb-cont', function() {
+			var $this = $(this);
+			$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.parent().addClass("thumb-selected");
+		});
+		$(document.body).on('click', '.img-thumb-overlay', function() {
+			var $this = $(this);
+			$this.closest(".img-thumb").removeClass("selected").find("input").trigger("click");
+		});	
+		$(document.body).on('click', '.img-thumb-cont-zoom', function() {
+			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
+			$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
+			$("#single-modal").fadeIn();
+		});
 		$("#app-control").on("itemWasAdded", function () {
 			_ctrl.current_step = _ctrl.new_itemManager.getIndex();
 			goToStep(_ctrl.current_step);
 			centerNav();
+		});
+		$("body").on('DOMSubtreeModified', "#app-control-images-logo", function() {
+			$("#app-control-images-logo").parent().attr('style','');
 		});
 	};
 	var setAppSteps = function () {
