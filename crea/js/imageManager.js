@@ -201,8 +201,14 @@ export default function imageManager () {
 		.done(function(res){
 			if(res.upload == 1){			
 				/*SAVES IMAGE TO OBJECT*/
+				/*SAVES IMAGE ACCUMULATIVELY*/
 				let img_src = _uploaded_images_url + res.texto;
-				saveImageInStorage(img_url, ("#img-" + name), (name == "gallery"));
+				let n_name = "#img-" + name;
+				let pre = _ctrl.jd.selections[(n_name + "-uploaded")] ? ((_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1) ? (_ctrl.jd.selections[(n_name + "-uploaded")].text + ",") : "") : "";
+				_ctrl.new_dataManager.saveSelected(_ctrl.jd,(n_name + "-uploaded"),(pre + img_src),'text');
+				
+				saveImageInStorage(img_src, ("#img-" + name), (name == "gallery"));
+				/*SAVES IMAGE TO OBJECT*/
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				/*ADDS THUMB*/
 				setUploadedImage(img_src, name, false, false, 0);
@@ -215,7 +221,7 @@ export default function imageManager () {
 	};
 	var saveImageInStorage = (img_url, cont, isGallery) => {
 		let pre = isGallery ? (_ctrl.jd.selections[cont].img + ",") : "";
-		_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,(pre + img_src),'image');
+		_ctrl.new_dataManager.saveSelected(_ctrl.jd,cont,(pre + img_url),'image');
 	};
 	var displayImageOnTemplate = (img_url, cont) => {
 		/*DISPLAYS IMAGE*/
