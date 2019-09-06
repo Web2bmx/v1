@@ -2,8 +2,9 @@
 header('Content-Type: application/json');
 foreach($_FILES as $file){
     if($file["size"]) {
+        $unique_id = $_GET["unique_id"] ? $_GET["unique_id"] : uniqid();
         $target_dir = "../client_images/";
-        $name = uniqid() . "_" . basename($file["name"]);
+        $name = $unique_id . "_" . basename($file["name"]);
         $target_file = $target_dir . $name;    
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         $uploadOk = 1;

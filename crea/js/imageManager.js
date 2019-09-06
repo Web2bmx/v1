@@ -191,7 +191,7 @@ export default function imageManager () {
 		$("input[type=submit],button",e.currentTarget).attr("disabled",true);
 		formData.append(f.attr("name"), f[0].files[0]);		
 		$.ajax({
-			url: "scripts/uploadImage.php",
+			url: ("scripts/uploadImage.php?unique_id=" + _ctrl.jd_templateId),
 			type: "post",
 			data: formData,
 			cache: false,
@@ -205,13 +205,16 @@ export default function imageManager () {
 				let img_src = _uploaded_images_url + res.texto;
 				let n_name = "#img-" + name;
 				let pre = _ctrl.jd.selections[(n_name + "-uploaded")] ? ((_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1) ? (_ctrl.jd.selections[(n_name + "-uploaded")].text + ",") : "") : "";
+				
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,(n_name + "-uploaded"),(pre + img_src),'text');
 				
 				saveImageInStorage(img_src, ("#img-" + name), (name == "gallery"));
 				/*SAVES IMAGE TO OBJECT*/
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				/*ADDS THUMB*/
-				setUploadedImage(img_src, name, false, false, 0);
+				if (_ctrl.jd.selections[(n_name + "-uploaded")] && (_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1)) {
+					setUploadedImage(img_src, name, false, false, 0);
+				}
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, name);
       }

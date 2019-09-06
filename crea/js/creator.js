@@ -23,6 +23,7 @@ export default function creator () {
 	_this.current_step = 0;
 	_this.lastKeyPressed = 0;
 	_this.jd = {};
+	_this.jd_templateId = null;
 	/*Objects*/	
 	_this.new_colorManager = new colorManager();
 	_this.new_colorManager.init(_this);
@@ -56,6 +57,7 @@ export default function creator () {
 			_this.sessionStatus = "RESUME SESSION";
 		}
 		_this.jd = Object.keys(web2bTemplate).length ? web2bTemplate : web2b;
+		_this.jd_templateId = _this.new_dataManager.getObjFromLocalStorage("web2b_templateId");
 		/* 2) it checks if _this.jd has 'respuestas' and if it has 3 of them, if it doesn´t have them it sends the User to Root /, otherwise to start the Tour*/
 		if(!_this.jd.respuestas) {
 			location.href = "/";
