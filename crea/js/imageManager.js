@@ -1,17 +1,31 @@
 export default function imageManager () {
 	var _ctrl = null;
+	var _uploaded_images = {};
 	var _loaded_images = [];
 	var _current_images = [];
 	var _api_url = "https://api.unsplash.com/photos/search";
 	var _api_id = "2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64";
 	var _uploaded_images_url = "/crea/client_images/";
+	var _err_unsplash = "An error occurred while loading images from UnSplash.";
 	var init = function (_that) { _ctrl = _that; };
 	var setImageSelection = (ide) => {
 		getImagesUploadedByUser();
 		loadImagesFromUnsplash(ide).then(function(data) { onImagesLoaded(data); }, function(err) { console.log(err); });
 	};
 	var getImagesUploadedByUser = () => {
-		//Check if there are images already uploaded by user
+		let s = "-uploaded";
+		let keys = Object.keys(_ctrl.jd.selections);
+		for(let i = 0; i < keys.length; i++) {
+			if(keys[i].indexOf(s) > -1) {
+				let ns = keys[i].replace(s, "");
+				let obj = _ctrl.jd.selections[keys[i]];
+				if (obj.text && obj.text != "") {
+					_uploaded_images[ns] = [];
+					let arr = obj.text.split(",");
+					for (let k = 0; k < arr.length; k++) { _uploaded_images[ns].push(arr[k]); }
+				}
+			}
+		}
 	}
 	var loadImagesFromUnsplash = (ide) => {
 		return new Promise(function(resolve, reject) {
@@ -19,7 +33,7 @@ export default function imageManager () {
 				_api_url, { client_id: _api_id, query: ide, page: 1, per_page: 20, orientation: 'landscape'
 			}).done(function(data){
 				resolve(data);
-			}).fail(function(){ reject(Error('An error occurred while loading images from UnSplash.')); });
+			}).fail(function(){ reject(Error(_err_unsplash)); });
 		});	
 	}
 	var onImagesLoaded = (data) => {
@@ -36,57 +50,41 @@ export default function imageManager () {
 		for(let i = 1; i <= items; i++ ){ image_types.push('item-' + i); }
 		for (let i = 0; i < image_types.length; i++) {
 			_current_images[image_types[i]] = [];
-			if(image_types[i] == "gallery") {
-				sortImagesMultiple(image_types[i]);
-			} else {
-				sortImagesSingle(image_types[i]);
-			}
-		}
-	}
-	var sortImagesSingle = (t) => {
-		if (_ctrl.jd.selections[("#img-" + t)] && _ctrl.jd.selections[("#img-" + t)].img) {
-			_current_images[t].push([_ctrl.jd.selections[("#img-" + t)].img, "selected"]);
-		}
-		for (let i = 0; i < _loaded_images.length; i++) {
-			if(_current_images[t]) {
-				let add_image = true;
-				for (let k = 0; k < _current_images[t].length; k++) {
-					if (_current_images[t][k][0] == _loaded_images[i]) {
-						add_image = false; break;
+			let t = image_types[i];
+			if (_ctrl.jd.selections[("#img-" + t)] && _ctrl.jd.selections[("#img-" + t)].img) {
+				let jd_images = _ctrl.jd.selections[("#img-" + t)].img.split(",");
+				for (let j = 0; j < jd_images.length; j++){
+					if (jd_images[j] != "") {
+						_current_images[t].push([jd_images[j], "selected"]);
 					}
 				}
-				if (add_image) { _current_images[t].push([_loaded_images[i], ""]); }
 			}
-		}
-		if(_current_images[t]) {
-			for(let j=0; j < _current_images[t].length; j++){
-				setThumb(t, j);
-			}
-		}
-	}
-	var sortImagesMultiple = (t) => {
-		if (_ctrl.jd.selections[("#img-" + t)] && _ctrl.jd.selections[("#img-" + t)].img) {
-			let jd_images = _ctrl.jd.selections[("#img-" + t)].img.split(",");
-			for (let j = 0; j < jd_images.length; j++){
-				if (jd_images[j] != "") {
-					_current_images[t].push([jd_images[j], "selected"]);
-				}
-			}
-		}
-		for (let i = 0; i < _loaded_images.length; i++) {
-			if(_current_images[t]) {
-				let add_image = true;
-				for (let k = 0; k < _current_images[t].length; k++) {
-					if (_current_images[t][k][0] == _loaded_images[i]) {
-						add_image = false; break;
+			if (_uploaded_images["#img-" + t]) {
+				for (let i = 0; i < _uploaded_images["#img-" + t].length; i++) {
+					let add_image = true;
+					for (let k = 0; k < _current_images[t].length; k++) {
+						if (_current_images[t][k][0] == _uploaded_images["#img-" + t][i]) {
+							add_image = false; break;
+						}
 					}
+					if (add_image) { _current_images[t].push([_uploaded_images["#img-" + t][i], ""]); }
 				}
-				if (add_image) { _current_images[t].push([_loaded_images[i], ""]); }
 			}
-		}
-		if(_current_images[t]) {
-			for(let j=0; j < _current_images[t].length; j++){
-				setThumb(t, j);
+			for (let i = 0; i < _loaded_images.length; i++) {
+				if(_current_images[t]) {
+					let add_image = true;
+					for (let k = 0; k < _current_images[t].length; k++) {
+						if (_current_images[t][k][0] == _loaded_images[i]) {
+							add_image = false; break;
+						}
+					}
+					if (add_image) { _current_images[t].push([_loaded_images[i], ""]); }
+				}
+			}
+			if(_current_images[t]) {
+				for(let j=0; j < _current_images[t].length; j++){
+					setThumb(t, j);
+				}
 			}
 		}
 	}
@@ -117,16 +115,14 @@ export default function imageManager () {
 						let imgs_arr = imgs_str.split(",");
 						for (let i = 0; i < imgs_arr.length; i++){
 							let img = imgs_arr[i];
-							let $img = $(".img.template").clone().removeClass("template").css({ "background-image" : ('url(' + img + ')') });
+							let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage({}, img));
 							if (img != "") {
 								$template.find("#gallery .gallery").append($img);
 							}
 						}
 						$template.find("#gallery .gallery .img:gt(0)").hide();
 					} else {
-						$(key).attr("class", ("img img-MC img-L")).css({
-							"background-image" : ("url(" + _ctrl.jd.selections[key].img + ")")
-						});	
+						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage({}, _ctrl.jd.selections[key].img));	
 					}
 				break;
 			}
@@ -139,7 +135,7 @@ export default function imageManager () {
 			let n_name = $this.attr("name").replace("inp-", "#");
 			if ($this.prop('checked')) {
 				/*SAVES IMAGE TO OBJECT*/
-				saveImageInStorage(img_url, n_name, (n_name == "#img-gallery"));
+				saveImageInStorage(img_src, n_name, (n_name == "#img-gallery"));
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, n_name.replace("#img-", ""));
 			} else {
@@ -162,9 +158,7 @@ export default function imageManager () {
 	}
 	var setUploadedImage = (img, cont, selected, append, index) => {
 		let $img_thumb = $(".img-thumb.template").clone();
-		$img_thumb.removeClass("template").find(".img-thumb-cont").css({
-			"background-image" : ("url(" + img + ")")
-		}).attr("data-img-url", img);
+		$img_thumb.removeClass("template").find(".img-thumb-cont").css(setBackgroundImage({}, img)).attr("data-img-url", img);
 		$img_thumb.find("input").attr("value", img);
 		var $this_img_thumb = $img_thumb.clone();
 		$this_img_thumb.find("input").attr("name", ("inp-img-" + cont));
@@ -238,15 +232,17 @@ export default function imageManager () {
 			if (cont_tag == "#img-logo") {
 				$(cont_tag).attr('src',img_url);
 			} else if (cont == "gallery") {
-				let $img = $(".img.template").clone().removeClass("template").css({ "background-image" : ('url(' + img_url + ')') });
+				let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage({}, img_url));
 				$template.find("#gallery .gallery").append($img).find(".img").hide().filter(":eq(0)").show();
 			} else {
-				$template.find(cont_tag).attr("class", ("img img-cont img-MC img-" + o)).css({
-					"background-image" : ("url(" + img_url + ")")
-				});
+				$template.find(cont_tag).attr("class", ("img img-cont img-MC img-" + o)).css(setBackgroundImage({}, img_url));
 			} 
 		};
 		img.src = img_url;
+	};
+	var setBackgroundImage = (obj, img) => {
+		obj["background-image"] = 'url(' + img + ')';
+		return obj;
 	};
 	return {
 		init : init,
