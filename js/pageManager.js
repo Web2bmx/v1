@@ -17,7 +17,7 @@ export default function pageManager(){
             localStorage.setItem("web2b_pages", p.paginas);
             p.paginas.forEach((value) => {
                 if(Number(value.idSitio) === templateId) {
-                    localStorage.setItem("web2b_actualPage", JSON.stringify(value));
+                    localStorage.setItem("web2b_actualPage", decodeURIComponent(JSON.stringify(value)));
                 }
             });                          
         });               
@@ -47,7 +47,7 @@ export default function pageManager(){
             let pagina = $(".proyectos-disponibles option:selected" ).val(),
                 d = e.data;
             if(pagina != ""){
-                localStorage.setItem("web2b_template", d.pags[pagina].info);
+                localStorage.setItem("web2b_template", decodeURIComponent(d.pags[pagina].info));
                 localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
                 localStorage.setItem("web2b_userId", d.userId);
                 localStorage.setItem("web2b_pages", JSON.stringify(d.pags));

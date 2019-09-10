@@ -51,7 +51,7 @@ $(document).ready(function() {
 					// si solo tiene una pagina
 					if(response.paginas.length == 1) {
 						//mostrar usuarios
-						localStorage.setItem("web2b_template", response.paginas[0].info);
+						localStorage.setItem("web2b_template", decodeURIComponent(response.paginas[0].info));
 						localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
 						localStorage.setItem("web2b_userId", response.userId);
 						localStorage.setItem("web2b_actualPage", response.paginas[0]);

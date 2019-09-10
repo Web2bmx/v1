@@ -47,7 +47,7 @@ export default function userValidator () {
                 $.post("scripts/crear_usuario.php", {
                     correo: $("#correo").val().trim(),
                     password: $("#password").val(),
-                    info: JSON.stringify(_ctrl.jd)
+                    info: encodeURIComponent(JSON.stringify(_ctrl.jd))
                 }).done(function (result) {
                     if (!result.ok) {
                         $(".otherMsgs").html(result.error);

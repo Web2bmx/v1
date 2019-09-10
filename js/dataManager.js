@@ -36,7 +36,7 @@ export default function dataManager() {
 			$.post("scripts/salvar_datos.php", {
 				userId: userId,
 				idSitio: idSitio,
-				info: strJD
+				info: encodeURIComponent(strJD)
 			}).done(function (result) {
 				if (!result.ok) {
 					console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. " + result.mensaje);
