@@ -49,8 +49,8 @@ export default function imageManager () {
 		let items = $("#template .item").length;
 		for(let i = 1; i <= items; i++ ){ image_types.push('item-' + i); }
 		for (let i = 0; i < image_types.length; i++) {
-			_current_images[image_types[i]] = [];
 			let t = image_types[i];
+			_current_images[t] = [];
 			if (_ctrl.jd.selections[("#img-" + t)] && _ctrl.jd.selections[("#img-" + t)].img) {
 				let jd_images = _ctrl.jd.selections[("#img-" + t)].img.split(",");
 				for (let j = 0; j < jd_images.length; j++){
@@ -59,39 +59,19 @@ export default function imageManager () {
 					}
 				}
 			}
-			if (_uploaded_images["#img-" + t]) {
-				for (let i = 0; i < _uploaded_images["#img-" + t].length; i++) {
-					let add_image = true;
-					for (let k = 0; k < _current_images[t].length; k++) {
-						if (_current_images[t][k][0] == _uploaded_images["#img-" + t][i]) {
-							add_image = false; break;
-						}
+			let arr = _uploaded_images["#img-" + t] ? _uploaded_images["#img-" + t].concat(_loaded_images) : _loaded_images;
+			for (let i = 0; i < arr.length; i++) {
+				let add_image = true;
+				for (let k = 0; k < _current_images[t].length; k++) {
+					if (_current_images[t][k][0] == arr[i]) {
+						add_image = false; break;
 					}
-					if (add_image) { _current_images[t].push([_uploaded_images["#img-" + t][i], ""]); }
 				}
+				if (add_image) { _current_images[t].push([arr[i], ""]); }
 			}
-			for (let i = 0; i < _loaded_images.length; i++) {
-				if(_current_images[t]) {
-					let add_image = true;
-					for (let k = 0; k < _current_images[t].length; k++) {
-						if (_current_images[t][k][0] == _loaded_images[i]) {
-							add_image = false; break;
-						}
-					}
-					if (add_image) { _current_images[t].push([_loaded_images[i], ""]); }
-				}
+			for(let j=0; j < _current_images[t].length; j++){
+				setUploadedImage(_current_images[t][j][0], t, _current_images[t][j][1] == "selected", true, j);
 			}
-			if(_current_images[t]) {
-				for(let j=0; j < _current_images[t].length; j++){
-					setThumb(t, j);
-				}
-			}
-		}
-	}
-	var setThumb = (t, j) => {
-		let img = _current_images[t][j][0];
-		if (img != "") {
-			setUploadedImage(img, t, _current_images[t][j][1] == "selected", true, j);
 		}
 	}
 	var setImagesOnStartSession = ($template) => {
@@ -162,10 +142,7 @@ export default function imageManager () {
 		$img_thumb.find("input").attr("value", img);
 		var $this_img_thumb = $img_thumb.clone();
 		$this_img_thumb.find("input").attr("name", ("inp-img-" + cont));
-		if (selected) {
-				$this_img_thumb.addClass("selected");
-				$this_img_thumb.find("input").attr("checked", "checked");
-			}
+		if (selected) { $this_img_thumb.addClass("selected").find("input").attr("checked", "checked"); }
 		if(append) {	
 			$("#app-control-images-" + cont + " .photo-container").append($this_img_thumb);
 		} else {	
@@ -194,14 +171,10 @@ export default function imageManager () {
 		})
 		.done(function(res){
 			if(res.upload == 1){			
-				/*SAVES IMAGE TO OBJECT*/
-				/*SAVES IMAGE ACCUMULATIVELY*/
 				let img_src = _uploaded_images_url + res.texto;
 				let n_name = "#img-" + name;
 				let pre = _ctrl.jd.selections[(n_name + "-uploaded")] ? ((_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1) ? (_ctrl.jd.selections[(n_name + "-uploaded")].text + ",") : "") : "";
-				
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,(n_name + "-uploaded"),(pre + img_src),'text');
-				
 				saveImageInStorage(img_src, ("#img-" + name), (name == "gallery"));
 				/*SAVES IMAGE TO OBJECT*/
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
