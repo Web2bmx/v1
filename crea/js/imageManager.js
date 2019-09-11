@@ -95,14 +95,14 @@ export default function imageManager () {
 						let imgs_arr = imgs_str.split(",");
 						for (let i = 0; i < imgs_arr.length; i++){
 							let img = imgs_arr[i];
-							let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage({}, img));
+							let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage(img));
 							if (img != "") {
 								$template.find("#gallery .gallery").append($img);
 							}
 						}
 						$template.find("#gallery .gallery .img:gt(0)").hide();
 					} else {
-						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage({}, _ctrl.jd.selections[key].img));	
+						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage(_ctrl.jd.selections[key].img));	
 					}
 				break;
 			}
@@ -138,7 +138,7 @@ export default function imageManager () {
 	}
 	var setUploadedImage = (img, cont, selected, append, index) => {
 		let $img_thumb = $(".img-thumb.template").clone();
-		$img_thumb.removeClass("template").find(".img-thumb-cont").css(setBackgroundImage({}, img)).attr("data-img-url", img);
+		$img_thumb.removeClass("template").find(".img-thumb-cont").css(setBackgroundImage(img)).attr("data-img-url", img);
 		$img_thumb.find("input").attr("value", img);
 		var $this_img_thumb = $img_thumb.clone();
 		$this_img_thumb.find("input").attr("name", ("inp-img-" + cont));
@@ -161,14 +161,7 @@ export default function imageManager () {
 			name = f.attr("name");
 		$("input[type=submit],button",e.currentTarget).attr("disabled",true);
 		formData.append(f.attr("name"), f[0].files[0]);		
-		$.ajax({
-			url: ("scripts/uploadImage.php?unique_id=" + _ctrl.jd_templateId),
-			type: "post",
-			data: formData,
-			cache: false,
-			contentType: false,
-			processData: false
-		})
+		$.ajax({ url: ("scripts/uploadImage.php?unique_id=" + _ctrl.jd_templateId), type: "post", data: formData, cache: false, contentType: false, processData: false })
 		.done(function(res){
 			if(res.upload == 1){			
 				let img_src = _uploaded_images_url + res.texto;
@@ -184,39 +177,24 @@ export default function imageManager () {
 				}
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, name);
-      }
-		}).always(function(){
-			$("button",e.currentTarget).attr("disabled",false);
-		});
+      		}
+		}).always(function(){ $("button",e.currentTarget).attr("disabled",false); });
 	};
-	var saveImageInStorage = (img_url, cont, isGallery) => {
+	var saveImageInStorage = (img, cont, isGallery) => {
 		let pre = isGallery ? (_ctrl.jd.selections[cont].img + ",") : "";
-		_ctrl.new_dataManager.saveSelected(_ctrl.jd,cont,(pre + img_url),'image');
+		_ctrl.new_dataManager.saveSelected(_ctrl.jd,cont,(pre + img),'image');
 	};
-	var displayImageOnTemplate = (img_url, cont) => {
-		/*DISPLAYS IMAGE*/
-		let cont_tag = "#img-" + cont;
-		let img = new Image();
-		let $template = $("#template");
-		img.onload = function() {
-			let o = "S";
-			if(this.width > this.height) { o = "L"; }
-			if(this.width < this.height) { o = "P"; }
-			if (cont_tag == "#img-logo") {
-				$(cont_tag).attr('src',img_url);
-			} else if (cont == "gallery") {
-				let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage({}, img_url));
-				$template.find("#gallery .gallery").append($img).find(".img").hide().filter(":eq(0)").show();
-			} else {
-				$template.find(cont_tag).attr("class", ("img img-cont img-MC img-" + o)).css(setBackgroundImage({}, img_url));
-			} 
-		};
-		img.src = img_url;
+	var displayImageOnTemplate = (img, cont) => {
+		if (cont == "logo") {
+			$("#img-logo").attr('src',img);
+		} else if (cont == "gallery") {
+			let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage(img));
+			$("#gallery .gallery").append($img).find(".img").hide().filter(":eq(0)").show();
+		} else {
+			$("#img-" + cont).css(setBackgroundImage(img));
+		} 
 	};
-	var setBackgroundImage = (obj, img) => {
-		obj["background-image"] = 'url(' + img + ')';
-		return obj;
-	};
+	var setBackgroundImage = (img, obj = {}) => { obj["background-image"] = 'url(' + img + ')'; return obj; };
 	return {
 		init : init,
 		setImageSelection : setImageSelection,
