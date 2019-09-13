@@ -17,7 +17,8 @@ export default function mapsManager() {
         initAutocomplete();
         if(_ctrl.jd && 
 			_ctrl.jd.selections &&
-			_ctrl.jd.selections["inp-contact-address"]){
+            _ctrl.jd.selections["inp-contact-address"] &&
+            _ctrl.jd.selections["inp-contact-address"].text.search('##') != -1) {
             updateMapSrc(_ctrl.jd.selections["inp-contact-address"].text);
         } else {
             getInitialPos();
@@ -34,7 +35,8 @@ export default function mapsManager() {
                 (document.getElementById(inputId))/*,
                 {types: ['(cities)']}*/);
 
-            autocomplete.addListener('place_changed', fillInAddress);            
+            autocomplete.addListener('place_changed', fillInAddress);
+            $('#' + inputId).change(fillInAddress);
         }).catch(function (error) {
             console.error(error);
         });
@@ -45,7 +47,13 @@ export default function mapsManager() {
         var place = autocomplete.getPlace();
         if (place && place.place_id) {
             updateMapSrc('place_id:' + place.place_id);
-        }        
+            $('#' + inputId).data('place', place.place_id);
+        } else {
+            $('#' + inputId).data('place', '');
+        }
+      
+        _ctrl.new_templateManager.updateTexts($("#template"), _ctrl.jd.selections);
+        _ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
     };
 
     let updateMapSrc = (query) => {

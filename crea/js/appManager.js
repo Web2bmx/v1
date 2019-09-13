@@ -128,7 +128,7 @@ export default function appManager() {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function (e) {
 			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
-		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function (e) {
+		$(document.body).on("keyup", "[name^='inp-'][type='text'][id!='inp-contact-address'],textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
 			if (!$(e.currentTarget).attr('pattern') || _ctrl.new_validator.isValidinput($(e.currentTarget))) {
 				_ctrl.new_templateManager.updateContent(e.currentTarget);

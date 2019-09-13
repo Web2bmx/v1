@@ -89,7 +89,13 @@ export default function templateManager () {
 				let $this = $(this);
 				let i_id = $this.attr("id");
 				let v_id = i_id.replace("inp", "val");
-				$this.val(selections[i_id] ? selections[i_id].text : '');
+				let text = selections[i_id] ? selections[i_id].text : '';
+				if(i_id == 'inp-contact-address' && text.search('##') != -1) {
+					let arr = text.split('##');
+					text = arr[0];
+					$this.data('place', arr[1]);
+				}
+				$this.val(text);
 
 				let arr;
 				switch (i_id) {
@@ -119,13 +125,19 @@ export default function templateManager () {
 			$template.find(".footer-column:not(:has(li:visible))").hide();
 		}
 		if (_ctrl.sessionStatus == "UPDATE SESSION") {
-			$("[id^='inp-contact-'], [id^='inp-content-'], #siteName").each(function() {
-				let $this = $(this);
+			$("[id^='inp-contact-'], [id^='inp-content-'], #siteName")
+			.each(function() {
+				let $this = $(this); 
 				let i_id = $this.attr("id");
 				let v_id = i_id.replace("inp", "val");
 				let arr;
-				if ($this.val() != "") {
-					_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,$this.val(),'text');
+				let val = $this.val();
+				if(i_id == 'inp-contact-address') {
+					val = val + ($this.data('place') ? ('##' + $this.data('place')) : '');
+				}				
+				if (val !== _ctrl.jd.selections[i_id].text) {
+
+					_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,val,'text');
 					$template.find("#" + v_id).show().closest(".footer-column").show();
 					if (i_id == "inp-content-name") {
 						if($template.find("#val-content-aboutus>span").length > 0) {
@@ -164,7 +176,7 @@ export default function templateManager () {
 					if ($this.hasClass("optional")) {
 						if ($(".app-control-step:eq(" + (_ctrl.current_step) + ")").has($this).length > 0) {
 							if (_ctrl.lastKeyPressed == 8) {
-								$template.find("#" + v_id).html($this.val());
+								$template.find("#" + v_id).html(val);
 							}
 						}
 						if ($(".app-control-step:eq(" + (_ctrl.current_step - 1) + ")").has($this).length > 0) {
@@ -243,6 +255,7 @@ export default function templateManager () {
 	return {
 		init : init,
 		loadTemplate : loadTemplate,
-        updateContent: updateContent
+		updateContent: updateContent, 
+		updateTexts: updateTexts
     };
 }
