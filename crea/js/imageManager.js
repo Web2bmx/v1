@@ -74,33 +74,33 @@ export default function imageManager () {
 			}
 		}
 	}
-	var setImagesOnStartSession = ($template) => {
+	var setImagesOnStartSession = () => {
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery","",'image');
-		$template.find("#gallery .gallery .img").each(function(index) {
+		$("#gallery .gallery .img").each(function(index) {
 			let img_src = $(this).attr("data-src");
 			let p = _ctrl.jd.selections["#img-gallery"].img == "" ? "" : (_ctrl.jd.selections["#img-gallery"].img + ",");
 			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery",(p + img_src),'image');
 		});
 
 	}
-	var setImagesOnResumeSession = ($template) => {
+	var setImagesOnResumeSession = () => {
 		for(var key in _ctrl.jd.selections){
 			switch(_ctrl.jd.selections[key].type){
 				case "image":
 					if (key == "#img-logo") {
 						$(key).attr('src',_ctrl.jd.selections[key].img);
 					} else if(key == "#img-gallery") {
-						$template.find("#gallery .gallery .img").remove().detach();
+						$("#gallery .gallery .img").remove().detach();
 						let imgs_str = _ctrl.jd.selections["#img-gallery"].img;
 						let imgs_arr = imgs_str.split(",");
 						for (let i = 0; i < imgs_arr.length; i++){
 							let img = imgs_arr[i];
 							let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage(img));
 							if (img != "") {
-								$template.find("#gallery .gallery").append($img);
+								$("#gallery .gallery").append($img);
 							}
 						}
-						$template.find("#gallery .gallery .img:gt(0)").hide();
+						$("#gallery .gallery .img:gt(0)").hide();
 					} else {
 						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage(_ctrl.jd.selections[key].img));	
 					}
@@ -108,29 +108,26 @@ export default function imageManager () {
 			}
 		}
 	}
-	var setImagesOnUpdateSession = ($template, target) => {
+	var setImagesOnUpdateSession = (target) => {
 		let $this = $(target);
 		if ($this.is("[value]")) {
-			let img_src = $this.val();
+			let img = $this.val();
 			let n_name = $this.attr("name").replace("inp-", "#");
 			if ($this.prop('checked')) {
 				/*SAVES IMAGE TO OBJECT*/
-				saveImageInStorage(img_src, n_name, (n_name == "#img-gallery"));
+				saveImageInStorage(img, n_name, (n_name == "#img-gallery"));
 				/*DISPLAYS IMAGE*/
-				displayImageOnTemplate(img_src, n_name.replace("#img-", ""));
+				displayImageOnTemplate(img, n_name.replace("#img-", ""));
 			} else {
 				if($this.closest("#app-control-images-gallery").length > 0) {
 					/*REMOVES FROM SELECTION*/
-					if (_ctrl.jd.selections[n_name].img.indexOf(img_src) > -1) {
-						var new_img = _ctrl.jd.selections[n_name].img.replace(img_src, "");
+					if (_ctrl.jd.selections[n_name].img.indexOf(img) > -1) {
+						var new_img = _ctrl.jd.selections[n_name].img.replace(img, "");
 						new_img = new_img.replace(",,",",");
 						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_img,'image');
 					}
-					/*REMOVES FROM DISPLAY*/
-					let $gallery_imgs = $template.find("#gallery .gallery .img");
-					$gallery_imgs.filter("[style*='" + img_src + "']").remove();
-					/*RESTARTS PLAYER*/
-					$gallery_imgs.hide().filter(":eq(0)").show();
+					/*REMOVES FROM DISPLAY AND RESTARTS PLAYER*/
+					$("#gallery .gallery .img").filter("[style*='" + img + "']").remove().end().hide().filter(":eq(0)").show();
 				}
 			}	
 		}

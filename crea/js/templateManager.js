@@ -54,7 +54,7 @@ export default function templateManager () {
         _ctrl.new_colorManager.updateColors($template);
 		updateTexts($template, selections);
 		updateRemoveControls($template, selections);
-		updateImages($template, target);
+		updateImages(target);
 		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
 		
@@ -241,16 +241,10 @@ export default function templateManager () {
 			});	
 		}
 	};
-	var updateImages = function ($template, target) {
-		if(_ctrl.sessionStatus == "START SESSION"){
-			_ctrl.new_imageManager.setImagesOnStartSession($template);
-		}
-		if(_ctrl.sessionStatus == "RESUME SESSION"){
-			_ctrl.new_imageManager.setImagesOnResumeSession($template);
-		}
-		if(_ctrl.sessionStatus == "UPDATE SESSION"){
-			_ctrl.new_imageManager.setImagesOnUpdateSession($template, target);
-		}
+	var updateImages = function (target) {
+		if(_ctrl.sessionStatus == "START SESSION"){ _ctrl.new_imageManager.setImagesOnStartSession(); }
+		if(_ctrl.sessionStatus == "RESUME SESSION"){ _ctrl.new_imageManager.setImagesOnResumeSession(); }
+		if(_ctrl.sessionStatus == "UPDATE SESSION"){ _ctrl.new_imageManager.setImagesOnUpdateSession(target); }
 	};
 	return {
 		init : init,

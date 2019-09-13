@@ -101,14 +101,12 @@ export default function appManager() {
 				$("#switch-view").hide();
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
-				$("#app-control>.app-control-step").hide();
-				$("#app-control").addClass("view");
+				$("#app-control").addClass("view").find(">.app-control-step").hide();
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
 				$("#control-view-nav").show();
-				$("#app-control>.app-control-step:eq(" + _ctrl.current_step + ")").show();
-				$("#app-control").removeClass("view");
+				$("#app-control").removeClass("view").find(">.app-control-step:eq(" + _ctrl.current_step + ")").show();
 				centerNav();
 				topStepMargin();
 				$(window).resize(function () {
