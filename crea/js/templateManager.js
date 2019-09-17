@@ -89,7 +89,7 @@ export default function templateManager () {
 				let $this = $(this);
 				let i_id = $this.attr("id");
 				let v_id = i_id.replace("inp", "val");
-				let text = selections[i_id] ? selections[i_id].text : '';
+				let text = selections[i_id] && selections[i_id].text ? selections[i_id].text : '';
 				if(i_id == 'inp-contact-address' && text.search('##') != -1) {
 					let arr = text.split('##');
 					text = arr[0];

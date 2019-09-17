@@ -148,6 +148,7 @@ export default function appManager() {
 		$(document.body).on('click', '.img-thumb-cont-zoom', function() {
 			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
 			$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
+			console.log($("#single-modal>div"));
 			$("#single-modal").fadeIn();
 		});
 		$("#app-control").on("itemWasAdded", function () {

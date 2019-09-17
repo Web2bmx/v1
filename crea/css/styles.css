@@ -461,6 +461,7 @@ and open the template in the editor.
     Created on : Feb 10, 2018, 1:18:48 PM
     Author     : cmend
 */
+/*SHADES OF GRAY*/
 .ui-dialog-titlebar {
   display: none;
 }
@@ -616,8 +617,8 @@ input[type='button'] {
 
 /**/
 body {
-  background-color: #666;
-  color: #444;
+  background-color: #f0f0f0;
+  color: #787878;
   font-size: 1.2em;
   margin: 0;
   padding: 0;
@@ -647,8 +648,8 @@ a {
 }
 
 #template-cont {
-  background-color: #FFFFFF;
-  color: #000000;
+  background-color: white;
+  color: black;
   display: block;
   height: auto;
   width: 100%;
@@ -675,13 +676,13 @@ a {
   display: block;
   height: 100%;
   left: 0;
+  overflow-y: scroll;
   pointer-events: auto;
   position: fixed;
   right: 0;
   top: 0;
   width: 100%;
   z-index: 1002;
-  overflow-y: scroll;
 }
 
 @media (min-width: 1040px) {
@@ -705,12 +706,12 @@ a {
 }
 
 #app-cover .control-design-thumb {
+  cursor: pointer;
   float: left;
   padding: 5px 10px;
   overflow: visible;
   box-sizing: border-box;
   width: 50%;
-  cursor: pointer;
 }
 
 @media (min-width: 660px) {
@@ -720,15 +721,15 @@ a {
 }
 
 #app-cover .control-design-thumb:hover {
-  background-color: #EEE;
+  background-color: #f0f0f0;
 }
 
 #app-cover .control-design-thumb aside {
+  height: 180px;
+  margin: 0 auto 20px auto;
   overflow: hidden;
   width: 180px;
-  height: 180px;
   max-width: 100%;
-  margin: 0 auto 20px auto;
 }
 
 #app-cover .control-design-thumb img {
@@ -752,8 +753,7 @@ a {
   }
 }
 
-#app-cover .app-cover-start img.logo,
-#app-cover .app-cover-start .change-page {
+#app-cover .app-cover-start img.logo, #app-cover .app-cover-start .change-page {
   position: absolute;
 }
 
@@ -764,9 +764,9 @@ a {
 }
 
 #app-cover .app-cover-start .change-page {
-  top: 30px;
-  right: 20px;
   color: #9b035a;
+  right: 20px;
+  top: 30px;
 }
 
 #app-cover .app-cover-start .thumb-selected + i::before {
@@ -793,7 +793,7 @@ a {
 }
 
 #app-cover .app-cover-finish h3 {
-  color: #58595B;
+  color: #787878;
   font-size: 28px;
   margin-bottom: 0;
 }
@@ -801,8 +801,8 @@ a {
 #app-cover .app-cover-finish p {
   font-size: 24px;
   font-weight: bold;
-  margin: 0;
   line-height: 30px;
+  margin: 0;
 }
 
 #app-cover .app-cover-finish .url .siteName {
@@ -816,33 +816,33 @@ a {
 }
 
 #app-cover .app-cover-finish .app-cover-finish-package {
-  width: 100%;
+  background-color: #9b035a;
+  box-sizing: border-box;
+  color: white;
+  float: left;
   margin: 1em 0;
   padding: 1.7em;
-  float: left;
-  background-color: #9E1F63;
-  color: white;
-  box-sizing: border-box;
+  width: 100%;
 }
 
 @media (min-width: 660px) {
   #app-cover .app-cover-finish .app-cover-finish-package {
-    width: calc(50% - 20px);
     margin: 1em 10px;
+    width: calc(50% - 20px);
   }
 }
 
 @media (min-width: 1040px) {
   #app-cover .app-cover-finish .app-cover-finish-package {
-    width: calc(33.33% - 40px);
     margin: 1em 20px;
+    width: calc(33.33% - 40px);
   }
 }
 
 @media (min-width: 1280px) {
   #app-cover .app-cover-finish .app-cover-finish-package {
-    width: calc(33.33% - 60px);
     margin: 1em 30px;
+    width: calc(33.33% - 60px);
   }
 }
 
@@ -852,8 +852,8 @@ a {
 
 #app-cover .app-cover-finish .app-cover-finish-package .price {
   display: block;
-  font-weight: bold;
   font-size: 50px;
+  font-weight: bold;
   margin-top: 40px;
 }
 
@@ -876,30 +876,30 @@ a {
 }
 
 #app-cover .app-cover-finish .app-cover-finish-package .price + span {
-  margin-bottom: 40px;
   display: block;
   font-size: 14px;
+  margin-bottom: 40px;
 }
 
 #app-cover .app-cover-finish .app-cover-finish-package ul {
-  text-decoration: none;
-  text-align: left;
-  margin-bottom: 40px;
   font-size: 13px;
   height: 70px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  text-align: left;
 }
 
 #app-cover .app-cover-finish .app-cover-finish-package .finish {
   background: none;
-  width: 100%;
   border-radius: 0;
+  cursor: pointer;
   font-size: 14px;
   font-weight: normal;
   letter-spacing: 2px;
-  cursor: pointer;
   line-height: 48px;
-  min-height: 50px;
   margin-bottom: 0px;
+  min-height: 50px;
+  width: 100%;
 }
 
 @media only screen and (min-width: 660px) {
@@ -953,17 +953,17 @@ a {
 
 #app-cover .app-cover-finish .app-cover-finish-package button:hover {
   background: white;
-  color: #9E1F63;
+  color: #9b035a;
 }
 
 /**/
 #app-control {
-  background-color: #f7f7f7;
+  background-color: #f0f0f0;
   bottom: 0;
-  color: #666;
+  color: #787878;
   display: block;
   height: 95%;
-  max-height: 95%;
+  max-height: 100%;
   left: 0;
   overflow: hidden;
   pointer-events: auto;
@@ -971,9 +971,8 @@ a {
   right: 0;
   top: 0;
   width: 100%;
-  z-index: 103;
   max-width: 100%;
-  max-height: 100%;
+  z-index: 103;
 }
 
 #app-control > .app-control-step {
@@ -990,10 +989,10 @@ a {
 }
 
 #app-control > .app-control-step .site-name-container {
-  text-align: left;
-  color: #121111;
+  color: #3c3c3c;
   font-size: 22px;
   position: relative;
+  text-align: left;
 }
 
 #app-control > .app-control-step .site-name-container h2 {
@@ -1001,12 +1000,12 @@ a {
 }
 
 #app-control > .app-control-step .site-name-container input[type="text"] {
-  width: 100px;
-  padding: 5px;
-  margin: 0;
   background: none;
   border: none;
   border-bottom: 1px solid;
+  margin: 0;
+  padding: 5px;
+  width: 100px;
 }
 
 #app-control > .app-control-step .site-name-container div {
@@ -1015,8 +1014,8 @@ a {
 
 #app-control > .app-control-step .site-name-container div > span {
   color: #9b035a;
-  font-weight: bold;
   display: block;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -1032,8 +1031,8 @@ a {
   #app-control > .app-control-step .site-name-container img {
     display: block;
     position: absolute;
-    top: 100px;
     right: 0;
+    top: 100px;
     width: 200px;
   }
 }
@@ -1047,17 +1046,15 @@ a {
   width: 80%;
 }
 
-#app-control .app-control-step > div textarea,
-#app-control .app-control-step > div input[type="text"].noIcon,
-#app-control .app-control-step > div select {
-  padding: 15px;
-  font-size: 1em;
+#app-control .app-control-step > div textarea, #app-control .app-control-step > div input[type="text"].noIcon, #app-control .app-control-step > div select {
+  border-color: #b4b4b4;
   border-radius: 5px;
-  border-color: #d5d1cf;
-  box-sizing: border-box;
   border-style: solid;
-  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
   margin: 0 0 20px 0;
+  padding: 15px;
+  width: 100%;
 }
 
 #app-control .app-control-step > div textarea {
@@ -1076,7 +1073,7 @@ a {
 
 #app-control .app-control-step > div .app-control-step-tooltip {
   background-color: #cc2880;
-  color: #FFF;
+  color: white;
   cursor: pointer;
   font-size: .8em;
   height: auto;
@@ -1091,7 +1088,7 @@ a {
 }
 
 #app-control .app-control-step > div .app-control-step-tooltip-info {
-  background-color: #FFFFDA;
+  background-color: #f0f0f0;
   display: none;
   padding: .2em;
 }
@@ -1101,12 +1098,12 @@ a {
 }
 
 #app-control .control-color {
+  box-sizing: border-box;
   float: left;
   margin: 5px 2%;
   overflow: visible;
   text-align: center;
   width: 29.33%;
-  box-sizing: border-box;
 }
 
 @media (min-width: 660px) {
@@ -1141,7 +1138,7 @@ a {
 #app-control .control-color-thumb {
   cursor: pointer;
   display: block;
-  outline: 1px solid #444444;
+  outline: 1px solid #3c3c3c;
   overflow: hidden;
 }
 
@@ -1162,8 +1159,8 @@ a {
 }
 
 #app-control #app-control-palettes {
-  text-align: left;
   overflow: hidden;
+  text-align: left;
 }
 
 #app-control .palette-color {
@@ -1187,56 +1184,51 @@ a {
 }
 
 #app-control .photo-container {
-  overflow: hidden;
-  width: 2000px;
-  height: 100px;
+  overflow-y: scroll;
+  width: 100%;
+  height: 200px;
 }
 
 @media (min-width: 1040px) {
   #app-control .photo-container {
-    width: 3000px;
-    height: 150px;
+    height: 300px;
+    width: 100%;
   }
 }
 
 @media (min-width: 1560px) {
   #app-control .photo-container {
-    width: 4000px;
-    height: 200px;
+    height: 300px;
+    width: 100%;
   }
 }
 
 #app-control .img-thumb {
   cursor: pointer;
   float: left;
-  height: 100px;
+  height: 200px;
   overflow: visible;
   position: relative;
-  width: 100px;
+  width: 50%;
   z-index: 101;
 }
 
 @media (min-width: 1040px) {
   #app-control .img-thumb {
-    width: 150px;
     height: 150px;
+    width: 25%;
   }
 }
 
 @media (min-width: 1560px) {
   #app-control .img-thumb {
-    width: 200px;
     height: 200px;
+    width: 20%;
   }
 }
 
-#app-control .thumb-selected {
-  outline: 3px solid blue;
-  z-index: 102;
-}
-
 #app-control .img-thumb-cont {
-  background-color: #000000;
+  background-color: black;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: auto 200%;
@@ -1247,7 +1239,7 @@ a {
 }
 
 #app-control .img-thumb-cont-zoom {
-  background-color: #FFF;
+  background-color: white;
   bottom: 0;
   height: 2em;
   position: absolute;
@@ -1272,6 +1264,15 @@ a {
   z-index: 1;
 }
 
+#app-control .thumb-selected {
+  z-index: 102;
+}
+
+#app-control .thumb-selected .img-thumb-overlay {
+  background-color: rgba(255, 255, 255, 0.8);
+  display: block;
+}
+
 #app-control .img-thumb.selected .img-thumb-overlay {
   background-color: rgba(255, 255, 255, 0.8);
   display: block;
@@ -1287,7 +1288,7 @@ a {
 }
 
 #app-control h2 {
-  color: #000000;
+  color: black;
   font-size: 30px;
   margin-bottom: 50px;
 }
@@ -1297,16 +1298,16 @@ a {
 }
 
 #app-control .product h2.children {
-  position: relative;
   padding-right: 25px;
+  position: relative;
 }
 
 #app-control .product h2 a {
-  position: absolute;
-  top: 10px;
-  right: 5px;
+  color: #9b035a;
   font-size: 16px;
-  color: darkred;
+  position: absolute;
+  right: 5px;
+  top: 10px;
 }
 
 .img-thumb-zoomed {
@@ -1328,11 +1329,11 @@ a {
 #app-control-nav #control-view-nav {
   float: left;
   height: 50px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  position: relative;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 30px;
-  position: relative;
-  padding-top: 10px;
 }
 
 @media (min-width: 660px) {
@@ -1342,9 +1343,9 @@ a {
 }
 
 #app-control-nav #control-view-nav a {
-  position: absolute;
   bottom: 0;
   margin: .4em;
+  position: absolute;
   z-index: 101;
 }
 
@@ -1357,7 +1358,7 @@ a {
 }
 
 #app-control-nav #control-view-nav a.disabled {
-  background-color: #999;
+  background-color: #b4b4b4;
   cursor: default;
 }
 
@@ -1372,7 +1373,7 @@ a {
 }
 
 #app-control-nav .control-view-index-item {
-  background-color: #a19d99;
+  background-color: #b4b4b4;
   cursor: pointer;
   float: left;
   height: 1em;
@@ -1390,22 +1391,22 @@ a {
 }
 
 #app-switch {
+  background-color: #9b035a;
+  color: white;
   height: 40px;
   overflow: hidden;
-  width: 100%;
   position: absolute;
-  top: 0;
-  color: #fff;
   text-align: center;
-  background-color: #9b035a;
+  top: 0;
+  width: 100%;
 }
 
 #app-switch a {
+  display: block;
   font-size: 22px;
   font-weight: bold;
   line-height: 40px;
   width: 100%;
-  display: block;
 }
 
 #app-switch a.switch-edit i {
@@ -1420,8 +1421,8 @@ a {
 
 #app-control.view {
   height: 40px;
-  overflow: hidden;
   margin-top: 0;
+  overflow: hidden;
   top: 0;
 }
 
@@ -1439,10 +1440,10 @@ a {
   #app-control {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     left: 50%;
-    top: 3%;
-    width: 85%;
     margin-left: -42.5%;
     margin-top: 0;
+    top: 3%;
+    width: 85%;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -1453,10 +1454,10 @@ a {
     top: 5%;
   }
   #app-control-nav #control-view-index {
-    display: block;
-    position: absolute;
     bottom: 20px;
+    display: block;
     left: 0;
+    position: absolute;
   }
   #app-control-nav #app-switch {
     width: auto;
@@ -1465,9 +1466,9 @@ a {
 
 .file-upload {
   display: block;
-  text-align: left;
   margin: 20px 0;
   overflow: hidden;
+  text-align: left;
 }
 
 .file-upload input[type=file] {
@@ -1475,19 +1476,19 @@ a {
 }
 
 .file-upload input[type=submit] {
+  font-size: 16px;
+  line-height: 18px;
   margin: 10px 0 0 0;
   padding: 10px;
-  line-height: 18px;
-  font-size: 16px;
 }
 
 .file-upload input[type=submit], .file-upload button {
-  background-color: #fff;
-  border: 1px solid #d5d1cf;
+  background-color: white;
+  border: 1px solid #f0f0f0;
   border-radius: 5px;
-  float: right;
-  color: #121111;
+  color: #3c3c3c;
   cursor: pointer;
+  float: right;
   font-weight: normal;
 }
 
@@ -1500,15 +1501,15 @@ a {
 }
 
 .file-upload p {
+  background-color: #f0f0f0;
   margin: 0;
   overflow: hidden;
-  background-color: #fbfbfb;
   padding: 20px;
 }
 
 .file-upload p span {
-  margin-top: 10px;
   display: inline-block;
+  margin-top: 10px;
   width: calc(100% - 145px);
 }
 
@@ -1519,22 +1520,22 @@ a {
 }
 
 .nav-btns {
-  display: block;
-  text-align: center;
-  font-size: 35px;
   color: #9b035a;
+  display: block;
+  font-size: 35px;
+  text-align: center;
 }
 
 /**/
 #single-modal {
-  background-color: #FFF;
+  background-color: white;
   bottom: auto;
   display: none;
   height: auto;
   left: 5%;
   overflow: hidden;
   padding: 2em 0;
-  position: absolute;
+  position: fixed;
   right: 5%;
   top: 5%;
   width: 90%;

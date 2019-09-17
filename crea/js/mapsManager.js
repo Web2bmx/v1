@@ -18,6 +18,7 @@ export default function mapsManager() {
         if(_ctrl.jd && 
 			_ctrl.jd.selections &&
             _ctrl.jd.selections["inp-contact-address"] &&
+            _ctrl.jd.selections["inp-contact-address"].text &&
             _ctrl.jd.selections["inp-contact-address"].text.search('##') != -1) {
             updateMapSrc(_ctrl.jd.selections["inp-contact-address"].text);
         } else {
