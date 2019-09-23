@@ -131,6 +131,7 @@ a {
 		}
 		.control-desing-cont{
 			overflow: hidden;
+			display: inline-block;
 		}
 		.next{
 			margin-top: 100px;
@@ -755,4 +756,12 @@ a {
 }
 .final-msgs{
 	@extend .modal-login;
+}
+
+// Map
+.map-error, .map-input{
+	font-size: 14px;
+    margin-top: 0px;
+    position: relative;
+    top: -8px;	
 }

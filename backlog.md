@@ -10,9 +10,6 @@
 
 #### Botones para mostrar/ocultar logo o titulo [Carlos]
 
-#### Ultimos detalles del mapa [Carlos]
-
-
 #### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
 
 start session = primera visita

@@ -775,6 +775,7 @@ a {
 
 #app-cover .app-cover-start .control-desing-cont {
   overflow: hidden;
+  display: inline-block;
 }
 
 #app-cover .app-cover-start .next {
@@ -1568,6 +1569,13 @@ a {
 
 .ventana-login .form-error {
   text-align: left;
+}
+
+.map-error, .map-input {
+  font-size: 14px;
+  margin-top: 0px;
+  position: relative;
+  top: -8px;
 }
 
 /*# sourceMappingURL=styles.css.map */
