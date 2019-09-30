@@ -1032,6 +1032,10 @@ button:active,
   }
 }
 
+.ui-dialog .ui-dialog-content.dialog {
+  overflow: hidden;
+}
+
 .ui-dialog .ui-dialog-content.dialog.datos-existentes {
   max-height: none !important;
   height: auto !important;
@@ -1126,7 +1130,7 @@ textarea {
   width: 100%;
   display: block;
   float: left;
-  padding: 5px 10px 5px 25px;
+  padding: 5px 10px 15px 10px;
   box-sizing: border-box;
   line-height: 18px;
   position: relative;
@@ -1147,16 +1151,25 @@ textarea {
   margin-top: 25px;
 }
 
-@media (min-width: 660px) {
-  .dialog p:first-child {
-    margin-top: inherit;
-  }
+.dialog .opciones {
+  margin-bottom: 100px;
+  max-height: 450px;
+  overflow-y: auto;
 }
 
-.dialog > div {
+.dialog .opciones > div {
   width: 100%;
   overflow: hidden;
   padding-top: 10px;
+}
+
+.dialog .opciones + div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .global-back {
@@ -1206,6 +1219,10 @@ textarea {
 
 .cont_answers > label {
   cursor: pointer;
+}
+
+.cont_answers > label:first-child {
+  width: 100%;
 }
 
 .cont_answers > label > input[type='radio'] {

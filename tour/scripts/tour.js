@@ -8,7 +8,7 @@ import dialogHandler from '../../js/dialog';
 
 export default function tour() {    
     var winWidth;
-    var spanError = '<span class="error">Aún no has respondida esta pregunta</span>';
+    var spanError = '<span class="form-error">Aún no has respondida esta pregunta</span>';
     var positionActual = '';  
 
     var muestraPregunta = function (pregunta){
@@ -80,7 +80,8 @@ export default function tour() {
         if( ($(selector + " textarea").length != 0 && $.trim($(selector + " textarea").val()) == "") ||
         ($(selector + " input").length != 0 && $(selector + " input:checked").length == 0 && $(selector + " input.otra").val() == "")){
             if($(selector + " p span").length == 0){
-                $(selector + " p").append(spanError); 
+                $(selector + " p").append(spanError);
+                $(selector + " p span").show();
             }
             return false;
         } else{

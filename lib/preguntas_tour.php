@@ -41,7 +41,8 @@ function muestra_pregunta($numero_pregunta){
     <p data-id="' . $GLOBALS['preguntas'][$numero_pregunta]["pregunta"]["id"] . 
         '" data-type="' . $GLOBALS['preguntas'][$numero_pregunta]["pregunta"]["tipo"] . '">    
         '. utf8_encode($GLOBALS['preguntas'][$numero_pregunta]["pregunta"]["texto"]) . '                                
-    </p>    
+    </p>  
+    <div class="opciones">  
     ';
     $opciones = $GLOBALS['preguntas'][$numero_pregunta]['opciones'];
     $x = 0;
@@ -50,6 +51,7 @@ function muestra_pregunta($numero_pregunta){
                     <div class="cont_answers">
                     <label for="rb' . $opcion["ID"] . '">           
                     <input id="rb' . $opcion["ID"] . '" type="radio" name="pregunta' . $numero_pregunta . '" value="' . $opcion["TEXT"] . '" data-loc-en="' . $opcion["LOC_EN"] . '">
+                    <i class="fas fa-plus-circle"></i>
                     <strong>' . $opcion["TEXT"] . 
                     '</strong></label><div class="group_answers">';
         foreach($opcion["OPCIONES"] as $o){
@@ -65,7 +67,7 @@ function muestra_pregunta($numero_pregunta){
         }
         $html .= '</div></div>';
     } 
-    $html .= '<div class="cont_answers"><label>Otro: <input class="otra" type="text" value="" /></label></div>';
+    $html .= '<div class="cont_answers"><label>Otro: <input class="otra" type="text" value="" /></label></div></div>';
     return $html;        
 }
 ?>
