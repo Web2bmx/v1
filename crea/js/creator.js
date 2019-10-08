@@ -12,7 +12,7 @@ import userValidator from "./userValidator";
 import mapsManager from "./mapsManager";
 /**/
 
-export default function creator () {
+export default function creator() {
 	var _this = this;
 	_this.sessionStatus = "START SESSION";
 	//Esta variable determina el estatus de la sesión y tiene tres valores:
@@ -24,7 +24,7 @@ export default function creator () {
 	_this.lastKeyPressed = 0;
 	_this.jd = {};
 	_this.jd_templateId = null;
-	/*Objects*/	
+	/*Objects*/
 	_this.new_colorManager = new colorManager();
 	_this.new_colorManager.init(_this);
 	_this.new_imageManager = new imageManager();
@@ -46,9 +46,9 @@ export default function creator () {
 	_this.new_dataManager = new dataManager();
 	_this.new_PageManager = new pageManager();
 	_this.new_validator = new validator();
-	
+
 	/*FUNCTIONS*/
-	var validation = function(){/*1*/
+	var validation = function () {/*1*/
 		/*This function does two things*/
 		/* 1) Sets a value for _this.jd as either localstorage->web2bTemplate or Web2b*/
 		let web2b = _this.new_dataManager.getObjFromLocalStorage("web2b");
@@ -59,28 +59,23 @@ export default function creator () {
 		_this.jd = Object.keys(web2bTemplate).length ? web2bTemplate : web2b;
 		_this.jd_templateId = _this.new_dataManager.getObjFromLocalStorage("web2b_templateId");
 		/* 2) it checks if _this.jd has 'respuestas' and if it has 3 of them, if it doesn´t have them it sends the User to Root /, otherwise to start the Tour*/
-		if(!_this.jd.respuestas) {
+		if (!_this.jd.respuestas) {
 			location.href = "/";
 		} else if (Object.keys(_this.jd.respuestas).length < 3) {
 			location.href = "/tour";
 		}
 	};
-	var init = function() {/*2*/
+	var init = function () {/*2*/
 		_this.new_userValidator.setUserValidation();
 		_this.new_appManager.setAppNavigation();//3
 		_this.new_appManager.setAppControls();//4
 		_this.new_appManager.setAppSteps();//5
-		_this.new_templateManager.loadTemplate(afterTemplateLoad);//6
+		_this.new_templateManager.loadTemplate(_this.new_appManager.afterTemplateLoad);//6
 		_this.new_itemManager.setItems();//7
 		new_tooltipManager.setTooltips();//8				
 	};
-	var afterTemplateLoad = () => {
-		/* */
-		_this.new_mapManager.start('inp-contact-address', 'iMap');
-		/* */
-	};
 	return {
-      validation: validation,
-			init: init
-    };
+		validation: validation,
+		init: init
+	};
 }

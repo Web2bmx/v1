@@ -167,7 +167,7 @@ export default function appManager() {
 			$("aside", this).addClass("thumb-selected");
 			$("[name^='inp-design']").removeAttr("checked");
 			$("input", this).attr("checked", "checked");
-			_ctrl.new_templateManager.loadTemplate();
+			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad);
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {
@@ -269,12 +269,16 @@ export default function appManager() {
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left", parentW / 2 - $("#control-view-index").width() / 2);
 	};
+	var afterTemplateLoad = () => {
+		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
+	};
 	return {
 		init: init,
 		setAppNavigation: setAppNavigation,
 		setAppControls: setAppControls,
 		setAppSteps: setAppSteps,
 		topStepMargin: topStepMargin,
-		goToStep: goToStep
+		goToStep: goToStep,
+		afterTemplateLoad: afterTemplateLoad
 	};
 }
