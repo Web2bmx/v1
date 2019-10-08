@@ -28,7 +28,7 @@
 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 			<script src="landing/js/landing.bundle.js"></script>
 			<header>
-				<div id="branding"><img id="logo" src="/img/logo.png" /></div>
+				<div id="branding"><img id="logo" src="landing/img/logo_web2b.svg" /></div>
 			</header>
 			<nav role="navigation">
 				<div id="menuToggle">
