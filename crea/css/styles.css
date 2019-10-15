@@ -753,7 +753,7 @@ a {
   }
 }
 
-#app-cover .app-cover-start img.logo, #app-cover .app-cover-start .change-page {
+#app-cover .app-cover-start img.logo, #app-cover .app-cover-start .actions {
   position: absolute;
 }
 
@@ -763,10 +763,24 @@ a {
   width: 100px;
 }
 
-#app-cover .app-cover-start .change-page {
-  color: #9b035a;
+#app-cover .app-cover-start .actions {
   right: 20px;
   top: 30px;
+}
+
+#app-cover .app-cover-start .actions a {
+  color: #9b035a;
+  float: left;
+  padding-left: 15px;
+  font-size: 25px;
+}
+
+#app-cover .app-cover-start .actions a i {
+  display: block;
+}
+
+#app-cover .app-cover-start .actions a span {
+  font-size: 14px;
 }
 
 #app-cover .app-cover-start .thumb-selected + i::before {

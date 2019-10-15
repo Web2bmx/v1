@@ -113,7 +113,7 @@ a {
 		@include breakpoint($desktop){
 			width: 1000px;
 		}
-		img.logo, .change-page{
+		img.logo, .actions{
 			position: absolute;
 		}		
 		img.logo{
@@ -121,10 +121,26 @@ a {
 			left: 20px;
 			width: 100px;			
 		}
-		.change-page{
-			color: $darker-pink;
+		.actions{			
 			right: 20px;
 			top:30px;
+
+			a{
+				color: #9b035a;
+				float: left;
+				padding-left: 15px;
+				font-size: 25px;
+
+				i {
+					display: block;
+					
+				}
+
+				span {
+					font-size: 14px;
+				}
+
+			}
 		}
 		.thumb-selected +  i::before{
 			content: "\f192";
