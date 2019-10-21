@@ -49,22 +49,22 @@
 				<section id="hero">
 					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
 					<div class="container">	
-						<img id="graph-rocket" src="landing/img/rocket.png" />					
-						<h1><strong>Impulsa</strong> tu estrategia digital</h1>
+						<img id="graph-rocket" src="landing/img/item_rocket.svg" />					
+						<h1>Impulsa tu estrategia digital</h1>
 						<h2>Crea tu página web en minutos</h2>
 						<a class="cta" href="/tour">¡Comenzar!</a>
 					</div>
-					<span class="graph" id="gr_alien_side" style="background-image: url(landing/img/alien_side.png);"></span>
-					<span class="graph" id="gr_moon" style="background-image: url(landing/img/moon.png);"></span>
-					<span class="graph" id="gr_planet_ring" style="background-image: url(landing/img/planet_ring.png);"></span>
+					<span class="graph" id="gr_alien_side" style="background-image: url(landing/img/item_alien.svg);"></span>
+					<span class="graph" id="gr_moon" style="background-image: url(landing/img/item_moon.svg);"></span>
+					<span class="graph" id="gr_planet_ring" style="background-image: url(landing/img/item_planet_with_rings.svg);"></span>
 				</section>
 				<section id="steps">
 					<div class="container">	
 						<ol id="list-steps">
-							<li><img src="landing/img/step_01.png" /><span>Paso 1</span>Permitenos conocer más de tu Empresa por medio de <a href="/tour">3 sencillas preguntas.</a></li>
-							<li><img src="landing/img/step_03.png" /><span>Paso 2</span>Al terminar, te haremos algunas propuestas con las que comenzarás a construir una estrategia digital completa.</li>
-							<li><img src="landing/img/step_04.png" /><span>Paso 3</span>Te ayudaremos a agregar el contenido que necesites publicar en tu sitio web.</li>
-							<li><img src="landing/img/step_02.png" /><span>Paso 4</span>Selecciona el paquete que más te guste.</li>						
+							<li><img src="landing/img/step_01.svg" /><span>Paso 1</span>Permitenos conocer más de tu Empresa por medio de <a href="/tour">3 sencillas preguntas.</a></li>
+							<li><img src="landing/img/step_02.svg" /><span>Paso 2</span>Al terminar, te haremos algunas propuestas con las que comenzarás a construir una estrategia digital completa.</li>
+							<li><img src="landing/img/step_03.svg" /><span>Paso 3</span>Te ayudaremos a agregar el contenido que necesites publicar en tu sitio web.</li>
+							<li><img src="landing/img/step_04.svg" /><span>Paso 4</span>Selecciona el paquete que más te guste.</li>						
 						</ol>
 					</div>	
 				</section>	
@@ -105,8 +105,8 @@
 					</div>
 				</section>
 				<section id="subscribe" class="canvas bg_white">
-					<!--<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>-->
-					<span class="graph" id="gr_ship" style="background-image: url(landing/img/ship.png);"></span>
+					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
+					<span class="graph" id="gr_ship" style="background-image: url(landing/img/item_ship.svg);"></span>
 					<div class="container">
 						<form>
 							<input type="email" placeholder="Tu correo electrónico" />
@@ -142,8 +142,8 @@
 							<li><a href="https://www.facebook.com/web2bmx/" target="_blank"><img src="landing/img/facebook.png" /> <span>Síguenos en Facebook</span></a></li>
 						</ul>
 					</div>
-					<div id="copyright"><p>&copy;2019 Web2b<br />Todos los derechos reservados</p></div>
 				</div>
+				<div id="copyright"><p>&copy;2019 Web2b Todos los derechos reservados</p></div>
 			</footer>
 			<?php include_once("include/include_modal-login.php"); ?>
 		</body>
