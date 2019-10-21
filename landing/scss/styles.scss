@@ -9,61 +9,65 @@
 @import '../../scss/components/_inputFields';
 @import '../../scss/components/login-paginas';
 @import '../../scss/partials/_errors';
-
-/**/
+/*ELEMENTS*/
+html { font-size: 150%; }
 body {
+	background-color: $blue20;
+	color: $gray80;
 	font-family: 'Open Sans', sans-serif;
+	font-size: .75rem;
+	line-height: 1rem;
 	margin: 0;
 	padding: 0;
 }
-ul, ol, nav {
+div, ul, ol, nav, p {
 	list-style-type: none;
+	margin: 0;
 	padding: 0;
 }
 a {
-	color: #727a82;
+	color: $gray80;
 	text-decoration: none;
 	transition: color 0.3s ease;
 	&:link, &:visited {
-		color: #727a82;
+		color: $gray60;
 	}
 	&:hover, &:active {
-		color: #ffffff;
+		color: $white;
 	}
 }
 .container {
 	display: block;
 	height: auto;
-	margin: 0 auto;
-	max-width: 1440px;
+	margin: 0 1rem;
 	overflow: hidden;
 	position: relative;
-	width: 80%;
+	width: auto;
 	z-index: 2;
 }
+@media screen and (min-width: $desktop) { .container {
+	margin: 0 2rem;
+}}
 a.cta, input.cta {
-	background-color: #cc2880;
+	@include border-radius(.25rem);
+	background-color: $pink60;
 	border: none;
-	border-radius: 0.6rem;
-	color: #ffffff;
+	color: $white;
 	cursor: pointer;
-	display: inline-block;
-	font-size: 1.3rem;
+	display: block;
 	font-weight: bold;
 	height: auto;
 	margin: 0;
 	overflow: hidden;
-	padding: 1rem 1.8rem;
+	padding: .5rem;
 	text-align: center;
-	text-decoration: none;
 	text-transform: uppercase;
+	transition: background-color 0.3s ease;
 	width: auto;
+	&:hover, &:active {
+		background-color: $pink80;
+	}
 }
-@media screen and (min-width: 1040px) { a.cta, input.cta {
-	border-radius: 0.3rem;
-	font-size: 1rem;
-	padding: 0.8rem 1.8rem;
-}}
 .graph {
 	background-repeat: no-repeat;
 	display: block;
@@ -72,44 +76,37 @@ a.cta, input.cta {
 }
 /*HEADER*/
 header {
-	background: #232d3a;
+	background: $blue20;
 	display: block;
-	height: 4rem;
+	height: 1rem;
 	overflow: visible;
-	padding: 2rem 0;
+	padding: .5rem 0;
 	position: fixed;
 	width: 100%;
 	z-index: 3;
 }
-@media screen and (min-width: 768px) { header {
-	height: 4rem;
-	padding: 1rem 0;
-}}
-@media screen and (min-width: 1040px) { header {
-	height: 3rem;
-	padding: 1rem 0;
+@media screen and (min-width: $desktop) { header {
+	height: 2rem;
+	padding: .5rem 0 0 0;
 }}
 #branding {
-	background: #232d3a;
+	background: $blue20;
 	float: left;
 	height: auto;
 	overflow: hidden;
-	padding-left: 5%;
+	padding-left: 1rem;
 	position: relative;
 	z-index: 5;
 	img {
 		display: block;
-		height: 3rem;
+		height: 1rem;
 		width: auto;
 	}
 }
-@media screen and (min-width: 768px) { #branding img {
-	height: 3rem;
-}}
-@media screen and (min-width: 1040px) { #branding {
-	padding-left: 5%;
+@media screen and (min-width: $desktop) { #branding {
+	padding-left: 2rem;
 	img {
-		height: 3rem;
+		height: 1.5rem;
 	}
 }} 
 #menuToggle {
@@ -118,201 +115,186 @@ header {
 	overflow: visible;
 	position: fixed;
 	user-select: none;
-	top: 2rem;
+	top: .5rem;
 	width: 100%;
-	z-index: 400;
+	z-index: 3;
 	input {
 		-webkit-touch-callout: none;
 		cursor: pointer;
 		display: block;
-		height: 5rem;
+		height: 1rem;
 		opacity: 0;
 		position: absolute;
-		right: 5%;
-		width: 4rem;
+		right: 1rem;
+		width: 1rem;
 		z-index: 5;
 	}
 	span {
-		background: #fff;
-		border-radius: 0.2rem;
+		@include border-radius(.125rem);
+		background-color: $white;
 		display: block;
-		height: 0.2rem;
-		left: 80%;
-		margin-bottom: 0.8rem;
-		position: relative;
-		top: 1rem;
+		height: .125rem;
+		position: absolute;
+		right: 1rem;
+		top: .25rem;
 		transform-origin: 0 0;
 		transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
 					background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
 					opacity 0.55s ease;
-		width: 3rem;
+		width: 1rem;
 		z-index: 4;
-		&:first-child {
-			transform-origin: 0% 0%;
-		}
 		&:nth-last-child(2) {
+			top: .5rem;
 			transform-origin: 0% 100%;
+		}
+		&:nth-last-child(3) {
+			top: .75rem;
 		}
 	}
 	input:checked ~ span {
 		opacity: 1;
-		transform: rotate(45deg) 
-					translate(-2px, -1px);
+		transform: rotate(45deg) translate(0, -.125rem);
+		&:nth-last-child(2) {
+			transform: rotate(-45deg) translate(-.125rem, .325rem);
+		}
 		&:nth-last-child(3) {
 			opacity: 0;
-			transform: rotate(0deg) 
-						scale(0.2, 0.2);
+			transform: rotate(0deg) scale(0.2, 0.2);
 		}
-		&:nth-last-child(2) {
-			transform: rotate(-45deg) 
-						translate(0, -1px);
-		}
+		
 	}
 }
-@media screen and (min-width: 768px) { #menuToggle {
-	input {
-		width: 5%;
-		height: 3rem;
-	}
-	span {
-		top: 1rem;
-	}
-}}
-@media screen and (min-width: 1040px) { #menuToggle {
+@media screen and (min-width: $desktop) { #menuToggle {
 	input, span {
 		display: none;
 	}
 }} 
 #menu {
 	-webkit-font-smoothing: antialiased;
-	background: #232d3a;
-	margin-top: -5rem;
-	padding: 9rem 5% 2em 5%;
+	background: $blue20;
+	display: block;
+	margin-top: -2rem;
+	left: 0;
+	padding: 0 1rem .5rem 1rem;
 	position: absolute;
-	transform-origin: 0% 0%;
+	right: 0;
 	transform: translate(0, -100%);
 	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-	width: 90%;
+	width: auto;
 	li {
-		padding: 1rem 0;
-		font-size: 1.5rem;
-		a {
-			color: #ffffff;
-		}
+		padding: .25rem 0;
 	}
 }
-@media screen and (min-width: 768px) { #menu {
-	padding: 7rem 5% 2em 5%;
-	li {
-		font-size: 1.6rem;
-		padding: 0.6rem 0;
-	}
-}}
-@media screen and (min-width: 1040px) { #menu {
+#menuToggle input:checked ~ #menu {
+	transform: translate(0, 3.5rem);
+}
+@media screen and (min-width: $desktop) { #menu {
 	float: right;	
-	margin: 0;
-	padding: 0 5% 0 5%;
+	margin: .5rem 0 0 0;
+	padding: 0 2rem;
 	position: static;
 	transform: none;
 	transform-origin: none;
 	transition: none;
 	width: auto;	
 	li {
-		float: left;	
-		font-size: 1rem;
-		padding: 0 1rem;	
+		float: left;
+		padding: 0 0 0 1rem;	
 	}
 }}
-#menuToggle input:checked ~ #menu {
-	transform: none;
-}
 /*EO HEADER*/
 /*MAIN*/
 main {
-	padding-top: 8rem;
+	padding-top: 2rem;
 }
-@media screen and (min-width: 768px) { main {
-	padding-top: 6rem;
-}}
-@media screen and (min-width: 1040px) { main {
-	padding-top: 5rem;
-}}
-/**/
+/*HERO*/
 #hero {
-	background: -webkit-radial-gradient(center, ellipse cover, #283655 0%, #172133 100%);
-	background-color: #242e3d;
-	color: #ffffff;
+	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
+	background-color: $blue20;
 	display: block;
 	height: auto;
-	padding: 11rem 0;
 	overflow: hidden;
 	position: relative;
 	text-align: center;
 	width: 100%;
 	a.cta {
-		margin-top: 20px;
+		margin: 1rem auto 5rem auto;
+		max-width: 18rem;
 	}
 }
-@media screen and (min-width: 1040px) { #hero {
-	padding: 10rem 0;
+@media screen and (min-width: $ext-desktop) { #hero {
+	a.cta {
+		margin-bottom: 10rem;
+	}
 }}
 #graph-rocket {
 	display: block;
-	margin: 0 auto;
-	width: 8rem;
+	height: 5rem;
+	margin: 6rem auto 0 auto;
+	width: auto;
 }
+@media screen and (min-width: $ext-desktop) { #hero {
+	#graph-rocket {
+		margin-top: 10rem;
+	}
+}}
 #hero h1 {
-	font-size: 2rem;
-	font-weight: normal;
-	margin-bottom: 0;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	margin: 0;
+}
+#hero h2 {
+	font-size: .75rem;
+	line-height: 1rem;
+	margin: 0;
 }
 #gr_alien_side {
 	background-size: contain;
-	height: 15%;
+	bottom: 2rem;
+	height: 2rem;
 	left: 0;
-	top: 85%;
-	width: 15%;
+	width: 3rem;
 }
 #gr_moon {
 	background-size: contain;
-	height: 12%;
-	left: 70%;
-	top: 5%;
-	width: 12%;
+	height: 3rem;
+	right: 1rem;
+	top: 3rem;
+	width: 3rem;
 }
+@media screen and (min-width: $desktop) { #gr_moon {
+	right: 2rem;
+}}
 #gr_planet_ring {
 	background-size: contain;
-	height: 10%;
-	left: 5%;
-	top: 30%;
-	width: 10%;
+	height: 2rem;
+	left: 2rem;
+	top: 12rem;
+	width: 2rem;
 }
+/*STEPS*/
 #steps {
-	background-color: #ffffff;
-	color: #555;
-    font-size: 1.2rem;
-	line-height: 1.5rem;
-	padding: 2rem 0;
-	text-align: center;
+	background-color: $gray80;
+	color: $gray20;
+    text-align: center;
 }
-@media screen and (min-width: 1040px) { #steps {
-	padding: 6rem 0;
-}}
 #list-steps {
+	margin: 4rem auto 3rem auto;
+	width: auto;
 	li {
 		display: block;
-		margin: 8rem auto;
+		margin: 5rem auto;
+		max-width: 18rem;
 	}
 	img {
 		display: block;	
 		margin: 0 auto;
-		width: 10rem;
+		width: 6rem;
 	}
 	span {
-		color: #000000;
+		color: $black;
 		display: block;
-		font-weight: bold;
-		margin: 1rem auto;
+		margin: 1rem auto .5rem auto;
 		width: auto;
 	}
 	a {
@@ -322,61 +304,39 @@ main {
 		color: inherit;
 	}
 }
-@media screen and (min-width: 768px) { #list-steps {
+@media screen and (min-width: $tablet) { #list-steps {
+	display: grid;
+	grid-template-columns: 48% 48%;
+	grid-template-rows: auto auto;
+	grid-column-gap: 4%;
+	grid-row-gap: 2rem;
+	margin: 2rem auto;
 	li {
-		float: left;
-		height: 16rem;
-		margin: 0 4% 2rem 4%;
-		width: 42%;
-	}
-	img {
-		width: 6rem;
-	}
-}}
-@media screen and (min-width: 1040px) { #list-steps {
-	li {
-		float: left;
-		font-size: 1rem;
-		height: auto;
-		margin: 0 2%;
-		width: 21%;
-	}
-	img {
-		display: block;
 		margin: 0 auto;
-		width: 5rem;
 	}
 }}
-@media screen and (min-width: 1040px) { #list-steps {
-	li {
-		float: left;
-		font-size: 1rem;
-		height: auto;
-		margin: 0 2%;
-		width: 21%;
-	}
-	img {
-		display: block;
-		margin: 0 auto;
-		width: 5rem;
-	}
+@media screen and (min-width: $desktop) { #list-steps {
+	grid-template-columns: 22% 22% 22% 22%;
+	grid-template-rows: auto;
+	grid-column-gap: 4%;
 }}
+/*SERVICES*/
 #services {
-	background-color: #eaf2f5;
-	color: #555;
-	padding: 2rem 0;
+	background-color: $blue100;
+	color: $gray20;
 }
-@media screen and (min-width: 1040px) { #services {
-	padding: 2rem 0 0 0;
-}}
 #list-services {
-	font-size: 1.2rem;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: auto;
+	grid-column-gap: 0;
+	grid-row-gap: 1rem;
+	margin: 1rem auto;
 	> li {
-		background-color: #ffffff;
-		border-radius: 0.3rem;
+		@include border-radius(0.25rem);
+		background-color: $white;
 		display: block;
 		height: auto;
-		margin: 2rem 0;
 		overflow: hidden;
 		position: relative;
 		width: 100%;
@@ -384,155 +344,154 @@ main {
 			img {
 				float: left;
 				height: auto;
-				width: 40%;
+				width: 100%;
 			}
 			h3 {
-				color: #000000;
+				color: $black;
 				float: left;
-				font-size: 1.2rem;
-				margin: 1rem 5% 0 5%;
-				width: 50%;
+				margin: 2rem 1rem 0 1rem;
+				width: auto;
 			}
 			p {
 				float: left;
-				margin: .6rem 5%;
-				width: 50%;
+				margin: .5rem 1rem 2rem 1rem;
+				width: auto;
 			}
 		}
 	}
 }
-@media screen and (min-width: 768px) { #list-services {
-	font-size: 1.1rem;
+@media screen and (min-width: $tablet) { #list-services {
+	grid-template-columns: auto auto;
+	grid-template-rows: auto;
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+}}
+@media screen and (min-width: $desktop) { #list-services {
+	grid-column-gap: 2rem;
+	grid-row-gap: 2rem;
+	margin: 2rem auto;
 	> li {
-		margin: 1rem 0;
 		> {
-			img {
-				height: auto;
+			h3 {
+				float: left;
+				margin: 1rem 0 0 1rem;
 				width: 40%;
 			}
-			h3 {
-				font-size: 1.2rem;
-			}
-		}
-	}
-}}
-@media screen and (min-width: 1040px) { #list-services {
-	font-size: 1rem; 
-	> li {
-		float: left;
-		margin: 0 2% 3rem 2%;
-		width: 44%;
-		> {
 			img {
 				float: left;
 				height: auto;		
 				width: 40%;
 			}
-			h3 {
-				font-size: 1.2rem; 
-			}
 			p {
-				font-size: .84rem;
-				height: auto;
+				margin-bottom: .5rem;		
+				width: 45%;
 			}
 		}
 	}
 }}
+@media screen and (min-width: $ext-desktop) { #list-services {
+	grid-template-columns: auto auto auto;
+}}
+/*SUBSCRIBE*/
 #subscribe {
-	background: -webkit-radial-gradient(center, ellipse cover, #283655 0%, #172133 100%);
-	background-color: #242e3d;
-	color: #ffffff;
+	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
+	background-color: $blue20;
 	display: block;
 	height: auto;
 	overflow: hidden;
-	padding: 16rem 0 12rem 0;
+	padding: 10rem 0 5rem 0;
 	position: relative;
 	text-align: center;
 	width: 100%;
-	p {
-		font-size: 1.5rem;
-	}
 	input[type='email'] {
+		@include border-radius(.25rem);
 		border: none;
-		border-radius: 0.3rem;
-		font-size: 1.5rem;
-		padding: 0.6rem 0.8rem;
+		display: block;
+		margin: 0 auto .5rem auto;
+		padding: 0.25rem 0.5rem;
 		vertical-align: bottom;
-		width: 24rem;
-		
+		width: 10rem;
+	}
+	input.cta {
+		margin: 0 auto;
+		width: 11rem;
+	}
+	p {
+		clear: both;
+		margin: 1rem auto 0 auto;
+		max-width: 18rem;
 	}
 }
-@media screen and (min-width: 1040px) { #subscribe {
-	padding: 12rem 0 10rem 0;
-	p {
-		font-size: 1.4rem;
-	}
+@media screen and (min-width: $tablet) { #subscribe {
 	input[type='email'] {
-		font-size: 1.3rem;
-		padding: 0.6rem 0.8rem;
+		width: 17rem;
+	}
+	input.cta {
+		width: 18rem;
+	}
+}}
+@media screen and (min-width: $desktop) { #subscribe {
+	padding: 4rem 0 2rem 0;
+	input[type='email'] {
+		display: inline-block;
+		margin: 0;
+		padding: .5rem 1rem;
+	}
+	input.cta {
+		display: inline-block;
+		width: auto;
 	}
 }}
 #gr_ship {
 	background-size: contain;
-	height: 12%;
-	left: 78%;
-	top: 26%;
+	height: 3rem;
+	right: 2rem;
+	top: 8rem;
 	transform: rotate(30deg);
-	width: 12%;
+	width: 3rem;
 	z-index: 2;
 }
-@media screen and (min-width: 1040px) { #gr_ship {
-	height: 20%;	
-	left: 66%;
-	top: 32%;
-	width: 20%;
-}}
 /*EO MAIN*/
 /*FOOTER*/
 footer {
-	padding: 4rem 0 0 0;
-	background-color: #232d3a;
-	color: #232d3b;
-	font-size: 1.4rem;
+	padding: 1rem 0 0 0;
 	h6 {
-		margin: 0 0 2rem 0;
-		color: #ffffff;
+		margin: 0 0 1rem 0;
 		text-transform: uppercase;
 	}
 	nav {
-		margin-bottom: 8rem;
+		margin-bottom: 1rem;
 		li {
-			margin-bottom: 0.8rem;
-			padding-bottom: 0.8rem;
-			font-size: 1rem;
-			border-bottom: 1px solid #777;
+			margin-bottom: 0.5rem;
+			padding-bottom: 0.5rem;
+			font-size: .5rem;
+			border-bottom: 1px solid $gray40;
 		}
 	}
 }
-@media screen and (min-width: 768px) { footer nav {
-	float: left;
-	margin: 0 4% 2rem 4%;
-	overflow: hidden;
-	padding: 0;
-	width: 42%;
-}}
-@media screen and (min-width: 1040px) { footer {
-	font-size: 1rem;
+@media screen and (min-width: $desktop) { footer {
 	h6 {
-		margin: 0 0 1rem 0;
+		margin: 0;
 	}
 	nav {
-		margin-bottom: 0;
+		float: left;
+		margin: 0 2rem 0 0;
+		overflow: hidden;
+		padding: 0;
+		width: 24%;
+		&:nth-child(2) {
+			width: 48%;
+		}
 		li {
-			border-bottom: 1px solid #555;	
-			font-size: 0.8rem;
-			margin-bottom: 0.8rem;
-			padding-bottom: 0.8rem;
+			margin: 0;
+			padding: 0;
+			border-bottom: none;
 		}
 	}
 }}
 #social {
-	margin-bottom: 2em;
+	font-size: .5rem;
+	margin-bottom: .5rem;
 	img, span {
 		display: block;
 	}
@@ -542,58 +501,43 @@ footer {
 	}
 	img{
 		margin: 0 auto;
+		width: 1rem;
 	}
 }
-@media screen and (min-width: 768px) { 
+
+@media screen and (min-width: $desktop) { 
 	#social {
-		font-size: 0.8em;
-		text-align: center;
+		clear: both;
+		float: left;
+		margin: .5rem auto 1rem auto;
+		width: auto;
 		img,span{
 			display: inline;
 		}
 		img {
-			width: 2em;
-		}
-		span{
-			top: -0.4rem;			
-		}
-	}
-}
-@media screen and (min-width: 1040px) { 
-	#social {
-		float: left;
-		margin-top: 10px;
-		margin-bottom: 0;
-		width: auto;
-		clear: both;
-		span {
 			position: relative;
-			top: -0.4rem;
+			top: .125rem;
+			width: .5rem;
 		}
 	}
 }
 #copyright {
-	color: #727a82;
-	font-size: 0.8rem;
-	text-align: center;
+	background-color: $gray20;
 	clear: both;
+	color: $gray60;
+	font-size: 0.5rem;
+	padding: .5rem 0;
+	text-align: center;
 }
-@media screen and (min-width: 1040px) { #copyright {
-	float: right;
-	text-align: right;
-}}
-/*EO FOOTER*/
-// MODAL
+/*MODAL*/
 .ventana-login {
 	@extend .modal-login;
 	@include login-paginas;
 
 }
-/*Botones*/
 .right {
 	float: right;
 }
 .left {
 	float: left;
 }
-/*EO MODAL*/
