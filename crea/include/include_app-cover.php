@@ -1,9 +1,20 @@
 <div id="app-cover">
 	<div class="app-cover-start">
 		<img src="/img/logo.png" class="logo" />
-		<a class='change-page' style='display: none'>
-			<i class="fas fa-redo-alt"></i>
-		</a>		
+		<aside class='actions'>
+			<a class='change-page' style='display: none'>
+				<i class="fas fa-exchange-alt"></i>
+				<span>
+					Cambiar
+				</span>
+			</a>
+			<a class='logout'>
+				<i class="fas fa-sign-out-alt"></i>
+				<span>
+					Salir
+				</span>
+			</a>
+		</aside>
 		<h2>Elige el diseño de tu página</h2>					
 		<div class="control-desing-cont">
 			<div class="control-design-thumb">

@@ -29,7 +29,7 @@ export default function pageManager(){
         let actualPage = new_Datamanager.getObjFromLocalStorage("web2b_actualPage");
         for(let i=0, jd; i < paginas.length; i++){
             if(paginas[i].idSitio === actualPage.idSitio) continue;
-            jd = JSON.parse(paginas[i].info);
+            jd = JSON.parse(decodeURIComponent(paginas[i].info));
             let name = jd.nombre || jd.selections.siteName.text || "no name";
             html += 
             `<option class="inserted" value="${i}">
