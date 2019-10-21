@@ -17,7 +17,7 @@ export default function pageManager(){
             localStorage.setItem("web2b_pages", p.paginas);
             p.paginas.forEach((value) => {
                 if(Number(value.idSitio) === templateId) {
-                    localStorage.setItem("web2b_actualPage", decodeURIComponent(JSON.stringify(value)));
+                    localStorage.setItem("web2b_actualPage", JSON.stringify(value));
                 }
             });                          
         });               
@@ -28,9 +28,10 @@ export default function pageManager(){
         let html = "";
         let actualPage = new_Datamanager.getObjFromLocalStorage("web2b_actualPage");
         for(let i=0, jd; i < paginas.length; i++){
-            if(paginas[i].idSitio === actualPage.idSitio) continue;
+            // if(paginas[i].idSitio === actualPage.idSitio) continue;
             jd = JSON.parse(decodeURIComponent(paginas[i].info));
             let name = jd.nombre || jd.selections.siteName.text || "no name";
+            if(paginas[i].idSitio === actualPage.idSitio) name = name + '(Proyecto actual)';
             html += 
             `<option class="inserted" value="${i}">
                 ${name}

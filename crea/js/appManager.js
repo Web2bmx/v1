@@ -84,6 +84,11 @@ export default function appManager() {
 			});			
 			$(".ventana-login").dialog("open");
 		});
+		$('.logout').click((e) => {
+			e.preventDefault();
+			localStorage.clear();
+			location.href = "/";
+		});
 		$(".cerrar-ventana").click(function () {
 			$(".ventana-login").dialog("close");
 		});
