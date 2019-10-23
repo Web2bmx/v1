@@ -1,14 +1,22 @@
+/*
 @import '../../node_modules/normalize-scss/sass/normalize/import-now';
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
+*/
 @import '../../scss/base/_variables';
 @import '../../scss/base/_colors';
 @import '../../scss/mixins/_border-radius';
+/*
 @import '../../scss/components/_stars';
 @import '../../scss/components/_buttons';
 @import '../../scss/components/_modal';
 @import '../../scss/components/_inputFields';
 @import '../../scss/components/login-paginas';
 @import '../../scss/partials/_errors';
+*/
+@mixin background-color-gradient-blue {
+	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
+	background-color: $blue20;
+}
 /*ELEMENTS*/
 html { font-size: 150%; }
 body {
@@ -209,8 +217,7 @@ main {
 }
 /*HERO*/
 #hero {
-	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
-	background-color: $blue20;
+	@include background-color-gradient-blue;
 	display: block;
 	height: auto;
 	overflow: hidden;
@@ -394,8 +401,7 @@ main {
 }}
 /*SUBSCRIBE*/
 #subscribe {
-	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
-	background-color: $blue20;
+	@include background-color-gradient-blue;
 	display: block;
 	height: auto;
 	overflow: hidden;
@@ -409,7 +415,7 @@ main {
 		display: block;
 		margin: 0 auto .5rem auto;
 		padding: 0.25rem 0.5rem;
-		vertical-align: bottom;
+		/*vertical-align: bottom;*/
 		width: 10rem;
 	}
 	input.cta {
@@ -530,6 +536,7 @@ footer {
 	text-align: center;
 }
 /*MODAL*/
+/*
 .ventana-login {
 	@extend .modal-login;
 	@include login-paginas;
@@ -541,3 +548,4 @@ footer {
 .left {
 	float: left;
 }
+*/

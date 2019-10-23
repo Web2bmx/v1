@@ -48,7 +48,8 @@ export default function creator() {
 	_this.new_validator = new validator();
 
 	/*FUNCTIONS*/
-	var validation = function () {/*1*/
+	var validation = function () {
+		/*1*/
 		/*This function does two things*/
 		/* 1) Sets a value for _this.jd as either localstorage->web2bTemplate or Web2b*/
 		let web2b = _this.new_dataManager.getObjFromLocalStorage("web2b");
