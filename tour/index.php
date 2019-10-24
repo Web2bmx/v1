@@ -15,7 +15,7 @@
     </head>
     <body>
         <a href="/" class="global-back"><i class="fas fa-arrow-circle-left"></i><span>Regresar</span></a>        
-    	<!--¿<div class="background"><div class='stars'></div><div class='stars2'></div><div class='stars3'></div></div>-->
+    	¿<div class="background"><div class='stars'></div><div class='stars2'></div><div class='stars3'></div></div>
         <div class="main-container">
             <div>
                 <div>
