@@ -1,4 +1,5 @@
 import dialogHandler from '../../js/dialog';
+import dataManager from '../../js/dataManager';
 
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -9,7 +10,8 @@ import dialogHandler from '../../js/dialog';
 export default function tour() {    
     var winWidth;
     var spanError = '<span class="form-error">Aún no has respondida esta pregunta</span>';
-    var positionActual = '';  
+    var positionActual = ''; 
+    var new_dataManager = new dataManager();
 
     var muestraPregunta = function (pregunta){
         $(".rocket img + img").animate({
@@ -73,7 +75,7 @@ export default function tour() {
     };
     
     var preguntaValida = function (selector){
-        var jsonData = localStorage.getItem("web2b");
+        var tplData = new_dataManager.getObjFromLocalStorage("web2b");
         var resp = "";
         var resp_id = "";
         var loc_en = "";
@@ -91,13 +93,10 @@ export default function tour() {
             }
             
     
-            if(jsonData == null)
-                {
-                    jsonData = {};
-                    jsonData.respuestas = {};                
-                }
-            else{
-                jsonData = JSON.parse(jsonData);
+            if(Object.keys(tplData).length == 0) {
+                    tplData.respuestas = {};                
+            } else{
+                tplData = JSON.parse(tplData);
             }
     
             if($(selector + " textarea").length != 0){
@@ -123,25 +122,25 @@ export default function tour() {
                     }
                 ).done(function(data) {
                     if(data){
-                        jsonData.respuestas[id] = {
+                        tplData.respuestas[id] = {
                             "tipo": $(selector + " p").data("type"),
                             "respuesta" : resp,
                             "localizacion_en" : decodeURIComponent(data.text[0]),
                             "resp_id" : resp_id
                         };
             
-                        localStorage.setItem("web2b", JSON.stringify(jsonData));
+                        localStorage.setItem("web2b", JSON.stringify(tplData));
                     }
                 });	
             } else {
-                jsonData.respuestas[id] = {
+                tplData.respuestas[id] = {
                     "tipo": $(selector + " p").data("type"),
                     "respuesta" : resp,
                     "localizacion_en" : loc_en,
                     "resp_id" : resp_id
                 };
     
-                localStorage.setItem("web2b", JSON.stringify(jsonData));
+                localStorage.setItem("web2b", JSON.stringify(tplData));
             }
         }
         return true;
@@ -260,31 +259,34 @@ export default function tour() {
         
         dialogHandler(true);  
     
-        var jsonData = localStorage.getItem("web2b");
-    
-        if(jsonData == null)
-            {
-                jsonData = {};
-                jsonData.respuestas = {};               
-            }
-        else{
-            jsonData = JSON.parse(jsonData);
+        // verify incomplete tour
+        let tplData = new_dataManager.getObjFromLocalStorage("web2b");        
+        if(Object.keys(tplData).length == 0) {
+            tplData.respuestas = {};
+
+            // verify existing project
+            let existingData = new_dataManager.getObjFromLocalStorage('web2b_actualPage');
+            if(Object.keys(existingData).length > 0) {
+                $(".proyecto-existente").dialog( "open" );
+            }                        
         }
-    
-        if(Object.keys(jsonData.respuestas).length > 0){
-            $(".datos-existentes").dialog( "open" ); 
-        } 
-    
+        else {
+            tplData = JSON.parse(tplData);
+            if(Object.keys(tplData.respuestas).length > 0){
+                $(".datos-existentes").dialog( "open" ); 
+            }            
+        }
+        
         $(".iniciar").click(function(){
             $(".datos-existentes").dialog( "close" );
             localStorage.removeItem("web2b");
-            jsonData = {};
+            tplData = {};
         });
     
         $(".continuar").click(function(){
             $(".init").fadeOut(50);
             $(".datos-existentes").dialog( "close" );
-            switch(Object.keys(jsonData.respuestas).length + 1){
+            switch(Object.keys(tplData.respuestas).length + 1){
                 case 2:
                     paso3();
                 break;
@@ -295,7 +297,19 @@ export default function tour() {
                     $(".fin").dialog( "open" );
                 break;
             }
-        });    
+        });
+
+        $(".iniciar-proyecto").click(function(){
+            localStorage.removeItem('web2b_actualPage');
+            localStorage.removeItem('web2b_template');
+            localStorage.removeItem('web2b_templateId');
+            localStorage.removeItem("web2b");
+            $(".proyecto-existente").dialog( "close" );
+        });       
+        
+        $(".continuar-proyecto").click(function(){
+            location.href = "/crea";
+        });             
         
         $(window).resize(function(){
             winWidth = $(window).width();

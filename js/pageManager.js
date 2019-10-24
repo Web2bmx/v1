@@ -14,7 +14,7 @@ export default function pageManager(){
       return new_Datamanager.getPagesFromDB().then((p) => {
             let templateId = new_Datamanager.getObjFromLocalStorage("web2b_templateId");
             paginas = p.paginas;
-            localStorage.setItem("web2b_pages", p.paginas);
+            localStorage.setItem("web2b_pages", JSON.stringify(p.paginas));
             p.paginas.forEach((value) => {
                 if(Number(value.idSitio) === templateId) {
                     localStorage.setItem("web2b_actualPage", JSON.stringify(value));

@@ -1,8 +1,18 @@
+import dataManager from '../../js/dataManager';
+
 export default function userValidator () {
-	var _ctrl = null;
+    var _ctrl = null;
+    var new_dataManager = new dataManager();
+
 	var init = function(_that) {
         _ctrl = _that;
     };
+
+    var openLoginDialog = () => {
+        $(".app-new-start.dialog").dialog("option", "width", 400);
+        $(".app-new-start.dialog").dialog("open");
+    };
+
     var setUserValidation = function() {
         $(".dialog").dialog({
             autoOpen: false,
@@ -17,9 +27,28 @@ export default function userValidator () {
             },
             closeOnEscape: false
         }); 
-        if(_ctrl.sessionStatus == "START SESSION"){									
-            $(".app-new-start.dialog").dialog("option", "width", 400);
-            $(".app-new-start.dialog").dialog("open");
+        if(_ctrl.sessionStatus == "START SESSION"){
+            var userId = new_dataManager.getObjFromLocalStorage("web2b_userId");
+            if(typeof(userId) === 'string' && userId != ''){
+                // crear nueva página
+                $.post("scripts/crear_pagina.php", {
+                    userid: userId,
+                    info: encodeURIComponent(JSON.stringify(_ctrl.jd))
+                }).done(function (result) {
+                    if (!result.ok) {
+                        openLoginDialog();
+                    } else {
+                        _ctrl.new_dataManager.setDataObjects(result, _ctrl.jd);
+                        if(result.paginas.length > 1) {
+                            $(".change-page").show();
+                        }
+                    }
+                }).fail(function (result) {
+                    openLoginDialog();
+                });                
+            } else {
+                openLoginDialog();
+            }					
         } else {
             _ctrl.new_PageManager.getPaginas().then(() => {
                 if (_ctrl.new_PageManager.hasPages()) $(".change-page").show();
@@ -67,7 +96,8 @@ export default function userValidator () {
 
             }
         });
-    }    
+    };
+
     return {
         init : init,
         setUserValidation: setUserValidation

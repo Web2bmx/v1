@@ -9,12 +9,6 @@ $password = filter_input(INPUT_POST,'password');
 $info = filter_input(INPUT_POST,'info');
 $id = uniqid();
 
-if($correo == "contacto@web2b.mx"){
-    echo '{"ok": 1}';
-    http_response_code(200);
-    exit;
-}
-
 if (!empty($_POST) && $correo && $info && $password){
     $exists = false;
 
