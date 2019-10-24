@@ -452,15 +452,6 @@ template {
   display: none;
 }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Feb 10, 2018, 1:18:48 PM
-    Author     : cmend
-*/
 /*SHADES OF GRAY*/
 /*RED*/
 /*ORANGE*/
@@ -624,8 +615,8 @@ input[type='button'] {
 
 /**/
 body {
-  background-color: #f0f0f0;
-  color: #787878;
+  background-color: #3c3c3c;
+  color: #b4b4b4;
   font-size: 1.2em;
   margin: 0;
   padding: 0;
@@ -728,7 +719,7 @@ a {
 }
 
 #app-cover .control-design-thumb:hover {
-  background-color: #f0f0f0;
+  background-color: #3c3c3c;
 }
 
 #app-cover .control-design-thumb aside {
@@ -815,7 +806,7 @@ a {
 }
 
 #app-cover .app-cover-finish h3 {
-  color: #787878;
+  color: #b4b4b4;
   font-size: 28px;
   margin-bottom: 0;
 }
@@ -828,7 +819,7 @@ a {
 }
 
 #app-cover .app-cover-finish .url .siteName {
-  color: #cc2880;
+  color: #ff0593;
   font-size: 24px;
   margin: 10px 0;
 }
@@ -980,9 +971,9 @@ a {
 
 /**/
 #app-control {
-  background-color: #f0f0f0;
+  background-color: #3c3c3c;
   bottom: 0;
-  color: #787878;
+  color: #b4b4b4;
   display: block;
   height: 95%;
   max-height: 100%;
@@ -1011,7 +1002,7 @@ a {
 }
 
 #app-control > .app-control-step .site-name-container {
-  color: #3c3c3c;
+  color: #f0f0f0;
   font-size: 22px;
   position: relative;
   text-align: left;
@@ -1069,7 +1060,7 @@ a {
 }
 
 #app-control .app-control-step > div textarea, #app-control .app-control-step > div input[type="text"].noIcon, #app-control .app-control-step > div select {
-  border-color: #b4b4b4;
+  border-color: #787878;
   border-radius: 5px;
   border-style: solid;
   box-sizing: border-box;
@@ -1094,7 +1085,7 @@ a {
 }
 
 #app-control .app-control-step > div .app-control-step-tooltip {
-  background-color: #cc2880;
+  background-color: #ff0593;
   color: white;
   cursor: pointer;
   font-size: .8em;
@@ -1110,7 +1101,7 @@ a {
 }
 
 #app-control .app-control-step > div .app-control-step-tooltip-info {
-  background-color: #f0f0f0;
+  background-color: #3c3c3c;
   display: none;
   padding: .2em;
 }
@@ -1160,7 +1151,7 @@ a {
 #app-control .control-color-thumb {
   cursor: pointer;
   display: block;
-  outline: 1px solid #3c3c3c;
+  outline: 1px solid #f0f0f0;
   overflow: hidden;
 }
 
@@ -1380,7 +1371,7 @@ a {
 }
 
 #app-control-nav #control-view-nav a.disabled {
-  background-color: #b4b4b4;
+  background-color: #787878;
   cursor: default;
 }
 
@@ -1395,7 +1386,7 @@ a {
 }
 
 #app-control-nav .control-view-index-item {
-  background-color: #b4b4b4;
+  background-color: #787878;
   cursor: pointer;
   float: left;
   height: 1em;
@@ -1506,9 +1497,9 @@ a {
 
 .file-upload input[type=submit], .file-upload button {
   background-color: white;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #3c3c3c;
   border-radius: 5px;
-  color: #3c3c3c;
+  color: #f0f0f0;
   cursor: pointer;
   float: right;
   font-weight: normal;
@@ -1523,7 +1514,7 @@ a {
 }
 
 .file-upload p {
-  background-color: #f0f0f0;
+  background-color: #3c3c3c;
   margin: 0;
   overflow: hidden;
   padding: 20px;
