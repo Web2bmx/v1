@@ -175,7 +175,7 @@ a {
 			margin: 0;	
 		}
 		.url .siteName{
-			color: $color-cta;
+			color: $pink60;
 			font-size: 24px;
 			margin: 10px 0;
 		}
@@ -183,7 +183,7 @@ a {
 			overflow: hidden;
 		}
 		.app-cover-finish-package {
-			background-color: $darker-pink;
+			background-color: $pink40;
 			box-sizing: border-box;
 			color: $white;
 			float: left;
@@ -271,7 +271,7 @@ a {
 				}
 				&:hover{
 					background: $white;
-					color: $darker-pink;
+					color: $pink40;
 				}
 			}
 		}		
@@ -324,7 +324,7 @@ a {
 			div{
 				margin: 80px 0;				
 				> span{
-					color: $darker-pink;
+					color: $pink40;
 					display: block;
 					font-weight: bold;
 					margin-bottom: 10px;
@@ -374,7 +374,7 @@ a {
 			margin: 0 0 5% 0;
 		}
 		.app-control-step-tooltip {
-			background-color: $color-cta;
+			background-color: $pink60;
 			color: $white;
 			cursor: pointer;
 			font-size: .8em;
@@ -555,7 +555,7 @@ a {
 			position: relative;
 		}
 		a {
-			color: $darker-pink;
+			color: $pink40;
 			font-size: 16px;
 			position: absolute;
 			right: 5px;
@@ -623,11 +623,11 @@ a {
 		@include border-radius(.5em);
 	}
 	.control-view-index-item.current {
-		background-color: $darker-pink;
+		background-color: $pink40;
 	}
 }
 #app-switch {
-	background-color: $darker-pink;
+	background-color: $pink40;
 	color: $white;
 	height: 40px;
     overflow: hidden;
@@ -734,7 +734,7 @@ a {
     margin-bottom: 10px;	
 }
 .nav-btns{
-	color: $darker-pink;	
+	color: $pink40;	
 	display: block;
 	font-size: 35px;
 	text-align: center;

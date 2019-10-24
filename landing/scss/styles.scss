@@ -1,18 +1,18 @@
-/*
+
 @import '../../node_modules/normalize-scss/sass/normalize/import-now';
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
-*/
+
 @import '../../scss/base/_variables';
 @import '../../scss/base/_colors';
 @import '../../scss/mixins/_border-radius';
-/*
+
 @import '../../scss/components/_stars';
 @import '../../scss/components/_buttons';
 @import '../../scss/components/_modal';
 @import '../../scss/components/_inputFields';
 @import '../../scss/components/login-paginas';
 @import '../../scss/partials/_errors';
-*/
+
 @mixin background-color-gradient-blue {
 	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
 	background-color: $blue20;
@@ -536,7 +536,6 @@ footer {
 	text-align: center;
 }
 /*MODAL*/
-/*
 .ventana-login {
 	@extend .modal-login;
 	@include login-paginas;
@@ -548,4 +547,3 @@ footer {
 .left {
 	float: left;
 }
-*/
