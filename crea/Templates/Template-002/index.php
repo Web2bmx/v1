@@ -1,10 +1,13 @@
-<?php include_once("../php/TemplateMaster.php"); ?>
+<?php 
+	$template_name = 'Template-002';
+	include_once("../php/Master.php"); 
+?>
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Template 006</title>
-		<meta name="description" content="Template 006">
+		<title>Template 002</title>
+		<meta name="description" content="Template 002">
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<meta name="author" content="Web2b">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -13,22 +16,22 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/brands.css" integrity="sha384-QT2Z8ljl3UupqMtQNmPyhSPO/d5qbrzWmFxJqmY7tqoTuT2YrQLEqzvVOP2cT5XW" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!--<script type="text/javascript" src="js/scripts.js"></script>-->
+		<script type="text/javascript" src="js/scripts.js"></script>
 	</head>
 	<body>
 		<div id="template" <?php if (isset($_GET["c"])) { echo('class="color-' . $_GET["c"] . '"'); } ?>>
 			<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
 			<main>
-				<?php include_once("../php/TemplateHero2.php"); ?>
-				<?php include_once("../php/TemplateMenu1.php"); ?>
-				<?php include_once("../php/TemplateItems2.php"); ?>	
-				<?php include_once("../php/TemplateAboutus1.php"); ?>	
-				<?php include_once("../php/TemplateGaleria1.php"); ?>	
-				<?php include_once("../php/TemplateCta1.php"); ?>
-				<?php include_once("../php/TemplateMap1.php"); ?>	
-				<?php include_once("../php/TemplateFooter2.php"); ?>
-				<?php include_once("../php/TemplateDisclaimer1.php"); ?>
+				<?php include_once("../php/Components/Hero.php"); ?>
+				<?php include_once("../php/Components/Menu.php"); ?>
+				<?php include_once("../php/Components/Items.php"); ?>	
+				<?php include_once("../php/Components/Aboutus.php"); ?>	
+				<?php include_once("../php/Components/Gallery.php"); ?>	
+				<?php include_once("../php/Components/CTA.php"); ?>
+				<?php include_once("../php/Components/Map.php"); ?>	
+				<?php include_once("../php/Components/Footer.php"); ?>
+				<?php include_once("../php/Components/Disclaimer.php"); ?>
 			</main>
 			<div id="template-colors" style="display: none;">
 				<div class="template-color" id="color-orange">

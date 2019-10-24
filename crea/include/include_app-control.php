@@ -24,6 +24,9 @@
         <?php include_once("include/include_app-control-step_item-add.php"); ?>
     </div>
     <div class="app-control-step">
+        <?php include_once("include/include_app-control-step_gallery.php"); ?>
+    </div>
+    <div class="app-control-step">
         <?php include_once("include/include_app-control-step_contact-online.php"); ?>
     </div>
     <div class="app-control-step">

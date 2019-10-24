@@ -1,87 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
     <hero>
-		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1516586640753-c6f994ebfd28?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		<logotipo>img/Logo-Template-001.png</logotipo>
-		<name>Tienda de Doña Lupita</name>
-		<slogan>¡La más grande variedad!</slogan>
+		<name>Inicio</name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1516383607781-913a19294fd1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080</img>
+		<logotipo orientation="landscape" background="rgba(255,255,255,0)">../Images/Logos/ignacioiniguez.png</logotipo>
+		<title>Ignacio Íñiguez, Ilustrador</title>
+		<slogan>Creatividad a tu servicio</slogan>
+		<button>Ver más</button>
 	</hero>
     <aboutus>
-        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1496250838191-02a942028e18?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		<title>Nuestra Historia</title>
-		<text>Nuestra historia comienza en 1954, cuando pusimos nuestra primera sucursal en Santa Tere, en la cual hemos estado por más de 50 años, ahora contamos con 8 sucursales en la zona metropolitána de Guadalajara, una cerca de tí.</text>
+		<name>Acerca de</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1488274319148-051ed60a9404?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Sobre mí</title>
+		<text>&lt;span class="name"&gt;Ignacio Íñiguez, Ilustrador&lt;/span&gt;, soy un artista apasionado por la ilustración y la expresión gráfica creativa, ilustro desde siempre y de manera profesional desde el 2009, creo obras únicas para tus proyectos.</text>
 	</aboutus>
 	<items>
+		<name>Servicios</name>
 		<header>
-			<title>Nuestros Productos</title>
-			<text></text>
+			<title>Mis estílos</title>
+			<text>Puedo colaborar contigo de estas maneras:</text>
 		</header>
 		<row>
         	<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1507215407641-a39a5d7b3192?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Frutas y verduras</title>
-				<text>La mejor selección de frutas y verduras.</text>
-				<precio>$22.00</precio>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1502868032459-aa78309e3503?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Diseño de personaje</title>
+				<text>Diseño de personaje para mascota o proyectos creativos.</text>
+				<precio>Costo por proyecto</precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1546085794-22da3636bc74?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Retrato</title>
+				<text>Retratos únicos para tí y tus seres queridos, piezas de arte con motivo de tus seres más cercanos.</text>
+				<precio>$500.00 por pieza tamaño carta</precio>
 			</item>
             <item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1494515426402-f1980ace7a9c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Lácteos</title>
-				<text>Productos lácteos variados como crema, queso, yogurth, etc.</text>
-				<precio>$57.00</precio>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1546010443-537ad3cebb4f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Murales</title>
+				<text>Creación de murales para tu hogar o negocio, piezas únicas que brindan personalidad a tu espacio.</text>
+				<precio>$800.00 metro cuadrado</precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1547664998-1666366d1258?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Postales</title>
+				<text>Postales personalizadas para tus eventos y momentos especiales.</text>
+				<precio>$200.00 media carta</precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1547878384-0398579ef9d3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Cuadros</title>
+				<text>Cuadros decorativos para tu casa o negocio.</text>
+				<precio>$500.00 por pieza</precio>
 			</item>
 			<item>
-				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1418669112725-fb499fb61127?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-				<title>Enlatados</title>
-				<text>El mejor surtido de enlatados y alimentos.</text>
-				<precio>$65.00</precio>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1520218750893-2be45c7cbf63?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Proyectos comerciales</title>
+				<text>Desarrollo de proyectos comerciales para tu marca o negocio.</text>
+				<precio>Costo por proyecto</precio>
 			</item>
         </row>
     </items>
-	<galeria>
-		<header>
-			<title>Ven a comer</title>
-			<text>Conoce nuestro espacio.</text>
-		</header>
-		<images>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1525575674331-70638740994c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533142146849-4620b8191531?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1421622548261-c45bfe178854?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-		</images>
-	</galeria>	
 	<cta>
-		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1513451732213-5775a1c40335?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
-        <title>¡Visítanos y compara!</title>
-		<text>Te invitamos a que nos conozcas, ¡no te arrepentirás!</text>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbeme</title>
+		<text>Comunícate conmigo y cuéntame tu proyecto.</text>
         <links>
             <link>
-                <description></description>
-                <url></url>
-                <target></target>
-                <text></text>
+                <description>Escríbeme</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíame un correo, te contestaré tan pronto como me sea posible.</text>
+            </link>
+			<link>
+                <description>Llámame</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Márcame a mi teléfono.</text>
+            </link>
+			<link>
+                <description>Descarga una muestra de mi trabajo</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Conoce mi obra.</text>
             </link>
         </links>
 	</cta>	
-	<contact>
+	<gallery>
+		<name>Mi obra</name>
 		<header>
-			<title>Contáctanos</title>
-			<text>Estamos para servirte.</text>
+			<title>Mi obra</title>
+			<text>Te presento algunos de mis proyectos.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="right" focus-ver="bottom">https://images.unsplash.com/photo-1491245338813-c6832976196e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1521249607530-ef23405c2d40?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1554368768-1740f909196b?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1551217624-a2de6db7e01d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1553733322-df0e2abad166?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1520882048095-f31b102229f1?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="botttom">https://images.unsplash.com/photo-1494488450280-5bb40b163f8f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1485458029194-00cff7de3ef7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1551315424-0e45312b4a5e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctame</title>
+			<text>Cuéntame de tu proyecto.</text>
 		</header>
         <communication>
             <title>Información de contacto</title>
-            <email>tucorreoelectronico@correo.com</email>
-		    <phonelabel>Llamanos al</phonelabel>
-            <phone>331 893 8770</phone>
+            <emaillabel>Escríbeme a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámame al</phonelabel>
+            <phone>5555555555</phone>
 		</communication>
         <location>
-            <title>Nuestra dirección</title>
-            <address>Canutillo 3010, Col. Fraccionamiento Revolución</address>
-	    	<map>https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d25669.182049294504!2d-103.39421939304526!3d20.62954019701506!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2894659df4166e8d!2sSax+Cafe!5e0!3m2!1ses!2smx!4v1526266097611" frameborder="0" style="border:0" allowfullscreen></map>
-            <hours>Abierto de lunes a domingo de 8 de la mañana a 8 de la noche.</hours>
+            <title>Mi dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours></hours>
 		</location>
         <social>
-            <title>Síguenos en nuestras redes</title>
-            <facebook>https://www.facebook.com/AbarrotesAntonio</facebook>
-		    <twitter>https://www.twitter.com/AbarrotesAntonio</twitter>
+            <title>Sígueme en mis redes</title>
+            <facebooklabel>Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
         </social> 
 	</contact>
 </content>

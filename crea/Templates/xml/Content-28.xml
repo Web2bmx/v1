@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<name>Inicio</name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1493185659424-16c86605dd4f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<logotipo orientation="square" background="rgba(255,255,255,0)">../Images/Logos/dojorevolucion.png</logotipo>
+		<title>Escuela de Karate Dojo Revolución</title>
+		<slogan>El mejor servicio</slogan>
+		<button>Ver más</button>
+	</hero>
+    <aboutus>
+		<name>Nosotros</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1529630218527-7df22fc2d4ee?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Acerca de nosotros</title>
+		<text>En &lt;span class="name"&gt;Dojo Revolución&lt;/span&gt; contamos con más de 15 años de tradición, ofrecemos clases para niños y adolescentes en níveles principiante y avanzado.</text>
+	</aboutus>
+	<items>
+		<name>Servicios</name>
+		<header>
+			<title>Nuestros servicios</title>
+			<text>Conoce nuestros diferentes servicios.</text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1529566193698-bc394165d541?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Grupo para principiantes</title>
+				<text>Tenemos un lugar para tí en nuestro grupo de principiantes, donde podrás aprender lo básico y mejorar tu técnica.</text>
+				<precio>$500.00 la semana, lunes, miércoles y viernes</precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1516684991026-4c3032a2b4fd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Clases infantiles</title>
+				<text>Clases infantiles para níveles intermedio y avanzado.</text>
+				<precio>$250.00 por clase</precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="right" focus-ver="middle">https://images.unsplash.com/photo-1529651228087-f0f728ea871e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Clases para adolescentes</title>
+				<text>Grupos para adolescentes en níveles intermedio y avanzado.</text>
+				<precio>$400.00 por clase</precio>
+			</item>
+        </row>
+	</items>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1544279762-d707b908fb99?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbenos</title>
+		<text>Comunícate con nosotros.</text>
+        <links>
+            <link>
+                <description>Escríbenos</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíanos un correo, te contestaremos en máximo un día hábil.</text>
+            </link>
+			<link>
+                <description>Llámanos</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Marca a nuestro teléfono y con gusto tomaremos tu llamada.</text>
+            </link>
+			<link>
+                <description>Descarga nuestro calendario de clases</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Tenemos un espacio para tí.</text>
+            </link>
+        </links>
+	</cta>		
+	<gallery>
+		<name>Instalaciones</name>
+		<header>
+			<title>Conoce nuestras instalaciones</title>
+			<text>Ven a conocer nuestras instalaciones sin ningún compromiso.</text>
+		</header>
+		<images>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1545327174-1c880e0fa7f3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1542937306-0a804f0ad7b7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+            <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1545058197-64626c80b9b6?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+            <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1542937307-e90d0cc07237?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+	    </images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctanos</title>
+			<text>Comunícate con nosotros.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <emaillabel>Escríbenos a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámanos al</phonelabel>
+            <phone>5555555555</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours>Nuestro horario de atención es de lunes a viernes de 9 de la mañana a 6 de la tarde.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebooklabel>Facebook: Nuestro Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter: @NuestroTwitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
+        </social> 
+	</contact>
+</content>

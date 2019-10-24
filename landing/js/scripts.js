@@ -35,7 +35,8 @@ $(document).ready(function() {
 		$(".ventana-login").dialog( "close" ); 
 	});
 
-	$(".entrar").click(function(){
+	$(".ventana-login form").submit(function(e){
+		e.preventDefault();
 		if($("#email").val().trim() == "" || !isEmail($("#email").val())){
 			$(".login-content .email.form-error").css("display","block");
 		} if(!$("#password").val().trim()){
@@ -45,34 +46,34 @@ $(document).ready(function() {
 				correo: $("#email").val().trim(),					
 				password: $("#password").val()
 			})
-				.done(function(response){
-					if(response.ok && response.paginas.length > 0){
-						// si solo tiene una pagina
-						if(response.paginas.length == 1) {
-							//mostrar usuarios
-							localStorage.setItem("web2b_template", response.paginas[0].info);
-							localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
-							localStorage.setItem("web2b_userId", response.userId);
-							localStorage.setItem("web2b_actualPage", response.paginas[0]);
-							window.location.href = "/crea";
-						} else {
-							// show pages and redirect on success
-							new_PageManager.setPaginasInfoFromExternal(response.paginas);
-							new_PageManager.fillModal(response.userId, () => {
-								window.location.href = "/crea";
-							});						
-						}
+			.done(function(response){
+				if(response.ok && response.paginas.length > 0){
+					// si solo tiene una pagina
+					if(response.paginas.length == 1) {
+						//mostrar usuarios
+						localStorage.setItem("web2b_template", decodeURIComponent(response.paginas[0].info));
+						localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
+						localStorage.setItem("web2b_userId", response.userId);
+						localStorage.setItem("web2b_actualPage", response.paginas[0]);
+						window.location.href = "/crea";
 					} else {
-						$(".login-content").fadeOut(100);
-						$(".login-error p").html(response.error);
-						$(".login-error").fadeIn(100);
+						// show pages and redirect on success
+						new_PageManager.setPaginasInfoFromExternal(response.paginas);
+						new_PageManager.fillModal(response.userId, () => {
+							window.location.href = "/crea";
+						});						
 					}
-				})
-				.fail(function(response){
+				} else {
+					$(".login-content").fadeOut(100);
+					$(".login-error p").html(response.error);
+					$(".login-error").fadeIn(100);
+				}
+			})
+			.fail(function(response){
 
-				}).always(function(){
-					$(".login-content .form-error").hide();
-				});
+			}).always(function(){
+				$(".login-content .form-error").hide();
+			});
 		}
 	});		
 

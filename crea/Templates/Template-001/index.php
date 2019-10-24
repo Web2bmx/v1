@@ -1,4 +1,7 @@
-<?php include_once("../php/TemplateMaster.php"); ?>
+<?php 
+	$template_name = 'Template-001';
+	include_once("../php/Master.php"); 
+?>
 <!doctype html>
 <html lang="en">
 	<head>
@@ -14,16 +17,16 @@
 			<link href="https://fonts.googleapis.com/css?family=Markazi+Text:400,700|Open+Sans:400,400i,700" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-			<!--<script src="js/scripts.js"></script>-->
+			<script src="js/scripts.js"></script>
 			<main>
-				<?php include_once("../php/TemplateHero1.php"); ?>
-				<?php include_once("../php/TemplateItems2.php"); ?>
-				<?php include_once("../php/TemplateAboutus1.php"); ?>
-				<?php include_once("../php/TemplateGaleria1.php"); ?>
-				<?php include_once("../php/TemplateCta1.php"); ?>
-				<?php include_once("../php/TemplateMap1.php"); ?>
-				<?php include_once("../php/TemplateFooter1.php"); ?>
-				<?php include_once("../php/TemplateDisclaimer1.php"); ?>
+				<?php include_once("../php/Components/Hero.php"); ?>
+				<?php include_once("../php/Components/Items.php"); ?>
+				<?php include_once("../php/Components/Aboutus.php"); ?>
+				<?php include_once("../php/Components/Gallery.php"); ?>
+				<?php include_once("../php/Components/CTA.php"); ?>
+				<?php include_once("../php/Components/Map.php"); ?>
+				<?php include_once("../php/Components/Footer.php"); ?>
+				<?php include_once("../php/Components/Disclaimer.php"); ?>
 			</main>
 			<div id="template-colors" style="display: none;">
 				<div class="template-color" id="color-orange">

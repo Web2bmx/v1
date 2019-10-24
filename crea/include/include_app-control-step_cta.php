@@ -8,6 +8,11 @@
 			<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" />
 		</div>			
 		<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
+		<div class="app-control-images">
+			<div id='app-control-images-cta'>
+				<div class="photo-container"></div>
+			</div>
+		</div>		
 		<input type="checkbox" id="inp-rem-content-cta" name="inp-rem-content-cta" class="remove-content" value="y" checked="checked" />
 		<label for="inp-rem-content-cta">Mostrar sección</label> 
 	</div>

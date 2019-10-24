@@ -21,18 +21,18 @@ export default function appManager() {
 					$("#control-view-nav>a:eq(0)").removeClass("disabled");
 				}
 				goToStep(_ctrl.current_step);
-				_ctrl.new_templateManager.updateContent();
+				_ctrl.new_templateManager.updateContent(e.currentTarget);
 			}
 		});
 		for (let i = 0; i < $("#app-control>.app-control-step").length - 1; i++) {
 			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
 		}
-		$(document).on("click", ".control-view-index-item", function () {
+		$(document).on("click", ".control-view-index-item", function (e) {
 			let $this = $(this);
 			let index = $(".control-view-index-item").index($this);
 			_ctrl.current_step = index;
 			goToStep(_ctrl.current_step);
-			_ctrl.new_templateManager.updateContent();
+			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
 		$(".control-view-nav-display-mark:eq(" + _ctrl.current_step + ")").addClass("control-view-nav-display-mark-active");
 		centerNav();
@@ -84,6 +84,11 @@ export default function appManager() {
 			});			
 			$(".ventana-login").dialog("open");
 		});
+		$('.logout').click((e) => {
+			e.preventDefault();
+			localStorage.clear();
+			location.href = "/";
+		});
 		$(".cerrar-ventana").click(function () {
 			$(".ventana-login").dialog("close");
 		});
@@ -101,14 +106,12 @@ export default function appManager() {
 				$("#switch-view").hide();
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
-				$("#app-control>.app-control-step").hide();
-				$("#app-control").addClass("view");
+				$("#app-control").addClass("view").find(">.app-control-step").hide();
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
 				$("#control-view-nav").show();
-				$("#app-control>.app-control-step:eq(" + _ctrl.current_step + ")").show();
-				$("#app-control").removeClass("view");
+				$("#app-control").removeClass("view").find(">.app-control-step:eq(" + _ctrl.current_step + ")").show();
 				centerNav();
 				topStepMargin();
 				$(window).resize(function () {
@@ -125,22 +128,41 @@ export default function appManager() {
 		});
 	};
 	var setAppControls = function () {
-		$(document.body).on("change", "[name^='inp-'][type!='text']", function () {
-			_ctrl.new_templateManager.updateContent();
+		$(document.body).on("change", "[name^='inp-'][type!='text']", function (e) {
+			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
-		$(document.body).on("keyup", "[name^='inp-'][type='text'],textarea[name^='inp-']", function (e) {
+		$(document.body).on("keyup", "[name^='inp-'][type='text'][id!='inp-contact-address'],textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
 			if (!$(e.currentTarget).attr('pattern') || _ctrl.new_validator.isValidinput($(e.currentTarget))) {
-				_ctrl.new_templateManager.updateContent();
+				_ctrl.new_templateManager.updateContent(e.currentTarget);
 				$(".form-error", $(e.currentTarget).parent()).hide();
 			} else {
 				$(".form-error", $(e.currentTarget).parent()).show();
 			}
 		});
+		$(document.body).on('click', '.img-thumb-cont', function() {
+			var $this = $(this);
+			$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.parent().addClass("thumb-selected");
+		});
+		$(document.body).on('click', '.img-thumb-overlay', function() {
+			var $this = $(this);
+			$this.closest(".img-thumb").removeClass("selected").find("input").trigger("click");
+		});	
+		$(document.body).on('click', '.img-thumb-cont-zoom', function() {
+			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
+			$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
+			console.log($("#single-modal>div"));
+			$("#single-modal").fadeIn();
+		});
 		$("#app-control").on("itemWasAdded", function () {
 			_ctrl.current_step = _ctrl.new_itemManager.getIndex();
 			goToStep(_ctrl.current_step);
 			centerNav();
+		});
+		$("body").on('DOMSubtreeModified', "#app-control-images-logo", function() {
+			$("#app-control-images-logo").parent().attr('style','');
 		});
 	};
 	var setAppSteps = function () {
@@ -150,7 +172,7 @@ export default function appManager() {
 			$("aside", this).addClass("thumb-selected");
 			$("[name^='inp-design']").removeAttr("checked");
 			$("input", this).attr("checked", "checked");
-			_ctrl.new_templateManager.loadTemplate();
+			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad);
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {
@@ -185,7 +207,7 @@ export default function appManager() {
 			if(firstTime) {
 				// Hide buttons when already a page is built
 				let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
-				if(actual_page.paquete !== null) {
+				if(actual_page && actual_page.paquete) {
 					manageFinalData(actual_page.fecha_fin, actual_page.paquete);
 				} else {
 					$(".created").hide();
@@ -252,11 +274,16 @@ export default function appManager() {
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left", parentW / 2 - $("#control-view-index").width() / 2);
 	};
+	var afterTemplateLoad = () => {
+		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
+	};
 	return {
 		init: init,
 		setAppNavigation: setAppNavigation,
 		setAppControls: setAppControls,
 		setAppSteps: setAppSteps,
-		topStepMargin: topStepMargin
+		topStepMargin: topStepMargin,
+		goToStep: goToStep,
+		afterTemplateLoad: afterTemplateLoad
 	};
 }

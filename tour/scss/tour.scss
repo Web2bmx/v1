@@ -357,6 +357,7 @@ button,
 }
 
 .ui-dialog .ui-dialog-content.dialog{ 
+    overflow: hidden;
     
     &.datos-existentes{
         max-height: none !important; 
@@ -447,7 +448,7 @@ textarea{
 
     input[type=radio]{
         position: absolute;
-        left: 5px;
+        left: 25px;
         top: 10px;        
     }
 
@@ -455,7 +456,7 @@ textarea{
         width: 100%;
         display: block;
         float: left;
-        padding: 8px 10px 8px 25px;
+        padding: 5px 10px 15px 10px;
         box-sizing: border-box;
         line-height: 18px;
         position: relative;
@@ -471,17 +472,29 @@ textarea{
         
         &:first-child{
             margin-top: 25px;
-
-            @include breakpoint($tablet){
-                margin-top: inherit;
-            }
         }
     }
 
-    > div{
-        width: 100%;
-        overflow: hidden;
-        padding-top: 10px;
+    .opciones {
+        margin-bottom: 100px;
+        max-height: 450px;
+        overflow-y: auto;
+
+        > div{
+            width: 100%;
+            overflow: hidden;
+            padding-top: 10px;      
+        } 
+
+        + div{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }          
+
     }
 
 }
@@ -526,10 +539,30 @@ textarea{
     height: auto;
     overflow: hidden;
     width: 100%;
+
+    >label {
+        cursor: pointer;
+
+        &:first-child {
+            width: 100%;
+        }
+
+        > input[type='radio'] {
+            display: none;
+        }            
+    }
+
 }
+
 .group_answers {
     display: block;
     height: auto;
     overflow: hidden;
     width: 100%;
+}
+.group_answers>label {
+    padding-left: 45px;
+    display: block;
+    font-size: .8em;
+    height: 52px;
 }

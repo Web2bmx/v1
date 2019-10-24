@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<name>Inicio</name>
+		<img orientation="square" focus-hor="center" focus-ver="bottom">https://images.unsplash.com/photo-1511198071870-cc57294d73b5?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080</img>
+		<logotipo orientation="" background=""></logotipo>
+		<title>Psicológa Pati Pérez</title>
+		<slogan>El mejor servicio</slogan>
+		<button>Ver más</button>
+	</hero>
+    <aboutus>
+		<name>Acerca de</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1495653797063-114787b77b23?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Quiénes somos</title>
+		<text>Cuento con 15 años de experiencia como Psicológa, te ofrezco servicio y atención personalizada y de acuerdo a tus necesidades.</text>
+	</aboutus>
+	<items>
+		<name>Servicios</name>
+		<header>
+			<title>Nuestros servicios</title>
+			<text>Los servicios que te ofrecemos incluyen:</text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Consulta</title>
+				<text>Sesiones periódicas de acuerdo con tus necesidades, ven a una primer cita de diagnóstico sin compromiso.</text>
+				<precio>$400.00 por sesión</precio>
+			</item>
+        </row>
+	</items>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1501621667575-af81f1f0bacc?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbeme</title>
+		<text>Comunícate con nosotros.</text>
+        <links>
+            <link>
+                <description>Escríbeme</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíame un correo, te contestaremos de inmediato.</text>
+            </link>
+			<link>
+                <description>Llámame</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Márcame a mi teléfono.</text>
+            </link>
+			<link>
+                <description>Descarga una muestras promociones</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Mira las promociones que tenemos para tí.</text>
+            </link>
+        </links>
+	</cta>	
+	<gallery>
+		<name>Galería</name>
+		<header>
+			<title>Galería</title>
+			<text>Nuestro compromiso es tu salud.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1459369510627-9efbee1e6051?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+            <img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1534950581589-28511e00ed67?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+            <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1475010040281-9c4f94108f91?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctame</title>
+			<text>Haz tu cita hoy.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <emaillabel>Escríbeme a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámame al</phonelabel>
+            <phone>5555555555</phone>
+		</communication>
+        <location>
+            <title>Mi dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours></hours>
+		</location>
+        <social>
+            <title>Sígueme en mis redes</title>
+            <facebooklabel>Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
+        </social> 
+	</contact>
+</content>

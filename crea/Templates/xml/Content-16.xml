@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<name>Inicio</name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1550087560-0d40289f48ea?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<logotipo orientation="" background=""></logotipo>
+		<title>Abarrotes don Abelardo</title>
+		<slogan>Los mejores precios</slogan>
+		<button>Ver más</button>
+	</hero>
+    <aboutus>
+		<name>Historia</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1553531889-56cc480ac5cb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Nuestra historia</title>
+		<text>La historia de &lt;span class="name"&gt;Abarrotes don Abelardo&lt;/span&gt; comienza en 1982 cuándo abrimos por primera vez nuestro negocio, ahora con más de 30 años de experiencia, seguimos teniendo los mejores precios para tí y para tu familia.</text>
+	</aboutus>
+	<items>
+		<name>Productos</name>
+		<header>
+			<title>Nuestros productos</title>
+			<text>Conoce nuestros líneas de productos.</text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Fruta y verdura</title>
+				<text>Fruta y verdura de la temporada, tenemos un amplio surtido en frutas y verduras.</text>
+				<precio></precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1506617420156-8e4536971650?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Lácteos</title>
+				<text>Una alta variedad en productos lácteos, frescura al alcance de tu mano.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1531422888678-9f098cb924ea?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Enlatados</title>
+				<text>Tenemos todas las marcas de alimentos enlatados, sino encuentras algo pregunta.</text>
+				<precio></precio>
+			</item>
+        </row>
+        <row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1522997169209-1629f3f89fdf?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Bebidas y refrescos</title>
+				<text>Bebidas, refrescos y licor para tus fiestas y eventos.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1528751014936-863e6e7a319c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Botanas</title>
+				<text>Te ofrecemos el más amplio surtido en botanas.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1529244927325-b3ef2247b9fb?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Artículos para fiestas</title>
+				<text>Tenemos desechables y artículos para fiesta y ocasiones especiales.</text>
+				<precio></precio>
+			</item>
+        </row>
+	</items>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1521566652839-697aa473761a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbenos</title>
+		<text>Comunícate con nosotros y pregunta sin compromiso.</text>
+        <links>
+            <link>
+                <description>Escríbenos</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíanos un correo, te contestaremos en máximo un día hábil.</text>
+            </link>
+			<link>
+                <description>Llámanos</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Marca a nuestro teléfono y con gusto tomaremos tu llamada.</text>
+            </link>
+			<link>
+                <description>Descarga nuestra lista de precios</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Comprueba que tenemos el mejor precio.</text>
+            </link>
+        </links>
+	</cta>	
+	<gallery>
+		<name>Promociones</name>
+		<header>
+			<title>Conoce nuestras promociones</title>
+			<text>Tenemos ofertas y promociones diseñadas para tí.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1516594798947-e65505dbb29d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1534723452862-4c874018d66d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="square" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1526470498-9ae73c665de8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1545601445-4d6a0a0565f0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1528733918455-5a59687cedf0?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1506617564039-2f3b650b7010?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1463490093487-b0ffe9b8e140?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		</images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctanos</title>
+			<text>Comunícate sin compromiso.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <emaillabel>Escríbenos a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámanos al</phonelabel>
+            <phone>5555555555</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours>Nuestro horario de atención es de lunes a viernes de 9 de la mañana a 6 de la tarde.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebooklabel>Facebook: Nuestro Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter: @NuestroTwitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
+        </social> 
+	</contact>
+</content>

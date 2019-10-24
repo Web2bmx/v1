@@ -14,7 +14,7 @@ export default function pageManager(){
       return new_Datamanager.getPagesFromDB().then((p) => {
             let templateId = new_Datamanager.getObjFromLocalStorage("web2b_templateId");
             paginas = p.paginas;
-            localStorage.setItem("web2b_pages", p.paginas);
+            localStorage.setItem("web2b_pages", JSON.stringify(p.paginas));
             p.paginas.forEach((value) => {
                 if(Number(value.idSitio) === templateId) {
                     localStorage.setItem("web2b_actualPage", JSON.stringify(value));
@@ -28,9 +28,10 @@ export default function pageManager(){
         let html = "";
         let actualPage = new_Datamanager.getObjFromLocalStorage("web2b_actualPage");
         for(let i=0, jd; i < paginas.length; i++){
-            if(paginas[i].idSitio === actualPage.idSitio) continue;
-            jd = JSON.parse(paginas[i].info);
+            // if(paginas[i].idSitio === actualPage.idSitio) continue;
+            jd = JSON.parse(decodeURIComponent(paginas[i].info));
             let name = jd.nombre || jd.selections.siteName.text || "no name";
+            if(paginas[i].idSitio === actualPage.idSitio) name = name + '(Proyecto actual)';
             html += 
             `<option class="inserted" value="${i}">
                 ${name}
@@ -38,7 +39,7 @@ export default function pageManager(){
         }						
         $(".proyectos-disponibles .inserted").remove();									
         $(".proyectos-disponibles").append(html);
-        $(".ventana-login > div").hide();
+        $(".ventana-login > form").hide();
         $(".login-paginas").show();
         $(".llevame").click({
             pags: paginas,
@@ -47,7 +48,7 @@ export default function pageManager(){
             let pagina = $(".proyectos-disponibles option:selected" ).val(),
                 d = e.data;
             if(pagina != ""){
-                localStorage.setItem("web2b_template", d.pags[pagina].info);
+                localStorage.setItem("web2b_template", decodeURIComponent(d.pags[pagina].info));
                 localStorage.setItem("web2b_templateId", d.pags[pagina].idSitio);
                 localStorage.setItem("web2b_userId", d.userId);
                 localStorage.setItem("web2b_pages", JSON.stringify(d.pags));

@@ -461,6 +461,14 @@ and open the template in the editor.
     Created on : Feb 10, 2018, 1:18:48 PM
     Author     : cmend
 */
+/*SHADES OF GRAY*/
+/*RED*/
+/*ORANGE*/
+/*PINK*/
+/*BLUE*/
+/*YELLOW*/
+/*GREEN*/
+/*PURPLE*/
 .stars, .stars1, .stars2 {
   display: block;
 }
@@ -1031,7 +1039,12 @@ button:active,
   }
 }
 
-.ui-dialog .ui-dialog-content.dialog.datos-existentes {
+.ui-dialog .ui-dialog-content.dialog {
+  overflow: hidden;
+}
+
+.ui-dialog .ui-dialog-content.dialog.datos-existentes,
+.ui-dialog .ui-dialog-content.dialog.proyecto-existente  {
   max-height: none !important;
   height: auto !important;
 }
@@ -1117,7 +1130,7 @@ textarea {
 
 .dialog input[type=radio] {
   position: absolute;
-  left: 5px;
+  left: 25px;
   top: 10px;
 }
 
@@ -1125,7 +1138,7 @@ textarea {
   width: 100%;
   display: block;
   float: left;
-  padding: 8px 10px 8px 25px;
+  padding: 5px 10px 15px 10px;
   box-sizing: border-box;
   line-height: 18px;
   position: relative;
@@ -1146,16 +1159,25 @@ textarea {
   margin-top: 25px;
 }
 
-@media (min-width: 660px) {
-  .dialog p:first-child {
-    margin-top: inherit;
-  }
+.dialog .opciones {
+  margin-bottom: 100px;
+  max-height: 450px;
+  overflow-y: auto;
 }
 
-.dialog > div {
+.dialog .opciones > div {
   width: 100%;
   overflow: hidden;
   padding-top: 10px;
+}
+
+.dialog .opciones + div {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .global-back {
@@ -1203,11 +1225,30 @@ textarea {
   width: 100%;
 }
 
+.cont_answers > label {
+  cursor: pointer;
+}
+
+.cont_answers > label:first-child {
+  width: 100%;
+}
+
+.cont_answers > label > input[type='radio'] {
+  display: none;
+}
+
 .group_answers {
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
+}
+
+.group_answers > label {
+  padding-left: 45px;
+  display: block;
+  font-size: .8em;
+  height: 52px;
 }
 
 /*# sourceMappingURL=tour.css.map */

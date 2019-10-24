@@ -9,12 +9,6 @@ $password = filter_input(INPUT_POST,'password');
 $info = filter_input(INPUT_POST,'info');
 $id = uniqid();
 
-if($correo == "contacto@web2b.mx"){
-    echo '{"ok": 1}';
-    http_response_code(200);
-    exit;
-}
-
 if (!empty($_POST) && $correo && $info && $password){
     $exists = false;
 
@@ -54,8 +48,9 @@ if (!empty($_POST) && $correo && $info && $password){
         http_response_code(200);
         exit;
     } else{
+        $idSitio = $dbh->insert_id;
         $paginas = getPages($dbh, $id);
-        echo '{"ok": 1, "userId": "' . $id . '","idSitio":"' . $dbh->insert_id . '","exists":"' . $exists . '", "paginas": ' . json_encode($paginas) .  '}';
+        echo '{"ok": 1, "userId": "' . $id . '","idSitio":"' . $idSitio . '","exists":"' . $exists . '", "paginas": ' . json_encode($paginas) .  '}';
         http_response_code(200);
     }                
 

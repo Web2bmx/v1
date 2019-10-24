@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<name>Inicio</name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1504222490345-c075b6008014?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080</img>
+		<logotipo orientation="landscape" background="rgba(3,3,3,1)">../Images/Logos/reparaciondeautosramirez.jpg</logotipo>
+		<title>Reparación de autos Ramírez</title>
+		<slogan>La mejor calidad</slogan>
+		<button>Ver más</button>
+	</hero>
+    <aboutus>
+		<name>Nosotros</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1533629663071-038eb2b96fcf?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Acerca de nosotros</title>
+		<text>&lt;span class="name"&gt;En Reparación de autos Ramírez&lt;/span&gt; tenemos 20 años trabajando con la mejor calidad y el mejor servicio, te ofrecemos asesoría y atención a tu medida, agenda una cita con nosotros para un diagnóstico sin compromiso.</text>
+	</aboutus>
+	<items>
+		<name>Servicios</name>
+		<header>
+			<title>Nuestros servicios</title>
+			<text>Conoce nuestros servicios, la mejor calidad a tu alcance.</text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="right" focus-ver="middle">https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Servicio</title>
+				<text>Contamos con los mejores especialistas para dar servicio a tu automovil ¡no te arriesgues!</text>
+				<precio></precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1502911679107-2b54f5c0292c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Alineación, balanceo y rotación de llantas</title>
+				<text>Le ofrecemos los servicios de alineación, balanceo y rotación de llantas así como el cambio de las mismas en caso de requerirlo.</text>
+				<precio></precio>
+			</item>
+            <item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1444947295498-07f60c19a4ff?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Revisión, limpieza y ajuste de frenos</title>
+				<text>Somos especialistas en diagnóstico, mantenimiento y reparación de frenos.</text>
+				<precio></precio>
+			</item>
+        </row>
+	</items>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1523676060187-f55189a71f5e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Escríbenos</title>
+		<text>Comunícate con nosotros y cotiza sin compromiso.</text>
+        <links>
+            <link>
+                <description>Escríbenos</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíanos un correo, te contestaremos en máximo un día hábil.</text>
+            </link>
+			<link>
+                <description>Llámanos</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Marca a nuestro teléfono y con gusto tomaremos tu llamada.</text>
+            </link>
+			<link>
+                <description>Descarga nuestro catálogo completo de servicios</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Descarga nuestro catálogo y conócenos mejor.</text>
+            </link>
+        </links>
+	</cta>	
+	<gallery>
+		<name>Nuestro trabajo</name>
+		<header>
+			<title>Nuestro trabajo</title>
+			<text>Te presentamos algunos de nuestros proyectos.</text>
+		</header>
+		<images>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1495737212524-0266a8c15b7f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1526903276501-625a526d752f?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1531782431322-a2607e9dc029?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1473621038790-b778b4750efe?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+	    </images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctanos</title>
+			<text>Cotiza sin compromiso.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <emaillabel>Escríbenos a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámanos al</phonelabel>
+            <phone>5555555555</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours>Nuestro horario de atención es de lunes a viernes de 9 de la mañana a 6 de la tarde.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebooklabel>Facebook: Nuestro Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter: @NuestroTwitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
+        </social> 
+	</contact>
+</content>

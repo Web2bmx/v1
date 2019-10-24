@@ -1,7 +1,16 @@
+/*VARIABLES*/
+/*VARIABLES*/
+/*MIXINS*/
+/*MIXINS*/
 /*BODY LEVEL*/
 @font-face {
   font-family: 'Modern Pics';
   src: url(/crea/Templates/Fonts/modernpics.otf);
+}
+
+@font-face {
+  font-family: 'Web Symbols';
+  src: url(/crea/Templates/Fonts/WebSymbols-Regular.otf);
 }
 
 body {
@@ -12,15 +21,15 @@ body {
 /*BODY LEVEL*/
 /*IMAGES CONTROL*/
 .img-L {
-  background-size: 100% auto;
+  background-size: cover;
 }
 
 .img-S {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .img-P {
-  background-size: auto 100%;
+  background-size: cover;
 }
 
 .img-TL {
@@ -59,7 +68,7 @@ body {
   background-position: bottom right;
 }
 
-.img-cont {
+.img {
   background-color: #cccccc;
   background-repeat: no-repeat;
 }
@@ -67,16 +76,11 @@ body {
 /*IMAGES CONTROL*/
 /*TEMPLATE LEVEL*/
 #template {
-  width: 100%;
-  height: auto;
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
   display: block;
+  height: auto;
   overflow: hidden;
-}
-
-#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
-  font-family: 'Markazi Text', serif;
+  width: 100%;
+  text-align: center;
 }
 
 #template a, #template a:link, #template a:visited, #template a:hover, #template a:active {
@@ -85,10 +89,10 @@ body {
 }
 
 #template main {
-  width: 100%;
-  height: auto;
   display: block;
+  height: auto;
   overflow: hidden;
+  width: 100%;
 }
 
 .font-icon {
@@ -96,86 +100,204 @@ body {
 }
 
 /*TEMPLATE LEVEL*/
-/*--TEMPLATE COMPONENTS--*/
-/*HERO*/
-#hero {
-  background-color: #666666;
+/*MAP*/
+#map, #map > .wrapper, #map > .wrapper > div {
   display: block;
-  height: 240px;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
-#hero .img-cont {
-  display: block;
-  height: 240px;
-  opacity: 1;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  z-index: 0;
-}
-
-#hero-content {
-  background-color: #444444;
-  color: black;
-  display: inline-block;
   height: auto;
-  margin: 2em auto;
   overflow: hidden;
-  padding: 1em 4%;
-  position: relative;
-  width: auto;
-  z-index: 1;
+  width: 100%;
 }
 
-#template.color-orange #hero-content {
-  background-color: #fa9900;
+#map > .wrapper > div > iframe {
+  display: block;
+  height: 600px;
+  overflow: hidden;
+  width: 100%;
 }
 
-#template.color-yellow #hero-content {
-  background-color: #fad400;
+/*MAP*/
+/*Colors*/
+/*TEMPLATE LEVEL*/
+#template {
+  font-family: 'Open Sans', sans-serif;
 }
 
-#template.color-green #hero-content {
-  background-color: #d4ff00;
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
+  font-family: 'Markazi Text', serif;
+  margin: 0 0 .4em 0;
 }
 
 #template h1 {
   font-size: 2em;
+  opacity: .8;
+}
+
+#template h2 {
+  font-size: 1.6em;
+  margin: 0;
+}
+
+#template h3 {
+  font-size: 1.4em;
+  margin: 0;
+  opacity: .8;
+}
+
+#template h4 {
+  font-size: 1.2em;
+}
+
+#template h5 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+#template h6 {
+  font-size: 1.2em;
+  font-weight: normal;
+  margin: 0;
+}
+
+#template p, #template ul, #template ol {
+  font-size: 1em;
+  margin: 0 0 .4em 0;
 }
 
 @media only screen and (min-width: 560px) {
-  #hero {
-    height: 600px;
-  }
-  #hero .img-cont {
-    height: 600px;
-  }
-  #hero-content {
-    margin: 8em auto 4em auto;
-  }
   #template h1 {
-    font-size: 3em;
+    font-size: 3.4em;
   }
+  #template h2 {
+    font-size: 2.2em;
+  }
+  #template h3 {
+    font-size: 1.8em;
+  }
+  #template h4 {
+    font-size: 1.2em;
+  }
+}
+
+/*TEMPLATE LEVEL*/
+/*--TEMPLATE COMPONENTS--*/
+/*HERO*/
+#hero {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  background-color: #666666;
+}
+
+#hero > .wrapper {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#hero div.img {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+#hero .wrapper-content {
+  background-color: #444444;
+  box-shadow: 0 10px 15px 10px rgba(0, 0, 0, 0.75);
+  color: black;
+  display: inline-block;
+  height: auto;
+  margin: 16em auto 2em auto;
+  overflow: hidden;
+  padding: 4em 4%;
+  position: relative;
+  width: 72%;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 760px) {
+  #hero .wrapper-content {
+    margin: 20em auto 8em auto;
+    padding: 4em 8%;
+    width: auto;
+  }
+}
+
+#template.color-orange #hero .wrapper-content {
+  background-color: #fa9900;
+  background: radial-gradient(circle, rgba(250, 153, 0, 0.7) 0%, #fa9900 100%);
+}
+
+#template.color-yellow #hero .wrapper-content {
+  background-color: #fad400;
+  background: radial-gradient(circle, rgba(250, 212, 0, 0.7) 0%, #fad400 100%);
+}
+
+#template.color-green #hero .wrapper-content {
+  background-color: #d4ff00;
+  background: radial-gradient(circle, rgba(212, 255, 0, 0.7) 0%, #d4ff00 100%);
+}
+
+#branding {
+  display: block;
+  height: 5em;
+  overflow: hidden;
+  width: 100%;
+}
+
+#branding > img {
+  display: block;
+  height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  width: auto;
+  max-height: 100px;
+}
+
+.seemore, .seemore > a {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.seemore span {
+  display: block;
 }
 
 /*HERO*/
 /*MENU*/
 /*ITEMS*/
-.items-cont {
+#items {
   display: block;
   height: auto;
   overflow: hidden;
-  padding: 1em 0 0 0;
   width: 100%;
 }
 
-.items-header {
-  margin: 0 auto;
+#items > .wrapper {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#items header {
+  margin: 1em auto;
   text-align: center;
-  padding: 0 4% 2em 4%;
+  padding: 0 4%;
   width: auto;
   max-width: 1180px;
 }
@@ -187,55 +309,64 @@ body {
 
 .item {
   display: block;
-  height: 320px;
+  height: 400px;
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
-.item .img-cont {
+.item .img {
   display: block;
-  height: 320px;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   width: 100%;
   z-index: 0;
 }
 
-.item .item-content {
-  bottom: 20px;
-  display: block;
-  left: 20%;
-  padding: 20px 5%;
+.item .wrapper-content {
+  bottom: 0;
+  box-shadow: 0 -10px 15px 10px rgba(0, 0, 0, 0.75);
+  left: 0;
+  padding: 1em 8%;
   position: absolute;
-  right: 20%;
-  top: 120px;
+  right: 0;
+  top: auto;
+  width: 84%;
   z-index: 1;
 }
 
-#template.color-orange .item .item-content {
+#template.color-orange .item .wrapper-content {
   background-color: #fa9900;
+  background: radial-gradient(circle, rgba(250, 153, 0, 0.7) 0%, #fa9900 100%);
 }
 
-#template.color-yellow .item .item-content {
+#template.color-yellow .item .wrapper-content {
   background-color: #fad400;
+  background: radial-gradient(circle, rgba(250, 212, 0, 0.7) 0%, #fad400 100%);
 }
 
-#template.color-green .item .item-content {
+#template.color-green .item .wrapper-content {
   background-color: #d4ff00;
+  background: radial-gradient(circle, rgba(212, 255, 0, 0.7) 0%, #d4ff00 100%);
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 760px) {
   .items {
     display: grid;
+    grid-gap: 0 4%;
+    margin: 2em auto;
+    width: 80%;
+    max-width: 1280px;
   }
   .items.one {
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
   }
   .items.two {
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
   }
   .items.three {
-    grid-template-columns: 33% 34% 33%;
+    grid-template-columns: auto auto auto;
   }
   .item {
     width: auto;
@@ -244,264 +375,318 @@ body {
 
 /*ITEMS*/
 /*ABOUT US*/
-.aboutus-cont {
+#aboutus {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
   background-color: #444444;
   color: black;
+}
+
+#aboutus > .wrapper {
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
-}
-
-#template.color-orange .aboutus-cont {
-  background-color: #fa9900;
-}
-
-#template.color-yellow .aboutus-cont {
-  background-color: #fad400;
-}
-
-#template.color-green .aboutus-cont {
-  background-color: #d4ff00;
-}
-
-.aboutus {
-  display: block;
-  height: auto;
-  overflow: hidden;
   position: relative;
 }
 
-.aboutus .img-cont {
-  float: left;
-  height: 200px;
-  overflow: hidden;
-  width: 100%;
-}
-
-.aboutus .aboutus-content {
-  float: right;
-  text-align: left;
-  overflow: hidden;
-  padding: 2em 10% 2em 10%;
-  width: auto;
-}
-
-@media only screen and (min-width: 560px) {
-  .aboutus .img-cont {
-    height: 300px;
-    width: 40%;
-  }
-  .aboutus .aboutus-content {
-    width: 40%;
-  }
-}
-
-/*ABOUT US*/
-/*GALERIA*/
-.galeria-cont {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  padding: 2em 0 0 0;
-  width: 100%;
-}
-
-.galeria-header {
-  margin: 0 auto;
-  text-align: center;
-  padding-bottom: 2em;
-  width: auto;
-  max-width: 1180px;
-}
-
-.galeria-header h3 {
-  font-variant: small-caps;
-}
-
-.galeria {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.galeria-img-cont {
-  width: 100%;
-}
-
-.galeria-img-cont img {
-  display: block;
-  height: 280px;
-  overflow: hidden;
-  width: 100%;
-}
-
-@media only screen and (min-width: 560px) {
-  .galeria-img-cont {
-    float: right;
-    margin: 0 2% 1em 2%;
-    width: 21%;
-  }
-}
-
-/*GALERIA*/
-/*CTA*/
-.cta-cont {
-  display: block;
-  height: 200px;
-  width: 100%;
-}
-
-.cta {
-  display: block;
-  height: 200px;
-  width: 100%;
-  overflow: visible;
-  position: relative;
-}
-
-.cta .img-cont {
-  display: block;
-  height: 200px;
+#aboutus .img {
+  bottom: 0;
+  left: 0;
+  opacity: .6;
   overflow: hidden;
   position: absolute;
+  right: 0;
+  top: 0;
   width: 100%;
   z-index: 0;
 }
 
-.cta .cta-content {
-  background-color: #444444;
-  color: black;
-  display: inline-block;
+#template #aboutus div.wrapper-content {
+  background-color: transparent;
   height: auto;
-  margin: 2em auto;
   overflow: hidden;
-  padding: 1em 4%;
+  padding: 8em 12% 8em 12%;
   position: relative;
+  margin: 0 auto;
   width: auto;
   z-index: 1;
 }
 
-#template.color-orange .cta .cta-content {
-  background-color: #fa9900;
-}
-
-#template.color-yellow .cta .cta-content {
-  background-color: #fad400;
-}
-
-#template.color-green .cta .cta-content {
-  background-color: #d4ff00;
-}
-
-.cta .cta-content h2 {
-  font-size: 2em;
-}
-
-@media only screen and (min-width: 560px) {
-  .cta-cont {
-    height: 350px;
-  }
-  .cta {
-    height: 350px;
-  }
-  .cta .img-cont {
-    height: 350px;
-  }
-  .cta .cta-content {
-    margin: 8em auto 4em auto;
+@media only screen and (min-width: 760px) {
+  #template #aboutus div.wrapper-content {
+    padding: 12em 12%;
   }
 }
 
-/*CTA*/
-/*MAP*/
-.map-container {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  width: 100%;
-}
-
-.map-container > iframe {
-  display: block;
-  height: 600px;
-  overflow: hidden;
-  width: 100%;
-}
-
-/*MAP*/
-/*FOOTER*/
-footer {
-  background-color: black;
-  color: white;
-  height: auto;
-  display: block;
-  overflow: hidden;
-  padding: 4em 0 2em 0;
-  width: 100%;
-}
-
-.footer-header {
+#template #aboutus div.wrapper-content p {
   margin: 0 auto;
-  text-align: center;
-  width: 92%;
-  max-width: 1086px;
+  width: auto;
+  max-width: 24em;
 }
 
-.footer-header h3 {
-  font-variant: small-caps;
-}
-
-.footer-header p {
-  color: #444444;
-}
-
-#template.color-orange .footer-header p {
+#template.color-orange #aboutus div.wrapper-content {
+  background-color: #0061fa;
+  background: radial-gradient(circle, rgba(0, 97, 250, 0.7) 0%, #0061fa 100%);
   color: #fa9900;
 }
 
-#template.color-yellow .footer-header p {
+#template.color-yellow #aboutus div.wrapper-content {
+  background-color: #840055;
+  background: radial-gradient(circle, rgba(132, 0, 85, 0.7) 0%, #840055 100%);
   color: #fad400;
 }
 
-#template.color-green .footer-header p {
-  color: #a4bc00;
+#template.color-green #aboutus div.wrapper-content {
+  background-color: #2b00ff;
+  background: radial-gradient(circle, rgba(43, 0, 255, 0.7) 0%, #2b00ff 100%);
+  color: #d4ff00;
 }
 
-.footer-contact-info {
-  margin: 0 auto;
-  text-align: left;
-  width: auto;
+/*ABOUT US*/
+/*GALERIA*/
+#gallery {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  padding: 2em 0 0 0;
+}
+
+#gallery > .wrapper {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
   max-width: 1440px;
+  margin: 0 auto;
 }
 
-.footer-column {
-  padding: 0 4%;
+#gallery header {
+  margin: 0 auto;
+  padding: 0 4% 2em 0;
   width: auto;
+  max-width: 1280px;
 }
 
-footer ul {
-  margin: 0;
+.gallery {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.gallery .img {
+  display: block;
+  height: 620px;
+  overflow: hidden;
+  width: 100%;
+  min-width: 220px;
+}
+
+.gallery_slider {
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 760px) {
+  .gallery {
+    width: 96%;
+  }
+  .gallery .img {
+    float: left;
+    margin: 0 2% 1em 2%;
+    width: 46%;
+  }
+  .gallery.gallery_slider .img {
+    display: block;
+    margin: 0 2% 1em 2%;
+    width: 96%;
+  }
+}
+
+.gallery-nav {
+  bottom: 0;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.gallery-nav > span {
+  background-color: white;
+  border-radius: 1em;
+  cursor: pointer;
+  font-size: 2em;
+  padding: .2em .4em;
+  top: 48%;
+  position: absolute;
+}
+
+.gallery-nav-prev {
+  left: 5%;
+}
+
+.gallery-nav-next {
+  right: 5%;
+}
+
+/*GALERIA*/
+/*CTA*/
+#cta {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  background-color: #444444;
+  color: black;
+}
+
+#cta > .wrapper {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#template.color-orange #cta {
+  background-color: #fa9900;
+}
+
+#template.color-yellow #cta {
+  background-color: #fad400;
+}
+
+#template.color-green #cta {
+  background-color: #d4ff00;
+}
+
+#cta .img {
+  bottom: 0;
+  height: auto;
+  left: 0;
+  opacity: .6;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+#template #cta div.wrapper-content {
+  background-color: transparent;
+  overflow: hidden;
+  position: relative;
+  margin: 16em 4% 8em 4%;
+  width: 92%;
+  z-index: 1;
+}
+
+#template #cta div.wrapper-content ul {
   list-style: none;
+  margin: 0;
   padding: 0;
 }
 
-@media only screen and (min-width: 560px) {
-  .footer-column {
-    float: left;
-    width: 25%;
+/*CTA*/
+/*FOOTER*/
+#template footer {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 2em 0 0 0;
+}
+
+#template footer header {
+  margin: 0 auto;
+  width: 60%;
+  max-width: 1086px;
+}
+
+#template footer header p {
+  color: #444444;
+  font-size: .8em;
+}
+
+#template.color-orange footer header p {
+  color: #fa9900;
+}
+
+#template.color-yellow footer header p {
+  color: #fad400;
+}
+
+#template.color-green footer header p {
+  color: #d4ff00;
+}
+
+#template footer section {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 760px) {
+  #template footer section {
+    width: 92%;
+    max-width: 1280px;
   }
+}
+
+#template footer .column {
+  margin: 1em auto 0 auto;
+  width: auto;
+}
+
+@media only screen and (min-width: 760px) {
+  #template footer .column {
+    float: left;
+    margin-left: 4%;
+    text-align: left;
+    width: 30.6%;
+  }
+  #template footer section div:first-child {
+    margin-left: 0;
+  }
+}
+
+#template footer .column ul {
+  font-size: .8em;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: auto;
+  max-width: 240px;
+}
+
+#template footer .column h6 {
+  margin: 0 auto;
+  width: auto;
+  max-width: 240px;
 }
 
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
-  background-color: black;
-  color: #444444;
   display: block;
   height: auto;
-  overflow: hiddden;
-  padding: 2em 0;
+  overflow: hidden;
   width: 100%;
+  background-color: black;
+  color: white;
 }
 
 #template.color-orange #disclaimer {
@@ -513,14 +698,22 @@ footer ul {
 }
 
 #template.color-green #disclaimer {
-  color: #a4bc00;
+  color: #d4ff00;
 }
 
 #disclaimer p {
-  margin: 0 auto;
-  width: 90%;
   font-size: .8em;
-  text-align: left;
+  margin: 0 auto;
+  padding: 2em 0;
+  width: 16em;
+}
+
+@media only screen and (min-width: 760px) {
+  #disclaimer p {
+    padding: .4em 4%;
+    text-align: left;
+    width: auto;
+  }
 }
 
 /*DISCLAIMER*/

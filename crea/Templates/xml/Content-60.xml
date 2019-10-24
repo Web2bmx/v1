@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+    <hero>
+		<name>Inicio</name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1534095256953-6249f0cd07f7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080</img>
+		<logotipo orientation="landscape" background="rgba (255,255,255,1)">../Images/Logos/heladeriahortencia.jpg</logotipo>
+		<title>Heladería Hortencia</title>
+		<slogan>El mejor sabor</slogan>
+		<button>Ver más</button>
+	</hero>
+    <aboutus>
+		<name>Nosotros</name>
+        <img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+		<title>Acerca de nosotros</title>
+		<text>En &lt;span class="name"&gt;Heladería Hortencia&lt;/span&gt; tenemos el mejor sabor de la región para tí, ven y disfruta de nuestros deliciosos helados. Nuestro placer es atenderte.</text>
+	</aboutus>
+	<items>
+		<name>Menú</name>
+		<header>
+			<title>Nuestro menú</title>
+			<text>Conoce nuestros platillos.</text>
+		</header>
+		<row>
+        	<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1422246478030-ac94dfdc1dae?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Barquillos</title>
+				<text>¡18 sabores diferentes de nieve para tí! Tenemos sabores de temporada y combinaciones únicas.</text>
+				<precio>$15.00, $20.00 y $25.00</precio>
+			</item>
+        </row>
+		<row>
+        	<item>
+				<img orientation="square" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1505394033641-40c6ad1178d7?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Paletas</title>
+				<text>Deliciosas paletas de fruta y de leche.</text>
+				<precio>$20.00 y $25.00</precio>
+			</item>
+			<item>
+				<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1514849302-984523450cf4?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+				<title>Bebidas frías</title>
+				<text>Frapuccinos y deliciosas bebidas servidas con nieve.</text>
+				<precio></precio>
+			</item>
+        </row>
+    </items>
+	<cta>
+		<name></name>
+		<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1484876586759-80555b97b22d?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+        <title>Contáctanos</title>
+		<text>Reserva con nosotros.</text>
+        <links>
+            <link>
+                <description>Escríbenos</description>
+                <url>mailto:escribenos@nuestrocorreo.com</url>
+                <target>_blank</target>
+                <text>Envíanos un correo, te contestaremos inmediatamente dentro de nuestros horarios de atención.</text>
+            </link>
+			<link>
+                <description>Llámanos</description>
+                <url>tel:5555555555</url>
+                <target>_blank</target>
+                <text>Marca a nuestro teléfono y con gusto tomaremos tu llamada.</text>
+            </link>
+			<link>
+                <description>Descarga nuestro menú</description>
+                <url>#</url>
+                <target>_blank</target>
+                <text>Descarga nuestro menú y mira nuestra carta de postres y bebidas.</text>
+            </link>
+        </links>
+	</cta>	
+	<gallery>
+		<name>Galería</name>
+		<header>
+			<title>Galería</title>
+			<text>Conoce nuestro espacio.</text>
+		</header>
+		<images>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1509745579717-28cc577a8ef8?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="bottom">https://images.unsplash.com/photo-1504855101244-34edfbd4b861?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1532678465554-94846274c297?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1469428946640-844b286ebf50?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1504050502639-3d3c3f6266cd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1541599188778-cdc73298e8fd?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1505075232616-5aea40f97c63?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="portrait" focus-hor="center" focus-ver="bottom">https://images.unsplash.com/photo-1524433759131-7ac85ce2fb7c?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+			<img orientation="landscape" focus-hor="center" focus-ver="middle">https://images.unsplash.com/photo-1507750549272-e58742b1df80?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjI2NzYxfQ&amp;s=f9460da838e62f3908b28814a74c74f3</img>
+         </images>
+	</gallery>		
+    <contact>
+		<header>
+			<title>Contáctanos</title>
+			<text>Nuestro placer es atenderte.</text>
+		</header>
+        <communication>
+            <title>Información de contacto</title>
+            <emaillabel>Escríbenos a</emaillabel>
+			<email>correoelectronico@correo.com</email>
+		    <phonelabel>Llámanos al</phonelabel>
+            <phone>5555555555</phone>
+		</communication>
+        <location>
+            <title>Nuestra dirección</title>
+            <address>Calle 1234, Colonia Nombre de la Colonia, C.P. 1111. Ciudad, Estado</address>
+	    	<map>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7525.015537023765!2d-99.14105422425605!3d19.433662615141593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f92d2e0e4dbd%3A0x905574a740c4893d!2sCentro+Hist%C3%B3rico+de+la+Cdad.+de+M%C3%A9xico%2C+Centro%2C+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses!2smx!4v1555449110446!5m2!1ses!2smx" width="600" height="450" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
+			</map>
+            <hours>Te atendemos las 24 horas del día los 365 días del año.</hours>
+		</location>
+        <social>
+            <title>Síguenos en nuestras redes</title>
+            <facebooklabel>Facebook: Nuestro Facebook</facebooklabel>
+			<facebook>https://www.facebook.com/nuestrofacebook</facebook>
+		    <twitterlabel>Twitter: @NuestroTwitter</twitterlabel>
+			<twitter>https://www.twitter.com/NuestroTwitter</twitter>
+        </social> 
+	</contact>
+</content>

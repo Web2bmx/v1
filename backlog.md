@@ -1,13 +1,17 @@
-#### Página de términos y condiciones [Antonio]
+* #### Página de términos y condiciones [Antonio]
 
-#### Generar logo [Carlos]
+* #### Agregar control para galería [Antonio - 80%]
 
-#### Contenido para los templates [Antonio]
-    * Que todos los templates tengan por default todas las secciones
-    * Que haya contenido para cada template de acuerdo a los segmentos de negocio
+* #### Verificar que todas las secciones pedan editarse en los controles
 
-#### Diferenciar contenido dummy de contenido capturado por el usuario [Antonio]
+#### Validar numero de secciones basado en la sesion [Carlos]
 
-#### Agregar control para galería [Antonio]
+#### Quitar productos [Carlos]
 
-#### Mejorar templates [Carlos - 20%]
+#### Botones para mostrar/ocultar logo o titulo [Carlos]
+
+#### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
+
+start session = primera visita
+resume session = refresh o visita posterior
+update session = cualquier boton que guarde

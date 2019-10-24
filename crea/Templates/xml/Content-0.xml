@@ -2,7 +2,7 @@
 <content>
     <hero>
 		<img orientation="landscape" focus-hor="center" focus-ver="middle">../Images/placeholder.png</img>
-		<logotipo>img/Logo-Template-001.png</logotipo>
+		<logotipo>{src}/img/Logo-Template-001.png</logotipo>
 		<name>El nombre de tu negocio</name>
 		<slogan>El eslógan de tu negocio</slogan>
 	</hero>
