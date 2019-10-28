@@ -2,15 +2,11 @@
 @import '../../node_modules/normalize-scss/sass/normalize/import-now';
 /*
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
-
+*/
 @import '../../scss/base/_variables';
 @import '../../scss/base/_colors';
 @import '../../scss/mixins/_border-radius';
-<<<<<<< HEAD
 @import '../../scss/mixins/_background-color-gradient-blue';
-=======
-
->>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 @import '../../scss/components/_stars';
 @import '../../scss/components/_buttons';
 @import '../../scss/components/_modal';
@@ -19,13 +15,6 @@
 @import '../../scss/components/login-paginas';
 @import '../../scss/partials/_errors';
 
-<<<<<<< HEAD
-=======
-@mixin background-color-gradient-blue {
-	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
-	background-color: $blue20;
-}
->>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 /*ELEMENTS*/
 html { font-size: 150%; }
 body {
@@ -533,8 +522,4 @@ footer {
 }
 .left {
 	float: left;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
