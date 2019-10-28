@@ -413,6 +413,7 @@ details {
   display: block;
 }
 
+<<<<<<< HEAD
 /*
      * Add the correct display in all browsers.
      */
@@ -455,6 +456,47 @@ template {
 /*
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 */
+=======
+/*
+     * Add the correct display in all browsers.
+     */
+summary {
+  display: list-item;
+}
+
+/*
+     * Add the correct display in IE 9-.
+     */
+menu {
+  display: block;
+}
+
+/* Scripting
+       ========================================================================== */
+/**
+     * Add the correct display in IE 9-.
+     */
+canvas {
+  display: inline-block;
+}
+
+/**
+     * Add the correct display in IE.
+     */
+template {
+  display: none;
+}
+
+/* Hidden
+       ========================================================================== */
+/**
+     * Add the correct display in IE 10-.
+     */
+[hidden] {
+  display: none;
+}
+
+>>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 /*SHADES OF GRAY*/
 /*RED*/
 /*ORANGE*/
@@ -537,6 +579,7 @@ template {
 button,
 .boton,
 a.boton,
+<<<<<<< HEAD
 a.boton:visited
 a.boton:link,
 input[type='button'],
@@ -584,6 +627,22 @@ a.cta:link:active,
 input.cta:hover,
 input.cta:active {
   background-color: #ff52b4;
+=======
+a.boton:visited a.boton:link,
+input[type='button'] {
+  padding: 10px;
+  background-color: #cc2880;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+>>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 }
 
 .ui-dialog-titlebar {
@@ -591,6 +650,7 @@ input.cta:active {
 }
 
 .ui-widget.ui-widget-content {
+<<<<<<< HEAD
   -moz-border-radius: 0.25rem;
   -ms-border-radius: 0.25rem;
   -webkit-border-radius: 0.25rem;
@@ -607,10 +667,47 @@ input.cta:active {
 
 .ui-widget-overlay {
   background: black;
+=======
+  border: none;
+  padding: 0;
+  border-radius: 10px;
+  max-width: 100%;
+}
+
+@media (min-width: 660px) {
+  .ui-widget.ui-widget-content {
+    max-width: 640px;
+    max-height: 760px;
+  }
+}
+
+.ui-dialog .ui-dialog-content.dialog {
+  max-height: 760px;
+  max-width: 100% !important;
+  z-index: 1003;
+}
+
+@media (min-width: 660px) {
+  .ui-dialog .ui-dialog-content.dialog {
+    max-width: 640px !important;
+    max-height: 760px !important;
+  }
+}
+
+@media (min-width: 1040px) {
+  .ui-dialog .ui-dialog-content.dialog {
+    max-height: 600px !important;
+  }
+}
+
+.ui-widget-overlay {
+  background: #000;
+>>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
   opacity: .5;
   z-index: 1002;
 }
 
+<<<<<<< HEAD
 .ventana-login {
   margin: 1rem;
 }
@@ -662,6 +759,59 @@ input.cta:active {
   border-radius: .25rem;
   margin-bottom: .5rem;
   overflow: hidden;
+=======
+.modal-login, .ventana-login {
+  margin: 20px;
+}
+
+.modal-login *, .ventana-login * {
+  box-sizing: border-box;
+}
+
+.modal-login img, .ventana-login img {
+  display: block;
+  height: auto;
+  margin: 1em auto;
+  max-width: 50%;
+  width: 10em;
+}
+
+.modal-login input, .ventana-login input, .modal-login button, .ventana-login button {
+  width: 100%;
+}
+
+.modal-login p, .ventana-login p {
+  text-align: center;
+  font-size: 18px;
+  color: #000;
+  margin: 25px 0;
+}
+
+.modal-login [type="button"], .ventana-login [type="button"] {
+  font-size: 23px;
+  padding: 15px;
+}
+
+.modal-login .x-close, .ventana-login .x-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #CCC;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.modal-login .x-close:hover, .ventana-login .x-close:hover {
+  color: #999;
+}
+
+.inputWihIcons {
+  border-radius: 10px;
+  background-color: #EEE;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border: 1px solid #DDD;
+>>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 }
 
 .inputWihIcons * {
@@ -671,6 +821,7 @@ input.cta:active {
 .inputWihIcons [type="text"],
 .inputWihIcons [type="email"],
 .inputWihIcons [type="password"] {
+<<<<<<< HEAD
   background-color: white;
   border: none;
   float: left;
@@ -691,6 +842,28 @@ input.cta:active {
   padding: .5rem;
   text-align: center;
   width: 2.5rem;
+=======
+  padding: 15px;
+  background-color: white;
+  float: left;
+  width: calc(100% - 62px);
+  border: none;
+  outline: none;
+  height: 55px;
+}
+
+.inputWihIcons i {
+  line-height: 1.15;
+  font-size: 22px;
+  padding: 15px;
+  display: block;
+  float: left;
+  color: #999;
+  width: 62px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  height: 55px;
+>>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 }
 
 .form-error {
@@ -1301,6 +1474,7 @@ footer nav li {
 
 /*MODAL*/
 .ventana-login, .ventana-login p {
+<<<<<<< HEAD
   color: #b4b4b4;
   text-align: left;
 }
@@ -1318,6 +1492,22 @@ footer nav li {
   text-align: left;
 }
 
+=======
+  color: #aaa;
+  text-align: left;
+}
+
+.ventana-login select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.ventana-login .form-error {
+  text-align: left;
+}
+
+>>>>>>> 9fb16aca7f59e19b0e50ea4c20d1af2c6b5b6bb5
 .right {
   float: right;
 }

@@ -452,15 +452,6 @@ template {
   display: none;
 }
 
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Feb 10, 2018, 1:18:48 PM
-    Author     : cmend
-*/
 /*SHADES OF GRAY*/
 /*RED*/
 /*ORANGE*/
@@ -1043,7 +1034,7 @@ button:active,
   overflow: hidden;
 }
 
-.ui-dialog .ui-dialog-content.dialog.datos-existentes {
+.ui-dialog .ui-dialog-content.dialog.datos-existentes, .ui-dialog .ui-dialog-content.dialog.proyecto-existente {
   max-height: none !important;
   height: auto !important;
 }

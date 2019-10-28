@@ -356,7 +356,8 @@ button,
 .ui-dialog .ui-dialog-content.dialog{ 
     overflow: hidden;
     
-    &.datos-existentes{
+    &.datos-existentes,
+    &.proyecto-existente {
         max-height: none !important; 
         height: auto !important; 
     }
