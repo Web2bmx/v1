@@ -1,22 +1,20 @@
-/*
+
 @import '../../node_modules/normalize-scss/sass/normalize/import-now';
+/*
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
 */
 @import '../../scss/base/_variables';
 @import '../../scss/base/_colors';
 @import '../../scss/mixins/_border-radius';
-/*
+@import '../../scss/mixins/_background-color-gradient-blue';
 @import '../../scss/components/_stars';
 @import '../../scss/components/_buttons';
 @import '../../scss/components/_modal';
 @import '../../scss/components/_inputFields';
+
 @import '../../scss/components/login-paginas';
 @import '../../scss/partials/_errors';
-*/
-@mixin background-color-gradient-blue {
-	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
-	background-color: $blue20;
-}
+
 /*ELEMENTS*/
 html { font-size: 150%; }
 body {
@@ -56,26 +54,6 @@ a {
 @media screen and (min-width: $desktop) { .container {
 	margin: 0 2rem;
 }}
-a.cta, input.cta {
-	@include border-radius(.25rem);
-	background-color: $pink60;
-	border: none;
-	color: $white;
-	cursor: pointer;
-	display: block;
-	font-weight: bold;
-	height: auto;
-	margin: 0;
-	overflow: hidden;
-	padding: .5rem;
-	text-align: center;
-	text-transform: uppercase;
-	transition: background-color 0.3s ease;
-	width: auto;
-	&:hover, &:active {
-		background-color: $pink80;
-	}
-}
 .graph {
 	background-repeat: no-repeat;
 	display: block;
@@ -536,11 +514,8 @@ footer {
 	text-align: center;
 }
 /*MODAL*/
-/*
 .ventana-login {
-	@extend .modal-login;
 	@include login-paginas;
-
 }
 .right {
 	float: right;
@@ -548,4 +523,3 @@ footer {
 .left {
 	float: left;
 }
-*/

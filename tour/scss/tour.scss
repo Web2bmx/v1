@@ -1,16 +1,12 @@
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
-
 @import "../../scss/base/_variables";
 @import "../../scss/base/_colors";
-
 @import "../../scss/mixins/_border-radius";
 @import "../../scss/mixins/_border-radius";
-
 @import "../../scss/components/_stars";
 @import "../../scss/components/_buttons";
 @import "../../scss/components/_modal"; 
-
 @import "../../scss/partials/_errors";
 
 .background,
@@ -24,6 +20,7 @@
 
 body{
     background-color: #273654;
+    background-color: red;
     position: relative;
     margin: 0;
     padding: 0;
