@@ -536,19 +536,51 @@ button,
 a.boton,
 a.boton:visited
 a.boton:link,
-input[type='button'] {
-  padding: 10px;
-  background-color: #cc2880;
-  color: #FFFFFF;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
+input[type='button'],
+a.cta,
+a.cta:visited,
+a.cta:link,
+input.cta {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #ff0593;
   border: none;
-  outline: none;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+  width: auto;
+}
+
+button:hover, button:active,
+.boton:hover,
+.boton:active,
+a.boton:hover,
+a.boton:active,
+a.boton:visited
+a.boton:link:hover,
+a.boton:visited
+a.boton:link:active,
+input[type='button']:hover,
+input[type='button']:active,
+a.cta:hover,
+a.cta:active,
+a.cta:visited:hover,
+a.cta:visited:active,
+a.cta:link:hover,
+a.cta:link:active,
+input.cta:hover,
+input.cta:active {
+  background-color: #ff52b4;
 }
 
 .ui-dialog-titlebar {
@@ -556,46 +588,28 @@ input[type='button'] {
 }
 
 .ui-widget.ui-widget-content {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
   border: none;
-  padding: 0;
-  border-radius: 10px;
   max-width: 100%;
 }
 
-@media (min-width: 660px) {
-  .ui-widget.ui-widget-content {
-    max-width: 640px;
-    max-height: 760px;
-  }
-}
-
 .ui-dialog .ui-dialog-content.dialog {
-  max-height: 760px;
-  max-width: 100% !important;
+  max-height: 30rem;
+  max-width: 100%;
   z-index: 1003;
 }
 
-@media (min-width: 660px) {
-  .ui-dialog .ui-dialog-content.dialog {
-    max-width: 640px !important;
-    max-height: 760px !important;
-  }
-}
-
-@media (min-width: 1040px) {
-  .ui-dialog .ui-dialog-content.dialog {
-    max-height: 600px !important;
-  }
-}
-
 .ui-widget-overlay {
-  background: #000;
+  background: black;
   opacity: .5;
   z-index: 1002;
 }
 
 .modal-login {
-  margin: 20px;
+  margin: 1rem;
 }
 
 .modal-login * {
@@ -605,9 +619,9 @@ input[type='button'] {
 .modal-login img {
   display: block;
   height: auto;
-  margin: 1em auto;
+  margin: 1rem auto;
+  width: 6rem;
   max-width: 50%;
-  width: 10em;
 }
 
 .modal-login input, .modal-login button {
@@ -615,28 +629,28 @@ input[type='button'] {
 }
 
 .modal-login p {
+  color: black;
+  margin: 1rem 0;
   text-align: center;
-  font-size: 18px;
-  color: #000;
-  margin: 25px 0;
 }
 
 .modal-login [type="button"] {
-  font-size: 23px;
-  padding: 15px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  padding: .5rem;
 }
 
 .modal-login .x-close {
+  color: #b4b4b4;
+  cursor: pointer;
+  font-size: 1rem;
   position: absolute;
   right: 0;
   top: 0;
-  color: #CCC;
-  font-size: 22px;
-  cursor: pointer;
 }
 
 .modal-login .x-close:hover {
-  color: #999;
+  color: #3c3c3c;
 }
 
 .form-error {
@@ -689,9 +703,6 @@ img {
 .main-container > div > div {
   width: 320px;
   margin: 0 auto;
-  /*        @include breakpoint($ext-desktop){
-            width: $ext-desktop;
-        }*/
 }
 
 @media (min-width: 660px) {
@@ -703,6 +714,12 @@ img {
 @media (min-width: 1040px) {
   .main-container > div > div {
     width: 1040px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main-container > div > div {
+    width: 1280px;
   }
 }
 

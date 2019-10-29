@@ -20,7 +20,6 @@
 
 body{
     background-color: #273654;
-    background-color: red;
     position: relative;
     margin: 0;
     padding: 0;
@@ -61,7 +60,7 @@ img{
         }
 /*        @include breakpoint($ext-desktop){
             width: $ext-desktop;
-        }*/
+        }
         
         > div{
             overflow: hidden;

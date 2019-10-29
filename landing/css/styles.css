@@ -537,8 +537,7 @@ template {
 button,
 .boton,
 a.boton,
-a.boton:visited
-a.boton:link,
+a.boton:visited a.boton:link,
 input[type='button'],
 a.cta,
 a.cta:visited,
@@ -569,10 +568,8 @@ button:hover, button:active,
 .boton:active,
 a.boton:hover,
 a.boton:active,
-a.boton:visited
-a.boton:link:hover,
-a.boton:visited
-a.boton:link:active,
+a.boton:visited a.boton:link:hover,
+a.boton:visited a.boton:link:active,
 input[type='button']:hover,
 input[type='button']:active,
 a.cta:hover,
@@ -591,10 +588,10 @@ input.cta:active {
 }
 
 .ui-widget.ui-widget-content {
-  -moz-border-radius: 0.25rem;
-  -ms-border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  border-radius: 0.25rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
   border: none;
   max-width: 100%;
 }
@@ -611,15 +608,15 @@ input.cta:active {
   z-index: 1002;
 }
 
-.ventana-login {
+.modal-login, .ventana-login {
   margin: 1rem;
 }
 
-.ventana-login * {
+.modal-login *, .ventana-login * {
   box-sizing: border-box;
 }
 
-.ventana-login img {
+.modal-login img, .ventana-login img {
   display: block;
   height: auto;
   margin: 1rem auto;
@@ -627,23 +624,23 @@ input.cta:active {
   max-width: 50%;
 }
 
-.ventana-login input, .ventana-login button {
+.modal-login input, .ventana-login input, .modal-login button, .ventana-login button {
   width: 100%;
 }
 
-.ventana-login p {
+.modal-login p, .ventana-login p {
   color: black;
   margin: 1rem 0;
   text-align: center;
 }
 
-.ventana-login [type="button"] {
+.modal-login [type="button"], .ventana-login [type="button"] {
   font-size: 1rem;
   line-height: 1.25rem;
   padding: .5rem;
 }
 
-.ventana-login .x-close {
+.modal-login .x-close, .ventana-login .x-close {
   color: #b4b4b4;
   cursor: pointer;
   font-size: 1rem;
@@ -652,7 +649,7 @@ input.cta:active {
   top: 0;
 }
 
-.ventana-login .x-close:hover {
+.modal-login .x-close:hover, .ventana-login .x-close:hover {
   color: #3c3c3c;
 }
 

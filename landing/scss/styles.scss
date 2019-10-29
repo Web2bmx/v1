@@ -516,6 +516,7 @@ footer {
 /*MODAL*/
 .ventana-login {
 	@include login-paginas;
+	@extend .modal-login;
 }
 .right {
 	float: right;

@@ -95,8 +95,6 @@ export default function tour() {
     
             if(Object.keys(tplData).length == 0) {
                     tplData.respuestas = {};                
-            } else{
-                tplData = JSON.parse(tplData);
             }
     
             if($(selector + " textarea").length != 0){
@@ -271,7 +269,6 @@ export default function tour() {
             }                        
         }
         else {
-            tplData = JSON.parse(tplData);
             if(Object.keys(tplData.respuestas).length > 0){
                 $(".datos-existentes").dialog( "open" ); 
             }            

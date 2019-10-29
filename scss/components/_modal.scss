@@ -2,7 +2,7 @@
 	display: none;
 }
 .ui-widget.ui-widget-content {
-	@include border-radius(.25rem);
+	@include border-radius(.5rem);
 	border: none;
 	max-width: 100%;
 }
@@ -16,7 +16,7 @@
 	opacity: .5;
 	z-index: 1002;
 }
-.ventana-login{
+.modal-login{
 	margin: 1rem;
 	*{
 		box-sizing: border-box;
