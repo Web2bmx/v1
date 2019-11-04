@@ -62,12 +62,12 @@
                     </div>
                     <div class="datos-existentes dialog" style="display: none">
                         <p>Hemos detectado que ya estabas realizando el tour.<br /> Quieres seguir donde estabas o iniciar de nuevo?</p>                         
-                        <button class="iniciar">Iniciar de nuevo</button><button class="continuar res">Continuar donde estaba</button>                                
+                        <button class="iniciar back">Iniciar de nuevo</button><button class="continuar res">Continuar donde estaba</button>                                
                     </div>
                     <div class="proyecto-existente dialog" style="display: none">
                         <p>Hemos detectado que ya tienes un proyecto abierto.<br /> 
                         Quieres seguir editandolo o iniciar un nuevo proyecto?</p>                         
-                        <button class="iniciar-proyecto">Iniciar otro Proyecto</button>
+                        <button class="iniciar-proyecto back">Iniciar otro Proyecto</button>
                         <button class="continuar-proyecto res">Continuar Editando</button>                                
                     </div>                                                                   
                 </div>
