@@ -1,3 +1,4 @@
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 .ui-dialog-titlebar {
 	display: none;
 }
@@ -5,11 +6,25 @@
 	@include border-radius(.5rem);
 	border: none;
 	max-width: 100%;
+	@include breakpoint($tablet){
+		max-width: 640px;
+		max-height: 760px;
+	}
+
 }
 .ui-dialog .ui-dialog-content.dialog {
 	max-height: 30rem;
 	max-width: 100%;
 	z-index: 1003;
+	@include breakpoint($tablet){
+		max-width: 640px !important;
+		max-height: 760px !important;
+	}
+
+	@include breakpoint($desktop){ 
+		max-height: 600px !important;
+	}	
+	
 }
 .ui-widget-overlay {
     background: $black;

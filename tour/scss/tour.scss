@@ -1,100 +1,178 @@
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
-@import "../../scss/base/_variables";
-@import "../../scss/base/_colors";
-@import "../../scss/mixins/_border-radius";
-@import "../../scss/mixins/_border-radius";
-@import "../../scss/components/_stars";
-@import "../../scss/components/_buttons";
-@import "../../scss/components/_modal"; 
-@import "../../scss/partials/_errors";
-
-.background,
-.main-container{
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
+/**/
+/*@import '../../scss/base/_variables';*/
+$ext-desktop: 1560px;
+$desktop: 1040px;
+$tablet: 660px;
+$mobile: 320px;
+/*@import '../../scss/base/_colors';*/
+/*SHADES OF GRAY*/
+$white: rgba(255,255,255,1);
+$gray20: rgba(60,60,60,1);
+$gray40: rgba(120,120,120,1);
+$gray60: rgba(180,180,180,1);
+$gray80: rgba(240,240,240,1);
+$black: rgba(0,0,0,1);
+/*RED*/
+$red40 : rgba(179,0,30,1);
+$red60 : rgba(255,5,47,1);
+/*ORANGE*/
+$orange40 : rgba(204,60,24,1);
+$orange60 : rgba(255,76,31,1);
+$orange80 : rgba(255,106,69,1);
+/*PINK*/
+$pink20 : rgba(102,10,63,1);
+$pink40 : rgba(155,3,90,1);
+$pink60 :rgba(255,5,147,1);
+$pink80 : rgba(255,82,180,1);
+$pink100 : rgba(242,174,216,1);
+/*BLUE*/
+$blue20 : rgba(15,22,38,1);
+$blue40 : rgba(23,33,51,1);
+$blue60 : rgba(5,93,255,1);
+$blue80 : rgba(80,145,255,1);
+$blue100 : rgba(176,199,242,1);
+/*YELLOW*/
+$yellow40 : rgba(204,181,24,1);
+$yellow60 : rgba(255,226,31,1);
+$yellow80 : rgba(255,250,69,1);
+/*GREEN*/
+$green40 : rgba(8,179,0,1);
+$green60 : rgba(17,255,5,1);
+/*PURPLE*/
+$purple60 : rgba(178,5,255,1);
+/*@import '../../scss/mixins/_border-radius';*/
+@mixin border-radius($radius) {
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius; 
 }
-
-body{
-    background-color: #273654;
-    position: relative;
+/*@import '../../scss/mixins/_background-color-gradient-blue';*/
+@mixin background-color-gradient-blue {
+	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
+	background-color: $blue20;
+}
+@import '../../scss/components/_stars';
+/*@import '../../scss/components/_buttons';*/
+ /*Botones*/
+ button,
+ .boton,
+ a.boton,
+ a.boton:visited
+ a.boton:link,
+ input[type='button'],
+ a.cta,
+ a.cta:visited,
+ a.cta:link, 
+ input.cta {
+	@include border-radius(.25rem);
+	background-color: $pink60;
+	border: none;
+	color: $white;
+	cursor: pointer;
+	display: block;
+	font-weight: bold;
+	height: auto;
+	margin: 0;
+	overflow: hidden;
+	padding: .5rem;
+	text-align: center;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease;
+	width: auto;
+	&:hover, &:active {
+		background-color: $pink80;
+	}
+}
+@import "../../scss/components/_modal"; 
+/*@import '../../scss/partials/_errors';*/
+.form-error{
+	color: $red60;
+	display: none;
+	font-size: .75rem;
+	margin: .5rem 0;
+	text-align: center;
+}
+/**/
+/*ELEMENTS*/
+html { font-size: 150%; }
+body {
+    background-color: $blue20;
+    color: $gray80;
+	font-family: 'Open Sans', sans-serif;
+	font-size: .75rem;
+	line-height: 1rem;
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
-
-    
-    > div{
-            overflow: hidden;
-    }    
-    
+    position: relative;
 }
-
+div, ul, ol, nav, p {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+a {
+	color: $gray80;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	&:link, &:visited {
+		color: $gray60;
+	}
+	&:hover, &:active {
+		color: $white;
+	}
+}
 .right{
 	float: right;
 }
-
 .left{
 	float: left;
 }
-
 img{
 	position: relative;
 }
-
-.main-container > div{
-    position: absolute;
+/**/
+.background,
+.main-container {
+    height: 100%;
+	left: 0;
+    position: fixed;
+    top: 0;
+	width: 100%;
+}
+.main-container > div {
     bottom: 0;
+    position: absolute;
     width: 100%;
     > div{
-        width: $mobile;
         margin: 0 auto;
-        
-        @include breakpoint($tablet){
-            width: $tablet;
-        }
-        @include breakpoint($desktop){
-            width: $desktop;
-        }
-/*        @include breakpoint($ext-desktop){
-            width: $ext-desktop;
-        }
-        
+        width: 100%;
         > div{
             overflow: hidden;
         }
-                
     }    
 }
-
 button,
 .boton{
-    padding: 20px 10px; 
-    
     &.init{
         top: 50%;
         left: 50%;
-        margin-left: -50px;  
+        margin-left: -4rem;  
         position: fixed;
     }
-    
     &.res{ 
         float: right;
     }
-
     &.back{ 
         float: left;
     }    
-
     &:active{
-        background-color: #60A9DE;
+        background-color: $blue80;
     }
-    
 }
-
-.space-man{
+.space-man {
     width: 90px;
     z-index: 4;
     position: absolute;
@@ -110,6 +188,10 @@ button,
     
     @include breakpoint($desktop){
         margin-left: 194px;
+        bottom: 80px;
+    }   
+    @include breakpoint($ext-desktop){
+        margin-left: 604px;
         bottom: 80px;
     }   
     
@@ -157,6 +239,11 @@ button,
         left: 50%;
         bottom: -48px;
         margin-left: 122px;
+    }      
+    @include breakpoint($ext-desktop){
+        left: 50%;
+        bottom: -48px;
+        margin-left: 472px;
     }      
     
     img{

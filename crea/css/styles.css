@@ -465,18 +465,38 @@ template {
 }
 
 .ui-widget.ui-widget-content {
-  -moz-border-radius: 0.25rem;
-  -ms-border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  border-radius: 0.25rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
   border: none;
   max-width: 100%;
+}
+
+@media (min-width: 660px) {
+  .ui-widget.ui-widget-content {
+    max-width: 640px;
+    max-height: 760px;
+  }
 }
 
 .ui-dialog .ui-dialog-content.dialog {
   max-height: 30rem;
   max-width: 100%;
   z-index: 1003;
+}
+
+@media (min-width: 660px) {
+  .ui-dialog .ui-dialog-content.dialog {
+    max-width: 640px !important;
+    max-height: 760px !important;
+  }
+}
+
+@media (min-width: 1040px) {
+  .ui-dialog .ui-dialog-content.dialog {
+    max-height: 600px !important;
+  }
 }
 
 .ui-widget-overlay {
@@ -983,7 +1003,7 @@ a {
 
 /**/
 #app-control {
-  background-color: #3c3c3c;
+  background-color: #f0f0f0;
   bottom: 0;
   color: #b4b4b4;
   display: block;
@@ -1509,9 +1529,9 @@ a {
 
 .file-upload input[type=submit], .file-upload button {
   background-color: white;
-  border: 1px solid #3c3c3c;
+  border: 1px solid #f0f0f0;
   border-radius: 5px;
-  color: #f0f0f0;
+  color: #3c3c3c;
   cursor: pointer;
   float: right;
   font-weight: normal;
@@ -1526,7 +1546,7 @@ a {
 }
 
 .file-upload p {
-  background-color: #3c3c3c;
+  background-color: #f0f0f0;
   margin: 0;
   overflow: hidden;
   padding: 20px;

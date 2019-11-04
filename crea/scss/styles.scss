@@ -282,7 +282,7 @@ a {
 }
 /**/
 #app-control {
-	background-color: $gray20;
+	background-color: $gray80;
 	bottom: 0;
 	color: $gray60;
 	display: block;
@@ -703,9 +703,9 @@ a {
 	}
 	input[type=submit],button{
 		background-color: $white;
-		border: 1px solid $gray20;
+		border: 1px solid $gray80;
 		border-radius: 5px;
-		color: $gray80;
+		color: $gray20;
 		cursor: pointer;
 		float: right;
 		font-weight: normal;	
@@ -717,7 +717,7 @@ a {
 		margin: 20px;
 	}
 	p{
-		background-color: $gray20;
+		background-color: $gray80;
 		margin: 0;
 		overflow: hidden;
 		padding: 20px;
