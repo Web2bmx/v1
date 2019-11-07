@@ -188,6 +188,16 @@ export default function appManager() {
 		$("#ok_btn").click(function () {
 			$(".alert.dialog").dialog("close");
 		});
+		$(".toogle").click(function (e) {
+			e.preventDefault();
+			if($(this).closest("aside").hasClass("inactive")) {
+				$(this).closest("aside").removeClass("inactive");
+				$("i", this).removeClass("fa-toggle-off").addClass("fa-toggle-on");
+			} else {
+				$(this).closest("aside").addClass("inactive");
+				$("i", this).removeClass("fa-toggle-on").addClass("fa-toggle-off");				
+			}
+		});
 	};
 	var closeAppCover = function () {
 		$("#app-cover").hide();
