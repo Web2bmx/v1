@@ -8,10 +8,15 @@
 
 #### Quitar productos [Carlos]
 
-#### Botones para mostrar/ocultar logo o titulo [Carlos]
+#### Botones para mostrar/ocultar logo o titulo [Carlos 50%]
 
 #### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
 
 start session = primera visita
 resume session = refresh o visita posterior
 update session = cualquier boton que guarde
+
+
+FOR PROD:
+#### Update PayPal refrence
+#### Get PROD version for unsplash
