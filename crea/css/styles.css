@@ -1374,17 +1374,11 @@ a {
 #app-control-nav #control-view-nav {
   float: left;
   height: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   padding-top: 10px;
   position: relative;
   overflow: hidden;
   width: 100%;
-}
-
-@media (min-width: 660px) {
-  #app-control-nav #control-view-nav {
-    margin-bottom: 0;
-  }
 }
 
 #app-control-nav #control-view-nav a {
@@ -1646,11 +1640,11 @@ a {
 
 #app-control .app-control-step .brand-name h4 {
   text-align: left;
-  color: #3c3c3c;
+  color: #9b035a;
 }
 
 #app-control .app-control-step .brand-name h4 a {
-  color: black;
+  color: #660a3f;
   font-size: 25px;
   margin-left: 15px;
   position: relative;
@@ -1671,6 +1665,31 @@ a {
 
 #app-control .app-control-step .brand-name aside.inactive {
   opacity: .3;
+}
+
+#app-control .app-control-step .brand-name .form-error {
+  text-align: left;
+  font-size: 14px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+
+@media (min-width: 1040px) {
+  #app-control .app-control-step .brand-name .form-error {
+    top: -15px;
+  }
+}
+
+#app-control .app-control-step .brand-name > div {
+  position: relative;
+  padding-top: 10px;
+}
+
+@media (min-width: 660px) {
+  #app-control .app-control-step .brand-name > div {
+    padding-top: 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
