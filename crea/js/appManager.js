@@ -188,6 +188,23 @@ export default function appManager() {
 		$("#ok_btn").click(function () {
 			$(".alert.dialog").dialog("close");
 		});
+		$(".brand-name .toogle").click(function (e) {
+			e.preventDefault();
+			if($(this).closest("aside").hasClass("inactive")) {
+				$(this).closest("aside").removeClass("inactive");
+				$("input, button", $(this).closest("aside")).removeAttr("disabled");			
+				$("i", this).removeClass("fa-toggle-off").addClass("fa-toggle-on");
+			} else if ($(".brand-name aside.inactive").length > 0) {
+				$(".brand-name .form-error").fadeIn(500);
+				setTimeout(() => {
+					$(".brand-name .form-error").fadeOut(500);
+				}, 5000);
+			} else {
+				$(this).closest("aside").addClass("inactive");
+				$("input, button", $(this).closest("aside")).attr("disabled",true);
+				$("i", this).removeClass("fa-toggle-on").addClass("fa-toggle-off");				
+			}
+		});
 	};
 	var closeAppCover = function () {
 		$("#app-cover").hide();

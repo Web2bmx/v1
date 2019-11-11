@@ -1339,7 +1339,7 @@ a {
 }
 
 #app-control h2.middle {
-  margin: 10px 0 30px 0;
+  margin: 10px 0;
 }
 
 #app-control .product h2.children {
@@ -1374,17 +1374,11 @@ a {
 #app-control-nav #control-view-nav {
   float: left;
   height: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   padding-top: 10px;
   position: relative;
   overflow: hidden;
   width: 100%;
-}
-
-@media (min-width: 660px) {
-  #app-control-nav #control-view-nav {
-    margin-bottom: 0;
-  }
 }
 
 #app-control-nav #control-view-nav a {
@@ -1553,9 +1547,28 @@ a {
 }
 
 .file-upload p span {
+  width: 100%;
   display: inline-block;
   margin-top: 10px;
-  width: calc(100% - 145px);
+  color: #787878;
+}
+
+@media (min-width: 1040px) {
+  .file-upload p span {
+    width: 70%;
+  }
+}
+
+.file-upload button {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (min-width: 1040px) {
+  .file-upload button {
+    width: auto;
+    margin-top: 0;
+  }
 }
 
 .form-label-note {
@@ -1623,6 +1636,60 @@ a {
   margin-top: 0px;
   position: relative;
   top: -8px;
+}
+
+#app-control .app-control-step .brand-name h4 {
+  text-align: left;
+  color: #9b035a;
+}
+
+#app-control .app-control-step .brand-name h4 a {
+  color: #660a3f;
+  font-size: 25px;
+  margin-left: 15px;
+  position: relative;
+  top: 4px;
+}
+
+#app-control .app-control-step .brand-name h2 span {
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+  color: #b4b4b4;
+}
+
+#app-control .app-control-step .brand-name form, #app-control .app-control-step .brand-name p {
+  margin: 0;
+  padding: 0;
+}
+
+#app-control .app-control-step .brand-name aside.inactive {
+  opacity: .3;
+}
+
+#app-control .app-control-step .brand-name .form-error {
+  text-align: left;
+  font-size: 14px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+}
+
+@media (min-width: 1040px) {
+  #app-control .app-control-step .brand-name .form-error {
+    top: -15px;
+  }
+}
+
+#app-control .app-control-step .brand-name > div {
+  position: relative;
+  padding-top: 10px;
+}
+
+@media (min-width: 660px) {
+  #app-control .app-control-step .brand-name > div {
+    padding-top: 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

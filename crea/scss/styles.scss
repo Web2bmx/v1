@@ -343,7 +343,7 @@ a {
 					right: 0;
 					top: 100px;
 					width: 200px;				
-				}
+				} 
 			}
 			.form-error{
 				text-align: left;
@@ -546,7 +546,7 @@ a {
 		font-size: 30px;
 		margin-bottom: 50px;
 		&.middle{
-			margin: 10px 0 30px 0;
+			margin: 10px 0;
 		}
 	}
 	.product h2{
@@ -579,14 +579,11 @@ a {
 	#control-view-nav {
 		float: left;
 		height: 50px;
-		margin-bottom: 30px;
+		margin-bottom: 0;
 		padding-top: 10px;
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		@include breakpoint($tablet){
-			margin-bottom: 0;
-		}
 		a {
 			bottom: 0;
 			margin: .4em;
@@ -721,11 +718,26 @@ a {
 		margin: 0;
 		overflow: hidden;
 		padding: 20px;
+
 		span{
+			width: 100%;
 			display: inline-block;
 			margin-top: 10px;
-			width: calc(100% - 145px);
+			color: $gray40;
+
+			@include breakpoint($desktop){
+				width: 70%;
+			}
 		}
+	}
+	button {
+		width: 100%;
+		margin-top: 20px;
+
+		@include breakpoint($desktop){
+			width: auto;
+			margin-top: 0;
+		}		
 	}
 }
 .form-label-note{
@@ -780,4 +792,58 @@ a {
     margin-top: 0px;
     position: relative;
     top: -8px;	
+}
+
+#app-control .app-control-step .brand-name {
+
+	h4{
+		text-align: left;
+		color: $pink40;
+
+		a {
+			color: $pink20;
+			font-size: 25px;
+			margin-left: 15px;
+			position: relative;
+			top: 4px;
+		}
+	}
+
+	h2 span {
+		font-size: 16px;
+		display: block;
+		margin-top: 10px;
+		color: $gray60;		
+	}
+
+	form, p {
+		margin: 0;
+		padding: 0;
+	}
+
+	aside.inactive {
+		opacity: .3;
+	}
+
+	.form-error{
+		text-align: left;
+		font-size: 14px;
+		position: absolute;
+		top: -30px;
+		left: 0;
+
+		@include breakpoint($desktop){
+			top: -15px;
+		}
+	}
+
+	> div {
+		position: relative;
+		padding-top: 10px;
+
+		@include breakpoint($tablet){
+			padding-top: 0;
+		}		
+	}
+
 }
