@@ -21,44 +21,25 @@
                 <div>
                     <div>
                         <div class="planet_red">
-                            <img src="images/red_planet.png">
+                            <img src="images/item_planet_red.svg" />
                             <div class="fin dialog">
-                                <aside><img alt="" src="images/rocket.png"/><img src="images/rocket_fire.png"/></aside>
+                                <aside><img alt="" src="images/item_rocket.svg" /><img src="images/item_rocket_tail.svg" /></aside>
                                 <h2>La misión ha sido un éxito</h2>
                                 <p>Ahora que ya tenemos tu informacion <br />Elaboraremos la mejor <br />Página web para ti</p>
                                 <a href="/crea" class="boton">Quiero ver mi página web</a>                                    
                             </div>                                  
                         </div>                        
-                        <div class="nave"><img src="images/nave.png"></div>
+                        <div class="nave"><img src="images/item_ship.svg"></div>
                     </div>                    
-                    <div class="tercero">
-                        <div class="tercera-pregunta dialog">
-                            <?= muestra_pregunta(3);?>
-                            <div>
-                                <button class="back" data-back="3">Regresar</button><button class="res_3 res">Siguiente</button>
-                            </div>
-                        </div>
-                        <img class="earth" src="images/earth.png" /><img class="satellite right" src="images/satellite.png" />
-                    </div>
-                    <div class="segundo">
-                        <aside class="right comets"><img alt="" src="images/comet_1.png" /><img alt="" src="images/comet_2.png" /></aside>                        
-                        <img class="planet-blue" alt="" src="images/planet_blue.png">
-                        <div class="segunda-pregunta dialog">
-                            <?= muestra_pregunta(2);?>
-                            <div><button class="back" data-back="2">Regresar</button><button class="res_2 res">Siguiente</button></div>
-                        </div>
-                    </div>
-                    <div class="sun">
-                        <img alt="" src="images/sun.png" />
-                        <div class="primera-pregunta dialog" style="display: none">
-                            <?= muestra_pregunta(1);?>
-                            <div><!-- <button class="back" data-back="0">Regresar</button>--><button class="res_1 res">Siguiente</button></div>
-                        </div>                            
-                    </div>
+                    <?php include "include/include_questions.php"; ?>
                     <div class="inicio">
                         <button class="init">Iniciar tour</button>
-                        <aside class="rocket"><img alt="" src="images/rocket.png" /><img src="images/rocket_fire.png" /></aside>                                  
-                        <img class="right space-man" src="images/spaceman.png" /><img class="right luna" alt="luna" src="images/land.png" />
+                        <aside class="rocket">
+                            <img alt="" src="images/item_rocket.svg" />
+                            <img src="images/item_rocket_tail.svg" />
+                        </aside>                                  
+                        <img class="right space-man" src="images/item_spaceman.svg" />
+                        <img class="right land" alt="land" src="images/item_land.svg" />
                     </div>
                     <div class="datos-existentes dialog" style="display: none">
                         <p>Hemos detectado que ya estabas realizando el tour.<br /> Quieres seguir donde estabas o iniciar de nuevo?</p>                         

@@ -100,6 +100,7 @@ $purple60 : rgba(178,5,255,1);
 html { font-size: 150%; }
 body {
     background-color: $blue20;
+    @include background-color-gradient-blue;
     color: $gray80;
 	font-family: 'Open Sans', sans-serif;
 	font-size: .75rem;
@@ -159,7 +160,7 @@ button,
     &.init{
         top: 50%;
         left: 50%;
-        margin-left: -4rem;  
+        margin-left: -3rem;  
         position: fixed;
     }
     &.res{ 
@@ -173,83 +174,74 @@ button,
     }
 }
 .space-man {
-    width: 90px;
-    z-index: 4;
-    position: absolute;
-    bottom: 49px;
+    bottom: 2rem;
     left: 50%;
-    margin-left: -52px;
-    
+    margin-left: -2rem;
+    position: absolute;
+    width: 4rem;
+    z-index: 4;
     @include breakpoint($tablet){
-        width: auto;
-        bottom: 104px;
-        margin-left: -88px;
+        bottom: 4rem;
+        margin-left: -3rem;
     }     
     
     @include breakpoint($desktop){
-        margin-left: 194px;
-        bottom: 80px;
+        bottom: 3rem;
+        margin-left: 6.5rem;
+        width: 6rem;
     }   
     @include breakpoint($ext-desktop){
-        margin-left: 604px;
-        bottom: 80px;
-    }   
-    
+        margin-left: 8.5rem;
+    }  
 }
 
 .inicio{
     height: 185px;
-    
     @include breakpoint($tablet){
         height: 348px;
     }     
     
 }
-
-.luna{
+.land{
     width: 100%;
-    margin-top: 133px;
-    
+    margin-top: 5.5rem;
     @include breakpoint($tablet){
-        margin-top: 240px;
+        margin-top: 9.5rem;
     }
-    
     @include breakpoint($desktop){
-        width: auto;
-        margin-top: 266px;
-    }        
+        margin-top: 11rem;
+        margin-left: 40%;
+        width: 60%;
+    }
+    @include breakpoint($ext-desktop){
+        margin-top: 9rem;
+    }
 }
 
 .rocket{
     position: absolute;
-    bottom: -35px;
+    bottom: -2.5rem;
     left: 50%;
     z-index: 0;
-    width: 100px;
-    margin-left: -105px;
-      
-    @include breakpoint($tablet){
-        width: 150px;
-        left: 50%;
-        margin-left: -162px;
-        bottom: -23px;
-    }         
+    width: 4rem;
+    margin-left: -4.5rem;
     
+    @include breakpoint($tablet){
+        left: 50%;
+        margin-left: -6rem;
+        bottom: 0;
+    }         
     @include breakpoint($desktop){
         left: 50%;
-        bottom: -48px;
-        margin-left: 122px;
+        bottom: -3.5rem;
+        margin-left: 3rem;
+        width: 6rem;
     }      
     @include breakpoint($ext-desktop){
-        left: 50%;
-        bottom: -48px;
-        margin-left: 472px;
-    }      
-    
-    img{
-       width: 100%; 
+        bottom: -2rem;
+        margin-left: 4rem;
+        
     }
-       
 }
 
 .sun{

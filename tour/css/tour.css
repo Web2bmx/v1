@@ -696,6 +696,8 @@ html {
 
 body {
   background-color: #0f1626;
+  background: -webkit-radial-gradient(center, ellipse cover, #055dff 0%, #172133 100%);
+  background-color: #0f1626;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-size: .75rem;
@@ -766,7 +768,7 @@ button.init,
 .boton.init {
   top: 50%;
   left: 50%;
-  margin-left: -4rem;
+  margin-left: -3rem;
   position: fixed;
 }
 
@@ -786,33 +788,32 @@ button:active,
 }
 
 .space-man {
-  width: 90px;
-  z-index: 4;
-  position: absolute;
-  bottom: 49px;
+  bottom: 2rem;
   left: 50%;
-  margin-left: -52px;
+  margin-left: -2rem;
+  position: absolute;
+  width: 4rem;
+  z-index: 4;
 }
 
 @media (min-width: 660px) {
   .space-man {
-    width: auto;
-    bottom: 104px;
-    margin-left: -88px;
+    bottom: 4rem;
+    margin-left: -3rem;
   }
 }
 
 @media (min-width: 1040px) {
   .space-man {
-    margin-left: 194px;
-    bottom: 80px;
+    bottom: 3rem;
+    margin-left: 6.5rem;
+    width: 6rem;
   }
 }
 
 @media (min-width: 1560px) {
   .space-man {
-    margin-left: 604px;
-    bottom: 80px;
+    margin-left: 8.5rem;
   }
 }
 
@@ -826,60 +827,62 @@ button:active,
   }
 }
 
-.luna {
+.land {
   width: 100%;
-  margin-top: 133px;
+  margin-top: 5.5rem;
 }
 
 @media (min-width: 660px) {
-  .luna {
-    margin-top: 240px;
+  .land {
+    margin-top: 9.5rem;
   }
 }
 
 @media (min-width: 1040px) {
-  .luna {
-    width: auto;
-    margin-top: 266px;
+  .land {
+    margin-top: 11rem;
+    margin-left: 40%;
+    width: 60%;
+  }
+}
+
+@media (min-width: 1560px) {
+  .land {
+    margin-top: 9rem;
   }
 }
 
 .rocket {
   position: absolute;
-  bottom: -35px;
+  bottom: -2.5rem;
   left: 50%;
   z-index: 0;
-  width: 100px;
-  margin-left: -105px;
+  width: 4rem;
+  margin-left: -4.5rem;
 }
 
 @media (min-width: 660px) {
   .rocket {
-    width: 150px;
     left: 50%;
-    margin-left: -162px;
-    bottom: -23px;
+    margin-left: -6rem;
+    bottom: 0;
   }
 }
 
 @media (min-width: 1040px) {
   .rocket {
     left: 50%;
-    bottom: -48px;
-    margin-left: 122px;
+    bottom: -3.5rem;
+    margin-left: 3rem;
+    width: 6rem;
   }
 }
 
 @media (min-width: 1560px) {
   .rocket {
-    left: 50%;
-    bottom: -48px;
-    margin-left: 472px;
+    bottom: -2rem;
+    margin-left: 4rem;
   }
-}
-
-.rocket img {
-  width: 100%;
 }
 
 .sun {
