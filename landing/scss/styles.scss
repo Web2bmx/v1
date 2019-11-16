@@ -699,9 +699,5 @@ footer {
 	@include login-paginas;
 	@extend .modal-login;
 }
-.right {
-	float: right;
-}
-.left {
-	float: left;
-}
+.right { float: right; }
+.left { float: left; }

@@ -16,7 +16,7 @@
     <body>
         <a href="/" class="global-back"><i class="fas fa-arrow-circle-left"></i><span>Regresar</span></a>        
     	<div class="background"><div class='stars'></div><div class='stars2'></div><div class='stars3'></div></div>
-        <div class="main-container">
+        <main>
             <div>
                 <div>
                     <div>
@@ -53,7 +53,7 @@
                     </div>                                                                   
                 </div>
             </div>
-    	</div>      
+        </main>      
             <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>        
             <script>
                 if (!window.jQuery) {

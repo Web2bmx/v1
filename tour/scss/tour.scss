@@ -125,25 +125,19 @@ a {
 		color: $white;
 	}
 }
-.right{
-	float: right;
-}
-.left{
-	float: left;
-}
-img{
-	position: relative;
-}
+.right{ float: right; }
+.left{ float: left; }
+img{ position: relative; }
 /**/
 .background,
-.main-container {
+main {
     height: 100%;
 	left: 0;
     position: fixed;
     top: 0;
 	width: 100%;
 }
-.main-container > div {
+main > div {
     bottom: 0;
     position: absolute;
     width: 100%;
@@ -217,7 +211,6 @@ button,
         margin-top: 9rem;
     }
 }
-
 .rocket{
     position: absolute;
     bottom: -2.5rem;
@@ -243,162 +236,74 @@ button,
         
     }
 }
-
 .sun{
-    margin-top: 1000px;
-    margin-bottom: 1000px; 
+    margin-top: 40rem;
+    margin-bottom: 40rem; 
     text-align: right;
-    
     img{
-        width: 150px;
-        
+        width: 7rem;
         @include breakpoint($tablet){
-            width: 250px;
+            width: 10rem;
         }          
         
     }     
     
 }
-
 .segundo{
-    margin-top: 1500px;    
+    margin-top: 60rem;    
 }
-
 .planet-blue{
-    width: 200px;
+    width: 8rem;
     
     @include breakpoint($tablet){
-        width: 350px;
+        width: 30rem;
     }      
-    
     @include breakpoint($desktop){
-        width: 450px;
+        width: 18rem;
     }      
-    
 }
-
 .comets{
     position: relative;
-    right: -70px;    
-    
+    right: -3rem;    
     img:first-child{
-        width: 100px; 
-        
+        width: 4rem; 
         @include breakpoint($tablet){
-            width: 200px;
+            width: 8rem;
         }
-        
     }
             
     img + img{
         position: relative;
-        left: -70px;
-        top: 18px;
-        width: 80px;
+        left: -3rem;
+        top: 1rem;
+        width: 3.5rem;
        
         @include breakpoint($tablet){
-            width: 160px;
-            top: 3px;
-            left: -130px;    
+            width: 7rem;
+            top: .5rem;
+            left: -5rem;    
         }                 
         
     }     
-    
 }
-
 .earth{
-    width: 200px;
-    left: 30px;    
-    
+    width: 8rem;
+    left: 1rem;    
     @include breakpoint($tablet){
-        width: 400px;
+        width: 32rem;
     }    
 }
-
 .satellite{
-    width: 100px;
+    width: 4rem;
     display: block;
     
     @include breakpoint($tablet){
-        width: 200px;
+        width: 8rem;
     }       
-    
     @include breakpoint($desktop){
-        margin-right: 385px;
+        margin-right: 32rem;
     }       
-    
 }
-
-.full_moon{
-    text-align: right;
-    
-    img{
-        width: 230px;
-        
-        @include breakpoint($tablet){
-            width: 400px;
-        }          
-    }
-    
-}
-
-.stars_img{
-    text-align: left;
-    margin: 1000px 0;
-
-    img{
-        width: 100px;
-        margin-left: 100px; 
-        
-        @include breakpoint($tablet){
-            width: 200px;
-        }        
-        
-    }
-    
-}
-
-.cometas{
-    margin-bottom: 50px;
-    text-align: right;
-
-    img{
-        width: 130px;
-    }
-    
-}
-
-.cinco{
-    margin-bottom: 1300px;
-}
-
-.alien{
-    position: absolute;
-    left: 0;
-    img{
-        width: 70px;
-        @include breakpoint($tablet){
-            width: 150px;
-        }     
-    }
-}
-
-.planet_ring{
-    text-align: center;
-    margin: 1300px 0px;
-    
-        img{width: 240px;
-        
-            @include breakpoint($tablet){
-                width: 350px;
-            }      
-            
-            @include breakpoint($desktop){
-                width: 400px;
-            }                 
-        }
-}
-
 .nave{
     margin: 1000px 50px;
     text-align: right;
@@ -418,19 +323,18 @@ button,
 }
 
 .planet_red{    
-    img{width: 300px;
-    
+    img{
+        width: 12rem;
         @include breakpoint($tablet){
-            width: 400px;
+            width: 16rem;
         }         
         
         @include breakpoint($desktop){
-            width: 500px;
+            width: 20rem;
         }          
         
     }
 }
-
 .ui-dialog .ui-dialog-content.dialog{ 
     overflow: hidden;
     
@@ -439,127 +343,92 @@ button,
         max-height: none !important; 
         height: auto !important; 
     }
-    
-    &.primera-pregunta{
-        background: url(../images/p1_bg.jpg) bottom center no-repeat;
-    }    
-    
-    &.segunda-pregunta{
-        background: url(../images/p2_bg.jpg) bottom center no-repeat;
-    } 
-
-    &.tercera-pregunta{
-        background: url(../images/p3_bg.jpg) bottom center no-repeat;
-    } 
-
-    &.cuarta-pregunta{
-        background: url(../images/p4_bg.jpg) bottom center no-repeat;
-    } 
-
-    &.quinta-pregunta{
-        background: url(../images/p5_bg.jpg) bottom center no-repeat;
-    } 
-    
-    &.sexta-pregunta{
-        background: url(../images/p1_bg.jpg) bottom center no-repeat;
-    }    
-    
-    &.septima-pregunta{
-        background: url(../images/p2_bg.jpg) bottom center no-repeat;
-    }  
+    &.primera-pregunta{ background: url(../images/p1_bg.jpg) bottom center no-repeat; }    
+    &.segunda-pregunta{ background: url(../images/p2_bg.jpg) bottom center no-repeat; } 
+    &.tercera-pregunta{ background: url(../images/p3_bg.jpg) bottom center no-repeat; } 
+    &.cuarta-pregunta{ background: url(../images/p4_bg.jpg) bottom center no-repeat; } 
+    &.quinta-pregunta{ background: url(../images/p5_bg.jpg) bottom center no-repeat; } 
+    &.sexta-pregunta{ background: url(../images/p1_bg.jpg) bottom center no-repeat; }    
+    &.septima-pregunta{ background: url(../images/p2_bg.jpg) bottom center no-repeat; }  
     
     &.fin{
         text-align: center;
-        background-color: #1f2c43;
-        color: white;
+        background-color: $blue20;
+        color: $white;
         text-transform: uppercase;    
-    
         aside{
             margin-top: 25%;
         }
-    
         img{
             display: block;
             margin: 0 auto;
             height: 20%;
-    
             + img{
                 height: 12%;
             }
         }
-    
         h2{
-            margin-bottom: 10px;        
+            margin-bottom: .5rem;        
         }
-    
         p{
-            font-size: 14px;
+            font-size: .5rem;
             font-weight: normal;
             margin-top: 0;
-            line-height: 20px;
-            margin-bottom: 40px;        
+            line-height: 1rem;
+            margin-bottom: 3rem;        
         }
     }    
-
     aside{
         overflow: hidden;
-        margin-bottom: 20px;
+        margin-bottom: 1rem;
     }
 }
 
 textarea{
-    margin: 15px 0px;
-    height: 200px;
+    margin: .5rem 0px;
+    height: 8rem;
     display: block;
     border: none;
-    background: #DDD;
+    background: $gray80;
     width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: .5rem;
+    border-radius: .25rem;
+    font-size: .75rem;
     outline: none;    
 }
-
 .dialog{
-
     input[type=radio]{
         position: absolute;
-        left: 25px;
-        top: 10px;        
+        left: 1rem;
+        top: .5rem;        
     }
-
     label{        
         width: 100%;
         display: block;
         float: left;
-        padding: 5px 10px 15px 10px;
+        padding: .25rem .5rem .5rem .5rem;
         box-sizing: border-box;
-        line-height: 18px;
+        line-height: 1rem;
         position: relative;
-        font-size: 16px;  
-        
+        font-size: .75rem;  
         @include breakpoint($tablet){
             width: 50%;
         }
     }
-
     p{
         font-weight: bold;
-        
         &:first-child{
-            margin-top: 25px;
+            margin-top: 1rem;
         }
     }
-
     .opciones {
-        margin-bottom: 100px;
-        max-height: 450px;
+        margin-bottom: 4rem;
+        max-height: 20rem;
         overflow-y: auto;
-
         > div{
             width: 100%;
             overflow: hidden;
-            padding-top: 10px;      
+            padding-top: .5rem;      
         } 
 
         + div{
@@ -570,42 +439,35 @@ textarea{
             box-sizing: border-box;
             width: 100%;
         }          
-
     }
-
 }
-
 .global-back{
     position: fixed;
-    top: 10px;
-    left: 10px;
+    top: .5rem;
+    left: .5rem;
     z-index: 1000;
     background: none;
     padding: 0;
-
     &:hover{
         opacity: 0.7;
     }
-
     i{
-        color: #cc2880;
-        font-size: 24px;
-
+        color: $pink60;
+        font-size: 1rem;
         @include breakpoint($tablet){
-            font-size: 30px;
+            font-size: 1.5rem;
         }
         
     }
 
     span{
-        color: #fff;
-        line-height: 24px;
+        color: $white;
+        line-height: 1rem;
         display: inline-block;
         vertical-align: top;
-        margin-left: 5px;
-
+        margin-left: .25rem;
         @include breakpoint($tablet){
-            line-height: 30px;
+            line-height: 2rem;
         }
 
     }
@@ -615,21 +477,17 @@ textarea{
     height: auto;
     overflow: hidden;
     width: 100%;
-
     >label {
         cursor: pointer;
-
         &:first-child {
             width: 100%;
         }
-
         > input[type='radio'] {
             display: none;
         }            
     }
 
 }
-
 .group_answers {
     display: block;
     height: auto;
@@ -637,8 +495,8 @@ textarea{
     width: 100%;
 }
 .group_answers>label {
-    padding-left: 45px;
+    padding-left: 2.5rem;
     display: block;
-    font-size: .8em;
-    height: 52px;
+    font-size: .5rem;
+    height: 2.5rem;
 }

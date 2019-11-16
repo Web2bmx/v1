@@ -741,7 +741,7 @@ img {
 
 /**/
 .background,
-.main-container {
+main {
   height: 100%;
   left: 0;
   position: fixed;
@@ -749,18 +749,18 @@ img {
   width: 100%;
 }
 
-.main-container > div {
+main > div {
   bottom: 0;
   position: absolute;
   width: 100%;
 }
 
-.main-container > div > div {
+main > div > div {
   margin: 0 auto;
   width: 100%;
 }
 
-.main-container > div > div > div {
+main > div > div > div {
   overflow: hidden;
 }
 
@@ -886,175 +886,96 @@ button:active,
 }
 
 .sun {
-  margin-top: 1000px;
-  margin-bottom: 1000px;
+  margin-top: 40rem;
+  margin-bottom: 40rem;
   text-align: right;
 }
 
 .sun img {
-  width: 150px;
+  width: 7rem;
 }
 
 @media (min-width: 660px) {
   .sun img {
-    width: 250px;
+    width: 10rem;
   }
 }
 
 .segundo {
-  margin-top: 1500px;
+  margin-top: 60rem;
 }
 
 .planet-blue {
-  width: 200px;
+  width: 8rem;
 }
 
 @media (min-width: 660px) {
   .planet-blue {
-    width: 350px;
+    width: 30rem;
   }
 }
 
 @media (min-width: 1040px) {
   .planet-blue {
-    width: 450px;
+    width: 18rem;
   }
 }
 
 .comets {
   position: relative;
-  right: -70px;
+  right: -3rem;
 }
 
 .comets img:first-child {
-  width: 100px;
+  width: 4rem;
 }
 
 @media (min-width: 660px) {
   .comets img:first-child {
-    width: 200px;
+    width: 8rem;
   }
 }
 
 .comets img + img {
   position: relative;
-  left: -70px;
-  top: 18px;
-  width: 80px;
+  left: -3rem;
+  top: 1rem;
+  width: 3.5rem;
 }
 
 @media (min-width: 660px) {
   .comets img + img {
-    width: 160px;
-    top: 3px;
-    left: -130px;
+    width: 7rem;
+    top: .5rem;
+    left: -5rem;
   }
 }
 
 .earth {
-  width: 200px;
-  left: 30px;
+  width: 8rem;
+  left: 1rem;
 }
 
 @media (min-width: 660px) {
   .earth {
-    width: 400px;
+    width: 32rem;
   }
 }
 
 .satellite {
-  width: 100px;
+  width: 4rem;
   display: block;
 }
 
 @media (min-width: 660px) {
   .satellite {
-    width: 200px;
+    width: 8rem;
   }
 }
 
 @media (min-width: 1040px) {
   .satellite {
-    margin-right: 385px;
-  }
-}
-
-.full_moon {
-  text-align: right;
-}
-
-.full_moon img {
-  width: 230px;
-}
-
-@media (min-width: 660px) {
-  .full_moon img {
-    width: 400px;
-  }
-}
-
-.stars_img {
-  text-align: left;
-  margin: 1000px 0;
-}
-
-.stars_img img {
-  width: 100px;
-  margin-left: 100px;
-}
-
-@media (min-width: 660px) {
-  .stars_img img {
-    width: 200px;
-  }
-}
-
-.cometas {
-  margin-bottom: 50px;
-  text-align: right;
-}
-
-.cometas img {
-  width: 130px;
-}
-
-.cinco {
-  margin-bottom: 1300px;
-}
-
-.alien {
-  position: absolute;
-  left: 0;
-}
-
-.alien img {
-  width: 70px;
-}
-
-@media (min-width: 660px) {
-  .alien img {
-    width: 150px;
-  }
-}
-
-.planet_ring {
-  text-align: center;
-  margin: 1300px 0px;
-}
-
-.planet_ring img {
-  width: 240px;
-}
-
-@media (min-width: 660px) {
-  .planet_ring img {
-    width: 350px;
-  }
-}
-
-@media (min-width: 1040px) {
-  .planet_ring img {
-    width: 400px;
+    margin-right: 32rem;
   }
 }
 
@@ -1080,18 +1001,18 @@ button:active,
 }
 
 .planet_red img {
-  width: 300px;
+  width: 12rem;
 }
 
 @media (min-width: 660px) {
   .planet_red img {
-    width: 400px;
+    width: 16rem;
   }
 }
 
 @media (min-width: 1040px) {
   .planet_red img {
-    width: 500px;
+    width: 20rem;
   }
 }
 
@@ -1134,7 +1055,7 @@ button:active,
 
 .ui-dialog .ui-dialog-content.dialog.fin {
   text-align: center;
-  background-color: #1f2c43;
+  background-color: #0f1626;
   color: white;
   text-transform: uppercase;
 }
@@ -1154,50 +1075,50 @@ button:active,
 }
 
 .ui-dialog .ui-dialog-content.dialog.fin h2 {
-  margin-bottom: 10px;
+  margin-bottom: .5rem;
 }
 
 .ui-dialog .ui-dialog-content.dialog.fin p {
-  font-size: 14px;
+  font-size: .5rem;
   font-weight: normal;
   margin-top: 0;
-  line-height: 20px;
-  margin-bottom: 40px;
+  line-height: 1rem;
+  margin-bottom: 3rem;
 }
 
 .ui-dialog .ui-dialog-content.dialog aside {
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 textarea {
-  margin: 15px 0px;
-  height: 200px;
+  margin: .5rem 0px;
+  height: 8rem;
   display: block;
   border: none;
-  background: #DDD;
+  background: #f0f0f0;
   width: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 16px;
+  padding: .5rem;
+  border-radius: .25rem;
+  font-size: .75rem;
   outline: none;
 }
 
 .dialog input[type=radio] {
   position: absolute;
-  left: 25px;
-  top: 10px;
+  left: 1rem;
+  top: .5rem;
 }
 
 .dialog label {
   width: 100%;
   display: block;
   float: left;
-  padding: 5px 10px 15px 10px;
+  padding: .25rem .5rem .5rem .5rem;
   box-sizing: border-box;
-  line-height: 18px;
+  line-height: 1rem;
   position: relative;
-  font-size: 16px;
+  font-size: .75rem;
 }
 
 @media (min-width: 660px) {
@@ -1211,19 +1132,19 @@ textarea {
 }
 
 .dialog p:first-child {
-  margin-top: 25px;
+  margin-top: 1rem;
 }
 
 .dialog .opciones {
-  margin-bottom: 100px;
-  max-height: 450px;
+  margin-bottom: 4rem;
+  max-height: 20rem;
   overflow-y: auto;
 }
 
 .dialog .opciones > div {
   width: 100%;
   overflow: hidden;
-  padding-top: 10px;
+  padding-top: .5rem;
 }
 
 .dialog .opciones + div {
@@ -1237,8 +1158,8 @@ textarea {
 
 .global-back {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  top: .5rem;
+  left: .5rem;
   z-index: 1000;
   background: none;
   padding: 0;
@@ -1249,27 +1170,27 @@ textarea {
 }
 
 .global-back i {
-  color: #cc2880;
-  font-size: 24px;
+  color: #ff0593;
+  font-size: 1rem;
 }
 
 @media (min-width: 660px) {
   .global-back i {
-    font-size: 30px;
+    font-size: 1.5rem;
   }
 }
 
 .global-back span {
-  color: #fff;
-  line-height: 24px;
+  color: white;
+  line-height: 1rem;
   display: inline-block;
   vertical-align: top;
-  margin-left: 5px;
+  margin-left: .25rem;
 }
 
 @media (min-width: 660px) {
   .global-back span {
-    line-height: 30px;
+    line-height: 2rem;
   }
 }
 
@@ -1300,10 +1221,10 @@ textarea {
 }
 
 .group_answers > label {
-  padding-left: 45px;
+  padding-left: 2.5rem;
   display: block;
-  font-size: .8em;
-  height: 52px;
+  font-size: .5rem;
+  height: 2.5rem;
 }
 
 /*# sourceMappingURL=tour.css.map */
