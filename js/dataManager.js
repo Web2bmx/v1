@@ -48,14 +48,28 @@ export default function dataManager() {
 	};
 	var saveSelected = function (jd, name, value, type) {
 		let selections = jd.selections || {};
+		let isSwitch = false;
+		if(name.includes("@switch")) {
+			let arr = name.split("@");
+			name = arr[0];
+			isSwitch = true;
+		} 
 		selections[name] = selections[name] || {};
 		switch (type) {
 			case 'image':
-				selections[name].img = value;
+				if(isSwitch) {
+					selections[name].active = value;					
+				} else {
+					selections[name].img = value;
+				}				
 				selections[name].type = type;
 				break;
 			case 'text':
-				selections[name].text = value;
+				if(isSwitch) {
+					selections[name].active = value;					
+				} else {
+					selections[name].text = value;
+				}							
 				selections[name].type = type;
 				break;
 			case 'config':

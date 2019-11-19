@@ -97,6 +97,12 @@ export default function templateManager () {
 				}
 				$this.val(text);
 
+				// if text is a switch
+				if(selections[i_id].active !== undefined && selections[i_id].active === false) {
+					_ctrl.new_appManager.hideTemplateElements(true, i_id.replace('inp-','val-'));
+					_ctrl.new_appManager.hideFormElements("[name='" + i_id + "']", i_id, "text");
+				}				
+
 				let arr;
 				switch (i_id) {
 					case "inp-contact-email" :

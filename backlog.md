@@ -8,8 +8,6 @@
 
 #### Quitar productos [Carlos]
 
-#### Botones para mostrar/ocultar logo o titulo [Carlos 50%]
-
 #### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
 
 start session = primera visita

@@ -190,22 +190,67 @@ export default function appManager() {
 		});
 		$(".brand-name .toogle").click(function (e) {
 			e.preventDefault();
-			if($(this).closest("aside").hasClass("inactive")) {
-				$(this).closest("aside").removeClass("inactive");
-				$("input, button", $(this).closest("aside")).removeAttr("disabled");			
-				$("i", this).removeClass("fa-toggle-off").addClass("fa-toggle-on");
-			} else if ($(".brand-name aside.inactive").length > 0) {
-				$(".brand-name .form-error").fadeIn(500);
-				setTimeout(() => {
-					$(".brand-name .form-error").fadeOut(500);
-				}, 5000);
-			} else {
-				$(this).closest("aside").addClass("inactive");
-				$("input, button", $(this).closest("aside")).attr("disabled",true);
-				$("i", this).removeClass("fa-toggle-on").addClass("fa-toggle-off");				
-			}
+			let name = $(this).closest("aside").children().find('input[name^="inp-"]').attr("name");
+			let selector = name;
+			let type = $(this).closest("aside").children().find('input[name^="inp-"]').attr("type");
+			if (type !== 'text') {
+				name = name.replace('inp-','#');
+			}						
+			
+			hideFormElements('[name="' + selector + '"]', name, type);			
 		});
 	};
+
+	var hideFormElements = function(selector, name, type) {
+		if($(selector).closest("aside").hasClass("inactive")) {
+			$(selector).closest("aside").removeClass("inactive");
+			$("input, button", $(selector).closest("aside")).removeAttr("disabled");			
+			$("i", selector).removeClass("fa-toggle-off").addClass("fa-toggle-on");
+
+			_ctrl.new_dataManager.saveSelected(
+				_ctrl.jd, 
+				name + '@switch', 
+				true,
+				type === 'text' ? type : 'image');
+
+			hideTemplateElements(false, name);
+		} else if ($(".brand-name aside.inactive").length > 0) {
+			$(".brand-name .form-error").fadeIn(500);
+			setTimeout(() => {
+				$(".brand-name .form-error").fadeOut(500);
+			}, 5000);
+		} else {
+			$(selector).closest("aside").addClass("inactive");
+			$("input, button", $(selector).closest("aside")).attr("disabled",true);
+			$("i", selector).removeClass("fa-toggle-on").addClass("fa-toggle-off");
+
+			_ctrl.new_dataManager.saveSelected(
+				_ctrl.jd, 
+				name + '@switch', 
+				false,
+				type === 'text' ? type : 'image');
+
+			hideTemplateElements(true, name);
+		
+		}
+
+	};
+
+	var hideTemplateElements = function(hide, selector) {
+		if(selector === "#img-logo") {
+			if (!hide) 
+				$('#branding').show();
+			else
+				$('#branding').hide();
+		} else {
+			selector = selector.replace('inp-','val-');
+			if (!hide) 
+				$('#' + selector).show();
+			else
+				$('#' + selector).hide();			
+		}
+	};
+
 	var closeAppCover = function () {
 		$("#app-cover").hide();
 		$(".app-cover-start").hide();
@@ -301,6 +346,8 @@ export default function appManager() {
 		setAppSteps: setAppSteps,
 		topStepMargin: topStepMargin,
 		goToStep: goToStep,
-		afterTemplateLoad: afterTemplateLoad
+		afterTemplateLoad: afterTemplateLoad,
+		hideTemplateElements: hideTemplateElements,
+		hideFormElements: hideFormElements
 	};
 }

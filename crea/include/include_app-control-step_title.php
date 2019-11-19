@@ -1,6 +1,6 @@
 <div class="brand-name">
 	<h2>
-		Primero, dinos como quieres presentar tu marca
+		¿Cómo quieres presentar tu marca?
 		<span>Puedes activar cualquiera de las 2 opciones, o ambas.</span>
 	</h2>
 	<div>
@@ -22,7 +22,7 @@
 		<h2 class="middle">ó</h2>
 		<aside>
 			<h4>
-				Selecciona/sube tu logotipo
+				Selecciona tu logo
 				<a class="toogle">
 					<i class="fas fa-toggle-on"></i>			
 				</a>			
