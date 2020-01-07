@@ -1,457 +1,8 @@
-/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
-/* Document
-       ========================================================================== */
-/**
-     * 1. Correct the line height in all browsers.
-     * 2. Prevent adjustments of font size after orientation changes in
-     *    IE on Windows Phone and in iOS.
-     */
-html {
-  line-height: 1.15;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/* Sections
-       ========================================================================== */
-/**
-     * Remove the margin in all browsers (opinionated).
-     */
-body {
-  margin: 0;
-}
-
-/**
-     * Add the correct display in IE 9-.
-     */
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
-/**
-     * Correct the font size and margin on `h1` elements within `section` and
-     * `article` contexts in Chrome, Firefox, and Safari.
-     */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
-       ========================================================================== */
-/**
-     * Add the correct display in IE 9-.
-     */
-figcaption,
-figure {
-  display: block;
-}
-
-/**
-     * Add the correct margin in IE 8.
-     */
-figure {
-  margin: 1em 40px;
-}
-
-/**
-     * 1. Add the correct box sizing in Firefox.
-     * 2. Show the overflow in Edge and IE.
-     */
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-}
-
-/**
-     * Add the correct display in IE.
-     */
-main {
-  display: block;
-}
-
-/**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
-pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/* Links
-       ========================================================================== */
-/**
-     * 1. Remove the gray background on active links in IE 10.
-     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
-     */
-a {
-  background-color: transparent;
-  /* 1 */
-  -webkit-text-decoration-skip: objects;
-  /* 2 */
-}
-
-/* Text-level semantics
-       ========================================================================== */
-/**
-     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
-     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-     */
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
-}
-
-/**
-     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
-     */
-b,
-strong {
-  font-weight: inherit;
-}
-
-/**
-     * Add the correct font weight in Chrome, Edge, and Safari.
-     */
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/**
-     * Add the correct font style in Android 4.3-.
-     */
-dfn {
-  font-style: italic;
-}
-
-/**
-     * Add the correct background and color in IE 9-.
-     */
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-
-/**
-     * Add the correct font size in all browsers.
-     */
-small {
-  font-size: 80%;
-}
-
-/**
-     * Prevent `sub` and `sup` elements from affecting the line height in
-     * all browsers.
-     */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Embedded content
-       ========================================================================== */
-/**
-     * Add the correct display in IE 9-.
-     */
-audio,
-video {
-  display: inline-block;
-}
-
-/**
-     * Add the correct display in iOS 4-7.
-     */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
-     * Remove the border on images inside links in IE 10-.
-     */
-img {
-  border-style: none;
-}
-
-/**
-     * Hide the overflow in IE.
-     */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* Forms
-       ========================================================================== */
-/**
-     * 1. Change the font styles in all browsers (opinionated).
-     * 2. Remove the margin in Firefox and Safari.
-     */
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-}
-
-/**
-     * Show the overflow in IE.
-     */
-button {
-  overflow: visible;
-}
-
-/**
-     * Remove the inheritance of text transform in Edge, Firefox, and IE.
-     * 1. Remove the inheritance of text transform in Firefox.
-     */
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
-
-/**
-     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-     *    controls in Android 4.
-     * 2. Correct the inability to style clickable types in iOS and Safari.
-     */
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  /**
-       * Remove the inner border and padding in Firefox.
-       */
-  /**
-       * Restore the focus styles unset by the previous rule.
-       */
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
-     * Show the overflow in Edge.
-     */
-input {
-  overflow: visible;
-}
-
-/**
-     * 1. Add the correct box sizing in IE 10-.
-     * 2. Remove the padding in IE 10-.
-     */
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
-     * Correct the cursor style of increment and decrement buttons in Chrome.
-     */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
-     * 1. Correct the odd appearance in Chrome and Safari.
-     * 2. Correct the outline style in Safari.
-     */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-  /**
-       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
-       */
-}
-
-[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
-     * 1. Correct the inability to style clickable types in iOS and Safari.
-     * 2. Change font properties to `inherit` in Safari.
-     */
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/**
-     * Correct the padding in Firefox.
-     */
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-/**
-     * 1. Correct the text wrapping in Edge and IE.
-     * 2. Correct the color inheritance from `fieldset` elements in IE.
-     * 3. Remove the padding so developers are not caught out when they zero out
-     *    `fieldset` elements in all browsers.
-     */
-legend {
-  box-sizing: border-box;
-  /* 1 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  color: inherit;
-  /* 2 */
-  white-space: normal;
-  /* 1 */
-}
-
-/**
-     * 1. Add the correct display in IE 9-.
-     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
-     */
-progress {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
-}
-
-/**
-     * Remove the default vertical scrollbar in IE.
-     */
-textarea {
-  overflow: auto;
-}
-
-/* Interactive
-       ========================================================================== */
 /*
-     * Add the correct display in Edge, IE, and Firefox.
-     */
-details {
-  display: block;
-}
+@import "../../node_modules/normalize-scss/sass/normalize/import-now";
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 
-/*
-     * Add the correct display in all browsers.
-     */
-summary {
-  display: list-item;
-}
-
-/*
-     * Add the correct display in IE 9-.
-     */
-menu {
-  display: block;
-}
-
-/* Scripting
-       ========================================================================== */
-/**
-     * Add the correct display in IE 9-.
-     */
-canvas {
-  display: inline-block;
-}
-
-/**
-     * Add the correct display in IE.
-     */
-template {
-  display: none;
-}
-
-/* Hidden
-       ========================================================================== */
-/**
-     * Add the correct display in IE 10-.
-     */
-[hidden] {
-  display: none;
-}
-
+*/
 /**/
 /*@import '../../scss/base/_variables';*/
 /*@import '../../scss/base/_colors';*/
@@ -465,7 +16,20 @@ template {
 /*PURPLE*/
 /*@import '../../scss/mixins/_border-radius';*/
 /*@import '../../scss/mixins/_background-color-gradient-blue';*/
-.stars, .stars1, .stars2 {
+#background {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+
+.stars, .stars2, .stars3 {
   display: block;
 }
 
@@ -535,6 +99,10 @@ template {
   }
 }
 
+#background {
+  position: fixed;
+}
+
 /*@import '../../scss/components/_buttons';*/
 /*Botones*/
 button,
@@ -557,6 +125,7 @@ input.cta {
   cursor: pointer;
   display: block;
   font-weight: bold;
+  font-size: inherit;
   height: auto;
   margin: 0;
   overflow: hidden;
@@ -565,6 +134,28 @@ input.cta {
   text-transform: uppercase;
   transition: background-color 0.3s ease;
   width: auto;
+}
+
+button:link, button:visited,
+.boton:link,
+.boton:visited,
+a.boton:link,
+a.boton:visited,
+a.boton:visited
+a.boton:link:link,
+a.boton:visited
+a.boton:link:visited,
+input[type='button']:link,
+input[type='button']:visited,
+a.cta:link,
+a.cta:visited,
+a.cta:visited:link,
+a.cta:visited:visited,
+a.cta:link:link,
+a.cta:link:visited,
+input.cta:link,
+input.cta:visited {
+  color: white;
 }
 
 button:hover, button:active,
@@ -589,107 +180,29 @@ input.cta:active {
   background-color: #ff52b4;
 }
 
-.ui-dialog-titlebar {
-  display: none;
-}
-
-.ui-widget.ui-widget-content {
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  border-radius: 0.5rem;
-  border: none;
-  max-width: 100%;
-}
-
-@media (min-width: 660px) {
-  .ui-widget.ui-widget-content {
-    max-width: 640px;
-    max-height: 760px;
-  }
-}
-
-.ui-dialog .ui-dialog-content.dialog {
-  max-height: 30rem;
-  max-width: 100%;
-  z-index: 1003;
-}
-
-@media (min-width: 660px) {
-  .ui-dialog .ui-dialog-content.dialog {
-    max-width: 640px !important;
-    max-height: 760px !important;
-  }
-}
-
-@media (min-width: 1040px) {
-  .ui-dialog .ui-dialog-content.dialog {
-    max-height: 600px !important;
-  }
-}
-
-.ui-widget-overlay {
-  background: black;
-  opacity: .5;
-  z-index: 1002;
-}
-
-.modal-login {
-  margin: 1rem;
-}
-
-.modal-login * {
-  box-sizing: border-box;
-}
-
-.modal-login img {
-  display: block;
-  height: auto;
-  margin: 1rem auto;
-  width: 6rem;
-  max-width: 50%;
-}
-
-.modal-login input, .modal-login button {
-  width: 100%;
-}
-
-.modal-login p {
-  color: black;
-  margin: 1rem 0;
-  text-align: center;
-}
-
-.modal-login [type="button"] {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  padding: .5rem;
-}
-
-.modal-login .x-close {
-  color: #b4b4b4;
+.clickable {
   cursor: pointer;
-  font-size: 1rem;
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 
-.modal-login .x-close:hover {
-  color: #3c3c3c;
-}
-
+/*@import "../../scss/components/_modal"; */
 /*@import '../../scss/partials/_errors';*/
-.form-error {
-  color: #ff052f;
-  display: none;
-  font-size: .75rem;
-  margin: .5rem 0;
-  text-align: center;
-}
-
+/*.form-error{
+	color: $red60;
+	display: none;
+	font-size: .75rem;
+	margin: .5rem 0;
+	text-align: center;
+}*/
 /**/
 /*ELEMENTS*/
+* {
+  list-style-type: none;
+  font-size: inherit;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font-size: 150%;
 }
@@ -698,6 +211,7 @@ body {
   background-color: #0f1626;
   background: -webkit-radial-gradient(center, ellipse cover, #055dff 0%, #172133 100%);
   background-color: #0f1626;
+  background-attachment: fixed;
   color: #f0f0f0;
   font-family: 'Open Sans', sans-serif;
   font-size: .75rem;
@@ -705,12 +219,6 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
-}
-
-div, ul, ol, nav, p {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 a {
@@ -727,504 +235,829 @@ a:hover, a:active {
   color: white;
 }
 
-.right {
-  float: right;
-}
+/*
+.right{ float: right; }
+.left{ float: left; }
+img{ position: relative; }
 
-.left {
-  float: left;
-}
-
-img {
-  position: relative;
-}
-
-/**/
 .background,
 main {
-  height: 100%;
+    height: 100%;
+	left: 0;
+    position: fixed;
+    top: 0;
+	width: 100%;
+}
+main > div {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    > div{
+        margin: 0 auto;
+        width: 100%;
+        > div{
+            overflow: hidden;
+        }
+    }    
+}
+button,
+.boton{
+    &.init{
+        top: 50%;
+        left: 50%;
+        margin-left: -3rem;  
+        position: fixed;
+    }
+    &.res{ 
+        float: right;
+    }
+    &.back{ 
+        float: left;
+    }    
+    &:active{
+        background-color: $blue80;
+    }
+}
+.space-man {
+    bottom: 2rem;
+    left: 50%;
+    margin-left: -2rem;
+    position: absolute;
+    width: 4rem;
+    z-index: 4;
+    @include breakpoint($tablet){
+        bottom: 4rem;
+        margin-left: -3rem;
+    }     
+    
+    @include breakpoint($desktop){
+        bottom: 3rem;
+        margin-left: 6.5rem;
+        width: 6rem;
+    }   
+    @include breakpoint($ext-desktop){
+        margin-left: 8.5rem;
+    }  
+}
+
+.inicio{
+    height: 185px;
+    @include breakpoint($tablet){
+        height: 348px;
+    }     
+    
+}
+.land{
+    width: 100%;
+    margin-top: 5.5rem;
+    @include breakpoint($tablet){
+        margin-top: 9.5rem;
+    }
+    @include breakpoint($desktop){
+        margin-top: 11rem;
+        margin-left: 40%;
+        width: 60%;
+    }
+    @include breakpoint($ext-desktop){
+        margin-top: 9rem;
+    }
+}
+.rocket{
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    z-index: 0;
+    width: 4rem;
+    margin-left: -4.5rem;
+    
+    @include breakpoint($tablet){
+        left: 50%;
+        margin-left: -6rem;
+        bottom: 0;
+    }         
+    @include breakpoint($desktop){
+        left: 50%;
+        bottom: -3.5rem;
+        margin-left: 3rem;
+        width: 6rem;
+    }      
+    @include breakpoint($ext-desktop){
+        bottom: -2rem;
+        margin-left: 4rem;
+        
+    }
+}
+.sun{
+    margin-top: 40rem;
+    margin-bottom: 40rem; 
+    text-align: right;
+    img{
+        width: 7rem;
+        @include breakpoint($tablet){
+            width: 10rem;
+        }          
+        
+    }     
+    
+}
+.segundo{
+    margin-top: 60rem;    
+}
+.planet-blue{
+    width: 8rem;
+    
+    @include breakpoint($tablet){
+        width: 30rem;
+    }      
+    @include breakpoint($desktop){
+        width: 18rem;
+    }      
+}
+.comets{
+    position: relative;
+    right: -3rem;    
+    img:first-child{
+        width: 4rem; 
+        @include breakpoint($tablet){
+            width: 8rem;
+        }
+    }
+            
+    img + img{
+        position: relative;
+        left: -3rem;
+        top: 1rem;
+        width: 3.5rem;
+       
+        @include breakpoint($tablet){
+            width: 7rem;
+            top: .5rem;
+            left: -5rem;    
+        }                 
+        
+    }     
+}
+.earth{
+    width: 8rem;
+    left: 1rem;    
+    @include breakpoint($tablet){
+        width: 32rem;
+    }    
+}
+.satellite{
+    width: 4rem;
+    display: block;
+    
+    @include breakpoint($tablet){
+        width: 8rem;
+    }       
+    @include breakpoint($desktop){
+        margin-right: 32rem;
+    }       
+}
+.nave{
+    margin: 1000px 50px;
+    text-align: right;
+    
+    img{
+        width: 100px; 
+        
+        @include breakpoint($tablet){
+            width: 180px;
+        }         
+        
+        @include breakpoint($desktop){
+            width: 200px;
+        }          
+        
+    }
+}
+
+.planet_red{    
+    img{
+        width: 12rem;
+        @include breakpoint($tablet){
+            width: 16rem;
+        }         
+        
+        @include breakpoint($desktop){
+            width: 20rem;
+        }          
+        
+    }
+}
+.datos-existentes button {
+    display: inline-block;
+}
+.ui-dialog .ui-dialog-content.dialog{ 
+    overflow: hidden;
+    &.datos-existentes,
+    &.proyecto-existente {
+        max-height: none !important; 
+        height: auto !important; 
+    }
+    &.primera-pregunta{ background: url(../images/item_spaceman_land.svg) bottom center no-repeat; }    
+    &.segunda-pregunta{ background: url(../images/item_spaceman_planet_blue.svg) bottom center no-repeat; }
+    &.tercera-pregunta{ background: url(../images/item_spaceman_earth.svg) bottom center no-repeat; }    
+    &.fin{
+        text-align: center;
+        background-color: $blue20;
+        color: $white;
+        text-transform: uppercase;    
+        aside{
+            margin-top: 25%;
+        }
+        img{
+            display: block;
+            margin: 0 auto;
+            height: 20%;
+            + img{
+                height: 12%;
+            }
+        }
+        h2{
+            margin-bottom: .5rem;        
+        }
+        p{
+            font-size: .5rem;
+            font-weight: normal;
+            margin-top: 0;
+            line-height: 1rem;
+            margin-bottom: 3rem;        
+        }
+    }    
+    aside{
+        overflow: hidden;
+        margin-bottom: 1rem;
+    }
+}
+
+textarea{
+    margin: .5rem 0px;
+    height: 8rem;
+    display: block;
+    border: none;
+    background: $gray80;
+    width: 100%;
+    padding: .5rem;
+    border-radius: .25rem;
+    font-size: .75rem;
+    outline: none;    
+}
+.dialog{
+    input[type=radio]{
+        position: absolute;
+        left: 1rem;
+        top: .5rem;        
+    }
+    label{        
+        width: 100%;
+        display: block;
+        float: left;
+        padding: .25rem .5rem .5rem .5rem;
+        box-sizing: border-box;
+        line-height: 1rem;
+        position: relative;
+        font-size: .75rem;  
+        @include breakpoint($tablet){
+            width: 50%;
+        }
+    }
+    p{
+        font-weight: bold;
+        &:first-child{
+            margin-top: 1rem;
+        }
+    }
+    .opciones {
+        margin-bottom: 4rem;
+        max-height: 20rem;
+        overflow-y: auto;
+        > div{
+            width: 100%;
+            overflow: hidden;
+            padding-top: .5rem;      
+        } 
+
+        + div{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            width: 100%;
+        }          
+    }
+}
+.cont_answers {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+    >label {
+        cursor: pointer;
+        &:first-child {
+            width: 100%;
+        }
+        > input[type='radio'] {
+            display: none;
+        }            
+    }
+
+}
+.group_answers {
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.group_answers>label {
+    padding-left: 2.5rem;
+    display: block;
+    height: 2.5rem;
+}*/
+#modal {
+  background-color: #f0f0f0;
+  bottom: 0;
+  color: #3c3c3c;
+  display: block;
   left: 0;
+  height: auto;
+  /*opacity: .3;*/
+  overflow: hidden;
+  overflow-y: auto;
   position: fixed;
+  right: 0;
   top: 0;
   width: 100%;
-}
-
-main > div {
-  bottom: 0;
-  position: absolute;
-  width: 100%;
-}
-
-main > div > div {
-  margin: 0 auto;
-  width: 100%;
-}
-
-main > div > div > div {
-  overflow: hidden;
-}
-
-button.init,
-.boton.init {
-  top: 50%;
-  left: 50%;
-  margin-left: -3rem;
-  position: fixed;
-}
-
-button.res,
-.boton.res {
-  float: right;
-}
-
-button.back,
-.boton.back {
-  float: left;
-}
-
-button:active,
-.boton:active {
-  background-color: #5091ff;
-}
-
-.space-man {
-  bottom: 2rem;
-  left: 50%;
-  margin-left: -2rem;
-  position: absolute;
-  width: 4rem;
   z-index: 4;
 }
 
-@media (min-width: 660px) {
-  .space-man {
-    bottom: 4rem;
-    margin-left: -3rem;
+@media screen and (min-width: 660px) {
+  #modal {
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    top: 2rem;
+    width: auto;
   }
 }
 
-@media (min-width: 1040px) {
-  .space-man {
-    bottom: 3rem;
-    margin-left: 6.5rem;
-    width: 6rem;
+@media screen and (min-width: 1280px) {
+  #modal {
+    left: 8rem;
+    right: 8rem;
   }
 }
 
-@media (min-width: 1560px) {
-  .space-man {
-    margin-left: 8.5rem;
+@media screen and (min-width: 1560px) {
+  #modal {
+    left: 12rem;
+    right: 12rem;
   }
 }
 
-.inicio {
-  height: 185px;
-}
-
-@media (min-width: 660px) {
-  .inicio {
-    height: 348px;
-  }
-}
-
-.land {
-  width: 100%;
-  margin-top: 5.5rem;
-}
-
-@media (min-width: 660px) {
-  .land {
-    margin-top: 9.5rem;
-  }
-}
-
-@media (min-width: 1040px) {
-  .land {
-    margin-top: 11rem;
-    margin-left: 40%;
-    width: 60%;
-  }
-}
-
-@media (min-width: 1560px) {
-  .land {
-    margin-top: 9rem;
-  }
-}
-
-.rocket {
+.dialog {
+  bottom: 0;
+  display: block;
+  height: auto;
+  left: 0;
+  overflow: scroll;
   position: absolute;
-  bottom: -2.5rem;
-  left: 50%;
-  z-index: 0;
-  width: 4rem;
-  margin-left: -4.5rem;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+  text-align: center;
+  width: auto;
 }
 
-@media (min-width: 660px) {
-  .rocket {
-    left: 50%;
-    margin-left: -6rem;
-    bottom: 0;
+@media screen and (min-width: 660px) {
+  .dialog {
+    padding: 2rem;
   }
 }
 
-@media (min-width: 1040px) {
-  .rocket {
-    left: 50%;
-    bottom: -3.5rem;
-    margin-left: 3rem;
-    width: 6rem;
+.dialog .options {
+  display: block;
+  overflow: hidden;
+}
+
+.dialog nav {
+  display: block;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.dialog button, .dialog .boton {
+  display: block;
+  margin-top: .5rem;
+  width: auto;
+}
+
+@media screen and (min-width: 660px) {
+  .dialog button, .dialog a.boton {
+    display: inline-block;
+    margin: 0;
+    width: auto;
   }
 }
 
-@media (min-width: 1560px) {
-  .rocket {
-    bottom: -2rem;
-    margin-left: 4rem;
+.dialog h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.dialog-error {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  border: 1px solid #ff0593;
+  font-size: .5rem;
+  padding: .5rem;
+}
+
+@media screen and (min-width: 660px) {
+  a.back {
+    float: left;
   }
 }
 
-.sun {
-  margin-top: 40rem;
-  margin-bottom: 40rem;
+.question {
+  text-align: left;
+}
+
+.question nav {
   text-align: right;
 }
 
-.sun img {
-  width: 7rem;
+.options h4 {
+  margin: .5rem 0 0 0;
 }
 
-@media (min-width: 660px) {
-  .sun img {
+.options label {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #b4b4b4;
+  cursor: pointer;
+  display: block;
+  font-size: .5rem;
+  margin: .25rem 0;
+  padding: .25rem .5rem;
+}
+
+.options label:hover {
+  background-color: #f2aed8;
+}
+
+.options input[type="radio"] {
+  display: none;
+}
+
+.options input[type="radio"]:checked + label {
+  background-color: #f2aed8;
+  font-weight: bold;
+}
+
+.question .options-group {
+  clear: both;
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.option-free {
+  display: block;
+  margin-top: .5rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.option-free input[type="text"] {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  border: none;
+  display: block;
+  padding: .5rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.option-free input[type="text"]:focus {
+  outline: none;
+}
+
+/*DIALOG END*/
+#dialog-end-rocket {
+  width: 6rem;
+  margin: 4rem auto 0 auto;
+}
+
+@media screen and (min-width: 660px) {
+  #dialog-end-rocket {
+    margin-top: 8rem;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  #dialog-end-rocket {
+    margin-top: 2rem;
+    width: 4rem;
+  }
+}
+
+#dialog-end h2 {
+  margin: 1rem 0;
+}
+
+#dialog-end .boton {
+  display: block;
+}
+
+@media screen and (min-width: 1040px) {
+  #dialog-end .boton {
+    display: inline-block;
+  }
+}
+
+/*STAGE*/
+#stage {
+  bottom: 0;
+  display: block;
+  height: auto;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.stage {
+  bottom: 0;
+  display: block;
+  height: auto;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  width: 100%;
+}
+
+#stage aside {
+  position: absolute;
+}
+
+#button-start {
+  display: inline-block;
+  margin: 15rem auto 0 auto;
+  width: auto;
+}
+
+@media screen and (min-width: 660px) {
+  #button-start {
+    margin-top: 20rem;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  #button-start {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #button-start {
+    margin-top: 15rem;
+  }
+}
+
+/*ITEMS*/
+#item-land {
+  bottom: 0;
+  left: 5%;
+  width: 90%;
+}
+
+@media screen and (min-width: 660px) {
+  #item-land {
+    left: 10%;
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  #item-land {
+    left: 30%;
+    width: 65%;
+  }
+}
+
+#item-spaceman {
+  bottom: 1.5rem;
+  left: 45%;
+  width: 4rem;
+}
+
+@media screen and (min-width: 660px) {
+  #item-spaceman {
+    bottom: 3rem;
+    left: 50%;
+    width: 6rem;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  #item-spaceman {
+    left: 65%;
+    width: 5rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  #item-spaceman {
+    width: 6rem;
+  }
+}
+
+#item-comets {
+  left: 2rem;
+  top: 18rem;
+  width: 4rem;
+}
+
+@media screen and (min-width: 660px) {
+  #item-comets {
+    left: 4rem;
+    top: 26rem;
+    width: 8rem;
+  }
+}
+
+@media screen and (min-width: 1040px) {
+  #item-comets {
+    top: 6rem;
+  }
+}
+
+#item-planet-red {
+  right: 1rem;
+  top: 6rem;
+  width: 4rem;
+}
+
+@media screen and (min-width: 660px) {
+  #item-planet-red {
+    right: 2rem;
+    top: 6rem;
     width: 10rem;
   }
 }
 
-.segundo {
-  margin-top: 60rem;
+#item-sun {
+  left: 2rem;
+  top: 18rem;
+  width: 6rem;
 }
 
-.planet-blue {
-  width: 8rem;
-}
-
-@media (min-width: 660px) {
-  .planet-blue {
-    width: 30rem;
+@media screen and (min-width: 660px) {
+  #item-sun {
+    left: 4rem;
+    top: 26rem;
+    width: 12rem;
   }
 }
 
-@media (min-width: 1040px) {
-  .planet-blue {
-    width: 18rem;
+@media screen and (min-width: 1040px) {
+  #item-sun {
+    top: 8rem;
   }
 }
 
-.comets {
-  position: relative;
-  right: -3rem;
-}
-
-.comets img:first-child {
+#item-planet-blue {
+  right: 1rem;
+  top: 6rem;
   width: 4rem;
 }
 
-@media (min-width: 660px) {
-  .comets img:first-child {
-    width: 8rem;
+@media screen and (min-width: 660px) {
+  #item-planet-blue {
+    right: 2rem;
+    top: 6rem;
+    width: 10rem;
   }
 }
 
-.comets img + img {
-  position: relative;
-  left: -3rem;
-  top: 1rem;
-  width: 3.5rem;
-}
-
-@media (min-width: 660px) {
-  .comets img + img {
-    width: 7rem;
-    top: .5rem;
-    left: -5rem;
-  }
-}
-
-.earth {
-  width: 8rem;
+#item-earth {
   left: 1rem;
-}
-
-@media (min-width: 660px) {
-  .earth {
-    width: 32rem;
-  }
-}
-
-.satellite {
+  top: 6rem;
   width: 4rem;
-  display: block;
 }
 
-@media (min-width: 660px) {
-  .satellite {
-    width: 8rem;
+@media screen and (min-width: 660px) {
+  #item-earth {
+    left: 2rem;
+    top: 12rem;
+    width: 10rem;
   }
 }
 
-@media (min-width: 1040px) {
-  .satellite {
-    margin-right: 32rem;
+#item-satellite {
+  right: 2rem;
+  top: 18rem;
+  width: 4rem;
+}
+
+@media screen and (min-width: 660px) {
+  #item-satellite {
+    right: 4rem;
+    top: 26rem;
+    width: 6rem;
   }
 }
 
-.nave {
-  margin: 1000px 50px;
-  text-align: right;
-}
-
-.nave img {
-  width: 100px;
-}
-
-@media (min-width: 660px) {
-  .nave img {
-    width: 180px;
+@media screen and (min-width: 660px) {
+  #item-satellite {
+    top: 10rem;
   }
 }
 
-@media (min-width: 1040px) {
-  .nave img {
-    width: 200px;
+/*EO ITEMS*/
+#item-rocket {
+  bottom: -2rem;
+  position: fixed;
+  left: 30%;
+  width: 3rem;
+  z-index: 3;
+}
+
+#item-rocket img:nth-child(2) {
+  opacity: 0;
+}
+
+@media screen and (min-width: 660px) {
+  #item-rocket {
+    bottom: -3rem;
+    left: 35%;
+    width: 6rem;
   }
 }
 
-.planet_red img {
-  width: 12rem;
-}
-
-@media (min-width: 660px) {
-  .planet_red img {
-    width: 16rem;
+@media screen and (min-width: 1040px) {
+  #item-rocket {
+    left: 45%;
+    width: 5rem;
   }
 }
 
-@media (min-width: 1040px) {
-  .planet_red img {
-    width: 20rem;
+@media screen and (min-width: 1280px) {
+  #item-rocket {
+    width: 6rem;
   }
 }
 
-.ui-dialog .ui-dialog-content.dialog {
-  overflow: hidden;
-}
-
-.ui-dialog .ui-dialog-content.dialog.datos-existentes, .ui-dialog .ui-dialog-content.dialog.proyecto-existente {
-  max-height: none !important;
-  height: auto !important;
-}
-
-.ui-dialog .ui-dialog-content.dialog.primera-pregunta {
-  background: url(../images/p1_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.segunda-pregunta {
-  background: url(../images/p2_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.tercera-pregunta {
-  background: url(../images/p3_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.cuarta-pregunta {
-  background: url(../images/p4_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.quinta-pregunta {
-  background: url(../images/p5_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.sexta-pregunta {
-  background: url(../images/p1_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.septima-pregunta {
-  background: url(../images/p2_bg.jpg) bottom center no-repeat;
-}
-
-.ui-dialog .ui-dialog-content.dialog.fin {
-  text-align: center;
-  background-color: #0f1626;
-  color: white;
-  text-transform: uppercase;
-}
-
-.ui-dialog .ui-dialog-content.dialog.fin aside {
-  margin-top: 25%;
-}
-
-.ui-dialog .ui-dialog-content.dialog.fin img {
-  display: block;
-  margin: 0 auto;
-  height: 20%;
-}
-
-.ui-dialog .ui-dialog-content.dialog.fin img + img {
-  height: 12%;
-}
-
-.ui-dialog .ui-dialog-content.dialog.fin h2 {
-  margin-bottom: .5rem;
-}
-
-.ui-dialog .ui-dialog-content.dialog.fin p {
-  font-size: .5rem;
-  font-weight: normal;
-  margin-top: 0;
-  line-height: 1rem;
-  margin-bottom: 3rem;
-}
-
-.ui-dialog .ui-dialog-content.dialog aside {
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-textarea {
-  margin: .5rem 0px;
-  height: 8rem;
-  display: block;
-  border: none;
-  background: #f0f0f0;
-  width: 100%;
-  padding: .5rem;
-  border-radius: .25rem;
-  font-size: .75rem;
-  outline: none;
-}
-
-.dialog input[type=radio] {
-  position: absolute;
-  left: 1rem;
-  top: .5rem;
-}
-
-.dialog label {
-  width: 100%;
-  display: block;
-  float: left;
-  padding: .25rem .5rem .5rem .5rem;
-  box-sizing: border-box;
-  line-height: 1rem;
-  position: relative;
-  font-size: .75rem;
-}
-
-@media (min-width: 660px) {
-  .dialog label {
-    width: 50%;
-  }
-}
-
-.dialog p {
-  font-weight: bold;
-}
-
-.dialog p:first-child {
-  margin-top: 1rem;
-}
-
-.dialog .opciones {
-  margin-bottom: 4rem;
-  max-height: 20rem;
-  overflow-y: auto;
-}
-
-.dialog .opciones > div {
-  width: 100%;
-  overflow: hidden;
-  padding-top: .5rem;
-}
-
-.dialog .opciones + div {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  width: 100%;
-}
-
-.global-back {
+/**/
+#global-navigation {
+  left: .5rem;
   position: fixed;
   top: .5rem;
-  left: .5rem;
-  z-index: 1000;
-  background: none;
-  padding: 0;
+  z-index: 3;
 }
 
-.global-back:hover {
-  opacity: 0.7;
+#global-navigation a {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
-.global-back i {
+#global-navigation a:hover {
+  opacity: 1;
+}
+
+#global-navigation a i {
   color: #ff0593;
-  font-size: 1rem;
 }
 
-@media (min-width: 660px) {
-  .global-back i {
-    font-size: 1.5rem;
-  }
-}
-
-.global-back span {
+#global-navigation a span {
   color: white;
-  line-height: 1rem;
-  display: inline-block;
-  vertical-align: top;
-  margin-left: .25rem;
-}
-
-@media (min-width: 660px) {
-  .global-back span {
-    line-height: 2rem;
-  }
-}
-
-.cont_answers {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  width: 100%;
-}
-
-.cont_answers > label {
-  cursor: pointer;
-}
-
-.cont_answers > label:first-child {
-  width: 100%;
-}
-
-.cont_answers > label > input[type='radio'] {
-  display: none;
-}
-
-.group_answers {
-  display: block;
-  height: auto;
-  overflow: hidden;
-  width: 100%;
-}
-
-.group_answers > label {
-  padding-left: 2.5rem;
-  display: block;
   font-size: .5rem;
-  height: 2.5rem;
+  margin-left: .25rem;
+  vertical-align: top;
 }
 
 /*# sourceMappingURL=tour.css.map */

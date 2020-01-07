@@ -1,6 +1,7 @@
+/*
 import dialogHandler from '../../js/dialog';
-import dataManager from '../../js/dataManager';
 
+*/
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,235 +9,14 @@ import dataManager from '../../js/dataManager';
  */
 
 export default function tour() {    
-    var winWidth;
-    var spanError = '<span class="form-error">Aún no has respondida esta pregunta</span>';
-    var positionActual = ''; 
-    var new_dataManager = new dataManager();
+    
 
-    var muestraPregunta = function (pregunta){
-        $(".rocket img + img").animate({
-            opacity: 0
-        }, 100, function(){
-            $("." + pregunta).dialog( "open" );                        
-        });        
-    };
     
-    var darSalto = function (selector, pregunta){    
     
-        let cb = () => {
-            muestraPregunta(pregunta);
-        };
-        positionActual = selector;    
-        rePositionRocket(cb,true);
-        
-        let selOffset = $(selector).offset();
-        let selWidth = $(selector).width();
-        let dif = $(document).height() - selWidth;
-        let containerBottom = $('.main-container > div').css("bottom").replace("px","");
-        $('.main-container > div').animate({
-              'bottom': (containerBottom*1)+selOffset.top-(dif > 0 ? dif/2 : 0)
-        }, 2000);    
-    };
     
-    var rePositionRocket = function (callback,animate){
     
-        if(callback == undefined){
-            callback = () => {};
-        }
     
-        if(animate == undefined){
-            animate=false;
-        }
     
-        let selHeight = $(positionActual).height();
-        let selWidth = $(positionActual).width();
-    
-        let rocketHeight = $(".rocket > img").height();
-        let rocketWidth = $(".rocket > img").width();
-            
-        let selPos = $(positionActual).position();
-    
-        //obtener posicion actual
-        positionActual = positionActual;
-    
-        if(animate){
-            $(".rocket").animate({
-                top: selPos.top + ((selHeight/2)-(rocketHeight/2)),
-                left: selPos.left + ((selWidth/2)-(rocketWidth/2)),
-                margin: 0
-            }, 2000, callback);    
-        } else {
-            $(".rocket").css({
-                "top": selPos.top + ((selHeight/2)-(rocketHeight/2)) + "px",
-                "left":selPos.left + ((selWidth/2)-(rocketWidth/2)) + "px",
-                "margin" : 0
-            });        
-        }
-    };
-    
-    var preguntaValida = function (selector){
-        var tplData = new_dataManager.getObjFromLocalStorage("web2b");
-        var resp = "";
-        var resp_id = "";
-        var loc_en = "";
-        if( ($(selector + " textarea").length != 0 && $.trim($(selector + " textarea").val()) == "") ||
-        ($(selector + " input").length != 0 && $(selector + " input:checked").length == 0 && $(selector + " input.otra").val() == "")){
-            if($(selector + " p span").length == 0){
-                $(selector + " p").append(spanError);
-                $(selector + " p span").show();
-            }
-            return false;
-        } else{
-            let id = $(selector + " p").data("id");
-            if(selector == ".primera-pregunta"){
-                localStorage.removeItem("web2b");
-            }
-            
-    
-            if(Object.keys(tplData).length == 0) {
-                    tplData.respuestas = {};                
-            }
-    
-            if($(selector + " textarea").length != 0){
-                resp = $(selector + " textarea").val();
-            } else {            
-                resp = $(selector + " input:checked").val();
-                loc_en = $(selector + " input:checked[data-loc-en!='']").length > 0 ? $(selector + " input:checked[data-loc-en!='']").attr("data-loc-en") : "";
-                resp_id = $(selector + " input:checked[data-id!='']").length > 0 ? $(selector + " input:checked[data-id!='']").attr("data-id") : "";            
-                if($(selector + " input.otra").val() != "") {
-                    resp = $(selector + " input.otra").val();
-                    loc_en = "";
-                }
-            }
-            
-            
-            if (loc_en == '' && $(selector + " p").data("type") == 6) {
-                $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
-                    {
-                        key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
-                        lang: 'es-en',
-                        text: resp,
-                        format: 'plain'
-                    }
-                ).done(function(data) {
-                    if(data){
-                        tplData.respuestas[id] = {
-                            "tipo": $(selector + " p").data("type"),
-                            "respuesta" : resp,
-                            "localizacion_en" : decodeURIComponent(data.text[0]),
-                            "resp_id" : resp_id
-                        };
-            
-                        localStorage.setItem("web2b", JSON.stringify(tplData));
-                    }
-                });	
-            } else {
-                tplData.respuestas[id] = {
-                    "tipo": $(selector + " p").data("type"),
-                    "respuesta" : resp,
-                    "localizacion_en" : loc_en,
-                    "resp_id" : resp_id
-                };
-    
-                localStorage.setItem("web2b", JSON.stringify(tplData));
-            }
-        }
-        return true;
-    };
-    
-    var paso1 = function () {
-        var marginLeft;
-        $(".rocket img + img").animate({
-            opacity: 1
-        }, 50);
-        if(winWidth < 660){
-            marginLeft = '105px';
-        }
-        else if(winWidth < 1040){
-            marginLeft = '162px';         
-        } else{            
-            marginLeft = '122px';
-        }
-        $(".rocket").css("top","auto");
-        $(".rocket").animate({
-            left: '50%',
-            marginLeft: marginLeft
-        }, 0, function(){
-            paso2();
-        });    
-        $('.main-container > div').animate({
-              'bottom': 0
-        }, 0); 
-    };
-    
-    var paso2 = function () {
-        $(".rocket img + img").animate({
-                opacity: 1
-            }, 50);  
-        if(winWidth < 660){
-            $(".space-man").animate({
-                width: '35px',
-                bottom: '55px',
-                marginLeft: '-73px',
-                opacity: '0'                         
-            }, 2000, function(){
-                darSalto(".sun > img","primera-pregunta");            
-            });
-        }
-        else if(winWidth < 1040){
-            $(".space-man").animate({
-                width: '50px',
-                marginLeft: '-112px',
-                bottom: '111px',
-                opacity: '0'                         
-            }, 2000, function(){
-                darSalto(".sun > img","primera-pregunta");           
-            });                        
-        } else{            
-            $(".space-man").animate({
-                width: '50px',
-                marginLeft: '172px',
-                opacity: '0'                         
-            }, 2000, function(){
-                darSalto(".sun > img","primera-pregunta");           
-            });            
-        }    
-    };
-    
-    var paso3 = function () {
-        $(".rocket img + img").animate({
-            opacity: 1
-        }, 50);        
-        darSalto(".planet-blue","segunda-pregunta");       
-    };
-    
-    var paso4 = function () {
-        $(".rocket img + img").animate({
-            opacity: 1
-        }, 50);        
-            darSalto(".earth","tercera-pregunta");      
-    };
-    
-    var paso5 = function () {
-        $(".rocket img + img").animate({
-            opacity: 1
-        }, 50);            
-            darSalto(".full_moon > img","quinta-pregunta");       
-    };
-    
-    var paso6 = function () {
-        $(".rocket img + img").animate({
-            opacity: 1
-        }, 50);         
-            darSalto(".planet_ring > img","sexta-pregunta");      
-    };
-    
-    var paso7 = function () {
-        $(".rocket img + img").animate({
-            opacity: 1
-        }, 50);          
-            darSalto(".planet_red > img","septima-pregunta");    
-    };
 
     var back = (e) => {
         $(".dialog:visible").dialog("close");
@@ -308,87 +88,7 @@ export default function tour() {
             location.href = "/crea";
         });             
         
-        $(window).resize(function(){
-            winWidth = $(window).width();
-            if(positionActual != ''){
-                rePositionRocket();
-            }
-        });   
         
-        $(".init").click(function(e){
-            $(e.target).fadeOut(50);
-            paso1();
-            //muestraPregunta("primera-pregunta");
-        });
-        
-        $(".res_1").click(function(){
-            if(preguntaValida(".primera-pregunta")){  
-                $(".primera-pregunta").dialog( "close" );
-                $( ".primera-pregunta" ).on( "dialogclose", function() {
-                    paso3();
-                });
-            }
-        });
-        
-        //segundo
-        $(".res_2").click(function(){
-            if(preguntaValida(".segunda-pregunta")){
-                $(".segunda-pregunta").dialog( "close" );
-                $( ".segunda-pregunta" ).on( "dialogclose", function() {            
-                    paso4();         
-                } );
-            }
-        });    
-        
-        //segundo
-        $(".res_3").click(function(){
-            if(preguntaValida(".tercera-pregunta")){
-                $(".tercera-pregunta").dialog( "close" );
-                $( ".tercera-pregunta" ).on( "dialogclose", function() {            
-                    //paso4();
-                    $(".fin").dialog( "open" );
-                } );
-            }
-        });
-        
-        //tercero
-        $(".res_4").click(function(){
-            if(preguntaValida(".cuarta-pregunta")){
-                $(".cuarta-pregunta").dialog( "close" );
-                $( ".cuarta-pregunta" ).on( "dialogclose", function() {           
-                    paso5();
-                });
-            }
-        });
-        
-        //cuarto
-        $(".res_5").click(function(){
-            if(preguntaValida(".quinta-pregunta")){
-                $(".quinta-pregunta").dialog( "close" );
-                $( ".quinta-pregunta" ).on( "dialogclose", function() {          
-                    paso6();
-                });
-            }
-        }); 
-        
-            //quinto
-        $(".res_6").click(function(){
-            if(preguntaValida(".sexta-pregunta")){
-                $(".sexta-pregunta").dialog( "close" );
-                $( ".sexta-pregunta" ).on( "dialogclose", function() {         
-                    paso7();
-                });
-            }
-        });    
-        
-        $(".res_7").click(function(){
-            if(preguntaValida(".septima-pregunta")){
-                $(".septima-pregunta").dialog( "close" );
-                $( ".septima-pregunta" ).on( "dialogclose", function() {  
-                    $(".fin").dialog( "open" );
-                });
-            }
-        });
 
         $(".back").on('click', {obj: that}, that.back);
 
@@ -417,11 +117,178 @@ export default function tour() {
         back: back
     };
 }
-
-$(document).ready(function(){
+/*
     var t = new tour();
     t.init(t);
+    */
+import dataManager from '../../js/dataManager';
+$(document).ready(function(){
+    var new_dataManager = new dataManager(); 
+    var current_step = 0;
+    var total_steps = $(".stage").length;
+   $(".stage:not(#stage-" + current_step + ")").hide();
+
+   $("#modal .dialog").hide();
+   $("#modal").hide();
+   
+   $("a[href*='#stage-']").on("click", function() {
+        var $this = $(this);
+        if ($this.attr("href") == "#stage-1") {
+            current_step = 1;
+            showStep(current_step);
+        }
+        if ($this.attr("href") == "#stage-2") {
+            if (checkAnswer($this.closest(".question").attr("id"))) {
+                current_step = 2;
+                showStep(current_step);
+            }
+                
+        }
+        if ($this.attr("href") == "#stage-3") {
+            if (checkAnswer($this.closest(".question").attr("id"))) {
+                current_step = 3;
+                showStep(current_step);
+            }
+        }
+        if ($this.attr("href") == "#stage-end") {
+            if (checkAnswer($this.closest(".question").attr("id"))) {
+                $("#modal").show();
+                $("#modal .dialog").hide();
+                $("#dialog-end").show();
+            }
+        }
+        return false;
+   });
+   var showStep = function(step) {
+       var delay = 0;
+        if(step == 1) {
+            delay = 500;
+            $("#item-spaceman").animate({"left" : "50%", "opacity" : "0", "width" : "1rem"}, 300);
+            $("#item-rocket").animate({ "bottom" : "1rem" }, 300);
+        }
+        $("#modal").fadeOut(300);
+        $("#item-rocket>img:last").animate({ "opacity" : 1 }, 300);
+        setTimeout(function() {
+            $(".stage:visible").animate({"top" : "100%", "bottom" : "-100%"}, 1000);
+            $(".stars1").animate({"height" : "5px"}, 1000, function() {
+                setTimeout(function() {
+                    $(".stars1").animate({"height" : "1px"}, 1000);
+                }, 1000);
+            });
+            $(".stars2").animate({"height" : "5px"}, 1000, function() {
+                setTimeout(function() {
+                    $(".stars2").animate({"height" : "2px"}, 1000);
+                }, 1000);
+            });
+            $(".stars3").animate({"height" : "5px"}, 1000, function() {
+                setTimeout(function() {
+                    $(".stars3").animate({"height" : "3px"}, 1000);
+                }, 1000);
+            });
+            setTimeout(function() {
+                $(".stage").hide().filter(":eq(" + step + ")").show().css({ "top" : "-100%", "bottom" : "100%" }).animate({ "top" : "0", "bottom" : 0 }, 1000);
+            }, 2000);
+            setTimeout(function() {
+                $("#modal .dialog.question").hide();
+                $("#modal .dialog.question:eq(" + (current_step - 1) + ")").show();
+                $("#modal").fadeIn(500);
+                $("#item-rocket>img:last").animate({ "opacity" : 0 }, 300);
+            }, 3000);
+        }, delay);        
+   }
+   var checkAnswer = function (s){
+       var $question = $("#" + s) 
+        var tplData = new_dataManager.getObjFromLocalStorage("web2b");
+        var resp = "";
+        var resp_id = "";
+        var loc_en = "";
+        var answer_exists = ($question.find("input:checked").length) || ($question.find("input.otra").val() != "");
+        if (answer_exists) {
+            $(".dialog-error:visible").remove().detach();
+            
+            let id = $question.find("h3").data("id");
+            if($question.attr("id") == "#dialog-question-1"){
+                localStorage.removeItem("web2b");
+            }
+            if(Object.keys(tplData).length == 0) {
+                    tplData.respuestas = {};                
+            }
+
+            if($question.find("textarea").length != 0){
+                resp = $question.find("textarea").val();
+            } else {            
+                resp = $question.find("input:checked").val();
+                loc_en = $question.find("input:checked[data-loc-en!='']").length > 0 ? $question.find("input:checked[data-loc-en!='']").attr("data-loc-en") : "";
+                resp_id = $question.find("input:checked[data-id!='']").length > 0 ? $question.find("input:checked[data-id!='']").attr("data-id") : "";            
+                if($question.find("input.otra").val() != "") {
+                    resp = $question.find("input.otra").val();
+                    loc_en = "";
+                }
+            }
+            
+            
+            if (loc_en == '' && $question.find("h3").data("type") == 6) {
+                $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+                    {
+                        key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+                        lang: 'es-en',
+                        text: resp,
+                        format: 'plain'
+                    }
+                ).done(function(data) {
+                    if(data){
+                        tplData.respuestas[id] = {
+                            "tipo": $question.find("h3").data("type"),
+                            "respuesta" : resp,
+                            "localizacion_en" : decodeURIComponent(data.text[0]),
+                            "resp_id" : resp_id
+                        };
+            
+                        localStorage.setItem("web2b", JSON.stringify(tplData));
+                    }
+                });	
+            } else {
+                tplData.respuestas[id] = {
+                    "tipo": $question.find("h3").data("type"),
+                    "respuesta" : resp,
+                    "localizacion_en" : loc_en,
+                    "resp_id" : resp_id
+                };
+
+                localStorage.setItem("web2b", JSON.stringify(tplData));
+            }
+            return true;
+        } else{
+            if ($question.find(".dialog-error").length == 0) {
+                $question.find("h3").after($(".dialog-error:last").clone());
+            }
+            $question.find(".dialog-error").hide().fadeIn("fast");
+            return false;
+            
+        }
+        
+    };    
+   /*Options*/
+   $(".options-group").hide();
+   $(".options h4").addClass("clickable").attr("data-state", "off");
+   $(".options i.fa-minus-circle").hide();
+   $(".options h4").on("click", function() {
+        var $this = $(this);
+        let index = $this.closest(".options").find("h4").index($this);
+        
+        if ($this.attr("data-state") == "off") {
+            $(".options h4").attr("data-state", "off").filter(":eq(" + index + ")").attr("data-state", "on");
+            $(".options h4 i.fa-minus-circle").hide();
+            $(".options h4 i.fa-plus-circle").show();
+            $this.find("i.fa-plus-circle").hide();
+            $this.find("i.fa-minus-circle").show();
+            $this.closest(".options").find(".options-group").hide().filter(".options-group:eq(" + index + ")").show();
+            $this.closest(".options").find(".options-group:eq(" + index + ") input:first").trigger("click");
+        } else {
+            $this.attr("data-state", "off");
+            $this.find("i.fa-minus-circle").hide();
+            $this.find("i.fa-plus-circle").show();
+            $this.closest(".options").find(".options-group:eq(" + index + ")").hide();
+        }
+   });
 }); 
-
-
-

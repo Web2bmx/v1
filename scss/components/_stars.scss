@@ -1,4 +1,16 @@
-.stars, .stars1, .stars2 {
+#background {
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 0;
+}
+.stars, .stars2, .stars3 {
 	display: block;
   }
   

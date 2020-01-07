@@ -1,8 +1,12 @@
+/*
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+
+*/
 /**/
 /*@import '../../scss/base/_variables';*/
-$ext-desktop: 1560px;
+$ext-ext-desktop: 1560px;
+$ext-desktop: 1280px;
 $desktop: 1040px;
 $tablet: 660px;
 $mobile: 320px;
@@ -55,6 +59,9 @@ $purple60 : rgba(178,5,255,1);
 	background-color: $blue20;
 }
 @import '../../scss/components/_stars';
+#background {
+    position: fixed;
+}
 /*@import '../../scss/components/_buttons';*/
  /*Botones*/
  button,
@@ -73,7 +80,8 @@ $purple60 : rgba(178,5,255,1);
 	color: $white;
 	cursor: pointer;
 	display: block;
-	font-weight: bold;
+    font-weight: bold;
+    font-size: inherit;
 	height: auto;
 	margin: 0;
 	overflow: hidden;
@@ -81,38 +89,47 @@ $purple60 : rgba(178,5,255,1);
 	text-align: center;
 	text-transform: uppercase;
 	transition: background-color 0.3s ease;
-	width: auto;
+    width: auto;
+    &:link, &:visited {
+		color: $white;
+	}
 	&:hover, &:active {
 		background-color: $pink80;
 	}
 }
-@import "../../scss/components/_modal"; 
+.clickable {
+    cursor: pointer;
+}
+/*@import "../../scss/components/_modal"; */
 /*@import '../../scss/partials/_errors';*/
-.form-error{
+/*.form-error{
 	color: $red60;
 	display: none;
 	font-size: .75rem;
 	margin: .5rem 0;
 	text-align: center;
-}
+}*/
 /**/
 /*ELEMENTS*/
+* {
+    list-style-type: none;
+    font-size: inherit;
+    font-weight: normal;
+	margin: 0;
+	padding: 0;
+}
 html { font-size: 150%; }
 body {
     background-color: $blue20;
     @include background-color-gradient-blue;
+    background-attachment: fixed;
     color: $gray80;
 	font-family: 'Open Sans', sans-serif;
-	font-size: .75rem;
-	line-height: 1rem;
+    font-size: .75rem;
+    line-height: 1rem;
     margin: 0;
     padding: 0;
     position: relative;
-}
-div, ul, ol, nav, p {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
 }
 a {
 	color: $gray80;
@@ -125,10 +142,11 @@ a {
 		color: $white;
 	}
 }
+/*
 .right{ float: right; }
 .left{ float: left; }
 img{ position: relative; }
-/**/
+
 .background,
 main {
     height: 100%;
@@ -335,22 +353,19 @@ button,
         
     }
 }
+.datos-existentes button {
+    display: inline-block;
+}
 .ui-dialog .ui-dialog-content.dialog{ 
     overflow: hidden;
-    
     &.datos-existentes,
     &.proyecto-existente {
         max-height: none !important; 
         height: auto !important; 
     }
-    &.primera-pregunta{ background: url(../images/p1_bg.jpg) bottom center no-repeat; }    
-    &.segunda-pregunta{ background: url(../images/p2_bg.jpg) bottom center no-repeat; } 
-    &.tercera-pregunta{ background: url(../images/p3_bg.jpg) bottom center no-repeat; } 
-    &.cuarta-pregunta{ background: url(../images/p4_bg.jpg) bottom center no-repeat; } 
-    &.quinta-pregunta{ background: url(../images/p5_bg.jpg) bottom center no-repeat; } 
-    &.sexta-pregunta{ background: url(../images/p1_bg.jpg) bottom center no-repeat; }    
-    &.septima-pregunta{ background: url(../images/p2_bg.jpg) bottom center no-repeat; }  
-    
+    &.primera-pregunta{ background: url(../images/item_spaceman_land.svg) bottom center no-repeat; }    
+    &.segunda-pregunta{ background: url(../images/item_spaceman_planet_blue.svg) bottom center no-repeat; }
+    &.tercera-pregunta{ background: url(../images/item_spaceman_earth.svg) bottom center no-repeat; }    
     &.fin{
         text-align: center;
         background-color: $blue20;
@@ -441,37 +456,6 @@ textarea{
         }          
     }
 }
-.global-back{
-    position: fixed;
-    top: .5rem;
-    left: .5rem;
-    z-index: 1000;
-    background: none;
-    padding: 0;
-    &:hover{
-        opacity: 0.7;
-    }
-    i{
-        color: $pink60;
-        font-size: 1rem;
-        @include breakpoint($tablet){
-            font-size: 1.5rem;
-        }
-        
-    }
-
-    span{
-        color: $white;
-        line-height: 1rem;
-        display: inline-block;
-        vertical-align: top;
-        margin-left: .25rem;
-        @include breakpoint($tablet){
-            line-height: 2rem;
-        }
-
-    }
-}
 .cont_answers {
     display: block;
     height: auto;
@@ -497,6 +481,287 @@ textarea{
 .group_answers>label {
     padding-left: 2.5rem;
     display: block;
-    font-size: .5rem;
     height: 2.5rem;
+}*/
+#modal {
+    background-color: $gray80;
+    bottom: 0;
+    color: $gray20;
+    display: block;
+    left: 0;
+    height: auto;
+    /*opacity: .3;*/
+    overflow: hidden;
+    overflow-y: auto;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 4;
+}
+@media screen and (min-width: $tablet) {
+    #modal {
+        @include border-radius(.25rem);
+        bottom: 2rem;
+        left: 2rem;
+        right: 2rem;
+        top: 2rem;
+        width: auto;
+    }
+}
+@media screen and (min-width: $ext-desktop) {
+    #modal {
+        left: 8rem;
+        right: 8rem;
+    }
+}
+@media screen and (min-width: $ext-ext-desktop) {
+    #modal {
+        left: 12rem;
+        right: 12rem;
+    }
+}
+.dialog {
+    bottom: 0;
+    display: block;
+    height: auto;
+    left: 0;
+    overflow: scroll;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1rem;
+    text-align: center;
+    width: auto;
+}
+@media screen and (min-width: $tablet) { .dialog { padding: 2rem; } }
+.dialog .options {
+    display: block;
+    overflow: hidden;
+}
+.dialog nav {
+    display: block;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+.dialog {
+    button, .boton {
+        display: block;
+        margin-top: .5rem;
+        width: auto;
+    }
+}
+@media screen and (min-width: $tablet) {
+    .dialog {
+        button, a.boton {
+            display: inline-block;
+            margin: 0;
+            width: auto;
+        }
+    }   
+}
+.dialog h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.dialog-error {
+    @include border-radius(.25rem);
+    background-color: $white;
+    border: 1px solid $pink60;
+    font-size: .5rem;
+    padding: .5rem;
+}
+@media screen and (min-width: $tablet) { a.back { float: left; } }
+.question {
+    text-align: left;
+}
+.question nav {
+    text-align: right;
+}
+.options h4 {
+    margin: .5rem 0 0 0;
+}
+.options label {
+    @include border-radius(.25rem);
+    background-color: $gray60;
+    cursor: pointer;
+    display: block;
+    font-size: .5rem;
+    margin: .25rem 0;
+    padding: .25rem .5rem;
+}
+.options label:hover {
+    background-color: $pink100;
+}
+.options input[type="radio"] {
+    display: none;
+}
+.options input[type="radio"]:checked+label {
+    background-color: $pink100;
+    font-weight: bold;
+}
+.question .options-group {
+    clear: both;
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+.option-free {
+    display: block;
+    margin-top: .5rem;
+    overflow: hidden;
+    width: 100%;
+}
+.option-free input[type="text"] {
+    @include border-radius(.25rem);
+    border: none;
+    display: block;
+    padding: .5rem;
+    overflow: hidden;
+    width: 100%;
+}
+.option-free input[type="text"]:focus {
+    outline: none;
+}
+/*DIALOG END*/
+#dialog-end-rocket {
+    width: 6rem;
+    margin: 4rem auto 0 auto;
+}
+@media screen and (min-width: $tablet) { #dialog-end-rocket { margin-top: 8rem; } }
+@media screen and (min-width: $desktop) { #dialog-end-rocket { margin-top: 2rem; width: 4rem; } }
+#dialog-end h2 {
+    margin: 1rem 0;
+}
+#dialog-end .boton {
+    display: block;
+}
+@media screen and (min-width: $desktop) { #dialog-end .boton { display: inline-block; } }
+/*STAGE*/
+#stage {
+    bottom: 0;
+    display: block;
+    height: auto;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.stage {
+    bottom: 0;
+    display: block;
+    height: auto;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: center;
+    width: 100%;
+}
+#stage aside {
+    position: absolute;
+}
+#button-start {
+    display: inline-block;
+    margin: 15rem auto 0 auto;
+    width: auto;
+}
+@media screen and (min-width: $tablet) { #button-start { margin-top: 20rem; } }
+@media screen and (min-width: $desktop) { #button-start { margin-top: 10rem; } }
+@media screen and (min-width: $ext-desktop) { #button-start { margin-top: 15rem; } }
+/*ITEMS*/
+#item-land {
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+}
+@media screen and (min-width: $tablet) { #item-land { left: 10%; width: 80% } }
+@media screen and (min-width: $desktop) { #item-land { left: 30%; width: 65% } }
+#item-spaceman {
+    bottom: 1.5rem;
+    left: 45%;
+    width: 4rem;
+}
+@media screen and (min-width: $tablet) { #item-spaceman { bottom: 3rem; left: 50%; width: 6rem; } }
+@media screen and (min-width: $desktop) { #item-spaceman { left: 65%; width: 5rem; } }
+@media screen and (min-width: $ext-desktop) { #item-spaceman { width: 6rem; } }
+#item-comets {
+    left: 2rem;
+    top: 18rem;
+    width: 4rem;
+}
+@media screen and (min-width: $tablet) { #item-comets { left: 4rem; top: 26rem; width: 8rem; } }
+@media screen and (min-width: $desktop) { #item-comets { top: 6rem; } }
+#item-planet-red {
+    right: 1rem;
+    top: 6rem;
+    width: 4rem;
+}
+@media screen and (min-width: $tablet) { #item-planet-red { right: 2rem; top: 6rem; width: 10rem; } }
+#item-sun {
+    left: 2rem;
+    top: 18rem;
+    width: 6rem;
+}
+@media screen and (min-width: $tablet) { #item-sun { left: 4rem; top: 26rem; width: 12rem; } }
+@media screen and (min-width: $desktop) { #item-sun { top: 8rem; } }
+#item-planet-blue {
+    right: 1rem;
+    top: 6rem;
+    width: 4rem;
+}
+@media screen and (min-width: $tablet) { #item-planet-blue { right: 2rem; top: 6rem; width: 10rem; } }
+#item-earth {
+    left: 1rem;
+    top: 6rem;
+    width: 4rem;
+}
+@media screen and (min-width: $tablet) { #item-earth { left: 2rem; top: 12rem; width: 10rem; } }
+#item-satellite {
+    right: 2rem;
+    top: 18rem;
+    width: 4rem;
+}
+@media screen and (min-width: $tablet) { #item-satellite { right: 4rem; top: 26rem; width: 6rem; } }
+@media screen and (min-width: $tablet) { #item-satellite { top: 10rem; } }
+/*EO ITEMS*/
+#item-rocket {
+    bottom: -2rem;
+    position: fixed;
+    left: 30%;
+    width: 3rem;
+    z-index: 3;
+    img:nth-child(2) {
+        opacity: 0;
+    }
+}
+@media screen and (min-width: $tablet) { #item-rocket { bottom: -3rem; left: 35%; width: 6rem; } }
+@media screen and (min-width: $desktop) {  #item-rocket { left: 45%; width: 5rem; } }
+@media screen and (min-width: $ext-desktop) {  #item-rocket { width: 6rem; } }
+/**/
+#global-navigation {
+    left: .5rem;
+    position: fixed;
+    top: .5rem;
+    z-index: 3;
+    a {
+        opacity: 0.6;    
+        transition: opacity 0.3s ease;
+        &:hover{ opacity: 1; }
+        i{ color: $pink60; }
+        span{
+            color: $white;
+            font-size: .5rem;
+            margin-left: .25rem;
+            vertical-align: top;
+        }
+    }    
 }
