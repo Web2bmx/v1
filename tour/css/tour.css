@@ -664,6 +664,9 @@ textarea{
     margin: 0;
     width: auto;
   }
+  .dialog button {
+    margin: 0 .25rem;
+  }
 }
 
 .dialog h3 {

@@ -3,6 +3,7 @@ export default function dataManager() {
 		var jsonData = localStorage.getItem(key);
 		if (jsonData == null) {
 			jsonData = {};
+			if(key == "web2b") { jsonData.respuestas = {}; }
 		} else {
 			try {
 				jsonData = JSON.parse(jsonData);

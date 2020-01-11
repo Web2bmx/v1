@@ -1,135 +1,64 @@
-/*
-import dialogHandler from '../../js/dialog';
-
-*/
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-export default function tour() {    
-    
-
-    
-    
-    
-    
-    
-    
-
-    var back = (e) => {
-        $(".dialog:visible").dialog("close");
-        const back = $(e.currentTarget).data("back");
-        const obj = e.data.obj;
-
-        if(back == 0){
-            paso1();
-        } else{
-            obj['paso' + back]();
-        }
-    };
-
-    var init = (that) => {
-        
-        let winWidth = $(window).width(),    
-            h = $(window).height();    
-        
-        dialogHandler(true);  
-    
-        // verify incomplete tour
-        let tplData = new_dataManager.getObjFromLocalStorage("web2b");        
-        if(Object.keys(tplData).length == 0) {
-            tplData.respuestas = {};
-
-            // verify existing project
-            let existingData = new_dataManager.getObjFromLocalStorage('web2b_actualPage');
-            if(Object.keys(existingData).length > 0) {
-                $(".proyecto-existente").dialog( "open" );
-            }                        
-        }
-        else {
-            if(Object.keys(tplData.respuestas).length > 0){
-                $(".datos-existentes").dialog( "open" ); 
-            }            
-        }
-        
-        $(".iniciar").click(function(){
-            $(".datos-existentes").dialog( "close" );
-            localStorage.removeItem("web2b");
-            tplData = {};
-        });
-    
-        $(".continuar").click(function(){
-            $(".init").fadeOut(50);
-            $(".datos-existentes").dialog( "close" );
-            switch(Object.keys(tplData.respuestas).length + 1){
-                case 2:
-                    paso3();
-                break;
-                case 3:
-                    paso4();
-                break;
-                case 4:
-                    $(".fin").dialog( "open" );
-                break;
-            }
-        });
-
-        $(".iniciar-proyecto").click(function(){
-            localStorage.removeItem('web2b_actualPage');
-            localStorage.removeItem('web2b_template');
-            localStorage.removeItem('web2b_templateId');
-            localStorage.removeItem("web2b");
-            $(".proyecto-existente").dialog( "close" );
-        });       
-        
-        $(".continuar-proyecto").click(function(){
-            location.href = "/crea";
-        });             
-        
-        
-
-        $(".back").on('click', {obj: that}, that.back);
-
-        /*GRUPOS DE RESPUESTAS */
-        $(".group_answers").hide();
-        $(".cont_answers>label>input[type='radio']").change(function() {
-            var $this = $(this);
-            $this.parent().parent().parent().find(".group_answers").hide();
-            $this.parent().parent().parent().find(".cont_answers>label").show();
-            $this.parent().next(".group_answers").show().find("input:first").trigger("click");
-            //$this.parent().hide();
-            return false;
-        });
-               
-    };
-
-    return {
-        init: init,
-        paso1: paso1,
-        paso2: paso2,
-        paso3: paso3,
-        paso4: paso4,
-        paso5: paso5,
-        paso6: paso6,
-        paso7:paso7,
-        back: back
-    };
-}
-/*
-    var t = new tour();
-    t.init(t);
-    */
 import dataManager from '../../js/dataManager';
 $(document).ready(function(){
     var new_dataManager = new dataManager(); 
+    var _tplData = new_dataManager.getObjFromLocalStorage("web2b");
     var current_step = 0;
     var total_steps = $(".stage").length;
-   $(".stage:not(#stage-" + current_step + ")").hide();
-
-   $("#modal .dialog").hide();
-   $("#modal").hide();
+    $(".stage:not(#stage-" + current_step + ")").hide();
+    $("#modal .dialog").hide();
+    $("#modal").hide();
+    /* */
+    // verify incomplete tour
+    if(Object.keys(_tplData).length == 0) {
+        console.log("Nuevo");
+        
+        //_tplData.respuestas = {};
+        // verify existing project
+        let existingData = new_dataManager.getObjFromLocalStorage('web2b_template');
+        if(Object.keys(existingData).length > 0) {
+            console.log("Proyecto existe");
+            $("#dialog-existing-project").show();
+            $("#modal").fadeIn(500);
+            $(".continuar-proyecto").click(function(){
+                location.href = "/crea";
+            }); 
+            $(".iniciar-proyecto").click(function(){
+                localStorage.removeItem('web2b_actualPage');
+                localStorage.removeItem('web2b_template');
+                localStorage.removeItem('web2b_templateId');
+                localStorage.removeItem('web2b_template');
+                localStorage.removeItem("web2b");
+                $("#modal").fadeOut(500);
+                $("#dialog-existing-project").hide();
+            });      
+        }
+                           
+    }
+    else {
+        console.log("Ya hay respuestas");
+        $("#dialog-existing-session").show();
+        $("#modal").fadeIn(500);
+        $(".iniciar").on("click", function() {
+            localStorage.removeItem("web2b");
+            _tplData = new_dataManager.getObjFromLocalStorage("web2b")
+            $("#modal").fadeOut(500);
+            $("#dialog-existing-session").hide();
+        });
+        $(".continuar").on("click", function() {
+            $("#dialog-existing-session").hide();
+            current_step = Object.keys(_tplData.respuestas).length + 1;
+            console.log(current_step);
+            if (current_step < 4) {
+                $("#modal").fadeOut(500);
+                showStep(current_step);
+            } else {
+                $("#modal").show();
+                $("#modal .dialog").hide();
+                $("#dialog-end").show();
+            }
+        });
+    }   
+    
    
    $("a[href*='#stage-']").on("click", function() {
         var $this = $(this);
@@ -197,98 +126,86 @@ $(document).ready(function(){
         }, delay);        
    }
    var checkAnswer = function (s){
-       var $question = $("#" + s) 
-        var tplData = new_dataManager.getObjFromLocalStorage("web2b");
-        var resp = "";
-        var resp_id = "";
-        var loc_en = "";
-        var answer_exists = ($question.find("input:checked").length) || ($question.find("input.otra").val() != "");
+        var $question = $("#" + s) 
+        var answer_exists = ($question.find("input:checked").length > 0) || ($question.find("input.otra").val() != "");
         if (answer_exists) {
             $(".dialog-error:visible").remove().detach();
             
             let id = $question.find("h3").data("id");
-            if($question.attr("id") == "#dialog-question-1"){
-                localStorage.removeItem("web2b");
-            }
-            if(Object.keys(tplData).length == 0) {
-                    tplData.respuestas = {};                
-            }
+            let q_type = $question.find("h3").data("type");
+            
+            let resp = "";
+            let resp_id = "";
+            let loc_en = "";
 
-            if($question.find("textarea").length != 0){
-                resp = $question.find("textarea").val();
-            } else {            
+            if ($question.find("input:checked").length > 0) {
                 resp = $question.find("input:checked").val();
-                loc_en = $question.find("input:checked[data-loc-en!='']").length > 0 ? $question.find("input:checked[data-loc-en!='']").attr("data-loc-en") : "";
-                resp_id = $question.find("input:checked[data-id!='']").length > 0 ? $question.find("input:checked[data-id!='']").attr("data-id") : "";            
-                if($question.find("input.otra").val() != "") {
-                    resp = $question.find("input.otra").val();
-                    loc_en = "";
-                }
-            }
-            
-            
-            if (loc_en == '' && $question.find("h3").data("type") == 6) {
-                $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
-                    {
-                        key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
-                        lang: 'es-en',
-                        text: resp,
-                        format: 'plain'
-                    }
-                ).done(function(data) {
-                    if(data){
-                        tplData.respuestas[id] = {
-                            "tipo": $question.find("h3").data("type"),
-                            "respuesta" : resp,
-                            "localizacion_en" : decodeURIComponent(data.text[0]),
-                            "resp_id" : resp_id
-                        };
-            
-                        localStorage.setItem("web2b", JSON.stringify(tplData));
-                    }
-                });	
+                resp_id = $question.find("input:checked").attr("data-id");
+                loc_en = $question.find("input:checked").attr("data-loc-en");
+            }    
+            if($question.find("input.otra").val() != "") { resp = $question.find("input.otra").val(); }
+            if (loc_en == '' && q_type == 6) {
+                translateAnswer(id, q_type, resp, loc_en, resp_id);
             } else {
-                tplData.respuestas[id] = {
-                    "tipo": $question.find("h3").data("type"),
-                    "respuesta" : resp,
-                    "localizacion_en" : loc_en,
-                    "resp_id" : resp_id
-                };
-
-                localStorage.setItem("web2b", JSON.stringify(tplData));
+                saveData(id, q_type, resp, loc_en, resp_id);
             }
             return true;
         } else{
-            if ($question.find(".dialog-error").length == 0) {
-                $question.find("h3").after($(".dialog-error:last").clone());
-            }
+            if ($question.find(".dialog-error").length == 0) { $question.find("h3").after($(".dialog-error:last").clone()); }
             $question.find(".dialog-error").hide().fadeIn("fast");
             return false;
             
         }
         
-    };    
-   /*Options*/
-   $(".options-group").hide();
-   $(".options h4").addClass("clickable").attr("data-state", "off");
-   $(".options i.fa-minus-circle").hide();
-   $(".options h4").on("click", function() {
-        var $this = $(this);
-        let index = $this.closest(".options").find("h4").index($this);
-        
-        if ($this.attr("data-state") == "off") {
-            $(".options h4").attr("data-state", "off").filter(":eq(" + index + ")").attr("data-state", "on");
-            $(".options h4 i.fa-minus-circle").hide();
-            $(".options h4 i.fa-plus-circle").show();
-            $this.find("i.fa-plus-circle").hide();
-            $this.find("i.fa-minus-circle").show();
-            $this.closest(".options").find(".options-group").hide().filter(".options-group:eq(" + index + ")").show();
-            $this.closest(".options").find(".options-group:eq(" + index + ") input:first").trigger("click");
-        } else {
-            $this.attr("data-state", "off");
-            $this.find("i.fa-minus-circle").hide();
-            $this.find("i.fa-plus-circle").show();
-            $this.closest(".options").find(".options-group:eq(" + index + ")").hide();
-        }
-   });
+    };
+    var translateAnswer = function(id, q_type, resp, loc_en, resp_id) {
+        $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
+            {
+                key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
+                lang: 'es-en',
+                text: resp,
+                format: 'plain'
+            }
+        ).done(function(data) {
+            if(data){
+                saveData(id, q_type, resp, decodeURIComponent(data.text[0]), resp_id);
+            }
+        });	
+    }
+    var saveData = function (id, q_type, resp, loc_en, resp_id){
+        _tplData.respuestas[id] = {
+            "tipo": q_type,
+            "respuesta" : resp,
+            "localizacion_en" : loc_en,
+            "resp_id" : resp_id
+        };
+        localStorage.setItem("web2b", JSON.stringify(_tplData));
+    };
+    var setOptions = function (){
+        $(".options-group").hide();
+        $(".options h4").addClass("clickable").attr("data-state", "off");
+        $(".options i.fa-minus-circle").hide();
+        $(".options h4").on("click", function() {
+                var $this = $(this);
+                let index = $this.closest(".options").find("h4").index($this);
+                
+                if ($this.attr("data-state") == "off") {
+                    $(".options h4").attr("data-state", "off").filter(":eq(" + index + ")").attr("data-state", "on");
+                    $(".options h4 i.fa-minus-circle").hide();
+                    $(".options h4 i.fa-plus-circle").show();
+                    $this.find("i.fa-plus-circle").hide();
+                    $this.find("i.fa-minus-circle").show();
+                    $this.closest(".options").find(".options-group").hide().filter(".options-group:eq(" + index + ")").show();
+                    $this.closest(".options").find(".options-group:eq(" + index + ") input:first").trigger("click");
+                } else {
+                    $this.attr("data-state", "off");
+                    $this.find("i.fa-minus-circle").hide();
+                    $this.find("i.fa-plus-circle").show();
+                    $this.closest(".options").find(".options-group:eq(" + index + ")").hide();
+                }
+        });
+    }
+    /* */
+    setOptions();
+    /* */
 }); 

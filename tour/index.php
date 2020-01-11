@@ -22,15 +22,19 @@
         <main>
             <section id="modal" style="display: none;">
                 <div id="dialog-existing-session" class="dialog">
-                    <p>Hemos detectado que ya estabas realizando el tour.</p>
-                    <h3>¿Quieres seguir donde estabas o iniciar de nuevo?</h3>                         
-                    <button class="iniciar">Iniciar de nuevo</button><button class="continuar res">Continuar donde estaba</button>
+                    <h3>Hemos detectado que ya estabas realizando el tour.</h3>
+                    <p>¿Quieres seguir donde estabas o iniciar de nuevo?</p>                         
+                    <nav>
+                        <button class="iniciar">Iniciar de nuevo</button><button class="continuar res">Continuar donde estaba</button>
+                    </nav>
                 </div>
                 <div id="dialog-existing-project" class="dialog">
-                    <p>Hemos detectado que ya tienes un proyecto abierto.</p> 
-                    <h3>¿Quieres seguir editandolo o iniciar un nuevo proyecto?</h3>                         
-                    <button class="iniciar-proyecto">Iniciar otro Proyecto</button>
-                    <button class="continuar-proyecto res">Continuar Editando</button>                                
+                    <h3>Hemos detectado que ya tienes un proyecto en curso.</h3> 
+                    <p>¿Quieres seguir editandolo o iniciar un nuevo proyecto?</p>                         
+                    <nav>
+                        <button class="iniciar-proyecto">Iniciar otro Proyecto</button>
+                        <button class="continuar-proyecto res">Continuar Editando</button>                                
+                    </nav>
                 </div>
                 <?php include "include/include_questions.php"; ?>
                 <div id="dialog-end" class="dialog">
