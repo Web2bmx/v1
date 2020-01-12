@@ -88,11 +88,19 @@ export default function dataManager() {
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
 		localStorage.setItem("web2b_pages", JSON.stringify(data.paginas));
 	};
+	var purgeTemplateData = function () {
+		localStorage.removeItem('web2b_actualPage');
+        localStorage.removeItem('web2b_template');
+        localStorage.removeItem('web2b_templateId');
+        localStorage.removeItem('web2b_template');
+        localStorage.removeItem("web2b");
+	}
 	return {
 		getObjFromLocalStorage: getObjFromLocalStorage,
 		saveWeb2bJson: saveWeb2bJson,
 		saveSelected: saveSelected,
 		getPagesFromDB: getPagesFromDB,
-		setDataObjects: setDataObjects
+		setDataObjects: setDataObjects,
+		purgeTemplateData: purgeTemplateData
 	};
 }

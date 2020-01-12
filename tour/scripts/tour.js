@@ -1,95 +1,88 @@
 import dataManager from '../../js/dataManager';
-$(document).ready(function(){
+export default function Tour() {
     var new_dataManager = new dataManager(); 
     var _tplData = new_dataManager.getObjFromLocalStorage("web2b");
     var current_step = 0;
     var total_steps = $(".stage").length;
-    $(".stage:not(#stage-" + current_step + ")").hide();
-    $("#modal .dialog").hide();
-    $("#modal").hide();
-    /* */
-    // verify incomplete tour
-    if(Object.keys(_tplData).length == 0) {
-        console.log("Nuevo");
-        
-        //_tplData.respuestas = {};
-        // verify existing project
-        let existingData = new_dataManager.getObjFromLocalStorage('web2b_template');
-        if(Object.keys(existingData).length > 0) {
-            console.log("Proyecto existe");
-            $("#dialog-existing-project").show();
+    var init = function (){
+        $(".stage:not(#stage-" + current_step + ")").hide();
+        $("#modal .dialog").hide();
+        $("#modal").hide();
+        setOptions();
+        /* */
+        // verify incomplete tour
+        if(Object.keys(_tplData).length == 0) {
+            let existingData = new_dataManager.getObjFromLocalStorage('web2b_template');
+            if(Object.keys(existingData).length > 0) {
+                console.log("Proyecto existe");
+                $("#dialog-existing-project").show();
+                $("#modal").fadeIn(500);
+                $(".continuar-proyecto").click(function(){
+                    location.href = "/crea";
+                }); 
+                $(".iniciar-proyecto").click(function(){
+                    new_dataManager.purgeTemplateData();
+                    $("#modal").fadeOut(500);
+                    $("#dialog-existing-project").hide();
+                });      
+            }
+                            
+        } else {
+            $("#dialog-existing-session").show();
             $("#modal").fadeIn(500);
-            $(".continuar-proyecto").click(function(){
-                location.href = "/crea";
-            }); 
-            $(".iniciar-proyecto").click(function(){
-                localStorage.removeItem('web2b_actualPage');
-                localStorage.removeItem('web2b_template');
-                localStorage.removeItem('web2b_templateId');
-                localStorage.removeItem('web2b_template');
-                localStorage.removeItem("web2b");
+            $(".iniciar").on("click", function() {
+                new_dataManager.purgeTemplateData();
+                _tplData = new_dataManager.getObjFromLocalStorage("web2b")
                 $("#modal").fadeOut(500);
-                $("#dialog-existing-project").hide();
-            });      
-        }
-                           
-    }
-    else {
-        console.log("Ya hay respuestas");
-        $("#dialog-existing-session").show();
-        $("#modal").fadeIn(500);
-        $(".iniciar").on("click", function() {
-            localStorage.removeItem("web2b");
-            _tplData = new_dataManager.getObjFromLocalStorage("web2b")
-            $("#modal").fadeOut(500);
-            $("#dialog-existing-session").hide();
-        });
-        $(".continuar").on("click", function() {
-            $("#dialog-existing-session").hide();
-            current_step = Object.keys(_tplData.respuestas).length + 1;
-            console.log(current_step);
-            if (current_step < 4) {
-                $("#modal").fadeOut(500);
-                showStep(current_step);
-            } else {
-                $("#modal").show();
-                $("#modal .dialog").hide();
-                $("#dialog-end").show();
-            }
-        });
-    }   
+                $("#dialog-existing-session").hide();
+            });
+            $(".continuar").on("click", function() {
+                $("#dialog-existing-session").hide();
+                current_step = Object.keys(_tplData.respuestas).length + 1;
+                console.log(current_step);
+                if (current_step < 4) {
+                    $("#modal").fadeOut(500);
+                    showStep(current_step);
+                } else {
+                    $("#modal").show();
+                    $("#modal .dialog").hide();
+                    $("#dialog-end").show();
+                }
+            });
+        }   
+        
     
-   
-   $("a[href*='#stage-']").on("click", function() {
-        var $this = $(this);
-        if ($this.attr("href") == "#stage-1") {
-            current_step = 1;
-            showStep(current_step);
-        }
-        if ($this.attr("href") == "#stage-2") {
-            if (checkAnswer($this.closest(".question").attr("id"))) {
-                current_step = 2;
+    $("a[href*='#stage-']").on("click", function() {
+            var $this = $(this);
+            if ($this.attr("href") == "#stage-1") {
+                current_step = 1;
                 showStep(current_step);
             }
-                
-        }
-        if ($this.attr("href") == "#stage-3") {
-            if (checkAnswer($this.closest(".question").attr("id"))) {
-                current_step = 3;
-                showStep(current_step);
+            if ($this.attr("href") == "#stage-2") {
+                if (checkAnswer($this.closest(".question").attr("id"))) {
+                    current_step = 2;
+                    showStep(current_step);
+                }
+                    
             }
-        }
-        if ($this.attr("href") == "#stage-end") {
-            if (checkAnswer($this.closest(".question").attr("id"))) {
-                $("#modal").show();
-                $("#modal .dialog").hide();
-                $("#dialog-end").show();
+            if ($this.attr("href") == "#stage-3") {
+                if (checkAnswer($this.closest(".question").attr("id"))) {
+                    current_step = 3;
+                    showStep(current_step);
+                }
             }
-        }
-        return false;
-   });
-   var showStep = function(step) {
-       var delay = 0;
+            if ($this.attr("href") == "#stage-end") {
+                if (checkAnswer($this.closest(".question").attr("id"))) {
+                    $("#modal").show();
+                    $("#modal .dialog").hide();
+                    $("#dialog-end").show();
+                }
+            }
+            return false;
+        });
+    }
+    var showStep = function(step) {
+        var delay = 0;
         if(step == 1) {
             delay = 500;
             $("#item-spaceman").animate({"left" : "50%", "opacity" : "0", "width" : "1rem"}, 300);
@@ -124,8 +117,8 @@ $(document).ready(function(){
                 $("#item-rocket>img:last").animate({ "opacity" : 0 }, 300);
             }, 3000);
         }, delay);        
-   }
-   var checkAnswer = function (s){
+    }
+    var checkAnswer = function (s){
         var $question = $("#" + s) 
         var answer_exists = ($question.find("input:checked").length > 0) || ($question.find("input.otra").val() != "");
         if (answer_exists) {
@@ -205,7 +198,11 @@ $(document).ready(function(){
                 }
         });
     }
-    /* */
-    setOptions();
-    /* */
+    return {
+		init: init
+	};
+};
+$(document).ready(function(){
+    var new_tour = new Tour();
+    new_tour.init();
 }); 
