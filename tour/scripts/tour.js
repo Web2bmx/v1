@@ -5,12 +5,14 @@ export default function Tour() {
     var current_step = 0;
     var total_steps = $(".stage").length;
     var init = function (){
+        setOptions();
+        setTourNavigation();
+        setTour();
+    }
+    var setTour = function() {
         $(".stage:not(#stage-" + current_step + ")").hide();
         $("#modal .dialog").hide();
         $("#modal").hide();
-        setOptions();
-        /* */
-        // verify incomplete tour
         if(Object.keys(_tplData).length == 0) {
             let existingData = new_dataManager.getObjFromLocalStorage('web2b_template');
             if(Object.keys(existingData).length > 0) {
@@ -50,9 +52,9 @@ export default function Tour() {
                 }
             });
         }   
-        
-    
-    $("a[href*='#stage-']").on("click", function() {
+    }
+    var setTourNavigation = function() {
+        $("a[href*='#stage-']").on("click", function() {
             var $this = $(this);
             if ($this.attr("href") == "#stage-1") {
                 current_step = 1;
@@ -80,7 +82,7 @@ export default function Tour() {
             }
             return false;
         });
-    }
+    };
     var showStep = function(step) {
         var delay = 0;
         if(step == 1) {
@@ -92,21 +94,7 @@ export default function Tour() {
         $("#item-rocket>img:last").animate({ "opacity" : 1 }, 300);
         setTimeout(function() {
             $(".stage:visible").animate({"top" : "100%", "bottom" : "-100%"}, 1000);
-            $(".stars1").animate({"height" : "5px"}, 1000, function() {
-                setTimeout(function() {
-                    $(".stars1").animate({"height" : "1px"}, 1000);
-                }, 1000);
-            });
-            $(".stars2").animate({"height" : "5px"}, 1000, function() {
-                setTimeout(function() {
-                    $(".stars2").animate({"height" : "2px"}, 1000);
-                }, 1000);
-            });
-            $(".stars3").animate({"height" : "5px"}, 1000, function() {
-                setTimeout(function() {
-                    $(".stars3").animate({"height" : "3px"}, 1000);
-                }, 1000);
-            });
+            animateBackground();
             setTimeout(function() {
                 $(".stage").hide().filter(":eq(" + step + ")").show().css({ "top" : "-100%", "bottom" : "100%" }).animate({ "top" : "0", "bottom" : 0 }, 1000);
             }, 2000);
@@ -118,6 +106,23 @@ export default function Tour() {
             }, 3000);
         }, delay);        
     }
+    var animateBackground = function (){
+        $(".stars1").animate({"height" : "15px"}, 1000, function() {
+            setTimeout(function() {
+                $(".stars1").animate({"height" : "1px"}, 1000);
+            }, 1000);
+        });
+        $(".stars2").animate({"height" : "15px", "opacity" : ".2"}, 1000, function() {
+            setTimeout(function() {
+                $(".stars2").animate({"height" : "2px", "opacity" : "1"}, 1000);
+            }, 1000);
+        });
+        $(".stars3").animate({"height" : "15px", "opacity" : ".2"}, 1000, function() {
+            setTimeout(function() {
+                $(".stars3").animate({"height" : "3px", "opacity" : "1"}, 1000);
+            }, 1000);
+        });
+    };
     var checkAnswer = function (s){
         var $question = $("#" + s) 
         var answer_exists = ($question.find("input:checked").length > 0) || ($question.find("input.otra").val() != "");

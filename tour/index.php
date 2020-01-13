@@ -18,7 +18,7 @@
     </head>
     <body>
         <nav id="global-navigation"><a href="/" class="global-navigation-back"><i class="fas fa-arrow-circle-left"></i><span>Regresar</span></a></nav>
-    	<aside id="background"><div class='stars'></div><div class='stars2'></div><div class='stars3'></div></aside>
+    	<aside id="background"><div class='stars1'></div><div class='stars2'></div><div class='stars3'></div></aside>
         <main>
             <section id="modal" style="display: none;">
                 <div id="dialog-existing-session" class="dialog">

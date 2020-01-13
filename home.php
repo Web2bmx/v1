@@ -48,7 +48,7 @@
 			</nav>
 			<main>
 				<section id="hero">
-					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
+					<span class='stars1'></span><span class='stars2'></span><span class='stars3'></span>
 					<div class="container">	
 						<img id="graph-rocket" src="landing/img/item_rocket.svg" />					
 						<h1>Impulsa tu estrategia digital</h1>
@@ -106,7 +106,7 @@
 					</div>
 				</section>
 				<section id="subscribe" class="canvas bg_white">
-					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
+					<span class='stars1'></span><span class='stars2'></span><span class='stars3'></span>
 					<span class="graph" id="gr_ship" style="background-image: url(landing/img/item_ship.svg);"></span>
 					<div class="container">
 						<form>
