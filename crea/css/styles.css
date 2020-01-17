@@ -1236,15 +1236,9 @@ a {
 
 @media (min-width: 1040px) {
   #app-control .photo-container {
-    height: 300px;
+    max-height: 300px;
     width: 100%;
-  }
-}
-
-@media (min-width: 1560px) {
-  #app-control .photo-container {
-    height: 300px;
-    width: 100%;
+    min-height: 150px;
   }
 }
 

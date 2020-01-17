@@ -172,7 +172,7 @@ export default function appManager() {
 			$("aside", this).addClass("thumb-selected");
 			$("[name^='inp-design']").removeAttr("checked");
 			$("input", this).attr("checked", "checked");
-			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad);
+			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad, true);
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {

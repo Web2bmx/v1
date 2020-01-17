@@ -18,3 +18,10 @@ update session = cualquier boton que guarde
 FOR PROD:
 #### Update PayPal refrence
 #### Get PROD version for unsplash
+
+
+Bugs found:
+Los botones de "ver mas" no hacen nada
+la galeria de fotos en el ultimo template esta roto
+La barra superior estorba al revisar el template
+Si la imagen no se encuentra dentro de las imagenes propuestas, agregarla a la lista

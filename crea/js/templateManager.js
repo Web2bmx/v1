@@ -3,7 +3,7 @@ export default function templateManager () {
 	var init = function(_that) {
         _ctrl = _that;
     };
-    var loadTemplate = function(callback) {
+    var loadTemplate = function(callback, templateChanged = false) {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
 		if (_ctrl.sessionStatus == "START SESSION") {
@@ -15,6 +15,10 @@ export default function templateManager () {
 			let newInp = $("input[value='inp-design-" + id + "']");
 			newInp.attr("checked","checked");
 			$("aside", newInp.parent()).addClass("thumb-selected");
+		}
+
+		if(templateChanged) {
+			_ctrl.sessionStatus = "RESUME SESSION";
 		}
 		
 		/* */
