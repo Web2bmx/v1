@@ -199,6 +199,7 @@ $color_red_002 : rgba(127, 160, 127, 1);
 .seemore {
 	display: inline-block;
 	text-align: center;
+	display: none;
 }
 .seemore span {
 	display: block;
@@ -332,40 +333,25 @@ $color_red_002 : rgba(127, 160, 127, 1);
 }
 .gallery {
 	@include box_block();
+	margin: 0 auto;
 	position: relative;
+	margin-bottom: 20px;
 }
 .gallery .img {
 	display: block;
-	height: 360px;
+	height: 620px;
 	min-width: 360px; 
 	overflow: hidden;
 	width: 100%; 
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $width_xs) {
+	.gallery {
+		width: 96%;
+	}
 	.gallery .img {
 		float: left; 
-		min-width: auto;
-		width: 50%; 
-	}
-}
-@media only screen and (min-width: $width_s) {
-	.gallery .img {
-		width: 33.33%; 
-	}
-}
-@media only screen and (min-width: $width_s) {
-	.gallery .img {
-		width: 25%; 
-	}
-}
-@media only screen and (min-width: $width_m) {
-	.gallery .img {
-		width: 20%; 
-	}
-}
-@media only screen and (min-width: $width_l) {
-	.gallery .img {
-		width: 16.66%; 
+		margin: 0 2% 1em 2%;
+		width: 46%; 
 	}
 	.gallery.gallery_slider .img {
 		display: block; 

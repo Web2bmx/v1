@@ -352,6 +352,7 @@ body {
   font-variant: small-caps;
   margin-top: 2em;
   padding: 1em 2em;
+  display: none;
 }
 
 .seemore span {
@@ -532,6 +533,7 @@ body {
   height: auto;
   overflow: hidden;
   width: 100%;
+  margin-bottom: 20px;
 }
 
 #items header {
@@ -558,13 +560,6 @@ body {
   width: 80%;
 }
 
-@media only screen and (min-width: 560px) {
-  .item {
-    height: 200px;
-    overflow: hidden;
-  }
-}
-
 #template.color-orange .item {
   background-color: #f0aa00;
 }
@@ -579,18 +574,9 @@ body {
 
 .item .img {
   display: block;
-  height: 200px;
+  height: 450px;
   overflow: hidden;
   width: 100%;
-}
-
-@media only screen and (min-width: 560px) {
-  .item .img {
-    height: 200px;
-    position: absolute;
-    width: 100%;
-    z-index: 0;
-  }
 }
 
 .item .wrapper-content {
@@ -601,15 +587,6 @@ body {
 }
 
 @media only screen and (min-width: 560px) {
-  .item .wrapper-content {
-    float: right;
-    height: 160px;
-    overflow: hidden;
-    padding: 20px 20px;
-    position: relative;
-    width: 160px;
-    z-index: 1;
-  }
   .items:nth-child(even) .item .wrapper-content {
     float: left;
   }
@@ -650,6 +627,7 @@ body {
   height: auto;
   overflow: hidden;
   width: 100%;
+  padding: 2em 0 0 0;
 }
 
 #gallery > .wrapper {
@@ -696,22 +674,20 @@ body {
 
 .gallery .img {
   display: block;
-  height: 220px;
+  height: 620px;
   min-width: 220px;
   overflow: hidden;
   width: 100%;
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 760px) {
+  .gallery {
+    width: 96%;
+  }
   .gallery .img {
     float: left;
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .gallery .img {
-    width: 33.33%;
+    margin: 0 2% 1em 2%;
+    width: 46%;
   }
   .gallery.gallery_slider .img {
     display: block;
