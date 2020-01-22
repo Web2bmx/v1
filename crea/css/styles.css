@@ -1457,15 +1457,10 @@ a {
   margin-top: 0;
   overflow: hidden;
   top: 0;
-}
-
-@media (min-width: 1040px) {
-  #app-control.view {
-    -moz-border-radius: 0 0 10px 10px;
-    -ms-border-radius: 0 0 10px 10px;
-    -webkit-border-radius: 0 0 10px 10px;
-    border-radius: 0 0 10px 10px;
-  }
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+  border-radius: unset;
 }
 
 /**/

@@ -192,9 +192,10 @@ export default function templateManager () {
 						if ($(".app-control-step:eq(" + (_ctrl.current_step - 1) + ")").has($this).length > 0) {
 							$template.find("#" + v_id).hide();
 						}
-					} else {
-						$template.find("#" + v_id).html($this.attr("placeholder"));
-					}
+					} 
+					// else {
+					// 	$template.find("#" + v_id).html($this.attr("placeholder"));
+					// }
 				}
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
