@@ -278,6 +278,10 @@ $color_red_002 : rgba(127, 160, 127, 1);
 	margin: 1em 0;
 	text-align: left;
 	width: 80%;
+
+	h3{
+		text-align: center;
+	}
 }
 @media only screen and (min-width: $width_xxs) {
 	.item .wrapper-content {
@@ -482,6 +486,7 @@ $color_red_002 : rgba(127, 160, 127, 1);
 	right: 0;
 	top: 0;
 	z-index: 0;
+	opacity: .3;
 }
 #cta .wrapper-content {
 	color: rgba(68, 68, 68, 1);

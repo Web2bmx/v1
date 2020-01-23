@@ -24,6 +24,4 @@ FOR PROD:
 
 Bugs found:
 Si la imagen no se encuentra dentro de las imagenes propuestas, agregarla a la lista
-La dieccion aparece con caracteres raros
 SI no tienes redes sociales, aparece "undefined"
-Los textos de los productos no concerdan con lo que se puede editar del todo
