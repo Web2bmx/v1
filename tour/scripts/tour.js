@@ -8,29 +8,25 @@ export default function Tour() {
         setOptions();
         setTourNavigation();
         setTour();
+
+        /*
+        ESTATUS:
+        Tour nuevo
+        Tour en proceso
+        Proyecto en proceso
+        */
+       var status = Object.keys(_tplData.respuestas).length == 0 ? "NEW" : "IN PROCESS";
+       status = Object.keys(new_dataManager.getObjFromLocalStorage('web2b_template')).length > 0 ? "WITH PROJECT" : status;
+       if (status == "IN PROCESS") { setDialogInProcess(); }   
+       if(status == "WITH PROJECT") { setDialogWithProject(); }
     }
     var setTour = function() {
         $(".stage:not(#stage-" + current_step + ")").hide();
         $("#modal .dialog").hide();
         $("#modal").hide();
-        if(Object.keys(_tplData).length == 0) {
-            let existingData = new_dataManager.getObjFromLocalStorage('web2b_template');
-            if(Object.keys(existingData).length > 0) {
-                console.log("Proyecto existe");
-                $("#dialog-existing-project").show();
-                $("#modal").fadeIn(500);
-                $(".continuar-proyecto").click(function(){
-                    location.href = "/crea";
-                }); 
-                $(".iniciar-proyecto").click(function(){
-                    new_dataManager.purgeTemplateData();
-                    $("#modal").fadeOut(500);
-                    $("#dialog-existing-project").hide();
-                });      
-            }
-                            
-        } else {
-            $("#dialog-existing-session").show();
+    }
+    var setDialogInProcess = function() {
+        $("#dialog-existing-session").show();
             $("#modal").fadeIn(500);
             $(".iniciar").on("click", function() {
                 new_dataManager.purgeTemplateData();
@@ -51,8 +47,19 @@ export default function Tour() {
                     $("#dialog-end").show();
                 }
             });
-        }   
-    }
+    };
+    var setDialogWithProject = function() {
+        $("#dialog-existing-project").show();
+        $("#modal").fadeIn(500);
+        $(".continuar-proyecto").click(function(){
+            location.href = "/crea";
+        }); 
+        $(".iniciar-proyecto").click(function(){
+            new_dataManager.purgeTemplateData();
+            $("#modal").fadeOut(500);
+            $("#dialog-existing-project").hide();
+        });  
+    };
     var setTourNavigation = function() {
         $("a[href*='#stage-']").on("click", function() {
             var $this = $(this);

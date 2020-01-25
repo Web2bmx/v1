@@ -100,16 +100,6 @@ $purple60 : rgba(178,5,255,1);
 .clickable {
     cursor: pointer;
 }
-/*@import "../../scss/components/_modal"; */
-/*@import '../../scss/partials/_errors';*/
-/*.form-error{
-	color: $red60;
-	display: none;
-	font-size: .75rem;
-	margin: .5rem 0;
-	text-align: center;
-}*/
-/**/
 /*ELEMENTS*/
 * {
     list-style-type: none;
@@ -142,347 +132,6 @@ a {
 		color: $white;
 	}
 }
-/*
-.right{ float: right; }
-.left{ float: left; }
-img{ position: relative; }
-
-.background,
-main {
-    height: 100%;
-	left: 0;
-    position: fixed;
-    top: 0;
-	width: 100%;
-}
-main > div {
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-    > div{
-        margin: 0 auto;
-        width: 100%;
-        > div{
-            overflow: hidden;
-        }
-    }    
-}
-button,
-.boton{
-    &.init{
-        top: 50%;
-        left: 50%;
-        margin-left: -3rem;  
-        position: fixed;
-    }
-    &.res{ 
-        float: right;
-    }
-    &.back{ 
-        float: left;
-    }    
-    &:active{
-        background-color: $blue80;
-    }
-}
-.space-man {
-    bottom: 2rem;
-    left: 50%;
-    margin-left: -2rem;
-    position: absolute;
-    width: 4rem;
-    z-index: 4;
-    @include breakpoint($tablet){
-        bottom: 4rem;
-        margin-left: -3rem;
-    }     
-    
-    @include breakpoint($desktop){
-        bottom: 3rem;
-        margin-left: 6.5rem;
-        width: 6rem;
-    }   
-    @include breakpoint($ext-desktop){
-        margin-left: 8.5rem;
-    }  
-}
-
-.inicio{
-    height: 185px;
-    @include breakpoint($tablet){
-        height: 348px;
-    }     
-    
-}
-.land{
-    width: 100%;
-    margin-top: 5.5rem;
-    @include breakpoint($tablet){
-        margin-top: 9.5rem;
-    }
-    @include breakpoint($desktop){
-        margin-top: 11rem;
-        margin-left: 40%;
-        width: 60%;
-    }
-    @include breakpoint($ext-desktop){
-        margin-top: 9rem;
-    }
-}
-.rocket{
-    position: absolute;
-    bottom: -2.5rem;
-    left: 50%;
-    z-index: 0;
-    width: 4rem;
-    margin-left: -4.5rem;
-    
-    @include breakpoint($tablet){
-        left: 50%;
-        margin-left: -6rem;
-        bottom: 0;
-    }         
-    @include breakpoint($desktop){
-        left: 50%;
-        bottom: -3.5rem;
-        margin-left: 3rem;
-        width: 6rem;
-    }      
-    @include breakpoint($ext-desktop){
-        bottom: -2rem;
-        margin-left: 4rem;
-        
-    }
-}
-.sun{
-    margin-top: 40rem;
-    margin-bottom: 40rem; 
-    text-align: right;
-    img{
-        width: 7rem;
-        @include breakpoint($tablet){
-            width: 10rem;
-        }          
-        
-    }     
-    
-}
-.segundo{
-    margin-top: 60rem;    
-}
-.planet-blue{
-    width: 8rem;
-    
-    @include breakpoint($tablet){
-        width: 30rem;
-    }      
-    @include breakpoint($desktop){
-        width: 18rem;
-    }      
-}
-.comets{
-    position: relative;
-    right: -3rem;    
-    img:first-child{
-        width: 4rem; 
-        @include breakpoint($tablet){
-            width: 8rem;
-        }
-    }
-            
-    img + img{
-        position: relative;
-        left: -3rem;
-        top: 1rem;
-        width: 3.5rem;
-       
-        @include breakpoint($tablet){
-            width: 7rem;
-            top: .5rem;
-            left: -5rem;    
-        }                 
-        
-    }     
-}
-.earth{
-    width: 8rem;
-    left: 1rem;    
-    @include breakpoint($tablet){
-        width: 32rem;
-    }    
-}
-.satellite{
-    width: 4rem;
-    display: block;
-    
-    @include breakpoint($tablet){
-        width: 8rem;
-    }       
-    @include breakpoint($desktop){
-        margin-right: 32rem;
-    }       
-}
-.nave{
-    margin: 1000px 50px;
-    text-align: right;
-    
-    img{
-        width: 100px; 
-        
-        @include breakpoint($tablet){
-            width: 180px;
-        }         
-        
-        @include breakpoint($desktop){
-            width: 200px;
-        }          
-        
-    }
-}
-
-.planet_red{    
-    img{
-        width: 12rem;
-        @include breakpoint($tablet){
-            width: 16rem;
-        }         
-        
-        @include breakpoint($desktop){
-            width: 20rem;
-        }          
-        
-    }
-}
-.datos-existentes button {
-    display: inline-block;
-}
-.ui-dialog .ui-dialog-content.dialog{ 
-    overflow: hidden;
-    &.datos-existentes,
-    &.proyecto-existente {
-        max-height: none !important; 
-        height: auto !important; 
-    }
-    &.primera-pregunta{ background: url(../images/item_spaceman_land.svg) bottom center no-repeat; }    
-    &.segunda-pregunta{ background: url(../images/item_spaceman_planet_blue.svg) bottom center no-repeat; }
-    &.tercera-pregunta{ background: url(../images/item_spaceman_earth.svg) bottom center no-repeat; }    
-    &.fin{
-        text-align: center;
-        background-color: $blue20;
-        color: $white;
-        text-transform: uppercase;    
-        aside{
-            margin-top: 25%;
-        }
-        img{
-            display: block;
-            margin: 0 auto;
-            height: 20%;
-            + img{
-                height: 12%;
-            }
-        }
-        h2{
-            margin-bottom: .5rem;        
-        }
-        p{
-            font-size: .5rem;
-            font-weight: normal;
-            margin-top: 0;
-            line-height: 1rem;
-            margin-bottom: 3rem;        
-        }
-    }    
-    aside{
-        overflow: hidden;
-        margin-bottom: 1rem;
-    }
-}
-
-textarea{
-    margin: .5rem 0px;
-    height: 8rem;
-    display: block;
-    border: none;
-    background: $gray80;
-    width: 100%;
-    padding: .5rem;
-    border-radius: .25rem;
-    font-size: .75rem;
-    outline: none;    
-}
-.dialog{
-    input[type=radio]{
-        position: absolute;
-        left: 1rem;
-        top: .5rem;        
-    }
-    label{        
-        width: 100%;
-        display: block;
-        float: left;
-        padding: .25rem .5rem .5rem .5rem;
-        box-sizing: border-box;
-        line-height: 1rem;
-        position: relative;
-        font-size: .75rem;  
-        @include breakpoint($tablet){
-            width: 50%;
-        }
-    }
-    p{
-        font-weight: bold;
-        &:first-child{
-            margin-top: 1rem;
-        }
-    }
-    .opciones {
-        margin-bottom: 4rem;
-        max-height: 20rem;
-        overflow-y: auto;
-        > div{
-            width: 100%;
-            overflow: hidden;
-            padding-top: .5rem;      
-        } 
-
-        + div{
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            width: 100%;
-        }          
-    }
-}
-.cont_answers {
-    display: block;
-    height: auto;
-    overflow: hidden;
-    width: 100%;
-    >label {
-        cursor: pointer;
-        &:first-child {
-            width: 100%;
-        }
-        > input[type='radio'] {
-            display: none;
-        }            
-    }
-
-}
-.group_answers {
-    display: block;
-    height: auto;
-    overflow: hidden;
-    width: 100%;
-}
-.group_answers>label {
-    padding-left: 2.5rem;
-    display: block;
-    height: 2.5rem;
-}*/
 #modal {
     background-color: $gray80;
     bottom: 0;
@@ -550,10 +199,13 @@ textarea{
         margin-top: .5rem;
         width: auto;
     }
+    button {
+        width: 100%;
+    }
 }
 @media screen and (min-width: $tablet) {
     .dialog {
-        button, a.boton {
+        button, .boton {
             display: inline-block;
             margin: 0;
             width: auto;
@@ -562,11 +214,15 @@ textarea{
     }   
 }
 .dialog h3 {
-    font-size: 1.25rem;
     font-weight: bold;
-    line-height: 2rem;
     margin-bottom: 1rem;
     text-align: center;
+}
+@media screen and (min-width: $tablet) {
+    .dialog h3 {
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
 }
 .dialog-error {
     @include border-radius(.25rem);
@@ -642,6 +298,15 @@ textarea{
     display: block;
 }
 @media screen and (min-width: $desktop) { #dialog-end .boton { display: inline-block; } }
+/*DIALOG EXISTING SESSION*/
+#dialog-existing-session {
+    padding-top: 40%;
+}
+@media screen and (min-width: $tablet) {
+    #dialog-existing-session {
+        padding-top: 15%;
+    }   
+}
 /*STAGE*/
 #stage {
     bottom: 0;
