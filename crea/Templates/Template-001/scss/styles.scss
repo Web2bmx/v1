@@ -121,6 +121,9 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	width: auto;
 	max-height: 100px;
 }
+.seemore {
+	display: none;
+}
 .seemore, .seemore>a {
 	@include box_block();
 }
@@ -149,7 +152,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 .item {
 	display: block;
-	height: 400px;
+	height: 450px;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
@@ -273,12 +276,14 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	margin: 0 auto;
 	position: relative;
+	margin-bottom: 20px;
 }
 .gallery .img {
 	display: block;
 	height: 620px;
 	overflow: hidden;
-	width: 100%; min-width: 220px; 
+	width: 100%; 
+	min-width: 220px; 
 }
 .gallery_slider {
 	cursor: pointer;

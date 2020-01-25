@@ -373,6 +373,7 @@ body {
 .seemore {
   display: inline-block;
   text-align: center;
+  display: none;
 }
 
 .seemore span {
@@ -473,6 +474,10 @@ body {
   width: 80%;
 }
 
+.item .wrapper-content h3 {
+  text-align: center;
+}
+
 @media only screen and (min-width: 560px) {
   .item .wrapper-content {
     float: right;
@@ -549,46 +554,27 @@ body {
   height: auto;
   overflow: hidden;
   width: 100%;
+  margin: 0 auto;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .gallery .img {
   display: block;
-  height: 360px;
+  height: 620px;
   min-width: 360px;
   overflow: hidden;
   width: 100%;
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 760px) {
+  .gallery {
+    width: 96%;
+  }
   .gallery .img {
     float: left;
-    min-width: auto;
-    width: 50%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .gallery .img {
-    width: 33.33%;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .gallery .img {
-    width: 25%;
-  }
-}
-
-@media only screen and (min-width: 1280px) {
-  .gallery .img {
-    width: 20%;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .gallery .img {
-    width: 16.66%;
+    margin: 0 2% 1em 2%;
+    width: 46%;
   }
   .gallery.gallery_slider .img {
     display: block;
@@ -759,6 +745,7 @@ body {
   right: 0;
   top: 0;
   z-index: 0;
+  opacity: .3;
 }
 
 #cta .wrapper-content {

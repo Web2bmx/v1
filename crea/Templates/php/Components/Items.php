@@ -21,7 +21,7 @@
                         <div class="wrapper-content">
                             <h3 id="val-content-title-item-<?php echo $key; ?>"><?php echo($row->item[$i - 1]->title); ?></h3>
                             <p id="val-content-item-<?php echo $key; ?>"><?php echo($row->item[$i - 1]->text); ?></p>
-                            <span id="val-precio-item-<?php echo $key; ?>"><?php echo($row->item[$i - 1]->precio); ?></span>
+                            <!-- <span id="val-precio-item-<?php echo $key; ?>"><?php echo($row->item[$i - 1]->precio); ?></span> -->
                         </div>
                     </div>
                 <?php 

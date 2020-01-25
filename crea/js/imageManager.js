@@ -75,6 +75,10 @@ export default function imageManager () {
 				}
 				if (add_image) { _current_images[t].push([arr[i], ""]); }
 			}
+
+			// Clean container before addin the images
+			$("#app-control-images-" + t + " .photo-container").empty();
+			
 			for(let j=0; j < _current_images[t].length; j++){
 				setUploadedImage(_current_images[t][j][0], t, _current_images[t][j][1] == "selected", true, j);
 			}

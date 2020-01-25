@@ -184,6 +184,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	font-variant: small-caps;
 	margin-top: 2em;
 	padding: 1em 2em;
+	display: none;
 }
 .seemore span {
 	display: block;
@@ -326,6 +327,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 /*ITEMS*/
 #items {
 	@include box_block();
+	margin-bottom: 20px;
 }
 #items header {
 	margin: 0 auto;
@@ -346,12 +348,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	position: relative;
 	width: 80%; 
 }
-@media only screen and (min-width: $width_xxs) {
-	.item {
-		height: 200px;
-		overflow: hidden;
-	}
-}
 #template.color-orange .item {
 	background-color: $color_orange_001;
 }
@@ -363,18 +359,10 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 .item .img {
 	display: block;
-	height: 200px;
+	height: 450px;
 	overflow: hidden;
 	width: 100%; 
 }
-@media only screen and (min-width: $width_xxs) {
-	.item .img {
-		height: 200px;
-		position: absolute;
-		width: 100%; 
-		z-index: 0;
-	}
-}	
 .item .wrapper-content {
 	display: block;
 	font-size: small;
@@ -382,15 +370,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	width: 80%;
 }
 @media only screen and (min-width: $width_xxs) {
-	.item .wrapper-content {
-		float: right;
-		height: 160px;
-		overflow: hidden;
-		padding: 20px 20px;
-		position: relative;
-		width: 160px;
-		z-index: 1;
-	}
 	.items:nth-child(even) .item .wrapper-content {
 		float: left;
 	}
@@ -418,6 +397,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 /*gallery*/
 #gallery {
 	@include box_block();
+	padding: 2em 0 0 0;
 }
 #gallery>.wrapper {
 	@include box_block();
@@ -450,20 +430,19 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 .gallery .img {
 	display: block;
-	height: 220px;
+	height: 620px;
 	min-width: 220px; 
 	overflow: hidden;
 	width: 100%; 
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $width_xs) {
+	.gallery {
+		width: 96%;
+	}
 	.gallery .img {
 		float: left; 
-		width: 50%; 
-	}
-}
-@media only screen and (min-width: $width_s) {
-	.gallery .img {
-		width: 33.33%; 
+		margin: 0 2% 1em 2%;
+		width: 46%; 
 	}
 	.gallery.gallery_slider .img {
 		display: block; 

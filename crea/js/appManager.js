@@ -107,6 +107,9 @@ export default function appManager() {
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
 				$("#app-control").addClass("view").find(">.app-control-step").hide();
+				if($("#menu").length > 0 && $("#menu").css("position")) {
+					$("#menu").css("top","40px");
+				}
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
@@ -117,6 +120,9 @@ export default function appManager() {
 				$(window).resize(function () {
 					topStepMargin();
 				});
+				if($("#menu").length > 0 && $("#menu").css("position")) {
+					$("#menu").css("top","0");
+				}
 			}
 			$("body").toggleClass("init");
 		});	
@@ -170,9 +176,9 @@ export default function appManager() {
 		$(".control-design-thumb").on('click', function () {
 			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
 			$("aside", this).addClass("thumb-selected");
-			$("[name^='inp-design']").removeAttr("checked");
-			$("input", this).attr("checked", "checked");
-			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad);
+			$("[name^='inp-design']").prop("checked", false);
+			$("input", this).prop("checked",true);
+			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad, true);
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {

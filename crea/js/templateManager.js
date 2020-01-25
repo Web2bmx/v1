@@ -3,7 +3,7 @@ export default function templateManager () {
 	var init = function(_that) {
         _ctrl = _that;
     };
-    var loadTemplate = function(callback) {
+    var loadTemplate = function(callback, templateChanged = false) {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
 		if (_ctrl.sessionStatus == "START SESSION") {
@@ -15,6 +15,10 @@ export default function templateManager () {
 			let newInp = $("input[value='inp-design-" + id + "']");
 			newInp.attr("checked","checked");
 			$("aside", newInp.parent()).addClass("thumb-selected");
+		}
+
+		if(templateChanged) {
+			_ctrl.sessionStatus = "RESUME SESSION";
 		}
 		
 		/* */
@@ -111,6 +115,9 @@ export default function templateManager () {
 					case "inp-contact-map" :
 						$template.find("#val-contact-map").html(selections[i_id] ? selections[i_id].text : '');
 						break;	
+					case "inp-contact-address" :
+						$template.find("#val-contact-address").html(selections[i_id] ? text : '');
+						break;							
 					case "inp-contact-facebook" :
 						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
 						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
@@ -124,7 +131,7 @@ export default function templateManager () {
 						$(".siteName").attr("href","http://" + selections[i_id] ? selections[i_id].text : '' + ".web2b.mx");
 						break;
 					default : 
-						$template.find("#" + v_id).html(selections[i_id] ? selections[i_id].text : '');
+						$template.find("#" + v_id).html(selections[i_id] && selections[i_id].text !== '' ? selections[i_id].text : $this.attr("placeholder"));
 						break;
 				}
 			});
@@ -137,9 +144,16 @@ export default function templateManager () {
 				let i_id = $this.attr("id");
 				let v_id = i_id.replace("inp", "val");
 				let arr;
+				let text = '';
 				let val = $this.val();
 				if(i_id == 'inp-contact-address') {
 					val = val + ($this.data('place') ? ('##' + $this.data('place')) : '');
+					let text = selections[i_id] && selections[i_id].text ? selections[i_id].text : '';
+					if(text.search('##') != -1) {
+						let arr = text.split('##');
+						text = arr[0];
+						$this.data('place', arr[1]);
+					}					
 				}				
 				if (val !== _ctrl.jd.selections[i_id].text) {
 
@@ -161,7 +175,10 @@ export default function templateManager () {
 							break;
 						case "inp-contact-map" :
 							$template.find("#val-contact-map").html(selections[i_id] ? selections[i_id].text : '');
-							break;	
+							break;		
+					case "inp-contact-address" :
+						$template.find("#val-contact-address").html(selections[i_id] ? text : '');
+						break;												
 						case "inp-contact-facebook" :
 							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
 							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id] ? selections[i_id].text : ''+ '">' + arr[1] + '</a>');
@@ -175,7 +192,7 @@ export default function templateManager () {
 							$(".siteName").attr("href","http://" + selections[i_id] ? selections[i_id].text : '' + ".web2b.mx");
 							break;
 						default : 
-							$template.find("#" + v_id).html(selections[i_id] ? selections[i_id].text : '');
+						$template.find("#" + v_id).html(selections[i_id] && selections[i_id].text !== '' ? selections[i_id].text : $this.attr("placeholder"));
 							break;
 					}
 				} else {
@@ -188,9 +205,10 @@ export default function templateManager () {
 						if ($(".app-control-step:eq(" + (_ctrl.current_step - 1) + ")").has($this).length > 0) {
 							$template.find("#" + v_id).hide();
 						}
-					} else {
-						$template.find("#" + v_id).html($this.attr("placeholder"));
-					}
+					} 
+					// else {
+					// 	$template.find("#" + v_id).html($this.attr("placeholder"));
+					// }
 				}
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
