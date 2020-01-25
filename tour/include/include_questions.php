@@ -8,5 +8,5 @@
 </div>
 <div id="dialog-question-3" class="dialog question">
     <?php $q = 3; include "include/include_question.php"; ?>
-    <nav><a id="back-3" class="boton answer back" href="#stage-2">Regresar</a><a id="next-3" class="boton answer next" href="#stage-end">Siguiente</a></nav>
+    <nav><a id="back-3" class="boton answer back" href="#stage-2">Regresar</a><a id="next-3" class="boton answer next" href="#stage-4">Siguiente</a></nav>
 </div>
