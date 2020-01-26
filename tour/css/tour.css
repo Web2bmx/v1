@@ -290,7 +290,7 @@ a:hover, a:active {
   }
 }
 
-.dialog .options {
+.dialog .options-container {
   display: block;
   overflow: hidden;
 }
@@ -360,11 +360,11 @@ a:hover, a:active {
   text-align: right;
 }
 
-.options h4 {
+.options-container h4 {
   margin: .5rem 0 0 0;
 }
 
-.options label {
+.options-container label {
   -moz-border-radius: 0.25rem;
   -ms-border-radius: 0.25rem;
   -webkit-border-radius: 0.25rem;
@@ -377,15 +377,15 @@ a:hover, a:active {
   padding: .25rem .5rem;
 }
 
-.options label:hover {
+.options-container label:hover {
   background-color: #f2aed8;
 }
 
-.options input[type="radio"] {
+.options-container input[type="radio"] {
   display: none;
 }
 
-.options input[type="radio"]:checked + label {
+.options-container input[type="radio"]:checked + label {
   background-color: #f2aed8;
   font-weight: bold;
 }

@@ -1,11 +1,13 @@
 import dataManager from '../../js/dataManager';
+import menuSingleSelection from '../../js/menuSingleSelection';
 export default function Tour() {
     var new_dataManager = new dataManager(); 
+    var new_menuSingleSelection = new menuSingleSelection(); 
     var _tplData = new_dataManager.getObjFromLocalStorage("web2b");
     var current_step = 0;
     var total_steps = $(".stage").length;
     var init = function (){
-        setOptions();
+        new_menuSingleSelection.init(".options-container", ".options-group");
         setTourNavigation();
         hideDialog();
 
@@ -40,10 +42,7 @@ export default function Tour() {
     };
     var setDialogWithProject = function() {
         showDialog("existing-project");
-        
-        $(".continuar-proyecto").click(function(){
-            location.href = "/crea";
-        }); 
+        $(".continuar-proyecto").click(function(){ location.href = "/crea"; }); 
         $(".iniciar-proyecto").click(function(){
             new_dataManager.purgeTemplateData();
             hideDialog();
@@ -52,30 +51,19 @@ export default function Tour() {
     var setTourNavigation = function() {
         $("a[href*='#stage-']").on("click", function() {
             let $this = $(this);
-            let ide = $this.attr("href").replace("#stage-", "") * 1;
-            /* */
-            current_step = ide;
-            switch (ide) {
-                case 1 :
+            if (checkAnswer($this.closest(".question").attr("id"))) {
+                current_step = $this.attr("href").replace("#stage-", "") * 1;
+                if (current_step < 4) {
                     showStep(current_step);
-                    break;
-                case 2 :
-                case 3 :
-                    if (checkAnswer($this.closest(".question").attr("id"))) {
-                        showStep(current_step);
-                    }
-                    break;
-                case 4 :
-                    if (checkAnswer($this.closest(".question").attr("id"))) {
-                        showDialog("end");
-                    }
-                    break;
+                } else {
+                    showDialog("end");
+                }
             }
             return false;
         });
     };
     var showDialog = function(ide) {
-        $("#modal").fadeIn(500).find(".dialog").hide().filter("#dialog-" + ide).show();
+        $("#modal").hide().fadeIn(500).find(".dialog").hide().filter("#dialog-" + ide).show();
     }
     var hideDialog = function() {
         $("#modal").fadeOut(500).find(".dialog").hide();
@@ -119,37 +107,39 @@ export default function Tour() {
         });
     };
     var checkAnswer = function (s){
-        var $question = $("#" + s) 
-        var answer_exists = ($question.find("input:checked").length > 0) || ($question.find("input.otra").val() != "");
-        if (answer_exists) {
-            $(".dialog-error:visible").remove().detach();
-            
-            let id = $question.find("h3").data("id");
-            let q_type = $question.find("h3").data("type");
-            
-            let resp = "";
-            let resp_id = "";
-            let loc_en = "";
-
-            if ($question.find("input:checked").length > 0) {
-                resp = $question.find("input:checked").val();
-                resp_id = $question.find("input:checked").attr("data-id");
-                loc_en = $question.find("input:checked").attr("data-loc-en");
-            }    
-            if($question.find("input.otra").val() != "") { resp = $question.find("input.otra").val(); }
-            if (loc_en == '' && q_type == 6) {
-                translateAnswer(id, q_type, resp, loc_en, resp_id);
-            } else {
-                saveData(id, q_type, resp, loc_en, resp_id);
-            }
+        if (s == 'undefined') {
             return true;
-        } else{
-            if ($question.find(".dialog-error").length == 0) { $question.find("h3").after($(".dialog-error:last").clone()); }
-            $question.find(".dialog-error").hide().fadeIn("fast");
-            return false;
-            
+        } else {
+            var $question = $("#" + s) 
+            var answer_exists = ($question.find("input:checked").length > 0) || ($question.find("input.otra").val() != "");
+            if (answer_exists) {
+                $(".dialog-error:visible").remove().detach();
+                
+                let id = $question.find("h3").data("id");
+                let q_type = $question.find("h3").data("type");
+                
+                let resp = "";
+                let resp_id = "";
+                let loc_en = "";
+
+                if ($question.find("input:checked").length > 0) {
+                    resp = $question.find("input:checked").val();
+                    resp_id = $question.find("input:checked").attr("data-id");
+                    loc_en = $question.find("input:checked").attr("data-loc-en");
+                }    
+                if($question.find("input.otra").val() != "") { resp = $question.find("input.otra").val(); }
+                if (loc_en == '' && q_type == 6) {
+                    translateAnswer(id, q_type, resp, loc_en, resp_id);
+                } else {
+                    saveData(id, q_type, resp, loc_en, resp_id);
+                }
+                return true;
+            } else{
+                if ($question.find(".dialog-error").length == 0) { $question.find("h3").after($(".dialog-error:last").clone()); }
+                $question.find(".dialog-error").hide().fadeIn("fast");
+                return false;
+            }
         }
-        
     };
     var translateAnswer = function(id, q_type, resp, loc_en, resp_id) {
         $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
@@ -174,30 +164,6 @@ export default function Tour() {
         };
         localStorage.setItem("web2b", JSON.stringify(_tplData));
     };
-    var setOptions = function (){
-        $(".options-group").hide();
-        $(".options h4").addClass("clickable").attr("data-state", "off");
-        $(".options i.fa-minus-circle").hide();
-        $(".options h4").on("click", function() {
-            var $this = $(this);
-            let index = $this.closest(".options").find("h4").index($this);
-                
-            if ($this.attr("data-state") == "off") {
-                $(".options h4").attr("data-state", "off").filter(":eq(" + index + ")").attr("data-state", "on");
-                $(".options h4 i.fa-minus-circle").hide();
-                $(".options h4 i.fa-plus-circle").show();
-                $this.find("i.fa-plus-circle").hide();
-                $this.find("i.fa-minus-circle").show();
-                $this.closest(".options").find(".options-group").hide().filter(".options-group:eq(" + index + ")").show();
-                $this.closest(".options").find(".options-group:eq(" + index + ") input:first").trigger("click");
-            } else {
-                $this.attr("data-state", "off");
-                $this.find("i.fa-minus-circle").hide();
-                $this.find("i.fa-plus-circle").show();
-                $this.closest(".options").find(".options-group:eq(" + index + ")").hide();
-            }
-        });
-    }
     return {
 		init: init
 	};
