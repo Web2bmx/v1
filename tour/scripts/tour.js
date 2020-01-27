@@ -90,21 +90,13 @@ export default function Tour() {
         }, delay);        
     }
     var animateBackground = function (){
-        $(".stars1").animate({"height" : "15px"}, 1000, function() {
-            setTimeout(function() {
-                $(".stars1").animate({"height" : "1px"}, 1000);
-            }, 1000);
-        });
-        $(".stars2").animate({"height" : "15px", "opacity" : ".2"}, 1000, function() {
-            setTimeout(function() {
-                $(".stars2").animate({"height" : "2px", "opacity" : "1"}, 1000);
-            }, 1000);
-        });
-        $(".stars3").animate({"height" : "15px", "opacity" : ".2"}, 1000, function() {
-            setTimeout(function() {
-                $(".stars3").animate({"height" : "3px", "opacity" : "1"}, 1000);
-            }, 1000);
-        });
+        for (let i = 1; i < 4; i++) {
+            $(".stars" + i).animate({"height" : ((i * 15) + "px"), "opacity" : (.8 - (i * .2))}, 1000, function() {
+                setTimeout(function() {
+                    $(".stars" + i).animate({"height" : (i + "px"), "opacity" : "1"}, 1000);
+                }, 1000);
+            });
+        }
     };
     var checkAnswer = function (s){
         if (s == 'undefined') {

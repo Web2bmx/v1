@@ -1,8 +1,4 @@
-/*@import '../../scss/base/_variables';*/
-$ext-desktop: 1560px;
-$desktop: 1040px;
-$tablet: 660px;
-$mobile: 320px;
+@import '../../scss/base/_variables';
 /*@import '../../scss/base/_colors';*/
 /*SHADES OF GRAY*/
 $white: rgba(255,255,255,1);
@@ -146,13 +142,14 @@ $purple60 : rgba(178,5,255,1);
     border-radius: .25rem;
     margin-bottom: .5rem;
     overflow: hidden;
-    * {
+    /** {
         box-sizing: border-box;
-    }
+    }*/
     [type="text"],
     [type="email"],
     [type="password"]{
-        background-color: $white;
+		background-color: $white;
+		color: $gray20;
         border: none;
         float: left;
         height: 2.5rem;
@@ -162,7 +159,7 @@ $purple60 : rgba(178,5,255,1);
     }
     i{
         border-right: 1px solid $gray60;
-        color: $gray40;
+        color: $pink100;
         display: block;
         float: left;
         font-size: 1rem;

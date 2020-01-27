@@ -1,4 +1,3 @@
-/*@import '../../scss/base/_variables';*/
 /*@import '../../scss/base/_colors';*/
 /*SHADES OF GRAY*/
 /*RED*/
@@ -222,16 +221,16 @@ input.cta:active {
   border-radius: .25rem;
   margin-bottom: .5rem;
   overflow: hidden;
-}
-
-.inputWihIcons * {
-  box-sizing: border-box;
+  /** {
+        box-sizing: border-box;
+    }*/
 }
 
 .inputWihIcons [type="text"],
 .inputWihIcons [type="email"],
 .inputWihIcons [type="password"] {
   background-color: white;
+  color: #3c3c3c;
   border: none;
   float: left;
   height: 2.5rem;
@@ -242,7 +241,7 @@ input.cta:active {
 
 .inputWihIcons i {
   border-right: 1px solid #b4b4b4;
-  color: #787878;
+  color: #f2aed8;
   display: block;
   float: left;
   font-size: 1rem;
@@ -496,7 +495,7 @@ main {
   max-width: 18rem;
 }
 
-@media screen and (min-width: 1560px) {
+@media screen and (min-width: 1280px) {
   #hero a.cta {
     margin-bottom: 10rem;
   }
@@ -509,7 +508,7 @@ main {
   width: auto;
 }
 
-@media screen and (min-width: 1560px) {
+@media screen and (min-width: 1280px) {
   #hero #graph-rocket {
     margin-top: 10rem;
   }
@@ -696,7 +695,7 @@ main {
   }
 }
 
-@media screen and (min-width: 1560px) {
+@media screen and (min-width: 1280px) {
   #list-services {
     grid-template-columns: auto auto auto;
   }
