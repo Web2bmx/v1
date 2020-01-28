@@ -244,6 +244,7 @@ body {
   margin: 1em auto 0 auto;
   padding: 2em 8%;
   width: auto;
+  display: none;
 }
 
 #template.color-orange .seemore {
@@ -414,7 +415,7 @@ body {
 
 .item .img {
   display: block;
-  height: 150px;
+  height: 450px;
   overflow: hidden;
   width: 100%;
 }
@@ -527,25 +528,29 @@ body {
 }
 
 .gallery {
+  display: block;
   height: auto;
-  margin: 0 auto;
   overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
   position: relative;
-  width: 92%;
-  max-width: 1180px;
+  margin-bottom: 20px;
 }
 
 .gallery .img {
   display: block;
-  height: 150px;
-  margin: 0 auto 1em auto;
+  height: 620px;
+  overflow: hidden;
   width: 100%;
+  min-width: 220px;
 }
 
-@media only screen and (min-width: 560px) {
+@media only screen and (min-width: 760px) {
+  .gallery {
+    width: 96%;
+  }
   .gallery .img {
     float: left;
-    height: 200px;
     margin: 0 2% 1em 2%;
     width: 46%;
   }

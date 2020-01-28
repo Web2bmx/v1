@@ -98,6 +98,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	margin: 1em auto 0 auto;
 	padding: 2em 8%;
 	width: auto;
+	display: none;
 }
 #template.color-orange .seemore {
 	border-color: $color_orange_001;
@@ -224,7 +225,7 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 .item .img {
 	display: block;
-	height: 150px;
+	height: 450px;
 	overflow: hidden;
 	width: 100%; 
 }
@@ -305,22 +306,24 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	color: $color_green_001;
 }
 .gallery {
-	height: auto;
+	@include box_block();
 	margin: 0 auto;
-	overflow: hidden;
 	position: relative;
-	width: 92%; max-width: 1180px;
+	margin-bottom: 20px;
 }
 .gallery .img {
 	display: block;
-	height: 150px;
-	margin: 0 auto 1em auto;
+	height: 620px;
+	overflow: hidden;
 	width: 100%; 
+	min-width: 220px; 
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $width_xs) {
+	.gallery {
+		width: 96%;
+	}
 	.gallery .img {
 		float: left; 
-		height: 200px;
 		margin: 0 2% 1em 2%;
 		width: 46%; 
 	}

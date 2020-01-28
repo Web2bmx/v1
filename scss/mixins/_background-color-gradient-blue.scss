@@ -1,0 +1,4 @@
+@mixin background-color-gradient-blue {
+	background: -webkit-radial-gradient(center, ellipse cover, $blue60 0%, $blue40 100%);
+	background-color: $blue20;
+}

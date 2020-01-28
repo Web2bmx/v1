@@ -3,7 +3,7 @@ export default function imageManager () {
 	var _uploaded_images = {};
 	var _loaded_images = [];
 	var _current_images = [];
-	var _api_url = "https://api.unsplash.com/photos/search";
+	var _api_url = "https://api.unsplash.com/search/photos";
 	var _api_id = "2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64";
 	var _uploaded_images_url = "/crea/client_images/";
 	var _err_unsplash = "An error occurred while loading images from UnSplash.";
@@ -26,16 +26,16 @@ export default function imageManager () {
 				}
 			}
 		}
-	}
+	};
 	var loadImagesFromUnsplash = (ide) => {
 		return new Promise(function(resolve, reject) {
 			$.getJSON(
 				_api_url, { client_id: _api_id, query: ide, page: 1, per_page: 20, orientation: 'landscape'
 			}).done(function(data){
-				resolve(data);
+				resolve(data.results);
 			}).fail(function(){ reject(Error(_err_unsplash)); });
 		});	
-	}
+	};
 	var onImagesLoaded = (data) => {
 		if (_loaded_images.length == 0) {
 			for(let x=0; x<data.length ; x++){
@@ -43,9 +43,9 @@ export default function imageManager () {
 			}
 		}
 		sortImages();
-	}
+	};
 	var sortImages = () => {
-		let image_types = ["hero","aboutus","cta","gallery"];
+		let image_types = ["hero","aboutus","cta","gallery","logo"];
 		let items = $("#template .item").length;
 		for(let i = 1; i <= items; i++ ){ image_types.push('item-' + i); }
 		for (let i = 0; i < image_types.length; i++) {
@@ -59,7 +59,13 @@ export default function imageManager () {
 					}
 				}
 			}
-			let arr = _uploaded_images["#img-" + t] ? _uploaded_images["#img-" + t].concat(_loaded_images) : _loaded_images;
+
+			// arr of base images from unsplash
+			let arr = [];
+			// exclde from here if needed
+			if(t != 'logo') {
+				arr = _uploaded_images["#img-" + t] ? _uploaded_images["#img-" + t].concat(_loaded_images) : _loaded_images;
+			}
 			for (let i = 0; i < arr.length; i++) {
 				let add_image = true;
 				for (let k = 0; k < _current_images[t].length; k++) {
@@ -69,11 +75,15 @@ export default function imageManager () {
 				}
 				if (add_image) { _current_images[t].push([arr[i], ""]); }
 			}
+
+			// Clean container before addin the images
+			$("#app-control-images-" + t + " .photo-container").empty();
+			
 			for(let j=0; j < _current_images[t].length; j++){
 				setUploadedImage(_current_images[t][j][0], t, _current_images[t][j][1] == "selected", true, j);
 			}
 		}
-	}
+	};
 	var setImagesOnStartSession = () => {
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery","",'image');
 		$("#gallery .gallery .img").each(function(index) {
@@ -82,12 +92,16 @@ export default function imageManager () {
 			_ctrl.new_dataManager.saveSelected(_ctrl.jd,"#img-gallery",(p + img_src),'image');
 		});
 
-	}
+	};
 	var setImagesOnResumeSession = () => {
 		for(var key in _ctrl.jd.selections){
 			switch(_ctrl.jd.selections[key].type){
 				case "image":
 					if (key == "#img-logo") {
+						if(_ctrl.jd.selections[key].active !== undefined && _ctrl.jd.selections[key].active === false) {
+							_ctrl.new_appManager.hideTemplateElements(true, key);
+							_ctrl.new_appManager.hideFormElements("[name='logo']",'#img-logo',"image");
+						}
 						$(key).attr('src',_ctrl.jd.selections[key].img);
 					} else if(key == "#img-gallery") {
 						$("#gallery .gallery .img").remove().detach();
@@ -107,7 +121,7 @@ export default function imageManager () {
 				break;
 			}
 		}
-	}
+	};
 	var setImagesOnUpdateSession = (target) => {
 		let $this = $(target);
 		if ($this.is("[value]")) {
@@ -132,7 +146,7 @@ export default function imageManager () {
 			}	
 		}
 		
-	}
+	};
 	var setUploadedImage = (img, cont, selected, append, index) => {
 		let $img_thumb = $(".img-thumb.template").clone();
 		$img_thumb.removeClass("template").find(".img-thumb-cont").css(setBackgroundImage(img)).attr("data-img-url", img);
@@ -149,7 +163,7 @@ export default function imageManager () {
 			$this_img_thumb.find("input").attr("type", "checkbox");
 			$this_img_thumb.find(".img-thumb-overlay>span").html(index + 1);
 		}
-	}
+	};
 	var uploadImage = (e) => {
 		e.preventDefault();
 		var f = $("input[type=file]",e.currentTarget),
@@ -169,9 +183,9 @@ export default function imageManager () {
 				/*SAVES IMAGE TO OBJECT*/
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				/*ADDS THUMB*/
-				if (_ctrl.jd.selections[(n_name + "-uploaded")] && (_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1)) {
+				//if (_ctrl.jd.selections[(n_name + "-uploaded")] && (_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1)) {
 					setUploadedImage(img_src, name, false, false, 0);
-				}
+				//}
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, name);
       		}

@@ -107,6 +107,9 @@ export default function appManager() {
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
 				$("#app-control").addClass("view").find(">.app-control-step").hide();
+				if($("#menu").length > 0 && $("#menu").css("position")) {
+					$("#menu").css("top","40px");
+				}
 			} else {
 				$("#switch-view").show();
 				$("#switch-edit").hide();
@@ -117,6 +120,9 @@ export default function appManager() {
 				$(window).resize(function () {
 					topStepMargin();
 				});
+				if($("#menu").length > 0 && $("#menu").css("position")) {
+					$("#menu").css("top","0");
+				}
 			}
 			$("body").toggleClass("init");
 		});	
@@ -170,9 +176,9 @@ export default function appManager() {
 		$(".control-design-thumb").on('click', function () {
 			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
 			$("aside", this).addClass("thumb-selected");
-			$("[name^='inp-design']").removeAttr("checked");
-			$("input", this).attr("checked", "checked");
-			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad);
+			$("[name^='inp-design']").prop("checked", false);
+			$("input", this).prop("checked",true);
+			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad, true);
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {
@@ -188,7 +194,69 @@ export default function appManager() {
 		$("#ok_btn").click(function () {
 			$(".alert.dialog").dialog("close");
 		});
+		$(".brand-name .toogle").click(function (e) {
+			e.preventDefault();
+			let name = $(this).closest("aside").children().find('input[name^="inp-"]').attr("name");
+			let selector = name;
+			let type = $(this).closest("aside").children().find('input[name^="inp-"]').attr("type");
+			if (type !== 'text') {
+				name = name.replace('inp-','#');
+			}						
+			
+			hideFormElements('[name="' + selector + '"]', name, type);			
+		});
 	};
+
+	var hideFormElements = function(selector, name, type) {
+		if($(selector).closest("aside").hasClass("inactive")) {
+			$(selector).closest("aside").removeClass("inactive");
+			$("input, button", $(selector).closest("aside")).removeAttr("disabled");			
+			$("i", selector).removeClass("fa-toggle-off").addClass("fa-toggle-on");
+
+			_ctrl.new_dataManager.saveSelected(
+				_ctrl.jd, 
+				name + '@switch', 
+				true,
+				type === 'text' ? type : 'image');
+
+			hideTemplateElements(false, name);
+		} else if ($(".brand-name aside.inactive").length > 0) {
+			$(".brand-name .form-error").fadeIn(500);
+			setTimeout(() => {
+				$(".brand-name .form-error").fadeOut(500);
+			}, 5000);
+		} else {
+			$(selector).closest("aside").addClass("inactive");
+			$("input, button", $(selector).closest("aside")).attr("disabled",true);
+			$("i", selector).removeClass("fa-toggle-on").addClass("fa-toggle-off");
+
+			_ctrl.new_dataManager.saveSelected(
+				_ctrl.jd, 
+				name + '@switch', 
+				false,
+				type === 'text' ? type : 'image');
+
+			hideTemplateElements(true, name);
+		
+		}
+
+	};
+
+	var hideTemplateElements = function(hide, selector) {
+		if(selector === "#img-logo") {
+			if (!hide) 
+				$('#branding').show();
+			else
+				$('#branding').hide();
+		} else {
+			selector = selector.replace('inp-','val-');
+			if (!hide) 
+				$('#' + selector).show();
+			else
+				$('#' + selector).hide();			
+		}
+	};
+
 	var closeAppCover = function () {
 		$("#app-cover").hide();
 		$(".app-cover-start").hide();
@@ -284,6 +352,8 @@ export default function appManager() {
 		setAppSteps: setAppSteps,
 		topStepMargin: topStepMargin,
 		goToStep: goToStep,
-		afterTemplateLoad: afterTemplateLoad
+		afterTemplateLoad: afterTemplateLoad,
+		hideTemplateElements: hideTemplateElements,
+		hideFormElements: hideFormElements
 	};
 }

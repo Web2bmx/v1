@@ -3,6 +3,7 @@ export default function dataManager() {
 		var jsonData = localStorage.getItem(key);
 		if (jsonData == null) {
 			jsonData = {};
+			if(key == "web2b") { jsonData.respuestas = {}; }
 		} else {
 			try {
 				jsonData = JSON.parse(jsonData);
@@ -48,14 +49,28 @@ export default function dataManager() {
 	};
 	var saveSelected = function (jd, name, value, type) {
 		let selections = jd.selections || {};
+		let isSwitch = false;
+		if(name.includes("@switch")) {
+			let arr = name.split("@");
+			name = arr[0];
+			isSwitch = true;
+		} 
 		selections[name] = selections[name] || {};
 		switch (type) {
 			case 'image':
-				selections[name].img = value;
+				if(isSwitch) {
+					selections[name].active = value;					
+				} else {
+					selections[name].img = value;
+				}				
 				selections[name].type = type;
 				break;
 			case 'text':
-				selections[name].text = value;
+				if(isSwitch) {
+					selections[name].active = value;					
+				} else {
+					selections[name].text = value;
+				}							
 				selections[name].type = type;
 				break;
 			case 'config':
@@ -73,11 +88,19 @@ export default function dataManager() {
 		localStorage.setItem("web2b_template", JSON.stringify(jd));
 		localStorage.setItem("web2b_pages", JSON.stringify(data.paginas));
 	};
+	var purgeTemplateData = function () {
+		localStorage.removeItem('web2b_actualPage');
+        localStorage.removeItem('web2b_template');
+        localStorage.removeItem('web2b_templateId');
+        localStorage.removeItem('web2b_template');
+        localStorage.removeItem("web2b");
+	}
 	return {
 		getObjFromLocalStorage: getObjFromLocalStorage,
 		saveWeb2bJson: saveWeb2bJson,
 		saveSelected: saveSelected,
 		getPagesFromDB: getPagesFromDB,
-		setDataObjects: setDataObjects
+		setDataObjects: setDataObjects,
+		purgeTemplateData: purgeTemplateData
 	};
 }

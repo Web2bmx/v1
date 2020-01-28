@@ -26,6 +26,7 @@
 		<body>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+			<!-- <script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script> -->
 			<script src="landing/js/landing.bundle.js"></script>
 			<header>
 				<div id="branding"><img id="logo" src="landing/img/logo_web2b.svg" /></div>
@@ -47,7 +48,7 @@
 			</nav>
 			<main>
 				<section id="hero">
-					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
+					<span class='stars1'></span><span class='stars2'></span><span class='stars3'></span>
 					<div class="container">	
 						<img id="graph-rocket" src="landing/img/item_rocket.svg" />					
 						<h1>Impulsa tu estrategia digital</h1>
@@ -105,7 +106,7 @@
 					</div>
 				</section>
 				<section id="subscribe" class="canvas bg_white">
-					<span class='stars'></span><span class='stars2'></span><span class='stars3'></span>
+					<span class='stars1'></span><span class='stars2'></span><span class='stars3'></span>
 					<span class="graph" id="gr_ship" style="background-image: url(landing/img/item_ship.svg);"></span>
 					<div class="container">
 						<form>

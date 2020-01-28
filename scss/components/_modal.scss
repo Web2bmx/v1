@@ -1,25 +1,21 @@
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 .ui-dialog-titlebar {
 	display: none;
 }
-  
 .ui-widget.ui-widget-content {
+	@include border-radius(.5rem);
 	border: none;
-	padding: 0;
-	border-radius: 10px;
 	max-width: 100%;
-
 	@include breakpoint($tablet){
 		max-width: 640px;
 		max-height: 760px;
 	}
-	
+
 }
-
 .ui-dialog .ui-dialog-content.dialog {
-	max-height: 760px;
-	max-width: 100% !important;
+	max-height: 30rem;
+	max-width: 100%;
 	z-index: 1003;
-
 	@include breakpoint($tablet){
 		max-width: 640px !important;
 		max-height: 760px !important;
@@ -30,54 +26,44 @@
 	}	
 	
 }
-
 .ui-widget-overlay {
-    background: #000;
+    background: $black;
 	opacity: .5;
 	z-index: 1002;
 }
-
 .modal-login{
-	margin: 20px;
-
+	margin: 1rem;
 	*{
 		box-sizing: border-box;
 	}
-	
 	img {
 		display: block;
 		height: auto;
-		margin: 1em auto;
-		max-width: 50%;
-		width: 10em;
+		margin: 1rem auto;
+		width: 6rem; max-width: 50%;
 	}
-
 	input, button{
 		width: 100%;
 	}
-
 	p{
+		color: $black;
+		margin: 1rem 0;		
 		text-align: center;
-		font-size: 18px;
-		color: #000;
-		margin: 25px 0;		
 	}
-
 	[type="button"]{
-		font-size: 23px;
-		padding: 15px;		
+		font-size: 1rem;
+		line-height: 1.25rem;
+		padding: .5rem;		
 	}
-
 	.x-close{
+		color: $gray60;
+		cursor: pointer;
+		font-size: 1rem;
 		position: absolute;
 		right: 0;
 		top: 0;
-		color: #CCC;
-		font-size: 22px;
-		cursor: pointer;
-
 		&:hover{
-			color: #999;
+			color: $gray20;
 		}
 	}
 }
