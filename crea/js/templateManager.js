@@ -120,11 +120,11 @@ export default function templateManager () {
 						break;							
 					case "inp-contact-facebook" :
 						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
-						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + arr[1] + '</a>');
+						$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id].text + '">' + arr.length > 1 ? arr[1] : '' + '</a>');
 						break;	
 					case "inp-contact-twitter" : 
 						arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('twitter.com/') : '';
-						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id] ? selections[i_id].text : '' + '">' + arr[1] + '</a>');
+						$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id] ? selections[i_id].text : '' + '">' + arr.length > 1 ? arr[1] : '' + '</a>');
 						break;	
 					case "siteName":
 						$(".siteName span").text(selections[i_id] ? selections[i_id].text : '');
@@ -181,11 +181,11 @@ export default function templateManager () {
 						break;												
 						case "inp-contact-facebook" :
 							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('facebook.com/') : '';
-							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id] ? selections[i_id].text : ''+ '">' + arr[1] + '</a>');
+							$template.find("#val-contact-facebook").html('<span class="font-icon">g</span> <a href="' + selections[i_id] ? selections[i_id].text : ''+ '">' + arr.length > 1 ? arr[1] : '' + '</a>');
 							break;	
 						case "inp-contact-twitter" :
 							arr = selections[i_id] && selections[i_id].text ? selections[i_id].text.toLowerCase().split('twitter.com/') : '';
-							$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id] ? selections[i_id].text : '' + '">' + arr[1] + '</a>');
+							$template.find("#val-contact-twitter").html('<span class="font-icon">t</span> <a href="' + selections[i_id] ? selections[i_id].text : '' + '">' + arr.length > 1 ? arr[1] : '' + '</a>');
 							break;	
 						case "siteName":
 							$(".siteName span").text(selections[i_id] ? selections[i_id].text : '');
