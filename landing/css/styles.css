@@ -97,7 +97,8 @@
 button,
 .boton,
 a.boton,
-a.boton:visited a.boton:link,
+a.boton:visited
+a.boton:link,
 input[type='button'],
 a.cta,
 a.cta:visited,
@@ -128,8 +129,10 @@ button:hover, button:active,
 .boton:active,
 a.boton:hover,
 a.boton:active,
-a.boton:visited a.boton:link:hover,
-a.boton:visited a.boton:link:active,
+a.boton:visited
+a.boton:link:hover,
+a.boton:visited
+a.boton:link:active,
 input[type='button']:hover,
 input[type='button']:active,
 a.cta:hover,
@@ -144,86 +147,180 @@ input.cta:active {
 }
 
 /*@import '../../scss/components/_modal';*/
-.ui-dialog-titlebar {
-  display: none;
+#modal-overlay {
+  background-color: #3c3c3c;
+  bottom: 0;
+  display: block;
+  left: 0;
+  height: auto;
+  opacity: .3;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 
-.ui-widget.ui-widget-content {
-  -moz-border-radius: 0.5rem;
-  -ms-border-radius: 0.5rem;
-  -webkit-border-radius: 0.5rem;
-  border-radius: 0.5rem;
-  border: none;
-  max-width: 100%;
+#modal {
+  background-color: #f0f0f0;
+  bottom: 0;
+  color: #3c3c3c;
+  display: block;
+  left: 0;
+  height: auto;
+  /*opacity: .3;*/
+  overflow: hidden;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 4;
 }
 
-.ui-dialog .ui-dialog-content.dialog {
-  max-height: 30rem;
-  max-width: 100%;
-  z-index: 1003;
+@media screen and (min-width: 660px) {
+  #modal {
+    -moz-border-radius: 0.25rem;
+    -ms-border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+    top: 2rem;
+    width: auto;
+  }
+  #modal.modal-narrow {
+    left: 8rem;
+    right: 8rem;
+  }
 }
 
-.ui-widget-overlay {
-  background: black;
-  opacity: .5;
-  z-index: 1002;
+@media screen and (min-width: 1280px) {
+  #modal {
+    left: 8rem;
+    right: 8rem;
+  }
+  #modal.modal-narrow {
+    left: 16rem;
+    right: 16rem;
+  }
 }
 
-.modal-login, .ventana-login {
-  margin: 1rem;
+@media screen and (min-width: 1560px) {
+  #modal {
+    left: 12rem;
+    right: 12rem;
+  }
+  #modal.modal-narrow {
+    left: 20rem;
+    right: 20rem;
+  }
 }
 
-.modal-login *, .ventana-login * {
-  box-sizing: border-box;
-}
-
-.modal-login img, .ventana-login img {
+.dialog {
+  bottom: 0;
   display: block;
   height: auto;
-  margin: 1rem auto;
+  left: 0;
+  overflow: auto;
+  right: 0;
+  top: 0;
+  padding: 1rem;
+  text-align: center;
+  width: auto;
+}
+
+@media screen and (min-width: 660px) {
+  .dialog {
+    padding: 2rem;
+  }
+}
+
+.dialog nav {
+  display: block;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.dialog button, .dialog .boton {
+  display: block;
+  margin-top: .5rem;
+  width: auto;
+}
+
+.dialog button {
+  width: 100%;
+}
+
+@media screen and (min-width: 660px) {
+  .dialog button, .dialog .boton {
+    display: inline-block;
+    margin: 0;
+    width: auto;
+  }
+  .dialog button {
+    margin: 0 .25rem;
+  }
+}
+
+.dialog h3 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 660px) {
+  .dialog h3 {
+    font-size: 1.25rem;
+    line-height: 2rem;
+  }
+}
+
+.dialog-error {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  border: 1px solid #ff0593;
+  font-size: .5rem;
+  margin-bottom: .5rem;
+  padding: .5rem;
+}
+
+#modal .logo {
+  display: block;
+  height: auto;
+  margin: 2rem auto 0 auto;
   width: 6rem;
   max-width: 50%;
 }
 
-.modal-login input, .ventana-login input, .modal-login button, .ventana-login button {
-  width: 100%;
-}
-
-.modal-login p, .ventana-login p {
-  color: black;
-  margin: 1rem 0;
-  text-align: center;
-}
-
-.modal-login [type="button"], .ventana-login [type="button"] {
-  font-size: 1rem;
-  line-height: 1.25rem;
-  padding: .5rem;
-}
-
-.modal-login .x-close, .ventana-login .x-close {
+.x-close {
   color: #b4b4b4;
   cursor: pointer;
   font-size: 1rem;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 1rem;
+  top: 1rem;
 }
 
-.modal-login .x-close:hover, .ventana-login .x-close:hover {
+.x-close:hover {
   color: #3c3c3c;
 }
 
-/*@import '../../scss/components/_inputFields';*/
 .inputWihIcons {
   background-color: #f0f0f0;
   border: 1px solid #b4b4b4;
   border-radius: .25rem;
   margin-bottom: .5rem;
   overflow: hidden;
-  /** {
-        box-sizing: border-box;
-    }*/
+}
+
+.inputWihIcons * {
+  box-sizing: border-box;
 }
 
 .inputWihIcons [type="text"],
@@ -252,14 +349,13 @@ input.cta:active {
   width: 2.5rem;
 }
 
-/*@import '../../scss/components/login-paginas';*/
-/*@import '../../scss/partials/_errors';*/
-.form-error {
-  color: #ff052f;
-  display: none;
-  font-size: .75rem;
-  margin: .5rem 0;
-  text-align: center;
+#dialog-project-switcher select {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  padding: .5rem;
+  width: 100%;
 }
 
 /*ELEMENTS*/
@@ -861,24 +957,12 @@ footer nav li {
 }
 
 /*MODAL*/
-.ventana-login, .ventana-login p {
-  color: #b4b4b4;
-  text-align: left;
+/*
+.ventana-login {
+	@include login-paginas;
+	@extend .modal-login;
 }
-
-.ventana-login select {
-  -moz-border-radius: 0.25rem;
-  -ms-border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  border-radius: 0.25rem;
-  padding: .5rem;
-  width: 100%;
-}
-
-.ventana-login .form-error {
-  text-align: left;
-}
-
+*/
 .right {
   float: right;
 }

@@ -224,6 +224,7 @@ a:hover, a:active {
   color: white;
 }
 
+/**/
 #modal {
   background-color: #f0f0f0;
   bottom: 0;
@@ -345,6 +346,7 @@ a:hover, a:active {
   padding: .5rem;
 }
 
+/**/
 @media screen and (min-width: 660px) {
   a.back {
     float: left;

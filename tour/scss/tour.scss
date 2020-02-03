@@ -127,6 +127,7 @@ a {
 		color: $white;
 	}
 }
+/**/
 #modal {
     background-color: $gray80;
     bottom: 0;
@@ -226,6 +227,7 @@ a {
     font-size: .5rem;
     padding: .5rem;
 }
+/**/
 @media screen and (min-width: $tablet) { a.back { float: left; } }
 .question {
     text-align: left;

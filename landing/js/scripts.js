@@ -1,12 +1,13 @@
-import dialogHandler from '../../js/dialog';
+/*
 import pageManager from '../../js/pageManager';
-
+*/
+import modal from '../../js/modal';
 $(document).ready(function() {
-	let new_PageManager = new pageManager();
+	var new_modal = new modal();
+	new_modal.init("#modal");
+	new_modal.hide();
 
-	$(".comingsoon").click(function() {
-		alert("Proximamente");
-	});
+	/* */
 	$("a[href^='#']").on("click", function() {
 		var top = $($(this).attr("href")).offset().top;
 		console.log(top);
@@ -16,75 +17,73 @@ $(document).ready(function() {
 		
 		return false;
 	});
+	function isEmail(email) {
+		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+		return regex.test(email);
+	}
 	
-	dialogHandler();
-		
 	$(".login-btn").click(function(e){
 		e.preventDefault();
-		$(".login-content").show();
-		$(".login-error").hide();
-		$(".ventana-login").dialog( "option", "width", 400 );		
-		$(".ventana-login").dialog( "open" );
 		$("#email").val("contacto@web2b.mx");
 		$("#password").val("");
-		$(".login-paginas").hide();
-		$(".form-error").hide();		
+		new_modal.show("#dialog-login");
 	});	
-
-	$(".cerrar-ventana").click(function(){
-		$(".ventana-login").dialog( "close" ); 
-	});
-
-	$(".ventana-login form").submit(function(e){
+	
+	$("#form-login").submit(function(e){
 		e.preventDefault();
+		new_modal.hideErrorMessage();
 		if($("#email").val().trim() == "" || !isEmail($("#email").val())){
-			$(".login-content .email.form-error").css("display","block");
+			new_modal.showErrorMessage($("#dialog-login"), "#inp-email", "#error-malformed-email");
 		} if(!$("#password").val().trim()){
-			$(".login-content .password.form-error").css("display","block");
+			new_modal.showErrorMessage($("#dialog-login"), "#inp-password", "#error-malformed-password");
 		} else {
 			$.post("/landing/scripts/login.php",{
 				correo: $("#email").val().trim(),					
 				password: $("#password").val()
-			})
-			.done(function(response){
+			}).done(function(response){
 				if(response.ok && response.paginas.length > 0){
 					// si solo tiene una pagina
 					if(response.paginas.length == 1) {
 						//mostrar usuarios
+						/* */
 						localStorage.setItem("web2b_template", decodeURIComponent(response.paginas[0].info));
 						localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
 						localStorage.setItem("web2b_userId", response.userId);
 						localStorage.setItem("web2b_actualPage", response.paginas[0]);
 						window.location.href = "/crea";
+						/**/
 					} else {
+						console.log("Page Manager");
+						/*
 						// show pages and redirect on success
 						new_PageManager.setPaginasInfoFromExternal(response.paginas);
 						new_PageManager.fillModal(response.userId, () => {
 							window.location.href = "/crea";
-						});						
+						});
+						*/						
 					}
 				} else {
-					$(".login-content").fadeOut(100);
-					$(".login-error p").html(response.error);
-					$(".login-error").fadeIn(100);
+					if (response.ok) {
+						window.location.href = "/crea";
+					} else {
+						new_modal.showErrorMessage($("#dialog-login"), "#inp-password", "#error-login", response.error);
+					}
 				}
-			})
-			.fail(function(response){
-
+			}).fail(function(response){
+				console.log(response);
 			}).always(function(){
 				$(".login-content .form-error").hide();
 			});
 		}
-	});		
+	});	
 
-	/*GENERAL FUNCTIONS*/
-	function isEmail(email) {
-		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		return regex.test(email);
-	}
 	/*
-	$("#list-steps li").on("swipe", function(e) {
-		
+	let new_PageManager = new pageManager();
+	$(".comingsoon").click(function() {
+		alert("Proximamente");
 	});
+	dialogHandler();
+	
 	*/
+	
 });
