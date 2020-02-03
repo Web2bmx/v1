@@ -44,13 +44,16 @@ $(document).ready(function() {
 				if(response.ok && response.paginas.length > 0){
 					// si solo tiene una pagina
 					if(response.paginas.length == 1) {
+						console.log("1");
+						console.log(response);
 						//mostrar usuarios
-						/* */
+						/*
 						localStorage.setItem("web2b_template", decodeURIComponent(response.paginas[0].info));
 						localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
 						localStorage.setItem("web2b_userId", response.userId);
 						localStorage.setItem("web2b_actualPage", response.paginas[0]);
 						window.location.href = "/crea";
+						 */
 						/**/
 					} else {
 						console.log("Page Manager");
@@ -64,7 +67,9 @@ $(document).ready(function() {
 					}
 				} else {
 					if (response.ok) {
-						window.location.href = "/crea";
+						console.log("0");
+						console.log(response);
+						//window.location.href = "/crea";
 					} else {
 						new_modal.showErrorMessage($("#dialog-login"), "#inp-password", "#error-login", response.error);
 					}

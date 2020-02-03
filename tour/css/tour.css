@@ -499,13 +499,15 @@ a:hover, a:active {
 
 #button-start {
   display: inline-block;
-  margin: 15rem auto 0 auto;
+  margin: 10rem auto 0 auto;
+  position: relative;
   width: auto;
+  z-index: 5;
 }
 
 @media screen and (min-width: 660px) {
   #button-start {
-    margin-top: 20rem;
+    margin-top: 15rem;
   }
 }
 
