@@ -9,8 +9,8 @@ $existentes = array();
 $resultado = $dbh->query($sql);
 if($resultado->num_rows > 0){
     while ($fila = $resultado->fetch_assoc()) {
-        $json = json_decode($fila['info']);
-        array_push($pagados,$json->{'selections'}->{'siteName'}->{'text'});        
+        $json = json_decode(urldecode($fila['info']));
+        array_push($pagados,strtolower($json->{'selections'}->{'siteName'}->{'text'}));        
     }
 }
 
@@ -20,6 +20,11 @@ foreach (glob("$path*",GLOB_ONLYDIR) as $nombre_fichero) {
 }
 
 $res_arr = array_diff($existentes,$pagados);
+echo "<pre>";
+print_r($pagados);
+print_r($existentes);
+print_r($res_arr);
+echo "</pre>";
 foreach($res_arr as $site) {
     array_map('unlink', glob($path . $site . "/*"));
     rmdir( $path . $site );

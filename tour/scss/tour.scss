@@ -127,6 +127,7 @@ a {
 		color: $white;
 	}
 }
+/**/
 #modal {
     background-color: $gray80;
     bottom: 0;
@@ -226,6 +227,7 @@ a {
     font-size: .5rem;
     padding: .5rem;
 }
+/**/
 @media screen and (min-width: $tablet) { a.back { float: left; } }
 .question {
     text-align: left;
@@ -332,10 +334,12 @@ a {
 }
 #button-start {
     display: inline-block;
-    margin: 15rem auto 0 auto;
+    margin: 10rem auto 0 auto;
+    position: relative;
     width: auto;
+    z-index: 5;
 }
-@media screen and (min-width: $tablet) { #button-start { margin-top: 20rem; } }
+@media screen and (min-width: $tablet) { #button-start { margin-top: 15rem; } }
 @media screen and (min-width: $desktop) { #button-start { margin-top: 10rem; } }
 @media screen and (min-width: $ext-desktop) { #button-start { margin-top: 15rem; } }
 /*ITEMS*/

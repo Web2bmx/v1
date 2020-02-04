@@ -39,13 +39,19 @@ export default function appManager() {
 		$(window).resize(function () {
 			centerNav();
 		});
-		
+
 		$(".finish").on("click", function () {
 			// _ctrl.current_step --;
 			// $("#app-cover").hide();
 			let id_pagina = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_templateId');
 			let id_usuario = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_userId');
 			let template_info = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_template');
+
+			if(template_info.selections.siteName.text.trim() == '' || template_info.selections.siteName.text.trim().lenght < 3) {
+				$('.final-msgs p').text('El nombre de tu sitio no ha sido proporcionado. Por favor, regresa a las pantallas anteriores para definirlo.');				
+				$('.final-msgs').dialog("open");				
+				return;
+			}
 
 			//Crear pago
 			$.post("scripts/crear_pago.php", {
@@ -56,19 +62,7 @@ export default function appManager() {
 				id_paypal: 'N/A'
 			}).done((PagoResult) => {
 				// Crear página
-				$.post("scripts/publicar_pagina.php", {
-					site_name: template_info.selections.siteName.text,
-					contenido: $('#template')[0].outerHTML,
-					title: template_info.selections['inp-content-name'].text,
-					description: template_info.selections['inp-content-slogan'].text
-				}).done((PublishResult) => {
-					$('.final-msgs p').text('La página se ha publicado exitosamente');
-					$('.final-msgs').dialog("open");
-					manageFinalData(PagoResult.fecha, 'gratuito');
-				}).fail(function (result) {
-					$('.final-msgs p').text('Algo ha salido al tratar de publicar tu página. Por favor, intenta más tarde');
-					$('.final-msgs').dialog("open");
-				});
+				publishPagina(template_info, PagoResult.fecha);
 			}).fail(function (result) {
 				// Algo salio mal
 			});
@@ -81,7 +75,7 @@ export default function appManager() {
 			let userId = _ctrl.new_dataManager.getObjFromLocalStorage("web2b_userId");
 			_ctrl.new_PageManager.fillModal(userId, () => {
 				location.reload();
-			});			
+			});
 			$(".ventana-login").dialog("open");
 		});
 		$('.logout').click((e) => {
@@ -94,7 +88,7 @@ export default function appManager() {
 		});
 		$(".cerrar-final-msgs").click(function () {
 			$(".final-msgs").dialog("close");
-		});		
+		});
 		/*NAV BUTTONS*/
 		$(".app-cover-start .next").click(function () {
 			closeAppCover();
@@ -107,8 +101,8 @@ export default function appManager() {
 				$("#switch-edit").show();
 				$("#control-view-nav").hide();
 				$("#app-control").addClass("view").find(">.app-control-step").hide();
-				if($("#menu").length > 0 && $("#menu").css("position")) {
-					$("#menu").css("top","40px");
+				if ($("#menu").length > 0 && $("#menu").css("position")) {
+					$("#menu").css("top", "40px");
 				}
 			} else {
 				$("#switch-view").show();
@@ -120,18 +114,30 @@ export default function appManager() {
 				$(window).resize(function () {
 					topStepMargin();
 				});
-				if($("#menu").length > 0 && $("#menu").css("position")) {
-					$("#menu").css("top","0");
+				if ($("#menu").length > 0 && $("#menu").css("position")) {
+					$("#menu").css("top", "0");
 				}
 			}
 			$("body").toggleClass("init");
-		});	
+		});
 
 		/* Go back */
 		$("#back").click(() => {
-			_ctrl.current_step --;
+			_ctrl.current_step--;
 			$("#app-cover").hide();
 		});
+
+		// Actualizar paginas
+		var actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
+		if(actual_page.fecha_fin != null) {
+			let diff = fecha_diff(actual_page.fecha_fin);
+			if(diff != 0) {
+				$('#publish').show();
+			}
+		}
+		$("#publish").click(() => {
+			publishPagina();
+		});		
 	};
 	var setAppControls = function () {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function (e) {
@@ -146,17 +152,17 @@ export default function appManager() {
 				$(".form-error", $(e.currentTarget).parent()).show();
 			}
 		});
-		$(document.body).on('click', '.img-thumb-cont', function() {
+		$(document.body).on('click', '.img-thumb-cont', function () {
 			var $this = $(this);
 			$this.closest("[id^='app-control-images']").find(".img-thumb").removeClass("thumb-selected");
 			$this.next("input").trigger("click");
 			$this.parent().addClass("thumb-selected");
 		});
-		$(document.body).on('click', '.img-thumb-overlay', function() {
+		$(document.body).on('click', '.img-thumb-overlay', function () {
 			var $this = $(this);
 			$this.closest(".img-thumb").removeClass("selected").find("input").trigger("click");
-		});	
-		$(document.body).on('click', '.img-thumb-cont-zoom', function() {
+		});
+		$(document.body).on('click', '.img-thumb-cont-zoom', function () {
 			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
 			$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
 			console.log($("#single-modal>div"));
@@ -167,8 +173,8 @@ export default function appManager() {
 			goToStep(_ctrl.current_step);
 			centerNav();
 		});
-		$("body").on('DOMSubtreeModified', "#app-control-images-logo", function() {
-			$("#app-control-images-logo").parent().attr('style','');
+		$("body").on('DOMSubtreeModified', "#app-control-images-logo", function () {
+			$("#app-control-images-logo").parent().attr('style', '');
 		});
 	};
 	var setAppSteps = function () {
@@ -177,7 +183,7 @@ export default function appManager() {
 			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
 			$("aside", this).addClass("thumb-selected");
 			$("[name^='inp-design']").prop("checked", false);
-			$("input", this).prop("checked",true);
+			$("input", this).prop("checked", true);
 			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad, true);
 		});
 		/* Upload image*/
@@ -197,25 +203,25 @@ export default function appManager() {
 		$(".brand-name .toogle").click(function (e) {
 			e.preventDefault();
 			let name = $(this).closest("aside").children().find('input[name^="inp-"]').attr("name");
-			let selector = name;
+			let selector = name ? '[name="' + name + '"]' : this;
 			let type = $(this).closest("aside").children().find('input[name^="inp-"]').attr("type");
-			if (type !== 'text') {
-				name = name.replace('inp-','#');
-			}						
-			
-			hideFormElements('[name="' + selector + '"]', name, type);			
+			if (name && type !== 'text') {
+				name = name.replace('inp-', '#');
+			}
+
+			hideFormElements(selector, name, type);
 		});
 	};
 
-	var hideFormElements = function(selector, name, type) {
-		if($(selector).closest("aside").hasClass("inactive")) {
+	var hideFormElements = function (selector, name, type) {
+		if ($(selector).closest("aside").hasClass("inactive")) {
 			$(selector).closest("aside").removeClass("inactive");
-			$("input, button", $(selector).closest("aside")).removeAttr("disabled");			
+			$("input, button", $(selector).closest("aside")).removeAttr("disabled");
 			$("i", selector).removeClass("fa-toggle-off").addClass("fa-toggle-on");
 
 			_ctrl.new_dataManager.saveSelected(
-				_ctrl.jd, 
-				name + '@switch', 
+				_ctrl.jd,
+				name + '@switch',
 				true,
 				type === 'text' ? type : 'image');
 
@@ -227,33 +233,33 @@ export default function appManager() {
 			}, 5000);
 		} else {
 			$(selector).closest("aside").addClass("inactive");
-			$("input, button", $(selector).closest("aside")).attr("disabled",true);
+			$("input, button", $(selector).closest("aside")).attr("disabled", true);
 			$("i", selector).removeClass("fa-toggle-on").addClass("fa-toggle-off");
 
 			_ctrl.new_dataManager.saveSelected(
-				_ctrl.jd, 
-				name + '@switch', 
+				_ctrl.jd,
+				name + '@switch',
 				false,
 				type === 'text' ? type : 'image');
 
 			hideTemplateElements(true, name);
-		
+
 		}
 
 	};
 
-	var hideTemplateElements = function(hide, selector) {
-		if(selector === "#img-logo") {
-			if (!hide) 
+	var hideTemplateElements = function (hide, selector) {
+		if (selector === "#img-logo" || selector == undefined) {
+			if (!hide)
 				$('#branding').show();
 			else
 				$('#branding').hide();
 		} else {
-			selector = selector.replace('inp-','val-');
-			if (!hide) 
+			selector = selector.replace('inp-', 'val-');
+			if (!hide)
 				$('#' + selector).show();
 			else
-				$('#' + selector).hide();			
+				$('#' + selector).hide();
 		}
 	};
 
@@ -272,10 +278,10 @@ export default function appManager() {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
 			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		} else {
-			if(firstTime) {
+			if (firstTime) {
 				// Hide buttons when already a page is built
 				let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
-				if(actual_page && actual_page.paquete) {
+				if (actual_page && actual_page.paquete) {
 					manageFinalData(actual_page.fecha_fin, actual_page.paquete);
 				} else {
 					$(".created").hide();
@@ -283,9 +289,9 @@ export default function appManager() {
 					let new_paypalBtn1 = new paypalBtn();
 					new_paypalBtn1.init('#paypal-button-container', 'basico');
 					let new_paypalBtn2 = new paypalBtn();
-					new_paypalBtn2.init('#paypal-button-container2', 'premium');					
+					new_paypalBtn2.init('#paypal-button-container2', 'premium');
 				}
-				firstTime = false;				
+				firstTime = false;
 			}
 
 			$("#app-cover").show();
@@ -295,46 +301,78 @@ export default function appManager() {
 
 		}
 	};
-	var manageFinalData= function(fecha, paquete) {
+	var manageFinalData = function (fecha, paquete) {
 		$(".app-cover-finish-package:first-child .finish").css('visibility','hidden');
 		$('#paypal-button-container').empty();
-		$('#paypal-button-container').attr("style","");
+		$('#paypal-button-container').attr("style", "");
 		$('#paypal-button-container2').empty();
-		$('#paypal-button-container2').attr("style","");
+		$('#paypal-button-container2').attr("style", "");
 
-		if(paquete === 'premium') {
+		if (paquete === 'premium') {
 			let new_paypalBtn2 = new paypalBtn();
-			new_paypalBtn2.init('#paypal-button-container2', 'premium');	
-			$('#paypal-button-container2').css('margin-bottom','0');
+			new_paypalBtn2.init('#paypal-button-container2', 'premium');
+			$('#paypal-button-container2').css('margin-bottom', '0');
 		} else {
 			let new_paypalBtn1 = new paypalBtn();
 			new_paypalBtn1.init('#paypal-button-container', 'basico');
 			let new_paypalBtn2 = new paypalBtn();
 			new_paypalBtn2.init('#paypal-button-container2', 'premium');
-			$('#paypal-button-container').css('margin-bottom','0');
-			$('#paypal-button-container2').css('margin-bottom','0');
-    }
+			$('#paypal-button-container').css('margin-bottom', '0');
+			$('#paypal-button-container2').css('margin-bottom', '0');
+		}
 		// number of days
-		let today = new Date();
-		let finArr = fecha.split("-");
-		let fin = new Date(Number(finArr[0]), Number(finArr[1])-1,Number(finArr[2]));
-		let diff;
-		if(fin >= today) {
-			diff = Math.ceil((Math.abs(today-fin)) / (1000 * 3600 * 24));
+		let diff = fecha_diff(fecha);
+		if(diff == 0) {
 			$(".daysLeft").text(diff);
 			$(".created").fadeIn(400);
 		} else {
-			diff = 0;
 			$(".caduco").fadeIn(400);
-			$(".created").hide();
-		}	
+			$(".created").hide();			
+		}
 	};
+
+	var publishPagina = function(template_info = '', fecha = ''){
+		template_info = template_info == '' ? _ctrl.new_dataManager.getObjFromLocalStorage('web2b_template') : template_info;
+
+		//Crear pago
+		$.post("scripts/publicar_pagina.php", {
+			site_name: template_info.selections.siteName.text,
+			contenido: $('#template')[0].outerHTML,
+			title: template_info.selections['inp-content-name'].text,
+			description: template_info.selections['inp-content-slogan'].text
+		}).done((PublishResult) => {
+			$('.final-msgs p').text('La página se ha publicado exitosamente');
+			$('.final-msgs').dialog("open");
+			if(fecha != '') {
+				manageFinalData(fecha, 'gratuito');
+			}
+		}).fail(function (result) {
+			$('.final-msgs p').text('Algo ha salido mal al tratar de publicar tu página. Por favor, intenta más tarde');
+			$('.final-msgs').dialog("open");
+		});
+
+	};
+
+	var fecha_diff = function(fecha) {
+		// number of days
+		let today = new Date();
+		let finArr = fecha.split("-");
+		let fin = new Date(Number(finArr[0]), Number(finArr[1]) - 1, Number(finArr[2]));
+		let diff;
+		if (fin >= today) {
+			diff = Math.ceil((Math.abs(today - fin)) / (1000 * 3600 * 24));
+		} else {
+			diff = 0;
+		}
+		return diff;	
+	};
+
 	var topStepMargin = function () {
 		let actual = $(".app-control-step:visible > div"),
 			remain = $("#app-control").height() -
-			$("#app-control-nav").height() -
-			$("#app-switch").height() -
-			actual.height();
+				$("#app-control-nav").height() -
+				$("#app-switch").height() -
+				actual.height();
 
 		actual.css("margin-top", remain > 0 ? remain / 2 + "px" : "0");
 	};

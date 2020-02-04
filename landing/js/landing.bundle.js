@@ -1,1 +1,113 @@
-!function(e){var t={};function o(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,o),a.l=!0,a.exports}o.m=e,o.c=t,o.d=function(e,t,n){o.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},o.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},o.t=function(e,t){if(1&t&&(e=o(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(o.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)o.d(n,a,function(t){return e[t]}.bind(null,a));return n},o.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return o.d(t,"a",t),t},o.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},o.p="",o(o.s=15)}({0:function(e,t,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=function(e){var t=localStorage.getItem(e);if(null==t)t={},"web2b"==e&&(t.respuestas={});else try{t=JSON.parse(t)}catch(e){return t}return t};return{getObjFromLocalStorage:e,saveWeb2bJson:function(t){var o=JSON.stringify(t),n=e("web2b_userId"),a=e("web2b_templateId"),i=localStorage.getItem("web2b_template");!o||i==o||n instanceof Object||a instanceof Object||(localStorage.setItem("web2b_template",o),$.post("scripts/salvar_datos.php",{userId:n,idSitio:a,info:encodeURIComponent(o)}).done(function(e){e.ok||console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. "+e.mensaje)}).fail(function(e){console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. "+e)}))},saveSelected:function(e,t,o,n){var a=e.selections||{},i=!1;if(t.includes("@switch")){var r=t.split("@");t=r[0],i=!0}switch(a[t]=a[t]||{},n){case"image":i?a[t].active=o:a[t].img=o,a[t].type=n;break;case"text":i?a[t].active=o:a[t].text=o,a[t].type=n;break;case"config":a[t].value=o,a[t].type=n}e.selections=a},getPagesFromDB:function(){var t=e("web2b_userId");return $.get("scripts/getActualPages.php",{userId:t}).done(function(e){return e.ok||console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. "+e.mensaje),e.paginas}).fail(function(e){return console.log("Algo salió mal. Por favor intentalo de nuevo mas tarde. "+e),{}})},setDataObjects:function(e,t){localStorage.removeItem("web2b"),localStorage.setItem("web2b_templateId",e.idSitio),localStorage.setItem("web2b_userId",e.userId),localStorage.setItem("web2b_template",JSON.stringify(t)),localStorage.setItem("web2b_pages",JSON.stringify(e.paginas))},purgeTemplateData:function(){localStorage.removeItem("web2b_actualPage"),localStorage.removeItem("web2b_template"),localStorage.removeItem("web2b_templateId"),localStorage.removeItem("web2b_template"),localStorage.removeItem("web2b")}}}},1:function(e,t,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=[],t=new n.default;return{setPaginasInfoFromExternal:function(t){e=t},getPaginas:function(){return t.getPagesFromDB().then(function(o){var n=t.getObjFromLocalStorage("web2b_templateId");e=o.paginas,localStorage.setItem("web2b_pages",JSON.stringify(o.paginas)),o.paginas.forEach(function(e){Number(e.idSitio)===n&&localStorage.setItem("web2b_actualPage",JSON.stringify(e))})})},fillModal:function(o,n){for(var a,i="",r=t.getObjFromLocalStorage("web2b_actualPage"),l=0;l<e.length;l++){var s=(a=JSON.parse(decodeURIComponent(e[l].info))).nombre||a.selections.siteName.text||"no name";e[l].idSitio===r.idSitio&&(s+="(Proyecto actual)"),i+='<option class="inserted" value="'+l+'">\n                '+s+"\n            </option>"}$(".proyectos-disponibles .inserted").remove(),$(".proyectos-disponibles").append(i),$(".ventana-login > form").hide(),$(".login-paginas").show(),$(".llevame").click({pags:e,userId:o},function(e){var t=$(".proyectos-disponibles option:selected").val(),o=e.data;""!=t?(localStorage.setItem("web2b_template",decodeURIComponent(o.pags[t].info)),localStorage.setItem("web2b_templateId",o.pags[t].idSitio),localStorage.setItem("web2b_userId",o.userId),localStorage.setItem("web2b_pages",JSON.stringify(o.pags)),localStorage.setItem("web2b_actualPage",JSON.stringify(o.pags[t])),n()):$(".login-paginas .form-error").css("display","block")})},hasPages:function(){return e.length>1}}};var n=function(e){return e&&e.__esModule?e:{default:e}}(o(0))},15:function(e,t,o){"use strict";var n=i(o(16)),a=i(o(1));function i(e){return e&&e.__esModule?e:{default:e}}$(document).ready(function(){var e=new a.default;$(".comingsoon").click(function(){alert("Proximamente")}),$("a[href^='#']").on("click",function(){var e=$($(this).attr("href")).offset().top;return console.log(e),$("html, body").stop().animate({scrollTop:e-55},500,"swing"),!1}),(0,n.default)(),$(".login-btn").click(function(e){e.preventDefault(),$(".login-content").show(),$(".login-error").hide(),$(".ventana-login").dialog("option","width",400),$(".ventana-login").dialog("open"),$("#email").val("contacto@web2b.mx"),$("#password").val(""),$(".login-paginas").hide(),$(".form-error").hide()}),$(".cerrar-ventana").click(function(){$(".ventana-login").dialog("close")}),$(".ventana-login form").submit(function(t){t.preventDefault(),""!=$("#email").val().trim()&&function(e){return/^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(e)}($("#email").val())||$(".login-content .email.form-error").css("display","block"),$("#password").val().trim()?$.post("/landing/scripts/login.php",{correo:$("#email").val().trim(),password:$("#password").val()}).done(function(t){t.ok&&t.paginas.length>0?1==t.paginas.length?(localStorage.setItem("web2b_template",decodeURIComponent(t.paginas[0].info)),localStorage.setItem("web2b_templateId",t.paginas[0].idSitio),localStorage.setItem("web2b_userId",t.userId),localStorage.setItem("web2b_actualPage",t.paginas[0]),window.location.href="/crea"):(e.setPaginasInfoFromExternal(t.paginas),e.fillModal(t.userId,function(){window.location.href="/crea"})):($(".login-content").fadeOut(100),$(".login-error p").html(t.error),$(".login-error").fadeIn(100))}).fail(function(e){}).always(function(){$(".login-content .form-error").hide()}):$(".login-content .password.form-error").css("display","block")})})},16:function(e,t,o){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]&&arguments[0],t=$(window).width(),o=$(window).height();$(".dialog").dialog({autoOpen:!1,modal:!0,width:t,height:e?o:"auto",fluid:!0,show:{effect:"fade",duration:1e3},hide:{effect:"fade",duration:1e3},closeOnEscape:!1}),$(document).on("dialogopen",".ui-dialog",function(e,t){$(".ui-dialog:visible").each(function(){var e=$(this),t=e.find(".ui-dialog-content").dialog("instance");console.log(t),t.options.maxWidth&&t.options.width&&(e.css("max-width",t.options.maxWidth),t.option("position",t.options.position)),t.options.fluid&&$(window).on("resize.responsive",function(){var o=$(window).width();o<t.options.maxWidth+50&&e.css("width","90%"),t.option("position",t.options.position)})})}),$(document).on("dialogclose",".ui-dialog",function(e,t){$(window).off("resize.responsive")})}}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./landing/js/scripts.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./js/modal.js":
+/*!*********************!*\
+  !*** ./js/modal.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = modal;\n\nfunction modal() {\n  var $modal = null;\n  var $close = null;\n  var $overlay = null;\n\n  var init = function init(ide) {\n    $modal = $(ide);\n\n    if ($modal.find(\"#modal-close\").length > 0) {\n      setCloseButton();\n    }\n\n    if ($modal.find(\"#modal-overlay\").length > 0) {\n      setOverlay();\n    }\n  };\n\n  var setCloseButton = function setCloseButton() {\n    $close = $(\"#modal-close\");\n    $(\"body\").on(\"click\", \"#modal-close\", function () {\n      hide();\n    });\n  };\n\n  var setOverlay = function setOverlay() {\n    $overlay = $(\"#modal-overlay\");\n    $modal.before($overlay);\n  };\n\n  var hide = function hide() {\n    $modal.fadeOut(500).find(\".dialog\").hide();\n\n    if ($overlay) {\n      $overlay.hide();\n    }\n  };\n\n  var show = function show(ide) {\n    $modal.hide().fadeIn(500).find(\".dialog\").hide().filter(ide).show();\n\n    if ($overlay) {\n      $overlay.fadeIn(500);\n    }\n  };\n\n  var hideErrorMessage = function hideErrorMessage() {\n    $(\".dialog-error:visible\").remove().detach();\n  };\n\n  var showErrorMessage = function showErrorMessage($target, cont, ide) {\n    var mssg = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : undefined;\n\n    if ($target.find(ide).length == 0) {\n      $target.find(cont).after($(ide).clone());\n    }\n\n    if (mssg != undefined) {\n      $target.find(ide).html(mssg);\n    }\n\n    $target.find(ide).hide().fadeIn(\"fast\");\n  };\n\n  return {\n    init: init,\n    hide: hide,\n    hideErrorMessage: hideErrorMessage,\n    showErrorMessage: showErrorMessage,\n    show: show\n  };\n}\n\n;\n\n//# sourceURL=webpack:///./js/modal.js?");
+
+/***/ }),
+
+/***/ "./landing/js/scripts.js":
+/*!*******************************!*\
+  !*** ./landing/js/scripts.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _modal = __webpack_require__(/*! ../../js/modal */ \"./js/modal.js\");\n\nvar _modal2 = _interopRequireDefault(_modal);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n/*\r\nimport pageManager from '../../js/pageManager';\r\n*/\n$(document).ready(function () {\n  var new_modal = new _modal2.default();\n  new_modal.init(\"#modal\");\n  new_modal.hide();\n  /* */\n\n  $(\"a[href^='#']\").on(\"click\", function () {\n    var top = $($(this).attr(\"href\")).offset().top;\n    console.log(top);\n    $(\"html, body\").stop().animate({\n      scrollTop: top - 55\n    }, 500, 'swing');\n    return false;\n  });\n\n  function isEmail(email) {\n    var regex = /^([a-zA-Z0-9_.+-])+\\@(([a-zA-Z0-9-])+\\.)+([a-zA-Z0-9]{2,4})+$/;\n    return regex.test(email);\n  }\n\n  $(\".login-btn\").click(function (e) {\n    e.preventDefault();\n    $(\"#email\").val(\"contacto@web2b.mx\");\n    $(\"#password\").val(\"\");\n    new_modal.show(\"#dialog-login\");\n  });\n  $(\"#form-login\").submit(function (e) {\n    e.preventDefault();\n    new_modal.hideErrorMessage();\n\n    if ($(\"#email\").val().trim() == \"\" || !isEmail($(\"#email\").val())) {\n      new_modal.showErrorMessage($(\"#dialog-login\"), \"#inp-email\", \"#error-malformed-email\");\n    }\n\n    if (!$(\"#password\").val().trim()) {\n      new_modal.showErrorMessage($(\"#dialog-login\"), \"#inp-password\", \"#error-malformed-password\");\n    } else {\n      $.post(\"/landing/scripts/login.php\", {\n        correo: $(\"#email\").val().trim(),\n        password: $(\"#password\").val()\n      }).done(function (response) {\n        if (response.ok && response.paginas.length > 0) {\n          // si solo tiene una pagina\n          if (response.paginas.length == 1) {\n            console.log(\"1\");\n            console.log(response); //mostrar usuarios\n\n            /*\r\n            localStorage.setItem(\"web2b_template\", decodeURIComponent(response.paginas[0].info));\r\n            localStorage.setItem(\"web2b_templateId\", response.paginas[0].idSitio);\r\n            localStorage.setItem(\"web2b_userId\", response.userId);\r\n            localStorage.setItem(\"web2b_actualPage\", response.paginas[0]);\r\n            window.location.href = \"/crea\";\r\n             */\n\n            /**/\n          } else {\n            console.log(\"Page Manager\");\n            /*\r\n            // show pages and redirect on success\r\n            new_PageManager.setPaginasInfoFromExternal(response.paginas);\r\n            new_PageManager.fillModal(response.userId, () => {\r\n            \twindow.location.href = \"/crea\";\r\n            });\r\n            */\n          }\n        } else {\n          if (response.ok) {\n            console.log(\"0\");\n            console.log(response); //window.location.href = \"/crea\";\n          } else {\n            new_modal.showErrorMessage($(\"#dialog-login\"), \"#inp-password\", \"#error-login\", response.error);\n          }\n        }\n      }).fail(function (response) {\n        console.log(response);\n      }).always(function () {\n        $(\".login-content .form-error\").hide();\n      });\n    }\n  });\n  /*\r\n  let new_PageManager = new pageManager();\r\n  $(\".comingsoon\").click(function() {\r\n  \talert(\"Proximamente\");\r\n  });\r\n  dialogHandler();\r\n  \r\n  */\n});\n\n//# sourceURL=webpack:///./landing/js/scripts.js?");
+
+/***/ })
+
+/******/ });

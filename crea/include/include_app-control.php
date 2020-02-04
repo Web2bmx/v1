@@ -56,13 +56,32 @@
         </nav>
     </div>
     <div id='app-switch'>
-        <a id='switch-view'>
-            <i class="far fa-eye"></i>
-            Vista Previa
-        </a>
-        <a id='switch-edit' style="display: none;">
-            <i class="fas fa-wrench"></i>
-            Editar
-        </a>
+        <aside>
+            <a id='switch-view'>
+                <i class="far fa-eye"></i>
+                <span> Ver mi página </span>
+            </a>
+            <a id='switch-edit' style="display: none;">
+                <i class="fas fa-wrench"></i>
+                <span> Editar </span>
+            </a>
+            <a id='publish' style="display: none;">
+                <i class="fas fa-upload"></i>
+                <span> Publicar </span>
+            </a>
+            <a class='change-page' style="display: none;">
+                <i class="fas fa-exchange-alt"></i>
+				<span>
+					Cambiar
+				</span>
+            </a>
+            <a id='logout'>
+				<i class="fas fa-sign-out-alt"></i>
+				<span>
+					Salir
+				</span>
+            </a>                        
+        </aside>
+
     </div>	
 </div>		

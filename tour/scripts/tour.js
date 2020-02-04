@@ -1,16 +1,18 @@
 import dataManager from '../../js/dataManager';
 import menuSingleSelection from '../../js/menuSingleSelection';
+import modal from '../../js/modal';
 export default function Tour() {
     var new_dataManager = new dataManager(); 
     var new_menuSingleSelection = new menuSingleSelection(); 
+    var new_modal = new modal(); 
     var _tplData = new_dataManager.getObjFromLocalStorage("web2b");
     var current_step = 0;
     var total_steps = $(".stage").length;
     var init = function (){
         new_menuSingleSelection.init(".options-container", ".options-group");
+        new_modal.init("#modal");
         setTourNavigation();
-        hideDialog();
-
+        new_modal.hide();
         /*
         ESTATUS:
         Tour nuevo
@@ -23,29 +25,29 @@ export default function Tour() {
        if(status == "WITH PROJECT") { setDialogWithProject(); }
     }
     var setDialogInProcess = function() {
-        showDialog("existing-session");
+        new_modal.show("#dialog-existing-session");
         $(".iniciar").on("click", function() {
             new_dataManager.purgeTemplateData();
             _tplData = new_dataManager.getObjFromLocalStorage("web2b")
-            hideDialog();
+            new_modal.hide();
         });
         $(".continuar").on("click", function() {
-            $("#dialog-existing-session").hide();
+            new_modal.hide();
             current_step = Object.keys(_tplData.respuestas).length + 1;
             if (current_step < 4) {
-                hideDialog();
+                new_modal.hide();
                 showStep(current_step);
             } else {
-                showDialog("end");
+                new_modal.show("#dialog-end");
             }
         });
     };
     var setDialogWithProject = function() {
-        showDialog("existing-project");
+        new_modal.show("#dialog-end");
         $(".continuar-proyecto").click(function(){ location.href = "/crea"; }); 
         $(".iniciar-proyecto").click(function(){
             new_dataManager.purgeTemplateData();
-            hideDialog();
+            new_modal.hide();
         });  
     };
     var setTourNavigation = function() {
@@ -56,20 +58,14 @@ export default function Tour() {
                 if (current_step < 4) {
                     showStep(current_step);
                 } else {
-                    showDialog("end");
+                    new_modal.show("#dialog-end");
                 }
             }
             return false;
         });
     };
-    var showDialog = function(ide) {
-        $("#modal").hide().fadeIn(500).find(".dialog").hide().filter("#dialog-" + ide).show();
-    }
-    var hideDialog = function() {
-        $("#modal").fadeOut(500).find(".dialog").hide();
-    }
     var showStep = function(step) {
-        hideDialog();
+        new_modal.hide();
         var delay = 0;
         if(step == 1) {
             delay = 500;
@@ -84,7 +80,7 @@ export default function Tour() {
                 $(".stage").hide().filter(":eq(" + step + ")").show().css({ "top" : "-100%", "bottom" : "100%" }).animate({ "top" : "0", "bottom" : 0 }, 1000);
             }, 2000);
             setTimeout(function() {
-                showDialog("question-" + current_step);
+                new_modal.show("#dialog-question-" + current_step);
                 $("#item-rocket>img:last").animate({ "opacity" : 0 }, 300);
             }, 3000);
         }, delay);        
@@ -105,8 +101,7 @@ export default function Tour() {
             var $question = $("#" + s) 
             var answer_exists = ($question.find("input:checked").length > 0) || ($question.find("input.otra").val() != "");
             if (answer_exists) {
-                $(".dialog-error:visible").remove().detach();
-                
+                new_modal.hideErrorMessage();
                 let id = $question.find("h3").data("id");
                 let q_type = $question.find("h3").data("type");
                 
@@ -127,8 +122,7 @@ export default function Tour() {
                 }
                 return true;
             } else{
-                if ($question.find(".dialog-error").length == 0) { $question.find("h3").after($(".dialog-error:last").clone()); }
-                $question.find(".dialog-error").hide().fadeIn("fast");
+                new_modal.showErrorMessage($question, "h3", "#error-no-answer");
                 return false;
             }
         }

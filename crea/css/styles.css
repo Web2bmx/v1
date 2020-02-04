@@ -1034,7 +1034,7 @@ a {
 }
 
 #app-control > .app-control-step .site-name-container {
-  color: #f0f0f0;
+  color: #9b035a;
   font-size: 22px;
   position: relative;
   text-align: left;
@@ -1429,17 +1429,18 @@ a {
   height: 40px;
   overflow: hidden;
   position: absolute;
-  text-align: center;
   top: 0;
   width: 100%;
+  padding: 0 10px;
+  text-align: right;
+  box-sizing: border-box;
 }
 
 #app-switch a {
-  display: block;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   line-height: 40px;
-  width: 100%;
+  margin-right: 15px;
 }
 
 #app-switch a.switch-edit i {
@@ -1450,6 +1451,17 @@ a {
 #app-switch a.switch-view {
   font-size: 40px;
   vertical-align: bottom;
+}
+
+#app-switch a span {
+  display: none;
+  margin-left: 3px;
+}
+
+@media (min-width: 660px) {
+  #app-switch a span {
+    display: inline;
+  }
 }
 
 #app-control.view {

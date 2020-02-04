@@ -75,6 +75,6 @@
         </script>      
         <!--<script src="scripts/jquery-ui.min.js"></script>-->
         <script type="text/javascript" src="./scripts/tour.bundle.js"></script>
-        <p class="dialog-error" style="display: none;">Por favor selecciona la opción que mejor represente tu empresa o escribe tu respuesta en el campo de texto.</p>
+        <p id="error-no-answer" class="dialog-error" style="display: none;">Por favor selecciona la opción que mejor represente tu empresa o escribe tu respuesta en el campo de texto.</p>
     </body>
 </html>
