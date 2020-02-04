@@ -11,7 +11,7 @@ $description = filter_input(INPUT_POST,'description');
 if (!empty($_POST) && 
     $site_name && 
     $contenido && 
-    $title && 
+    // $title && 
     $description) {
 
     $site = file_get_contents('../include/include_site.tmp.html');

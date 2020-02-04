@@ -16,3 +16,8 @@ update session = cualquier boton que guarde
 FOR PROD:
 #### Update PayPal refrence
 #### Get PROD version for unsplash
+
+BUGS:
+los colores no se puede seleccionar
+la galeria no funciona en la pagina final
+si a estoy logedo debera decir "Editar" en vez de "Ingreso" en la pagina principal
