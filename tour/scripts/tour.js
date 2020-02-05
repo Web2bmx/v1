@@ -43,7 +43,11 @@ export default function Tour() {
         });
     };
     var setDialogWithProject = function() {
+<<<<<<< HEAD
         new_modal.show("#dialog-existing-project");
+=======
+        new_modal.show("#dialog-end");
+>>>>>>> 3bfceb988d43950639e3f510dada4e92393b59e0
         $(".continuar-proyecto").click(function(){ location.href = "/crea"; }); 
         $(".iniciar-proyecto").click(function(){
             new_dataManager.purgeTemplateData();

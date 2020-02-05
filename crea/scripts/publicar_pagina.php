@@ -11,7 +11,7 @@ $description = filter_input(INPUT_POST,'description');
 if (!empty($_POST) && 
     $site_name && 
     $contenido && 
-    $title && 
+    // $title && 
     $description) {
 
     $site = file_get_contents('../include/include_site.tmp.html');
@@ -20,7 +20,7 @@ if (!empty($_POST) &&
     $site = str_replace('##content##', $contenido, $site);
     $site = str_replace('href="Templates', 'href="/crea/Templates', $site);
 
-    $path = "../../client_sites/" . $site_name;
+    $path = "../../client_sites/" . strtolower($site_name);
 
     if(!file_exists($path)){
         mkdir($path);

@@ -128,7 +128,7 @@ export default function templateManager () {
 						break;	
 					case "siteName":
 						$(".siteName span").text(selections[i_id] ? selections[i_id].text : '');
-						$(".siteName").attr("href","http://" + selections[i_id] ? selections[i_id].text : '' + ".web2b.mx");
+						$(".siteName").attr("href","http://" + (selections[i_id] ? selections[i_id].text : '') + ".web2b.mx");
 						break;
 					default : 
 						$template.find("#" + v_id).html(selections[i_id] && selections[i_id].text !== '' ? selections[i_id].text : $this.attr("placeholder"));
@@ -189,7 +189,7 @@ export default function templateManager () {
 							break;	
 						case "siteName":
 							$(".siteName span").text(selections[i_id] ? selections[i_id].text : '');
-							$(".siteName").attr("href","http://" + selections[i_id] ? selections[i_id].text : '' + ".web2b.mx");
+							$(".siteName").attr("href","http://" + (selections[i_id] ? selections[i_id].text : '') + ".web2b.mx");
 							break;
 						default : 
 						$template.find("#" + v_id).html(selections[i_id] && selections[i_id].text !== '' ? selections[i_id].text : $this.attr("placeholder"));
