@@ -74,7 +74,21 @@ $(document).ready(function() {
 	});	
 	/*COMPLETE EMAIL SUBSCRIPTION*/
 	$(".comingsoon").click(function() {
-		alert("Proximamente");
+		var email = $("#input-email-subscribe").val();
+		if(isEmail(email)) {
+			$.post("/landing/scripts/emailSubscriptions.php",{
+				correo: email.trim()
+			}).done(function(response){
+				console.log(response);
+			}).fail(function(response){
+				console.log(response);
+			}).always(function(){
+				
+			});
+		} else {
+			console.log("error");
+		}
+		return false;
 	});
 	/*COMPLETE EMAIL SUBSCRIPTION*/
 });

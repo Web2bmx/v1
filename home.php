@@ -112,7 +112,7 @@
 					<span class="graph" id="gr_ship" style="background-image: url(landing/img/item_ship.svg);"></span>
 					<div class="container">
 						<form>
-							<input type="email" placeholder="Tu correo electrónico" />
+							<input id="input-email-subscribe" type="email" placeholder="Tu correo electrónico" />
 							<input class="cta comingsoon" type="submit" value="Suscribirme" />
 						</form>
 						<p>Suscribete a nuestro boletín y recibe los mejores tips para iniciar tu estrategia digital.</p>
