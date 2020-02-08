@@ -1187,6 +1187,10 @@ a {
   overflow: hidden;
 }
 
+#app-control .control-color-thumb.thumb-selected {
+  outline: 1px solid blue;
+}
+
 #app-control .control-color-thumb-bg {
   display: block;
   float: left;

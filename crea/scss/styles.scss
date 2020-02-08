@@ -424,6 +424,9 @@ a {
 		outline: 1px solid $gray80;
 		overflow: hidden;
 	}
+	.control-color-thumb.thumb-selected {
+		outline: 1px solid blue;
+	}
 	.control-color-thumb-bg {
 		display: block;
 		float: left;

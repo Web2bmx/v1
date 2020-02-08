@@ -52,7 +52,7 @@ export default function colorManager () {
 		return palette_id;
 	}
     var updateColors = function($template) {
-        $template.attr("class", $palettes.filter(":eq(" + palette_id + ")").attr("id"));
+		$template.attr("class", $palettes.filter(":eq(" + palette_id + ")").attr("id"));
     }
     var HexColorToRGBA = function (c, a) {
 		var s = ("rgba(" + parseInt(c.substr(1, 2), 16) + "," + parseInt(c.substr(3, 2), 16) + "," + parseInt(c.substr(5, 2), 16) + ", " + a + ")");
