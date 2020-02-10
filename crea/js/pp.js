@@ -78,7 +78,7 @@ export default function paypalBtn() {
     // Render the PayPal button
     return paypal.Button.render({
       // Set your environment
-      env: 'sandbox', // sandbox | production
+      env: 'production', // sandbox | production
       client: {
         sandbox: 'AeYhV898LwB_wov8dDxwQeKLrx1Yegkzeldu8P5WNPgfxi-ic1-5qlFnL4LK0xlkdrISIc5NeVNVi-Y9',
         production: 'Ab6PGV7NqDwbG9BNJ_2b0ttvuP53CaldZaLyn4YE2Pux_65VWHhL-IfbiYPQAkDayRzgu_3qAjHUkxUd'

@@ -129,7 +129,7 @@
 							<li><a href="#steps">¿Cómo funciona?</a></li>
 							<li><a href="#services">Nuestros servicios</a></li>
 							<li><a href="/tour">Comenzar</a></li>
-							<li><a class="login-btn">Ingreso</a></li>
+							<li><a href="#login" class="login-btn">Ingreso</a></li>
 						</ul>
 					</nav>	
 					<nav>

@@ -527,7 +527,7 @@ template {
 
 .modal-login p, .app-new-start p, .ventana-login p, .final-msgs p {
   color: black;
-  margin: 1rem 0;
+  margin: 2rem 0;
   text-align: center;
 }
 
@@ -999,6 +999,10 @@ a {
 #app-cover .app-cover-finish .app-cover-finish-package button:hover {
   background: white;
   color: #9b035a;
+}
+
+.app-new-start .boton {
+  margin-top: 40px;
 }
 
 /**/

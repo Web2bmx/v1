@@ -109,7 +109,12 @@ $purple60 : rgba(178,5,255,1);
     right: 0;
     top: 0;
     width: 100%;
-    z-index: 4;
+	z-index: 4;
+	
+	p {
+		margin-bottom: 20px
+	}
+
 }
 @media screen and (min-width: $tablet) {
     #modal {

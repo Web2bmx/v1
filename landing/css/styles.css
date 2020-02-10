@@ -179,6 +179,10 @@ input.cta:active {
   z-index: 4;
 }
 
+#modal p {
+  margin-bottom: 20px;
+}
+
 @media screen and (min-width: 660px) {
   #modal {
     -moz-border-radius: 0.25rem;
