@@ -971,4 +971,36 @@ footer nav li {
   float: left;
 }
 
+/*PRIVACY POLICY*/
+#politica {
+  background-color: white;
+  color: #3c3c3c;
+  padding: 2rem 1rem;
+}
+
+#politica a {
+  color: #172133;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#politica a:link, #politica a:visited {
+  color: #055dff;
+}
+
+#politica a:hover, #politica a:active {
+  color: #660a3f;
+}
+
+@media screen and (min-width: 1040px) {
+  #politica {
+    padding: 2rem 2rem;
+  }
+}
+
+#politica ul {
+  list-style-type: disc;
+  margin: .5rem 0 .5rem 2rem;
+}
+
 /*# sourceMappingURL=styles.css.map */

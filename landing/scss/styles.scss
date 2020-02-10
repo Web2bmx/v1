@@ -767,3 +767,29 @@ footer {
 */
 .right { float: right; }
 .left { float: left; }
+/*PRIVACY POLICY*/
+#politica {
+	background-color: $white;
+	color: $gray20;
+	padding: 2rem 1rem;
+}
+#politica a {
+	color: $blue40;
+	text-decoration: none;
+	transition: color 0.3s ease;
+	&:link, &:visited {
+		color: $blue60;
+	}
+	&:hover, &:active {
+		color: $pink20;
+	}
+}
+@media screen and (min-width: $desktop) {
+	#politica {
+		padding: 2rem 2rem;
+	}	
+}
+#politica ul {
+	list-style-type: disc;
+	margin: .5rem 0 .5rem 2rem;
+}
