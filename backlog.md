@@ -1,23 +1,11 @@
-* #### Página de términos y condiciones [Antonio]
-
-#### Validar numero de secciones basado en la sesion [Carlos]
-
+* #### Página de términos y condiciones [Antonio - 90%]
 #### Quitar productos [Carlos]
-
-#### Verificar que el contenido cargado de principio no cambie [Antonio - 80%]
-
 #### Regresar los botones de "ver mas" con funcionalidad
-
-start session = primera visita
-resume session = refresh o visita posterior
-update session = cualquier boton que guarde
 
 
 FOR PROD:
-#### Update PayPal refrence
 #### Get PROD version for unsplash
 
 BUGS:
-los colores no se puede seleccionar
 la galeria no funciona en la pagina final
 si a estoy logedo debera decir "Editar" en vez de "Ingreso" en la pagina principal
