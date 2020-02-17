@@ -241,6 +241,20 @@ a {
 				margin-bottom: 0px;
 				min-height: 50px;
 				width: 100%;					
+			}
+			button.finish{
+				padding: 0px 20px;
+				border: 1px solid $white; 
+				i, span{
+					vertical-align: middle;						
+				}
+				i{
+					font-size: 30px;
+				}
+				&:hover{
+					background: $white;
+					color: $pink40;
+				}
 				@media only screen and (min-width: 660px){
 					margin-bottom: 0px;
 				}				
@@ -258,21 +272,7 @@ a {
 				}				
 				@media only screen and (min-width: 1610px){
 					margin-bottom: 40px;
-				}	
-			}
-			button{
-				padding: 0px 20px;
-				border: 1px solid $white; 
-				i, span{
-					vertical-align: middle;						
-				}
-				i{
-					font-size: 30px;
-				}
-				&:hover{
-					background: $white;
-					color: $pink40;
-				}
+				}					
 			}
 		}		
 	}

@@ -38,11 +38,15 @@ export default function templateManager () {
 			for (let i = items_in_template; i < items_in_jd; i ++) {
 				_ctrl.new_itemManager.addItems(i);
 			}
-			$template.append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="' + '/crea/Templates/Template-' + id + '/js/scripts.js' + '"></script>');
+			//$template.append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="' + '/crea/Templates/Template-' + id + '/js/scripts.js' + '"></script>');
 			_ctrl.new_itemManager.checkItemsNumber();
 			_ctrl.new_colorManager.loadColors($template);
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 			updateContent('undefined');
+			$.ajax({
+				url: ("Templates/Template-" + id + "/js/scripts.js"),
+				dataType: "script"
+			});			
 			callback();
 		});
 	};

@@ -322,9 +322,10 @@ export default function appManager() {
 		}
 		// number of days
 		let diff = fecha_diff(fecha);
-		if(diff == 0) {
+		if(diff >= 0) {
 			$(".daysLeft").text(diff);
 			$(".created").fadeIn(400);
+			$('#publish').show();
 		} else {
 			$(".caduco").fadeIn(400);
 			$(".created").hide();			
@@ -334,10 +335,14 @@ export default function appManager() {
 	var publishPagina = function(template_info = '', fecha = ''){
 		template_info = template_info == '' ? _ctrl.new_dataManager.getObjFromLocalStorage('web2b_template') : template_info;
 
+		let template_html = '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>' +
+						'<script src="' + '/crea/Templates/Template-' + template_info.selections.templateTypeId.value + '/js/scripts.js' + '"></script>' +
+						$('#template')[0].outerHTML;
+
 		//Crear pago
 		$.post("scripts/publicar_pagina.php", {
 			site_name: template_info.selections.siteName.text,
-			contenido: $('#template')[0].outerHTML,
+			contenido: template_html,
 			title: template_info.selections['inp-content-name'].text,
 			description: template_info.selections['inp-content-slogan'].text
 		}).done((PublishResult) => {
