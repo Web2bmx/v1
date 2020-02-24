@@ -54,8 +54,8 @@ export default function mapsManager() {
         if (place && place.place_id) {
             updateMapSrc('place_id:' + place.place_id);
             $('#' + inputId).data('place', place.place_id);
-            _ctrl.new_templateManager.updateTexts($("#template"), _ctrl.jd.selections);
             _ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
+            _ctrl.new_templateManager.updateTexts($("#template"), _ctrl.jd.selections);           
         } else {
             $('#' + inputId).data('place', '');
             $('.map-error').show();

@@ -1,6 +1,10 @@
 * #### Página de términos y condiciones [Antonio - 90%]
 #### Quitar productos [Carlos]
 #### Regresar los botones de "ver mas" con funcionalidad
+#### cambiar iconos de facebook y twiter y agregar font awesome
+#### Horarios de atención mas sencillos de llenar con dropdowns
+#### Dropdown de dias de atencion
+#### Que haya un campo de direccion y otro del mapa
 
 
 FOR PROD:
@@ -8,4 +12,5 @@ FOR PROD:
 
 BUGS:
 si a estoy logedo debera decir "Editar" en vez de "Ingreso" en la pagina principal
-los datos a no se actualizan en el footer
+wrapper -> header no es editable??
+el mapa no se actualiza al publicar la pagina

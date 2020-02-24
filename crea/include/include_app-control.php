@@ -75,7 +75,7 @@
 					Cambiar
 				</span>
             </a>
-            <a id='logout'>
+            <a class='logout'>
 				<i class="fas fa-sign-out-alt"></i>
 				<span>
 					Salir
