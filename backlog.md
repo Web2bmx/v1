@@ -5,6 +5,7 @@
 #### Horarios de atención mas sencillos de llenar con dropdowns
 #### Dropdown de dias de atencion
 #### Que haya un campo de direccion y otro del mapa
+#### Indicador de cambios pendientes por publicar
 
 
 FOR PROD:
@@ -13,4 +14,3 @@ FOR PROD:
 BUGS:
 si a estoy logedo debera decir "Editar" en vez de "Ingreso" en la pagina principal
 wrapper -> header no es editable??
-el mapa no se actualiza al publicar la pagina

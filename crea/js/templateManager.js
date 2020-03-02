@@ -121,7 +121,9 @@ export default function templateManager () {
 				let text = '';
 				let val = $this.val();
 				if(i_id == 'inp-contact-address') {
-					text = val + ($this.data('place') ? ('##' + $this.data('place')) : '');
+					text = val;
+					val = val + ($this.data('place') ? ('##' + $this.data('place')) : '');
+					
 					if(text.search('##') != -1) {
 						let arr = text.split('##');
 						text = arr[0];
