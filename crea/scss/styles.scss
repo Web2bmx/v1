@@ -461,6 +461,18 @@ a {
 		overflow: visible;
 		position: relative;
 		width: auto;
+
+		> p {
+			width: 100%;
+			text-align: left;
+			font-size: 14px;
+			margin: 0;
+			
+			a {
+				text-decoration: underline;
+				color: #b4b4b4;
+			}
+		}
 	}
 	[id^="app-control-images"] {
 		margin: 10px auto;
@@ -469,9 +481,9 @@ a {
 	.photo-container{		
 		overflow-y: scroll;
 		width: 100%;
-		height: 200px;
+		height: 400px;
 		@include breakpoint($desktop){
-			max-height: 300px;
+			max-height: 400px;
 			width: 100%;
 			min-height: 150px;
 		}			
@@ -487,6 +499,10 @@ a {
 		@include breakpoint($desktop){
 			height: 150px;
 			width: 25%;
+
+			&:hover .img-thumb-autor{
+				display: block;
+			}
 		}	
 		@include breakpoint($ext-ext-desktop){
 			height: 200px;
@@ -525,6 +541,25 @@ a {
 		top: 0;
 		width: 100%;
 		z-index: 1;
+	}
+	.img-thumb-autor {
+		background: rgba(0, 0, 0, 0.5);
+		padding: 5px 10px;
+		font-size: 12px;
+		position: absolute;
+		z-index: 1000;
+		width: 100%;
+		box-sizing: border-box;
+		top: 0;
+
+		@include breakpoint($desktop){
+			display: none;
+		}
+
+		a {
+			color: white;
+			text-decoration: underline;
+		}
 	}
 	.thumb-selected {
 		z-index: 102;

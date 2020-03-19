@@ -39,7 +39,11 @@ export default function imageManager () {
 	var onImagesLoaded = (data) => {
 		if (_loaded_images.length == 0) {
 			for(let x=0; x<data.length ; x++){
-				_loaded_images.push(data[x].urls.regular);
+				_loaded_images.push(
+					data[x].urls.regular + '#web2b#' +
+					data[x].links.download_location + '#web2b#' +
+					data[x].user.links.html
+					);
 			}
 		}
 		sortImages();
@@ -126,34 +130,72 @@ export default function imageManager () {
 		let $this = $(target);
 		if ($this.is("[value]")) {
 			let img = $this.val();
+			let org_img = img;
 			let n_name = $this.attr("name").replace("inp-", "#");
+
+			let downloadUrl = $this.attr('data-download');
+			let autorUrl = $this.attr('data-autor');
+
+			img = downloadUrl !== undefined ?
+				(img + '#web2b#' +
+				downloadUrl + '#web2b#' +
+				autorUrl) :
+				img;
+
+
 			if ($this.prop('checked')) {
+				/* call unsplash download link if exists and info*/
+				if(downloadUrl !== undefined) {
+					$.ajax({
+						url: downloadUrl,
+						headers: {
+							Authorization: 'Client-ID ' + _api_id
+						}
+					});
+				}
+				
 				/*SAVES IMAGE TO OBJECT*/
 				saveImageInStorage(img, n_name, (n_name == "#img-gallery"));
+				
 				/*DISPLAYS IMAGE*/
-				displayImageOnTemplate(img, n_name.replace("#img-", ""));
+				displayImageOnTemplate(org_img, n_name.replace("#img-", ""));
 			} else {
 				if($this.closest("#app-control-images-gallery").length > 0) {
 					/*REMOVES FROM SELECTION*/
-					if (_ctrl.jd.selections[n_name].img.indexOf(img) > -1) {
-						var new_img = _ctrl.jd.selections[n_name].img.replace(img, "");
-						new_img = new_img.replace(",,",",");
-						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_img,'image');
+					let gallery_arr = _ctrl.jd.selections[n_name].img.split(',');
+					if (gallery_arr.indexOf(img) != -1) {
+						gallery_arr = gallery_arr.splice(gallery_arr.indexOf(img),1);
+						var new_arr = gallery_arr.join(',');
+						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_arr,'image');
 					}
 					/*REMOVES FROM DISPLAY AND RESTARTS PLAYER*/
-					$("#gallery .gallery .img").filter("[style*='" + img + "']").remove().end().hide().filter(":eq(0)").show();
+					$("#gallery .gallery .img").filter("[style*='" + org_img + "']").remove().end().hide().filter(":eq(0)").show();
 				}
 			}	
 		}
 		
 	};
 	var setUploadedImage = (img, cont, selected, append, index) => {
+		let arr = '';
+		if(img.search('#web2b#') !== -1) {
+			arr = img.split('#web2b#');
+			img = arr[0];
+		}
 		let $img_thumb = $(".img-thumb.template").clone();
 		$img_thumb.removeClass("template").find(".img-thumb-cont").css(setBackgroundImage(img)).attr("data-img-url", img);
 		$img_thumb.find("input").attr("value", img);
+		if(arr != ''){
+			$img_thumb.find("input").attr('data-download', arr[1]);
+			$img_thumb.find("input").attr('data-autor', arr[2]);
+			let autor_name = arr[2].split("@");
+			$img_thumb.find(".img-thumb-autor a").attr('href',
+				arr[2] + "?utm_source=web2b&utm_medium=referral");
+				$img_thumb.find(".img-thumb-autor a").text(autor_name[1]);
+			$img_thumb.find(".img-thumb-autor").show();
+		}
 		var $this_img_thumb = $img_thumb.clone();
 		$this_img_thumb.find("input").attr("name", ("inp-img-" + cont));
-		if (selected) { $this_img_thumb.addClass("selected").find("input").attr("checked", "checked"); }
+		if (selected) { $this_img_thumb.addClass("thumb-selected").find("input").attr("checked", "checked"); }
 		if(append) {	
 			$("#app-control-images-" + cont + " .photo-container").append($this_img_thumb);
 		} else {	

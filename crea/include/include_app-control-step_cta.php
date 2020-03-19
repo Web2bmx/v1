@@ -9,6 +9,7 @@
 		</div>			
 		<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
 		<div class="app-control-images">
+			<?php include("include_unsplash_referral.php"); ?>
 			<div id='app-control-images-cta'>
 				<div class="photo-container"></div>
 			</div>

@@ -11,7 +11,12 @@
 <!--img-thumb-->
 <div class="img-thumb template">
 	<div class='img-thumb-cont'></div>
-	<input type="radio" name="" value="" style="display: none;" />		
+	<input type="radio" name="" value="" style="display: none;" />
+	<div class='img-thumb-autor' style="display: none">
+		<a href="" target="_blank">
+			Autor
+		</a>
+	</div>	
 	<div class='img-thumb-cont-zoom'><i class="fas fa-search-plus"></i></div>
 	<div class='img-thumb-overlay'><span></span></div>
 </div> 

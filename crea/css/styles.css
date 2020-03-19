@@ -1231,6 +1231,18 @@ a {
   width: auto;
 }
 
+#app-control .app-control-images > p {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+}
+
+#app-control .app-control-images > p a {
+  text-decoration: underline;
+  color: #b4b4b4;
+}
+
 #app-control [id^="app-control-images"] {
   margin: 10px auto;
   overflow: auto;
@@ -1239,12 +1251,12 @@ a {
 #app-control .photo-container {
   overflow-y: scroll;
   width: 100%;
-  height: 200px;
+  height: 400px;
 }
 
 @media (min-width: 1040px) {
   #app-control .photo-container {
-    max-height: 300px;
+    max-height: 400px;
     width: 100%;
     min-height: 150px;
   }
@@ -1264,6 +1276,9 @@ a {
   #app-control .img-thumb {
     height: 150px;
     width: 25%;
+  }
+  #app-control .img-thumb:hover .img-thumb-autor {
+    display: block;
   }
 }
 
@@ -1309,6 +1324,28 @@ a {
   top: 0;
   width: 100%;
   z-index: 1;
+}
+
+#app-control .img-thumb-autor {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+}
+
+@media (min-width: 1040px) {
+  #app-control .img-thumb-autor {
+    display: none;
+  }
+}
+
+#app-control .img-thumb-autor a {
+  color: white;
+  text-decoration: underline;
 }
 
 #app-control .thumb-selected {
