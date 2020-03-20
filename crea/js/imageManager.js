@@ -1,5 +1,3 @@
-import dataManager from '../../js/dataManager';
-
 export default function imageManager () {
 	var _ctrl = null;
 	var _uploaded_images = {};
@@ -12,7 +10,6 @@ export default function imageManager () {
 		getImagesUploadedByUser();
 		loadImagesFromUnsplash(ide).then(function(data) { onImagesLoaded(data); }, function(err) { console.log(err); });
 	};
-	var new_dataManager = new dataManager();
 
 	var getImagesUploadedByUser = () => {
 		let s = "-uploaded";
@@ -31,9 +28,7 @@ export default function imageManager () {
 	};
 	var loadImagesFromUnsplash = (ide) => {
 		return new Promise(function(resolve, reject) {
-			let userid = new_dataManager.getObjFromLocalStorage("web2b_userId");
 			$.post( "scripts/unsplashMW.php", { 
-				userid, 
 				api_path: "https://api.unsplash.com/search/photos", 
 				params: "query=" + encodeURIComponent(ide) + "&page=1&per_page=20&orientation=landscape"
 			})
@@ -151,10 +146,8 @@ export default function imageManager () {
 
 			if ($this.prop('checked')) {
 				/* call unsplash download link if exists and info*/
-				let userid = new_dataManager.getObjFromLocalStorage("web2b_userId");
 				if(downloadUrl !== undefined) {
-					$.post( "scripts/unsplashMW.php", { 
-						userid, 
+					$.post( "scripts/unsplashMW.php", {
 						api_path: downloadUrl
 					});
 				}
