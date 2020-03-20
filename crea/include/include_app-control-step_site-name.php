@@ -14,7 +14,7 @@
 	</div>
 	<p>
 		<span>Nota:</span>
-		Puedes cambiarla por tu propio nombre de sitio
+		Puedes cambiarla por tu propio nombre de sitio (p.e. tusitio.com).
 	</p>
 	<img src="/img/logo.png" />
 </div>

@@ -28,6 +28,7 @@
 				</a>			
 			</h4>
 			<div class="app-control-images" style="display: none">
+				<?php include("include_unsplash_referral.php"); ?>
 				<div id='app-control-images-logo'>
 					<div class="photo-container"></div>
 				</div>

@@ -1,6 +1,7 @@
 <div>
 	<h2>Selecciona las imágenes para tu galería.</h2>
 	<div class="app-control-images">
+		<?php include("include_unsplash_referral.php"); ?>
 		<div id='app-control-images-gallery'>
 			<div class="photo-container"></div>
 		</div>

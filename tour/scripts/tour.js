@@ -43,7 +43,7 @@ export default function Tour() {
         });
     };
     var setDialogWithProject = function() {
-        new_modal.show("#dialog-end");
+        new_modal.show("#dialog-existing-project");
         $(".continuar-proyecto").click(function(){ location.href = "/crea"; }); 
         $(".iniciar-proyecto").click(function(){
             new_dataManager.purgeTemplateData();

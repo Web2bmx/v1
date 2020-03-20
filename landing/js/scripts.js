@@ -1,6 +1,6 @@
-/*
+
 import pageManager from '../../js/pageManager';
-*/
+
 import modal from '../../js/modal';
 $(document).ready(function() {
 	var new_modal = new modal();
@@ -44,35 +44,26 @@ $(document).ready(function() {
 				if(response.ok && response.paginas.length > 0){
 					// si solo tiene una pagina
 					if(response.paginas.length == 1) {
-						console.log("1");
-						console.log(response);
 						//mostrar usuarios
-						/*
 						localStorage.setItem("web2b_template", decodeURIComponent(response.paginas[0].info));
 						localStorage.setItem("web2b_templateId", response.paginas[0].idSitio);
 						localStorage.setItem("web2b_userId", response.userId);
 						localStorage.setItem("web2b_actualPage", response.paginas[0]);
 						window.location.href = "/crea";
-						 */
-						/**/
 					} else {
 						console.log("Page Manager");
-						/*
+						/* */
 						// show pages and redirect on success
+						new_modal.show("#dialog-project-switcher");
+						let new_PageManager = new pageManager();
 						new_PageManager.setPaginasInfoFromExternal(response.paginas);
 						new_PageManager.fillModal(response.userId, () => {
 							window.location.href = "/crea";
 						});
-						*/						
+						/**/						
 					}
 				} else {
-					if (response.ok) {
-						console.log("0");
-						console.log(response);
-						//window.location.href = "/crea";
-					} else {
-						new_modal.showErrorMessage($("#dialog-login"), "#inp-password", "#error-login", response.error);
-					}
+					new_modal.showErrorMessage($("#dialog-login"), "#inp-password", "#error-login", response.error);
 				}
 			}).fail(function(response){
 				console.log(response);
@@ -81,14 +72,23 @@ $(document).ready(function() {
 			});
 		}
 	});	
-
-	/*
-	let new_PageManager = new pageManager();
+	/*COMPLETE EMAIL SUBSCRIPTION*/
 	$(".comingsoon").click(function() {
-		alert("Proximamente");
+		var email = $("#input-email-subscribe").val();
+		if(isEmail(email)) {
+			$.post("/landing/scripts/emailSubscriptions.php",{
+				correo: email.trim()
+			}).done(function(response){
+				console.log(response);
+			}).fail(function(response){
+				console.log(response);
+			}).always(function(){
+				
+			});
+		} else {
+			console.log("error");
+		}
+		return false;
 	});
-	dialogHandler();
-	
-	*/
-	
+	/*COMPLETE EMAIL SUBSCRIPTION*/
 });

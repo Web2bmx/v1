@@ -5,9 +5,16 @@
     <div id="dialog-login" class="dialog">
 		<form id="form-login">
 			<div class="login-content">
+				<p>
+					¿Ya tienes una cuenta con nosotros? <br>
+					Sino, toma nuestro tour 
+					<a href="/tour">
+						dando clic aquí.
+					</a>
+				</p>
 				<div id="inp-email" class="inputWihIcons"><i class="fas fa-envelope"></i><input type="email" name="email" id="email"  placeholder="Correo"  /></div>
 				<div id="inp-password" class="inputWihIcons"><i class="fas fa-asterisk"></i><input type="password" name="password" id="password" value="" placeholder="Contraseña" /></div>
-				<p>¿Ya tienes una cuenta con nosotros?</p>				
+								
 			</div>
 			<!--<div class="login-error" style="display: none">
 				<p>Esta cuenta no se ha encontrado en el sistema</p>			

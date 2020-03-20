@@ -8,6 +8,7 @@
 		</div>
 		<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
 		<div class="app-control-images">
+			<?php include("include_unsplash_referral.php"); ?>
 			<div id='app-control-images-aboutus'>
 				<div class="photo-container"></div>
 			</div>

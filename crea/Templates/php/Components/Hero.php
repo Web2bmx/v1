@@ -10,12 +10,12 @@
 			<h1 id="val-content-name"><?php echo($content->hero[0]->title); ?></h1>
 			<h3 id="val-content-slogan"><?php echo($content->hero[0]->slogan); ?></h3>
 			<?php if ($content->hero[0]->button != "") : ?>
-				<div class="seemore">
+				<!-- <div class="seemore">
 					<a href="#">
 						<span><?php echo($content->hero[0]->button); ?></span>
 						<span>&darr;</span>
 					</a>
-				</div>
+				</div> -->
 			<?php endif ?>
 		</div>
 	</div>

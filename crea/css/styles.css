@@ -527,7 +527,7 @@ template {
 
 .modal-login p, .app-new-start p, .ventana-login p, .final-msgs p {
   color: black;
-  margin: 1rem 0;
+  margin: 2rem 0;
   text-align: center;
 }
 
@@ -947,58 +947,62 @@ a {
   width: 100%;
 }
 
+#app-cover .app-cover-finish .app-cover-finish-package button.finish {
+  padding: 0px 20px;
+  border: 1px solid white;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button.finish i, #app-cover .app-cover-finish .app-cover-finish-package button.finish span {
+  vertical-align: middle;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button.finish i {
+  font-size: 30px;
+}
+
+#app-cover .app-cover-finish .app-cover-finish-package button.finish:hover {
+  background: white;
+  color: #9b035a;
+}
+
 @media only screen and (min-width: 660px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
     margin-bottom: 0px;
   }
 }
 
 @media only screen and (min-width: 730px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
     margin-bottom: 20px;
   }
 }
 
 @media only screen and (min-width: 980px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
     margin-bottom: 40px;
   }
 }
 
 @media only screen and (min-width: 1040px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
     margin-bottom: 0px;
   }
 }
 
 @media only screen and (min-width: 1160px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
     margin-bottom: 20px;
   }
 }
 
 @media only screen and (min-width: 1610px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .finish {
+  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
     margin-bottom: 40px;
   }
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package button {
-  padding: 0px 20px;
-  border: 1px solid white;
-}
-
-#app-cover .app-cover-finish .app-cover-finish-package button i, #app-cover .app-cover-finish .app-cover-finish-package button span {
-  vertical-align: middle;
-}
-
-#app-cover .app-cover-finish .app-cover-finish-package button i {
-  font-size: 30px;
-}
-
-#app-cover .app-cover-finish .app-cover-finish-package button:hover {
-  background: white;
-  color: #9b035a;
+.app-new-start .boton {
+  margin-top: 40px;
 }
 
 /**/
@@ -1187,6 +1191,10 @@ a {
   overflow: hidden;
 }
 
+#app-control .control-color-thumb.thumb-selected {
+  outline: 1px solid blue;
+}
+
 #app-control .control-color-thumb-bg {
   display: block;
   float: left;
@@ -1223,6 +1231,18 @@ a {
   width: auto;
 }
 
+#app-control .app-control-images > p {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  margin: 0;
+}
+
+#app-control .app-control-images > p a {
+  text-decoration: underline;
+  color: #b4b4b4;
+}
+
 #app-control [id^="app-control-images"] {
   margin: 10px auto;
   overflow: auto;
@@ -1231,12 +1251,12 @@ a {
 #app-control .photo-container {
   overflow-y: scroll;
   width: 100%;
-  height: 200px;
+  height: 400px;
 }
 
 @media (min-width: 1040px) {
   #app-control .photo-container {
-    max-height: 300px;
+    max-height: 400px;
     width: 100%;
     min-height: 150px;
   }
@@ -1256,6 +1276,9 @@ a {
   #app-control .img-thumb {
     height: 150px;
     width: 25%;
+  }
+  #app-control .img-thumb:hover .img-thumb-autor {
+    display: block;
   }
 }
 
@@ -1301,6 +1324,28 @@ a {
   top: 0;
   width: 100%;
   z-index: 1;
+}
+
+#app-control .img-thumb-autor {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+}
+
+@media (min-width: 1040px) {
+  #app-control .img-thumb-autor {
+    display: none;
+  }
+}
+
+#app-control .img-thumb-autor a {
+  color: white;
+  text-decoration: underline;
 }
 
 #app-control .thumb-selected {
