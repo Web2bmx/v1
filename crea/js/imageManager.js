@@ -1,10 +1,10 @@
+import dataManager from '../../js/dataManager';
+
 export default function imageManager () {
 	var _ctrl = null;
 	var _uploaded_images = {};
 	var _loaded_images = [];
 	var _current_images = [];
-	var _api_url = "https://api.unsplash.com/search/photos";
-	var _api_id = "2aaa588b969353176886d12597d7ee7ee3860961c9ac468df4ccf5198ab20e64";
 	var _uploaded_images_url = "/crea/client_images/";
 	var _err_unsplash = "An error occurred while loading images from UnSplash.";
 	var init = function (_that) { _ctrl = _that; };
@@ -12,6 +12,8 @@ export default function imageManager () {
 		getImagesUploadedByUser();
 		loadImagesFromUnsplash(ide).then(function(data) { onImagesLoaded(data); }, function(err) { console.log(err); });
 	};
+	var new_dataManager = new dataManager();
+
 	var getImagesUploadedByUser = () => {
 		let s = "-uploaded";
 		let keys = Object.keys(_ctrl.jd.selections);
@@ -29,9 +31,13 @@ export default function imageManager () {
 	};
 	var loadImagesFromUnsplash = (ide) => {
 		return new Promise(function(resolve, reject) {
-			$.getJSON(
-				_api_url, { client_id: _api_id, query: ide, page: 1, per_page: 20, orientation: 'landscape'
-			}).done(function(data){
+			let userid = new_dataManager.getObjFromLocalStorage("web2b_userId");
+			$.post( "scripts/unsplashMW.php", { 
+				userid, 
+				api_path: "https://api.unsplash.com/search/photos", 
+				params: "query=" + encodeURIComponent(ide) + "&page=1&per_page=20&orientation=landscape"
+			})
+			.done(function(data){
 				resolve(data.results);
 			}).fail(function(){ reject(Error(_err_unsplash)); });
 		});	
@@ -145,12 +151,11 @@ export default function imageManager () {
 
 			if ($this.prop('checked')) {
 				/* call unsplash download link if exists and info*/
+				let userid = new_dataManager.getObjFromLocalStorage("web2b_userId");
 				if(downloadUrl !== undefined) {
-					$.ajax({
-						url: downloadUrl,
-						headers: {
-							Authorization: 'Client-ID ' + _api_id
-						}
+					$.post( "scripts/unsplashMW.php", { 
+						userid, 
+						api_path: downloadUrl
 					});
 				}
 				
