@@ -24,7 +24,7 @@ $(document).ready(function() {
 	
 	$(".login-btn").click(function(e){
 		e.preventDefault();
-		$("#email").val("contacto@web2b.mx");
+		$("#email").val("");
 		$("#password").val("");
 		new_modal.show("#dialog-login");
 	});	
