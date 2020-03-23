@@ -1,5 +1,5 @@
 <?php $a = $GLOBALS['preguntas'][$q]; ?>
-<h3 data-id="<?php echo($a["pregunta"]["id"]); ?>" data-type="<?php echo($a["pregunta"]["tipo"]); ?>"><?php echo(utf8_encode($a["pregunta"]["texto"])); ?></h3>  
+<h3 data-id="<?php echo($a["pregunta"]["id"]); ?>" data-type="<?php echo($a["pregunta"]["tipo"]); ?>"><?php echo(($a["pregunta"]["texto"])); ?></h3>  
 <div class="options-container">  
     <?php $opciones = $a['opciones']; $x = 0; ?>
     <?php foreach($opciones as $opcion) : ?>
