@@ -43,7 +43,8 @@ export default function imageManager () {
 				_loaded_images.push(
 					data[x].urls.regular + '#web2b#' +
 					data[x].links.download_location + '#web2b#' +
-					data[x].user.links.html
+					data[x].user.links.html + '#web2b#' +
+					data[x].user.name
 					);
 			}
 		}
@@ -136,11 +137,13 @@ export default function imageManager () {
 
 			let downloadUrl = $this.attr('data-download');
 			let autorUrl = $this.attr('data-autor');
+			let autor = $this.attr('data-autor-name');
 
 			img = downloadUrl !== undefined ?
 				(img + '#web2b#' +
 				downloadUrl + '#web2b#' +
-				autorUrl) :
+				autorUrl + '#web2b#' +
+				autor) :
 				img;
 
 
@@ -185,10 +188,11 @@ export default function imageManager () {
 		if(arr != ''){
 			$img_thumb.find("input").attr('data-download', arr[1]);
 			$img_thumb.find("input").attr('data-autor', arr[2]);
-			let autor_name = arr[2].split("@");
+			$img_thumb.find("input").attr('data-autor-name', arr[3]);
+			let autor_name = arr[3];
 			$img_thumb.find(".img-thumb-autor a").attr('href',
 				arr[2] + "?utm_source=web2b&utm_medium=referral");
-				$img_thumb.find(".img-thumb-autor a").text(autor_name[1]);
+				$img_thumb.find(".img-thumb-autor a").text(autor_name);
 			$img_thumb.find(".img-thumb-autor").show();
 		}
 		var $this_img_thumb = $img_thumb.clone();
