@@ -1499,13 +1499,22 @@ a {
 }
 
 #app-switch a span {
-  display: none;
   margin-left: 3px;
 }
 
+#app-switch a span.web {
+  display: none;
+}
+
 @media (min-width: 660px) {
-  #app-switch a span {
+  #app-switch a span.web {
     display: inline;
+  }
+}
+
+@media (min-width: 660px) {
+  #app-switch a span.mobile {
+    display: none;
   }
 }
 

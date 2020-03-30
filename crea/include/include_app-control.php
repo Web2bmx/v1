@@ -59,7 +59,8 @@
         <aside>
             <a id='switch-view'>
                 <i class="far fa-eye"></i>
-                <span> Ver mi página </span>
+                <span class="web"> Ver mi página </span>
+                <span class="mobile"> Ver </span>
             </a>
             <a id='switch-edit' style="display: none;">
                 <i class="fas fa-wrench"></i>

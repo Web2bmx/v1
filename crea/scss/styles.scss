@@ -687,12 +687,23 @@ a {
 			vertical-align: bottom;
 		}
 		span {
-			display: none;
 			margin-left: 3px;
+			
+			&.web {
+				display: none;
 
-			@include breakpoint($tablet){
-				display: inline;
-			}				
+				@include breakpoint($tablet){
+					display: inline;
+				}				
+			}
+
+			&.mobile {
+
+				@include breakpoint($tablet){
+					display: none;
+				}	
+							
+			}			
 		}
 	
 	}
