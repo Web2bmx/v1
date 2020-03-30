@@ -1,4 +1,4 @@
-<section id="modal" class="modal-narrow">
+<section id="modal" class="modal-narrow" style="display: none">
 	<div id="modal-overlay"></div>
 	<a id="modal-close" class="cerrar-ventana x-close"><i class="fas fa-times"></i></a>	
 	<img class="logo" src="landing/img/logo_web2b.svg" />

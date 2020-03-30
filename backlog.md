@@ -9,5 +9,4 @@
 
 
 BUGS:
-si a estoy logedo debera decir "Editar" en vez de "Ingreso" en la pagina principal
 wrapper -> header no es editable??

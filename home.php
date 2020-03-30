@@ -37,7 +37,8 @@
 							<li><a href="#steps">¿Cómo funciona?</a></li>
 							<li><a href="#services">Nuestros servicios</a></li>
 							<li><a href="/tour">Comenzar</a></li>
-							<li><a class="login-btn" href="">Ingreso</a></li>
+							<li><a class="login-btn" href="">Login</a></li>
+							<li><a class="panel" href="/crea" style="display: none">Panel</a></li>
 						</ul>
 					</div>
 				</div>
@@ -123,7 +124,8 @@
 							<li><a href="#steps">¿Cómo funciona?</a></li>
 							<li><a href="#services">Nuestros servicios</a></li>
 							<li><a href="/tour">Comenzar</a></li>
-							<li><a href="#login" class="login-btn">Ingreso</a></li>
+							<li><a href="#login" class="login-btn">Login</a></li>
+							<li><a class="panel" href="/crea" style="display: none">Panel</a></li>
 						</ul>
 					</nav>	
 					<nav>
@@ -140,7 +142,13 @@
 						</ul>
 					</div>
 				</div>
-				<div id="copyright"><p>&copy;2019 Web2b Todos los derechos reservados</p></div>
+				<div id="copyright">
+					<p>
+						&copy; 
+						<script>new Date().getFullYear()>document.write(new Date().getFullYear());</script>
+						Web2b Todos los derechos reservados
+					</p>
+				</div>
 			</footer>
 			<?php include_once("include/include_modal-login.php"); ?>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
