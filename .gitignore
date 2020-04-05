@@ -71,3 +71,5 @@ unsplash/
 
 #images from clients
 crea/client_images
+
+client_sites/*

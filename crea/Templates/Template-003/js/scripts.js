@@ -6,7 +6,7 @@ $(document).ready(function() {
     $c_gallery_images.filter(":not(:eq(" + c_gallery_count + "))").hide();
     $c_gallery_control.show();
     $(".gallery").addClass("gallery_slider");
-    $(".gallery-nav>span").on("click", function() {
+    $(".gallery-nav>a").on("click", function() {
         var b = $(this).hasClass("gallery-nav-next") ? "next" : "prev";
         change_gallery_item(b);
     });
@@ -25,7 +25,7 @@ $(document).ready(function() {
     /*Gallery*/
     /*Menu*/
     var setMenu = function() {
-        console.log($(window).width());
+        //console.log($(window).width());
         if ($(window).width() <= 560) {
             $("#menu").addClass("toggle");
             $("#menu-icon").show();

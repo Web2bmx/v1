@@ -23,7 +23,7 @@ export default function Tour() {
        status = Object.keys(new_dataManager.getObjFromLocalStorage('web2b_template')).length > 0 ? "WITH PROJECT" : status;
        if (status == "IN PROCESS") { setDialogInProcess(); }   
        if(status == "WITH PROJECT") { setDialogWithProject(); }
-    }
+    };
     var setDialogInProcess = function() {
         new_modal.show("#dialog-existing-session");
         $(".iniciar").on("click", function() {
@@ -84,7 +84,7 @@ export default function Tour() {
                 $("#item-rocket>img:last").animate({ "opacity" : 0 }, 300);
             }, 3000);
         }, delay);        
-    }
+    };
     var animateBackground = function (){
         for (let i = 1; i < 4; i++) {
             $(".stars" + i).animate({"height" : ((i * 15) + "px"), "opacity" : (.8 - (i * .2))}, 1000, function() {
@@ -140,7 +140,7 @@ export default function Tour() {
                 saveData(id, q_type, resp, decodeURIComponent(data.text[0]), resp_id);
             }
         });	
-    }
+    };
     var saveData = function (id, q_type, resp, loc_en, resp_id){
         _tplData.respuestas[id] = {
             "tipo": q_type,
@@ -153,7 +153,8 @@ export default function Tour() {
     return {
 		init: init
 	};
-};
+}
+
 $(document).ready(function(){
     var new_tour = new Tour();
     new_tour.init();

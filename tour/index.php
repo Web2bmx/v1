@@ -1,4 +1,5 @@
 <?php
+
     include "../lib/dbc.php";
     include "../lib/preguntas_tour.php";
 ?>
@@ -6,6 +7,10 @@
     <head>
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta charset="utf-8" />
+        <title>Web2b - Impulsa tu estrategia digital</title>
+        <meta name="description" content="Impulsa tu estrategia digital">
+        <meta name="author" content="Web2b">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">        
         <!--
         <link rel="stylesheet" href="css/jquery-ui.min.css" >
         <link rel="stylesheet" href="css/jquery-ui.structure.min.css" >
@@ -65,9 +70,10 @@
                 </div>
             </div>
         </main>      
-          
-            <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>        
-            <script>
+        <p id="error-no-answer" class="dialog-error" style="display: none;">Por favor selecciona la opción que mejor represente tu empresa o escribe tu respuesta en el campo de texto.</p>    
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>        
+        <script>
                 if (!window.jQuery) {
                 // fallback to local jQuery
                 document.write(decodeURIComponent('%3Cscript src="scripts/jquery-3.3.1.min.js" %3E%3C/script%3E'));
@@ -75,6 +81,6 @@
         </script>      
         <!--<script src="scripts/jquery-ui.min.js"></script>-->
         <script type="text/javascript" src="./scripts/tour.bundle.js"></script>
-        <p id="error-no-answer" class="dialog-error" style="display: none;">Por favor selecciona la opción que mejor represente tu empresa o escribe tu respuesta en el campo de texto.</p>
+
     </body>
 </html>

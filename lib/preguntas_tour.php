@@ -1,4 +1,6 @@
 <?php
+
+
     $preguntas = [];
     $i=1;
     //obtener tipos
@@ -10,10 +12,10 @@
     foreach ($dbo_respuestas as $dbo_r) {
         if ($dbo_r["PID"] != NULL) {
             if (!array_key_exists($dbo_r["PID"], $respuestas)) { $respuestas[$dbo_r["PID"]] = array(); }
-            $respuesta = array("ID"=>$dbo_r["ID"],"TEXT"=>utf8_encode($dbo_r["TEXT"]), "LOC_EN"=>utf8_encode($dbo_r["LOC_EN"]), "OPCIONES"=>array());
+            $respuesta = array("ID"=>$dbo_r["ID"],"TEXT"=>($dbo_r["TEXT"]), "LOC_EN"=>($dbo_r["LOC_EN"]), "OPCIONES"=>array());
             for ($k = 0; $k < count($arr_respuestas); $k++) {
                 if ($dbo_r["ID"] == $arr_respuestas[$k]["RID"]) {
-                    array_push($respuesta["OPCIONES"], array("ID"=>$arr_respuestas[$k]["ID"], "TEXT"=>utf8_encode($arr_respuestas[$k]["TEXT"]), "LOC_EN"=>utf8_encode($arr_respuestas[$k]["LOC_EN"])));        
+                    array_push($respuesta["OPCIONES"], array("ID"=>$arr_respuestas[$k]["ID"], "TEXT"=>($arr_respuestas[$k]["TEXT"]), "LOC_EN"=>($arr_respuestas[$k]["LOC_EN"])));        
                 }
             }
             $respuestas[$dbo_r["PID"]][] = $respuesta;

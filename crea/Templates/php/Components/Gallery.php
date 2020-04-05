@@ -9,8 +9,8 @@
                 <div class="img <?php echo(getImgClasses($content->gallery->images[0]->img[$i])); ?>" style="background-image: url(<?php echo($content->gallery->images[0]->img[$i]); ?>);" data-src="<?php echo($content->gallery->images[0]->img[$i]); ?>"></div>
             <?php endfor; ?>
             <div class="gallery-nav" style="display: none;">
-                <span class="gallery-nav-prev">&#9668;</span>
-                <span class="gallery-nav-next">&#9658;</span>
+                <a class="gallery-nav-prev">&#9668;</a>
+                <a class="gallery-nav-next">&#9658;</a>
             </div>
         </div>
     </div>

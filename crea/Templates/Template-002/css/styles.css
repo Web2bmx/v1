@@ -499,14 +499,15 @@ body {
   z-index: 1;
 }
 
-.gallery-nav > span {
+.gallery-nav > a {
   background-color: white;
   border-radius: 1em;
   cursor: pointer;
   font-size: 2em;
-  padding: .2em .4em;
+  padding: .20em .35em;
   top: 48%;
   position: absolute;
+  user-select: none;
 }
 
 .gallery-nav-prev {

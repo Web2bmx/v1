@@ -17,6 +17,12 @@ $(document).ready(function() {
 		
 		return false;
 	});
+
+	if(localStorage.web2b_template !== undefined && localStorage.web2b_pages !== undefined) {
+		$('.panel').show();
+		$('.login-btn').hide();
+	}
+
 	function isEmail(email) {
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		return regex.test(email);
@@ -24,7 +30,7 @@ $(document).ready(function() {
 	
 	$(".login-btn").click(function(e){
 		e.preventDefault();
-		$("#email").val("contacto@web2b.mx");
+		$("#email").val("");
 		$("#password").val("");
 		new_modal.show("#dialog-login");
 	});	

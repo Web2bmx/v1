@@ -1,6 +1,7 @@
 <div>
 						<h2>Elige la imagen de cabecera</h2>
 						<div class="app-control-images">
+							<?php include("include_unsplash_referral.php"); ?>
 							<div id='app-control-images-hero'>
 								<div class="photo-container"></div>
 							</div>

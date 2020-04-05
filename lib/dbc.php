@@ -19,4 +19,7 @@ if ($dbh->connect_errno) {
     
     // Podr�a ser conveniente mostrar algo interesante, aunque nosotros simplemente saldremos
     exit;
+} else {
+    $dbh->query("SET time_zone='+6:00'");
+    $dbh->set_charset('utf8');
 }
