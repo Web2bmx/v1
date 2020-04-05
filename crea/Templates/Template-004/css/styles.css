@@ -116,7 +116,6 @@ body {
 }
 
 /*MAP*/
-/*Colors*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Roboto', sans-serif;
@@ -204,22 +203,6 @@ body {
   color: white;
 }
 
-#template.color-orange #menu h4 {
-  color: #f0aa00;
-}
-
-#template.color-yellow #menu h4 {
-  color: #ffe600;
-}
-
-#template.color-green #menu h4 {
-  color: #4cbe74;
-}
-
-#template.color-red #menu h4 {
-  color: #ff5c5c;
-}
-
 #template #menu.toggle h4 {
   float: left;
 }
@@ -270,22 +253,6 @@ body {
   padding: .4em .8em;
 }
 
-#template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-  color: #f0aa00;
-}
-
-#template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-  color: #ffe600;
-}
-
-#template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-  color: #4cbe74;
-}
-
-#template.color-red #menu menu li a:hover, #template.color-red #menu menu li a:active {
-  color: #ff5c5c;
-}
-
 #menu-icon {
   cursor: pointer;
   display: none;
@@ -311,22 +278,6 @@ body {
 #template #hero h1 {
   width: 50%;
   min-width: 760px;
-}
-
-#template.color-orange #hero h1 {
-  color: #f0aa00;
-}
-
-#template.color-yellow #hero h1 {
-  color: #ffe600;
-}
-
-#template.color-green #hero h1 {
-  color: #4cbe74;
-}
-
-#template.color-red #hero h1 {
-  color: #ff5c5c;
 }
 
 #hero > .wrapper {
@@ -431,22 +382,6 @@ body {
   margin: 0 auto 2em auto;
   overflow: hidden;
   width: 80%;
-}
-
-#template.color-orange .item h3 {
-  color: #f0aa00;
-}
-
-#template.color-yellow .item h3 {
-  color: #ffe600;
-}
-
-#template.color-green .item h3 {
-  color: #4cbe74;
-}
-
-#template.color-red .item h3 {
-  color: #ff5c5c;
 }
 
 .item .img {
@@ -631,22 +566,6 @@ body {
   background-color: white;
 }
 
-#template.color-orange #aboutus {
-  color: #f0aa00;
-}
-
-#template.color-yellow #aboutus {
-  color: #ffe600;
-}
-
-#template.color-green #aboutus {
-  color: #4cbe74;
-}
-
-#template.color-red #aboutus {
-  color: #ff5c5c;
-}
-
 #aboutus .img {
   display: block;
   height: 350px;
@@ -760,22 +679,6 @@ body {
   z-index: 1;
 }
 
-#template.color-orange #cta .wrapper-content {
-  color: #f0aa00;
-}
-
-#template.color-yellow #cta .wrapper-content {
-  color: #ffe600;
-}
-
-#template.color-green #cta .wrapper-content {
-  color: #4cbe74;
-}
-
-#template.color-red #cta .wrapper-content {
-  color: #ff5c5c;
-}
-
 #cta .wrapper-content ul {
   list-style-type: none;
 }
@@ -795,22 +698,6 @@ body {
   width: 100%;
   background-color: #444444;
   padding: 2em 0 1em 0;
-}
-
-#template.color-orange footer {
-  color: #f0aa00;
-}
-
-#template.color-yellow footer {
-  color: #ffe600;
-}
-
-#template.color-green footer {
-  color: #4cbe74;
-}
-
-#template.color-red footer {
-  color: #ff5c5c;
 }
 
 #tempalte footer header {
@@ -879,22 +766,6 @@ body {
   width: 100%;
   background-color: black;
   color: white;
-}
-
-#template.color-orange #disclaimer {
-  color: #f0aa00;
-}
-
-#template.color-yellow #disclaimer {
-  color: #ffe600;
-}
-
-#template.color-green #disclaimer {
-  color: #4cbe74;
-}
-
-#template.color-red #disclaimer {
-  color: #ff5c5c;
 }
 
 #disclaimer p {

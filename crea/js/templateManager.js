@@ -24,8 +24,9 @@ export default function templateManager () {
 		/* */
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
 		$("#template").html("");
+		let colors = _ctrl.new_colorManager.getColors();
 		var content_id = _ctrl.jd.respuestas[22].resp_id == "" ? 2 : _ctrl.jd.respuestas[22].resp_id;
-		var src = "Templates/Template-" + id + "/index.php?t=" + content_id; 
+		var src = "Templates/Template-" + id + "/index.php?t=" + content_id + "&color=impact&h=" + colors[0] + "&b=" + colors[1] + "0&s=" + colors[2]; 
 		$("#template-cont").load(src + " #template", function() {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
@@ -47,18 +48,24 @@ export default function templateManager () {
 		});
 	};
 	var updateContent = function (target) {
-        let $template = $("#template");
+		if(target.id && (target.id == "inp-color")) {
+			_ctrl.new_colorManager.modifyColors();
+		}
+		let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
 		/* */
 		_ctrl.new_appManager.topStepMargin();
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
-        _ctrl.new_colorManager.updateColors($template);
+		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"color",String($("#inp-color").val()),'text');
+		_ctrl.new_colorManager.updateColors($template);
 		updateTexts($template, selections);
 		updateRemoveControls($template, selections);
 		updateImages(target);
 		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
-		
+	};
+	var afterTemplateLoad = () => {
+		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
 	};
 	var updateTexts = function ($template, selections) {
 		if (_ctrl.sessionStatus == "START SESSION") {

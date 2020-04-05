@@ -22,6 +22,7 @@
 		<div id="template" <?php if (isset($_GET["c"])) { echo('class="color-' . $_GET["c"] . '"'); } ?>>
 			<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
+			<div id="style"><style><?php include("css/dynamic.php"); ?></style></div>
 			<main>
 				<?php include_once("../php/Components/Hero.php"); ?>
 				<?php include_once("../php/Components/Menu.php"); ?>

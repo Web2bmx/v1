@@ -1,14 +1,6 @@
 @import "./crea/Templates/scss/_common"; 
 @import "../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "../../../../scss/base/variables";
-/*Colors*/
-$color_orange_001 : rgba(250, 153, 0, 1);
-$color_orange_002 : rgba(0, 97, 250, 1);
-$color_yellow_001 : rgba(250, 212, 0, 1);
-$color_yellow_002 : rgba(132, 0, 85, 1);
-$color_green_001 : rgba(212, 255, 0, 1);
-$color_green_002 : rgba(43, 0, 255, 1);
-
 
 /*TEMPLATE LEVEL*/
 #template {
@@ -95,18 +87,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 		width: auto;
 	}
 }
-#template.color-orange #hero .wrapper-content {
-	background-color: $color_orange_001;
-	background: radial-gradient(circle, rgba($color_orange_001, .7) 0%, $color_orange_001 100%);
-}
-#template.color-yellow #hero .wrapper-content {
-	background-color: $color_yellow_001;
-	background: radial-gradient(circle, rgba($color_yellow_001, .7) 0%, $color_yellow_001 100%);
-}
-#template.color-green #hero .wrapper-content {
-	background-color: $color_green_001;
-	background: radial-gradient(circle, rgba($color_green_001, .7) 0%, $color_green_001 100%);
-}
 #branding {
 	display: block;
 	height: 5em;
@@ -176,18 +156,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	width: 84%;
 	z-index: 1;
 }
-#template.color-orange .item .wrapper-content {
-	background-color: $color_orange_001;
-	background: radial-gradient(circle, rgba($color_orange_001, .7) 0%, $color_orange_001 100%);
-}
-#template.color-yellow .item .wrapper-content {
-	background-color: $color_yellow_001;
-	background: radial-gradient(circle, rgba($color_yellow_001, .7) 0%, $color_yellow_001 100%);
-}
-#template.color-green .item .wrapper-content {
-	background-color: $color_green_001;
-	background: radial-gradient(circle, rgba($color_green_001, .7) 0%, $color_green_001 100%);
-}
 @media only screen and (min-width: $width_xs) {
 	.items {
 		display: grid;
@@ -240,21 +208,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 #template #aboutus div.wrapper-content p {
 	margin: 0 auto;
 	width: auto; max-width: 24em;
-}
-#template.color-orange #aboutus div.wrapper-content {
-	background-color: $color_orange_002;
-	background: radial-gradient(circle, rgba($color_orange_002, .7) 0%, $color_orange_002 100%);
-	color: $color_orange_001;
-}
-#template.color-yellow #aboutus div.wrapper-content {
-	background-color: $color_yellow_002;
-	background: radial-gradient(circle, rgba($color_yellow_002, .7) 0%, $color_yellow_002 100%);
-	color: $color_yellow_001;
-}
-#template.color-green #aboutus div.wrapper-content {
-	background-color: $color_green_002;
-	background: radial-gradient(circle, rgba($color_green_002, .7) 0%, $color_green_002 100%);
-	color: $color_green_001;
 }
 /*ABOUT US*/
 /*GALERIA*/
@@ -335,15 +288,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	position: relative;
 }
-#template.color-orange #cta {
-	background-color: $color_orange_001;
-}
-#template.color-yellow #cta {
-	background-color: $color_yellow_001;
-}
-#template.color-green #cta {
-	background-color: $color_green_001;
-}
 #cta .img {
 	bottom: 0;
 	height: auto;
@@ -384,15 +328,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 #template footer header p {
 	color: rgba(68, 68, 68, 1);
 	font-size: .8em;
-}
-#template.color-orange footer header p {
-	color: $color_orange_001;
-}
-#template.color-yellow footer header p {
-	color: $color_yellow_001;
-}
-#template.color-green footer header p {
-	color: $color_green_001;
 }
 #template footer section {
 	@include box_block();
@@ -435,15 +370,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	background-color: rgba(0,0,0,1);
 	color: rgba(255, 255, 255, 1);
-}
-#template.color-orange #disclaimer {
-	color: $color_orange_001;
-}
-#template.color-yellow #disclaimer {
-	color: $color_yellow_001;
-}
-#template.color-green #disclaimer {
-	color: $color_green_001;
 }
 #disclaimer p {
 	font-size: .8em;

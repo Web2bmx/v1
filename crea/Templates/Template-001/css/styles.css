@@ -116,7 +116,6 @@ body {
 }
 
 /*MAP*/
-/*Colors*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Open Sans', sans-serif;
@@ -234,21 +233,6 @@ body {
   }
 }
 
-#template.color-orange #hero .wrapper-content {
-  background-color: #fa9900;
-  background: radial-gradient(circle, rgba(250, 153, 0, 0.7) 0%, #fa9900 100%);
-}
-
-#template.color-yellow #hero .wrapper-content {
-  background-color: #fad400;
-  background: radial-gradient(circle, rgba(250, 212, 0, 0.7) 0%, #fad400 100%);
-}
-
-#template.color-green #hero .wrapper-content {
-  background-color: #d4ff00;
-  background: radial-gradient(circle, rgba(212, 255, 0, 0.7) 0%, #d4ff00 100%);
-}
-
 #branding {
   display: block;
   height: 5em;
@@ -340,21 +324,6 @@ body {
   z-index: 1;
 }
 
-#template.color-orange .item .wrapper-content {
-  background-color: #fa9900;
-  background: radial-gradient(circle, rgba(250, 153, 0, 0.7) 0%, #fa9900 100%);
-}
-
-#template.color-yellow .item .wrapper-content {
-  background-color: #fad400;
-  background: radial-gradient(circle, rgba(250, 212, 0, 0.7) 0%, #fad400 100%);
-}
-
-#template.color-green .item .wrapper-content {
-  background-color: #d4ff00;
-  background: radial-gradient(circle, rgba(212, 255, 0, 0.7) 0%, #d4ff00 100%);
-}
-
 @media only screen and (min-width: 760px) {
   .items {
     display: grid;
@@ -429,24 +398,6 @@ body {
   margin: 0 auto;
   width: auto;
   max-width: 24em;
-}
-
-#template.color-orange #aboutus div.wrapper-content {
-  background-color: #0061fa;
-  background: radial-gradient(circle, rgba(0, 97, 250, 0.7) 0%, #0061fa 100%);
-  color: #fa9900;
-}
-
-#template.color-yellow #aboutus div.wrapper-content {
-  background-color: #840055;
-  background: radial-gradient(circle, rgba(132, 0, 85, 0.7) 0%, #840055 100%);
-  color: #fad400;
-}
-
-#template.color-green #aboutus div.wrapper-content {
-  background-color: #2b00ff;
-  background: radial-gradient(circle, rgba(43, 0, 255, 0.7) 0%, #2b00ff 100%);
-  color: #d4ff00;
 }
 
 /*ABOUT US*/
@@ -561,18 +512,6 @@ body {
   position: relative;
 }
 
-#template.color-orange #cta {
-  background-color: #fa9900;
-}
-
-#template.color-yellow #cta {
-  background-color: #fad400;
-}
-
-#template.color-green #cta {
-  background-color: #d4ff00;
-}
-
 #cta .img {
   bottom: 0;
   height: auto;
@@ -622,18 +561,6 @@ body {
 #template footer header p {
   color: #444444;
   font-size: .8em;
-}
-
-#template.color-orange footer header p {
-  color: #fa9900;
-}
-
-#template.color-yellow footer header p {
-  color: #fad400;
-}
-
-#template.color-green footer header p {
-  color: #d4ff00;
 }
 
 #template footer section {
@@ -692,18 +619,6 @@ body {
   width: 100%;
   background-color: black;
   color: white;
-}
-
-#template.color-orange #disclaimer {
-  color: #fa9900;
-}
-
-#template.color-yellow #disclaimer {
-  color: #fad400;
-}
-
-#template.color-green #disclaimer {
-  color: #d4ff00;
 }
 
 #disclaimer p {
