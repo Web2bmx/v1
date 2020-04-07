@@ -390,7 +390,8 @@ a {
 			@include border-radius(.2em);	
 		}
 		.app-control-step-tooltip-info {
-			background-color: $gray20;
+			background-color: $pink80;
+			color: $gray20;
 			display: none;
 			padding: .2em;
 		}
@@ -421,6 +422,10 @@ a {
 			font-weight: normal;
 			margin: 0 0 .4em 0;
 		}
+	}
+	#inp-color {
+		height: 60px;
+		width: 60px;
 	}
 	.control-color-thumb {
 		cursor: pointer;

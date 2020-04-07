@@ -16,12 +16,7 @@ export default function templateManager () {
 			newInp.attr("checked","checked");
 			$("aside", newInp.parent()).addClass("thumb-selected");
 		}
-
-		if(templateChanged) {
-			_ctrl.sessionStatus = "RESUME SESSION";
-		}
-		
-		/* */
+		if(templateChanged) { _ctrl.sessionStatus = "RESUME SESSION"; }
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
 		$("#template").html("");
 		let colors = _ctrl.new_colorManager.getColors();
@@ -30,7 +25,6 @@ export default function templateManager () {
 		$("#template-cont").load(src + " #template", function() {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-			//$template.find(".img-cont").removeAttr("style").attr("style", "background-image: url('Templates/Images/placeholder.png')");
 			let items_in_jd = 1;
 			if(_ctrl.jd && _ctrl.jd.selections && _ctrl.jd.selections.products) {
 				items_in_jd = _ctrl.jd.selections.products.text;
@@ -39,7 +33,6 @@ export default function templateManager () {
 			for (let i = items_in_template; i < items_in_jd; i ++) {
 				_ctrl.new_itemManager.addItems(i);
 			}
-			//$template.append('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><script src="' + '/crea/Templates/Template-' + id + '/js/scripts.js' + '"></script>');
 			_ctrl.new_itemManager.checkItemsNumber();
 			_ctrl.new_colorManager.loadColors($template);
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
@@ -57,7 +50,6 @@ export default function templateManager () {
 		}
 		let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
-		/* */
 		_ctrl.new_appManager.topStepMargin();
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"color",String($("#inp-color").val()),'text');
@@ -108,8 +100,6 @@ export default function templateManager () {
 					$this.data('place', arr[1]);
 				}
 				$this.val(text);
-
-				// if text is a switch
 				if(selections[i_id].active !== undefined && selections[i_id].active === false) {
 					_ctrl.new_appManager.hideTemplateElements(true, i_id.replace('inp-','val-'));
 					_ctrl.new_appManager.hideFormElements("[name='" + i_id + "']", i_id, "text");
@@ -130,14 +120,12 @@ export default function templateManager () {
 				if(i_id == 'inp-contact-address') {
 					text = val;
 					val = val + ($this.data('place') ? ('##' + $this.data('place')) : '');
-					
 					if(text.search('##') != -1) {
 						let arr = text.split('##');
 						text = arr[0];
 						$this.data('place', arr[1]);
 					}					
 				}				
-
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,val,'text');
 				$template.find("#" + v_id).show().closest(".column").show();
 				if (i_id == "inp-content-name") {
@@ -150,9 +138,7 @@ export default function templateManager () {
 						$("#inp-content-aboutus").val($template.find("#val-content-aboutus").html());
 					}
 				}
-
 				updateSpecificFields($this, i_id, v_id, text, $template, selections);
-
 				if ($this.hasClass("optional")) {
 					if ($(".app-control-step:eq(" + (_ctrl.current_step) + ")").has($this).length > 0) {
 						if (_ctrl.lastKeyPressed == 8) {
@@ -165,7 +151,6 @@ export default function templateManager () {
 			$template.find(".footer-column:not(:has(li:visible))").hide();
 		}
 	};
-
 	var updateSpecificFields = function($this, i_id, v_id, text, $template, selections) {
 		let dir;
 		let arr;

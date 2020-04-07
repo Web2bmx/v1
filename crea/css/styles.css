@@ -1137,7 +1137,8 @@ a {
 }
 
 #app-control .app-control-step > div .app-control-step-tooltip-info {
-  background-color: #3c3c3c;
+  background-color: #ff52b4;
+  color: #3c3c3c;
   display: none;
   padding: .2em;
 }
@@ -1182,6 +1183,11 @@ a {
 #app-control .control-color h4 {
   font-weight: normal;
   margin: 0 0 .4em 0;
+}
+
+#app-control #inp-color {
+  height: 60px;
+  width: 60px;
 }
 
 #app-control .control-color-thumb {

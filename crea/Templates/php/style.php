@@ -3,20 +3,16 @@
     
     include("../Template-00" . $t . "/css/dynamic.php");
 
-    
-    echo("#thumb-light>.control-color-thumb-bg:nth-child(1) { background-color: " . hsl_array_to_hsla_string($c_original_light) . "; }");
-    echo("#thumb-light>.control-color-thumb-bg:nth-child(2) { background-color: " . hsl_array_to_hsla_string($c_original_light_desaturated) . "; }");
-    echo("#thumb-light>.control-color-thumb-bg:nth-child(3) { background-color: " . hsl_array_to_hsla_string($c_invert_light_desaturated) . "; }");
-    echo("#thumb-dark>.control-color-thumb-bg:nth-child(1) { background-color: " . hsl_array_to_hsla_string($c_original_dark) . "; }");
-    echo("#thumb-dark>.control-color-thumb-bg:nth-child(2) { background-color: " . hsl_array_to_hsla_string($c_original_dark_desaturated) . "; }");
-    echo("#thumb-dark>.control-color-thumb-bg:nth-child(3) { background-color: " . hsl_array_to_hsla_string($c_invert_dark_desaturated) . "; }");
-    echo("#thumb-grey>.control-color-thumb-bg:nth-child(1) { background-color: " . hsl_array_to_hsla_string($c_original_desaturated) . "; }");
-    echo("#thumb-grey>.control-color-thumb-bg:nth-child(2) { background-color: " . hsl_array_to_hsla_string($c_invert_desaturated) . "; }");
-    echo("#thumb-grey>.control-color-thumb-bg:nth-child(3) { background-color: " . hsl_array_to_hsla_string($c_original_light) . "; }");
-    echo("#thumb-impact>.control-color-thumb-bg:nth-child(1) { background-color: " . hsl_array_to_hsla_string($c_original) . "; }");
-    echo("#thumb-impact>.control-color-thumb-bg:nth-child(2) { background-color: " . hsl_array_to_hsla_string($c_invert_light) . "; }");
-    echo("#thumb-impact>.control-color-thumb-bg:nth-child(3) { background-color: " . hsl_array_to_hsla_string($c_original_light) . "; }");
-    echo("#thumb-colorful>.control-color-thumb-bg:nth-child(1) { background-color: " . hsl_array_to_hsla_string($c_original_light) . "; }");
-    echo("#thumb-colorful>.control-color-thumb-bg:nth-child(2) { background-color: " . hsl_array_to_hsla_string($c_triad_2) . "; }");
-    echo("#thumb-colorful>.control-color-thumb-bg:nth-child(3) { background-color: " . hsl_array_to_hsla_string($c_triad_3) . "; }");
+    $cs = array(
+                "light" => array($c_original_light, $c_original_light_desaturated, $c_invert_light_desaturated),
+                "dark" => array($c_original_dark, $c_original_dark_desaturated, $c_invert_dark_desaturated),
+                "grey" => array($c_original_desaturated, $c_invert_desaturated, $c_original_light),
+                "impact" => array($c_original, $c_invert_light, $c_original_light),
+                "colorful" => array($c_original_light, $c_triad_2, $c_triad_3)
+    );    
+    foreach ($cs as $k=>$v) {
+        for ($i = 1; $i < 4; $i++) {
+            echo("#thumb-" . $k . ">.control-color-thumb-bg:nth-child(" . $i . ") { background-color: " . hsl_array_to_hsla_string($v[$i - 1]) . "; }");
+        }    
+    }    
 ?>
