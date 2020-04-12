@@ -1,6 +1,6 @@
 <?php
 include("../php/colors.php");
-//header('Content-type: text/css');
+header('Content-type: text/css');
 /*LIGHT*/
 buildCSSRule("light", "", array(
     array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))

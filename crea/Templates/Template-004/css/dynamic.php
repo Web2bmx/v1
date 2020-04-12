@@ -1,12 +1,12 @@
 <?php
 include("../php/colors.php");
-//header('Content-type: text/css');
+header('Content-type: text/css');
 /*LIGHT*/
 buildCSSRule("light", "", array(
     array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
 buildCSSRule("light", "#menu h4", array(
-    array("color", hsl_array_to_hsla_string($c_original_light))
+    array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
 buildCSSRule("light", "#menu menu li a:hover", array(
     array("color", hsl_array_to_hsla_string($c_original_light))
@@ -18,6 +18,10 @@ buildCSSRule("light", "#cta .wrapper-content", array(
     array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
 buildCSSRule("light", ".item", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_light_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+));
+buildCSSRule("light", ".item h3", array(
     array("background-color", hsl_array_to_hsla_string($c_original_light_desaturated)),
     array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
 ));
@@ -42,11 +46,13 @@ buildCSSRule("light", "#disclaimer", array(
 /**/
 /*DARK*/
 buildCSSRule("dark", "", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
     array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
 ));
+buildCSSRule("dark", "#menu", array(
+    array("background-color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+));
 buildCSSRule("dark", "#menu h4", array(
-    array("color", hsl_array_to_hsla_string($c_original_light))
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
 ));
 buildCSSRule("dark", "#menu menu li a:hover", array(
     array("color", hsl_array_to_hsla_string($c_original_light))
@@ -54,32 +60,58 @@ buildCSSRule("dark", "#menu menu li a:hover", array(
 buildCSSRule("dark", "#menu menu li a:active", array(
     array("color", hsl_array_to_hsla_string($c_original_light))
 ));
-buildCSSRule("dark", "#aboutus .wrapper-content", array(
+buildCSSRule("dark", "#hero", array(
+    array("background-color", hsl_array_to_hsla_string($c_invert_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("dark", "#items", array(
     array("background-color", hsl_array_to_hsla_string($c_original_dark)),
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("dark", ".item", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+));
+buildCSSRule("dark", ".item h3", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+));
+buildCSSRule("dark", ".item .wrapper-content", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+));
+buildCSSRule("dark", "#gallery", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark)),
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("dark", "#gallery a", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("dark", "#aboutus", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark)),
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("dark", "#aboutus .wrapper-content", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("dark", "#aboutus .wrapper-content p", array(
     array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
 ));
 buildCSSRule("dark", "#cta .wrapper-content", array(
     array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
 ));
-buildCSSRule("dark", ".item", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
-    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
-));
-buildCSSRule("dark", ".item .wrapper-content", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_dark)),
-    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
-));
-buildCSSRule("dark", "#gallery header h2", array(
-    array("color", hsl_array_to_hsla_string($c_invert_light))
-));
 buildCSSRule("dark", "footer", array(
-    array("color", hsl_array_to_hsla_string($c_invert_light_desaturated))
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_invert_light))
 ));
 buildCSSRule("dark", "footer  header p", array(
-    array("color", hsl_array_to_hsla_string($c_invert_light))
+    array("color", hsl_array_to_hsla_string($c_invert_light_desaturated))
 ));
 buildCSSRule("dark", "#disclaimer", array(
-    array("color", hsl_array_to_hsla_string($c_invert_light))
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
+    array("color", hsl_array_to_hsla_string($c_invert_dark))
 ));
 /* */
 /*GREY*/
@@ -87,7 +119,7 @@ buildCSSRule("grey", "", array(
     array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
 buildCSSRule("grey", "#menu h4", array(
-    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+    array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
 buildCSSRule("grey", "#menu menu li a:hover", array(
     array("color", hsl_array_to_hsla_string($c_original_light_desaturated))

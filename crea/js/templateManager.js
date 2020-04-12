@@ -19,9 +19,8 @@ export default function templateManager () {
 		if(templateChanged) { _ctrl.sessionStatus = "RESUME SESSION"; }
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
 		$("#template").html("");
-		let colors = _ctrl.new_colorManager.getColors();
 		var content_id = _ctrl.jd.respuestas[22].resp_id == "" ? 2 : _ctrl.jd.respuestas[22].resp_id;
-		var src = "Templates/Template-" + id + "/index.php?t=" + content_id + "&color=impact&h=" + colors[0] + "&b=" + colors[1] + "0&s=" + colors[2]; 
+		var src = "Templates/Template-" + id + "/index.php?t=" + content_id + "&color=impact&hex=000000"; 
 		$("#template-cont").load(src + " #template", function() {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
@@ -34,7 +33,7 @@ export default function templateManager () {
 				_ctrl.new_itemManager.addItems(i);
 			}
 			_ctrl.new_itemManager.checkItemsNumber();
-			_ctrl.new_colorManager.loadColors($template);
+			_ctrl.new_colorManager.setColors();
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 			updateContent('undefined');
 			$.ajax({

@@ -17,12 +17,13 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+		<link rel="stylesheet" href="css/dynamic.php?hex=<?php echo($_GET['hex']); ?>&c=<?php echo($_GET['c']); ?>">
 	</head>
 	<body>
 		<div id="template" <?php if (isset($_GET["c"])) { echo('class="color-' . $_GET["c"] . '"'); } ?>>
 			<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet"" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
-			<div id="style"><style><?php include("css/dynamic.php"); ?></style></div>
+			<div id="style"></div>
 			<main>
 				<?php include_once("../php/Components/Hero.php"); ?>
 				<?php include_once("../php/Components/Menu.php"); ?>

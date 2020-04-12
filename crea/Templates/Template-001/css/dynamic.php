@@ -1,6 +1,6 @@
 <?php
 include("../php/colors.php");
-//header('Content-type: text/css');
+header('Content-type: text/css');
 /*LIGHT*/
 buildCSSRule("light", ".wrapper-content", array(
     array("background-color", hsl_array_to_hsla_string($c_original, 0, 100, 1)),

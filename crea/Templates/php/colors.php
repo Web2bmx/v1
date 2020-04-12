@@ -6,21 +6,6 @@
         }
         echo("\n}");
     }
-    function hsv_to_hsl($h, $s, $b) {
-        $s = $s / 100;
-        $b = $b / 100;
-        $l = (2 - $s) * $b / 2;
-        if ($l != 0) {
-            if ($l == 1) {
-                $s = 0;
-            } else if ($l < 0.5) {
-                $s = $s * $b / ($l * 2);
-            } else {
-                $s = $s * $b / (2 - $l * 2);
-            }
-        }
-        return array($h, number_format(($s * 100),2), number_format(($l * 100),2));
-    }
     function hsl_array_to_hsla_string($o, $s = null, $l = null, $a = null) {
         $h = $o[0];
         $s = ($s === null) ? $o[1] : $s;
@@ -29,28 +14,63 @@
         return ("hsla(" . $h . "," . $s . "%," . $l . "%," . $a . ")");
     }
     /**/
-    
-    $h = $_GET && isset($_GET["h"]) ? $_GET["h"] : random_int(0, 360);
-    $s = $_GET && isset($_GET["s"]) ? $_GET["s"] : random_int(0, 100);
-    $b = $_GET && isset($_GET["b"]) ? $_GET["b"] : random_int(0, 100);
-    /**/
-    if ($h < 0) { $h = 0; } if ($h > 360) { $h = 360; }
-    if ($s < 0) { $s = 0; } if ($s > 100) { $h = 100; }
-    if ($b < 0) { $b = 0; } if ($b > 100) { $b = 100; }
-    /**/
-    $c_original = hsv_to_hsl($h, $s, $b);
-    $c_original_desaturated = hsv_to_hsl($h, 20, $b);
-    $c_original_dark = $b > 40 ? hsv_to_hsl($h, $s, 15) : hsv_to_hsl($h, $s, $b);
-    $c_original_dark_desaturated = $b > 40 ? hsv_to_hsl($h, 30, 15) : hsv_to_hsl($h, 20, $b);
-    $c_original_light = $b < 85 ? hsv_to_hsl($h, $s, 85) : hsv_to_hsl($h, $s, $b);
-    $c_original_light_desaturated = $b < 85 ? hsv_to_hsl($h, 30, 85) : hsv_to_hsl($h, 30, $b);
-    $c_complement = hsv_to_hsl((($h + 180) % 360), $s, $b);
-    $c_invert = hsv_to_hsl((($h + 180) % 360), (100 - $s), (100 - $b));
-    $c_invert_dark = hsv_to_hsl((($h + 180) % 360), $s, 25);
-    $c_invert_dark_desaturated = hsv_to_hsl((($h + 180) % 360), 20, 25);
-    $c_invert_desaturated = hsv_to_hsl((($h + 180) % 360), 20, (100 - $b));
-    $c_invert_light = $b < 85 ? hsv_to_hsl((($h + 180) % 360), $s, 85) : hsv_to_hsl((($h + 180) % 360), $s, $b);
-    $c_invert_light_desaturated = $b < 85 ? hsv_to_hsl((($h + 180) % 360), 30, 85) : hsv_to_hsl((($h + 180) % 360), 30, $b);
-    $c_triad_2 = hsv_to_hsl((($h + 120) % 360), $s, $b);
-    $c_triad_3 = hsv_to_hsl((($h + 240) % 360), $s, $b);
+    if ($_GET && isset($_GET["hex"])) {
+        $hex = $_GET["hex"];
+        
+        $computedH = 0;
+		$computedS = 0;
+		$computedV = 0;
+        $r = hexdec(substr($hex,0,2));
+		$g = hexdec(substr($hex,2,2));
+		$b = hexdec(substr($hex,4,2));
+        
+        $r1 = $r / 255;
+	    $g1 = $g / 255;
+	    $b1 = $b / 255;
+        $max = max( $r1, $g1, $b1 );
+	    $min = min( $r1, $g1, $b1 );
+
+        $h;
+        $s;
+        $l = ( $max + $min ) / 2;
+	    $d = $max - $min;
+
+    	if( $d == 0 ){
+        	$h = $s = 0; // achromatic
+    	} else {
+        	$s = $d / ( 1 - abs( 2 * $l - 1 ) );
+            switch( $max ){
+                case $r1:
+                    $h = 60 * fmod( ( ( $g1 - $b1 ) / $d ), 6 ); 
+                    if ($b1 > $g1) {
+                        $h += 360;
+                    }
+                    break;
+                case $g1: 
+                    $h = 60 * ( ( $b1 - $r1 ) / $d + 2 ); 
+                    break;
+                case $b1: 
+                    $h = 60 * ( ( $r1 - $g1 ) / $d + 4 ); 
+                    break;
+            }			        	        
+	    }
+        $h = round( $h, 2 );
+        $s = round( $s * 100, 2 );
+        $l = round( $l * 100, 2 );
+    }
+    $c_original = array($h, $s, $l);
+    $c_original_desaturated = array($h, 20, $l);
+    $c_original_dark = $l > 40 ? array($h, $s, 15) : array($h, $s, $l);
+    $c_original_dark_desaturated = $l > 40 ? array($h, 30, 15) : array($h, 20, $l);
+    $c_original_light = $l < 85 ? array($h, $s, 85) : array($h, $s, $l);
+    $c_original_light_desaturated = $l < 85 ? array($h, 30, 85) : array($h, 30, $l);
+    $c_complement = array((($h + 180) % 360), $s, $l);
+    $c_invert = array((($h + 180) % 360), (100 - $s), (100 - $l));
+    $c_invert_dark = array((($h + 180) % 360), $s, 25);
+    $c_invert_dark_desaturated = array((($h + 180) % 360), 20, 25);
+    $c_invert_desaturated = array((($h + 180) % 360), 20, (100 - $l));
+    $c_invert_light = $l < 85 ? array((($h + 180) % 360), $s, 85) : array((($h + 180) % 360), $s, $l);
+    $c_invert_light_desaturated = $l < 85 ? array((($h + 180) % 360), 30, 85) : array((($h + 180) % 360), 30, $l);
+    $c_triad_2 = array((($h + 120) % 360), $s, $l);
+    $c_triad_3 = array((($h + 240) % 360), $s, $l);
 ?>

@@ -361,7 +361,7 @@ body {
   height: auto;
   overflow: hidden;
   margin: 1em auto;
-  text-align: left;
+  text-align: center;
   width: 80%;
   max-width: 800px;
 }
