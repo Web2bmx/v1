@@ -33,7 +33,6 @@ export default function templateManager () {
 				_ctrl.new_itemManager.addItems(i);
 			}
 			_ctrl.new_itemManager.checkItemsNumber();
-			_ctrl.new_colorManager.setColors();
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 			updateContent('undefined');
 			$.ajax({
@@ -44,18 +43,18 @@ export default function templateManager () {
 		});
 	};
 	var updateContent = function (target) {
-		if(target.id && (target.id == "inp-color")) {
-			_ctrl.new_colorManager.modifyColors();
-		}
 		let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
 		_ctrl.new_appManager.topStepMargin();
+		
+		_ctrl.new_colorManager.modifyColors();
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"color",String($("#inp-color").val()),'text');
-		_ctrl.new_colorManager.updateColors($template);
+		_ctrl.new_colorManager.updateTemplatePalette($template);
+
 		updateTexts($template, selections);
-		updateRemoveControls($template, selections);
 		updateImages(target);
+		updateRemoveControls($template, selections);
 		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
 	};

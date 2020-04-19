@@ -161,6 +161,12 @@ export default function appManager() {
 			$this.next("input").trigger("click");
 			$this.parent().addClass("thumb-selected");
 		});
+		$("body").on('click', ".control-color-thumb", function() {
+			let $this = $(this);
+			$this.closest("#app-control-palettes").find(".control-color-thumb").removeClass("thumb-selected");
+			$this.next("input").trigger("click");
+			$this.addClass("thumb-selected");
+		});
 		$(document.body).on('click', '.img-thumb-overlay', function () {
 			var $this = $(this);
 			$this.closest(".img-thumb").removeClass("thumb-selected").find("input").trigger("click");
