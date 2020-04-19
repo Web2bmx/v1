@@ -47,11 +47,8 @@ export default function templateManager () {
 		let selections = _ctrl.jd.selections || {};
 		_ctrl.new_appManager.topStepMargin();
 		
-		_ctrl.new_colorManager.modifyColors();
-		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"palette",_ctrl.new_colorManager.changeColors(selections),'id');
-		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"color",String($("#inp-color").val()),'text');
-		_ctrl.new_colorManager.updateTemplatePalette($template);
-
+		_ctrl.new_colorManager.updateColor(selections, $template)
+		
 		updateTexts($template, selections);
 		updateImages(target);
 		updateRemoveControls($template, selections);

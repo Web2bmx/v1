@@ -23,7 +23,7 @@
 		<div id="template" <?php if (isset($_GET["c"])) { echo('class="color-' . $_GET["c"] . '"'); } ?>>
 			<link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400i,700|Montserrat:400,400i,700" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
-			<div id="style"></div>
+			<style id="style-color"></style>
 			<main>
 				<?php include_once("../php/Components/Menu.php"); ?>
 				<?php include_once("../php/Components/Hero.php"); ?>
