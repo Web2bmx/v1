@@ -159,6 +159,14 @@ export default function appManager() {
 				.find(".img-thumb")
 				.removeClass("thumb-selected");
 			$this.next("input").trigger("click");
+
+			// if gallery
+			const $parent = $this.closest("[id^='app-control-images']");
+			if ($parent.attr('id').search('gallery') != -1) {
+				const actualNum = $parent.find(".thumb-selected").length;
+				$this.parent().find(".img-thumb-overlay span").text(actualNum + 1);
+			}
+
 			$this.parent().addClass("thumb-selected");
 		});
 		$("body").on('click', ".control-color-thumb", function() {
@@ -168,7 +176,20 @@ export default function appManager() {
 			$this.addClass("thumb-selected");
 		});
 		$(document.body).on('click', '.img-thumb-overlay', function () {
-			var $this = $(this);
+			var $this = $(this); 
+
+			// if gallery
+			const $parent = $this.closest("[id^='app-control-images']");
+			if ($parent.attr('id').search('gallery') != -1) {
+				const actualNum = $this.parent().find(".img-thumb-overlay span").text();
+				$parent.find(".thumb-selected").each((i,e) => {
+					const an = $('.img-thumb-overlay span', e).text();
+					if (an > actualNum) {
+						$('.img-thumb-overlay span', e).text(an - 1);
+					}
+				});				
+			}
+
 			$this.closest(".img-thumb").removeClass("thumb-selected").find("input").trigger("click");
 		});
 		$(document.body).on('click', '.img-thumb-cont-zoom', function () {
