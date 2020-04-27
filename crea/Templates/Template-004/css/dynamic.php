@@ -1,5 +1,5 @@
 <?php
-include("../php/colors.php");
+include("../../php/color/colors.php");
 header('Content-type: text/css');
 /*LIGHT*/
 buildCSSRule("light", "", array(
@@ -9,27 +9,23 @@ buildCSSRule("light", "#menu h4", array(
     array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
 buildCSSRule("light", "#menu menu li a:hover", array(
-    array("color", hsl_array_to_hsla_string($c_original_light))
+    array("color", hsl_array_to_hsla_string($c_original))
 ));
 buildCSSRule("light", "#menu menu li a:active", array(
-    array("color", hsl_array_to_hsla_string($c_original_light))
-));
-buildCSSRule("light", "#cta .wrapper-content", array(
-    array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
+    array("color", hsl_array_to_hsla_string($c_original))
 ));
 buildCSSRule("light", ".item", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_light_desaturated)),
-    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
-));
-buildCSSRule("light", ".item h3", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_light_desaturated)),
-    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+    array("background-color", hsl_array_to_hsla_string($c_invert_light_desaturated))
 ));
 buildCSSRule("light", ".item .wrapper-content", array(
     array("background-color", hsl_array_to_hsla_string($c_original_light_desaturated)),
     array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
 ));
-buildCSSRule("light", "#gallery header h2", array(
+buildCSSRule("light", "#aboutus .wrapper", array(
+    array("background-color", hsl_array_to_hsla_string($c_invert_light_desaturated))
+));
+buildCSSRule("light", "#aboutus .wrapper-content", array(
+    array("background-color", hsl_array_to_hsla_string($c_original_light_desaturated)),
     array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
 ));
 buildCSSRule("light", "footer", array(
@@ -65,20 +61,15 @@ buildCSSRule("dark", "#hero", array(
     array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
 ));
 buildCSSRule("dark", "#items", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_dark)),
+    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
     array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
 ));
 buildCSSRule("dark", ".item", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
-    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
-));
-buildCSSRule("dark", ".item h3", array(
-    array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
-    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+    array("background-color", hsl_array_to_hsla_string($c_original_dark))
 ));
 buildCSSRule("dark", ".item .wrapper-content", array(
     array("background-color", hsl_array_to_hsla_string($c_original_dark_desaturated)),
-    array("color", hsl_array_to_hsla_string($c_invert_dark_desaturated))
+    array("color", hsl_array_to_hsla_string($c_invert_light_desaturated))
 ));
 buildCSSRule("dark", "#gallery", array(
     array("background-color", hsl_array_to_hsla_string($c_original_dark)),
@@ -163,23 +154,24 @@ buildCSSRule("grey", "#disclaimer", array(
 buildCSSRule("impact", "", array(
     array("color", hsl_array_to_hsla_string($c_original_dark_desaturated))
 ));
+buildCSSRule("impact", "#menu", array(
+    array("background-color", hsl_array_to_hsla_string($c_original)),
+    array("color", hsl_array_to_hsla_string($c_invert_light_desaturated))
+));
+buildCSSRule("impact", "#menu menu li a:hover", array(
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
+buildCSSRule("impact", "#menu menu li a:active", array(
+    array("color", hsl_array_to_hsla_string($c_original_light_desaturated))
+));
 buildCSSRule("impact", "#hero", array(
     array("background-color", hsl_array_to_hsla_string($c_invert_dark_desaturated)),
     array("color", hsl_array_to_hsla_string($c_original_light))
 ));
 buildCSSRule("impact", "h1", array(
-    array("color", hsl_array_to_hsla_string($c_original_light))
+    array("color", hsl_array_to_hsla_string($c_original))
 ));
 buildCSSRule("impact", ".seemore", array(
-    array("border-color", hsl_array_to_hsla_string($c_original))
-));
-buildCSSRule("impact", "#menu", array(
-    array("border-color", hsl_array_to_hsla_string($c_original))
-));
-buildCSSRule("impact", "#menu menu li a:hover", array(
-    array("border-color", hsl_array_to_hsla_string($c_original))
-));
-buildCSSRule("impact", "#menu menu li a:active", array(
     array("border-color", hsl_array_to_hsla_string($c_original))
 ));
 buildCSSRule("impact", "#aboutus", array(

@@ -452,6 +452,7 @@ template {
   display: none;
 }
 
+/*@import "../../scss/base/_colors";*/
 /*SHADES OF GRAY*/
 /*RED*/
 /*ORANGE*/
@@ -460,6 +461,7 @@ template {
 /*YELLOW*/
 /*GREEN*/
 /*PURPLE*/
+/**/
 .ui-dialog-titlebar {
   display: none;
 }
@@ -647,8 +649,8 @@ input.cta:active {
 
 /**/
 body {
-  background-color: #3c3c3c;
-  color: #b4b4b4;
+  background-color: #f0f0f0;
+  color: #3c3c3c;
   font-size: 1.2em;
   margin: 0;
   padding: 0;
@@ -678,8 +680,6 @@ a {
 }
 
 #template-cont {
-  background-color: white;
-  color: black;
   display: block;
   height: auto;
   width: 100%;
@@ -703,6 +703,7 @@ a {
 #app-cover {
   background-color: white;
   bottom: 0;
+  color: #3c3c3c;
   display: block;
   height: 100%;
   left: 0;
@@ -751,7 +752,7 @@ a {
 }
 
 #app-cover .control-design-thumb:hover {
-  background-color: #3c3c3c;
+  background-color: #ff52b4;
 }
 
 #app-cover .control-design-thumb aside {
@@ -799,7 +800,7 @@ a {
 }
 
 #app-cover .app-cover-start .actions a {
-  color: #9b035a;
+  color: #ff0593;
   float: left;
   padding-left: 15px;
   font-size: 25px;
@@ -838,7 +839,7 @@ a {
 }
 
 #app-cover .app-cover-finish h3 {
-  color: #b4b4b4;
+  color: #787878;
   font-size: 28px;
   margin-bottom: 0;
 }
@@ -851,7 +852,7 @@ a {
 }
 
 #app-cover .app-cover-finish .url .siteName {
-  color: #ff0593;
+  color: #f0f0f0;
   font-size: 24px;
   margin: 10px 0;
 }
@@ -1009,7 +1010,7 @@ a {
 #app-control {
   background-color: #f0f0f0;
   bottom: 0;
-  color: #b4b4b4;
+  color: #3c3c3c;
   display: block;
   height: 95%;
   max-height: 100%;
@@ -1038,7 +1039,7 @@ a {
 }
 
 #app-control > .app-control-step .site-name-container {
-  color: #9b035a;
+  color: #ff0593;
   font-size: 22px;
   position: relative;
   text-align: left;
@@ -1062,7 +1063,7 @@ a {
 }
 
 #app-control > .app-control-step .site-name-container div > span {
-  color: #9b035a;
+  color: #3c3c3c;
   display: block;
   font-weight: bold;
   margin-bottom: 10px;
@@ -1096,7 +1097,7 @@ a {
 }
 
 #app-control .app-control-step > div textarea, #app-control .app-control-step > div input[type="text"].noIcon, #app-control .app-control-step > div select {
-  border-color: #787878;
+  border-color: #f0f0f0;
   border-radius: 5px;
   border-style: solid;
   box-sizing: border-box;
@@ -1121,8 +1122,8 @@ a {
 }
 
 #app-control .app-control-step > div .app-control-step-tooltip {
-  background-color: #ff0593;
-  color: white;
+  background-color: #ff52b4;
+  color: #787878;
   cursor: pointer;
   font-size: .8em;
   height: auto;
@@ -1198,7 +1199,7 @@ a {
 }
 
 #app-control .control-color-thumb.thumb-selected {
-  outline: 1px solid blue;
+  outline: 1px solid #ff0593;
 }
 
 #app-control .control-color-thumb-bg {

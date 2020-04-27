@@ -48,7 +48,7 @@ export default function colorManager () {
 		}
 		
 		let id = $("[name^='inp-design']:checked").val().replace("inp-design-", "") * 1;
-		let url = "Templates/php/style.php?t=" + id + "&hex=" + _color_hex.replace("#", "");
+		let url = "Templates/php/color/style.php?t=" + id + "&hex=" + _color_hex.replace("#", "");
 		$("#style-color").html("").load(url);
 		/* */
 		$template.attr("class", ("color-" + _palette));

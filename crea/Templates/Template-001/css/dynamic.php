@@ -1,5 +1,5 @@
 <?php
-include("../php/colors.php");
+include("../../php/color/colors.php");
 header('Content-type: text/css');
 /*LIGHT*/
 buildCSSRule("light", ".wrapper-content", array(

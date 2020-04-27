@@ -1,7 +1,7 @@
 <?php
     $t = $_GET && isset($_GET["t"]) ? $_GET["t"] : 1;
     
-    include("../Template-00" . $t . "/css/dynamic.php");
+    include("../../Template-00" . $t . "/css/dynamic.php");
 
     $cs = array(
                 "light" => array($c_original_light, $c_original_light_desaturated, $c_invert_light_desaturated),
