@@ -1,17 +1,53 @@
 @import "../../node_modules/normalize-scss/sass/normalize/import-now";
 @import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "../../scss/base/_variables";
-@import "../../scss/base/_colors";
+/*@import "../../scss/base/_colors";*/
+/*SHADES OF GRAY*/
+$white: rgba(255,255,255,1);
+$gray20: rgba(60,60,60,1);
+$gray40: rgba(120,120,120,1);
+$gray60: rgba(180,180,180,1);
+$gray80: rgba(240,240,240,1);
+$black: rgba(0,0,0,1);
+/*RED*/
+$red40 : rgba(179,0,30,1);
+$red60 : rgba(255,5,47,1);
+/*ORANGE*/
+$orange40 : rgba(204,60,24,1);
+$orange60 : rgba(255,76,31,1);
+$orange80 : rgba(255,106,69,1);
+/*PINK*/
+$pink20 : rgba(102,10,63,1);
+$pink40 : rgba(155,3,90,1);
+$pink60 :rgba(255,5,147,1);
+$pink80 : rgba(255,82,180,1);
+$pink100 : rgba(242,174,216,1);
+/*BLUE*/
+$blue20 : rgba(15,22,38,1);
+$blue40 : rgba(23,33,51,1);
+$blue60 : rgba(5,93,255,1);
+$blue80 : rgba(80,145,255,1);
+$blue100 : rgba(176,199,242,1);
+/*YELLOW*/
+$yellow40 : rgba(204,181,24,1);
+$yellow60 : rgba(255,226,31,1);
+$yellow80 : rgba(255,250,69,1);
+/*GREEN*/
+$green40 : rgba(8,179,0,1);
+$green60 : rgba(17,255,5,1);
+/*PURPLE*/
+$purple60 : rgba(178,5,255,1);
+/**/
 @import "../../scss/mixins/_border-radius"; 
- @import "../../scss/components/_modal";
+@import "../../scss/components/_modal";
 @import "../../scss/components/_buttons"; 
 @import "../../scss/components/_inputFields"; 
 @import "../../scss/components/login-paginas";
 @import "../../scss/partials/_errors";
 /**/
 body { 
-	background-color: $gray20;
-	color: $gray60;
+	background-color: $gray80;
+	color: $gray20;
 	font-size: 1.2em;
 	margin: 0;
 	padding: 0;
@@ -33,8 +69,6 @@ a {
 /**/
 .template { display: none; }
 #template-cont {
-	background-color: $white;
-	color: $black;
 	display: block; 
 	height: auto;
 	width: 100%; 
@@ -56,6 +90,7 @@ a {
 #app-cover {
 	background-color: $white;
 	bottom: 0;
+	color: $gray20;
 	display: block;
 	height: 100%;
 	left: 0;
@@ -92,7 +127,7 @@ a {
 			width: 200px;
 		}
 		&:hover{
-			background-color: $gray20;
+			background-color: $pink80;
 		}
 		aside{
 			height: 180px;
@@ -126,7 +161,7 @@ a {
 			top:30px;
 
 			a{
-				color: #9b035a;
+				color: $pink60;
 				float: left;
 				padding-left: 15px;
 				font-size: 25px;
@@ -164,7 +199,7 @@ a {
 			}
 		}
 		h3{
-			color: $gray60;
+			color: $gray40;
 			font-size: 28px;
 			margin-bottom: 0;
 		}
@@ -175,7 +210,7 @@ a {
 			margin: 0;	
 		}
 		.url .siteName{
-			color: $pink60;
+			color: $gray80;
 			font-size: 24px;
 			margin: 10px 0;
 		}
@@ -288,7 +323,7 @@ a {
 #app-control {
 	background-color: $gray80;
 	bottom: 0;
-	color: $gray60;
+	color: $gray20;
 	display: block;
 	height: 95%; max-height: 100%;
 	left: 0;
@@ -310,7 +345,7 @@ a {
 			position: relative;
 		}
 		.site-name-container{
-			color: $pink40;
+			color: $pink60;
 			font-size: 22px;
 			position: relative;
 			text-align: left;
@@ -328,7 +363,7 @@ a {
 			div{
 				margin: 80px 0;				
 				> span{
-					color: $pink40;
+					color: $gray20;
 					display: block;
 					font-weight: bold;
 					margin-bottom: 10px;
@@ -358,7 +393,7 @@ a {
 		margin: auto;
 		width: 80%;
 		textarea, input[type="text"].noIcon, select{
-			border-color: $gray40;
+			border-color: $gray80;
 			border-radius: 5px;
 			border-style: solid;
 			box-sizing: border-box;
@@ -378,8 +413,8 @@ a {
 			margin: 0 0 5% 0;
 		}
 		.app-control-step-tooltip {
-			background-color: $pink60;
-			color: $white;
+			background-color: $pink80;
+			color: $gray40;
 			cursor: pointer;
 			font-size: .8em;
 			height: auto;
@@ -390,7 +425,8 @@ a {
 			@include border-radius(.2em);	
 		}
 		.app-control-step-tooltip-info {
-			background-color: $gray20;
+			background-color: $pink80;
+			color: $gray20;
 			display: none;
 			padding: .2em;
 		}
@@ -422,6 +458,10 @@ a {
 			margin: 0 0 .4em 0;
 		}
 	}
+	#inp-color {
+		height: 60px;
+		width: 60px;
+	}
 	.control-color-thumb {
 		cursor: pointer;
 		display: block; 
@@ -429,7 +469,7 @@ a {
 		overflow: hidden;
 	}
 	.control-color-thumb.thumb-selected {
-		outline: 1px solid blue;
+		outline: 1px solid $pink60;
 	}
 	.control-color-thumb-bg {
 		display: block;
@@ -470,7 +510,7 @@ a {
 			
 			a {
 				text-decoration: underline;
-				color: #b4b4b4;
+				color: $gray60;
 			}
 		}
 	}
@@ -557,7 +597,7 @@ a {
 		}
 
 		a {
-			color: white;
+			color: $white;
 			text-decoration: underline;
 		}
 	}

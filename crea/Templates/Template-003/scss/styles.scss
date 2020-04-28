@@ -1,12 +1,4 @@
 @import "./crea/Templates/scss/_common";
-/*Colors*/
-$color_orange_001 : rgba(240, 170, 0, 1);
-$color_orange_002 : rgba(0, 97, 250, 1);
-$color_yellow_001 : rgba(255, 230, 0, 1);
-$color_yellow_002 : rgba(132, 0, 85, 1);
-$color_green_001 : rgba(76, 190, 116, 1);
-$color_green_002 : rgba(43, 0, 255, 1);
-
 /*TEMPLATE LEVEL*/
 #template {
 	font-family: 'Montserrat', sans-serif;
@@ -76,15 +68,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 		float: left;
 	}
 }
-#template.color-orange #menu h4 {
-	color: $color_orange_001;
-}
-#template.color-yellow #menu h4 {
-	color: $color_yellow_001;
-}
-#template.color-green #menu h4 {
-	color: $color_green_001;
-}
 #menu menu {
 	display: block;
 	height: auto;
@@ -118,15 +101,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	display: block;
 	font-variant: small-caps;
 	padding: .4em .8em;
-}
-#template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-	color: $color_orange_001;
-}
-#template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-	color: $color_yellow_001;
-}
-#template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-	color: $color_green_001;
 }
 #menu-icon {
 	color: rgba(255,255,255,1);
@@ -314,15 +288,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 		margin: 12em auto 12em auto;
 	}
 }
-#template.color-orange #cta .wrapper-content {
-	color: $color_orange_001;
-}
-#template.color-yellow #cta .wrapper-content {
-	color: $color_yellow_001;
-}
-#template.color-green #cta .wrapper-content {
-	color: $color_green_001;
-}
 /*CTA*/
 /*ITEMS*/
 #items {
@@ -347,15 +312,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	margin: 0 auto;
 	position: relative;
 	width: 80%; 
-}
-#template.color-orange .item {
-	background-color: $color_orange_001;
-}
-#template.color-yellow .item {
-	background-color: $color_yellow_001;
-}
-#template.color-green .item {
-	background-color: $color_green_001;
 }
 .item .img {
 	display: block;
@@ -384,15 +340,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 		width: auto;
 	}
 }
-#template.color-orange .item .wrapper-content {
-	background-color: $color_orange_001;
-}
-#template.color-yellow .item .wrapper-content {
-	background-color: $color_yellow_001;
-}
-#template.color-green .item .wrapper-content {
-	background-color: $color_green_001;
-}
 /*ITEMS*/
 /*gallery*/
 #gallery {
@@ -411,15 +358,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 #gallery header h2 {
 	color: rgba(68, 68, 68, 1);
-}
-#template.color-orange #gallery header h2 {
-	color: $color_orange_001;
-}
-#template.color-yellow #gallery header h2 {
-	color: $color_yellow_001;
-}
-#template.color-green #gallery header h2 {
-	color: $color_green_001;
 }
 .gallery {
 	height: auto;
@@ -477,30 +415,12 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	padding: 1em 0;
 }
-#template.color-orange footer {
-	background-color: $color_orange_001;
-}
-#template.color-yellow footer {
-	background-color: $color_yellow_001;
-}
-#template.color-green footer {
-	background-color: $color_green_001;
-}
 #template footer header {
 	margin: 0 auto;
 	width: 92%; max-width: 1086px;
 }
 #template footer header p {
 	color: rgba(68, 68, 68, 1);
-}
-#template.color-orange footer header p {
-	color: $color_orange_001;
-}
-#template.color-yellow footer header p {
-	color: $color_yellow_001;
-}
-#template.color-green .footer header p {
-	color: $color_green_001;
 }
 #template footer section {
 	@include box_block();
@@ -543,15 +463,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	background-color: rgba(30, 30, 30,1);
 	color: rgba(255, 255, 255, 1);
-}
-#template.color-orange #disclaimer {
-	color: $color_orange_001;
-}
-#template.color-yellow #disclaimer {
-	color: $color_yellow_001;
-}
-#template.color-green #disclaimer {
-	color: $color_green_001;
 }
 #disclaimer p {
 	font-size: .8em;

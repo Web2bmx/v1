@@ -101,10 +101,11 @@
 					<nav>
 						<h6>Menú</h6>
 						<ul>
-							<li><a href="#hero">Inicio</a></li>
+							<li><a href="/#hero">Inicio</a></li>
 							<li><a href="/blog">Blog</a></li>
-							<li><a href="#steps">¿Cómo funciona?</a></li>
-							<li><a href="#services">Nuestros servicios</a></li>
+							<li><a href="/#steps">¿Cómo funciona?</a></li>
+							<li><a href="/#services">Nuestros servicios</a></li>
+							<li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
 							<li><a href="/tour">Comenzar</a></li>
 							<li><a class="login-btn">Ingreso</a></li>
 						</ul>

@@ -17,11 +17,13 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+		<link rel="stylesheet" href="css/dynamic.php?hex=<?php echo($_GET['hex']); ?>&c=<?php echo($_GET['c']); ?>">
 	</head>
 	<body>
 		<div id="template" <?php if (isset($_GET["c"])) { echo('class="color-' . $_GET["c"] . '"'); } ?>>
 			<link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,400i,700|Montserrat:400,400i,700" rel="stylesheet">
 			<link rel="stylesheet" href="css/styles.css?v=1.0">
+			<style id="style-color"></style>
 			<main>
 				<?php include_once("../php/Components/Menu.php"); ?>
 				<?php include_once("../php/Components/Hero.php"); ?>

@@ -102,7 +102,7 @@ export default function imageManager () {
 	var setImagesOnResumeSession = () => {
 		for(var key in _ctrl.jd.selections){
 			switch(_ctrl.jd.selections[key].type){
-				case "image":
+				case "image":					
 					if (key == "#img-logo") {
 						if(_ctrl.jd.selections[key].active !== undefined && _ctrl.jd.selections[key].active === false) {
 							_ctrl.new_appManager.hideTemplateElements(true, key);
@@ -115,6 +115,10 @@ export default function imageManager () {
 						let imgs_arr = imgs_str.split(",");
 						for (let i = 0; i < imgs_arr.length; i++){
 							let img = imgs_arr[i];
+							if(img.search('#web2b#') !== -1) {
+								const arr = img.split('#web2b#');
+								img = arr[0];
+							}	
 							let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage(img));
 							if (img != "") {
 								$("#gallery .gallery").append($img);
@@ -122,7 +126,12 @@ export default function imageManager () {
 						}
 						$("#gallery .gallery .img:gt(0)").hide();
 					} else {
-						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage(_ctrl.jd.selections[key].img));	
+						let img = _ctrl.jd.selections[key].img;
+						if(img.search('#web2b#') !== -1) {
+							const arr = img.split('#web2b#');
+							img = arr[0];
+						}						
+						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage(img));	
 					}
 				break;
 			}
@@ -165,12 +174,15 @@ export default function imageManager () {
 					/*REMOVES FROM SELECTION*/
 					let gallery_arr = _ctrl.jd.selections[n_name].img.split(',');
 					if (gallery_arr.indexOf(img) != -1) {
-						gallery_arr = gallery_arr.splice(gallery_arr.indexOf(img),1);
+						gallery_arr.splice(gallery_arr.indexOf(img),1);
 						var new_arr = gallery_arr.join(',');
 						_ctrl.new_dataManager.saveSelected(_ctrl.jd,n_name,new_arr,'image');
 					}
 					/*REMOVES FROM DISPLAY AND RESTARTS PLAYER*/
-					$("#gallery .gallery .img").filter("[style*='" + org_img + "']").remove().end().hide().filter(":eq(0)").show();
+					//$("#gallery .gallery .img").filter("[style*='" + org_img + "']").remove().end().hide().filter(":eq(0)").show();
+					$("#gallery .gallery .img").filter("[style*='" + org_img + "']").remove();
+					$("#gallery .gallery .img").hide();
+					$("#gallery .gallery .img").first().show();
 				}
 			}	
 		}

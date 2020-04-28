@@ -116,7 +116,6 @@ body {
 }
 
 /*MAP*/
-/*Colors*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Roboto', sans-serif;
@@ -225,18 +224,6 @@ body {
   z-index: 1;
 }
 
-#template.color-orange h1 {
-  color: #f0aa00;
-}
-
-#template.color-yellow h1 {
-  color: #ffe600;
-}
-
-#template.color-green h1 {
-  color: #d4ff00;
-}
-
 .seemore {
   border: 1px solid #444444;
   display: inline-block;
@@ -245,18 +232,6 @@ body {
   padding: 2em 8%;
   width: auto;
   display: none;
-}
-
-#template.color-orange .seemore {
-  border-color: #f0aa00;
-}
-
-#template.color-yellow .seemore {
-  border-color: #ffe600;
-}
-
-#template.color-green .seemore {
-  border-color: #d4ff00;
 }
 
 .seemore span {
@@ -288,18 +263,6 @@ body {
   width: 100%;
   border-bottom: 1px solid #444444;
   padding: 1em 0;
-}
-
-#template.color-orange #menu {
-  border-color: #f0aa00;
-}
-
-#template.color-yellow #menu {
-  border-color: #ffe600;
-}
-
-#template.color-green #menu {
-  border-color: #d4ff00;
 }
 
 #menu > .wrapper {
@@ -347,18 +310,6 @@ body {
 
 #menu menu li a:hover, #menu ul li a:active {
   border: 1px solid #444444;
-}
-
-#template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-  border-color: #f0aa00;
-}
-
-#template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-  border-color: #ffe600;
-}
-
-#template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-  border-color: #d4ff00;
 }
 
 #menu-icon {
@@ -452,18 +403,6 @@ body {
   color: black;
 }
 
-#template.color-orange #aboutus {
-  background-color: #f0aa00;
-}
-
-#template.color-yellow #aboutus {
-  background-color: #ffe600;
-}
-
-#template.color-green #aboutus {
-  background-color: #d4ff00;
-}
-
 #aboutus > .wrapper {
   display: block;
   height: auto;
@@ -513,18 +452,6 @@ body {
 
 #gallery header h2 {
   color: #444444;
-}
-
-#template.color-orange #gallery header h2 {
-  color: #f0aa00;
-}
-
-#template.color-yellow #gallery header h2 {
-  color: #ffe600;
-}
-
-#template.color-green #gallery header h2 {
-  color: #d4ff00;
 }
 
 .gallery {
@@ -636,18 +563,6 @@ body {
   list-style-type: none;
 }
 
-#template.color-orange #cta .wrapper-content {
-  color: #f0aa00;
-}
-
-#template.color-yellow #cta .wrapper-content {
-  color: #ffe600;
-}
-
-#template.color-green #cta .wrapper-content {
-  color: #d4ff00;
-}
-
 /*CTA*/
 /*FOOTER*/
 #template footer {
@@ -667,18 +582,6 @@ body {
 #template footer header p {
   color: #444444;
   font-size: .8em;
-}
-
-#template.color-orange footer header p {
-  color: #f0aa00;
-}
-
-#template.color-yellow footer header p {
-  color: #ffe600;
-}
-
-#template.color-green footer header p {
-  color: #d4ff00;
 }
 
 #template footer section {
@@ -743,18 +646,6 @@ body {
   width: 100%;
   background-color: #1e1e1e;
   color: white;
-}
-
-#template.color-orange #disclaimer {
-  color: #f0aa00;
-}
-
-#template.color-yellow #disclaimer {
-  color: #ffe600;
-}
-
-#template.color-green #disclaimer {
-  color: #d4ff00;
 }
 
 #disclaimer p {

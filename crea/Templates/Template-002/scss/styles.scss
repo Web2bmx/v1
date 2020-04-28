@@ -1,12 +1,4 @@
 @import "./crea/Templates/scss/_common"; 
-/*Colors*/
-$color_orange_001 : rgba(240, 170, 0, 1);
-$color_orange_002 : rgba(0, 97, 250, 1);
-$color_yellow_001 : rgba(255, 230, 0, 1);
-$color_yellow_002 : rgba(132, 0, 85, 1);
-$color_green_001 : rgba(212, 255, 0, 1);
-$color_green_002 : rgba(43, 0, 255, 1);
-
 /*TEMPLATE LEVEL*/
 #template {
 	font-family: 'Roboto', sans-serif;
@@ -82,15 +74,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	width: 80%; max-width: 1180px;
 	z-index: 1;
 }
-#template.color-orange h1 {
-	color: $color_orange_001;
-}
-#template.color-yellow h1 {
-	color: $color_yellow_001;
-}
-#template.color-green h1 {
-	color: $color_green_001;
-}
 .seemore {
 	border: 1px solid rgba(68, 68, 68, 1);
 	display: inline-block;
@@ -99,15 +82,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	padding: 2em 8%;
 	width: auto;
 	display: none;
-}
-#template.color-orange .seemore {
-	border-color: $color_orange_001;
-}
-#template.color-yellow .seemore {
-	border-color: $color_yellow_001;
-}
-#template.color-green .seemore {
-	border-color: $color_green_001;
 }
 .seemore span {
 	display: block;
@@ -132,15 +106,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	border-bottom: 1px solid rgba(68, 68, 68, 1);
 	padding: 1em 0;
-}
-#template.color-orange #menu {
-	border-color: $color_orange_001;
-}
-#template.color-yellow #menu {
-	border-color: $color_yellow_001;
-}
-#template.color-green #menu {
-	border-color: $color_green_001;
 }
 #menu>.wrapper {
 	display: block;
@@ -179,15 +144,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 #menu menu li a:hover, #menu ul li a:active {
 	border: 1px solid rgba(68, 68, 68, 1);
-}
-#template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-	border-color: $color_orange_001;
-}
-#template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-	border-color: $color_yellow_001;
-}
-#template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-	border-color: $color_green_001;
 }
 #menu-icon {
 	cursor: pointer;
@@ -253,15 +209,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	background-color: rgba(68, 68, 68, 1);
 	color: rgba(0,0,0,1);
 }
-#template.color-orange #aboutus {
-	background-color: $color_orange_001;
-}
-#template.color-yellow #aboutus {
-	background-color: $color_yellow_001;
-}
-#template.color-green #aboutus {
-	background-color: $color_green_001;
-}
 #aboutus>.wrapper {
 	@include box_block();
 	position: relative;
@@ -295,15 +242,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 }
 #gallery header h2 {
 	color: rgba(68, 68, 68, 1);
-}
-#template.color-orange #gallery header h2 {
-	color: $color_orange_001;
-}
-#template.color-yellow #gallery header h2 {
-	color: $color_yellow_001;
-}
-#template.color-green #gallery header h2 {
-	color: $color_green_001;
 }
 .gallery {
 	@include box_block();
@@ -385,15 +323,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 #cta .wrapper-content ul {
 	list-style-type: none;
 }
-#template.color-orange #cta .wrapper-content {
-	color: $color_orange_001;
-}
-#template.color-yellow #cta .wrapper-content {
-	color: $color_yellow_001;
-}
-#template.color-green #cta .wrapper-content {
-	color: $color_green_001;
-}
 /*CTA*/
 /*FOOTER*/
 #template footer {
@@ -407,15 +336,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 #template footer header p {
 	color: rgba(68, 68, 68, 1);
 	font-size: .8em;
-}
-#template.color-orange footer header p {
-	color: $color_orange_001;
-}
-#template.color-yellow footer header p {
-	color: $color_yellow_001;
-}
-#template.color-green footer header p {
-	color: $color_green_001;
 }
 #template footer section {
 	margin: 0 auto;
@@ -462,15 +382,6 @@ $color_green_002 : rgba(43, 0, 255, 1);
 	@include box_block();
 	background-color: rgba(30, 30, 30,1);
 	color: rgba(255, 255, 255, 1);
-}
-#template.color-orange #disclaimer {
-	color: $color_orange_001;
-}
-#template.color-yellow #disclaimer {
-	color: $color_yellow_001;
-}
-#template.color-green #disclaimer {
-	color: $color_green_001;
 }
 #disclaimer p {
 	font-size: .8em;

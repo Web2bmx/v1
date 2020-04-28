@@ -116,7 +116,6 @@ body {
 }
 
 /*MAP*/
-/*Colors*/
 /*TEMPLATE LEVEL*/
 #template {
   font-family: 'Montserrat', sans-serif;
@@ -214,18 +213,6 @@ body {
   }
 }
 
-#template.color-orange #menu h4 {
-  color: #f0aa00;
-}
-
-#template.color-yellow #menu h4 {
-  color: #ffe600;
-}
-
-#template.color-green #menu h4 {
-  color: #4cbe74;
-}
-
 #menu menu {
   display: block;
   height: auto;
@@ -264,18 +251,6 @@ body {
   display: block;
   font-variant: small-caps;
   padding: .4em .8em;
-}
-
-#template.color-orange #menu menu li a:hover, #template.color-orange #menu menu li a:active {
-  color: #f0aa00;
-}
-
-#template.color-yellow #menu menu li a:hover, #template.color-yellow #menu menu li a:active {
-  color: #ffe600;
-}
-
-#template.color-green #menu menu li a:hover, #template.color-green #menu menu li a:active {
-  color: #4cbe74;
 }
 
 #menu-icon {
@@ -514,18 +489,6 @@ body {
   }
 }
 
-#template.color-orange #cta .wrapper-content {
-  color: #f0aa00;
-}
-
-#template.color-yellow #cta .wrapper-content {
-  color: #ffe600;
-}
-
-#template.color-green #cta .wrapper-content {
-  color: #4cbe74;
-}
-
 /*CTA*/
 /*ITEMS*/
 #items {
@@ -558,18 +521,6 @@ body {
   margin: 0 auto;
   position: relative;
   width: 80%;
-}
-
-#template.color-orange .item {
-  background-color: #f0aa00;
-}
-
-#template.color-yellow .item {
-  background-color: #ffe600;
-}
-
-#template.color-green .item {
-  background-color: #4cbe74;
 }
 
 .item .img {
@@ -608,18 +559,6 @@ body {
   }
 }
 
-#template.color-orange .item .wrapper-content {
-  background-color: #f0aa00;
-}
-
-#template.color-yellow .item .wrapper-content {
-  background-color: #ffe600;
-}
-
-#template.color-green .item .wrapper-content {
-  background-color: #4cbe74;
-}
-
 /*ITEMS*/
 /*gallery*/
 #gallery {
@@ -649,18 +588,6 @@ body {
 
 #gallery header h2 {
   color: #444444;
-}
-
-#template.color-orange #gallery header h2 {
-  color: #f0aa00;
-}
-
-#template.color-yellow #gallery header h2 {
-  color: #ffe600;
-}
-
-#template.color-green #gallery header h2 {
-  color: #4cbe74;
 }
 
 .gallery {
@@ -738,18 +665,6 @@ body {
   padding: 1em 0;
 }
 
-#template.color-orange footer {
-  background-color: #f0aa00;
-}
-
-#template.color-yellow footer {
-  background-color: #ffe600;
-}
-
-#template.color-green footer {
-  background-color: #4cbe74;
-}
-
 #template footer header {
   margin: 0 auto;
   width: 92%;
@@ -758,18 +673,6 @@ body {
 
 #template footer header p {
   color: #444444;
-}
-
-#template.color-orange footer header p {
-  color: #f0aa00;
-}
-
-#template.color-yellow footer header p {
-  color: #ffe600;
-}
-
-#template.color-green .footer header p {
-  color: #4cbe74;
 }
 
 #template footer section {
@@ -828,18 +731,6 @@ body {
   width: 100%;
   background-color: #1e1e1e;
   color: white;
-}
-
-#template.color-orange #disclaimer {
-  color: #f0aa00;
-}
-
-#template.color-yellow #disclaimer {
-  color: #ffe600;
-}
-
-#template.color-green #disclaimer {
-  color: #4cbe74;
 }
 
 #disclaimer p {
