@@ -1,85 +1,40 @@
-@import "./crea/Templates/scss/_common"; 
+@import "./crea/Templates/scss/_common";
 /*TEMPLATE LEVEL*/
-#template {
-	font-family: 'Roboto', sans-serif;
-}
+#template { font-family: 'Roboto', sans-serif; }
 #template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
-	font-family: 'Roboto', sans-serif;
 	font-variant: small-caps;
 	font-weight: normal;
-	margin: 0 0 .4em 0;
 }
-#template h1 {
-	font-size: 2em;
-}
-#template h2 {
-	font-size: 1.6em;
-}
-#template h3 {
-	font-size: 1.4em;
-}
-#template h4 {
-	font-size: 1em;
-}
-#template h5 { 
-	font-size: 1em;
-	margin: 0;
-}
-#template h6 {
-	font-size: 1em;
-	margin: 0;
-}
-#template p, #template ul, #template ol, #template menu, #template li {
-	font-size: 1em;
-}
-#template p, #template ul, #template ol {
-	margin: 0 0 .4em 0;
-}
-@media only screen and (min-width: $width_xxs) {
-	#template h1 { font-size: 3em; }
-	#template h2 { font-size: 2.2em; }
-	#template h3 { font-size: 1.8em; }
-	#template h4 { font-size: 1.2em; }
-}
+#template * { font-size: 1rem; }
 /*TEMPLATE LEVEL*/
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
-#hero {
-	@include box_block();
-	background-color: rgba(102, 102, 102, 1);
-}
+#hero { @include box_block(); }
 #hero>.wrapper {
 	@include box_block();
 	position: relative;
 }
+#hero h1 { font-size: 2rem; }
 #hero .img {
 	@include box_block();
-	bottom: 0;
-	left: 0;
+	@include box_absolute();
 	opacity: .3;
-	position: absolute;
-	top: 0;
-	right: 0;
 	z-index: 0;
 }
 #hero .wrapper-content {
-	background-color: transparent;
-	color: rgba(255,255,255,1);
-	display: block; 
-	height: auto;
-	margin: 16em auto 4em auto;
-	overflow: hidden;
-	padding: 0 4%;
+	@include box_block(80%);
+	margin: 16rem auto 12rem auto;
+	max-width: $ext-desktop;
+	padding: 0 2rem;
 	position: relative;
-	width: 80%; max-width: 1180px;
 	z-index: 1;
 }
 .seemore {
-	border: 1px solid rgba(68, 68, 68, 1);
+	border: 1px solid hsla(0, 0%, 0%, 1);
 	display: inline-block;
 	font-variant: small-caps;
-	margin: 1em auto 0 auto;
-	padding: 2em 8%;
+	margin: 1rem auto 0 auto;
+	padding: 2rem;
 	width: auto;
 	display: none;
 }
@@ -88,7 +43,7 @@
 }
 #branding {
 	display: block;
-	height: 5em;
+	height: 5rem;
 	overflow: hidden;
 	width: 100%;
 }
@@ -98,22 +53,20 @@
 	margin: 0 auto;
 	overflow: hidden;
 	width: auto;
-	max-height: 100px;
+	max-height: 5rem;
 }
 /*HERO*/
 /*MENU*/
 #menu {
 	@include box_block();
-	border-bottom: 1px solid rgba(68, 68, 68, 1);
-	padding: 1em 0;
+	border-bottom: 1px solid hsla(0, 0%, 0%, 1);
+	padding: 1rem 0;
 }
 #menu>.wrapper {
-	display: block;
-	height: auto;
+	@include box_block(auto);
 	margin: 0 auto;
-	overflow: hidden;
-	padding: 0 4%;
-	width: auto; max-width: 1180px;
+	max-width: $ext-desktop;
+	padding: 0 2rem;
 }
 #menu h4 {
 	display: none;
@@ -139,11 +92,11 @@
 #menu menu li a {
 	display: block;
 	font-variant: small-caps;
-	padding: .6em 1.4em;
-	border: 1px solid rgba(255,255,255,1);
+	padding: .5rem 1rem;
+	border: 1px solid hsla(0, 0%, 100%, 1);
 }
 #menu menu li a:hover, #menu ul li a:active {
-	border: 1px solid rgba(68, 68, 68, 1);
+	border: 1px solid hsla(0, 0%, 0%, 1);
 }
 #menu-icon {
 	cursor: pointer;
@@ -159,76 +112,75 @@
 /*ITEMS*/
 #items {
 	@include box_block();
-	padding: 2em 0 0 0;
+	padding: 2rem 0 0 0;
 }
 #items>.wrapper {
 	@include box_block();
 }
 #items header {
-	margin: 0 auto 1em auto;
-	padding: 0 4%;
-	width: auto; max-width: 1180px;
+	margin: 0 auto 1rem auto;
+	max-width: $ext-desktop;
+	padding: 0 2rem;
+	width: auto; 
 }
 .items {
 	margin: 0 auto;
-	padding: 0 4%;
-	width: auto; max-width: 1180px;
+	max-width: $ext-desktop;
+	padding: 0 2rem;
+	width: auto; 
 }
 .item {
 	@include box_block();
-	margin: 0 auto 1em auto;
+	margin: 0 auto 1rem auto;
 	position: relative;
 }
 .item .img {
 	display: block;
-	height: 450px;
+	height: 18rem;
 	overflow: hidden;
 	width: 100%; 
 }
 .item .wrapper-content {
 	display: block;
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $tablet) {
 	.items {
 		display: grid;
 	}
 	.items.one { grid-template-columns: 100%; }
 	.items.two {
-		grid-gap: 0 4%;
-		grid-template-columns: 48% 48%;
+		grid-gap: 0 2rem;
+		grid-template-columns: 1fr 1fr;
 	}
 	.items.three {
-		grid-gap: 0 4%;
-		grid-template-columns: 30.6% 30.7% 30.6%;
+		grid-gap: 0 2rem;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
 /*ITEMS*/
 /*ABOUT US*/
 #aboutus {
 	@include box_block();
-	background-color: rgba(68, 68, 68, 1);
-	color: rgba(0,0,0,1);
 }
 #aboutus>.wrapper {
 	@include box_block();
 	position: relative;
 }
+#aboutus h2 {
+	font-size: 2rem;
+	margin-bottom: .5rem;
+}
 #aboutus .img {
 	@include box_block();
-	bottom: 0;
-	left: 0;
+	@include box_absolute();
 	opacity: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
 	z-index: 0;
 }
 #aboutus .wrapper-content {
-	display: block;
-	margin: 12em auto 12em auto;
-	overflow: hidden;
+	@include box_block(80%);
+	margin: 12rem auto 12rem auto;
+	max-width: $ext-desktop;
 	position: relative;
-	width: 80%; max-width: 1180px;
 	z-index: 1;
 }
 /*ABOUT US*/
@@ -237,63 +189,49 @@
 	@include box_block();
 }
 #gallery header {
-	margin: 2em auto 1em auto;
-	width: 80%; max-width: 1180px;
+	margin: 2rem auto 1rem auto;
+	max-width: $ext-desktop;
+	width: 80%; 
 }
-#gallery header h2 {
-	color: rgba(68, 68, 68, 1);
+#gallery h2 {
+	font-size: 2rem;
 }
 .gallery {
 	@include box_block();
 	margin: 0 auto;
 	position: relative;
-	margin-bottom: 20px;
 }
 .gallery .img {
 	display: block;
-	height: 620px;
+	height: 16rem;
 	overflow: hidden;
 	width: 100%; 
-	min-width: 220px; 
+	min-width: $mobile; 
 }
-@media only screen and (min-width: $width_xs) {
-	.gallery {
-		width: 96%;
-	}
+@media only screen and (min-width: $tablet) {
 	.gallery .img {
-		float: left; 
-		margin: 0 2% 1em 2%;
-		width: 46%; 
-	}
-	.gallery.gallery_slider .img {
-		display: block; 
-		margin: 0 2% 1em 2%;
-		width: 96%; 
+		height: 30rem;
 	}
 }
 .gallery-nav {
-	bottom: 0;
-	height: auto;
-	left: 0;	
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 100%;
+	@include box_block();
+	@include box_absolute();
 	z-index: 1;
 }
 .gallery-nav>a {
-	background-color: white;
-    border-radius: 1em;
+	background-color: hsla(0, 0, 100%, 1);
+    border-radius: 1rem;
     cursor: pointer;
-    font-size: 2em;
-    padding: .20em .35em;
+    padding: .25rem .25rem;
     top: 48%;
     position: absolute;
 	user-select: none;
 }
-.gallery-nav-prev { left: 5%; }
-.gallery-nav-next { right: 5%; }
+.gallery-nav>a.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
+.gallery-nav>a.gallery-nav-next { right: 1rem; padding-left: .5rem; }
 /*GALERIA*/
+/*MAP*/
+/*MAP*/
 /*CTA*/
 #cta {
 	@include box_block();
@@ -304,97 +242,62 @@
 }
 #cta .img {
 	@include box_block();
-	bottom: 0;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
+	@include box_absolute();
 	z-index: 0;
 }
 #cta .wrapper-content {
-	color: rgba(68, 68, 68, 1);
-	display: block;
-	height: auto;
-	margin: 12em auto;
+	@include box_block(80%);
+	margin: 12rem auto;
+	max-width: $ext-desktop; 
 	position: relative;
-	width: 80%; max-width: 1086px; 
 	z-index: 1;
-}
-#cta .wrapper-content ul {
-	list-style-type: none;
 }
 /*CTA*/
 /*FOOTER*/
 #template footer {
 	@include box_block();
-	padding: 2em 0 1em 0;
+	padding: 2rem 0 1rem 0;
 }
+#template footer * { font-size: .75rem; }
+#template footer h5 { font-size: 1.2rem; }
+#template footer h6 { font-size: 1rem; }
 #template footer header {
 	margin: 0 auto;
-	width: 60%; max-width: 1086px;
-}
-#template footer header p {
-	color: rgba(68, 68, 68, 1);
-	font-size: .8em;
+	max-width: $ext-desktop;
+	width: 80%; 
 }
 #template footer section {
 	margin: 0 auto;
-	width: 60%; max-width: 1086px;
+	max-width: $ext-desktop;
+	width: 80%; 
 }
 #template footer section {
 	@include box_block();
 	margin: 0 auto;
+	max-width: $ext-desktop;
 }
-@media only screen and (min-width: $width_xs) {
+@media only screen and (min-width: $tablet) {
 	#template footer section {
-		width: 92%; max-width: 1280px;
+		display: grid;
+		grid-gap: 0 1rem;
+		grid-template-columns: 1fr 1fr 1fr;
 	}	
 }
 #template footer .column {
 	margin: 1em auto 0 auto;
 	width: auto;
 }
-@media only screen and (min-width: $width_xs) {
-	#template footer .column {
-		float: left;
-		margin-left: 4%;
-		text-align: left;
-		width: 30.6%;
-	}	
-	#template footer section div:first-child {
-		margin-left: 0;
-	}	
-}
-#template footer .column ul {
-	font-size: .8em;
-	list-style: none;
-	margin: 0 auto;
-	padding: 0;
-	width: auto; max-width: 240px;
-}
-#template footer .column h6 {
-	margin: 0 auto;
-	width: auto; max-width: 240px;
-}
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
 	@include box_block();
-	background-color: rgba(30, 30, 30,1);
-	color: rgba(255, 255, 255, 1);
 }
-#disclaimer p {
-	font-size: .8em;
+#template #disclaimer p {
+	font-size: .75em;
+	font-variant: small-caps;
 	margin: 0 auto;
-	padding: 1.4em 0;
-	width: 16em;
-}
-@media only screen and (min-width: $width_xs) {
-	#disclaimer p {
-		text-align: left;
-		padding: 1.4em 4%;
-		width: auto;
-	}
+	max-width: $desktop;
+	padding: 1rem 0;
 }
 /*DISCLAIMER*/
 /*--TEMPLATE COMPONENTS--*/

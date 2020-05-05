@@ -1,82 +1,43 @@
 @import "./crea/Templates/scss/_common";
 /*TEMPLATE LEVEL*/
-#template {
-	font-family: 'Montserrat', sans-serif;
-}
-#template h1, #template h2, #template h3, #template h4 {
-	font-family: 'Lobster Two', cursive;
-	margin: 0 0 .4em 0;
-}
-#template h1 {
-	font-size: 2em;
-}
-#template h2 {
-	font-size: 1.6em;
-}
-#template h3 {
-	font-size: 1.4em;
-}
-#template h4 {
-	font-size: 1em;
-}
-#template h5 { 
-	font-size: 1em;
-}
-#template h6 {
-	font-size: 1em;
-}
-#template p, #template ul, #template ol, #template menu, #template li {
-	font-size: 1em;
-}
-#template p, #template ul, #template ol {
-	margin: 0 0 .4em 0;
-}
-@media only screen and (min-width: 560px) {
-	#template h1 { font-size: 3em; }
-	#template h2 { font-size: 2.2em; }
-	#template h3 { font-size: 1.8em; }
-	#template h4 { font-size: 1.2em; }
-}
+#template { font-family: 'Roboto', sans-serif; }
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 { font-family: 'Montserrat', sans-serif; font-size: 1rem; }
+#template p, #template ul, #template ol, #template menu, #template li { font-size: 1rem; }
+/*TEMPLATE LEVEL*/
+#template { font-family: 'Montserrat', sans-serif; }
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 { font-family: 'Lobster Two', cursive; }
+#template * { font-size: 1rem; }
 /*TEMPLATE LEVEL*/
 /*rgba(40, 55, 75, 1)*/
 /*--TEMPLATE COMPONENTS--*/
 /*MENU*/
 #menu {
 	@include box_block();
-	background-color: rgba(0,0,0,.9);
-	padding: .6em 0;
+	background-color: hsla(0,0%,100%,1);
+	padding: .5rem 0;
 	position: fixed;
 	top: 0;
 	z-index: 2;
 }
 #menu>.wrapper {
-	display: block;
-	height: auto;
+	@include box_block(auto);
 	margin: 0 auto;
-	overflow: hidden;
-	padding: 0 4%;
-	width: auto; max-width: 1180px;
-}
-#template #menu h4 {
-	color: rgba(255, 255, 255, 1);
+	max-width: $ext-desktop;
+	padding: 0 1rem;
 }
 #template #menu.toggle h4 {
 	float: left;
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $tablet) {
 	#template #menu h4 {
 		float: left;
 	}
 }
 #menu menu {
-	display: block;
-	height: auto;
+	@include box_block(80%);
 	margin: 0 auto;
-	overflow: hidden;
-	padding: 0;
-	width: 80%;
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $tablet) {
 	#menu menu {
 		float: right;
 		text-align: right;
@@ -90,9 +51,7 @@
 	width: auto;	
 }
 #menu menu li {
-	color: rgba(255,255,255,1);
 	display: inline-block;
-	list-style-type: none;
 }
 #menu.toggle menu li {
 	display: block;
@@ -100,7 +59,7 @@
 #menu menu li a {
 	display: block;
 	font-variant: small-caps;
-	padding: .4em .8em;
+	padding: .5rem 1rem;
 }
 #menu-icon {
 	color: rgba(255,255,255,1);
@@ -111,66 +70,50 @@
 #menu.toggle #menu-icon {
 	display: block;
 	float: right;
-	font-family: 'Web Symbols';
 }
 /*MENU*/
 /*HERO*/
-#hero {
-	@include box_block();
-	background-color: rgba(102, 102, 102, 1);
-}
-#hero>.wrapper {
-	@include box_block();
-	position: relative;
-}
+#hero { @include box_block(); }
+#hero>.wrapper { @include box_block(); position: relative; }
 #hero .img {
 	@include box_block();
-	bottom: 0;
-	left: 0;
+	@include box_absolute();
 	opacity: .3;
-	position: absolute;
-	right: 0;
-	top: 0;
 	z-index: 0;
 }
 #hero .wrapper-content {
-	background-color: transparent;
-	color: rgba(255,255,255,1);
-	display: block; 
-	height: auto;
-	margin: 16em auto 8em auto;
-	overflow: hidden;
-	padding: 1em 4%;
+	@include box_block(80%);
+	margin: 12rem auto 8rem auto;
+	max-width: $ext-desktop;
+	padding: 1rem 4%;
 	position: relative;
-	width: 80%; max-width: 1180px;
 	z-index: 1;
 }
+@media only screen and (min-width: $tablet) { #hero .wrapper-content { margin: 16rem auto 12rem auto; } }
+#hero h1 { font-size: 2.4rem; }
+@media only screen and (min-width: $tablet) { #hero h1 { font-size: 3.4rem; } }
 #hero h3 {
-	border-top: 1px dashed rgba(255,255,255,1);
-	margin: 0 auto;
-	padding-top: .5em;
-	width: auto; max-width: 240px;
+	border-top: 1px dashed hsla(0,0%,100%,1);
+	font-size: 1.4rem;
+	margin: 1rem auto 0 auto;
+	max-width: $mobile;
+	padding-top: 1rem;
+	width: auto; 
 }
+@media only screen and (min-width: $tablet) { #hero h3 { font-size: 2.4rem; } }
 .seemore {
-	background-color: rgba(21, 29, 37, 1);
-	color: rgba(255,255,255,1);
 	display: inline-block;
 	font-variant: small-caps;
-	margin-top: 2em;
-	padding: 1em 2em;
+	margin-top: 2rem;
+	padding: 1rem 2rem;
 	display: none;
 }
 .seemore span {
 	display: block;
 }
-@media only screen and (min-width: $width_xxs) {
-	#hero .wrapper-content {
-		margin: 12em auto 12em auto;
-	}	
-}
 #branding {
 	display: block;
-	height: 5em;
+	height: 7rem;
 	overflow: hidden;
 	width: 100%;
 }
@@ -180,303 +123,215 @@
 	margin: 0 auto;
 	overflow: hidden;
 	width: auto;
-	max-height: 100px;
+	max-height: 7rem;
 }
 /*HERO*/
 /*ABOUT US*/
-#aboutus {
-	color: rgba(0,0,0,1);
-	display: block; 
-}
-@media only screen and (min-width: $width_xxs) {
-	#aboutus {
-		height: 300px;
-		overflow: visible;
-		position: relative;
-		z-index: 1;
-	}
-}
+#aboutus { @include box_block(); }
 #aboutus>.wrapper {
 	@include box_block();
-	background-color: rgba(255,255,255,1);
-}
-@media only screen and (min-width: $width_xxs) {
-	#aboutus>.wrapper {
-		background-color: rgba(255,255,255,1);
-		display: block;
-		height: auto;
-		margin: 0 auto 0 auto;
-		overflow: visible;
-		position: relative;
-		width: 1000px;
-	}
 }
 #aboutus .img {
 	display: block; 
-	height: 350px;
+	height: 24rem;
 	overflow: hidden;
 	width: 100%;
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $tablet) {
 	#aboutus .img {
-		float: left;
-		height: 500px;
+		float: right;
 		width: 50%;
-		position: absolute;
-		top: -100px;
 	}
 }
 #aboutus .wrapper-content {
-	background-color: rgba(255,255,255,1);
-	display: block;
-	height: auto;
+	@include box_block(auto);
 	margin: 0 auto;
-	overflow: hidden;
-	padding: 4em 4%;
-	width: 92%; 
+	padding: 2rem 1rem;
 }
-@media only screen and (min-width: $width_xxs) {
+@media only screen and (min-width: $tablet) {
 	#aboutus .wrapper-content {
 		float: right;
-		height: 420px;
-		padding: 80px 4% 0 4%;
-		width: 42%;
-		position: absolute;
-		text-align: left;
-		top: -100px;
-		right: 0;
-	}
+		padding: 6rem 5% 2rem 5%;
+		width: 40%;
+	}	
 }
-@media only screen and (min-width: $width_xxs) {
-	#aboutus .wrapper-content h2 {
-		border-bottom: 1px dashed rgba(0, 0, 0, 1);
-		padding-bottom: .5em;
-	}
+#aboutus .wrapper-content h2 {
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
 }
 /*ABOUT US*/
 /*CTA*/
-#cta {
-	@include box_block();
-	background-color: rgba(68, 68, 68, 1);
-	position: relative;
-}
-#cta>.wrapper {
-	@include box_block();
-	position: relative;
+#cta { @include box_block(); position: relative; }
+#cta>.wrapper { @include box_block(); position: relative; }
+#cta>.wrapper h2 {
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
 }
 #cta .img {
 	@include box_block();
-	bottom: 0;
-	left: 0;
+	@include box_absolute();
 	opacity: .3;
-	position: absolute;
-	right: 0;
-	top: 0;
 	z-index: 0;
 }
 #cta .wrapper-content {
-	color: rgba(68, 68, 68, 1);
-	display: block;
-	height: auto;
-	margin: 12em auto 6em auto;
+	@include box_block(80%);
+	margin: 8rem auto 6rem auto;
+	max-width: $desktop; 
 	position: relative;
-	width: 80%; max-width: 1086px; 
 	z-index: 1;
-}
-@media only screen and (min-width: $width_xxs) {
-	#cta .wrapper-content {
-		margin: 12em auto 12em auto;
-	}
 }
 /*CTA*/
 /*ITEMS*/
-#items {
-	@include box_block();
-	margin-bottom: 20px;
-}
+#items { @include box_block(); }
+#items .wrapper { @include box_block(); }
 #items header {
 	margin: 0 auto;
-	padding: 2em 4% 0 4%;
-	width: auto; max-width: 1180px;
+	max-width: $desktop;
+	padding: 2rem 1rem;
+	width: auto; 
+}
+#items header h2 {
+	font-size: 1.4rem;
+	margin-bottom: 1rem;
 }
 .items {
-	color: rgba(255,255,255,1);
 	margin: 0 auto;
+	max-width: $desktop;
 	text-align: left;
-	padding: 0 4%;
-	width: auto; max-width: 1180px;
+	width: 100%; 
 }
 .item {
-	display: block;
-	height: auto;
+	@include box_block();
 	margin: 0 auto;
 	position: relative;
-	width: 80%; 
 }
 .item .img {
 	display: block;
-	height: 450px;
+	height: 20rem;
 	overflow: hidden;
 	width: 100%; 
 }
 .item .wrapper-content {
-	display: block;
-	font-size: small;
-	padding: 1em 10%;
-	width: 80%;
+	padding: 1rem 1rem;
+	width: auto;
 }
-@media only screen and (min-width: $width_xxs) {
-	.items:nth-child(even) .item .wrapper-content {
-		float: left;
-	}
+#items .item .wrapper-content h3 {
+	font-size: 1.2rem;
+	margin-bottom: 1rem;
+}
+@media only screen and (min-width: $tablet) {
 	.items {
 		display: grid;
+		grid-gap: 0 1rem;
 	}
 	.items.one { grid-template-columns: auto; }
-	.items.two { grid-template-columns: 50% 50%; }
-	.items.three { grid-template-columns: 33% 34% 33%; }
-	.item {
-		margin: 0;
-		width: auto;
-	}
+	.items.two { grid-template-columns: 1fr 1fr; }
+	.items.three { grid-template-columns: 1fr 1fr 1fr; }
 }
 /*ITEMS*/
-/*gallery*/
-#gallery {
-	@include box_block();
-	padding: 2em 0 0 0;
-}
-#gallery>.wrapper {
-	@include box_block();
-}
+/*GALLERY*/
+#gallery { @include box_block(); }
+#gallery>.wrapper { @include box_block(); }
 #gallery header {
-	margin: 2em auto 1em auto;
-	width: auto; max-width: 1180px;
+	margin: 2rem auto 1rem auto;
+	max-width: $ext-desktop;
 }
 #gallery header h2 {
+	font-size: 2rem;
 	font-variant: small-caps;
 }
-#gallery header h2 {
-	color: rgba(68, 68, 68, 1);
-}
 .gallery {
-	height: auto;
-	margin: 0 auto;
-	overflow: hidden;
+	@include box_block();
+	margin: 0 auto 2rem auto;
+	max-width: $ext-desktop;
 	position: relative;
-	width: auto; max-width: 1180px;
 }
 .gallery .img {
 	display: block;
-	height: 620px;
-	min-width: 220px; 
+	height: 15rem;
+	min-width: $mobile; 
 	overflow: hidden;
 	width: 100%; 
 }
-@media only screen and (min-width: $width_xs) {
-	.gallery {
-		width: 96%;
-	}
+@media only screen and (min-width: $tablet) {
 	.gallery .img {
-		float: left; 
-		margin: 0 2% 1em 2%;
-		width: 46%; 
-	}
-	.gallery.gallery_slider .img {
-		display: block; 
-		margin: 0 2% 1em 2%;
-		width: 96%; 
-	}
+		height: 35rem;
+	}	
 }
 .gallery-nav {
 	@include box_block();
-	bottom: 0;
-	left: 0;	
-	position: absolute;
-	right: 0;
-	top: 0;
+	@include box_absolute();
 	z-index: 1;
 }
 .gallery-nav>a {
-	background-color: white;
-    border-radius: 1em;
+	background-color: hsla(0, 0, 100%, 1);
+    border-radius: 1rem;
     cursor: pointer;
-    font-size: 2em;
-    padding: .20em .35em;
+    padding: .25rem .25rem;
     top: 48%;
     position: absolute;
 	user-select: none;
 }
-.gallery-nav-prev { left: 5%; }
-.gallery-nav-next { right: 5%; }
-/*gallery*/
+.gallery-nav>a.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
+.gallery-nav>a.gallery-nav-next { right: 1rem; padding-left: .5rem; }
+/*GALLERY*/
+/*MAP*/
+/*MAP*/
 /*FOOTER*/
 #template footer {
 	@include box_block();
-	padding: 1em 0;
+	padding: 1rem 0;
+}
+#template footer * {
+	font-size: .75rem;
+}
+#template footer h5 {
+	font-size: 1.2rem;
+}
+#template footer h6 {
+	font-size: 1rem;
 }
 #template footer header {
-	margin: 0 auto;
-	width: 92%; max-width: 1086px;
+	margin: 0 1rem;
+	max-width: $ext-desktop;
+	width: auto; 
 }
-#template footer header p {
-	color: rgba(68, 68, 68, 1);
+@media only screen and (min-width: $tablet) {
+	#template footer header {
+		margin: 0 auto;
+	}
 }
 #template footer section {
 	@include box_block();
 	margin: 0 auto;
+	max-width: $ext-desktop;
 }
-@media only screen and (min-width: $width_xs) {
+@media only screen and (min-width: $tablet) {
 	#template footer section {
-		width: 92%; max-width: 1280px;
+		display: grid;
+		grid-gap: 0 1rem;
+		grid-template-columns: 1fr 1fr 1fr;
 	}	
 }
 #template footer .column {
-	margin: 1em auto 0 auto;
+	margin: 1rem auto 0 auto;
 	width: auto;
 }
-@media only screen and (min-width: $width_xs) {
-	#template footer .column {
-		float: left;
-		margin-left: 4%;
-		text-align: left;
-		width: 30.6%;
-	}	
-	#template footer section div:first-child {
-		margin-left: 0;
-	}	
-}
 #template footer .column ul {
-	font-size: .8em;
-	list-style: none;
 	margin: 0 auto;
-	padding: 0;
-	width: auto; max-width: 240px;
-}
-#template footer .column h6 {
-	margin: 0 auto;
-	width: auto; max-width: 240px;
+	max-width: $mobile;
 }
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
 	@include box_block();
-	background-color: rgba(30, 30, 30,1);
-	color: rgba(255, 255, 255, 1);
 }
-#disclaimer p {
-	font-size: .8em;
+#template #disclaimer p {
+	font-size: .75em;
 	font-variant: small-caps;
 	margin: 0 auto;
-	padding: 1.4em 0;
-	width: 16em;
-}
-@media only screen and (min-width: $width_xs) {
-	#disclaimer p {
-		padding: .4em 4%;
-		text-align: left;
-		width: auto;
-	}
+	max-width: $desktop;
+	padding: 1rem 0;
 }
 /*DISCLAIMER*/
 /*--TEMPLATE COMPONENTS--*/

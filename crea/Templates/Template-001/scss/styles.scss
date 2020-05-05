@@ -1,95 +1,46 @@
-@import "./crea/Templates/scss/_common"; 
-@import "../../../../node_modules/breakpoint-sass/stylesheets/breakpoint";
-@import "../../../../scss/base/variables";
-
+@import "./crea/Templates/scss/_common";
 /*TEMPLATE LEVEL*/
-#template {
-	font-family: 'Open Sans', sans-serif;
-}
-#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
-	font-family: 'Markazi Text', serif;
-	margin: 0 0 .4em 0;
-}
-#template h1 {
-	font-size: 2em;
-	opacity: .8;
-}
-#template h2 {
-	font-size: 1.6em;
-	margin: 0;
-}
-#template h3 {
-	font-size: 1.4em;
-	margin: 0;
-	opacity: .8;
-}
-#template h4 {
-	font-size: 1.2em;
-}
-#template h5 { 
-	font-size: 1.2em;
-	font-weight: normal;
-	margin: 0;
-}
-#template h6 {
-	font-size: 1.2em;
-	font-weight: normal;
-	margin: 0;
-}
-#template p, #template ul, #template ol {
-	font-size: 1em;
-	margin: 0 0 .4em 0;
-}
-@media only screen and (min-width: $width_xxs) {
-	#template h1 { font-size: 3.4em; }
-	#template h2 { font-size: 2.2em; }
-	#template h3 { font-size: 1.8em; }
-	#template h4 { font-size: 1.2em; }
-}
-/*TEMPLATE LEVEL*/
+#template { font-family: 'Open Sans', sans-serif; }
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 { font-family: 'Markazi Text', serif; }
+#template * { font-size: 1rem; }
 /*--TEMPLATE COMPONENTS--*/
 /*HERO*/
-#hero {
-	@include box_block();
-	background-color: rgba(102, 102, 102, 1);
-}
+#hero { @include box_block(); }
 #hero>.wrapper {
 	@include box_block();
 	position: relative;
 }
+#hero h1 {
+	font-size: 2rem;
+	opacity: .8;
+}
 #hero div.img {
 	@include box_block();
-	bottom: 0;
-	left: 0;
+	@include box_absolute();
 	opacity: 1;
-	position: absolute;
-	right: 0;
-	top: 0;
 	z-index: 0;
 }
 #hero .wrapper-content {
-	background-color: rgba(68, 68, 68, 1);
-	box-shadow: 0 10px 15px 10px rgba(0,0,0,0.75);
-	color: rgba(0,0,0,1);
+	box-shadow: 0 10px 15px 10px hsla(0, 0%, 0%, .75);
 	display: inline-block; 
 	height: auto;
-	margin: 16em auto 2em auto;
+	margin: 16rem auto 2rem auto;
 	overflow: hidden;
-	padding: 4em 4%;
+	padding: 4rem 4%;
 	position: relative;
 	width: 72%;
 	z-index: 1;
 }
-@media only screen and (min-width: $width_xs) {
+@media only screen and (min-width: $tablet) {
 	#hero .wrapper-content {
-		margin: 20em auto 8em auto;
-		padding: 4em 8%;
+		margin: 20rem auto 8rem auto;
+		padding: 4rem 8%;
 		width: auto;
 	}
 }
 #branding {
 	display: block;
-	height: 5em;
+	height: 5rem;
 	overflow: hidden;
 	width: 100%;
 }
@@ -99,7 +50,7 @@
 	margin: 0 auto;
 	overflow: hidden;
 	width: auto;
-	max-height: 100px;
+	max-height: 5rem;
 }
 .seemore {
 	display: none;
@@ -121,21 +72,30 @@
 	position: relative;
 }
 #items header {
-	margin: 1em auto;
-	text-align: center;
+	margin: 1rem auto;
+	max-width: $ext-desktop;
 	padding: 0 4%;
-	width: auto; max-width: 1180px;
+	width: auto; 
+}
+#items h2 {
+	font-size: 2rem;
 }
 .items {
-	margin: 0 auto;
+	margin: 0 auto 2rem auto;
+	max-width: $ext-desktop;
 	width: 100%;
 }
 .item {
 	display: block;
-	height: 450px;
+	height: 16rem;
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+}
+@media only screen and (min-width: $tablet) {
+	.item {
+		height: 30rem;
+	}
 }
 .item .img {
 	display: block;
@@ -147,243 +107,181 @@
 }
 .item .wrapper-content {
 	bottom: 0;
-	box-shadow: 0 -10px 15px 10px rgba(0,0,0,0.75);
+	box-shadow: 0 -10px 15px 10px hsla(0, 0%, 0%, .75);
 	left: 0;
-    padding: 1em 8%;
+    padding: 1rem 8%;
 	position: absolute;
 	right: 0;
 	top: auto;
 	width: 84%;
 	z-index: 1;
 }
-@media only screen and (min-width: $width_xs) {
+@media only screen and (min-width: $tablet) {
 	.items {
 		display: grid;
-		grid-gap: 0 4%;
-		margin: 2em auto;
-		width: 80%; max-width: 1280px;
 	}
 	.items.one { grid-template-columns: 100%; }
-	.items.two { grid-template-columns: auto auto; }
-	.items.three { grid-template-columns: auto auto auto; }
-	.item { width: auto; }
+	.items.two {
+		grid-gap: 0 2rem;
+		grid-template-columns: 1fr 1fr;
+	}
+	.items.three {
+		grid-gap: 0 2rem;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
 }
 /*ITEMS*/
 /*ABOUT US*/
 #aboutus {
 	@include box_block();
-	background-color: rgba(68, 68, 68, 1);
-	color: rgba(0,0,0,1);
+}
+#aboutus h2 {
+	font-size: 2rem;
 }
 #aboutus>.wrapper {
 	@include box_block();
 	position: relative;
 }
 #aboutus .img {
-	bottom: 0;
-	left: 0;
+	@include box_block();
+	@include box_absolute();
 	opacity: .6;
-	overflow: hidden;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 100%;
 	z-index: 0;
 }
 #template #aboutus div.wrapper-content {
-	background-color: transparent;
-	height: auto;
-	overflow: hidden;
-	padding: 8em 12% 8em 12%;
-	position: relative;
+	@include box_block(auto);
 	margin: 0 auto;
-	width: auto;
+	padding: 8rem 2rem;
+	position: relative;
 	z-index: 1;
-}
-@media only screen and (min-width: $width_xs) {
-	#template #aboutus div.wrapper-content {
-		padding: 12em 12%;
-	}	
 }
 #template #aboutus div.wrapper-content p {
 	margin: 0 auto;
-	width: auto; max-width: 24em;
+	max-width: 24rem;
+	width: auto; 
 }
 /*ABOUT US*/
 /*GALERIA*/
 #gallery {
 	@include box_block();
-	padding: 2em 0 0 0;
+}
+#gallery h2 {
+	font-size: 2rem;
 }
 #gallery>.wrapper {
 	@include box_block();
-	max-width: 1440px;
+	max-width: $ext-desktop;
 	margin: 0 auto;
 }
 #gallery header {
-	margin: 0 auto;
-	padding: 0 4% 2em 0;
-	width: auto; max-width: 1280px;
+	margin: 2rem auto 1rem auto;
+	max-width: $ext-desktop;
+	padding: 0 2rem;
+	width: auto; 
 }
 .gallery {
 	@include box_block();
 	margin: 0 auto;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 2rem;
 }
 .gallery .img {
 	display: block;
-	height: 620px;
+	height: 20rem;
+	min-width: $mobile; 
 	overflow: hidden;
 	width: 100%; 
-	min-width: 220px; 
 }
 .gallery_slider {
 	cursor: pointer;
 }
-@media only screen and (min-width: $width_xs) {
-	.gallery {
-		width: 96%;
-	}
-	.gallery .img {
-		float: left; 
-		margin: 0 2% 1em 2%;
-		width: 46%; 
-	}
-	.gallery.gallery_slider .img {
-		display: block; 
-		margin: 0 2% 1em 2%;
-		width: 96%; 
-	}
-}
 .gallery-nav {
-	bottom: 0;
-	height: auto;
-	left: 0;	
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 100%;
+	@include box_block();
+	@include box_absolute();
 	z-index: 1;
 }
 .gallery-nav>a {
-	background-color: white;
-    border-radius: 1em;
+	background-color: hsla(0, 0, 100%, 1);
+    border-radius: 1rem;
     cursor: pointer;
-    font-size: 2em;
-    padding: .20em .35em;
+    padding: .25rem .25rem;
     top: 48%;
     position: absolute;
 	user-select: none;
 }
-.gallery-nav-prev { left: 5%; }
-.gallery-nav-next { right: 5%; }
+.gallery-nav>a.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
+.gallery-nav>a.gallery-nav-next { right: 1rem; padding-left: .5rem; }
 /*GALERIA*/
 /*CTA*/
 #cta {
 	@include box_block();
-	background-color: rgba(68, 68, 68, 1);
-	color: rgba(0,0,0,1);
+}
+#cta h2 {
+	font-size: 2rem;
 }
 #cta>.wrapper {
 	@include box_block();
 	position: relative;
 }
 #cta .img {
-	bottom: 0;
-	height: auto;
-	left: 0;
+	@include box_block();
+	@include box_absolute();
 	opacity: .3;
-	overflow: hidden;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 100%;
 	z-index: 0;
 }
 #template #cta div.wrapper-content {
+	@include box_block(92%);
 	background-color: transparent;
-	overflow: hidden;
 	position: relative;
-	margin: 16em 4% 8em 4%;
-	width: 92%;
+	margin: 16rem 4% 8rem 4%;
 	z-index: 1;
-}
-#template #cta div.wrapper-content ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 /*CTA*/
 /*FOOTER*/
 #template footer {
 	@include box_block();
-	background-color: rgba(0,0,0,1);
-	color: rgba(255,255,255,1);
-	padding: 2em 0 0 0;
+	padding: 2rem 0 1rem 0;
 }
+#template footer * { font-size: .75rem; }
+#template footer h5 { font-size: 1.2rem; }
+#template footer h6 { font-size: 1rem; }
 #template footer header {
 	margin: 0 auto;
-	width: 60%; max-width: 1086px;
+	max-width: $ext-desktop;
+	width: 80%; 
 }
-#template footer header p {
-	color: rgba(68, 68, 68, 1);
-	font-size: .8em;
+#template footer section {
+	margin: 0 auto;
+	max-width: $ext-desktop;
+	width: 80%; 
 }
 #template footer section {
 	@include box_block();
 	margin: 0 auto;
+	max-width: $ext-desktop;
 }
-@media only screen and (min-width: $width_xs) {
+@media only screen and (min-width: $tablet) {
 	#template footer section {
-		width: 92%; max-width: 1280px;
+		display: grid;
+		grid-gap: 0 1rem;
+		grid-template-columns: 1fr 1fr 1fr;
 	}	
 }
 #template footer .column {
 	margin: 1em auto 0 auto;
 	width: auto;
 }
-@media only screen and (min-width: $width_xs) {
-	#template footer .column {
-		float: left;
-		margin-left: 4%;
-		text-align: left;
-		width: 30.6%;
-	}	
-	#template footer section div:first-child {
-		margin-left: 0;
-	}	
-}
-#template footer .column ul {
-	font-size: .8em;
-	list-style: none;
-	margin: 0 auto;
-	padding: 0;
-	width: auto; max-width: 240px;
-}
-#template footer .column h6 {
-	margin: 0 auto;
-	width: auto; max-width: 240px;
-}
 /*FOOTER*/
 /*DISCLAIMER*/
 #disclaimer {
 	@include box_block();
-	background-color: rgba(0,0,0,1);
-	color: rgba(255, 255, 255, 1);
 }
-#disclaimer p {
-	font-size: .8em;
+#template #disclaimer p {
+	font-size: .75em;
+	font-variant: small-caps;
 	margin: 0 auto;
-	padding: 2em 0;
-	width: 16em;
-}
-@media only screen and (min-width: $width_xs) {
-	#disclaimer p {
-		padding: .4em 4%;
-		text-align: left;
-		width: auto;
-	}
+	max-width: $desktop;
+	padding: 1rem 0;
 }
 /*DISCLAIMER*/
 /*--TEMPLATE COMPONENTS--*/
