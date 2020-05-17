@@ -2,9 +2,9 @@
 <div class="control-color template">
 	<h4></h4>
 	<div class="control-color-thumb">
-		<div class="control-color-thumb-bg"><div class="control-color-thumb-content"></div></div>
-		<div class="control-color-thumb-bg"><div class="control-color-thumb-content"></div></div>
-		<div class="control-color-thumb-bg"><div class="control-color-thumb-content"></div></div>
+		<div class="control-color-thumb-bg"></div>
+		<div class="control-color-thumb-bg"></div>
+		<div class="control-color-thumb-bg"></div>
 	</div>		
 	<input type="radio" name="inp-palette" value="" style="display: none;" />
 </div>

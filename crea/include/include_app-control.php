@@ -1,4 +1,13 @@
 <div id="app-control">
+    <div id='app-switch'>
+        <menu>
+            <li><a id='switch-view'><i class="far fa-eye"></i><span>Ver mi página</span></a></li>
+            <li><a id='switch-edit' style="display: none;"><i class="fas fa-wrench"></i><span>Editar</span></a></li>
+            <li><a id='publish' style="display: none;"><i class="fas fa-upload"></i><span>Publicar</span></a></li>
+            <li><a class='change-page' style="display: none;"><i class="fas fa-exchange-alt"></i><span>Cambiar</span></a></li>
+            <li><a class='logout'><i class="fas fa-sign-out-alt"></i><span>Salir</span></a></li>
+        </menu>
+    </div>	
     <div class="app-control-step" style>
         <?php include_once("include/include_app-control-step_site-name.php"); ?>
     </div>
@@ -27,17 +36,8 @@
         <?php include_once("include/include_app-control-step_gallery.php"); ?>
     </div>
     <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_contact-online.php"); ?>
+        <?php include_once("include/include_app-control-step_contact.php"); ?>
     </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_contact-offline.php"); ?>
-    </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_contact-social.php"); ?>
-    </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_colors.php"); ?>
-    </div>				
     <div class="app-control-step">
         <div>
             <h2>¡Terminamos!</h2>
@@ -55,34 +55,4 @@
             </a>
         </nav>
     </div>
-    <div id='app-switch'>
-        <aside>
-            <a id='switch-view'>
-                <i class="far fa-eye"></i>
-                <span class="web"> Ver mi página </span>
-                <span class="mobile"> Ver </span>
-            </a>
-            <a id='switch-edit' style="display: none;">
-                <i class="fas fa-wrench"></i>
-                <span> Editar </span>
-            </a>
-            <a id='publish' style="display: none;">
-                <i class="fas fa-upload"></i>
-                <span> Publicar </span>
-            </a>
-            <a class='change-page' style="display: none;">
-                <i class="fas fa-exchange-alt"></i>
-				<span>
-					Cambiar
-				</span>
-            </a>
-            <a class='logout'>
-				<i class="fas fa-sign-out-alt"></i>
-				<span>
-					Salir
-				</span>
-            </a>                        
-        </aside>
-
-    </div>	
 </div>		

@@ -1,458 +1,3 @@
-/*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
-/* Document
-       ========================================================================== */
-/**
-     * 1. Correct the line height in all browsers.
-     * 2. Prevent adjustments of font size after orientation changes in
-     *    IE on Windows Phone and in iOS.
-     */
-html {
-  line-height: 1.15;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/* Sections
-       ========================================================================== */
-/**
-     * Remove the margin in all browsers (opinionated).
-     */
-body {
-  margin: 0;
-}
-
-/**
-     * Add the correct display in IE 9-.
-     */
-article,
-aside,
-footer,
-header,
-nav,
-section {
-  display: block;
-}
-
-/**
-     * Correct the font size and margin on `h1` elements within `section` and
-     * `article` contexts in Chrome, Firefox, and Safari.
-     */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/* Grouping content
-       ========================================================================== */
-/**
-     * Add the correct display in IE 9-.
-     */
-figcaption,
-figure {
-  display: block;
-}
-
-/**
-     * Add the correct margin in IE 8.
-     */
-figure {
-  margin: 1em 40px;
-}
-
-/**
-     * 1. Add the correct box sizing in Firefox.
-     * 2. Show the overflow in Edge and IE.
-     */
-hr {
-  box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
-}
-
-/**
-     * Add the correct display in IE.
-     */
-main {
-  display: block;
-}
-
-/**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
-pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/* Links
-       ========================================================================== */
-/**
-     * 1. Remove the gray background on active links in IE 10.
-     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
-     */
-a {
-  background-color: transparent;
-  /* 1 */
-  -webkit-text-decoration-skip: objects;
-  /* 2 */
-}
-
-/* Text-level semantics
-       ========================================================================== */
-/**
-     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
-     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
-     */
-abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
-  text-decoration: underline dotted;
-  /* 2 */
-}
-
-/**
-     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
-     */
-b,
-strong {
-  font-weight: inherit;
-}
-
-/**
-     * Add the correct font weight in Chrome, Edge, and Safari.
-     */
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
-     * 1. Correct the inheritance and scaling of font size in all browsers.
-     * 2. Correct the odd `em` font sizing in all browsers.
-     */
-code,
-kbd,
-samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
-}
-
-/**
-     * Add the correct font style in Android 4.3-.
-     */
-dfn {
-  font-style: italic;
-}
-
-/**
-     * Add the correct background and color in IE 9-.
-     */
-mark {
-  background-color: #ff0;
-  color: #000;
-}
-
-/**
-     * Add the correct font size in all browsers.
-     */
-small {
-  font-size: 80%;
-}
-
-/**
-     * Prevent `sub` and `sup` elements from affecting the line height in
-     * all browsers.
-     */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-/* Embedded content
-       ========================================================================== */
-/**
-     * Add the correct display in IE 9-.
-     */
-audio,
-video {
-  display: inline-block;
-}
-
-/**
-     * Add the correct display in iOS 4-7.
-     */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
-     * Remove the border on images inside links in IE 10-.
-     */
-img {
-  border-style: none;
-}
-
-/**
-     * Hide the overflow in IE.
-     */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* Forms
-       ========================================================================== */
-/**
-     * 1. Change the font styles in all browsers (opinionated).
-     * 2. Remove the margin in Firefox and Safari.
-     */
-button,
-input,
-optgroup,
-select,
-textarea {
-  font-family: sans-serif;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
-}
-
-/**
-     * Show the overflow in IE.
-     */
-button {
-  overflow: visible;
-}
-
-/**
-     * Remove the inheritance of text transform in Edge, Firefox, and IE.
-     * 1. Remove the inheritance of text transform in Firefox.
-     */
-button,
-select {
-  /* 1 */
-  text-transform: none;
-}
-
-/**
-     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
-     *    controls in Android 4.
-     * 2. Correct the inability to style clickable types in iOS and Safari.
-     */
-button,
-html [type="button"],
-[type="reset"],
-[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-}
-
-button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
-  /**
-       * Remove the inner border and padding in Firefox.
-       */
-  /**
-       * Restore the focus styles unset by the previous rule.
-       */
-}
-
-button::-moz-focus-inner,
-[type="button"]::-moz-focus-inner,
-[type="reset"]::-moz-focus-inner,
-[type="submit"]::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
-}
-
-button:-moz-focusring,
-[type="button"]:-moz-focusring,
-[type="reset"]:-moz-focusring,
-[type="submit"]:-moz-focusring {
-  outline: 1px dotted ButtonText;
-}
-
-/**
-     * Show the overflow in Edge.
-     */
-input {
-  overflow: visible;
-}
-
-/**
-     * 1. Add the correct box sizing in IE 10-.
-     * 2. Remove the padding in IE 10-.
-     */
-[type="checkbox"],
-[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
-     * Correct the cursor style of increment and decrement buttons in Chrome.
-     */
-[type="number"]::-webkit-inner-spin-button,
-[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-
-/**
-     * 1. Correct the odd appearance in Chrome and Safari.
-     * 2. Correct the outline style in Safari.
-     */
-[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
-  /**
-       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
-       */
-}
-
-[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
-     * 1. Correct the inability to style clickable types in iOS and Safari.
-     * 2. Change font properties to `inherit` in Safari.
-     */
-::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
-}
-
-/**
-     * Correct the padding in Firefox.
-     */
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
-}
-
-/**
-     * 1. Correct the text wrapping in Edge and IE.
-     * 2. Correct the color inheritance from `fieldset` elements in IE.
-     * 3. Remove the padding so developers are not caught out when they zero out
-     *    `fieldset` elements in all browsers.
-     */
-legend {
-  box-sizing: border-box;
-  /* 1 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  color: inherit;
-  /* 2 */
-  white-space: normal;
-  /* 1 */
-}
-
-/**
-     * 1. Add the correct display in IE 9-.
-     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
-     */
-progress {
-  display: inline-block;
-  /* 1 */
-  vertical-align: baseline;
-  /* 2 */
-}
-
-/**
-     * Remove the default vertical scrollbar in IE.
-     */
-textarea {
-  overflow: auto;
-}
-
-/* Interactive
-       ========================================================================== */
-/*
-     * Add the correct display in Edge, IE, and Firefox.
-     */
-details {
-  display: block;
-}
-
-/*
-     * Add the correct display in all browsers.
-     */
-summary {
-  display: list-item;
-}
-
-/*
-     * Add the correct display in IE 9-.
-     */
-menu {
-  display: block;
-}
-
-/* Scripting
-       ========================================================================== */
-/**
-     * Add the correct display in IE 9-.
-     */
-canvas {
-  display: inline-block;
-}
-
-/**
-     * Add the correct display in IE.
-     */
-template {
-  display: none;
-}
-
-/* Hidden
-       ========================================================================== */
-/**
-     * Add the correct display in IE 10-.
-     */
-[hidden] {
-  display: none;
-}
-
-/*@import "../../scss/base/_colors";*/
 /*SHADES OF GRAY*/
 /*RED*/
 /*ORANGE*/
@@ -461,7 +6,6 @@ template {
 /*YELLOW*/
 /*GREEN*/
 /*PURPLE*/
-/**/
 .ui-dialog-titlebar {
   display: none;
 }
@@ -647,31 +191,30 @@ input.cta:active {
   text-align: center;
 }
 
-/**/
-body {
-  background-color: #f0f0f0;
-  color: #3c3c3c;
-  font-size: 1.2em;
+/*MIXINS*/
+/*MIXINS*/
+* {
+  list-style-type: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-size: 150%;
 }
 
 body.init {
   overflow: hidden;
 }
 
-body, input, textarea, select, button {
-  font-family: 'Open Sans', sans-serif;
-}
-
-ul, ol, nav {
-  list-style-type: none;
-  padding: 0;
+body * {
+  font-size: inherit;
 }
 
 a {
   text-decoration: none;
-  cursor: pointer;
 }
 
 /**/
@@ -682,106 +225,56 @@ a {
 #template-cont {
   display: block;
   height: auto;
+  overflow: hidden;
   width: 100%;
 }
 
 #app {
-  bottom: 0;
   display: block;
-  height: 100%;
-  left: 0;
+  height: auto;
   overflow: hidden;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  right: 0;
   width: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  pointer-events: none;
   z-index: 101;
 }
 
-/**/
+/*APP COVER*/
 #app-cover {
-  background-color: white;
-  bottom: 0;
-  color: #3c3c3c;
   display: block;
-  height: 100%;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
   left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: white;
+  color: #3c3c3c;
   overflow-y: scroll;
   pointer-events: auto;
   position: fixed;
-  right: 0;
-  top: 0;
-  width: 100%;
   z-index: 1002;
-}
-
-@media (min-width: 1040px) {
-  #app-cover {
-    /*overflow: hidden;*/
-  }
 }
 
 #app-cover > div {
   display: block;
   height: auto;
-  margin: 4em auto;
   overflow: hidden;
-  text-align: center;
   width: 80%;
+  margin: 4rem auto 2rem auto;
+  max-width: 1040px;
+  text-align: center;
 }
 
 #app-cover label {
   display: block;
-  margin-bottom: 15px;
-}
-
-#app-cover .control-design-thumb {
-  cursor: pointer;
-  float: left;
-  padding: 5px 10px;
-  overflow: visible;
-  box-sizing: border-box;
-  width: 50%;
-}
-
-@media (min-width: 660px) {
-  #app-cover .control-design-thumb {
-    width: 200px;
-  }
-}
-
-#app-cover .control-design-thumb:hover {
-  background-color: #ff52b4;
-}
-
-#app-cover .control-design-thumb aside {
-  height: 180px;
-  margin: 0 auto 20px auto;
-  overflow: hidden;
-  width: 180px;
-  max-width: 100%;
-}
-
-#app-cover .control-design-thumb img {
-  display: block;
-  height: 100%;
-}
-
-#app-cover .app-cover-start {
-  width: 100%;
-}
-
-@media (min-width: 660px) {
-  #app-cover .app-cover-start {
-    width: 600px;
-  }
-}
-
-@media (min-width: 1040px) {
-  #app-cover .app-cover-start {
-    width: 1000px;
-  }
+  margin-bottom: 1rem;
 }
 
 #app-cover .app-cover-start img.logo, #app-cover .app-cover-start .actions {
@@ -789,448 +282,460 @@ a {
 }
 
 #app-cover .app-cover-start img.logo {
-  top: 20px;
-  left: 20px;
-  width: 100px;
+  top: 1rem;
+  left: 1rem;
+  width: 5rem;
 }
 
 #app-cover .app-cover-start .actions {
-  right: 20px;
-  top: 30px;
+  right: 1rem;
+  top: 1rem;
 }
 
 #app-cover .app-cover-start .actions a {
   color: #ff0593;
+  cursor: pointer;
   float: left;
-  padding-left: 15px;
-  font-size: 25px;
+  padding-left: 1rem;
+  font-size: .75rem;
 }
 
 #app-cover .app-cover-start .actions a i {
   display: block;
-}
-
-#app-cover .app-cover-start .actions a span {
-  font-size: 14px;
-}
-
-#app-cover .app-cover-start .thumb-selected + i::before {
-  content: "\f192";
+  font-size: 1rem;
+  margin-bottom: .5rem;
 }
 
 #app-cover .app-cover-start .control-desing-cont {
+  display: grid;
+  grid-gap: 2rem 2rem;
   overflow: hidden;
-  display: inline-block;
+  margin-top: 1rem;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-start .control-desing-cont {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1040px) {
+  #app-cover .app-cover-start .control-desing-cont {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+#app-cover .app-cover-start .control-design-thumb {
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  margin: 0 auto;
+  max-width: 12rem;
+  padding: 2rem 1rem;
+  width: auto;
+}
+
+#app-cover .app-cover-start .control-design-thumb.thumb-selected i::before {
+  content: "\f192";
+}
+
+#app-cover .app-cover-start .control-design-thumb:hover {
+  background-color: #f2aed8;
+}
+
+#app-cover .app-cover-start .control-design-thumb.thumb-selected {
+  background-color: #ff52b4;
+}
+
+#app-cover .app-cover-start .control-design-thumb aside {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+#app-cover .app-cover-start .control-design-thumb img {
+  display: block;
+  width: 100%;
 }
 
 #app-cover .app-cover-start .next {
-  margin-top: 100px;
+  clear: both;
+  cursor: pointer;
+  margin-top: 1rem;
 }
 
-#app-cover .app-cover-finish > div > img {
-  width: 100px;
+.app-new-start .boton {
+  margin-top: 2rem;
 }
 
-#app-cover .app-cover-finish > div .extra-info {
+/*APP COVER*/
+/*APP COVER FINISH*/
+.app-cover-finish > div > img {
+  width: 5rem;
+}
+
+.app-cover-finish > div .extra-info {
   display: block;
-  font-size: 14px;
-  line-height: 24px;
-  margin: 25px 0;
+  margin: 1rem 0;
 }
 
-#app-cover .app-cover-finish h3 {
+.app-cover-finish h3 {
   color: #787878;
-  font-size: 28px;
-  margin-bottom: 0;
+  font-size: 2rem;
 }
 
-#app-cover .app-cover-finish p {
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 30px;
-  margin: 0;
-}
-
-#app-cover .app-cover-finish .url .siteName {
+.app-cover-finish .url .siteName {
   color: #f0f0f0;
-  font-size: 24px;
-  margin: 10px 0;
+  font-size: 2rem;
+  margin: 1rem auto;
 }
 
-#app-cover .app-cover-finish .paquetes {
-  overflow: hidden;
-}
-
-#app-cover .app-cover-finish .app-cover-finish-package {
-  background-color: #9b035a;
-  box-sizing: border-box;
-  color: white;
-  float: left;
-  margin: 1em 0;
-  padding: 1.7em;
+.app-cover-finish #back {
+  display: block;
+  margin-top: 2rem;
   width: 100%;
 }
 
+/*APP COVER FINISH*/
+/*PACKAGES*/
+.paquetes {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  display: grid;
+  grid-gap: 2rem 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1040px) {
+  .paquetes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.app-cover-finish-package {
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #9b035a;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  width: auto;
+}
+
 @media (min-width: 660px) {
-  #app-cover .app-cover-finish .app-cover-finish-package {
-    margin: 1em 10px;
-    width: calc(50% - 20px);
+  .app-cover-finish-package {
+    display: grid;
+    grid-gap: 1rem 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 1040px) {
-  #app-cover .app-cover-finish .app-cover-finish-package {
-    margin: 1em 20px;
-    width: calc(33.33% - 40px);
+  .app-cover-finish-package {
+    display: block;
   }
 }
 
-@media (min-width: 1280px) {
-  #app-cover .app-cover-finish .app-cover-finish-package {
-    margin: 1em 30px;
-    width: calc(33.33% - 60px);
-  }
-}
-
-#app-cover .app-cover-finish .app-cover-finish-package hr {
+.app-cover-finish-package hr {
+  margin: 0 auto;
   width: 10%;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package .price {
+.app-cover-finish-package .price {
   display: block;
-  font-size: 50px;
+  font-size: 3rem;
   font-weight: bold;
-  margin-top: 40px;
+  margin-top: 2rem;
 }
 
-@media (min-width: 660px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .price {
-    font-size: 60px;
-  }
-}
-
-@media (min-width: 1040px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .price {
-    font-size: 70px;
-  }
-}
-
-@media (min-width: 1280px) {
-  #app-cover .app-cover-finish .app-cover-finish-package .price {
-    font-size: 80px;
-  }
-}
-
-#app-cover .app-cover-finish .app-cover-finish-package .price + span {
+.app-cover-finish-package .price + span {
   display: block;
-  font-size: 14px;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package ul {
-  font-size: 13px;
-  height: 70px;
-  margin-bottom: 40px;
-  text-decoration: none;
-  text-align: left;
+.app-cover-finish-package ul {
+  font-size: 1rem;
+  height: 12rem;
+  text-align: center;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package .finish {
+.app-cover-finish-package .finish {
   background: none;
   border-radius: 0;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: normal;
-  letter-spacing: 2px;
-  line-height: 48px;
-  margin-bottom: 0px;
-  min-height: 50px;
+  display: block;
+  height: 5rem;
+  margin-top: 2rem;
   width: 100%;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package button.finish {
-  padding: 0px 20px;
+.app-cover-finish-package button.finish {
+  padding: 0px 1rem;
   border: 1px solid white;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package button.finish i, #app-cover .app-cover-finish .app-cover-finish-package button.finish span {
+.app-cover-finish-package button.finish i, .app-cover-finish-package button.finish span {
   vertical-align: middle;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package button.finish i {
-  font-size: 30px;
+.app-cover-finish-package button.finish i {
+  font-size: 2rem;
 }
 
-#app-cover .app-cover-finish .app-cover-finish-package button.finish:hover {
+.app-cover-finish-package button.finish:hover {
   background: white;
   color: #9b035a;
 }
 
-@media only screen and (min-width: 660px) {
-  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
-    margin-bottom: 0px;
-  }
-}
-
-@media only screen and (min-width: 730px) {
-  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
-    margin-bottom: 20px;
-  }
-}
-
-@media only screen and (min-width: 980px) {
-  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
-    margin-bottom: 40px;
-  }
-}
-
-@media only screen and (min-width: 1040px) {
-  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
-    margin-bottom: 0px;
-  }
-}
-
-@media only screen and (min-width: 1160px) {
-  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
-    margin-bottom: 20px;
-  }
-}
-
-@media only screen and (min-width: 1610px) {
-  #app-cover .app-cover-finish .app-cover-finish-package button.finish {
-    margin-bottom: 40px;
-  }
-}
-
-.app-new-start .boton {
-  margin-top: 40px;
-}
-
-/**/
+/*PACKAGES*/
+/*APP CONTROL*/
 #app-control {
-  background-color: #f0f0f0;
-  bottom: 0;
-  color: #3c3c3c;
   display: block;
-  height: 95%;
-  max-height: 100%;
-  left: 0;
+  height: auto;
   overflow: hidden;
-  pointer-events: auto;
-  position: fixed;
+  width: auto;
+  bottom: 0;
+  left: 0;
+  position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
-  max-width: 100%;
+  background-color: #f0f0f0;
+  color: #3c3c3c;
+  pointer-events: auto;
+  position: fixed;
   z-index: 103;
 }
 
-#app-control > .app-control-step {
-  display: block;
-  height: calc(100% - 100px);
-  margin: 40px 2% 60px 2%;
-  overflow-y: auto;
-  text-align: center;
-  width: 96%;
-}
-
-#app-control > .app-control-step .inp-cont {
-  position: relative;
-}
-
-#app-control > .app-control-step .site-name-container {
-  color: #ff0593;
-  font-size: 22px;
-  position: relative;
-  text-align: left;
-}
-
-#app-control > .app-control-step .site-name-container h2 {
-  margin: 0;
-}
-
-#app-control > .app-control-step .site-name-container input[type="text"] {
-  background: none;
-  border: none;
-  border-bottom: 1px solid;
-  margin: 0;
-  padding: 5px;
-  width: 100px;
-}
-
-#app-control > .app-control-step .site-name-container div {
-  margin: 80px 0;
-}
-
-#app-control > .app-control-step .site-name-container div > span {
-  color: #3c3c3c;
-  display: block;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-#app-control > .app-control-step .site-name-container p span {
-  font-weight: bold;
-}
-
-#app-control > .app-control-step .site-name-container img {
-  display: none;
-}
-
 @media (min-width: 660px) {
-  #app-control > .app-control-step .site-name-container img {
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 100px;
-    width: 200px;
-  }
-}
-
-#app-control > .app-control-step .site-name-container .form-error {
-  text-align: left;
-}
-
-#app-control .app-control-step > div {
-  margin: auto;
-  width: 80%;
-}
-
-#app-control .app-control-step > div textarea, #app-control .app-control-step > div input[type="text"].noIcon, #app-control .app-control-step > div select {
-  border-color: #f0f0f0;
-  border-radius: 5px;
-  border-style: solid;
-  box-sizing: border-box;
-  font-size: 1em;
-  margin: 0 0 20px 0;
-  padding: 15px;
-  width: 100%;
-}
-
-#app-control .app-control-step > div textarea {
-  width: 100%;
-  height: 8em;
-}
-
-#app-control .app-control-step > div input[type="text"].noIcon {
-  height: auto;
-}
-
-#app-control .app-control-step > div select {
-  height: auto;
-  margin: 0 0 5% 0;
-}
-
-#app-control .app-control-step > div .app-control-step-tooltip {
-  background-color: #ff52b4;
-  color: #787878;
-  cursor: pointer;
-  font-size: .8em;
-  height: auto;
-  margin-left: .4em;
-  overflow: hidden;
-  padding: .2em .4em;
-  width: auto;
-  -moz-border-radius: 0.2em;
-  -ms-border-radius: 0.2em;
-  -webkit-border-radius: 0.2em;
-  border-radius: 0.2em;
-}
-
-#app-control .app-control-step > div .app-control-step-tooltip-info {
-  background-color: #ff52b4;
-  color: #3c3c3c;
-  display: none;
-  padding: .2em;
-}
-
-#app-control .app-control-step > div .app-control-step-tooltip-info.active {
-  display: block;
-}
-
-#app-control .control-color {
-  box-sizing: border-box;
-  float: left;
-  margin: 5px 2%;
-  overflow: visible;
-  text-align: center;
-  width: 29.33%;
-}
-
-@media (min-width: 660px) {
-  #app-control .control-color {
-    width: 21%;
+  #app-control {
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+    bottom: 4rem;
+    left: 4rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    top: 4rem;
+    right: 4rem;
   }
 }
 
 @media (min-width: 1040px) {
-  #app-control .control-color {
-    width: 16%;
+  #app-control {
+    left: 8rem;
+    right: 8rem;
   }
 }
 
 @media (min-width: 1280px) {
-  #app-control .control-color {
-    width: 12.66%;
+  #app-control {
+    left: 12rem;
+    right: 12rem;
   }
 }
 
-@media (min-width: 1560px) {
-  #app-control .control-color {
-    width: 10.28%;
+#app-control.view {
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  bottom: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+#app-control.view #app-control-nav, #app-control.view .app-control-step {
+  display: none;
+}
+
+/*APP CONTROL*/
+/*APP CONTROL STEP*/
+.app-control-step {
+  font-size: 1rem;
+  height: calc(100% - 10rem);
+  margin: 1rem 2rem 4rem 2rem;
+  padding: 1rem;
+  overflow-y: auto;
+  width: auto;
+}
+
+.app-control-step > div {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.app-control-step > div textarea, .app-control-step > div input[type="text"].noIcon, .app-control-step > div select {
+  border-color: #f0f0f0;
+  border-radius: .5rem;
+  border-style: solid;
+  box-sizing: border-box;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  width: 100%;
+}
+
+.app-control-step > div textarea {
+  width: 100%;
+  height: 8rem;
+}
+
+.app-control-step > div .inp-cont {
+  position: relative;
+}
+
+.app-control-step > div input[type="text"].noIcon {
+  height: auto;
+}
+
+.app-control-step > div select {
+  margin-bottom: 1rem;
+}
+
+.app-control-step h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.app-control-step h2.middle {
+  margin: 1rem 0;
+}
+
+.app-control-step aside {
+  margin: 1rem auto;
+}
+
+.app-control-step .product h2.children {
+  padding-right: 1rem;
+  position: relative;
+}
+
+.app-control-step .product h2 a {
+  color: #9b035a;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+/*APP CONTROL STEP*/
+/*TOOLTIP*/
+.app-control-step-tooltip {
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: auto;
+  border: 1px solid #ff0593;
+  cursor: pointer;
+  display: inline;
+  font-size: 1rem;
+  margin-left: .5rem;
+  padding: 0 .5rem;
+  vertical-align: super;
+}
+
+.app-control-step-tooltip-info {
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  border: 1px solid #ff0593;
+  display: none;
+  padding: .5rem;
+  margin-bottom: 1rem;
+}
+
+.app-control-step-tooltip-info.active {
+  display: block;
+}
+
+/*TOOLTIP*/
+/*CONTROL COLOR*/
+#inp-color {
+  border: none;
+  cursor: pointer;
+  height: 5rem;
+  width: 5rem;
+}
+
+#app-control-palettes {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 660px) {
+  #app-control-palettes {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-#app-control .control-color h4 {
+@media (min-width: 1040px) {
+  #app-control-palettes {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  #app-control-palettes {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.control-color {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 8rem;
+}
+
+.control-color h4 {
   font-weight: normal;
-  margin: 0 0 .4em 0;
+  margin: 0 0 .5rem 0;
 }
 
-#app-control #inp-color {
-  height: 60px;
-  width: 60px;
-}
-
-#app-control .control-color-thumb {
+.control-color-thumb {
+  border: 1px solid #f0f0f0;
   cursor: pointer;
   display: block;
-  outline: 1px solid #f0f0f0;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: calc(100% - 2px);
 }
 
-#app-control .control-color-thumb.thumb-selected {
-  outline: 1px solid #ff0593;
+.control-color-thumb.thumb-selected {
+  border: 1px solid #ff0593;
 }
 
-#app-control .control-color-thumb-bg {
+.control-color-thumb-bg {
   display: block;
   float: left;
-  height: 72px;
+  height: 6rem;
   overflow: hidden;
-  width: 33.3%;
 }
 
-#app-control .control-color-thumb-content {
-  display: none;
-  height: 8px;
-  margin: 8px 10%;
-  overflow: hidden;
-  width: 80%;
-}
-
-#app-control #app-control-palettes {
-  overflow: hidden;
-  text-align: left;
-}
-
-#app-control .palette-color {
-  display: inline-block;
-  height: 1em;
-  overflow: hidden;
-  width: 1em;
-}
-
-#app-control .app-control-images {
+/*CONTROL COLOR*/
+/*CONTROL IMAGES*/
+.app-control-images {
   display: block;
   height: auto;
   overflow: visible;
@@ -1238,190 +743,190 @@ a {
   width: auto;
 }
 
-#app-control .app-control-images > p {
+.app-control-images > p {
   width: 100%;
   text-align: left;
-  font-size: 14px;
-  margin: 0;
 }
 
-#app-control .app-control-images > p a {
+.app-control-images > p a {
   text-decoration: underline;
   color: #b4b4b4;
 }
 
-#app-control [id^="app-control-images"] {
-  margin: 10px auto;
+[id^="app-control-images"] {
+  margin: 1rem auto;
   overflow: auto;
 }
 
-#app-control .photo-container {
-  overflow-y: scroll;
-  width: 100%;
-  height: 400px;
+.photo-container {
+  display: grid;
+  height: auto;
+  overflow: hidden;
+  width: auto;
+  grid-template-columns: 1fr;
 }
 
-@media (min-width: 1040px) {
-  #app-control .photo-container {
-    max-height: 400px;
-    width: 100%;
-    min-height: 150px;
+@media (min-width: 660px) {
+  .photo-container {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-#app-control .img-thumb {
+@media (min-width: 1040px) {
+  .photo-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .photo-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.img-thumb {
   cursor: pointer;
-  float: left;
-  height: 200px;
-  overflow: visible;
+  height: 10rem;
   position: relative;
-  width: 50%;
   z-index: 101;
 }
 
 @media (min-width: 1040px) {
-  #app-control .img-thumb {
-    height: 150px;
-    width: 25%;
+  .img-thumb {
+    height: 15rem;
   }
-  #app-control .img-thumb:hover .img-thumb-autor {
+  .img-thumb:hover .img-thumb-autor {
     display: block;
   }
 }
 
-@media (min-width: 1560px) {
-  #app-control .img-thumb {
-    height: 200px;
-    width: 20%;
-  }
-}
-
-#app-control .img-thumb-cont {
-  background-color: black;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: auto 200%;
+.img-thumb-cont {
   display: block;
-  height: 100%;
+  height: auto;
   overflow: hidden;
   width: 100%;
+  background-color: black;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
 }
 
-#app-control .img-thumb-cont-zoom {
+.img-thumb-cont-zoom {
   background-color: white;
   bottom: 0;
-  height: 2em;
+  height: 2rem;
   position: absolute;
   right: 0;
-  width: 2em;
+  width: 2rem;
   z-index: 2;
 }
 
-#app-control .img-thumb-cont-zoom i {
-  padding-top: .5em;
+.img-thumb-cont-zoom i {
+  margin: .5rem 0 0 .5rem;
 }
 
-#app-control .img-thumb-overlay {
-  bottom: 0;
-  display: none;
+.img-thumb-overlay {
+  display: block;
   height: auto;
+  overflow: hidden;
+  width: 100%;
+  bottom: 0;
   left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 100%;
+  display: none;
   z-index: 1;
 }
 
-#app-control .img-thumb-autor {
+.img-thumb-autor {
   background: rgba(0, 0, 0, 0.5);
-  padding: 5px 10px;
-  font-size: 12px;
+  padding: .5rem;
   position: absolute;
-  z-index: 1000;
-  width: 100%;
-  box-sizing: border-box;
   top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 @media (min-width: 1040px) {
-  #app-control .img-thumb-autor {
+  .img-thumb-autor {
     display: none;
   }
 }
 
-#app-control .img-thumb-autor a {
+.img-thumb-autor a {
   color: white;
+  font-size: .75rem;
   text-decoration: underline;
 }
 
-#app-control .thumb-selected {
+.thumb-selected {
   z-index: 102;
 }
 
-#app-control .thumb-selected .img-thumb-overlay {
+.thumb-selected .img-thumb-overlay {
   background-color: rgba(255, 255, 255, 0.8);
   display: block;
 }
 
-#app-control .img-thumb.selected .img-thumb-overlay {
+.img-thumb.selected .img-thumb-overlay {
   background-color: rgba(255, 255, 255, 0.8);
   display: block;
 }
 
-#app-control .img-thumb-overlay > span {
+.img-thumb-overlay > span {
   color: black;
   display: block;
-  font-size: 2em;
+  font-size: 2rem;
   font-weight: bold;
-  padding-top: 1em;
+  padding-top: 1rem;
   text-align: center;
-}
-
-#app-control h2 {
-  color: black;
-  font-size: 30px;
-  margin-bottom: 50px;
-}
-
-#app-control h2.middle {
-  margin: 10px 0;
-}
-
-#app-control .product h2.children {
-  padding-right: 25px;
-  position: relative;
-}
-
-#app-control .product h2 a {
-  color: #9b035a;
-  font-size: 16px;
-  position: absolute;
-  right: 5px;
-  top: 10px;
 }
 
 .img-thumb-zoomed {
   display: block;
   height: auto;
-  margin: 0 auto;
+  overflow: hidden;
   width: 96%;
+  margin: 0 auto;
 }
 
+/*CONTROL IMAGES*/
+/*SITE NAME*/
+.site-name-container {
+  position: relative;
+  text-align: left;
+}
+
+.site-name-container input[type="text"] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #3c3c3c;
+  padding: .5rem .5rem .25rem .5rem;
+  width: 40%;
+}
+
+.site-name-container .form-error {
+  text-align: left;
+}
+
+/*SITE NAME*/
+/*APP CONTROL NAV*/
 #app-control-nav {
-  bottom: 0;
   display: block;
   height: auto;
   overflow: hidden;
-  position: absolute;
   width: 100%;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
 }
 
 #app-control-nav #control-view-nav {
   float: left;
-  height: 50px;
+  height: 5rem;
   margin-bottom: 0;
-  padding-top: 10px;
+  padding-top: 1rem;
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -1429,17 +934,17 @@ a {
 
 #app-control-nav #control-view-nav a {
   bottom: 0;
-  margin: .4em;
+  margin: .5rem auto;
   position: absolute;
   z-index: 101;
 }
 
 #app-control-nav #control-view-nav a.prev {
-  left: 0;
+  left: 1rem;
 }
 
 #app-control-nav #control-view-nav a.next {
-  right: 0;
+  right: 1rem;
 }
 
 #app-control-nav #control-view-nav a.disabled {
@@ -1447,127 +952,74 @@ a {
   cursor: default;
 }
 
-#app-control-nav #control-view-index {
-  display: none;
+/*APP CONTROL NAV*/
+/*CONTROL VIEW INDEX*/
+#control-view-index {
+  display: inline-block;
+  margin: 1.5rem auto 0 auto;
   overflow: hidden;
   width: auto;
 }
 
-#app-control-nav #control-view-index + a {
+#control-view-index + a {
   float: right;
 }
 
-#app-control-nav .control-view-index-item {
-  background-color: #787878;
+.control-view-index-item {
+  background-color: #b4b4b4;
   cursor: pointer;
   float: left;
-  height: 1em;
-  margin: 1em .4em .6em 0;
+  height: .5rem;
+  margin: 1.5rem .5rem .5rem 0;
   overflow: hidden;
-  width: 1em;
-  -moz-border-radius: 0.5em;
-  -ms-border-radius: 0.5em;
-  -webkit-border-radius: 0.5em;
-  border-radius: 0.5em;
+  width: .5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-#app-control-nav .control-view-index-item.current {
-  background-color: #9b035a;
+.control-view-index-item.current {
+  background-color: #ff0593;
 }
 
+/*CONTROL VIEW INDEX*/
+/*APP SWITCH*/
 #app-switch {
-  background-color: #9b035a;
-  color: white;
-  height: 40px;
+  display: block;
+  height: auto;
   overflow: hidden;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  padding: 0 10px;
+  width: auto;
+  background-color: #ff0593;
+  color: white;
+  font-size: .75rem;
+  padding: .5rem 1rem;
   text-align: right;
-  box-sizing: border-box;
+}
+
+@media (min-width: 660px) {
+  #app-switch {
+    font-size: 1rem;
+  }
+}
+
+#app-switch li {
+  display: inline;
 }
 
 #app-switch a {
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 40px;
-  margin-right: 15px;
-}
-
-#app-switch a.switch-edit i {
-  font-size: 25px;
-  vertical-align: initial;
-}
-
-#app-switch a.switch-view {
-  font-size: 40px;
-  vertical-align: bottom;
+  cursor: pointer;
+  margin-left: 1rem;
 }
 
 #app-switch a span {
-  margin-left: 3px;
+  margin-left: .5rem;
 }
 
-#app-switch a span.web {
-  display: none;
-}
-
-@media (min-width: 660px) {
-  #app-switch a span.web {
-    display: inline;
-  }
-}
-
-@media (min-width: 660px) {
-  #app-switch a span.mobile {
-    display: none;
-  }
-}
-
-#app-control.view {
-  height: 40px;
-  margin-top: 0;
-  overflow: hidden;
-  top: 0;
-  width: 100%;
-  left: 0;
-  margin-left: 0;
-  border-radius: unset;
-}
-
-/**/
-@media screen and (min-width: 660px) {
-  #app-control {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    left: 50%;
-    margin-left: -42.5%;
-    margin-top: 0;
-    top: 3%;
-    width: 85%;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-  }
-  #app-control.top {
-    bottom: 55%;
-    top: 5%;
-  }
-  #app-control-nav #control-view-index {
-    bottom: 20px;
-    display: block;
-    left: 0;
-    position: absolute;
-  }
-  #app-control-nav #app-switch {
-    width: auto;
-  }
-}
-
+/*APP SWITCH*/
 .file-upload {
   display: block;
-  margin: 20px 0;
+  margin: 1rem 0;
   overflow: hidden;
   text-align: left;
 }
@@ -1577,16 +1029,14 @@ a {
 }
 
 .file-upload input[type=submit] {
-  font-size: 16px;
-  line-height: 18px;
-  margin: 10px 0 0 0;
-  padding: 10px;
+  margin: 1rem 0 0 0;
+  padding: 1rem;
 }
 
 .file-upload input[type=submit], .file-upload button {
   background-color: white;
   border: 1px solid #f0f0f0;
-  border-radius: 5px;
+  border-radius: 1rem;
   color: #3c3c3c;
   cursor: pointer;
   float: right;
@@ -1598,20 +1048,20 @@ a {
 }
 
 .file-upload input[type=submit] {
-  margin: 20px;
+  margin: 1rem;
 }
 
 .file-upload p {
   background-color: #f0f0f0;
   margin: 0;
   overflow: hidden;
-  padding: 20px;
+  padding: 1rem;
 }
 
 .file-upload p span {
   width: 100%;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 1rem;
   color: #787878;
 }
 
@@ -1623,7 +1073,7 @@ a {
 
 .file-upload button {
   width: 100%;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 @media (min-width: 1040px) {
@@ -1635,14 +1085,13 @@ a {
 
 .form-label-note {
   display: block;
-  font-size: 14px;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
 }
 
 .nav-btns {
-  color: #9b035a;
+  color: #ff0593;
   display: block;
-  font-size: 35px;
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -1654,7 +1103,7 @@ a {
   height: auto;
   left: 5%;
   overflow: hidden;
-  padding: 2em 0;
+  padding: 2rem 0;
   position: fixed;
   right: 5%;
   top: 5%;
@@ -1664,12 +1113,12 @@ a {
 
 #single-modal i {
   cursor: pointer;
-  height: 2em;
-  padding-top: .5em;
+  height: 2rem;
+  padding-top: 1rem;
   position: absolute;
   right: 0;
   top: 0;
-  width: 2em;
+  width: 2rem;
   z-index: 101;
 }
 
@@ -1694,64 +1143,46 @@ a {
 }
 
 .map-error, .map-input {
-  font-size: 14px;
   margin-top: 0px;
   position: relative;
-  top: -8px;
+  top: -1rem;
 }
 
-#app-control .app-control-step .brand-name h4 {
-  text-align: left;
-  color: #9b035a;
-}
-
-#app-control .app-control-step .brand-name h4 a {
+/*BRAND NAME*/
+.brand-name h4 a {
   color: #660a3f;
-  font-size: 25px;
-  margin-left: 15px;
-  position: relative;
-  top: 4px;
+  font-size: 2rem;
+  margin-left: 1rem;
 }
 
-#app-control .app-control-step .brand-name h2 span {
-  font-size: 16px;
-  display: block;
-  margin-top: 10px;
-  color: #b4b4b4;
-}
-
-#app-control .app-control-step .brand-name form, #app-control .app-control-step .brand-name p {
-  margin: 0;
-  padding: 0;
-}
-
-#app-control .app-control-step .brand-name aside.inactive {
+.brand-name aside.inactive {
   opacity: .3;
 }
 
-#app-control .app-control-step .brand-name .form-error {
+.brand-name .form-error {
   text-align: left;
-  font-size: 14px;
   position: absolute;
-  top: -30px;
+  top: -3rem;
   left: 0;
 }
 
 @media (min-width: 1040px) {
-  #app-control .app-control-step .brand-name .form-error {
-    top: -15px;
+  .brand-name .form-error {
+    top: -1rem;
   }
 }
 
-#app-control .app-control-step .brand-name > div {
+.brand-name > div {
   position: relative;
-  padding-top: 10px;
+  padding-top: 1rem;
 }
 
 @media (min-width: 660px) {
-  #app-control .app-control-step .brand-name > div {
+  .brand-name > div {
     padding-top: 0;
   }
 }
+
+/*BRAND NAME*/
 
 /*# sourceMappingURL=styles.css.map */

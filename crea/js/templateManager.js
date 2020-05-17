@@ -7,14 +7,14 @@ export default function templateManager () {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
 		if (_ctrl.sessionStatus == "START SESSION") {
-			$("aside", $("input[value='inp-design-" + id + "']").parent()).addClass("thumb-selected");
+			$("input[value='inp-design-" + id + "']").closest(".control-design-thumb").addClass("thumb-selected");
 		}
 		if (_ctrl.sessionStatus == "RESUME SESSION") {
 			id = _ctrl.jd.selections.templateTypeId.value;
 			$("[name^='inp-design']").removeAttr("checked");
-			let newInp = $("input[value='inp-design-" + id + "']");
-			newInp.attr("checked","checked");
-			$("aside", newInp.parent()).addClass("thumb-selected");
+			let $newInp = $("input[value='inp-design-" + id + "']");
+			$newInp.attr("checked","checked");
+			$newInp.closest(".control-design-thumb").addClass("thumb-selected");
 		}
 		if(templateChanged) { _ctrl.sessionStatus = "RESUME SESSION"; }
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");

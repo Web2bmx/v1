@@ -210,8 +210,8 @@ export default function appManager() {
 	var setAppSteps = function () {
 		/* TEMPLATE DESIGN*/
 		$(".control-design-thumb").on('click', function () {
-			$(".control-design-thumb aside.thumb-selected").removeClass("thumb-selected");
-			$("aside", this).addClass("thumb-selected");
+			$(this).parent().find(".thumb-selected").removeClass("thumb-selected");
+			$(this).addClass("thumb-selected");
 			$("[name^='inp-design']").prop("checked", false);
 			$("input", this).prop("checked", true);
 			_ctrl.new_templateManager.loadTemplate(afterTemplateLoad, true);
@@ -403,6 +403,7 @@ export default function appManager() {
 	};
 
 	var topStepMargin = function () {
+		/*
 		let actual = $(".app-control-step:visible > div"),
 			remain = $("#app-control").height() -
 				$("#app-control-nav").height() -
@@ -410,10 +411,13 @@ export default function appManager() {
 				actual.height();
 
 		actual.css("margin-top", remain > 0 ? remain / 2 + "px" : "0");
+		*/
 	};
 	var centerNav = function () {
+		/*
 		let parentW = $("#control-view-index").parent().width();
 		$("#control-view-index").css("padding-left", parentW / 2 - $("#control-view-index").width() / 2);
+		*/
 	};
 	var afterTemplateLoad = () => {
 		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');

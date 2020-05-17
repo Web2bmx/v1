@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/scripts.js"></script>
+		<link rel="stylesheet" href="../css/normalize.css">
 		<link rel="stylesheet" href="css/dynamic.php?hex=<?php echo($_GET['hex']); ?>&c=<?php echo($_GET['c']); ?>">
 	</head>
 	<body>

@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no" />
 		<meta name="author" content="Web2b">
 		<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../css/normalize.css">
 		<link rel="stylesheet" href="css/dynamic.php?hex=<?php echo($_GET['hex']); ?>&c=<?php echo($_GET['c']); ?>">
 	</head>
 	<body>
