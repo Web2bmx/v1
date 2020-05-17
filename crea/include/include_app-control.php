@@ -39,6 +39,9 @@
         <?php include_once("include/include_app-control-step_contact.php"); ?>
     </div>
     <div class="app-control-step">
+        <?php include_once("include/include_app-control-step_colors.php"); ?>
+    </div>
+    <div class="app-control-step">
         <div>
             <h2>¡Terminamos!</h2>
             <p>Revisa tu sitio antes de continuar.</p>
