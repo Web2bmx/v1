@@ -36,7 +36,7 @@ body {
 body * { font-size: inherit; }
 a { text-decoration: none; }
 /**/
-.template { display: none; }
+#component_templates { display: none; }
 #template-cont { @include box_block(); }
 #app {
 	@include box_block();
