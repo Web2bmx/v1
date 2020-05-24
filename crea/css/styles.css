@@ -614,12 +614,12 @@ a {
   margin: 1rem auto;
 }
 
-.app-control-step .product h2.children {
+.app-control-step .item-control h2.children {
   padding-right: 1rem;
   position: relative;
 }
 
-.app-control-step .product h2 a {
+.app-control-step .item-control h2 a {
   color: #9b035a;
   position: absolute;
   right: 1rem;
@@ -965,7 +965,7 @@ a {
   float: right;
 }
 
-.control-view-index-item {
+.control-view-index-step {
   background-color: #b4b4b4;
   cursor: pointer;
   float: left;
@@ -979,7 +979,7 @@ a {
   border-radius: 0.5rem;
 }
 
-.control-view-index-item.current {
+.control-view-index-step.current {
   background-color: #ff0593;
 }
 

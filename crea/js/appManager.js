@@ -10,36 +10,28 @@ export default function appManager() {
 		$(".app-control-step:gt(0)").hide();
 		$("#control-view-nav>a").on("click", function (e) {
 			e.preventDefault();
-			let totalItems = $("#app-control>.app-control-step").length;
 			if (!$(this).hasClass("disabled")) {
-				var inc = $(this).attr("href") == "#next" ? 1 : -1;
+				let inc = $(this).attr("href") == "#next" ? 1 : -1;
 				_ctrl.current_step += inc;
-				if (_ctrl.current_step >= totalItems) {
-					_ctrl.current_step = totalItems;
-				}
-				if (_ctrl.current_step == 1) {
-					$("#control-view-nav>a:eq(0)").removeClass("disabled");
-				}
+				let totalSteps = $("#app-control>.app-control-step").length;
+				if (_ctrl.current_step >= totalSteps) { _ctrl.current_step = totalSteps; }
+				if (_ctrl.current_step == 1) { $("#control-view-nav>a:eq(0)").removeClass("disabled"); }
 				goToStep(_ctrl.current_step);
 				_ctrl.new_templateManager.updateContent(e.currentTarget);
 			}
 		});
 		for (let i = 0; i < $("#app-control>.app-control-step").length - 1; i++) {
-			$("#control-view-index").append(($(".control-view-index-item.current").clone().removeClass("current")));
+			$("#control-view-index").append(($(".control-view-index-step.current").clone().removeClass("current")));
 		}
-		$(document).on("click", ".control-view-index-item", function (e) {
+		$(document).on("click", ".control-view-index-step", function (e) {
 			let $this = $(this);
-			let index = $(".control-view-index-item").index($this);
+			let index = $(".control-view-index-step").index($this);
 			_ctrl.current_step = index;
 			goToStep(_ctrl.current_step);
 			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
 		$(".control-view-nav-display-mark:eq(" + _ctrl.current_step + ")").addClass("control-view-nav-display-mark-active");
-		centerNav();
-		$(window).resize(function () {
-			centerNav();
-		});
-
+		
 		$(".finish").on("click", function () {
 			// _ctrl.current_step --;
 			// $("#app-cover").hide();
@@ -109,11 +101,6 @@ export default function appManager() {
 				$("#switch-edit").hide();
 				$("#control-view-nav").show();
 				$("#app-control").removeClass("view").find(">.app-control-step:eq(" + _ctrl.current_step + ")").show();
-				centerNav();
-				topStepMargin();
-				$(window).resize(function () {
-					topStepMargin();
-				});
 				if ($("#menu").length > 0 && $("#menu").css("position")) {
 					$("#menu").css("top", "0");
 				}
@@ -199,10 +186,12 @@ export default function appManager() {
 			$("#single-modal").fadeIn();
 		});
 		$("#app-control").on("itemWasAdded", function () {
-			_ctrl.current_step = _ctrl.new_itemManager.getIndex();
+			_ctrl.current_step = _ctrl.new_itemManager.getCurrentStep();
 			goToStep(_ctrl.current_step);
-			centerNav();
 		});
+		$("body").on("click", "#inp-content-item-add-y", function() {
+			_ctrl.new_itemManager.addItem();
+        });
 		$("body").on('DOMSubtreeModified', "#app-control-images-logo", function () {
 			$("#app-control-images-logo").parent().attr('style', '');
 		});
@@ -306,7 +295,7 @@ export default function appManager() {
 			$(".app-cover-finish").hide();
 		} else if (step < ($(".app-control-step").length)) {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
-			$(".control-view-index-item").removeClass("current").filter(":eq(" + step + ")").addClass("current");
+			$(".control-view-index-step").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		} else {
 			if (firstTime) {
 				// Hide buttons when already a page is built
@@ -401,24 +390,6 @@ export default function appManager() {
 		}
 		return diff;	
 	};
-
-	var topStepMargin = function () {
-		/*
-		let actual = $(".app-control-step:visible > div"),
-			remain = $("#app-control").height() -
-				$("#app-control-nav").height() -
-				$("#app-switch").height() -
-				actual.height();
-
-		actual.css("margin-top", remain > 0 ? remain / 2 + "px" : "0");
-		*/
-	};
-	var centerNav = function () {
-		/*
-		let parentW = $("#control-view-index").parent().width();
-		$("#control-view-index").css("padding-left", parentW / 2 - $("#control-view-index").width() / 2);
-		*/
-	};
 	var afterTemplateLoad = () => {
 		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
 	};
@@ -427,7 +398,6 @@ export default function appManager() {
 		setAppNavigation: setAppNavigation,
 		setAppControls: setAppControls,
 		setAppSteps: setAppSteps,
-		topStepMargin: topStepMargin,
 		goToStep: goToStep,
 		afterTemplateLoad: afterTemplateLoad,
 		hideTemplateElements: hideTemplateElements,

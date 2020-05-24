@@ -24,15 +24,7 @@ export default function templateManager () {
 		$("#template-cont").load(src + " #template", function() {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-			let items_in_jd = 1;
-			if(_ctrl.jd && _ctrl.jd.selections && _ctrl.jd.selections.products) {
-				items_in_jd = _ctrl.jd.selections.products.text;
-			}			
-			let items_in_template = $("#template .item").length;
-			for (let i = items_in_template; i < items_in_jd; i ++) {
-				_ctrl.new_itemManager.addItems(i);
-			}
-			_ctrl.new_itemManager.checkItemsNumber();
+			_ctrl.new_itemManager.setItems();
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 			updateContent('undefined');
 			$.ajax({
@@ -45,7 +37,6 @@ export default function templateManager () {
 	var updateContent = function (target) {
 		let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
-		_ctrl.new_appManager.topStepMargin();
 		
 		_ctrl.new_colorManager.updateColor(selections, $template)
 		
@@ -95,7 +86,7 @@ export default function templateManager () {
 					$this.data('place', arr[1]);
 				}
 				$this.val(text);
-				if(selections[i_id].active !== undefined && selections[i_id].active === false) {
+				if(selections[i_id] && selections[i_id].active !== undefined && selections[i_id].active === false) {
 					_ctrl.new_appManager.hideTemplateElements(true, i_id.replace('inp-','val-'));
 					_ctrl.new_appManager.hideFormElements("[name='" + i_id + "']", i_id, "text");
 				}				

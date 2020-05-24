@@ -72,8 +72,7 @@ export default function creator() {
 		_this.new_appManager.setAppControls();//4
 		_this.new_appManager.setAppSteps();//5
 		_this.new_templateManager.loadTemplate(_this.new_appManager.afterTemplateLoad);//6
-		_this.new_itemManager.setItems();//7
-		new_tooltipManager.setTooltips();//8				
+		new_tooltipManager.setTooltips();//7
 	};
 	return {
 		validation: validation,
