@@ -366,8 +366,12 @@ a {
   margin-top: 1rem;
 }
 
+.app-new-start {
+  font-size: 1rem;
+}
+
 .app-new-start .boton {
-  margin-top: 2rem;
+  margin: 2rem auto;
 }
 
 /*APP COVER*/

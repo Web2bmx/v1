@@ -124,7 +124,8 @@ a { text-decoration: none; }
 }
 .app-new-start { 
 	@extend .modal-login;
-	.boton { margin-top: 2rem; }
+	font-size: 1rem;
+	.boton { margin: 2rem auto; }
 }
 /*APP COVER*/
 /*APP COVER FINISH*/
