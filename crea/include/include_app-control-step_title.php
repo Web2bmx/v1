@@ -12,10 +12,6 @@
 		<h2 class="middle">ó</h2>
 		<aside>
 			<h4>Selecciona tu logo<a class="toogle"><i class="fas fa-toggle-on"></i></a></h4>
-			<div class="app-control-images" style="display: none">
-				<?php include("include_unsplash_referral.php"); ?>
-				<div id='app-control-images-logo'><div class="photo-container"></div></div>
-			</div>	
 			<form enctype="multipart/form-data" method="POST" class="file-upload">
 				<p class="one-line-text">
 					<span>Sube tu logotipo en formato png o jpg con un mínimo de 400px</span>
@@ -23,7 +19,11 @@
 					<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
 				</p>														
 				<input type="submit" disabled value="Subir foto"/>
-			</form>	
+			</form>				
+			<div class="app-control-images" style="display: none">
+				<?php include("include_unsplash_referral.php"); ?>
+				<div id='app-control-images-logo'><div class="photo-container"></div></div>
+			</div>
 		</aside>
 	</div>		
 </div>

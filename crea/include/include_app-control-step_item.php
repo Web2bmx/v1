@@ -15,12 +15,6 @@
 
 	</div>
 	<!-- <h2>Elige una imagen para tu principal producto o servicio</h2> -->
-	<div class="app-control-images">
-		<?php include("include_unsplash_referral.php"); ?>
-		<div id='app-control-images-item-1'>
-			<div class="photo-container"></div>
-		</div>
-	</div>
 	<form enctype="multipart/form-data" method="POST" class="file-upload">
 		<p class="one-line-text">
 			<span>Sube tus propias imágenes para personalizar tu sitio web.</span>
@@ -28,5 +22,12 @@
 			<input accept=".png, .jpg, .jpeg" type="file" name="item-1" value="Selecciona imagen" />
 		</p>
 		<input type="submit" disabled value="Subir foto"/>
-	</form>						
+	</form>		
+	<div class="app-control-images">
+		<?php include("include_unsplash_referral.php"); ?>
+		<div id='app-control-images-item-1'>
+			<div class="photo-container"></div>
+		</div>
+	</div>
+					
 </div>

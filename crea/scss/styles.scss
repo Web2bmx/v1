@@ -476,12 +476,12 @@ a { text-decoration: none; }
 	text-align: center;
 	#control-view-nav {
 		float: left;
-		height: 5rem;
-		margin-bottom: 0;
-		padding-top: 1rem;
+		margin-top: 1rem;
 		position: relative;
 		overflow: hidden;
 		width: 100%;
+		background: azure;
+
 		a {
 			bottom: 0;
 			margin: .5rem auto;
@@ -563,7 +563,7 @@ a { text-decoration: none; }
 		span{
 			width: 100%;
 			display: inline-block;
-			margin-top: 1rem;
+			margin-top: 1rem 0;
 			color: $gray40;
 			@include breakpoint($desktop){ width: 70%; }
 		}

@@ -924,12 +924,11 @@ a {
 
 #app-control-nav #control-view-nav {
   float: left;
-  height: 5rem;
-  margin-bottom: 0;
-  padding-top: 1rem;
+  margin-top: 1rem;
   position: relative;
   overflow: hidden;
   width: 100%;
+  background: azure;
 }
 
 #app-control-nav #control-view-nav a {
@@ -1061,7 +1060,7 @@ a {
 .file-upload p span {
   width: 100%;
   display: inline-block;
-  margin-top: 1rem;
+  margin-top: 1rem 0;
   color: #787878;
 }
 
