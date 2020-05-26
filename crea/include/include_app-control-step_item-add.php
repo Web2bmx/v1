@@ -3,5 +3,6 @@
 	<div>
 		<label for="inp-content-item-add-y">Sí</label><input type="radio" id="inp-content-item-add-y" name="inp-content-item-add" value="y" />
 		<label for="inp-content-item-add-n">No</label><input type="radio" id="inp-content-item-add-n" name="inp-content-item-add" value="n" checked="checked" />
+		<input type="hidden" id="inp-content-items-number" name="inp-content-items-number" value="0" />
 	</div>
 </div>

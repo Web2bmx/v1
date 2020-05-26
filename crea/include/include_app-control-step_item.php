@@ -1,4 +1,4 @@
-<div class="product">
+<div class="item-control">
 	<h2>	
 		<span>¿Cuál es tu principal producto o servicio?</span>
 		<!-- <a style="display:none" class="remove-item">

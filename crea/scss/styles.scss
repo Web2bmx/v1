@@ -124,7 +124,8 @@ a { text-decoration: none; }
 }
 .app-new-start { 
 	@extend .modal-login;
-	.boton { margin-top: 2rem; }
+	font-size: 1rem;
+	.boton { margin: 2rem auto; }
 }
 /*APP COVER*/
 /*APP COVER FINISH*/
@@ -278,7 +279,7 @@ a { text-decoration: none; }
 	aside {
 		margin: 1rem auto;
 	}
-	.product h2{
+	.item-control h2{
 		&.children{
 			padding-right: 1rem;
 			position: relative;
@@ -505,7 +506,7 @@ a { text-decoration: none; }
 	width: auto;
 	+ a { float: right; }
 }
-.control-view-index-item {
+.control-view-index-step {
 	background-color: $gray60;
 	cursor: pointer;
 	float: left;
@@ -515,7 +516,7 @@ a { text-decoration: none; }
 	width: .5rem;
 	@include border-radius(.5rem);
 }
-.control-view-index-item.current { background-color: $pink60; }
+.control-view-index-step.current { background-color: $pink60; }
 /*CONTROL VIEW INDEX*/
 /*APP SWITCH*/
 #app-switch {

@@ -52,7 +52,7 @@
             <a href='#prev' class="nav-btns prev">
                 <i class="fas fa-arrow-circle-left"></i>
             </a>
-            <div id="control-view-index"><div class="control-view-index-item current"></div></div>
+            <div id="control-view-index"><div class="control-view-index-step current"></div></div>
             <a href='#next' class="nav-btns next">
                 <i class="fas fa-arrow-circle-right"></i>
             </a>
