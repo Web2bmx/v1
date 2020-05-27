@@ -92,6 +92,10 @@ export default function templateManager () {
 				}				
 
 				updateSpecificFields($this, i_id, v_id, text, $template, selections);
+				if ($('#' + v_id + '[pattern]').length > 0) {
+					console.log(v_id);
+					_ctrl.new_appManager.validateFields('#' + v_id);
+				}				
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
 		}

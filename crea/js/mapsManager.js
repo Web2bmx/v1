@@ -16,11 +16,17 @@ export default function mapsManager() {
         mapId = map;
         initAutocomplete();
         if(_ctrl.jd && 
-			_ctrl.jd.selections &&
+            _ctrl.jd.selections &&
             _ctrl.jd.selections["inp-contact-address"] &&
-            _ctrl.jd.selections["inp-contact-address"].text &&
-            _ctrl.jd.selections["inp-contact-address"].text.search('##') != -1) {
-            updateMapSrc(_ctrl.jd.selections["inp-contact-address"].text);
+            _ctrl.jd.selections["inp-contact-address"].text) {
+
+            if (_ctrl.jd.selections["inp-contact-address"].text.search('##') != -1) {
+                updateMapSrc(_ctrl.jd.selections["inp-contact-address"].text);
+            } else {
+                $('#' + inputId).data('place', '');
+                $('.map-error').show();
+            }
+
         } else {
             getInitialPos();
         }  

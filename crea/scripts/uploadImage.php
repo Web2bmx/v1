@@ -6,7 +6,7 @@ foreach($_FILES as $file){
         $target_dir = "../client_images/";
         $name = $unique_id . "_" . basename($file["name"]);
         $target_file = $target_dir . $name;    
-        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+        $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
         $uploadOk = 1;
         $mensaje = new stdClass();
 
@@ -17,8 +17,8 @@ foreach($_FILES as $file){
         }
     
         // Check file size
-        if ($file["size"] > 500000) {
-            $mensaje->texto = "Lo sentimos, este archivo es muy grande.";
+        if ($file["size"] > 50000000) {
+            $mensaje->texto = "Lo sentimos, este archivo es muy grande. Intenta con uno mas pequeño.";
             $uploadOk = 0;
         }
         // Allow certain file formats
@@ -42,6 +42,9 @@ foreach($_FILES as $file){
             }
         }   
         echo json_encode($mensaje);
+        http_response_code(200);     
+    } else {
+        echo '{"texto":"Ha habido problemas en el servidor para subir tu imagen.","upload":0}';
         http_response_code(200);     
     }
 }

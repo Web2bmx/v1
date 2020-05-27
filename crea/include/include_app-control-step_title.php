@@ -9,19 +9,20 @@
 				<i class="fas fa-font"></i><input type="text" id="inp-content-name" name="inp-content-name" placeholder="Nombre de tu negocio" />
 			</div>
 		</aside>
-		<h2 class="middle">ó</h2>
 		<aside>
 			<h4>Selecciona tu logo<a class="toogle"><i class="fas fa-toggle-on"></i></a></h4>
 			<form enctype="multipart/form-data" method="POST" class="file-upload">
 				<p class="one-line-text">
 					<span>Sube tu logotipo en formato png o jpg con un mínimo de 400px</span>
-					<button>Carga tu imagen</button>
+					<button>Selecciona tu imagen...</button>
 					<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
 				</p>														
-				<input type="submit" disabled value="Subir foto"/>
+				<input type="submit" disabled value="Subir foto" class="boton"/>
 			</form>				
 			<div class="app-control-images" style="display: none">
-				<?php include("include_unsplash_referral.php"); ?>
+				<p>
+					Tus logotipos:
+				</p>
 				<div id='app-control-images-logo'><div class="photo-container"></div></div>
 			</div>
 		</aside>

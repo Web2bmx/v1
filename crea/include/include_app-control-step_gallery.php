@@ -2,11 +2,11 @@
 	<h2>Selecciona las imágenes para tu galería.</h2>
 	<form enctype="multipart/form-data" method="POST" class="file-upload">
 		<p class="one-line-text">
-			<span>Sube tus propias imágenes para personalizar tu sitio web.</span>
-			<button>Carga tu imagen</button>
+			<span>Sube tus imágenes para personalizar tu sitio.</span>
+			<button>Selecciona tu imagen...</button>
 			<input accept=".png, .jpg, .jpeg" type="file" name="gallery" value="Selecciona imagen" />
 		</p>
-		<input type="submit" disabled value="Subir foto"/>
+		<input type="submit" disabled value="Subir foto" class="boton"/>
 	</form>	
 	<div class="app-control-images">
 		<?php include("include_unsplash_referral.php"); ?>

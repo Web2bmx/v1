@@ -221,13 +221,20 @@ export default function imageManager () {
 		}
 	};
 	var uploadImage = (e) => {
-		e.preventDefault();
-		var f = $("input[type=file]",e.currentTarget),
-			formData = new FormData(),
-			ide = f.data("ide"),
-			name = f.attr("name");
-		$("input[type=submit],button",e.currentTarget).attr("disabled",true);
-		formData.append(f.attr("name"), f[0].files[0]);		
+		e.preventDefault();		
+
+		let parent = $(e.currentTarget).parent();
+		let f = $("input[type=file]",parent);
+		let	formData = new FormData();
+		let ide = f.data("ide");
+		let name = f.attr("name");
+
+		// remove previous errors
+		$('.error', parent).remove();
+
+		$("input[type=submit],button",parent).attr("disabled",true);
+		formData.append(f.attr("name"), f[0].files[0]);	
+
 		$.ajax({ url: ("scripts/uploadImage.php?unique_id=" + _ctrl.jd_templateId), type: "post", data: formData, cache: false, contentType: false, processData: false })
 		.done(function(res){
 			if(res.upload == 1){			
@@ -244,8 +251,14 @@ export default function imageManager () {
 				//}
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, name);
-      		}
-		}).always(function(){ $("button",e.currentTarget).attr("disabled",false); });
+      		} else {
+				parent.append("<span class='error'>Error al subir tu foto: " + res.texto + "</span>");
+			}
+		})
+		.fail((e)=>{
+			console.log(e);
+		})
+		.always(function(){ $("button",parent).attr("disabled",false); });
 	};
 	var saveImageInStorage = (img, cont, isGallery) => {
 		let pre = isGallery ? (_ctrl.jd.selections[cont].img + ",") : "";

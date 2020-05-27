@@ -57,6 +57,8 @@ export default function appManager() {
 				publishPagina(template_info, PagoResult.fecha);
 			}).fail(function (result) {
 				// Algo salio mal
+				$('.final-msgs p').text('Algo a salido mal. Por favor, intenta de nuevo. Si el error persiste, por favor contáctanos.');				
+				$('.final-msgs').dialog("open");				
 			});
 		});
 		/* SWITCH TEMPLATE */
@@ -126,18 +128,23 @@ export default function appManager() {
 			publishPagina();
 		});		
 	};
+	var validateFields = (element, isKeyup = false) => {
+		if (!$(element).attr('pattern') || _ctrl.new_validator.isValidinput($(element))) {
+			if (isKeyup) {
+				_ctrl.new_templateManager.updateContent(element);
+			}
+			$(".form-error", $(element).parent()).hide();
+		} else {
+			$(".form-error", $(element).parent()).show();
+		}
+	};
 	var setAppControls = function () {
 		$(document.body).on("change", "[name^='inp-'][type!='text']", function (e) {
 			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
 		$(document.body).on("keyup", "[name^='inp-'][type='text'][id!='inp-contact-address'],textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
-			if (!$(e.currentTarget).attr('pattern') || _ctrl.new_validator.isValidinput($(e.currentTarget))) {
-				_ctrl.new_templateManager.updateContent(e.currentTarget);
-				$(".form-error", $(e.currentTarget).parent()).hide();
-			} else {
-				$(".form-error", $(e.currentTarget).parent()).show();
-			}
+			validateFields(e.currentTarget, true);
 		});
 		$(document.body).on('click', '.img-thumb-cont', function () {
 			var $this = $(this);
@@ -207,14 +214,15 @@ export default function appManager() {
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {
-			$(e.currentTarget).next("input").click();
+			e.preventDefault();
+			$(e.currentTarget).next("input[type='file']").click();
 		});
 		$('.file-upload input[type=file]').on('change', (e) => {
 			let file = $(e.currentTarget)[0].files[0].name;
 			$("span", $(e.currentTarget).parent()).text(file);
 			$("input[type=submit]", $(e.currentTarget).closest("form")).attr("disabled", false);
 		});
-		$('.file-upload').on('submit', _ctrl.new_imageManager.uploadImage);
+		$('.file-upload input[type="submit"]').on('click', _ctrl.new_imageManager.uploadImage);
 		/* manage dialog */
 		$("#ok_btn").click(function () {
 			$(".alert.dialog").dialog("close");
@@ -297,6 +305,19 @@ export default function appManager() {
 			$(".app-control-step").hide().filter(":eq(" + step + ")").show();
 			$(".control-view-index-step").removeClass("current").filter(":eq(" + step + ")").addClass("current");
 		} else {
+			let errors = false;
+			let index = -1;
+			$(".form-error").each((i,el) => {
+				if ($(el).css("display") == "block" || $(el).css("display") == "inline") {
+					errors = true;
+					index = $(el).closest(".app-control-step").index();
+					return;
+				}			
+			});
+			if (errors) {
+				goToStep(index - 1);
+				return;
+			};
 			if (firstTime) {
 				// Hide buttons when already a page is built
 				let actual_page = _ctrl.new_dataManager.getObjFromLocalStorage('web2b_actualPage');
@@ -401,6 +422,7 @@ export default function appManager() {
 		goToStep: goToStep,
 		afterTemplateLoad: afterTemplateLoad,
 		hideTemplateElements: hideTemplateElements,
-		hideFormElements: hideFormElements
+		hideFormElements: hideFormElements,
+		validateFields: validateFields
 	};
 }
