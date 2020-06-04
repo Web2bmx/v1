@@ -6,14 +6,18 @@ export default function itemManager () {
 		_ctrl = _that;
 	};
     var setItems = function() {
-		/*FIRES ON CREATOR INIT AND AFTER TEMPLATE IS LOADED*/
-		if(_ctrl.jd && _ctrl.jd.selections && _ctrl.jd.selections["inp-content-items-number"]) {
-			_number_of_items = _ctrl.jd.selections["inp-content-items-number"].text;
-			$("#inp-content-items-number").val(_number_of_items);
-			for (let i = 0; i < _number_of_items; i++) { addItemToTemplate(i); }
-		} else {
-			_number_of_items = $("#template .item").length;
+		/*FIRES AFTER TEMPLATE IS LOADED*/
+		switch (_ctrl.sessionStatus) {
+			case "START SESSION" :
+				_number_of_items = $("#template .item").length;
+				break;
+			case "RESUME SESSION" :
+			case "UPDATE SESSION" :
+				_number_of_items = _ctrl.jd.selections["inp-content-items-number"].text;
+				for (let i = 0; i < _number_of_items; i++) { addItemToTemplate(i); }
+				break;
 		}
+		$("#inp-content-items-number").val(_number_of_items);
 		for (let i = 0; i < _number_of_items; i++) { addItemControl(i); }
 	};
 	var addItemControl = function(i) {
@@ -49,8 +53,8 @@ export default function itemManager () {
 		}
 		/*UPDATES CONTROL DATA*/
 		let i_img = _ctrl.jd.selections["#img-item-" + k] ? _ctrl.jd.selections["#img-item-" + k].img : "";
-		let i_t = _ctrl.jd.selections["inp-content-item-" + k] ? _ctrl.jd.selections["inp-content-item-" + k].text : "";
-		let i_c = _ctrl.jd.selections["inp-content-title-item-" + k] ? _ctrl.jd.selections["inp-content-title-item-" + k].text : "";
+		let i_t = _ctrl.sessionStatus == "START SESSION" ? $("#val-content-title-item-" + k).html() : _ctrl.jd.selections["inp-content-title-item-" + k].text;
+		let i_c = _ctrl.sessionStatus == "START SESSION" ? $("#val-content-item-" + k).html() : _ctrl.jd.selections["inp-content-item-" + k].text;
 		//img
 		$("#inp-content-title-item-" + k).val(i_t);
 		$("#inp-content-item-" + k).val(i_c);
