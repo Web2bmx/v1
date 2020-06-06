@@ -8,6 +8,11 @@ export default function appManager() {
 	var firstTime = true;
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();
+		$(".app-cover-start").on("tap",function(e){
+			if ($(".control-design-thumb").is(":visible").length == 1) {
+				//console.log("hi");
+			}
+		});
 		$("#control-view-nav>a").on("click", function (e) {
 			e.preventDefault();
 			if (!$(this).hasClass("disabled")) {

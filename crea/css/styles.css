@@ -336,6 +336,7 @@ a {
   max-width: 12rem;
   padding: 2rem 1rem;
   width: auto;
+  /*&:not(:first-child) { display: none; }*/
 }
 
 #app-cover .app-cover-start .control-design-thumb.thumb-selected i::before {
@@ -348,6 +349,12 @@ a {
 
 #app-cover .app-cover-start .control-design-thumb.thumb-selected {
   background-color: #ff52b4;
+}
+
+@media (min-width: 660px) {
+  #app-cover .app-cover-start .control-design-thumb:not(:first-child) {
+    display: block;
+  }
 }
 
 #app-cover .app-cover-start .control-design-thumb aside {
@@ -606,7 +613,7 @@ a {
 }
 
 .app-control-step h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
@@ -933,7 +940,6 @@ a {
   position: relative;
   overflow: hidden;
   width: 100%;
-  background: azure;
 }
 
 #app-control-nav #control-view-nav a {

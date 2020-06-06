@@ -115,7 +115,7 @@ export default function imageManager () {
 						let imgs_arr = imgs_str.split(",");
 						for (let i = 0; i < imgs_arr.length; i++){
 							let img = imgs_arr[i];
-							if(img.search('#web2b#') !== -1) {
+							if(img && img.search('#web2b#') !== -1) {
 								const arr = img.split('#web2b#');
 								img = arr[0];
 							}	
@@ -127,7 +127,7 @@ export default function imageManager () {
 						$("#gallery .gallery .img:gt(0)").hide();
 					} else {
 						let img = _ctrl.jd.selections[key].img;
-						if(img.search('#web2b#') !== -1) {
+						if(img && img.search('#web2b#') !== -1) {
 							const arr = img.split('#web2b#');
 							img = arr[0];
 						}						
@@ -190,7 +190,7 @@ export default function imageManager () {
 	};
 	var setUploadedImage = (img, cont, selected, append, index) => {
 		let arr = '';
-		if(img.search('#web2b#') !== -1) {
+		if(img && img.search('#web2b#') !== -1) {
 			arr = img.split('#web2b#');
 			img = arr[0];
 		}
