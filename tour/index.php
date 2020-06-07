@@ -44,9 +44,9 @@
                 <?php include "include/include_questions.php"; ?>
                 <div id="dialog-end" class="dialog">
                     <aside id="dialog-end-rocket"><img alt="" src="images/item_rocket.svg" /></aside>
-                    <h2>La misión ha sido un éxito</h2>
-                    <p>Ahora que ya tenemos tu informacion <br />Elaboraremos la mejor <br />Página web para ti</p>
-                    <nav><a href="/crea" class="boton">Quiero ver mi página web</a></nav>
+                    <h2>¡La misión ha sido un éxito!</h2>
+                    <p>Tenemos una página lista para tu Negocio.</p>
+                    <nav><a href="/crea" class="boton">Ver mi página web</a></nav>
                 </div>                                                              
             </section>
             <div id="stage">

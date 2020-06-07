@@ -199,6 +199,14 @@ a {
         width: 100%;
     }
 }
+.back {
+    float: left;
+    width: 50%;
+}
+.next {
+    float: right;
+    width: 50%;
+}
 @media screen and (min-width: $tablet) {
     .dialog {
         button, .boton {

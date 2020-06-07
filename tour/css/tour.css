@@ -311,6 +311,16 @@ a:hover, a:active {
   width: 100%;
 }
 
+.back {
+  float: left;
+  width: 50%;
+}
+
+.next {
+  float: right;
+  width: 50%;
+}
+
 @media screen and (min-width: 660px) {
   .dialog button, .dialog .boton {
     display: inline-block;
