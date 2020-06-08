@@ -9,7 +9,7 @@ export default function userValidator () {
     };
 
     var openLoginDialog = () => {
-        $(".app-new-start.dialog").dialog("option", "width", 400);
+        $(".app-new-start.dialog").dialog("option", "width", 300);
         $(".app-new-start.dialog").dialog("open");
     };
 
@@ -72,7 +72,11 @@ export default function userValidator () {
             } else if (!_ctrl.new_validator.validPassword($("#password").val())) {
                 $(".password-invalid").css("display", "block");
             } else {
-                _ctrl.new_dataManager.saveSelected(_ctrl.jd, 'inp-content-name', $("#nombrePagina").val().trim(), 'text');
+                let np = $("#nombrePagina").val().trim();
+                _ctrl.new_dataManager.saveSelected(_ctrl.jd, 'inp-content-name', np, 'text');
+                $("#inp-content-name").val(np);
+                let npfmt = formatValue(np);
+                $("#siteName").val(npfmt);
                 $.post("scripts/crear_usuario.php", {
                     correo: $("#correo").val().trim(),
                     password: $("#password").val(),
@@ -97,7 +101,17 @@ export default function userValidator () {
             }
         });
     };
-
+    var formatValue = function (s) {
+        s = s.toLowerCase();
+        s= s.replace(/ /g, '');
+        s= s.replace(/á/g, 'a');
+        s= s.replace(/é/g, 'e');
+        s= s.replace(/í/g, 'i');
+        s= s.replace(/ó/g, 'o');
+        s= s.replace(/ú/g, 'u');
+        s= s.replace(/ñ/g, 'n');
+        return s;
+    };
     return {
         init : init,
         setUserValidation: setUserValidation

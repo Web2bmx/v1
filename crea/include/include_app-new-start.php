@@ -7,15 +7,15 @@
 		</p>
 		<div class="inputWihIcons">
 			<i class="fas fa-font"></i>		
-			<input type="text" name="nombre" id="nombrePagina" value="" placeholder="Nombre de tu página" />
+			<input type="text" name="nombre" id="nombrePagina" value="" placeholder="Nombre de tu Negocio" />
 		</div>
 		<div class="inputWihIcons">
 			<i class="fas fa-envelope"></i>
-			<input type="email" name="correo" id="correo" value="" placeholder="Correo" />
+			<input type="email" name="correo" id="correo" value="" placeholder="Tu correo" />
 		</div>
 		<div class="inputWihIcons">
 			<i class="fas fa-asterisk"></i>
-			<input type="password" name="password" id="password" value="" placeholder="Contraseña" />
+			<input type="password" name="password" id="password" value="" placeholder="Tu contraseña" />
 		</div>
 		<span class="form-error name-invalid">Nombre de página inválido: Solo números y letras, sin espacios son permitidos.</span>						
 		<span class="form-error empty-fields">Alguno de los campos están vacios</span>
