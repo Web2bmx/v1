@@ -8,11 +8,18 @@ export default function appManager() {
 	var firstTime = true;
 	var setAppNavigation = function () {
 		$(".app-control-step:gt(0)").hide();
-		$(".app-cover-start").on("tap",function(e){
-			if ($(".control-design-thumb").is(":visible").length == 1) {
-				//console.log("hi");
-			}
-		});
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+			setTimeout(function() {
+				$(".control-design-cont").prepend($(".control-design-thumb.thumb-selected"));
+				$(".control-design-cont").prepend($(".control-design-thumb:last"));
+			}, 500);
+			$(".control-design-thumb").on("tap",function(e){
+				let $this = $(this);
+				let i = $(".control-design-thumb").index($this);
+				if (i == 0) { $this.parent().prepend($(".control-design-thumb:last")); }
+				if (i == 2) { $this.parent().append($(".control-design-thumb:first")); }
+			});
+		}	
 		$("#control-view-nav>a").on("click", function (e) {
 			e.preventDefault();
 			if (!$(this).hasClass("disabled")) {

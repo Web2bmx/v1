@@ -16,7 +16,7 @@
 			</a>
 		</aside>
 		<h2>Elige el diseño de tu página</h2>					
-		<div class="control-desing-cont">
+		<div class="control-design-cont">
 			<div class="control-design-thumb">
 				<aside>
 					<img src="Templates/Template-001/Thumb.png" />
