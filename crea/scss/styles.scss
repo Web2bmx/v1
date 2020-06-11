@@ -94,7 +94,7 @@ a { text-decoration: none; }
 			grid-template-columns: 1fr 1fr 1fr 1fr;
 			overflow: visible;
 			position: relative;
-			left: -8rem;
+			left: -8.5rem;
 			margin-top: 2rem;
 			@include breakpoint($tablet){ left: 0; grid-template-columns: 1fr 1fr;	}
 			@include breakpoint($desktop){ grid-template-columns: 1fr 1fr 1fr 1fr; }
@@ -471,8 +471,9 @@ a { text-decoration: none; }
 		border: none;
 		border-bottom: 1px solid $gray20;
 		padding: .5rem .5rem .25rem .5rem;
-		width: 40%;
+		width: 100%;
 		text-transform: lowercase;
+		@include breakpoint($desktop){ width: 40%; }
 	}
 	.form-error{ text-align: left; }
 }
@@ -551,6 +552,7 @@ a { text-decoration: none; }
 		float: right;
 		font-weight: normal;
 		text-transform: none;
+		width: 100%;
 		&:disabled{ opacity: 0.3; }
 	}
 	p{

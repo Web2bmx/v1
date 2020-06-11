@@ -318,7 +318,7 @@ a {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   overflow: visible;
   position: relative;
-  left: -8rem;
+  left: -8.5rem;
   margin-top: 2rem;
 }
 
@@ -925,8 +925,14 @@ a {
   border: none;
   border-bottom: 1px solid #3c3c3c;
   padding: .5rem .5rem .25rem .5rem;
-  width: 40%;
+  width: 100%;
   text-transform: lowercase;
+}
+
+@media (min-width: 1040px) {
+  .site-name-container input[type="text"] {
+    width: 40%;
+  }
 }
 
 .site-name-container .form-error {
@@ -1053,6 +1059,7 @@ a {
   float: right;
   font-weight: normal;
   text-transform: none;
+  width: 100%;
 }
 
 .file-upload input[type=submit]:disabled, .file-upload button:disabled {
