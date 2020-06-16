@@ -26,5 +26,5 @@
 				<div id='app-control-images-logo'><div class="photo-container"></div></div>
 			</div>
 		</aside>
-	</div>		
+	</div>
 </div>

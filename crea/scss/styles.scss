@@ -237,12 +237,12 @@ a { text-decoration: none; }
 		right: 4rem;
 	}
 	@include breakpoint($desktop){
-		left: 8rem;
-		right: 8rem;
-	}
-	@include breakpoint($ext-desktop){
 		left: 12rem;
 		right: 12rem;
+	}
+	@include breakpoint($ext-desktop){
+		left: 16rem;
+		right: 16rem;
 	}
 }
 #app-control.view {
@@ -258,8 +258,8 @@ a { text-decoration: none; }
 .app-control-step {
 	font-size: 1rem;
 	height: calc(100% - 10rem);
-	margin: 1rem 2rem 4rem 2rem;
-	padding: 1rem;
+	margin: 1rem 0 4rem 0;
+	padding: 1rem 2rem;
 	overflow-y: auto;
 	width: auto;
 	>div {
@@ -279,9 +279,14 @@ a { text-decoration: none; }
 		select { margin-bottom: 1rem; }
 	}
 	h2{
-		font-size: 1.5rem;
+		font-weight: bold;
 		margin-bottom: 1rem;
 		&.middle{ margin: 1rem 0; }
+		@include breakpoint($tablet){ font-size: 1.5rem; }
+	}
+	h3{
+		font-size: 1.25rem;
+		margin-bottom: .5rem;
 	}
 	aside {
 		margin: 1rem auto;
@@ -300,25 +305,59 @@ a { text-decoration: none; }
 	}
 }
 /*APP CONTROL STEP*/
+/*CONTAINER INPUT*/
+.container-input {
+	@include box_block();
+	margin-bottom: .5rem;
+	.inputWihIcons {
+		@include border-radius(.5rem);	
+		float: left;
+		width: calc(100% - 2rem);
+	}
+	label {
+		@include box_block();
+		margin-bottom: .25rem;
+	}
+	p {
+		clear: both;
+	}
+	.input-error {
+		@include border-radius(.5rem);	
+		border: 1px solid $red60;
+		display: none;
+		margin-bottom: .5rem;
+		padding: 1rem;
+	}
+}
+.container-input.container-error {
+	.inputWihIcons {
+		border-color: $red60;
+	}
+	.input-error {
+		display: block;
+	}
+}
+/*CONTAINER INPUT*/
 /*TOOLTIP*/
 .app-control-step-tooltip {
-	@include border-radius(.5rem);	
+	@include border-radius(2rem);	
 	@include box_block(auto);
-	border: 1px solid $pink60;
+	background-color: $blue80;
+	color: $white;
 	cursor: pointer;
 	display: inline;
-	font-size: 1rem;
+	font-size: .75rem;
 	margin-left: .5rem;
-	padding: 0 .5rem;
-	vertical-align: super;
+	padding: .25rem .5rem;
+	position: relative;
+	top: .5rem;
 }
 .app-control-step-tooltip-info {
 	@include border-radius(.5rem);	
-	background-color: $white;
-	border: 1px solid $pink60;
+	border: 1px solid $blue60;
 	display: none;
-	padding: .5rem;
-	margin-bottom: 1rem;
+	margin-bottom: .5rem;
+	padding: 1rem;
 }
 .app-control-step-tooltip-info.active { display: block; }
 /*TOOLTIP*/
@@ -462,22 +501,18 @@ a { text-decoration: none; }
 	margin: 0 auto;
 }
 /*CONTROL IMAGES*/
-/*SITE NAME*/
-.site-name-container{
+/*NAME CONTROL*/
+.inputWihIcons {
 	position: relative;
-	text-align: left;
-	input[type="text"]{
-		background: none;
-		border: none;
-		border-bottom: 1px solid $gray20;
-		padding: .5rem .5rem .25rem .5rem;
-		width: 100%;
-		text-transform: lowercase;
-		@include breakpoint($desktop){ width: 40%; }
+	span {
+		@include box_absolute();
+		left: auto;
+		font-size: .5rem;
+		right: .5rem;
+		top: 1rem;
 	}
-	.form-error{ text-align: left; }
 }
-/*SITE NAME*/
+/*NAME CONTROL*/
 /*APP CONTROL NAV*/
 #app-control-nav {
 	@include box_block();
@@ -632,27 +667,3 @@ a { text-decoration: none; }
     position: relative;
     top: -5px;	
 }
-/*BRAND NAME*/
-.brand-name {
-	h4{
-		a {
-			color: $pink20;
-			font-size: 2rem;
-			margin-left: 1rem;
-		}
-	}
-	aside.inactive { opacity: .3; }
-	.form-error{
-		text-align: left;
-		position: absolute;
-		top: -3rem;
-		left: 0;
-		@include breakpoint($desktop){ top: -1rem; }
-	}
-	> div {
-		position: relative;
-		padding-top: 1rem;
-		@include breakpoint($tablet){ padding-top: 0; }		
-	}
-}
-/*BRAND NAME*/

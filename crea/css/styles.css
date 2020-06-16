@@ -551,15 +551,15 @@ a {
 
 @media (min-width: 1040px) {
   #app-control {
-    left: 8rem;
-    right: 8rem;
+    left: 12rem;
+    right: 12rem;
   }
 }
 
 @media (min-width: 1280px) {
   #app-control {
-    left: 12rem;
-    right: 12rem;
+    left: 16rem;
+    right: 16rem;
   }
 }
 
@@ -583,8 +583,8 @@ a {
 .app-control-step {
   font-size: 1rem;
   height: calc(100% - 10rem);
-  margin: 1rem 2rem 4rem 2rem;
-  padding: 1rem;
+  margin: 1rem 0 4rem 0;
+  padding: 1rem 2rem;
   overflow-y: auto;
   width: auto;
 }
@@ -624,12 +624,23 @@ a {
 }
 
 .app-control-step h2 {
-  font-size: 1.5rem;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .app-control-step h2.middle {
   margin: 1rem 0;
+}
+
+@media (min-width: 660px) {
+  .app-control-step h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.app-control-step h3 {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
 }
 
 .app-control-step aside {
@@ -649,23 +660,75 @@ a {
 }
 
 /*APP CONTROL STEP*/
-/*TOOLTIP*/
-.app-control-step-tooltip {
+/*CONTAINER INPUT*/
+.container-input {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.container-input .inputWihIcons {
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   border-radius: 0.5rem;
+  float: left;
+  width: calc(100% - 2rem);
+}
+
+.container-input label {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: .25rem;
+}
+
+.container-input p {
+  clear: both;
+}
+
+.container-input .input-error {
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ff052f;
+  display: none;
+  margin-bottom: .5rem;
+  padding: 1rem;
+}
+
+.container-input.container-error .inputWihIcons {
+  border-color: #ff052f;
+}
+
+.container-input.container-error .input-error {
+  display: block;
+}
+
+/*CONTAINER INPUT*/
+/*TOOLTIP*/
+.app-control-step-tooltip {
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
   display: block;
   height: auto;
   overflow: hidden;
   width: auto;
-  border: 1px solid #ff0593;
+  background-color: #5091ff;
+  color: white;
   cursor: pointer;
   display: inline;
-  font-size: 1rem;
+  font-size: .75rem;
   margin-left: .5rem;
-  padding: 0 .5rem;
-  vertical-align: super;
+  padding: .25rem .5rem;
+  position: relative;
+  top: .5rem;
 }
 
 .app-control-step-tooltip-info {
@@ -673,11 +736,10 @@ a {
   -ms-border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   border-radius: 0.5rem;
-  background-color: white;
-  border: 1px solid #ff0593;
+  border: 1px solid #055dff;
   display: none;
-  padding: .5rem;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
+  padding: 1rem;
 }
 
 .app-control-step-tooltip-info.active {
@@ -914,32 +976,24 @@ a {
 }
 
 /*CONTROL IMAGES*/
-/*SITE NAME*/
-.site-name-container {
+/*NAME CONTROL*/
+.inputWihIcons {
   position: relative;
-  text-align: left;
 }
 
-.site-name-container input[type="text"] {
-  background: none;
-  border: none;
-  border-bottom: 1px solid #3c3c3c;
-  padding: .5rem .5rem .25rem .5rem;
-  width: 100%;
-  text-transform: lowercase;
+.inputWihIcons span {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  left: auto;
+  font-size: .5rem;
+  right: .5rem;
+  top: 1rem;
 }
 
-@media (min-width: 1040px) {
-  .site-name-container input[type="text"] {
-    width: 40%;
-  }
-}
-
-.site-name-container .form-error {
-  text-align: left;
-}
-
-/*SITE NAME*/
+/*NAME CONTROL*/
 /*APP CONTROL NAV*/
 #app-control-nav {
   display: block;
@@ -1168,42 +1222,5 @@ a {
   position: relative;
   top: -5px;
 }
-
-/*BRAND NAME*/
-.brand-name h4 a {
-  color: #660a3f;
-  font-size: 2rem;
-  margin-left: 1rem;
-}
-
-.brand-name aside.inactive {
-  opacity: .3;
-}
-
-.brand-name .form-error {
-  text-align: left;
-  position: absolute;
-  top: -3rem;
-  left: 0;
-}
-
-@media (min-width: 1040px) {
-  .brand-name .form-error {
-    top: -1rem;
-  }
-}
-
-.brand-name > div {
-  position: relative;
-  padding-top: 1rem;
-}
-
-@media (min-width: 660px) {
-  .brand-name > div {
-    padding-top: 0;
-  }
-}
-
-/*BRAND NAME*/
 
 /*# sourceMappingURL=styles.css.map */

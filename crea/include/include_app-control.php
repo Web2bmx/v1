@@ -9,13 +9,7 @@
         </menu>
     </div>	
     <div class="app-control-step" style>
-        <?php include_once("include/include_app-control-step_site-name.php"); ?>
-    </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_title.php"); ?>
-    </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_slogan.php"); ?>
+        <?php include_once("include/include_app-control-step_name.php"); ?>
     </div>
     <div class="app-control-step">
         <?php include_once("include/include_app-control-step_hero-banner.php"); ?>

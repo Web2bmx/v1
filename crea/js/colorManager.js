@@ -40,6 +40,7 @@ export default function colorManager () {
 			$("#inp-palette-" + _palette).attr("checked", "checked");
 			
 		} 
+		console.log(_ctrl.sessionStatus);
 		if (_ctrl.sessionStatus == 'UPDATE SESSION') {
 			_palette = $("[name='inp-palette']:checked").val();
 			selections["palette"].text = _palette;

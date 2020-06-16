@@ -145,9 +145,9 @@ export default function appManager() {
 			if (isKeyup) {
 				_ctrl.new_templateManager.updateContent(element);
 			}
-			$(".form-error", $(element).parent()).hide();
+			$(element).closest(".container-input").removeClass("container-error");
 		} else {
-			$(".form-error", $(element).parent()).show();
+			$(element).closest(".container-input").addClass("container-error");
 		}
 	};
 	var setAppControls = function () {
@@ -226,10 +226,12 @@ export default function appManager() {
 		});
 		/* Upload image*/
 		$('.file-upload button').on("click", (e) => {
+			console.log($(e.currentTarget).next("input[type='file']").length);
 			e.preventDefault();
-			$(e.currentTarget).next("input[type='file']").click();
+			$(e.currentTarget).parent().find("input[type='file']").click();
 		});
 		$('.file-upload input[type=file]').on('change', (e) => {
+			console.log("hi");
 			let file = $(e.currentTarget)[0].files[0].name;
 			$("span", $(e.currentTarget).parent()).text(file);
 			$("input[type=submit]", $(e.currentTarget).closest("form")).attr("disabled", false);
@@ -239,8 +241,22 @@ export default function appManager() {
 		$("#ok_btn").click(function () {
 			$(".alert.dialog").dialog("close");
 		});
-		$(".brand-name .toogle").click(function (e) {
+		$(".name-control .toogle").click(function (e) {
 			e.preventDefault();
+			let $this = $(this);
+			let $p = $this.closest(".container-input");
+			
+			if ($this.find(".fas.fa-toggle-on").length > 0) {
+				console.log("off");
+				$this.find(".fas.fa-toggle-on").attr("class", "fas fa-toggle-off");
+				$p.find(">*").hide();
+				$this.parent().show();
+			} else {
+				console.log("on");
+				$this.find(".fas.fa-toggle-off").attr("class", "fas fa-toggle-on");
+				$p.find(">*").show();
+			}
+			/*
 			let name = $(this).closest("aside").children().find('input[name^="inp-"]').attr("name");
 			let selector = name ? '[name="' + name + '"]' : this;
 			let type = $(this).closest("aside").children().find('input[name^="inp-"]').attr("type");
@@ -249,7 +265,8 @@ export default function appManager() {
 			}
 
 			hideFormElements(selector, name, type);
-		});
+			*/
+		}).filter(":eq(1)").trigger("click");
 	};
 
 	var hideFormElements = function (selector, name, type) {
@@ -265,10 +282,10 @@ export default function appManager() {
 				type === 'text' ? type : 'image');
 
 			hideTemplateElements(false, name);
-		} else if ($(".brand-name aside.inactive").length > 0) {
-			$(".brand-name .form-error").fadeIn(500);
+		} else if ($(".name-control aside.inactive").length > 0) {
+			$(".name-control .form-error").fadeIn(500);
 			setTimeout(() => {
-				$(".brand-name .form-error").fadeOut(500);
+				$(".name-control .form-error").fadeOut(500);
 			}, 5000);
 		} else {
 			$(selector).closest("aside").addClass("inactive");
