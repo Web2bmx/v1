@@ -6,9 +6,9 @@
 		</a> -->
 	</h2>
 	<div class="container-input">	
-
-		<div class="inp-cont">
-			<input class='noIcon' type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" /><br />
+		<div class="inputWihIcons inp-cont">
+			<i class="fas fa-pen"></i>
+			<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Tu primer producto o servicio" />
 		</div>
 	</div>
 	<div class="container-input">	
