@@ -558,8 +558,8 @@ a {
 
 @media (min-width: 1280px) {
   #app-control {
-    left: 16rem;
-    right: 16rem;
+    left: 24rem;
+    right: 24rem;
   }
 }
 
@@ -587,6 +587,12 @@ a {
   padding: 1rem 2rem;
   overflow-y: auto;
   width: auto;
+}
+
+@media (min-width: 1040px) {
+  .app-control-step {
+    padding: 1rem 4rem;
+  }
 }
 
 .app-control-step > div {
@@ -828,17 +834,13 @@ a {
 .app-control-images {
   display: block;
   height: auto;
+  margin-top: 1rem;
   overflow: visible;
   position: relative;
   width: auto;
 }
 
-.app-control-images > p {
-  width: 100%;
-  text-align: left;
-}
-
-.app-control-images > p a {
+.app-control-images a {
   text-decoration: underline;
   color: #b4b4b4;
 }
@@ -856,21 +858,9 @@ a {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 660px) {
-  .photo-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
 @media (min-width: 1040px) {
   .photo-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 1280px) {
-  .photo-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1147,14 +1137,7 @@ a {
 
 .file-upload button {
   width: 100%;
-  margin-top: 1rem;
-}
-
-@media (min-width: 1040px) {
-  .file-upload button {
-    width: auto;
-    margin-top: 0;
-  }
+  margin: 1rem 0;
 }
 
 .file-upload .error {

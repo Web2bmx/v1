@@ -201,9 +201,8 @@ export default function appManager() {
 		$(document.body).on('click', '.img-thumb-cont-zoom', function () {
 			let img_url = $(this).parent().find(".img-thumb-cont").attr("data-img-url");
 			$("#single-modal>div").html("<img src='" + img_url + "' class='img-thumb-zoomed' />");
-			console.log($("#single-modal>div"));
 			$("#single-modal").fadeIn();
-		});
+		}).append($("#single-modal"));
 		$("#app-control").on("itemWasAdded", function () {
 			_ctrl.current_step = _ctrl.new_itemManager.getCurrentStep();
 			goToStep(_ctrl.current_step);
@@ -241,20 +240,13 @@ export default function appManager() {
 		$("#ok_btn").click(function () {
 			$(".alert.dialog").dialog("close");
 		});
-		$(".name-control .toogle").click(function (e) {
+		$(".toggle").click(function (e) {
 			e.preventDefault();
 			let $this = $(this);
-			let $p = $this.closest(".container-input");
-			
 			if ($this.find(".fas.fa-toggle-on").length > 0) {
-				console.log("off");
 				$this.find(".fas.fa-toggle-on").attr("class", "fas fa-toggle-off");
-				$p.find(">*").hide();
-				$this.parent().show();
 			} else {
-				console.log("on");
 				$this.find(".fas.fa-toggle-off").attr("class", "fas fa-toggle-on");
-				$p.find(">*").show();
 			}
 			/*
 			let name = $(this).closest("aside").children().find('input[name^="inp-"]').attr("name");
@@ -266,7 +258,16 @@ export default function appManager() {
 
 			hideFormElements(selector, name, type);
 			*/
-		}).filter(":eq(1)").trigger("click");
+		});
+		$("#toggle-logotipo").click(function(e) {
+			e.preventDefault();
+			let $this = $(this);
+			if ($this.find(".fas.fa-toggle-on").length > 0) {
+				$this.next(".conditional-input").show();
+			} else {
+				$this.next(".conditional-input").hide();
+			}
+		}).trigger("click");
 	};
 
 	var hideFormElements = function (selector, name, type) {

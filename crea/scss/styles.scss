@@ -241,8 +241,8 @@ a { text-decoration: none; }
 		right: 12rem;
 	}
 	@include breakpoint($ext-desktop){
-		left: 16rem;
-		right: 16rem;
+		left: 24rem;
+		right: 24rem;
 	}
 }
 #app-control.view {
@@ -262,6 +262,9 @@ a { text-decoration: none; }
 	padding: 1rem 2rem;
 	overflow-y: auto;
 	width: auto;
+	@include breakpoint($desktop){
+		padding: 1rem 4rem;
+	}
 	>div {
 		@include box_block();
 		input[type="text"].noIcon, select{
@@ -412,16 +415,13 @@ a { text-decoration: none; }
 .app-control-images {
 	display: block;
 	height: auto;
+	margin-top: 1rem;
 	overflow: visible;
 	position: relative;
 	width: auto;
-	> p {
-		width: 100%;
-		text-align: left;
-		a {
-			text-decoration: underline;
-			color: $gray60;
-		}
+	a {
+		text-decoration: underline;
+		color: $gray60;
 	}
 }
 [id^="app-control-images"] {
@@ -434,9 +434,7 @@ a { text-decoration: none; }
 	overflow: hidden;
 	width: auto;
 	grid-template-columns: 1fr;
-	@include breakpoint($tablet){ grid-template-columns: 1fr 1fr; }
-	@include breakpoint($desktop){ grid-template-columns: 1fr 1fr 1fr; }
-	@include breakpoint($ext-desktop){ grid-template-columns: 1fr 1fr 1fr 1fr; }
+	@include breakpoint($desktop){ grid-template-columns: 1fr 1fr; }
 }
 .img-thumb {	
 	cursor: pointer;
@@ -610,11 +608,7 @@ a { text-decoration: none; }
 	}
 	button {
 		width: 100%;
-		margin-top: 1rem;
-		@include breakpoint($desktop){
-			width: auto;
-			margin-top: 0;
-		}		
+		margin: 1rem 0;
 	}
 	.error {
 		display: block;
