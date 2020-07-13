@@ -3,7 +3,7 @@ export default function templateManager () {
 	var init = function(_that) {
         _ctrl = _that;
     };
-    var loadTemplate = function(callback, templateChanged = false) {
+    var loadTemplate = function(templateChanged = false) {
 		let id = $("[name^='inp-design']:checked").val();
 		id = id.replace("inp-design-", "");
 		if (_ctrl.sessionStatus == "START SESSION") {
@@ -27,22 +27,25 @@ export default function templateManager () {
 			_ctrl.new_itemManager.setItems();
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
 			updateContent('undefined');
+			console.log("TEMPLATE LOADED");
 			$.ajax({
 				url: ("Templates/Template-" + id + "/js/scripts.js"),
 				dataType: "script"
 			});			
-			callback();
 		});
+		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
 	};
-	var updateContent = function (target) {
+	var updateContent = function (target, type = null) {
 		let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
-		
-		_ctrl.new_colorManager.updateColor(selections, $template)
-		
-		updateTexts($template, selections);
-		updateImages(target);
-		updateRemoveControls($template, selections);
+		if (type == null || type == "text") {
+			updateTexts($template, selections);
+		}
+		if (type == null) {
+			_ctrl.new_colorManager.updateColor(selections, $template)
+			updateImages(target);
+			updateRemoveControls($template, selections);
+		}
 		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }
 	};
@@ -87,14 +90,14 @@ export default function templateManager () {
 				}
 				$this.val(text);
 				if(selections[i_id] && selections[i_id].active !== undefined && selections[i_id].active === false) {
-					_ctrl.new_appManager.hideTemplateElements(true, i_id.replace('inp-','val-'));
-					_ctrl.new_appManager.hideFormElements("[name='" + i_id + "']", i_id, "text");
+					hideTemplateElements(true, i_id.replace('inp-','val-'));
+					_ctrl.new_menuManager.hideFormElements("[name='" + i_id + "']");
 				}				
 
 				updateSpecificFields($this, i_id, v_id, text, $template, selections);
 				if ($('#' + v_id + '[pattern]').length > 0) {
 					console.log(v_id);
-					_ctrl.new_appManager.validateFields('#' + v_id);
+					_ctrl.new_utilsManager.validateFields('#' + v_id);
 				}				
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
@@ -139,6 +142,20 @@ export default function templateManager () {
 
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
+		}
+	};
+	var hideTemplateElements = function (hide, selector) {
+		if (selector === "#img-logo" || selector == undefined) {
+			if (!hide)
+				$('#branding').show();
+			else
+				$('#branding').hide();
+		} else {
+			selector = selector.replace('inp-', 'val-');
+			if (!hide)
+				$('#' + selector).show();
+			else
+				$('#' + selector).hide();
 		}
 	};
 	var updateSpecificFields = function($this, i_id, v_id, text, $template, selections) {
@@ -197,18 +214,28 @@ export default function templateManager () {
 		if (_ctrl.sessionStatus == "RESUME SESSION") {
 			$("[id^='inp-rem-']").each(function() {
 				let $this = $(this);
-				let v = selections[$this.attr("id")].text;
+				let v = selections[$this.attr("id")] && selections[$this.attr("id")].text ? selections[$this.attr("id")].text : "N";
 				let sec = "";
 				switch ($this.attr("id")) {
 					case "inp-rem-content-cta" :
-						sec = ".cta-cont";
+						sec = "#cta";
 						break;
 					case "inp-rem-content-aboutus" :
-						sec = ".aboutus-cont";
+						sec = "#aboutus";
+						break;
+					case "inp-rem-content-gallery" :
+							sec = "#gallery";
+							break;
+					case "inp-rem-content-logo" :
+						sec = "#branding";
 						break;	 
 				}
 				if (v == "N") {
-					$this.prop("checked", false);		
+					$this.prop("checked", false);
+					let i = $this.attr("id").replace("inp-rem-content", "#toggle");
+					let t = $this.attr("id").replace("inp-rem-content", "#conditional");
+					$(i).find(".fas.fa-toggle-on").attr("class", "fas fa-toggle-off");
+					_ctrl.new_menuManager.hideFormElements($(t));
 					$template.find(sec).hide();
 				}
 			});	
@@ -220,14 +247,22 @@ export default function templateManager () {
 				let sec = "";
 				switch ($this.attr("id")) {
 					case "inp-rem-content-cta" :
-						sec = ".cta-cont";
+						sec = "#cta";
 						break;
 					case "inp-rem-content-aboutus" :
-						sec = ".aboutus-cont";
+						sec = "#aboutus";
+						break;	 
+					case "inp-rem-content-gallery" :
+						sec = "#gallery";
+						break;
+					case "inp-rem-content-logo" :
+						sec = "#branding";
 						break;	 
 				}
 				if ($this.is(":checked")) { v = "Y"; } else { v = "N"; }
-				selections[$this.attr("id")].text = v;
+				if (selections[$this.attr("id")] && selections[$this.attr("id")].text) {
+					selections[$this.attr("id")].text = v;
+				}
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,$this.attr("id"),v,'text');		
 				if (v == "N") {
 					$template.find(sec).hide();
@@ -246,6 +281,7 @@ export default function templateManager () {
 		init : init,
 		loadTemplate : loadTemplate,
 		updateContent: updateContent, 
+		hideTemplateElements: hideTemplateElements,
 		updateTexts: updateTexts
     };
 }

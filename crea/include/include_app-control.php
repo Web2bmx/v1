@@ -2,7 +2,7 @@
     <div id='app-switch'>
         <menu>
             <li><a id='switch-view'><i class="far fa-eye"></i><span>Ver mi página</span></a></li>
-            <li><a id='switch-edit' style="display: none;"><i class="fas fa-wrench"></i><span>Editar</span></a></li>
+            <li><a id='switch-edit'><i class="fas fa-wrench"></i><span>Editar</span></a></li>
             <li><a id='publish' style="display: none;"><i class="fas fa-upload"></i><span>Publicar</span></a></li>
             <li><a class='change-page' style="display: none;"><i class="fas fa-exchange-alt"></i><span>Cambiar</span></a></li>
             <li><a class='logout'><i class="fas fa-sign-out-alt"></i><span>Salir</span></a></li>
@@ -15,10 +15,10 @@
         <?php include_once("include/include_app-control-step_hero-banner.php"); ?>
     </div>
     <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_about-us.php"); ?>
+        <?php include_once("include/include_app-control-step_colors.php"); ?>
     </div>
     <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_cta.php"); ?>
+        <?php include_once("include/include_app-control-step_contact.php"); ?>
     </div>
     <div class="app-control-step">
         <?php include_once("include/include_app-control-step_item.php"); ?>
@@ -27,13 +27,7 @@
         <?php include_once("include/include_app-control-step_item-add.php"); ?>
     </div>
     <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_gallery.php"); ?>
-    </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_contact.php"); ?>
-    </div>
-    <div class="app-control-step">
-        <?php include_once("include/include_app-control-step_colors.php"); ?>
+        <?php include_once("include/include_app-control-step_optionals.php"); ?>
     </div>
     <div class="app-control-step">
         <div>

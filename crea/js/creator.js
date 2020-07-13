@@ -4,6 +4,9 @@ import tooltipManager from "./tooltipManager";
 import itemManager from "./itemManager";
 import templateManager from "./templateManager";
 import appManager from "./appManager";
+import menuManager from "./menuManager";
+import paymentsManager from "./paymentsManager";
+import utilsManager from "./utilsManager";
 import dataManager from "../../js/dataManager";
 import pageManager from '../../js/pageManager';
 import validator from "./validator";
@@ -35,6 +38,12 @@ export default function creator() {
 	_this.new_templateManager.init(_this);
 	_this.new_appManager = new appManager();
 	_this.new_appManager.init(_this);
+	_this.new_menuManager = new menuManager();
+	_this.new_menuManager.init(_this);
+	_this.new_paymentsManager = new paymentsManager();
+	_this.new_paymentsManager.init(_this);
+	_this.new_utilsManager = new utilsManager();
+	_this.new_utilsManager.init(_this);
 	_this.new_userValidator = new userValidator();
 	_this.new_userValidator.init(_this);
 	/**/
@@ -68,11 +77,10 @@ export default function creator() {
 	};
 	var init = function () {/*2*/
 		_this.new_userValidator.setUserValidation();
-		_this.new_appManager.setAppNavigation();//3
-		_this.new_appManager.setAppControls();//4
-		_this.new_appManager.setAppSteps();//5
+		_this.new_appManager.setApp();//3
 		_this.new_templateManager.loadTemplate(_this.new_appManager.afterTemplateLoad);//6
 		new_tooltipManager.setTooltips();//7
+		_this.new_paymentsManager.createPaypalButtons();
 	};
 	return {
 		validation: validation,

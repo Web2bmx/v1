@@ -217,6 +217,10 @@ a {
   text-decoration: none;
 }
 
+.hidden {
+  display: none;
+}
+
 /**/
 #component_templates {
   display: none;
@@ -542,24 +546,10 @@ a {
     -webkit-border-radius: 1rem;
     border-radius: 1rem;
     bottom: 4rem;
-    left: 4rem;
+    left: calc((100% - 40rem) / 2);
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     top: 4rem;
-    right: 4rem;
-  }
-}
-
-@media (min-width: 1040px) {
-  #app-control {
-    left: 12rem;
-    right: 12rem;
-  }
-}
-
-@media (min-width: 1280px) {
-  #app-control {
-    left: 24rem;
-    right: 24rem;
+    width: 40rem;
   }
 }
 
@@ -572,6 +562,7 @@ a {
   left: 0;
   top: 0;
   right: 0;
+  width: 100%;
 }
 
 #app-control.view #app-control-nav, #app-control.view .app-control-step {
@@ -686,6 +677,7 @@ a {
   border-radius: 0.5rem;
   border: 1px solid #b4b4b4;
   height: 10rem;
+  max-width: 38rem;
   width: calc(100% - 4rem);
   padding: 1rem;
 }
@@ -719,6 +711,10 @@ a {
 
 .container-input.container-error .input-error {
   display: block;
+}
+
+.remove-content {
+  display: none;
 }
 
 /*CONTAINER INPUT*/
@@ -763,8 +759,9 @@ a {
 #inp-color {
   border: none;
   cursor: pointer;
-  height: 5rem;
-  width: 5rem;
+  float: left;
+  height: 3rem;
+  width: calc(100% - 2rem);
 }
 
 #app-control-palettes {
@@ -773,26 +770,8 @@ a {
   overflow: hidden;
   width: 100%;
   display: grid;
-  grid-gap: 1rem 1rem;
+  grid-gap: 1rem 0;
   grid-template-columns: 1fr;
-}
-
-@media (min-width: 660px) {
-  #app-control-palettes {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1040px) {
-  #app-control-palettes {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-@media (min-width: 1280px) {
-  #app-control-palettes {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  }
 }
 
 .control-color {
@@ -800,12 +779,21 @@ a {
   height: auto;
   overflow: hidden;
   width: 100%;
-  height: 8rem;
+  display: grid;
+  grid-gap: 0 1rem;
+  grid-template-columns: 1fr 1fr 0;
+  height: 3rem;
+}
+
+@media (min-width: 660px) {
+  .control-color {
+    grid-template-columns: 2fr 1fr 0;
+  }
 }
 
 .control-color h4 {
   font-weight: normal;
-  margin: 0 0 .5rem 0;
+  margin: .5rem 0 0 0;
 }
 
 .control-color-thumb {
@@ -1029,6 +1017,10 @@ a {
   cursor: default;
 }
 
+#app-control-nav.view #control-view-nav {
+  display: none;
+}
+
 /*APP CONTROL NAV*/
 /*CONTROL VIEW INDEX*/
 #control-view-index {
@@ -1091,6 +1083,18 @@ a {
 
 #app-switch a span {
   margin-left: .5rem;
+}
+
+#app-switch #switch-edit {
+  display: none;
+}
+
+#app-switch.view #switch-edit {
+  display: inline-block;
+}
+
+#app-switch.view #switch-view {
+  display: none;
 }
 
 /*APP SWITCH*/
@@ -1210,6 +1214,15 @@ a {
   margin-top: 0px;
   position: relative;
   top: -5px;
+}
+
+/*TEMPLATE ACOMMODATIONS*/
+body #menu {
+  top: 40px;
+}
+
+body.init #menu {
+  top: 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

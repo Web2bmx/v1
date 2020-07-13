@@ -10,6 +10,8 @@ export default function itemManager () {
 		switch (_ctrl.sessionStatus) {
 			case "START SESSION" :
 				_number_of_items = $("#template .item").length;
+				_ctrl.jd.selections["inp-content-items-number"] = { "name": "items-number", "type": "text", "text":_number_of_items };
+				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				break;
 			case "RESUME SESSION" :
 			case "UPDATE SESSION" :

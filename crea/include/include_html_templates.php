@@ -1,12 +1,12 @@
 <div id="component_templates">
 	<!--control-color-->
 	<div class="control-color template">
-		<h4></h4>
 		<div class="control-color-thumb">
 			<div class="control-color-thumb-bg"></div>
 			<div class="control-color-thumb-bg"></div>
 			<div class="control-color-thumb-bg"></div>
-		</div>		
+		</div>
+		<h4></h4>
 		<input type="radio" name="inp-palette" value="" style="display: none;" />
 	</div>
 	<!--img-thumb-->

@@ -38,16 +38,13 @@ export default function colorManager () {
 			}
 			$("#thumb-" + _palette).addClass("thumb-selected");
 			$("#inp-palette-" + _palette).attr("checked", "checked");
-			
 		} 
-		console.log(_ctrl.sessionStatus);
 		if (_ctrl.sessionStatus == 'UPDATE SESSION') {
 			_palette = $("[name='inp-palette']:checked").val();
 			selections["palette"].text = _palette;
 			_color_hex = ($("#inp-color").val());
 			selections["color"].text = _color_hex;
 		}
-		
 		let id = $("[name^='inp-design']:checked").val().replace("inp-design-", "") * 1;
 		let url = "Templates/php/color/style.php?t=" + id + "&hex=" + _color_hex.replace("#", "");
 		$("#style-color").html("").load(url);
