@@ -30,7 +30,7 @@
         <?php include_once("include/include_app-control-step_optionals.php"); ?>
     </div>
     <div class="app-control-step">
-        <div>
+        <div class="app-control-step-finish">
             <h2>¡Terminamos!</h2>
             <p>Revisa tu sitio antes de continuar.</p>
         </div>

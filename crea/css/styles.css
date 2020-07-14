@@ -217,7 +217,7 @@ a {
   text-decoration: none;
 }
 
-.hidden {
+*.hidden {
   display: none;
 }
 
@@ -639,16 +639,9 @@ a {
   margin: 1rem auto;
 }
 
-.app-control-step .item-control h2.children {
-  padding-right: 1rem;
-  position: relative;
-}
-
-.app-control-step .item-control h2 a {
-  color: #9b035a;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
+.app-control-step-finish {
+  margin-top: 50%;
+  text-align: center;
 }
 
 /*APP CONTROL STEP*/
@@ -658,7 +651,7 @@ a {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
 }
 
 .container-input .inputWihIcons {
@@ -687,7 +680,7 @@ a {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin-bottom: .25rem;
+  margin-bottom: .5rem;
 }
 
 .container-input p {
@@ -718,6 +711,12 @@ a {
 }
 
 /*CONTAINER INPUT*/
+/*ACCORDION*/
+.accordion h4 {
+  cursor: pointer;
+}
+
+/*ACCORDION*/
 /*TOOLTIP*/
 .app-control-step-tooltip {
   -moz-border-radius: 2rem;

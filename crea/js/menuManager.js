@@ -75,6 +75,11 @@ export default function templateManager () {
 			hideFormElements($(t));
 		});
 		/*TOGGLES*/
+		/*ACCORDION*/
+		$(".accordion").find("h4").on("click", function() {
+			$(this).next().toggle();
+		}).trigger("click");
+		/*ACCORDION*/
 		/*IMAGES*/
 		$(document.body).on('click', '.img-thumb-cont', function () {
 			var $this = $(this);

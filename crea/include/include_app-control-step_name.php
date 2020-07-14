@@ -21,10 +21,6 @@
 		<p><a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />¿Tienes un logotipo para mostrar?</p>
 	</div>
 	<div id="conditional-logo">
-		<!--
-		<label>¿Tienes un logotipo para mostrar?</label>
-		<a id="toggle-logotipo" class="toggle"><i class="fas fa-toggle-on"></i></a>
-		-->
 		<form enctype="multipart/form-data" method="POST" class="file-upload">
 			<button>Selecciona tu logotipo en formato png o jpg con un mínimo de 400px</button>
 			<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />

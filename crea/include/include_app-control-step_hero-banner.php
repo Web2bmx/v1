@@ -8,8 +8,8 @@
 		</div>	
 		<p class="app-control-step-tooltip-info">Un eslogan es una frase breve que le describe a tus Clientes que es lo que hace diferente a tu Negocio.</p>		
 	</div>
-	<div class="container-input">
-		<label>Hemos elegido una imagen para el encabezado del sitio de tu Negocio, ¿deseas cambiarla?</label>
+	<div class="container-input accordion">
+		<h4>Sube tu imagen</h4>
 		<form enctype="multipart/form-data" method="POST" class="file-upload">
 			<p class="one-line-text">
 				<span class="one-line-text">Sube tus imágenes para personalizar tu sitio.</span>
@@ -18,6 +18,9 @@
 			</p>
 			<input disabled type="submit" value="Subir foto" class="boton"/>
 		</form>
+	</div>
+	<div class="container-input accordion">
+		<h4>Elige tu imagen</h4>
 		<div class="app-control-images">
 			<?php include("include_unsplash_referral.php"); ?>
 			<div id='app-control-images-hero'>

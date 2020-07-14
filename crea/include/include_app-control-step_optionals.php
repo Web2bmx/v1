@@ -5,7 +5,8 @@
 	</div>
 	<div id="conditional-gallery">
 		<p>Selecciona las imágenes para tu galería</p>
-		<div class="container-input">	
+		<div class="container-input accordion">	
+			<h4>Sube imagen</h4>
 			<form enctype="multipart/form-data" method="POST" class="file-upload">
 				<p class="one-line-text">
 					<span>Sube tus imágenes para personalizar tu sitio.</span>
@@ -14,6 +15,9 @@
 				</p>
 				<input type="submit" disabled value="Subir foto" class="boton"/>
 			</form>	
+		</div>
+		<div class="container-input accordion">	
+			<h4>Elige tu imagen</h4>
 			<div class="app-control-images">
 				<?php include("include_unsplash_referral.php"); ?>
 				<div id='app-control-images-gallery'>
@@ -37,7 +41,8 @@
 		<div class="container-input">
 			<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
 		</div>
-		<div class="container-input">
+		<div class="container-input accordion">
+			<h4>Elige tu imagen</h4>
 			<div class="app-control-images">
 				<?php include("include_unsplash_referral.php"); ?>
 				<div id='app-control-images-aboutus'>
@@ -62,7 +67,8 @@
 			<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
 		</div>
 		<div class="container-input">				
-			<div class="app-control-images">
+			<div class="app-control-images accordion">
+			<h4>Elige tu imagen</h4>
 				<?php include("include_unsplash_referral.php"); ?>
 				<div id='app-control-images-cta'>
 					<div class="photo-container"></div>
