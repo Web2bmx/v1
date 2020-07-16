@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*SHADES OF GRAY*/
 /*RED*/
 /*ORANGE*/
@@ -713,7 +714,18 @@ a {
 /*CONTAINER INPUT*/
 /*ACCORDION*/
 .accordion h4 {
+  border-bottom: 1px solid #b4b4b4;
+  color: #787878;
   cursor: pointer;
+  padding-bottom: .5rem;
+}
+
+.accordion h4::after {
+  content: " ↑";
+}
+
+.accordion h4.expanded::after {
+  content: " ↓";
 }
 
 /*ACCORDION*/

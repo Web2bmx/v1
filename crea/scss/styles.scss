@@ -342,7 +342,16 @@ a { text-decoration: none; }
 /*ACCORDION*/
 .accordion {
 	h4 {
+		border-bottom: 1px solid $gray60;
+		color: $gray40;
 		cursor: pointer;
+		padding-bottom: .5rem;
+		&::after {
+			content: " ↑";
+		}
+		&.expanded::after {
+			content: " ↓";
+		}
 	}
 }
 /*ACCORDION*/

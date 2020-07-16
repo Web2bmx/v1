@@ -77,6 +77,7 @@ export default function templateManager () {
 		/*TOGGLES*/
 		/*ACCORDION*/
 		$(".accordion").find("h4").on("click", function() {
+			$(this).toggleClass("expanded");
 			$(this).next().toggle();
 		}).trigger("click");
 		/*ACCORDION*/
