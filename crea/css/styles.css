@@ -670,10 +670,11 @@ a {
   -webkit-border-radius: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid #b4b4b4;
-  height: 10rem;
+  height: 14rem;
   max-width: 38rem;
   width: calc(100% - 4rem);
   padding: 1rem;
+  resize: none;
 }
 
 .container-input label {
@@ -768,11 +769,24 @@ a {
 /*TOOLTIP*/
 /*CONTROL COLOR*/
 #inp-color {
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
   border: none;
   cursor: pointer;
   float: left;
   height: 3rem;
+  outline: none;
   width: calc(100% - 2rem);
+}
+
+input::-webkit-color-swatch {
+  border: none;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
 }
 
 #app-control-palettes {
@@ -808,7 +822,11 @@ a {
 }
 
 .control-color-thumb {
-  border: 1px solid #f0f0f0;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  border-radius: 2rem;
+  border: 3px solid #b4b4b4;
   cursor: pointer;
   display: block;
   overflow: hidden;
@@ -818,7 +836,7 @@ a {
 }
 
 .control-color-thumb.thumb-selected {
-  border: 1px solid #ff0593;
+  border-color: #ff52b4;
 }
 
 .control-color-thumb-bg {

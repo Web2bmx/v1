@@ -307,10 +307,11 @@ a { text-decoration: none; }
 	textarea {
 		@include border-radius(.5rem);	
 		border: 1px solid $gray60;
-		height: 10rem;
+		height: 14rem;
 		max-width: 38rem;
 		width: calc(100% - 4rem);
 		padding: 1rem;
+		resize: none;
 	}
 	label {
 		@include box_block();
@@ -380,11 +381,17 @@ a { text-decoration: none; }
 /*TOOLTIP*/
 /*CONTROL COLOR*/
 #inp-color {
+	@include border-radius(2rem);	
 	border: none;
 	cursor: pointer;
 	float: left;
 	height: 3rem;
+	outline: none;
 	width: calc(100% - 2rem);
+}
+input::-webkit-color-swatch {
+	border: none;
+	@include border-radius(2rem);	
 }
 #app-control-palettes {
 	@include box_block();
@@ -405,14 +412,15 @@ a { text-decoration: none; }
 	}
 }
 .control-color-thumb {
-	border: 1px solid $gray80;
+	@include border-radius(2rem);	
+	border: 3px solid $gray60;
 	cursor: pointer;
 	display: block; 
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	width: calc(100% - 2px);
-	&.thumb-selected { border: 1px solid $pink60; }
+	&.thumb-selected { border-color: $pink80; }
 }
 .control-color-thumb-bg {
 	display: block;
