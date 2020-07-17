@@ -1,6 +1,1 @@
-<p>
-    Tus fotos (Fotos de cortesía desde
-    <a href="https://unsplash.com/?utm_source=web2b&utm_medium=referral">
-        Unsplash
-    </a>)
-</p>
+<p>Catálogo de fotos de cortesía de <a href="https://unsplash.com/?utm_source=web2b&utm_medium=referral">Unsplash</a></p>

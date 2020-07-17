@@ -6,7 +6,7 @@
 			<i class="fas fa-pen"></i><input data-validate="true" pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]+$" type="text" id="siteName" name="inp-siteName" placeholder="tuSitio" />
 			<span>.web2b.mx</span>
 		</div>
-		<p class="app-control-step-tooltip-info">Es como tus Clientes accesarán al sitio web de tu Negocio, al final podrás cambiar por tu propia dirección web si así lo deseas, por ejemplo: www.minegocio.com.mx</p>
+		<p class="app-control-step-tooltip-info">Es lo que tus Clientes escribirán para acceder al sitio web de tu Negocio, al final lo podrás cambiar por tu propia dirección web si así lo deseas, por ejemplo: www.minegocio.com.mx</p>
 		<p class="input-error">La dirección web de tu sitio solo puede contener letras, números y guiones medios y debe de tener como mínimo 3 caracteres.</p>
 	</div>
 	<div class="container-input">
@@ -18,13 +18,13 @@
 		<!--<p><a class="toggle"><i class="fas fa-toggle-on"></i></a>Si usas un logotipo puedes elegir no mostrar tu nombre.</p>-->
 	</div>
 	<div class="container-input">	
-		<p><a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />¿Tienes un logotipo para mostrar?</p>
+		<p><a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />¿Quieres agregar el logotipo de tu Negocio?</p>
 	</div>
 	<div id="conditional-logo">
 		<form enctype="multipart/form-data" method="POST" class="file-upload">
-			<button>Selecciona tu logotipo en formato png o jpg con un mínimo de 400px</button>
+			<button>Selecciona tu logotipo</button>
 			<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
-			<input type="submit" disabled value="Subir foto" class="boton"/>
+			<input type="submit" disabled value="Subir archivo" class="boton"/>
 		</form>
 		<div class="app-control-images" style="display: none">
 			<h4>Tus logotipos:</h4>
