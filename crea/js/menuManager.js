@@ -46,7 +46,7 @@ export default function templateManager () {
 		/*TEXT*/
 		$(document.body).on("keyup", "[name^='inp-'][type='text'][id!='inp-contact-address'],textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
-			_ctrl.new_templateManager.updateContent(e.currentTarget, "text");
+			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
 		$("[data-validate]").on("focusout", function(e){
 			_ctrl.new_utilsManager.validateFields(e.currentTarget, true);
@@ -69,17 +69,16 @@ export default function templateManager () {
 			} else {
 				$this.find(".fas.fa-toggle-off").attr("class", "fas fa-toggle-on");
 			}
-			console.log("TOGGLE");
 			$(i).trigger("click");
-			_ctrl.new_templateManager.updateContent($(i));
+			_ctrl.new_templateManager.updateContent(e.currentTarget);
 			hideFormElements($(t));
 		});
 		/*TOGGLES*/
 		/*ACCORDION*/
-		$(".accordion").find("h4").on("click", function() {
+		$("body").on("click", ".accordion h4", function() {
 			$(this).toggleClass("expanded");
 			$(this).next().toggle();
-		}).trigger("click");
+		}).find(".accordion h4").trigger("click");
 		/*ACCORDION*/
 		/*IMAGES*/
 		$(document.body).on('click', '.img-thumb-cont', function () {
@@ -134,10 +133,6 @@ export default function templateManager () {
 		});
 		/*COLOR*/
 		/*ITEMS*/
-		$("#app-control").on("itemWasAdded", function () {
-			_ctrl.current_step = _ctrl.new_itemManager.getCurrentStep();
-			_ctrl.new_menuManager.goToStep(_ctrl.current_step);
-		});
 		$("body").on("click", "#inp-content-item-add-y", function() {
 			_ctrl.new_itemManager.addItem();
         });

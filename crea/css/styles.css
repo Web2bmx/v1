@@ -617,7 +617,8 @@ a {
 }
 
 .app-control-step h2 {
-  font-weight: bold;
+  font-size: 3rem;
+  font-weight: 100;
   margin-bottom: 1rem;
 }
 
@@ -632,7 +633,7 @@ a {
 }
 
 .app-control-step h3 {
-  font-size: 1.25rem;
+  font-weight: bold;
   margin-bottom: .5rem;
 }
 
@@ -989,6 +990,48 @@ input::-webkit-color-swatch {
 }
 
 /*CONTROL IMAGES*/
+/*CONTROL ITEMS*/
+#content-item-type {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+#content-item-type label {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-block;
+  background-color: #5091ff;
+  float: left;
+  height: auto;
+  margin-right: .5rem;
+  overflow: hidden;
+  padding: .5rem;
+  width: auto;
+}
+
+#content-item-type label input {
+  display: none;
+}
+
+#content-item-type label.checked {
+  background-color: #055dff;
+}
+
+.content-item-number {
+  font-weight: inherit;
+}
+
+.content-item-type {
+  font-weight: inherit;
+}
+
+/*CONTROL ITEMS*/
 /*NAME CONTROL*/
 .inputWihIcons {
   position: relative;

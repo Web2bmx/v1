@@ -1,6 +1,7 @@
 export default function itemManager () {
 	var _ctrl = null;
 	var _number_of_items = 0;
+	var _type_of_item = 0;
 	var _current_step = 0;
 	var init = function(_that) {
 		_ctrl = _that;
@@ -21,32 +22,24 @@ export default function itemManager () {
 		}
 		$("#inp-content-items-number").val(_number_of_items);
 		for (let i = 0; i < _number_of_items; i++) { addItemControl(i); }
+		
 	};
 	var addItemControl = function(i) {
 		/*ADDS CONTROL*/
 		let k = (i * 1) + 1;
 		if (i > 0) {//Item 0 is already included in form
-			/*UPDATES STEPS NAV*/
-			$("#control-view-index").append(($(".control-view-index-step.current").clone().removeClass("current")));
-			/*ADD CONTROL*/
-			_current_step = $("#inp-content-item-add-y").closest(".app-control-step").index() - 1;
-			let $item_add = $("#inp-content-item-add-y");
-			//let step = $(".app-control-step").index($item_add.closest(".app-control-step"));
-			let $i_t = $(".app-control-step:eq(" + (_current_step - 1) + ")").clone();
-			$item_add.closest(".app-control-step").before($i_t);
+			let $i_t = $(".item-control:eq(0)").clone();
+			$(".add-item-control").before($i_t);
 			/*UPDATES CONTROL META DATA*/
-			$i_t.find("h2:first-child span:eq(0)").html("Tu producto o servicio (" + k + ")");
+			$i_t.find(".content-item-number").html(k);
 			$i_t.find("input[type=text]").attr({
 				"id" : ("inp-content-title-item-" + k),
-				"name" : ("inp-content-title-item-" + k),
-				"placeholder" : "Tu producto o servicio"
+				"name" : ("inp-content-title-item-" + k)
 			}).val("");
 			$i_t.find("textarea").attr({
 				"id" : ("inp-content-item-" + k),
-				"name" : ("inp-content-item-" + k),
-				"placeholder" : "Tu producto o servicio"
+				"name" : ("inp-content-item-" + k)
 			}).val("");
-			$i_t.find("h2:eq(1)").html("Elige una imagen para tu producto o servicio");
 			$i_t.find("#app-control-images-item-" + i).attr("id", ("app-control-images-item-" + k));
 			$i_t.find("input").each(function() {
 				if($(this).attr("type") != "file" && $(this).attr("type") != "submit"){ $(this).attr("name", ("inp-img-item-" + k)); }
@@ -60,7 +53,7 @@ export default function itemManager () {
 		//img
 		$("#inp-content-title-item-" + k).val(i_t);
 		$("#inp-content-item-" + k).val(i_c);
-		
+		/****************************************** */
 	};
     var addItem = function() {
 		/*SAVES NEWLY ADDED ITEM TO COUNT*/
@@ -71,8 +64,6 @@ export default function itemManager () {
 		/*RESETS ADD ITEM CONTROL*/
 		$("#inp-content-item-add-y").prop('checked', false);
 		$("#inp-content-item-add-n").trigger("click");
-		$("#app-control").trigger("itemWasAdded");
-		
 	};
     var addItemToTemplate = function (i) {
 		let items_in_template = $("#template .item").length;
@@ -92,11 +83,40 @@ export default function itemManager () {
 			$("#template .items:last").attr("class", "items").addClass(c);
 		}
 	};
+	var setContentType = function() { 
+		if (!_ctrl.jd.selections["inp-content-item-type"]) {
+			_type_of_item = $("input[name='inp-content-item-type']:checked"). val();
+			_ctrl.jd.selections["inp-content-item-type"] = { "name": "items-type", "type": "text", "text":_type_of_item };
+		} else {
+			switch (_ctrl.sessionStatus) {
+				case "RESUME SESSION" :
+					_type_of_item = _ctrl.jd.selections["inp-content-item-type"].text;
+					$("input[name='inp-content-item-type'][value='" + _type_of_item + "']").prop("checked", "checked");
+					break;
+				case "UPDATE SESSION" :
+					_type_of_item = $("input[name='inp-content-item-type']:checked").val();
+					_ctrl.jd.selections["inp-content-item-type"].text = _type_of_item;
+					break;
+			}
+			$("#content-item-type label").removeClass("checked");
+			$("input[name='inp-content-item-type']:checked").parent().addClass("checked");
+		}
+		
+		let v = $("input[name='inp-content-item-type']:checked").attr("id");
+		let m = "";
+		switch (v) {
+			case 'inp-content-item-type-1' : m = "producto"; break;
+			case 'inp-content-item-type-2' : m = "servicio"; break;
+			case 'inp-content-item-type-3' : m = "producto o servicio"; break;
+		}
+		$(".content-item-type").html(m);
+	 };
 	var getCurrentStep = function() { return _current_step; };
 	return {
 		init : init,
 		setItems : setItems,
 		addItem : addItem,
+		setContentType : setContentType,
         getCurrentStep : getCurrentStep
 	};
 }

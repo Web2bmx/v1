@@ -9,7 +9,7 @@
 		<p class="app-control-step-tooltip-info">Un eslogan es una frase breve que le describe a tus Clientes que es lo que hace diferente a tu Negocio.</p>		
 	</div>
 	<div class="container-input accordion">
-		<h2>¿Deseas cambiar la imagen de portada del sitio web de tu Negocio?</h2>
+		<h3>¿Deseas cambiar la imagen de portada del sitio web de tu Negocio?</h3>
 	</div>
 	<div class="container-input accordion">
 		<h4>Sube tu imagen</h4>

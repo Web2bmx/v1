@@ -26,7 +26,7 @@ export default function templateManager () {
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
 			_ctrl.new_itemManager.setItems();
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
-			updateContent('undefined');
+			updateContent();
 			console.log("TEMPLATE LOADED");
 			$.ajax({
 				url: ("Templates/Template-" + id + "/js/scripts.js"),
@@ -35,16 +35,25 @@ export default function templateManager () {
 		});
 		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
 	};
-	var updateContent = function (target, type = null) {
+	var updateContent = function (target = null) {
 		let $template = $("#template");
 		let selections = _ctrl.jd.selections || {};
-		if (type == null || type == "text") {
+		if (target == null || target.href) {
+			_ctrl.new_itemManager.setContentType();
 			updateTexts($template, selections);
-		}
-		if (type == null) {
 			_ctrl.new_colorManager.updateColor(selections, $template)
 			updateImages(target);
 			updateRemoveControls($template, selections);
+		} else if (target.name == 'inp-content-item-type') {
+			_ctrl.new_itemManager.setContentType();
+		} else if ((target.type) && ((target.type == 'text') || (target.type == 'textarea'))) {
+			updateTexts($template, selections);
+		} else if (target.name == 'inp-color' || target.name == 'inp-palette') {
+			_ctrl.new_colorManager.updateColor(selections, $template)
+		} else if (target.name.indexOf("inp-rem-content") > -1) {
+			updateRemoveControls($template, selections);
+		} else {
+			updateImages(target);
 		}
 		_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 		if (_ctrl.sessionStatus != "UPDATE SESSION") { _ctrl.sessionStatus = "UPDATE SESSION"; }

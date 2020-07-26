@@ -277,13 +277,14 @@ a { text-decoration: none; }
 		select { margin-bottom: 1rem; }
 	}
 	h2{
-		font-weight: bold;
+		font-size: 3rem;
+		font-weight: 100;
 		margin-bottom: 1rem;
 		&.middle{ margin: 1rem 0; }
 		@include breakpoint($tablet){ font-size: 1.5rem; }
 	}
 	h3{
-		font-size: 1.25rem;
+		font-weight: bold;
 		margin-bottom: .5rem;
 	}
 	aside {
@@ -523,6 +524,36 @@ input::-webkit-color-swatch {
 	margin: 0 auto;
 }
 /*CONTROL IMAGES*/
+/*CONTROL ITEMS*/
+#content-item-type {
+	@include box_block();
+	margin-bottom: .5rem;
+	label {
+		@include border_radius(.25rem);
+		cursor: pointer;
+		display: inline-block;
+		background-color: $blue80;
+		float: left;
+		height: auto;
+		margin-right: .5rem;
+		overflow: hidden;
+		padding: .5rem;
+		width: auto;
+		input {
+			display: none;
+		}
+		&.checked {
+			background-color: $blue60;
+		}	
+	}
+}
+.content-item-number {
+	font-weight: inherit;
+}
+.content-item-type {
+	font-weight: inherit;
+}
+/*CONTROL ITEMS*/
 /*NAME CONTROL*/
 .inputWihIcons {
 	position: relative;
