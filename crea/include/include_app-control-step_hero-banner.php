@@ -1,15 +1,15 @@
 <div>
-	<h2>Constrúyamos la portada del sitio web de tu Negocio</h2>
+	<h2>Portada</h2>
 	<div class="container-input">
-		<label>Hemos redactado este eslogan para tu Negocio, puedes modificarlo si así lo deseas:</label>
+		<label>Eslogan</label>
 		<div class="inputWihIcons">
 			<i class="fas fa-pen"></i>
 			<input type="text" id="inp-content-slogan" name="inp-content-slogan" value="" placeholder="El eslógan de tu negocio" class="optional" />
 		</div>	
-		<p class="app-control-step-tooltip-info">Un eslogan es una frase breve que le describe a tus Clientes que es lo que hace diferente a tu Negocio.</p>		
+		<p class="app-control-step-tooltip-info">Un eslogan es una frase breve que le describe a tus Clientes que es lo que hace diferente a tu Negocio. Hemos redactado este eslogan para tu Negocio, puedes modificarlo si así lo deseas.</p>		
 	</div>
 	<div class="container-input accordion">
-		<h3>¿Deseas cambiar la imagen de portada del sitio web de tu Negocio?</h3>
+		<h3>Imagen de portada</h3>
 	</div>
 	<div class="container-input accordion">
 		<h4>Sube tu imagen</h4>

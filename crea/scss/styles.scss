@@ -25,7 +25,7 @@
 * {
 	list-style-type: none;
 	font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
+	font-weight: normal;
 	margin: 0;
 	padding: 0;
 }
@@ -277,15 +277,9 @@ a { text-decoration: none; }
 		select { margin-bottom: 1rem; }
 	}
 	h2{
+		color: $gray40;	
 		font-size: 1.5rem;
-		font-weight: 100;
-		margin-bottom: 1rem;
-		&.middle{ margin: 1rem 0; }
 		@include breakpoint($tablet){ font-size: 2.5rem; }
-	}
-	h3{
-		font-weight: bold;
-		margin-bottom: .5rem;
 	}
 	aside {
 		margin: 1rem auto;
@@ -299,7 +293,7 @@ a { text-decoration: none; }
 /*CONTAINER INPUT*/
 .container-input {
 	@include box_block();
-	margin-bottom: 1rem;
+	margin-top: 1rem;
 	.inputWihIcons {
 		@include border-radius(.5rem);	
 		float: left;
@@ -341,6 +335,15 @@ a { text-decoration: none; }
 	display: none;
 }
 /*CONTAINER INPUT*/
+/*TOGGLE*/
+.toggle {
+	cursor: pointer;
+	font-size: 1.5rem;
+	margin-left: 1rem;
+	position: relative;
+	top: .25rem;
+}
+/*TOGGLE*/
 /*ACCORDION*/
 .accordion {
 	h4 {
@@ -578,7 +581,7 @@ input::-webkit-color-swatch {
 		position: relative;
 		overflow: hidden;
 		width: 100%;
-		a {
+		a.nav-btns {
 			bottom: 0;
 			margin: .5rem auto;
 			position: absolute;
@@ -605,7 +608,7 @@ input::-webkit-color-swatch {
 .control-view-index-step {
 	background-color: $gray60;
 	cursor: pointer;
-	float: left;
+	display: inline-block;
 	height: .5rem;
 	margin: 1.5rem .5rem .5rem 0;
 	overflow: hidden;
