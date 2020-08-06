@@ -1,7 +1,7 @@
 <div class="name-control">
-	<h2>Cuéntanos más sobre tu Negocio</h2>
+	<h2>Nombre</h2>
 	<div class="container-input">
-		<label>¿Cómo quieres que tus Clientes accedan al sitio de tu Negocio?</label>
+		<label>Dirección web</label>
 		<div class="inputWihIcons">
 			<i class="fas fa-pen"></i><input data-validate="true" pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]+$" type="text" id="siteName" name="inp-siteName" placeholder="tuSitio" />
 			<span>.web2b.mx</span>
@@ -10,7 +10,7 @@
 		<p class="input-error">La dirección web de tu sitio solo puede contener letras, números y guiones medios y debe de tener como mínimo 3 caracteres.</p>
 	</div>
 	<div class="container-input">
-		<label>¿Qué nombre deseas que aparezca en el sitio web de tu Negocio?</label>
+		<label>Nombre</label>
 		<div class="inputWihIcons">
 			<i class="fas fa-pen"></i><input type="text" id="inp-content-name" name="inp-content-name" placeholder="Nombre de tu negocio" />
 		</div>
@@ -18,7 +18,7 @@
 		<!--<p><a class="toggle"><i class="fas fa-toggle-on"></i></a>Si usas un logotipo puedes elegir no mostrar tu nombre.</p>-->
 	</div>
 	<div class="container-input">	
-		<p><a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />¿Quieres agregar el logotipo de tu Negocio?</p>
+		<p><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />Agregar logotipo<a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a></p>
 	</div>
 	<div id="conditional-logo">
 		<form enctype="multipart/form-data" method="POST" class="file-upload">

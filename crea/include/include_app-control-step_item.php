@@ -1,28 +1,30 @@
 <div>	
-	<h2>Cuéntanos más sobre lo que tu Negocio ofrece</h2>
+	<h2>Productos y Servicios</h2>
 	<div class="select-item-control">
-		<h3>¿Tu Negocio tiene productos o servicios?</h3>
+		<div class="container-input">	
+			<h3>¿Tu Negocio tiene productos o servicios?</h3>
+		</div>
 		<div id="content-item-type" class="container-input">
 			<label for="inp-content-item-type-1"><input type="radio" id="inp-content-item-type-1" name="inp-content-item-type" value="1" /> Productos</label>
-			<label for="inp-content-item-type-2"><input type="radio" id="inp-content-item-type-2" name="inp-content-item-type" value="2" /> Servcicios</label>
+			<label for="inp-content-item-type-2"><input type="radio" id="inp-content-item-type-2" name="inp-content-item-type" value="2" /> Servicios</label>
 			<label for="inp-content-item-type-3"><input type="radio" id="inp-content-item-type-3" name="inp-content-item-type" value="3" checked="checked" /> Ambos</label>
 		</div>
 	</div>
 	<div class="item-control">
 		<h3>¿Cuál es tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span>?</h3>
 		<div class="container-input">	
-			<label>Escribe el título para tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></label>
+			<label>Título del <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></label>
 			<div class="inputWihIcons inp-cont">
 				<i class="fas fa-pen"></i>
 				<input type="text" value="" id="inp-content-title-item-1" name="inp-content-title-item-1" placeholder="Título" />
 			</div>
 		</div>
 		<div class="container-input">	
-			<label>Escribe una descripción para tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></label>
+			<label>Descripción del <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></label>
 			<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Descripción"></textarea>
 		</div>
 		<div class="container-input">
-			<h3>Elige una imagen para tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></h3>
+			<h3>Imagen para el <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></h3>
 		</div>
 		<div class="container-input accordion">
 			<h4>Sube una imagen para tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></h4>

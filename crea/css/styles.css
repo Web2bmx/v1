@@ -617,28 +617,27 @@ a {
 }
 
 .app-control-step h2 {
+  color: #787878;
   font-size: 1.5rem;
-  font-weight: 100;
-  margin-bottom: 1rem;
-}
-
-.app-control-step h2.middle {
-  margin: 1rem 0;
 }
 
 @media (min-width: 660px) {
   .app-control-step h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-}
-
-.app-control-step h3 {
-  font-weight: bold;
-  margin-bottom: .5rem;
 }
 
 .app-control-step aside {
   margin: 1rem auto;
+}
+
+.app-control-step [class~=item-control] {
+  margin-bottom: 1em;
+}
+
+.app-control-step div.item-control h3 {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .app-control-step-finish {
@@ -653,7 +652,7 @@ a {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .container-input .inputWihIcons {
@@ -714,6 +713,20 @@ a {
 }
 
 /*CONTAINER INPUT*/
+/*TOGGLE*/
+.toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  position: relative;
+  top: .25rem;
+}
+
+.toggle .fa-toggle-on {
+  color: #5091ff;
+}
+
+/*TOGGLE*/
 /*ACCORDION*/
 .accordion h4 {
   border-bottom: 1px solid #b4b4b4;
@@ -1021,6 +1034,7 @@ input::-webkit-color-swatch {
 
 #content-item-type label.checked {
   background-color: #055dff;
+  color: #f0f0f0;
 }
 
 .content-item-number {
@@ -1069,18 +1083,18 @@ input::-webkit-color-swatch {
   width: 100%;
 }
 
-#app-control-nav #control-view-nav a {
+#app-control-nav #control-view-nav a.nav-btns {
   bottom: 0;
   margin: .5rem auto;
   position: absolute;
   z-index: 101;
 }
 
-#app-control-nav #control-view-nav a.prev {
+#app-control-nav #control-view-nav a.nav-btns.prev {
   left: 1rem;
 }
 
-#app-control-nav #control-view-nav a.next {
+#app-control-nav #control-view-nav a.nav-btns.next {
   right: 1rem;
 }
 
@@ -1109,7 +1123,7 @@ input::-webkit-color-swatch {
 .control-view-index-step {
   background-color: #b4b4b4;
   cursor: pointer;
-  float: left;
+  display: inline-block;
   height: .5rem;
   margin: 1.5rem .5rem .5rem 0;
   overflow: hidden;
