@@ -279,10 +279,17 @@ a { text-decoration: none; }
 	h2{
 		color: $gray40;	
 		font-size: 1.5rem;
-		@include breakpoint($tablet){ font-size: 2.5rem; }
+		@include breakpoint($tablet){ font-size: 2rem; }
 	}
 	aside {
 		margin: 1rem auto;
+	}
+	[class~=item-control]{
+		margin-bottom: 1em;
+	}
+	div.item-control h3 {
+		font-weight: bold;
+		font-size: 1.1em;		
 	}
 }
 .app-control-step-finish {
@@ -342,6 +349,10 @@ a { text-decoration: none; }
 	margin-left: 1rem;
 	position: relative;
 	top: .25rem;
+
+	.fa-toggle-on {
+		color: $blue80;
+	}
 }
 /*TOGGLE*/
 /*ACCORDION*/
@@ -547,6 +558,7 @@ input::-webkit-color-swatch {
 		}
 		&.checked {
 			background-color: $blue60;
+			color: $gray80;
 		}	
 	}
 }

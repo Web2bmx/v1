@@ -623,12 +623,21 @@ a {
 
 @media (min-width: 660px) {
   .app-control-step h2 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }
 
 .app-control-step aside {
   margin: 1rem auto;
+}
+
+.app-control-step [class~=item-control] {
+  margin-bottom: 1em;
+}
+
+.app-control-step div.item-control h3 {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .app-control-step-finish {
@@ -711,6 +720,10 @@ a {
   margin-left: 1rem;
   position: relative;
   top: .25rem;
+}
+
+.toggle .fa-toggle-on {
+  color: #5091ff;
 }
 
 /*TOGGLE*/
@@ -1021,6 +1034,7 @@ input::-webkit-color-swatch {
 
 #content-item-type label.checked {
   background-color: #055dff;
+  color: #f0f0f0;
 }
 
 .content-item-number {
