@@ -10,6 +10,14 @@
 			<label for="inp-content-item-type-3"><input type="radio" id="inp-content-item-type-3" name="inp-content-item-type" value="3" checked="checked" /> Ambos</label>
 		</div>
 	</div>
+	<div class="container-input">
+		<label>¿Cuántos?</label>
+		<div class="number-item-control">
+			<button class="items-change-number remove-item">-</button>
+			<input type="text" id="inp-content-items-number" name="inp-content-items-number" value="0" disabled />
+			<button class="items-change-number add-item">+</button>
+		</div>
+	</div>
 	<div class="item-control">
 		<h3>¿Cuál es tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span>?</h3>
 		<div class="container-input">	
@@ -44,14 +52,6 @@
 					<div class="photo-container"></div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="add-item-control">
-		<h2>¿Tienes otro <span class="content-item-type">producto o servicio</span> que agregar?</h2>
-		<div class="container-input">
-			<label for="inp-content-item-add-y"><input type="radio" id="inp-content-item-add-y" name="inp-content-item-add" value="y" /> Sí</label>
-			<label for="inp-content-item-add-n"><input type="radio" id="inp-content-item-add-n" name="inp-content-item-add" value="n" checked="checked" /> No</label>
-			<input type="hidden" id="inp-content-items-number" name="inp-content-items-number" value="0" />
 		</div>
 	</div>
 </div>

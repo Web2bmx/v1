@@ -29,7 +29,8 @@ export default function itemManager () {
 		let k = (i * 1) + 1;
 		if (i > 0) {//Item 0 is already included in form
 			let $i_t = $(".item-control:eq(0)").clone();
-			$(".add-item-control").before($i_t);
+			//$(".add-item-control").before($i_t);
+			$(".item-control:last").after($i_t);
 			/*UPDATES CONTROL META DATA*/
 			$i_t.find(".content-item-number").html(k);
 			$i_t.find("input[type=text]").attr({
@@ -55,15 +56,17 @@ export default function itemManager () {
 		$("#inp-content-item-" + k).val(i_c);
 		/****************************************** */
 	};
-    var addItem = function() {
-		/*SAVES NEWLY ADDED ITEM TO COUNT*/
-		addItemControl(_number_of_items);
-		addItemToTemplate(_number_of_items);
-		_number_of_items = (_number_of_items * 1) + 1;
-		$("#inp-content-items-number").val(_number_of_items);
-		/*RESETS ADD ITEM CONTROL*/
-		$("#inp-content-item-add-y").prop('checked', false);
-		$("#inp-content-item-add-n").trigger("click");
+    var addItem = function(v) {
+		if (v < _number_of_items) {
+			$(".item-control:last").remove();
+			$("#template .items:last .item").remove();
+			if($("#template .items:last .item").length == 0) { $("#template .items:last").remove(); }
+		}
+		if (v > _number_of_items) {
+			addItemControl(_number_of_items);
+			addItemToTemplate(v);
+		}
+		_number_of_items = v;
 	};
     var addItemToTemplate = function (i) {
 		let items_in_template = $("#template .item").length;

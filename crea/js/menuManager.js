@@ -44,7 +44,7 @@ export default function templateManager () {
     };
 	var setFormControls = function () {
 		/*TEXT*/
-		$(document.body).on("keyup", "[name^='inp-'][type='text'][id!='inp-contact-address'],textarea[name^='inp-']", function (e) {
+		$(document.body).on("keyup", "[type='text'][name^='inp-'][id!='inp-contact-address']:not([disabled]),textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
 			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
@@ -133,9 +133,15 @@ export default function templateManager () {
 		});
 		/*COLOR*/
 		/*ITEMS*/
-		$("body").on("click", "#inp-content-item-add-y", function() {
-			_ctrl.new_itemManager.addItem();
-        });
+		$("body").on("click", ".items-change-number", function() {
+			var $this = $(this);
+			let $t = $("#inp-content-items-number");
+			let v = $this.hasClass("add-item") ? ($t.val() * 1) + 1 : ($t.val() * 1) - 1;
+			if (v >= 1 && v <= 5) {
+				$t.val(v);
+				_ctrl.new_itemManager.addItem(v);
+			}
+		});
 		/*ITEMS*/
 		/*UPLOADS*/
 		$('.file-upload button').on("click", (e) => {

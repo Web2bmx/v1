@@ -1028,7 +1028,6 @@ input::-webkit-color-swatch {
   -webkit-border-radius: 0.25rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  display: inline-block;
   background-color: #5091ff;
   float: left;
   height: auto;
@@ -1053,6 +1052,40 @@ input::-webkit-color-swatch {
 
 .content-item-type {
   font-weight: inherit;
+}
+
+.item-control {
+  margin-top: 2rem;
+}
+
+.number-item-control {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+.number-item-control input {
+  background-color: white;
+  border: none;
+  color: #3c3c3c;
+  float: left;
+  padding: .5rem;
+  width: 2rem;
+}
+
+.number-item-control button {
+  float: left;
+}
+
+.number-item-control button.remove-item {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.number-item-control button.add-item {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 /*CONTROL ITEMS*/

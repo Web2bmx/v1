@@ -558,7 +558,6 @@ input::-webkit-color-swatch {
 	label {
 		@include border_radius(.25rem);
 		cursor: pointer;
-		display: inline-block;
 		background-color: $blue80;
 		float: left;
 		height: auto;
@@ -580,6 +579,31 @@ input::-webkit-color-swatch {
 }
 .content-item-type {
 	font-weight: inherit;
+}
+.item-control {
+	margin-top: 2rem;
+}
+.number-item-control {
+	@include box_block();
+	input {
+		background-color: $white;
+		border: none;
+		color: $gray20;
+		float: left;
+		padding: .5rem;
+		width: 2rem;
+	}
+	button {
+		float: left;
+		&.remove-item {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		&.add-item {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
 }
 /*CONTROL ITEMS*/
 /*NAME CONTROL*/
