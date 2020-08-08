@@ -139,15 +139,13 @@ export default function templateManager () {
 		/*ITEMS*/
 		/*UPLOADS*/
 		$('.file-upload button').on("click", (e) => {
-			console.log($(e.currentTarget).next("input[type='file']").length);
 			e.preventDefault();
 			$(e.currentTarget).parent().find("input[type='file']").click();
 		});
 		$('.file-upload input[type=file]').on('change', (e) => {
-			console.log("hi");
 			let file = $(e.currentTarget)[0].files[0].name;
 			$("span", $(e.currentTarget).parent()).text(file);
-			$("input[type=submit]", $(e.currentTarget).closest("form")).attr("disabled", false);
+			$("input[type=submit]", $(e.currentTarget).closest("form")).trigger("click");
 		});
 		$('.file-upload input[type="submit"]').on('click', _ctrl.new_imageManager.uploadImage);
 		/*UPLOADS*/

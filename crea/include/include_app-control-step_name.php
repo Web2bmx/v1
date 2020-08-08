@@ -22,12 +22,12 @@
 	</div>
 	<div id="conditional-logo">
 		<form enctype="multipart/form-data" method="POST" class="file-upload">
-			<button>Selecciona tu logotipo</button>
+			<button><i class="fas fa-file-upload"></i></i><br />Sube tu logotipo</button>
 			<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
 			<input type="submit" disabled value="Subir archivo" class="boton"/>
 		</form>
 		<div class="app-control-images" style="display: none">
-			<h4>Tus logotipos:</h4>
+			<h4>Tus logotipos</h4>
 			<div id='app-control-images-logo'>
 				<div class="photo-container"></div>
 			</div>

@@ -706,6 +706,7 @@ a {
 /*CONTAINER INPUT*/
 /*TOGGLE*/
 .toggle {
+  color: #5091ff;
   cursor: pointer;
   font-size: 1.5rem;
   margin-left: 1rem;
@@ -879,19 +880,21 @@ input::-webkit-color-swatch {
 @media (min-width: 1040px) {
   .photo-container {
     grid-template-columns: 1fr 1fr;
+    grid-gap: .25rem .25rem;
   }
 }
 
 .img-thumb {
+  background-color: white;
   cursor: pointer;
-  height: 10rem;
+  height: 8rem;
   position: relative;
   z-index: 101;
 }
 
 @media (min-width: 1040px) {
   .img-thumb {
-    height: 15rem;
+    height: 12rem;
   }
   .img-thumb:hover .img-thumb-autor {
     display: block;
@@ -903,10 +906,17 @@ input::-webkit-color-swatch {
   height: auto;
   overflow: hidden;
   width: 100%;
-  background-color: black;
+  background-color: white;
   background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  margin: 1rem auto;
+  height: calc(100% - 2rem);
+  width: calc(100% - 2rem);
+}
+
+#app-control-images-logo .img-thumb-cont {
+  background-size: contain;
 }
 
 .img-thumb-cont-zoom {
@@ -1171,9 +1181,15 @@ input::-webkit-color-swatch {
 
 /*APP SWITCH*/
 .file-upload {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  border: 1px dashed #b0c7f2;
   display: block;
+  margin-top: 1rem;
   overflow: hidden;
-  text-align: left;
+  padding: 1rem 0;
 }
 
 .file-upload input[type=file] {
@@ -1181,15 +1197,19 @@ input::-webkit-color-swatch {
 }
 
 .file-upload input[type=submit], .file-upload button {
+  background-color: #5091ff;
   cursor: pointer;
-  float: right;
   font-weight: normal;
+  padding: .5rem 1rem;
   text-transform: none;
-  width: 100%;
+}
+
+.file-upload input[type=submit]:hover, .file-upload button:hover {
+  background-color: #b0c7f2;
 }
 
 .file-upload input[type=submit]:disabled, .file-upload button:disabled {
-  opacity: 0.3;
+  display: none;
 }
 
 .file-upload p {
@@ -1212,8 +1232,8 @@ input::-webkit-color-swatch {
 }
 
 .file-upload button {
-  width: 100%;
-  margin: 1rem 0;
+  width: auto;
+  margin: 1rem auto;
 }
 
 .file-upload .error {
