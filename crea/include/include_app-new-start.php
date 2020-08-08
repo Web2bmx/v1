@@ -3,7 +3,7 @@
 		<img src="/img/logo.png" />
 		<p>
 			¡Tú página ya está lista! <br>
-			Crea una cuenta para comenzar a editarla.
+			Crea una cuenta con nosotros para comenzar a editarla.
 		</p>
 		<div class="inputWihIcons">
 			<i class="fas fa-font"></i>		
@@ -11,11 +11,11 @@
 		</div>
 		<div class="inputWihIcons">
 			<i class="fas fa-envelope"></i>
-			<input type="email" name="correo" id="correo" value="" placeholder="Tu correo" />
+			<input type="email" name="correo" id="correo" value="" placeholder="Introduce tu correo" />
 		</div>
 		<div class="inputWihIcons">
 			<i class="fas fa-asterisk"></i>
-			<input type="password" name="password" id="password" value="" placeholder="Tu contraseña" />
+			<input type="password" name="password" id="password" value="" placeholder="Crea una contraseña" />
 		</div>
 		<span class="form-error name-invalid">Nombre de página inválido: Solo números y letras, sin espacios son permitidos.</span>						
 		<span class="form-error empty-fields">Alguno de los campos están vacios</span>
