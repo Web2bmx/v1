@@ -252,9 +252,9 @@ a { text-decoration: none; }
 /*APP CONTROL*/
 /*APP CONTROL STEP*/
 .app-control-step {
+	background-color: $white;
 	font-size: 1rem;
-	height: calc(100% - 10rem);
-	margin: 1rem 0 4rem 0;
+	height: calc(100% - 8rem);
 	padding: 1rem 2rem;
 	overflow-y: auto;
 	width: auto;
@@ -626,7 +626,6 @@ input::-webkit-color-swatch {
 	text-align: center;
 	#control-view-nav {
 		float: left;
-		margin-top: 1rem;
 		position: relative;
 		overflow: hidden;
 		width: 100%;
