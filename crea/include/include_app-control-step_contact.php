@@ -1,7 +1,7 @@
 <div>
     <h2>Contacto</h2>
     <div class="container-input"> 
-        <label>Dirección física</label>
+        <label>Dirección</label>
 		<div class="inputWihIcons inp-cont">
 			<i class="fas fa-map-marker-alt"></i>
 			<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
