@@ -18,7 +18,11 @@
 		<!--<p><a class="toggle"><i class="fas fa-toggle-on"></i></a>Si usas un logotipo puedes elegir no mostrar tu nombre.</p>-->
 	</div>
 	<div class="container-input">	
-		<p><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />Agregar logotipo<a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a></p>
+		<h3>
+			<a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a>
+			Agregar logotipo
+			<input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />
+		</h3>
 	</div>
 	<div id="conditional-logo">
 		<form enctype="multipart/form-data" method="POST" class="file-upload">

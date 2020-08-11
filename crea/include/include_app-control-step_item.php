@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div class="container-input">
-		<label>¿Cuántos?</label>
+		<h3>¿Cuántos?</h3>
 		<div class="number-item-control">
 			<button class="items-change-number remove-item">-</button>
 			<input type="text" id="inp-content-items-number" name="inp-content-items-number" value="0" disabled />
@@ -32,7 +32,7 @@
 			<textarea id="inp-content-item-1" name="inp-content-item-1" placeholder="Descripción"></textarea>
 		</div>
 		<div class="container-input">
-			<h3>Imagen para el <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></h3>
+			<h4>Imagen para el <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></h4>
 		</div>
 		<div class="container-input accordion">
 			<h4>Sube una imagen para tu <span class="content-item-type">producto o servicio</span> #<span class="content-item-number">1</span></h4>

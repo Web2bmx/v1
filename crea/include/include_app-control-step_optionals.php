@@ -1,10 +1,14 @@
 <div>
 	<h2>Otras secciones</h2>
 	<div class="container-input">	
-		<p><input type="checkbox" id="inp-rem-content-gallery" name="inp-rem-content-gallery" class="remove-content" value="y" checked="checked" />Galería<a id="toggle-gallery" class="toggle"><i class="fas fa-toggle-on"></i></a></p>
+		<h3>
+			<a id="toggle-gallery" class="toggle"><i class="fas fa-toggle-on"></i></a>
+			Galería
+			<input type="checkbox" id="inp-rem-content-gallery" name="inp-rem-content-gallery" class="remove-content" value="y" checked="checked" />
+		</h3>
 	</div>
 	<div id="conditional-gallery">
-		<h3>Elige las imagenes para la galería del sitio web de tu Negocio</h3>
+		<p>Elige las imagenes para la galería del sitio web de tu Negocio</p>
 		<div class="container-input accordion">	
 			<h4>Sube una imagen</h4>
 			<form enctype="multipart/form-data" method="POST" class="file-upload">
@@ -26,10 +30,14 @@
 		</div>
 	</div>
     <div class="container-input">
-		<p><input type="checkbox" id="inp-rem-content-aboutus" name="inp-rem-content-aboutus" class="remove-content" value="y" checked="checked" />Historia de tu Negocio<a id="toggle-aboutus" class="toggle"><i class="fas fa-toggle-on"></i></a></p>
+		<h3>
+			<a id="toggle-aboutus" class="toggle"><i class="fas fa-toggle-on"></i></a>
+			Historia de tu Negocio
+			<input type="checkbox" id="inp-rem-content-aboutus" name="inp-rem-content-aboutus" class="remove-content" value="y" checked="checked" />
+		</h3>
 	</div>
 	<div id="conditional-aboutus">
-		<h3>Cuéntale a tus Clientes la historia de tu Negocio</h3>
+		<p>Cuéntale a tus Clientes la historia de tu Negocio</p>
 		<div class="container-input">
             <label>Escribe el título para la historia de tu Negocio</label>
 			<div class="inputWihIcons inp-cont">
@@ -52,10 +60,14 @@
 		</div>
 	</div>
     <div class="container-input">	
-		<p><input type="checkbox" id="inp-rem-content-cta" name="inp-rem-content-cta" class="remove-content" value="y" checked="checked" />Invitación a tus Clientes a realizar una acción<a id="toggle-cta" class="toggle"><i class="fas fa-toggle-on"></i></a></p>
+		<h3>
+			<a id="toggle-cta" class="toggle"><i class="fas fa-toggle-on"></i></a>
+			Invitación a tus Clientes a realizar una acción
+			<input type="checkbox" id="inp-rem-content-cta" name="inp-rem-content-cta" class="remove-content" value="y" checked="checked" />
+		</h3>
 	</div>
 	<div id="conditional-cta">
-        <h3>Invita a tus clientes a realizar una acción</h3>
+        <p>Invita a tus clientes a realizar una acción</p>
         <div class="container-input">
 			<label>Dile a tus Clientes que esperas de ellos</label>
 			<div class="inputWihIcons inp-cont">
