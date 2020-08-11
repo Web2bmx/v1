@@ -74,7 +74,7 @@
 				<i class="fas fa-location-arrow"></i>		
 				<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" />
 			</div>
-			<p class="app-control-step-tooltip-info">Invita a tus clientes a visitar tu Negocio o a conocer tus productos o servicios.</p>
+			
 		</div>
 		<div class="container-input">
 			<label>Ofrécele más información a tus Clientes sobre lo que esperas de ellos</label>				
