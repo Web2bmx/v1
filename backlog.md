@@ -7,6 +7,7 @@
 - Invitación a realizar acción no tiene para subir imágenes [Antonio]
 - Call to action no es editable [Antonio]
 - Agregar y quitar productos arroja un error en at addItemControl (itemManager.js:86) [Antonio]
+- Agregar funcionalidad de correos al loggearse [Carlos]
 
 
 #### Regresar los botones de "ver mas" con funcionalidad
