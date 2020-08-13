@@ -209,13 +209,19 @@ export default function imageManager () {
 		}
 		var $this_img_thumb = $img_thumb.clone();
 		$this_img_thumb.find("input").attr("name", ("inp-img-" + cont));
-		if (selected) { $this_img_thumb.addClass("thumb-selected").find("input").attr("checked", "checked"); }
+		if (selected) { 
+			if (cont != "gallery") {
+				$("#app-control-images-" + cont + " .photo-container .thumb-selected").find("input").attr("checked", "checked");
+				$("#app-control-images-" + cont + " .photo-container .thumb-selected").removeClass("thumb-selected");
+			}
+			$this_img_thumb.addClass("thumb-selected").find("input").attr("checked", "checked"); 
+		}
 		if(append) {	
 			$("#app-control-images-" + cont + " .photo-container").append($this_img_thumb);
 		} else {	
 			$("#app-control-images-" + cont + " .photo-container").prepend($this_img_thumb);
 		}	
-		if (cont == "gallery") {
+		if (cont == "gallery") {			
 			$this_img_thumb.find("input").attr("type", "checkbox");
 			$this_img_thumb.find(".img-thumb-overlay>span").html(index + 1);
 		}
@@ -240,6 +246,7 @@ export default function imageManager () {
 			if(res.upload == 1){			
 				let img_src = _uploaded_images_url + res.texto;
 				let n_name = "#img-" + name;
+				let index = 0;
 				let pre = _ctrl.jd.selections[(n_name + "-uploaded")] ? ((_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1) ? (_ctrl.jd.selections[(n_name + "-uploaded")].text + ",") : "") : "";
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,(n_name + "-uploaded"),(pre + img_src),'text');
 				saveImageInStorage(img_src, ("#img-" + name), (name == "gallery"));
@@ -247,7 +254,10 @@ export default function imageManager () {
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				/*ADDS THUMB*/
 				//if (_ctrl.jd.selections[(n_name + "-uploaded")] && (_ctrl.jd.selections[(n_name + "-uploaded")].text.indexOf(img_src) == -1)) {
-					setUploadedImage(img_src, name, false, false, 0);
+				if (name == "gallery") {
+					index = $("#app-control-images-" + name + " .photo-container .thumb-selected").length;
+				}
+				setUploadedImage(img_src, name, true, false, index);
 				//}
 				/*DISPLAYS IMAGE*/
 				displayImageOnTemplate(img_src, name);
