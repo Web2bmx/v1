@@ -32,8 +32,8 @@ export default function templateManager () {
 				url: ("Templates/Template-" + id + "/js/scripts.js"),
 				dataType: "script"
 			});			
-		});
-		_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
+			_ctrl.new_mapManager.start('inp-contact-address', 'iMap');
+		});		
 	};
 	var updateContent = function (target = null) {
 		let $template = $("#template");
