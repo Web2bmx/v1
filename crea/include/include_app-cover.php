@@ -21,7 +21,7 @@
 				<aside>
 					<img src="Templates/Template-001/Thumb.png" />
 				</aside>							
-				<label for="inp-design-001">Diseño 1</label>
+				<label for="inp-design-001">Formal</label>
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" />
 			</div>
@@ -29,7 +29,7 @@
 				<aside>
 					<img src="Templates/Template-002/Thumb.png" />
 				</aside>
-				<label for="inp-design-002">Diseño 2</label>							
+				<label for="inp-design-002">Divertido</label>							
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" />
 			</div>
@@ -37,7 +37,7 @@
 				<aside>
 					<img src="Templates/Template-003/Thumb.png" />
 				</aside>
-				<label for="inp-design-003">Diseño 3</label>
+				<label for="inp-design-003">Impactante</label>
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" />
 			</div>
@@ -45,7 +45,7 @@
 				<aside>
 					<img src="Templates/Template-004/Thumb.png" />
 				</aside>
-				<label for="inp-design-004">Diseño 4</label>
+				<label for="inp-design-004">Moderno</label>
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" />
 			</div>

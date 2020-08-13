@@ -49,6 +49,16 @@
 			<label>Escribe la historia de tu Negocio</label>
 			<textarea id="inp-content-aboutus" name="inp-content-aboutus" placeholder="Una descripción sobre tu empresa o negocio."></textarea>
 		</div>
+		<div class="container-input accordion">	
+			<h4>Sube una imagen</h4>
+			<form enctype="multipart/form-data" method="POST" class="file-upload">
+				<p class="one-line-text">
+					<button>Selecciona tu imagen</button>
+					<input accept=".png, .jpg, .jpeg" type="file" name="aboutus" value="Selecciona imagen" />
+				</p>
+				<input type="submit" disabled value="Subir foto" class="boton"/>
+			</form>	
+		</div>
 		<div class="container-input accordion">
 			<h4>Elige una imagen para la historia de tu Negocio</h4>
 			<div class="app-control-images">
@@ -80,9 +90,19 @@
 			<label>Ofrécele más información a tus Clientes sobre lo que esperas de ellos</label>				
 			<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
 		</div>
-		<div class="container-input">				
-			<div class="app-control-images accordion">
+		<div class="container-input accordion">	
+			<h4>Sube una imagen</h4>
+			<form enctype="multipart/form-data" method="POST" class="file-upload">
+				<p class="one-line-text">
+					<button>Selecciona tu imagen</button>
+					<input accept=".png, .jpg, .jpeg" type="file" name="cta" value="Selecciona imagen" />
+				</p>
+				<input type="submit" disabled value="Subir foto" class="boton"/>
+			</form>	
+		</div>
+		<div class="container-input accordion"">				
 			<h4>Elige una imagen que motive a tus Clientes a atender a tu llamado</h4>
+			<div class="app-control-images>
 				<?php include("include_unsplash_referral.php"); ?>
 				<div id='app-control-images-cta'>
 					<div class="photo-container"></div>

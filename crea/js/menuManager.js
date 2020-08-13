@@ -152,6 +152,7 @@ export default function templateManager () {
 			let file = $(e.currentTarget)[0].files[0].name;
 			$("span", $(e.currentTarget).parent()).text(file);
 			$("input[type=submit]", $(e.currentTarget).closest("form")).trigger("click");
+			$(e.currentTarget).closest(".accordion").next(".accordion").find("h4").trigger("click");
 		});
 		$('.file-upload input[type="submit"]').on('click', _ctrl.new_imageManager.uploadImage);
 		/*UPLOADS*/
