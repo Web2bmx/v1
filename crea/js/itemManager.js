@@ -17,6 +17,11 @@ export default function itemManager () {
 			case "RESUME SESSION" :
 			case "UPDATE SESSION" :
 				_number_of_items = _ctrl.jd.selections["inp-content-items-number"].text;
+				if (!_number_of_items || _number_of_items == '') {
+					_number_of_items = $("#template .item").length;
+					_ctrl.jd.selections["inp-content-items-number"] = { "name": "items-number", "type": "text", "text":_number_of_items };
+					_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);					
+				}
 				for (let i = 0; i < _number_of_items; i++) { addItemToTemplate(i); }
 				break;
 		}
@@ -48,19 +53,21 @@ export default function itemManager () {
 			});
 		}
 		/*UPDATES CONTROL DATA*/
-		let i_img = _ctrl.jd.selections["#img-item-" + k] ? _ctrl.jd.selections["#img-item-" + k].img : "";
-		let i_t = _ctrl.sessionStatus == "START SESSION" ? $("#val-content-title-item-" + k).html() : _ctrl.jd.selections["inp-content-title-item-" + k].text;
-		let i_c = _ctrl.sessionStatus == "START SESSION" ? $("#val-content-item-" + k).html() : _ctrl.jd.selections["inp-content-item-" + k].text;
-		//img
-		$("#inp-content-title-item-" + k).val(i_t);
-		$("#inp-content-item-" + k).val(i_c);
+		// let i_img = _ctrl.jd.selections["#img-item-" + k] ? _ctrl.jd.selections["#img-item-" + k].img : "";
+		// let i_t = _ctrl.sessionStatus == "START SESSION" ? $("#val-content-title-item-" + k).html() : _ctrl.jd.selections["inp-content-title-item-" + k].text;
+		// let i_c = _ctrl.sessionStatus == "START SESSION" ? $("#val-content-item-" + k).html() : _ctrl.jd.selections["inp-content-item-" + k].text;
+		// //img
+		// $("#inp-content-title-item-" + k).val(i_t);
+		// $("#inp-content-item-" + k).val(i_c);
 		/****************************************** */
 	};
     var addItem = function(v) {
 		if (v < _number_of_items) {
 			$(".item-control:last").remove();
-			$("#template .items:last .item").remove();
+			$("#template .items:last .item:last").remove();
 			if($("#template .items:last .item").length == 0) { $("#template .items:last").remove(); }
+			$("#template .items:last").removeClass("one two three");
+			$("#template .items:last").addClass(getClassSize());
 		}
 		if (v > _number_of_items) {
 			addItemControl(_number_of_items);
@@ -77,13 +84,14 @@ export default function itemManager () {
 			$item_copy.find("#val-content-title-item-" + i).attr("id", ("val-content-title-item-" + (i + 1)));
 			$item_copy.find("#val-content-item-" + i).attr("id", ("val-content-item-" + (i + 1)));
 			$("#template .items:last").append($item_copy);
-			var c = "";
-			switch ($("#template .items:last .item").length % 3) {
-				case 0 : c = "three"; break;
-				case 1 : c = "one"; break;
-				case 2 : c = "two"; break;
-			}
-			$("#template .items:last").attr("class", "items").addClass(c);
+			$("#template .items:last").attr("class", "items").addClass(getClassSize());
+		}
+	};
+	var getClassSize = () => {
+		switch ($("#template .items:last .item").length % 3) {
+			case 0 : return "three";
+			case 1 : return "one";
+			case 2 : return "two";
 		}
 	};
 	var setContentType = function() { 
