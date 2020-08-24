@@ -1047,7 +1047,7 @@ input::-webkit-color-swatch {
   font-weight: inherit;
 }
 
-.content-item-type {
+.content-items-type, .content-item-type {
   font-weight: inherit;
 }
 

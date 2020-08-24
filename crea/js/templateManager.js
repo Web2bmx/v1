@@ -24,8 +24,8 @@ export default function templateManager () {
 		$("#template-cont").load(src + " #template", function() {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-			_ctrl.new_itemManager.setItems();
 			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
+			_ctrl.new_itemManager.setItems();
 			updateContent();
 			console.log("TEMPLATE LOADED");
 			$.ajax({
@@ -107,7 +107,10 @@ export default function templateManager () {
 				if ($('#' + v_id + '[pattern]').length > 0) {
 					console.log(v_id);
 					_ctrl.new_utilsManager.validateFields('#' + v_id);
-				}				
+				}
+				if (i_id == "inp-content-name") {
+					$template.find("#menu h4").html(selections[i_id].text);
+				}		
 			});
 			$template.find(".footer-column:not(:has(li:visible))").hide();
 		}
@@ -127,10 +130,11 @@ export default function templateManager () {
 						text = arr[0];
 						$this.data('place', arr[1]);
 					}					
-				}				
+				}
 				_ctrl.new_dataManager.saveSelected(_ctrl.jd,i_id,val,'text');
 				$template.find("#" + v_id).show().closest(".column").show();
 				if (i_id == "inp-content-name") {
+					$template.find("#menu h4").html(selections[i_id].text);
 					if($template.find("#val-content-aboutus>span").length > 0) {
 						$template.find("#val-content-aboutus>span").html(selections[i_id].text);
 						let t = $template.find("#val-content-aboutus").html();

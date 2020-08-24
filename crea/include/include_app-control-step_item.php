@@ -1,4 +1,4 @@
-<div>	
+<div id="items-control">	
 	<h2>Productos y Servicios</h2>
 	<div class="select-item-control">
 		<div class="container-input">	
@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div class="container-input">
-		<h3>¿Cuántos?</h3>
+		<h3>¿Cuántos <span class="content-items-type">productos o servicios</span>?</h3>
 		<div class="number-item-control">
 			<button class="items-change-number remove-item">-</button>
 			<input type="text" id="inp-content-items-number" name="inp-content-items-number" value="0" disabled />

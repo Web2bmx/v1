@@ -1,7 +1,7 @@
 #### Página de términos y condiciones [Antonio - 90%]
 
 
-[ ] El título de la barra superior del tercer u cuarto template parece no ser editable [Antonio]
+[ ] El título de la barra superior del tercer u cuarto template parece no ser editable [Antonio]- HECHO
 [ ] Agregar funcionalidad de correos al loggearse [Carlos]
 [ ] Modal para cambiar de pagina que estas editando esta roto
 
