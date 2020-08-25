@@ -4,7 +4,6 @@ export default function itemManager () {
 	var _type_of_item = 0;
 	var _current_step = 0;
 	var $item = null;
-	var $item_control = null;
 	var init = function(_that) {
 		_ctrl = _that;
 	};
@@ -12,8 +11,6 @@ export default function itemManager () {
 		/*FIRES AFTER TEMPLATE IS LOADED*/
 		$item = $("#template .item:last").clone();
 		$("#template .items").remove().detach();
-		$item_control = $(".item-control:eq(0)").clone();
-		$(".item-control:eq(0)").remove();
 		switch (_ctrl.sessionStatus) {
 			case "START SESSION" :
 				_ctrl.jd.selections["inp-content-items-number"] = { "name": "items-number", "type": "text", "text":_number_of_items };
@@ -33,7 +30,7 @@ export default function itemManager () {
 		console.log("addItemControl");
 		/*ADDS CONTROL*/
 		let k = (i * 1) + 1;
-		let $i_t = $item_control.clone();
+		let $i_t = $(".item-control:last").clone();
 		$("#items-control").append($i_t);
 		/*UPDATES CONTROL META DATA*/
 		$i_t.find(".content-item-number").html(k);

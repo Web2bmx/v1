@@ -51,9 +51,9 @@ export default function imageManager () {
 		sortImages();
 	};
 	var sortImages = () => {
-		let image_types = ["hero","aboutus","cta","gallery","logo"];
-		let items = $("#template .item").length;
-		for(let i = 1; i <= items; i++ ){ image_types.push('item-' + i); }
+		let image_types = ["hero","aboutus","cta","gallery","logo","item-0"];
+		/**/let items = $("#template .item").length;
+		/**/for(let i = 1; i <= items; i++ ){ image_types.push('item-' + i); }
 		for (let i = 0; i < image_types.length; i++) {
 			let t = image_types[i];
 			_current_images[t] = [];
@@ -65,7 +65,6 @@ export default function imageManager () {
 					}
 				}
 			}
-
 			// arr of base images from unsplash
 			let arr = [];
 			// exclde from here if needed
