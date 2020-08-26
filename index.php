@@ -5,17 +5,10 @@
 	if($host_arr[0] !== "web2b" 
 		&& $host_arr[0] !== "local" 
 		&& $host_arr[0] !== "www"
-		&& file_exists("./client_sites/" . strtolower($host_arr[0]) . "/index.html")){
-		$file = file_get_contents("./client_sites/" . strtolower($host_arr[0]) . "/index.html");
-		echo eval("?>$file");
+		&& file_exists("./client_sites/" . strtolower($host_arr[0]) . "/index.html")) {
+			$file = file_get_contents("./client_sites/" . strtolower($host_arr[0]) . "/index.html");
+			echo $file;
 	} else {
 		include_once("home.php");
-		// $handle = @fopen($remoteFile, 'r');
-		// if ($handle) {
-		// 	echo "El fichero $nombre_fichero existe";
-		// } else {
-		// 	echo "El fichero $nombre_fichero no existe";
-		// }		
-		// echo $remoteFile;
 	}	
 ?>

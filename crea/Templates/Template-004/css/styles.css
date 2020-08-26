@@ -119,6 +119,7 @@
 #template h1, #template h2, #template h3, #template h4, #template h5, #template h6 {
   font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
+  line-height: 38px;
 }
 
 #template p, #template ul, #template ol, #template menu, #template li {
@@ -449,24 +450,26 @@
   z-index: 1;
 }
 
-.gallery-nav > a {
-  background-color: white;
-  border-radius: 1rem;
+.gallery-nav a {
   cursor: pointer;
-  padding: .25rem .25rem;
   top: 48%;
   position: absolute;
   user-select: none;
 }
 
-.gallery-nav > a.gallery-nav-prev {
+.gallery-nav a.gallery-nav-prev {
   left: 1rem;
   padding-right: .5rem;
 }
 
-.gallery-nav > a.gallery-nav-next {
+.gallery-nav a.gallery-nav-next {
   right: 1rem;
   padding-left: .5rem;
+}
+
+.gallery-nav i {
+  color: white;
+  font-size: 2rem !important;
 }
 
 /*GALLERY*/

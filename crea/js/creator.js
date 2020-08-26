@@ -16,6 +16,7 @@ import mapsManager from "./mapsManager";
 /**/
 
 export default function creator() {
+	console.log("hi");
 	var _this = this;
 	_this.sessionStatus = "START SESSION";
 	//Esta variable determina el estatus de la sesión y tiene tres valores:

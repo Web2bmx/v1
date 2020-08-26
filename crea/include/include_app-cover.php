@@ -21,33 +21,33 @@
 				<aside>
 					<img src="Templates/Template-001/Thumb.png" />
 				</aside>							
+				<label for="inp-design-001">Formal</label>
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-001" name="inp-design" value="inp-design-001" checked="checked" style="display: none;" />
-				<label for="inp-design-001"></label>
 			</div>
 			<div class="control-design-thumb">
 				<aside>
 					<img src="Templates/Template-002/Thumb.png" />
-					</aside>
+				</aside>
+				<label for="inp-design-002">Divertido</label>							
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-002" name="inp-design" value="inp-design-002" style="display: none;" />
-				<label for="inp-design-002"></label>							
 			</div>
 			<div class="control-design-thumb">
 				<aside>
 					<img src="Templates/Template-003/Thumb.png" />
-					</aside>
+				</aside>
+				<label for="inp-design-003">Impactante</label>
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-003" name="inp-design" value="inp-design-003" style="display: none;" />
-				<label for="inp-design-003"></label>							
 			</div>
 			<div class="control-design-thumb">
 				<aside>
 					<img src="Templates/Template-004/Thumb.png" />
-					</aside>
+				</aside>
+				<label for="inp-design-004">Moderno</label>
 				<i class="far fa-circle"></i>
 				<input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" />
-				<label for="inp-design-004"></label>							
 			</div>
 		</div>
 		<a class="next nav-btns">

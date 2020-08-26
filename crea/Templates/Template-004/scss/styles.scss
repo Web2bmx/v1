@@ -1,7 +1,7 @@
 @import "./crea/Templates/scss/_common";
 /*TEMPLATE LEVEL*/
 #template { font-family: 'Roboto', sans-serif; }
-#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 { font-family: 'Montserrat', sans-serif; font-size: 1rem; }
+#template h1, #template h2, #template h3, #template h4, #template h5, #template h6 { font-family: 'Montserrat', sans-serif; font-size: 1rem; line-height: 38px; }
 #template p, #template ul, #template ol, #template menu, #template li { font-size: 1rem; }
 /*TEMPLATE LEVEL*/
 /*rgba(40, 55, 75, 1)*/
@@ -200,19 +200,25 @@
 	@include box_block();
 	@include box_absolute();
 	z-index: 1;
+
+	a {
+		cursor: pointer;
+		top: 48%;
+		position: absolute;
+		user-select: none;		
+
+		&.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
+		&.gallery-nav-next { right: 1rem; padding-left: .5rem; }		
+	}
+
+	i {
+		color: hsla(0, 0, 100%, 1);
+		font-size: 2rem !important;
+	}
+
 }
-.gallery-nav>a {
-	background-color: hsla(0, 0, 100%, 1);
-    border-radius: 1rem;
-    cursor: pointer;
-    padding: .25rem .25rem;
-    top: 48%;
-    position: absolute;
-	user-select: none;
-}
-.gallery-nav>a.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
-.gallery-nav>a.gallery-nav-next { right: 1rem; padding-left: .5rem; }
 /*GALLERY*/
+
 /*ABOUT US*/
 #aboutus {
 	@include box_block();

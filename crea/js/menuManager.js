@@ -44,7 +44,7 @@ export default function templateManager () {
     };
 	var setFormControls = function () {
 		/*TEXT*/
-		$(document.body).on("keyup", "[name^='inp-'][type='text'][id!='inp-contact-address'],textarea[name^='inp-']", function (e) {
+		$(document.body).on("keyup", "[type='text'][name^='inp-'][id!='inp-contact-address']:not([disabled]),textarea[name^='inp-']", function (e) {
 			_ctrl.lastKeyPressed = e.keyCode || e.which;
 			_ctrl.new_templateManager.updateContent(e.currentTarget);
 		});
@@ -133,21 +133,28 @@ export default function templateManager () {
 		});
 		/*COLOR*/
 		/*ITEMS*/
-		$("body").on("click", "#inp-content-item-add-y", function() {
-			_ctrl.new_itemManager.addItem();
-        });
+		$("body").on("click", ".items-change-number", function() {
+			var $this = $(this);
+			let $t = $("#inp-content-items-number");
+			let v = $this.hasClass("add-item") ? ($t.val() * 1) + 1 : ($t.val() * 1) - 1;
+			if (v >= 1 && v <= 5) {
+				$t.val(v);
+				_ctrl.new_itemManager.addItem(v);
+			}
+		});
 		/*ITEMS*/
 		/*UPLOADS*/
 		$('.file-upload button').on("click", (e) => {
-			console.log($(e.currentTarget).next("input[type='file']").length);
 			e.preventDefault();
 			$(e.currentTarget).parent().find("input[type='file']").click();
 		});
 		$('.file-upload input[type=file]').on('change', (e) => {
-			console.log("hi");
 			let file = $(e.currentTarget)[0].files[0].name;
 			$("span", $(e.currentTarget).parent()).text(file);
-			$("input[type=submit]", $(e.currentTarget).closest("form")).attr("disabled", false);
+			$("input[type=submit]", $(e.currentTarget).closest("form")).trigger("click");
+			if(!$(e.currentTarget).closest(".accordion").next(".accordion").children('div').is(':visible')) {
+				$(e.currentTarget).closest(".accordion").next(".accordion").find("h4").trigger("click");
+			}			
 		});
 		$('.file-upload input[type="submit"]').on('click', _ctrl.new_imageManager.uploadImage);
 		/*UPLOADS*/

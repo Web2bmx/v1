@@ -18,16 +18,20 @@
 		<!--<p><a class="toggle"><i class="fas fa-toggle-on"></i></a>Si usas un logotipo puedes elegir no mostrar tu nombre.</p>-->
 	</div>
 	<div class="container-input">	
-		<p><input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />Agregar logotipo<a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a></p>
+		<h3>
+			<a id="toggle-logo" class="toggle"><i class="fas fa-toggle-on"></i></a>
+			Agregar logotipo
+			<input type="checkbox" id="inp-rem-content-logo" name="inp-rem-content-logo" class="remove-content" value="y" checked="checked" />
+		</h3>
 	</div>
 	<div id="conditional-logo">
 		<form enctype="multipart/form-data" method="POST" class="file-upload">
-			<button>Selecciona tu logotipo</button>
+			<button><i class="fas fa-file-upload"></i></i><br />Sube tu logotipo</button>
 			<input accept=".png, .jpg, .jpeg" type="file" name="logo" value="Selecciona imagen" />
 			<input type="submit" disabled value="Subir archivo" class="boton"/>
 		</form>
 		<div class="app-control-images" style="display: none">
-			<h4>Tus logotipos:</h4>
+			<h4>Tus logotipos</h4>
 			<div id='app-control-images-logo'>
 				<div class="photo-container"></div>
 			</div>
