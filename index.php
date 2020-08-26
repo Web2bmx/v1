@@ -7,7 +7,7 @@
 		&& $host_arr[0] !== "www"
 		&& file_exists("./client_sites/" . strtolower($host_arr[0]) . "/index.html")) {
 			$file = file_get_contents("./client_sites/" . strtolower($host_arr[0]) . "/index.html");
-		echo $file;
+			echo $file;
 	} else {
 		include_once("home.php");
 	}	
