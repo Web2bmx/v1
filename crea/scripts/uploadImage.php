@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 foreach($_FILES as $file){
     if($file["size"]) {
-        $unique_id = $_GET["unique_id"] ? $_GET["unique_id"] : uniqid();
+        $unique_id = isset($_GET['unique_id']) ? $_GET["unique_id"] : uniqid();
         $target_dir = "../client_images/";
         $name = $unique_id . "_" . basename($file["name"]);
         $target_file = $target_dir . $name;    
