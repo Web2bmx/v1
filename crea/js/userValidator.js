@@ -54,9 +54,6 @@ export default function userValidator () {
                 if (_ctrl.new_PageManager.hasPages()) $(".change-page").show();
             });			
         }
-        $("#single-modal i").on("click", function() {
-            $("#single-modal").fadeOut();
-        });
         /* ON NEW PAGE */
         $(".app-new-start form").on("submit", function (e) {
             e.preventDefault();

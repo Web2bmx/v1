@@ -11,7 +11,7 @@ export default function appManager() {
 				$(".control-design-cont").prepend($(".control-design-thumb.thumb-selected"));
 				$(".control-design-cont").prepend($(".control-design-thumb:last"));
 			}, 500);
-			$(".control-design-thumb").on("tap",function(e){
+			$(".control-design-thumb").on("click",function(e){
 				let $this = $(this);
 				let i = $(".control-design-thumb").index($this);
 				if (i == 0) { $this.parent().prepend($(".control-design-thumb:last")); }
@@ -37,15 +37,22 @@ export default function appManager() {
 			_ctrl.new_paymentsManager.createPayment();
 		});
 		/* SWITCH PAGE CONTROL*/
-		$(".ventana-login").dialog("option", "width", 400);
-		$(".final-msgs").dialog("option", "width", 400);
+		/* */
+		$(".change-page").click(function() {
+			$("#single-modal>div").append($(".page-switcher")).find(".page-switcher:last").show();
+			$("#single-modal").addClass("small").fadeIn();
+			$("body").append($("#modal-bg"));
+		});
+		/* */
+		//$(".ventana-login").dialog("option", "width", 400);
+		//$(".final-msgs").dialog("option", "width", 400);
 		$(".change-page").click((e) => {
 			e.preventDefault();
 			let userId = _ctrl.new_dataManager.getObjFromLocalStorage("web2b_userId");
 			_ctrl.new_PageManager.fillModal(userId, () => {
 				location.reload();
 			});
-			$(".ventana-login").dialog("open");
+			//$(".ventana-login").dialog("open");
 		});
 		/*LOGOUT BUTTON*/
 		$('.logout').click((e) => {
