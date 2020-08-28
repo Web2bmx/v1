@@ -184,6 +184,7 @@ input.cta:active {
   width: 2.5rem;
 }
 
+/*@import "../../scss/components/login-paginas";*/
 .form-error, .error {
   color: red;
   display: none;
@@ -1301,9 +1302,25 @@ input::-webkit-color-swatch {
   text-align: center;
 }
 
-/**/
+/*MODAL BG*/
+#modal-bg {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1003;
+}
+
+/*MODAL BG*/
 #single-modal {
   background-color: white;
+  border: 1px solid #b4b4b4;
   bottom: auto;
   display: none;
   height: auto;
@@ -1315,6 +1332,11 @@ input::-webkit-color-swatch {
   top: 5%;
   width: 90%;
   z-index: 1004;
+}
+
+#single-modal.small {
+  left: calc(50% - 12rem);
+  width: 24rem;
 }
 
 #single-modal i {
@@ -1329,23 +1351,31 @@ input::-webkit-color-swatch {
 }
 
 /**/
-/*Modal*/
-.ventana-login, .ventana-login p {
-  color: #b4b4b4;
-  text-align: left;
-}
-
-.ventana-login select {
-  -moz-border-radius: 0.25rem;
-  -ms-border-radius: 0.25rem;
-  -webkit-border-radius: 0.25rem;
-  border-radius: 0.25rem;
-  padding: .5rem;
+/*PAGE SWITCHER*/
+.page-switcher {
+  display: block;
+  height: auto;
+  overflow: hidden;
   width: 100%;
+  font-size: 1rem;
+  margin: 0;
+  padding: 2rem 2rem;
+  text-align: center;
+  width: calc(100% - 4rem);
 }
 
-.ventana-login .form-error {
-  text-align: left;
+.page-switcher img {
+  max-width: 6rem;
+}
+
+.page-switcher button {
+  margin: 1rem auto 0 auto;
+}
+
+/*PAGE SWITCHER*/
+/*Modal*/
+.ventana-login {
+  /*@include login-paginas;*/
 }
 
 .map-error, .map-input {

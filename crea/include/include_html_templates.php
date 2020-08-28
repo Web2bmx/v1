@@ -67,4 +67,6 @@
 			</div>
 		</div>
 	</div>
+	<!--BG-->
+	<div id="modal-bg"></div>
 </div>

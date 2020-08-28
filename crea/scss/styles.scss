@@ -5,7 +5,7 @@
 @import "../../scss/components/_modal";
 @import "../../scss/components/_buttons"; 
 @import "../../scss/components/_inputFields"; 
-@import "../../scss/components/login-paginas";
+/*@import "../../scss/components/login-paginas";*/
 @import "../../scss/partials/_errors";
 /*MIXINS*/
 @mixin box_block ($width: 100%) {
@@ -737,9 +737,21 @@ input::-webkit-color-swatch {
 	font-size: 2rem;
 	text-align: center;
 }
-/**/
+/*MODAL BG*/
+#modal-bg {
+	@include box_block();
+	background-color: rgba(0,0,0,.8);
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1003; 
+}
+/*MODAL BG*/
 #single-modal {
 	background-color: $white;
+	border: 1px solid $gray60;
 	bottom: auto;
 	display: none;
 	height: auto;
@@ -752,6 +764,10 @@ input::-webkit-color-swatch {
 	width: 90%;
 	z-index: 1004; 
 }
+#single-modal.small {
+	left: calc(50% - 12rem);
+	width: 24rem;
+}
 #single-modal i {
 	cursor: pointer;
 	height: 2rem;
@@ -763,10 +779,26 @@ input::-webkit-color-swatch {
 	z-index: 101;
 }
 /**/
+/*PAGE SWITCHER*/
+.page-switcher {
+	@include box_block();
+	font-size: 1rem;
+	margin: 0;
+	padding: 2rem 2rem;
+	text-align: center;
+	width: calc(100% - 4rem);
+	img {
+		max-width: 6rem;
+	}
+	button {
+		margin: 1rem auto 0 auto;
+	}
+}
+/*PAGE SWITCHER*/
 /*Modal*/
 .ventana-login {
 	@extend .modal-login;
-	@include login-paginas;
+	/*@include login-paginas;*/
 }
 .final-msgs{
 	@extend .modal-login;

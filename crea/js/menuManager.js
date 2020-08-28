@@ -124,6 +124,15 @@ export default function templateManager () {
 			$("#app-control-images-logo").parent().attr('style', '');
 		});
 		/*IMAGES*/
+		/*SINGLE MODAL*/
+		$("#single-modal i").on("click", function() {
+            $("#single-modal").fadeOut("fast", function() {
+				$("body").append($(".page-switcher")).find(".page-switcher:last").hide();
+				$("#single-modal").attr("class", "");
+				$("#component_templates").append($("#modal-bg"));
+			});
+		});
+		/*SINGLE MODAL*/
 		/*COLOR*/
 		$("body").on('click', ".control-color-thumb", function() {
 			let $this = $(this);
