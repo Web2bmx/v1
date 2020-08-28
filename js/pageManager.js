@@ -30,7 +30,7 @@ export default function pageManager(){
         for(let i=0, jd; i < paginas.length; i++){
             // if(paginas[i].idSitio === actualPage.idSitio) continue;
             jd = JSON.parse(decodeURIComponent(paginas[i].info));
-            let name = jd.nombre || jd.selections.siteName.text || "no name";
+            let name = jd.nombre ? jd.nombre : ((jd.selections && jd.selections.siteName && jd.selections.siteName.text) ? jd.selections.siteName.text : "no name");
             if(paginas[i].idSitio === actualPage.idSitio) name = name + '(Proyecto actual)';
             html += 
             `<option class="inserted" value="${i}">
