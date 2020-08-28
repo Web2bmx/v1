@@ -240,7 +240,14 @@ export default function imageManager () {
 		$("input[type=submit],button",parent).attr("disabled",true);
 		formData.append(f.attr("name"), f[0].files[0]);	
 
-		$.ajax({ url: ("scripts/uploadImage.php?unique_id=" + _ctrl.jd_templateId), type: "post", data: formData, cache: false, contentType: false, processData: false })
+		$.ajax({ 
+			url: "scripts/uploadImage.php", //?unique_id=" + _ctrl.jd_templateId), 
+			type: "post", 
+			data: formData, 
+			cache: false, 
+			contentType: false, 
+			processData: false 
+		})
 		.done(function(res){
 			if(res.upload == 1){			
 				let img_src = _uploaded_images_url + res.texto;

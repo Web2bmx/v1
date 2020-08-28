@@ -4,6 +4,7 @@
   "description": "Impulsa tu negocio desde cero",
   "main": "js/scripts.js",
   "dependencies": {
+    "@google-cloud/translate": "^6.0.2",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "breakpoint-sass": "2.7.1",

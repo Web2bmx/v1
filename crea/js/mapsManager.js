@@ -3,7 +3,7 @@ import loadGoogleMapsApi from 'load-google-maps-api';
 export default function mapsManager() {
     let inputId = '';
     let mapId = '';
-    let key = 'AIzaSyBR5kBWFTVAecBoW4IKDSjttophb4BC6fg';
+    const key = 'AIzaSyBR5kBWFTVAecBoW4IKDSjttophb4BC6fg';
     let autocomplete;
     let _ctrl = null;
 

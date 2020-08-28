@@ -17,7 +17,8 @@ export default function itemManager () {
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				break;
 			case "RESUME SESSION" :
-				_number_of_items = _ctrl.jd.selections["inp-content-items-number"].text;
+				_number_of_items = (_ctrl.jd.selections["inp-content-items-number"].text && _ctrl.jd.selections["inp-content-items-number"].text != "") ?  
+				parseInt(_ctrl.jd.selections["inp-content-items-number"].text) : 0;
 				$("#inp-content-items-number").val(_number_of_items);
 				for (let i = 0; i < _number_of_items; i++) {
 					addItemControl(i);

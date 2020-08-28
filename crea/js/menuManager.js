@@ -98,7 +98,7 @@ export default function templateManager () {
 
 			$this.parent().addClass("thumb-selected");
 		});
-		$(document.body).on('click', '.img-thumb-overlay', function () {
+		$(document.body).on('click', '#app-control-images-gallery .img-thumb-overlay', function () {
 			var $this = $(this); 
 
 			// if gallery

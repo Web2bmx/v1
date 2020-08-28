@@ -8,6 +8,7 @@ export default function Tour() {
     var _tplData = new_dataManager.getObjFromLocalStorage("web2b");
     var current_step = 0;
     var total_steps = $(".stage").length;
+    const key = 'AIzaSyBR5kBWFTVAecBoW4IKDSjttophb4BC6fg';
     var init = function (){
         new_menuSingleSelection.init(".options-container", ".options-group");
         new_modal.init("#modal");
@@ -128,18 +129,25 @@ export default function Tour() {
         }
     };
     var translateAnswer = function(id, q_type, resp, loc_en, resp_id) {
-        $.get("https://translate.yandex.net/api/v1.5/tr.json/translate",
-            {
-                key: 'trnsl.1.1.20180912T220603Z.70993d2fcf04258e.5e48efdba36505f0de87ff86f3ed40548d14a2e2',
-                lang: 'es-en',
-                text: resp,
-                format: 'plain'
-            }
-        ).done(function(data) {
-            if(data){
-                saveData(id, q_type, resp, decodeURIComponent(data.text[0]), resp_id);
-            }
-        });	
+
+        $.ajax({
+            url: 'https://translation.googleapis.com/language/translate/v2?key=' + key,
+            type: 'post',
+            data: {
+                q: resp,
+                source: "es",
+                target: "en",
+                format: "text"
+            },
+            dataType: 'json'
+        }).
+        done(function (response) {
+            saveData(id, q_type, resp, response.data.translations[0].translatedText, resp_id);
+        }).
+        fail(function(){
+            saveData(id, q_type, resp, resp, resp_id);
+        });
+
     };
     var saveData = function (id, q_type, resp, loc_en, resp_id){
         _tplData.respuestas[id] = {

@@ -218,18 +218,23 @@
 	@include box_block();
 	@include box_absolute();
 	z-index: 1;
+
+	a {
+		cursor: pointer;
+		top: 48%;
+		position: absolute;
+		user-select: none;		
+
+		&.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
+		&.gallery-nav-next { right: 1rem; padding-left: .5rem; }		
+	}
+
+	i {
+		color: hsla(0, 0, 100%, 1);
+		font-size: 2rem !important;
+	}
+
 }
-.gallery-nav>a {
-	background-color: hsla(0, 0, 100%, 1);
-    border-radius: 1rem;
-    cursor: pointer;
-    padding: .25rem .25rem;
-    top: 48%;
-    position: absolute;
-	user-select: none;
-}
-.gallery-nav>a.gallery-nav-prev { left: 1rem; padding-right: .5rem; }
-.gallery-nav>a.gallery-nav-next { right: 1rem; padding-left: .5rem; }
 /*GALERIA*/
 /*MAP*/
 /*MAP*/
