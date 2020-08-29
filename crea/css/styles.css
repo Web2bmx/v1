@@ -819,13 +819,13 @@ input::-webkit-color-swatch {
   width: 100%;
   display: grid;
   grid-gap: 0 1rem;
-  grid-template-columns: 1fr 1fr 0;
+  grid-template-columns: 1fr 2rem 1fr 0;
   height: 3rem;
 }
 
 @media (min-width: 660px) {
   .control-color {
-    grid-template-columns: 2fr 1fr 0;
+    grid-template-columns: 2fr 2rem 1fr 0;
   }
 }
 
@@ -857,6 +857,29 @@ input::-webkit-color-swatch {
   float: left;
   height: 6rem;
   overflow: hidden;
+}
+
+#color-pointer {
+  color: white;
+  font-size: 1.5rem;
+  left: 20%;
+  position: absolute;
+  top: 8rem;
+}
+
+@media (min-width: 660px) {
+  #color-pointer {
+    top: 9rem;
+  }
+}
+
+.control-color-radio i {
+  cursor: pointer;
+  margin: 1rem 0 0 1rem;
+}
+
+.control-color-thumb.thumb-selected + .control-color-radio i::before {
+  content: "\f192";
 }
 
 /*CONTROL COLOR*/
