@@ -140,6 +140,9 @@ export default function templateManager () {
 			$this.parent().find("input").trigger("click");
 			$this.addClass("thumb-selected");
 		});
+		$("body").on('click', ".control-color-radio", function() {
+			$(this).parent().find(".control-color-thumb").trigger("click");
+		});
 		/*COLOR*/
 		/*ITEMS*/
 		$("body").on("click", ".items-change-number", function() {
@@ -187,6 +190,19 @@ export default function templateManager () {
 				$(".app-cover-start").hide();
 				$(".app-cover-finish").show();
 			}
+			/*TRANSITIONS*/
+			if ($(".app-control-step:eq(" + step + ") #color-pointer").length > 0) {
+				$("#color-pointer").addClass("focus");
+			} else {
+				$("#color-pointer").removeClass("focus");
+			}
+			/*if ($(".app-control-step:eq(" + step + ") #color-pointer").length > 0) {
+				$("#color-pointer").().fadeIn("slow", function() {
+					$("#color-pointer").fadeOut("fast");
+				});
+			}*/
+			
+			/*TRANSITIONS*/
 		} else { $(".app-control-step .container-error").hide().fadeIn("fast"); }
 	};
     return {

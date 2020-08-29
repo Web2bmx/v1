@@ -824,19 +824,25 @@ input::-webkit-color-swatch {
   width: 100%;
   display: grid;
   grid-gap: 0 1rem;
-  grid-template-columns: 1fr 1fr 0;
+  grid-template-columns: 1fr 2rem 1fr 0;
   height: 3rem;
+  color: #b4b4b4;
+}
+
+.control-color .thumb-selected + div, .control-color .thumb-selected + div + h4 {
+  color: black;
 }
 
 @media (min-width: 660px) {
   .control-color {
-    grid-template-columns: 2fr 1fr 0;
+    grid-template-columns: 2fr 2rem 1fr 0;
   }
 }
 
 .control-color h4 {
   font-weight: normal;
-  margin: .5rem 0 0 0;
+  line-height: 48px;
+  color: #b4b4b4;
 }
 
 .control-color-thumb {
@@ -850,7 +856,7 @@ input::-webkit-color-swatch {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: calc(100% - 2px);
+  width: calc(100% - 3px);
 }
 
 .control-color-thumb.thumb-selected {
@@ -862,6 +868,42 @@ input::-webkit-color-swatch {
   float: left;
   height: 6rem;
   overflow: hidden;
+}
+
+#color-pointer {
+  color: white;
+  font-size: 1.5rem;
+  left: 20%;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 10rem;
+  transition: top 2s, opacity 2s;
+}
+
+#color-pointer.focus {
+  opacity: 0;
+  top: 8rem;
+}
+
+@media (min-width: 660px) {
+  #color-pointer.focus {
+    top: 9rem;
+  }
+}
+
+.control-color-radio {
+  align-content: center;
+  display: grid;
+  justify-content: center;
+}
+
+.control-color-radio i {
+  cursor: pointer;
+}
+
+.control-color-thumb.thumb-selected + .control-color-radio i::before {
+  content: "\f192";
 }
 
 /*CONTROL COLOR*/
@@ -1340,8 +1382,15 @@ input::-webkit-color-swatch {
 }
 
 #single-modal.small {
-  left: calc(50% - 12rem);
-  width: 24rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+}
+
+@media (min-width: 660px) {
+  #single-modal.small {
+    left: calc(50% - 12rem);
+    width: 24rem;
+  }
 }
 
 #single-modal i {

@@ -6,6 +6,7 @@
 			<div class="control-color-thumb-bg"></div>
 			<div class="control-color-thumb-bg"></div>
 		</div>
+		<div class="control-color-radio"><i class="far fa-circle"></i></div>
 		<h4></h4>
 		<input type="radio" name="inp-palette" value="" style="display: none;" />
 	</div>

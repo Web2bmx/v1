@@ -421,12 +421,22 @@ input::-webkit-color-swatch {
 	@include box_block();
 	display: grid;
 	grid-gap: 0 1rem;
-	grid-template-columns: 1fr 1fr 0;
+	grid-template-columns: 1fr 2rem 1fr 0;
 	height: 3rem;
-	@include breakpoint($tablet){ grid-template-columns: 2fr 1fr 0; }
+	color: $gray60;
+
+	.thumb-selected{
+
+		+ div , + div + h4{
+			color: black;
+		}	
+	}
+
+	@include breakpoint($tablet){ grid-template-columns: 2fr 2rem 1fr 0; }
 	h4 {
 		font-weight: normal;
-		margin: .5rem 0 0 0;
+		line-height: 48px;
+		color: $gray60;
 	}
 }
 .control-color-thumb {
@@ -437,7 +447,7 @@ input::-webkit-color-swatch {
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: calc(100% - 2px);
+	width: calc(100% - 3px);
 	&.thumb-selected { border-color: $pink80; }
 }
 .control-color-thumb-bg {
@@ -445,6 +455,30 @@ input::-webkit-color-swatch {
 	float: left;
 	height: 6rem;
 	overflow: hidden;
+}
+#color-pointer {
+	color: $white;
+	font-size: 1.5rem;
+	left: 20%;
+	opacity: 1;
+	pointer-events: none;
+    position: absolute;
+	top: 10rem;
+	transition: top 2s, opacity 2s;
+}
+#color-pointer.focus {
+	opacity: 0;
+	top: 8rem;
+	@include breakpoint($tablet){ top: 9rem; }
+}
+.control-color-radio {
+	align-content: center;
+	display: grid;
+	justify-content: center;
+	i { cursor: pointer; }
+}
+.control-color-thumb.thumb-selected + .control-color-radio {
+	i::before{ content: "\f192"; }
 }
 /*CONTROL COLOR*/
 /*CONTROL IMAGES*/
@@ -770,8 +804,12 @@ input::-webkit-color-swatch {
 	z-index: 1004; 
 }
 #single-modal.small {
-	left: calc(50% - 12rem);
-	width: 24rem;
+	left: 1rem;
+	width: calc(100% - 2rem);
+	@include breakpoint($tablet){
+		left: calc(50% - 12rem);
+		width: 24rem;
+	}
 }
 #single-modal i {
 	cursor: pointer;
