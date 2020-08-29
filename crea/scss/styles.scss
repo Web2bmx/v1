@@ -423,10 +423,20 @@ input::-webkit-color-swatch {
 	grid-gap: 0 1rem;
 	grid-template-columns: 1fr 2rem 1fr 0;
 	height: 3rem;
+	color: $gray60;
+
+	.thumb-selected{
+
+		+ div , + div + h4{
+			color: black;
+		}	
+	}
+
 	@include breakpoint($tablet){ grid-template-columns: 2fr 2rem 1fr 0; }
 	h4 {
 		font-weight: normal;
-		margin: .5rem 0 0 0;
+		line-height: 48px;
+		color: $gray60;
 	}
 }
 .control-color-thumb {
@@ -437,7 +447,7 @@ input::-webkit-color-swatch {
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
-	width: calc(100% - 2px);
+	width: calc(100% - 3px);
 	&.thumb-selected { border-color: $pink80; }
 }
 .control-color-thumb-bg {

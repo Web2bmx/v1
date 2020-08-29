@@ -826,6 +826,11 @@ input::-webkit-color-swatch {
   grid-gap: 0 1rem;
   grid-template-columns: 1fr 2rem 1fr 0;
   height: 3rem;
+  color: #b4b4b4;
+}
+
+.control-color .thumb-selected + div, .control-color .thumb-selected + div + h4 {
+  color: black;
 }
 
 @media (min-width: 660px) {
@@ -836,7 +841,8 @@ input::-webkit-color-swatch {
 
 .control-color h4 {
   font-weight: normal;
-  margin: .5rem 0 0 0;
+  line-height: 48px;
+  color: #b4b4b4;
 }
 
 .control-color-thumb {
@@ -850,7 +856,7 @@ input::-webkit-color-swatch {
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  width: calc(100% - 2px);
+  width: calc(100% - 3px);
 }
 
 .control-color-thumb.thumb-selected {
