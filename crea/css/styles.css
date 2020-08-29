@@ -629,6 +629,11 @@ a {
   }
 }
 
+.app-control-step h2 + p {
+  color: #787878;
+  margin-bottom: 2rem;
+}
+
 .app-control-step h3 {
   font-weight: bold;
   margin: 1rem 0 1rem 0;
@@ -1211,7 +1216,7 @@ input::-webkit-color-swatch {
   height: auto;
   overflow: hidden;
   width: auto;
-  background-color: #ff0593;
+  background-color: #0f1626;
   color: white;
   font-size: .75rem;
   padding: .5rem 1rem;

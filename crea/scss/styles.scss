@@ -281,6 +281,11 @@ a { text-decoration: none; }
 		color: $gray40;	
 		font-size: 1.5rem;
 		@include breakpoint($tablet){ font-size: 2rem; }
+
+		+ p {
+			color: $gray40;
+			margin-bottom: 2rem;
+		}
 	}
 	h3 {
 		font-weight: bold;
@@ -685,7 +690,7 @@ input::-webkit-color-swatch {
 /*APP SWITCH*/
 #app-switch {
 	@include box_block(auto);
-	background-color: $pink60;
+	background-color: $blue20;
 	color: $white;
 	font-size: .75rem;
 	padding: .5rem 1rem;
