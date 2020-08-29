@@ -1,8 +1,8 @@
 <div>
 	<h2>Colores</h2>
-	<p>
+	<!--<p>
 		Escoge un color principal para tu sitio y selecciona la paleta de colores que mas te guste.
-	</p>
+	</p>-->
 	<div class="container-input"> 
 		<label for="inp-color">Color principal</label>
 		<input type="color" id="inp-color" name="inp-color" value="#ff0000" />

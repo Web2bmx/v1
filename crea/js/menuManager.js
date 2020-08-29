@@ -196,6 +196,7 @@ export default function templateManager () {
 					$("#color-pointer").fadeOut("fast");
 				});
 			}
+			
 			/*TRANSITIONS*/
 		} else { $(".app-control-step .container-error").hide().fadeIn("fast"); }
 	};
