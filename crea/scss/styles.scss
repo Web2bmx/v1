@@ -794,8 +794,12 @@ input::-webkit-color-swatch {
 	z-index: 1004; 
 }
 #single-modal.small {
-	left: calc(50% - 12rem);
-	width: 24rem;
+	left: 1rem;
+	width: calc(100% - 2rem);
+	@include breakpoint($tablet){
+		left: calc(50% - 12rem);
+		width: 24rem;
+	}
 }
 #single-modal i {
 	cursor: pointer;

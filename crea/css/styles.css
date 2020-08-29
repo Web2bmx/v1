@@ -1376,8 +1376,15 @@ input::-webkit-color-swatch {
 }
 
 #single-modal.small {
-  left: calc(50% - 12rem);
-  width: 24rem;
+  left: 1rem;
+  width: calc(100% - 2rem);
+}
+
+@media (min-width: 660px) {
+  #single-modal.small {
+    left: calc(50% - 12rem);
+    width: 24rem;
+  }
 }
 
 #single-modal i {
