@@ -192,10 +192,15 @@ export default function templateManager () {
 			}
 			/*TRANSITIONS*/
 			if ($(".app-control-step:eq(" + step + ") #color-pointer").length > 0) {
-				$("#color-pointer").hide().fadeIn("slow", function() {
+				$("#color-pointer").addClass("focus");
+			} else {
+				$("#color-pointer").removeClass("focus");
+			}
+			/*if ($(".app-control-step:eq(" + step + ") #color-pointer").length > 0) {
+				$("#color-pointer").().fadeIn("slow", function() {
 					$("#color-pointer").fadeOut("fast");
 				});
-			}
+			}*/
 			
 			/*TRANSITIONS*/
 		} else { $(".app-control-step .container-error").hide().fadeIn("fast"); }

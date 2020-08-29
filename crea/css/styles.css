@@ -868,19 +868,32 @@ input::-webkit-color-swatch {
   color: white;
   font-size: 1.5rem;
   left: 20%;
+  opacity: 1;
+  pointer-events: none;
   position: absolute;
+  top: 10rem;
+  transition: top 2s, opacity 2s;
+}
+
+#color-pointer.focus {
+  opacity: 0;
   top: 8rem;
 }
 
 @media (min-width: 660px) {
-  #color-pointer {
+  #color-pointer.focus {
     top: 9rem;
   }
 }
 
+.control-color-radio {
+  align-content: center;
+  display: grid;
+  justify-content: center;
+}
+
 .control-color-radio i {
   cursor: pointer;
-  margin: 1rem 0 0 1rem;
 }
 
 .control-color-thumb.thumb-selected + .control-color-radio i::before {
