@@ -56,16 +56,14 @@ export default function itemManager () {
 	};
     var addItem = function(v) {
 		if (v < _number_of_items) {
-			$(".item-control:last").remove();
+			console.log(v);
 			$("#template .items:last .item:last").remove();
 			if($("#template .items:last .item").length == 0) { $("#template .items:last").remove(); }
 			$("#template .items:last").removeClass("one two three");
 			$("#template .items:last").addClass(getClassSize());
+			$("#items-navigation .item-navigation:last").prev(".item-navigation").trigger("click");
 			$("#items-navigation .item-navigation:last").remove();
-			if ($(".item-control:last").is(":visible")) {
-				$(".item-control:last").hide();
-				$(".item-control:eq(" + $(".item-control").length - 1 + ")").fadeIn();
-			}
+			$(".item-control:last").remove()
 		}
 		if (v > _number_of_items) {
 			addItemControl(_number_of_items);
