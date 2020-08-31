@@ -1073,7 +1073,8 @@ input::-webkit-color-swatch {
   -webkit-border-radius: 0.25rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  background-color: #5091ff;
+  background-color: #b0c7f2;
+  color: white;
   float: left;
   height: auto;
   margin-right: .5rem;
@@ -1088,7 +1089,6 @@ input::-webkit-color-swatch {
 
 #content-item-type label.checked {
   background-color: #055dff;
-  color: #f0f0f0;
 }
 
 .content-item-number {
@@ -1137,6 +1137,32 @@ input::-webkit-color-swatch {
 }
 
 /*CONTROL ITEMS*/
+/*ITEMS NAVIGATION*/
+#items-navigation {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#items-navigation .item-navigation {
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  background-color: #b0c7f2;
+  color: white;
+  cursor: pointer;
+  float: left;
+  margin-right: .5rem;
+  padding: .5rem;
+}
+
+#items-navigation .item-navigation.selected {
+  background-color: #055dff;
+}
+
+/*ITEMS NAVIGATION*/
 /*NAME CONTROL*/
 .inputWihIcons {
   position: relative;

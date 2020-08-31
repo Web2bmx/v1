@@ -594,7 +594,8 @@ input::-webkit-color-swatch {
 	label {
 		@include border_radius(.25rem);
 		cursor: pointer;
-		background-color: $blue80;
+		background-color: $blue100;
+		color: $white;
 		float: left;
 		height: auto;
 		margin-right: .5rem;
@@ -606,7 +607,6 @@ input::-webkit-color-swatch {
 		}
 		&.checked {
 			background-color: $blue60;
-			color: $gray80;
 		}	
 	}
 }
@@ -645,6 +645,23 @@ input::-webkit-color-swatch {
 	}
 }
 /*CONTROL ITEMS*/
+/*ITEMS NAVIGATION*/
+#items-navigation {
+	@include box_block();
+	.item-navigation {
+		@include border-radius(.25rem);
+		background-color: $blue100;
+		color: $white;
+		cursor: pointer;
+		float: left;
+		margin-right: .5rem;
+		padding: .5rem;
+		&.selected {
+			background-color: $blue60;
+		}
+	}
+}
+/*ITEMS NAVIGATION*/
 /*NAME CONTROL*/
 .inputWihIcons {
 	position: relative;

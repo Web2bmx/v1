@@ -154,6 +154,14 @@ export default function templateManager () {
 				_ctrl.new_itemManager.addItem(v);
 			}
 		});
+		$("body").on("click", ".item-navigation", function() {
+			var $this = $(this);
+			var i = $(".item-navigation").index($this);
+			$(".item-navigation").removeClass("selected");
+			$(".item-control").hide();
+			$this.addClass("selected");
+			$(".item-control:eq(" + i + ")").fadeIn();
+		});
 		/*ITEMS*/
 		/*UPLOADS*/
 		$('.file-upload button').on("click", (e) => {

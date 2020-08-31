@@ -22,13 +22,18 @@ export default function itemManager () {
 				$("#inp-content-items-number").val(_number_of_items);
 				for (let i = 0; i < _number_of_items; i++) {
 					addItemControl(i);
+					addItemToNavigation(i);
 					addItemToTemplate(i + 1);
 				}
 				break;
 		}
 	};
+	var addItemToNavigation = function(i) {
+		console.log("item navigation " + i);
+		$("#items-navigation").append($(".item-navigation.template").clone());
+		$("#items-navigation .item-navigation.template").html(i + 1).removeClass("template").trigger("click");
+	}
 	var addItemControl = function(i) {
-		console.log("addItemControl");
 		/*ADDS CONTROL*/
 		let k = (i * 1) + 1;
 		let $i_t = $(".item-control:last").clone();
@@ -50,17 +55,22 @@ export default function itemManager () {
 		});
 	};
     var addItem = function(v) {
-		console.log("addItem + " + v);
 		if (v < _number_of_items) {
 			$(".item-control:last").remove();
 			$("#template .items:last .item:last").remove();
 			if($("#template .items:last .item").length == 0) { $("#template .items:last").remove(); }
 			$("#template .items:last").removeClass("one two three");
 			$("#template .items:last").addClass(getClassSize());
+			$("#items-navigation .item-navigation:last").remove();
+			if ($(".item-control:last").is(":visible")) {
+				$(".item-control:last").hide();
+				$(".item-control:eq(" + $(".item-control").length - 1 + ")").fadeIn();
+			}
 		}
 		if (v > _number_of_items) {
 			addItemControl(_number_of_items);
 			addItemToTemplate(v);
+			addItemToNavigation(_number_of_items);
 		}
 		_number_of_items = v;
 	};

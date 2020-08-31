@@ -18,4 +18,7 @@
 			<button class="items-change-number add-item">+</button>
 		</div>
 	</div>
+	<div class="container-input">
+		<div id="items-navigation"></div>
+	</div>
 </div>
