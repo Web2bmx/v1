@@ -17,18 +17,26 @@ export default function itemManager () {
 				_ctrl.new_dataManager.saveWeb2bJson(_ctrl.jd);
 				break;
 			case "RESUME SESSION" :
-				_number_of_items = (_ctrl.jd.selections["inp-content-items-number"].text && _ctrl.jd.selections["inp-content-items-number"].text != "") ?  
-				parseInt(_ctrl.jd.selections["inp-content-items-number"].text) : 0;
+				_number_of_items = (
+					_ctrl.jd.selections["inp-content-items-number"] && 
+					_ctrl.jd.selections["inp-content-items-number"].text &&
+					_ctrl.jd.selections["inp-content-items-number"].text != "") ?  
+					parseInt(_ctrl.jd.selections["inp-content-items-number"].text) : 0;
 				$("#inp-content-items-number").val(_number_of_items);
 				for (let i = 0; i < _number_of_items; i++) {
 					addItemControl(i);
+					addItemToNavigation(i);
 					addItemToTemplate(i + 1);
 				}
 				break;
 		}
 	};
+	var addItemToNavigation = function(i) {
+		console.log("item navigation " + i);
+		$("#items-navigation").append($(".item-navigation.template").clone());
+		$("#items-navigation .item-navigation.template").html(i + 1).removeClass("template").trigger("click");
+	}
 	var addItemControl = function(i) {
-		console.log("addItemControl");
 		/*ADDS CONTROL*/
 		let k = (i * 1) + 1;
 		let $i_t = $(".item-control:last").clone();
@@ -50,17 +58,20 @@ export default function itemManager () {
 		});
 	};
     var addItem = function(v) {
-		console.log("addItem + " + v);
 		if (v < _number_of_items) {
-			$(".item-control:last").remove();
+			console.log(v);
 			$("#template .items:last .item:last").remove();
 			if($("#template .items:last .item").length == 0) { $("#template .items:last").remove(); }
 			$("#template .items:last").removeClass("one two three");
 			$("#template .items:last").addClass(getClassSize());
+			$("#items-navigation .item-navigation:last").prev(".item-navigation").trigger("click");
+			$("#items-navigation .item-navigation:last").remove();
+			$(".item-control:last").remove()
 		}
 		if (v > _number_of_items) {
 			addItemControl(_number_of_items);
 			addItemToTemplate(v);
+			addItemToNavigation(_number_of_items);
 		}
 		_number_of_items = v;
 	};

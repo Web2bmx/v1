@@ -27,8 +27,15 @@
 			?>
 		</div>		
 		<?php include_once("include/include_html_templates.php"); ?>
-		<?php /*include_once("include/include_chat.php");*/ ?>
+		<?php 
+			$host = $_SERVER['HTTP_HOST'];
+			$host_arr = explode(".",$host);
+			if ($host_arr[0] !== "local" ) {
+				include_once("include/include_chat.php"); 
+			}
+		?>
 		<?php include_once("include/include_modal-page-switcher.php"); ?>
-		<?php include_once("include/include_libraries.php"); ?>		
+		<?php include_once("include/include_libraries.php"); ?>
+		<img src="/img/logo.png" class="floating-logo" />
 	</body>
 </html>

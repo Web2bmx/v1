@@ -594,7 +594,8 @@ input::-webkit-color-swatch {
 	label {
 		@include border_radius(.25rem);
 		cursor: pointer;
-		background-color: $blue80;
+		background-color: $blue100;
+		color: $white;
 		float: left;
 		height: auto;
 		margin-right: .5rem;
@@ -606,7 +607,6 @@ input::-webkit-color-swatch {
 		}
 		&.checked {
 			background-color: $blue60;
-			color: $gray80;
 		}	
 	}
 }
@@ -645,6 +645,23 @@ input::-webkit-color-swatch {
 	}
 }
 /*CONTROL ITEMS*/
+/*ITEMS NAVIGATION*/
+#items-navigation {
+	@include box_block();
+	.item-navigation {
+		@include border-radius(.25rem);
+		background-color: $blue100;
+		color: $white;
+		cursor: pointer;
+		float: left;
+		margin-right: .5rem;
+		padding: .5rem;
+		&.selected {
+			background-color: $blue60;
+		}
+	}
+}
+/*ITEMS NAVIGATION*/
 /*NAME CONTROL*/
 .inputWihIcons {
 	position: relative;
@@ -712,6 +729,8 @@ input::-webkit-color-swatch {
 	font-size: .75rem;
 	padding: .5rem 1rem;
 	text-align: right;
+	height: 40px;
+	box-sizing: border-box;
 	@include breakpoint($tablet){ font-size: 1rem; }
 	li { display: inline; }
     a{
@@ -855,3 +874,20 @@ input::-webkit-color-swatch {
 /*TEMPLATE ACOMMODATIONS*/
 body #menu { top: 40px; }
 body.init #menu { top: 0; }
+
+.floating-logo {
+	position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 100;
+    opacity: .3;
+	width: 100px;
+	
+	&:hover {
+		opacity: .6;
+	}
+}
+
+a.cerrar-final-msgs {
+	font-size: 16px;
+}

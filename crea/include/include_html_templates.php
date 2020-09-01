@@ -70,4 +70,6 @@
 	</div>
 	<!--BG-->
 	<div id="modal-bg"></div>
+	<!--ITEM-NAVIGATION-->
+	<span class="item-navigation template"></span>
 </div>
