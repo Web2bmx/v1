@@ -178,6 +178,21 @@ export default function templateManager () {
 		});
 		$('.file-upload input[type="submit"]').on('click', _ctrl.new_imageManager.uploadImage);
 		/*UPLOADS*/
+		/*OPTIONALS*/
+		$("#control-optionals .tab").each(function() {
+			$("#optionals-navigation").append($(".optional-navigation.template").clone());
+			$("#optionals-navigation .optional-navigation.template").removeClass("template").html($(this).find("h3:first span").html());
+		}).hide();
+		$("body").on("click", ".optional-navigation", function() {
+			var $this = $(this);
+			var i = $(".optional-navigation").index($this);
+			$(".optional-navigation").removeClass("selected");
+			$this.addClass("selected");
+			$("#control-optionals .tab").hide();
+			$("#control-optionals .tab:eq(" + i + ")").fadeIn();
+		});
+		$("#optionals-navigation .optional-navigation:first").trigger("click");
+		/*OPTIONALS*/
 	};
 	var hideFormElements = function($s) {
 		$s.toggleClass("hidden");

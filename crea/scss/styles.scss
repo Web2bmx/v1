@@ -662,6 +662,21 @@ input::-webkit-color-swatch {
 	}
 }
 /*ITEMS NAVIGATION*/
+/*OPTIONALS NAVIGATION*/
+#optionals-navigation {
+	@include box_block();
+	.optional-navigation {
+		background-color: $blue100;
+		color: $white;
+		cursor: pointer;
+		float: left;
+		padding: .5rem 1rem;
+		&.selected {
+			background-color: $blue60;
+		}
+	}
+}
+/*OPTIONALS NAVIGATION*/
 /*NAME CONTROL*/
 .inputWihIcons {
 	position: relative;
