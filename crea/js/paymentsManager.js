@@ -59,6 +59,7 @@ export default function paymentsManager () {
 			title: template_info.selections['inp-content-name'].text,
 			description: template_info.selections['inp-content-slogan'].text
 		}).done((PublishResult) => {
+			$('#app-cover').scrollTop(0);
 			$('.final-msgs p').text('La página se ha publicado exitosamente');
 			$('.final-msgs').dialog("open");
 			if(fecha != '') {

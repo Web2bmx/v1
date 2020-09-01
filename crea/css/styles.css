@@ -1287,6 +1287,8 @@ input::-webkit-color-swatch {
   font-size: .75rem;
   padding: .5rem 1rem;
   text-align: right;
+  height: 40px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 660px) {
@@ -1492,6 +1494,23 @@ body #menu {
 
 body.init #menu {
   top: 0;
+}
+
+.floating-logo {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  opacity: .3;
+  width: 100px;
+}
+
+.floating-logo:hover {
+  opacity: .6;
+}
+
+a.cerrar-final-msgs {
+  font-size: 16px;
 }
 
 /*# sourceMappingURL=styles.css.map */
