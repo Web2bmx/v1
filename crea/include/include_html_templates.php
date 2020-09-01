@@ -72,4 +72,6 @@
 	<div id="modal-bg"></div>
 	<!--ITEM-NAVIGATION-->
 	<span class="item-navigation template"></span>
+	<!--OPTIONAL-NAVIGATION-->
+	<span class="optional-navigation template"></span>
 </div>

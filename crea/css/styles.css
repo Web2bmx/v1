@@ -1163,6 +1163,27 @@ input::-webkit-color-swatch {
 }
 
 /*ITEMS NAVIGATION*/
+/*OPTIONALS NAVIGATION*/
+#optionals-navigation {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+#optionals-navigation .optional-navigation {
+  background-color: #b0c7f2;
+  color: white;
+  cursor: pointer;
+  float: left;
+  padding: .5rem 1rem;
+}
+
+#optionals-navigation .optional-navigation.selected {
+  background-color: #055dff;
+}
+
+/*OPTIONALS NAVIGATION*/
 /*NAME CONTROL*/
 .inputWihIcons {
   position: relative;

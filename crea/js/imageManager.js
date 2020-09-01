@@ -118,7 +118,7 @@ export default function imageManager () {
 								const arr = img.split('#web2b#');
 								img = arr[0];
 							}	
-							let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage(img));
+							let $img = $(".img.template").clone().removeClass("template").css('background-image','url("' + img + '")');
 							if (img != "") {
 								$("#gallery .gallery").append($img);
 							}
@@ -130,7 +130,7 @@ export default function imageManager () {
 							const arr = img.split('#web2b#');
 							img = arr[0];
 						}						
-						$(key).attr("class", ("img img-MC img-L")).css(setBackgroundImage(img));	
+						$(key).attr("class", ("img img-MC img-L")).css('background-image','url("' + img + '")');	
 					}
 				break;
 			}
@@ -194,7 +194,7 @@ export default function imageManager () {
 			img = arr[0];
 		}
 		let $img_thumb = $(".img-thumb.template").clone();
-		$img_thumb.removeClass("template").find(".img-thumb-cont").css(setBackgroundImage(img)).attr("data-img-url", img);
+		$img_thumb.removeClass("template").find(".img-thumb-cont").css('background-image','url("' + img + '")').attr("data-img-url", img);
 		$img_thumb.find("input").attr("value", img);
 		if(arr != ''){
 			$img_thumb.find("input").attr('data-download', arr[1]);
@@ -284,13 +284,13 @@ export default function imageManager () {
 		if (cont == "logo") {
 			$("#img-logo").attr('src',img);
 		} else if (cont == "gallery") {
-			let $img = $(".img.template").clone().removeClass("template").css(setBackgroundImage(img));
+			let $img = $(".img.template").clone().removeClass("template").css('background-image','url("' + img + '")');
 			$("#gallery .gallery").append($img).find(".img").hide().filter(":eq(0)").show();
 		} else {
-			$("#img-" + cont).css(setBackgroundImage(img));
+			$("#img-" + cont).css('background-image','url("' + img + '")');
 		} 
 	};
-	var setBackgroundImage = (img, obj = {}) => { obj["background-image"] = 'url(' + img + ')'; return obj; };
+	var setBackgroundImage = (img, obj = {}) => { obj["background-image"] = 'url("' + img + '")'; return obj; };
 	return {
 		init : init,
 		setImageSelection : setImageSelection,
