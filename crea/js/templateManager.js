@@ -19,12 +19,12 @@ export default function templateManager () {
 		if(templateChanged) { _ctrl.sessionStatus = "RESUME SESSION"; }
 		_ctrl.new_dataManager.saveSelected(_ctrl.jd,"templateTypeId",id,"config");
 		$("#template").html("");
-		var content_id = _ctrl.jd.respuestas[22].resp_id == "" ? 2 : _ctrl.jd.respuestas[22].resp_id;
+		var content_id = (!_ctrl.jd.respuestas[22] || _ctrl.jd.respuestas[22].resp_id == "") ? 2 : _ctrl.jd.respuestas[22].resp_id;
 		var src = "Templates/Template-" + id + "/index.php?t=" + content_id + "&color=impact&hex=000000"; 
 		$("#template-cont").load(src + " #template", function() {
 			var $template = $("#template");
 			$template.find("link[href^='css/styles.css']").attr("href", ("Templates/Template-" + id + "/css/styles.css"));
-			_ctrl.new_imageManager.setImageSelection(_ctrl.jd.respuestas[22].localizacion_en);
+			_ctrl.new_imageManager.setImageSelection((!_ctrl.jd.respuestas[22] || _ctrl.jd.respuestas[22].localizacion_en == "") ? 'nature' : _ctrl.jd.respuestas[22].localizacion_en);
 			_ctrl.new_itemManager.setItems();
 			updateContent();
 			console.log("TEMPLATE LOADED");
@@ -176,7 +176,7 @@ export default function templateManager () {
 		let arr;
 		switch (i_id) {
 			case "inp-contact-email" :
-				$template.find("#val-contact-email").html("<a href='mailto:" + selections[i_id] ? selections[i_id].text : '' + "'>" + selections[i_id] ? selections[i_id].text : '' + "</a>");
+				$template.find("#val-contact-email").html("<a href='mailto:" + (selections[i_id] ? selections[i_id].text : '') + "'>" + (selections[i_id] ? selections[i_id].text : '') + "</a>");
 				break;
 			case "inp-contact-map" :
 				$template.find("#val-contact-map").html(selections[i_id] ? selections[i_id].text : '');

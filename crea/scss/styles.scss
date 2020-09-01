@@ -729,6 +729,8 @@ input::-webkit-color-swatch {
 	font-size: .75rem;
 	padding: .5rem 1rem;
 	text-align: right;
+	height: 40px;
+	box-sizing: border-box;
 	@include breakpoint($tablet){ font-size: 1rem; }
 	li { display: inline; }
     a{
@@ -872,3 +874,20 @@ input::-webkit-color-swatch {
 /*TEMPLATE ACOMMODATIONS*/
 body #menu { top: 40px; }
 body.init #menu { top: 0; }
+
+.floating-logo {
+	position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 100;
+    opacity: .3;
+	width: 100px;
+	
+	&:hover {
+		opacity: .6;
+	}
+}
+
+a.cerrar-final-msgs {
+	font-size: 16px;
+}

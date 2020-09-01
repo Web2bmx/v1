@@ -19,7 +19,7 @@ export default function utilsManager () {
 		if (fin >= today) {
 			diff = Math.ceil((Math.abs(today - fin)) / (1000 * 3600 * 24));
 		} else {
-			diff = 0;
+			diff = -1;
 		}
 		return diff;	
 	};

@@ -138,6 +138,9 @@
 			<i class="fas fa-times"></i>
 		</a>    
 		<p>
-		</p>		
+		</p>
+		<a class="cta cerrar-final-msgs">
+			ACEPTAR
+		</a>
 	</div> 	
 </div>
