@@ -63,6 +63,9 @@ a { text-decoration: none; }
 		max-width: $desktop;
 		text-align: center;
 		@include breakpoint($tablet){ width: 80%; }
+		@include breakpoint($desktop){
+			margin: 2rem auto 2rem auto;
+		}
 	}
 	label{
 		display: block;
@@ -200,6 +203,9 @@ a { text-decoration: none; }
 		font-size: 1rem;	
 		height: 12rem;
 		text-align: center;
+		@include breakpoint($desktop){
+			height: 6rem;
+		}
 	}
 	.finish{
 		background: none;				
@@ -301,6 +307,7 @@ a { text-decoration: none; }
 .app-control-step-finish {
 	margin-top: 50%;
 	text-align: center;
+	@include breakpoint($desktop){ margin-top: 6rem; }
 }
 /*APP CONTROL STEP*/
 /*CONTAINER INPUT*/

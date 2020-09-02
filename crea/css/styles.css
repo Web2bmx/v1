@@ -284,6 +284,12 @@ a {
   }
 }
 
+@media (min-width: 1040px) {
+  #app-cover > div {
+    margin: 2rem auto 2rem auto;
+  }
+}
+
 #app-cover label {
   display: block;
   margin-bottom: 1rem;
@@ -494,6 +500,12 @@ a {
   text-align: center;
 }
 
+@media (min-width: 1040px) {
+  .app-cover-finish-package ul {
+    height: 6rem;
+  }
+}
+
 .app-cover-finish-package .finish {
   background: none;
   border-radius: 0;
@@ -650,6 +662,12 @@ a {
 .app-control-step-finish {
   margin-top: 50%;
   text-align: center;
+}
+
+@media (min-width: 1040px) {
+  .app-control-step-finish {
+    margin-top: 6rem;
+  }
 }
 
 /*APP CONTROL STEP*/
