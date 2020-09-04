@@ -1,5 +1,5 @@
 <div id="control-optionals">
-	<h2>Otras secciones</h2>
+	<h2>Secciones</h2>
 	<div id="optionals-navigation" class="container-input"></div>
 	<div class="tab">
 		<div class="container-input">	

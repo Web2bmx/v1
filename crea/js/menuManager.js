@@ -213,18 +213,16 @@ export default function templateManager () {
 				$(".app-cover-start").hide();
 				$(".app-cover-finish").show();
 			}
+			/*BREADCRUMB*/
+			$(".app-control-step:eq(" + step + ")").find("h2:first").hide();
+			$("#breadcrumb").html($(".app-control-step:eq(" + step + ")").find("h2:first").html());
+			/*BREADCRUMB*/
 			/*TRANSITIONS*/
 			if ($(".app-control-step:eq(" + step + ") #color-pointer").length > 0) {
 				$("#color-pointer").addClass("focus");
 			} else {
 				$("#color-pointer").removeClass("focus");
 			}
-			/*if ($(".app-control-step:eq(" + step + ") #color-pointer").length > 0) {
-				$("#color-pointer").().fadeIn("slow", function() {
-					$("#color-pointer").fadeOut("fast");
-				});
-			}*/
-			
 			/*TRANSITIONS*/
 		} else { $(".app-control-step .container-error").hide().fadeIn("fast"); }
 	};

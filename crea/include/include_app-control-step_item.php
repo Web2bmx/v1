@@ -1,5 +1,5 @@
 <div id="items-control">	
-	<h2>Productos y Servicios</h2>
+	<h2>Catálogo</h2>
 	<div class="select-item-control">
 		<div class="container-input">	
 			<h3>¿Tu Negocio tiene productos o servicios?</h3>

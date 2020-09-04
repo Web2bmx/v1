@@ -133,7 +133,7 @@
 			</button>										
 		</div>
 	</div>
-	<div class="dialog final-msgs">
+	<div class="dialog final-msgs" style="display: none;">
 		<a class="cerrar-final-msgs x-close">
 			<i class="fas fa-times"></i>
 		</a>    

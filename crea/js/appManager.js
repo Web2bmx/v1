@@ -28,9 +28,7 @@ export default function appManager() {
 		/*START SCREEN NEXT BUTTON*/
 		$(".app-cover-start .next").click(function () {
 			$("#app-cover").hide();
-			$(".app-cover-start").hide();
-			$(".app-cover-finish").show();
-			_ctrl.current_step = 0;
+			_ctrl.new_menuManager.goToStep(0);
 		});
 		/*FINISH BUTTON*/
 		$(".finish").on("click", function () {
