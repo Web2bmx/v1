@@ -212,19 +212,22 @@ a { text-decoration: none; }
 		border-radius: 0;
 		cursor: pointer;
 		display: block;
-		height: 5rem;
+		min-height: 2rem;
 		margin-top: 2rem;
-		width: 100%;					
+		width: 100%;
+		height: auto;				
 	}
 	button.finish{
 		padding: 0px 1rem;
 		border: 1px solid $white; 
+		background: $white;
+		color: $pink40;
+		font-size: 1rem;
 		i, span{ vertical-align: middle; }
-		i{ font-size: 2rem; }
 		&:hover{
-			background: $white;
-			color: $pink40;
-		}
+			background: $pink40;
+			color: $white;
+		} 
 	}
 }		
 /*PACKAGES*/

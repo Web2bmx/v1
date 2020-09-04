@@ -89,7 +89,7 @@
 					</ul>
 					<button class="finish">
 						<i class="fas fa-check-circle"></i>
-						<span>FINALIZAR</span>
+						<span>COMENZAR DEMO</span>
 					</button>
 				</div>
 				<div class="app-cover-finish-package">
@@ -113,7 +113,7 @@
 					<aside>
 						<h4>PREMIUM</h4>
 						<hr />
-						<span class="price">$1599</span>
+						<span class="price">$1595</span>
 						<span>anual</span>
 					</aside>
 					<ul>

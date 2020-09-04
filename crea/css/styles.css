@@ -511,27 +511,27 @@ a {
   border-radius: 0;
   cursor: pointer;
   display: block;
-  height: 5rem;
+  min-height: 2rem;
   margin-top: 2rem;
   width: 100%;
+  height: auto;
 }
 
 .app-cover-finish-package button.finish {
   padding: 0px 1rem;
   border: 1px solid white;
+  background: white;
+  color: #9b035a;
+  font-size: 1rem;
 }
 
 .app-cover-finish-package button.finish i, .app-cover-finish-package button.finish span {
   vertical-align: middle;
 }
 
-.app-cover-finish-package button.finish i {
-  font-size: 2rem;
-}
-
 .app-cover-finish-package button.finish:hover {
-  background: white;
-  color: #9b035a;
+  background: #9b035a;
+  color: white;
 }
 
 /*PACKAGES*/
