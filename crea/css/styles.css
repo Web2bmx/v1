@@ -1302,8 +1302,10 @@ input::-webkit-color-swatch {
   width: auto;
   background-color: #0f1626;
   color: white;
-  font-size: .75rem;
+  font-size: 1rem;
   padding: .5rem 1rem;
+  position: relative;
+  overflow: visible;
   text-align: right;
   height: 40px;
   box-sizing: border-box;
@@ -1313,6 +1315,10 @@ input::-webkit-color-swatch {
   #app-switch {
     font-size: 1rem;
   }
+}
+
+#app-switch .switch-menu {
+  float: right;
 }
 
 #app-switch li {
@@ -1338,6 +1344,61 @@ input::-webkit-color-swatch {
 
 #app-switch.view #switch-view {
   display: none;
+}
+
+#app-switch .hamburger-icon {
+  position: absolute;
+  right: 1rem;
+  z-index: 100000;
+}
+
+#app-switch .hamburger-icon .fa-times {
+  display: none;
+  margin-top: .125rem;
+}
+
+#app-switch .hamburger-control {
+  float: right;
+  margin: .5rem 0 0 1rem;
+  opacity: 0;
+  position: relative;
+  z-index: 100001;
+}
+
+#app-switch .hamburger-control:checked + .hamburger-icon + .hamburger {
+  max-height: 8rem;
+}
+
+#app-switch .hamburger-control:checked + .hamburger-icon .fa-bars {
+  display: none;
+}
+
+#app-switch .hamburger-control:checked + .hamburger-icon .fa-times {
+  display: block;
+}
+
+#app-switch .hamburger {
+  background-color: #3c3c3c;
+  left: 0;
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 40px;
+  transition: max-height 1s;
+  width: 100%;
+  z-index: 100000;
+}
+
+#app-switch .hamburger li {
+  display: block;
+  padding: .5rem 1rem;
+}
+
+#app-switch #breadcrumb {
+  font-size: 1rem;
+  float: left;
+  text-align: left;
 }
 
 /*APP SWITCH*/
