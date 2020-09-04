@@ -25,17 +25,9 @@ export default function appManager() {
 			_ctrl.new_templateManager.loadTemplate(true);
 		});
 		/*START SCREEN NEXT BUTTON*/
-<<<<<<< HEAD
 		$(".app-cover-start .next").click(function () {
 			$("#app-cover").hide();
 			_ctrl.new_menuManager.goToStep(0);
-=======
-		$('.app-cover-start .next').click(function () {
-			$('#app-cover').hide();
-			$('.app-cover-start').hide();
-			$('.app-cover-finish').show();
-			_ctrl.current_step = 0;
->>>>>>> bdb23d46c1551faaee362d061b05ea72727f41e5
 		});
 		/*FINISH BUTTON*/
 		$('.finish').on('click', function () {
