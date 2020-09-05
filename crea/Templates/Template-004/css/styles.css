@@ -455,6 +455,7 @@
   top: 48%;
   position: absolute;
   user-select: none;
+  background: none !important;
 }
 
 .gallery-nav a.gallery-nav-prev {
@@ -472,6 +473,7 @@
   font-size: 2rem !important;
   box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
   border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*GALLERY*/
