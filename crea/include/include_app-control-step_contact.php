@@ -4,7 +4,7 @@
         <label>Dirección</label>
 		<div class="inputWihIcons inp-cont">
 			<i class="fas fa-map-marker-alt"></i>
-			<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
+			<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" autocomplete="off" /><br />
 		</div>
 		<p class="app-control-step-tooltip-info">Si no cuentas con una dirección o prefieres no ponerla, puedes dejar este campo vacio.</p>
         <!--<input type="text" id="inp-contact-map" name="inp-contact-map" value="" placeholder="" /><br />-->

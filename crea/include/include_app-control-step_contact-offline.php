@@ -3,7 +3,7 @@
 
 						<div class="inputWihIcons inp-cont">
 							<i class="fas fa-map-marker-alt"></i>
-							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" /><br />
+							<input type="text" id="inp-contact-address" name="inp-contact-address" value="" placeholder="La dirección de tu Negocio" class="optional" autocomplete="off" /><br />
 						</div>
 						<span class="form-error map-error">
 							Parece que no podemos encontrar esta dirección. Selecciona una dirección válida.

@@ -1,11 +1,19 @@
 <div id="app-control">
     <div id='app-switch'>
-        <menu>
-            <li><a id='switch-view'><i class="far fa-eye"></i><span>Ver mi página</span></a></li>
-            <li><a id='switch-edit'><i class="fas fa-wrench"></i><span>Editar</span></a></li>
-            <li><a id='publish' style="display: none;"><i class="fas fa-upload"></i><span>Publicar</span></a></li>
+        <h6 id="breadcrumb"></h6>
+        <input type="checkbox" class="hamburger-control" />
+        <div class="hamburger-icon">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </div>
+        <menu class="hamburger">
             <li><a class='change-page' style="display: none;"><i class="fas fa-exchange-alt"></i><span>Cambiar</span></a></li>
             <li><a class='logout'><i class="fas fa-sign-out-alt"></i><span>Salir</span></a></li>
+        </menu>
+        <menu class="switch-menu">
+            <li><a id='switch-view'><i class="far fa-eye"></i><span>Ver página</span></a></li>
+            <li><a id='switch-edit'><i class="fas fa-wrench"></i><span>Editar</span></a></li>
+            <li><a id='publish' style="display: none;"><i class="fas fa-upload"></i><span>Publicar</span></a></li>
         </menu>
     </div>	
     <div class="app-control-step" style>
@@ -28,7 +36,8 @@
     </div>
     <div class="app-control-step">
         <div class="app-control-step-finish">
-            <h2>¡Terminamos!</h2>
+            <h2>Revisión</h2>
+            <h3>¡Terminamos!</h3>
             <p>Revisa tu sitio antes de continuar.</p>
         </div>
     </div>

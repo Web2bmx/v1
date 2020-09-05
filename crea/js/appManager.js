@@ -10,14 +10,14 @@ export default function appManager() {
 				$('.control-design-cont').prepend($('.control-design-thumb.thumb-selected'));
 				$('.control-design-cont').prepend($('.control-design-thumb:last'));
 			}, 500);
-			$('.control-design-thumb').on('click',function(e){
+			$('body').on('click', '.control-design-thumb', function(e){
 				let $this = $(this);
 				let i = $('.control-design-thumb').index($this);
 				if (i == 0) { $this.parent().prepend($('.control-design-thumb:last')); }
 				if (i == 2) { $this.parent().append($('.control-design-thumb:first')); }
 			});
 		}
-		$('.control-design-thumb').on('click', function () {
+		$('body').on('click','.control-design-thumb', function () {
 			$(this).parent().find('.thumb-selected').removeClass('thumb-selected');
 			$(this).addClass('thumb-selected');
 			$('[name^=\'inp-design\']').prop('checked', false);
@@ -27,12 +27,10 @@ export default function appManager() {
 		/*START SCREEN NEXT BUTTON*/
 		$('.app-cover-start .next').click(function () {
 			$('#app-cover').hide();
-			$('.app-cover-start').hide();
-			$('.app-cover-finish').show();
-			_ctrl.current_step = 0;
+			_ctrl.new_menuManager.goToStep(0);
 		});
 		/*FINISH BUTTON*/
-		$('.finish').on('click', function () {
+		$('body').on('click', '.finish', function () {
 			_ctrl.new_paymentsManager.createPayment();
 		});
 		/* SWITCH PAGE CONTROL*/
