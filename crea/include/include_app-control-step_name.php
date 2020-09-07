@@ -6,7 +6,7 @@
 			<i class="fas fa-pen"></i><input data-validate="true" pattern="^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]+$" type="text" id="siteName" name="inp-siteName" placeholder="tuSitio" />
 			<span>.web2b.mx</span>
 		</div>
-		<p class="app-control-step-tooltip-info">Es lo que tus Clientes escribirán para acceder al sitio web de tu Negocio, al final lo podrás cambiar por tu propia dirección web si así lo deseas, por ejemplo: www.minegocio.com.mx</p>
+		<p class="app-control-step-tooltip-info">Es lo que tus Clientes escribirán para acceder al sitio web de tu Negocio, al final lo podrás cambiar por tu propia dirección web si así lo deseas.</p>
 		<p class="input-error">La dirección web de tu sitio solo puede contener letras, números y guiones medios y debe de tener como mínimo 3 caracteres.</p>
 	</div>
 	<div class="container-input">

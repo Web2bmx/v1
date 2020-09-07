@@ -1,971 +1,1130 @@
 @import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
 @import "../../scss/base/_variables";
 @import "../../scss/base/_colors";
-@import "../../scss/mixins/_border-radius"; 
+@import "../../scss/mixins/_border-radius";
 @import "../../scss/components/_modal";
-@import "../../scss/components/_buttons"; 
-@import "../../scss/components/_inputFields"; 
+@import "../../scss/components/_buttons";
+@import "../../scss/components/_inputFields";
 /*@import "../../scss/components/login-paginas";*/
 @import "../../scss/partials/_errors";
 /*MIXINS*/
-@mixin box_block ($width: 100%) {
-	display: block;
-	height: auto;
-	overflow: hidden;
-	width: $width;
+@mixin box_block($width: 100%) {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: $width;
 }
-@mixin box_absolute () {
-	bottom: 0;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 0;
+@mixin box_absolute() {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 /*MIXINS*/
 * {
-	list-style-type: none;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: normal;
-	margin: 0;
-	padding: 0;
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
-body { 
-	font-size: 150%;
-	&.init{ overflow: hidden; }
+body {
+  font-size: 150%;
+  &.init {
+    overflow: hidden;
+  }
 }
-body * { font-size: inherit; }
-a { text-decoration: none; }
+body * {
+  font-size: inherit;
+}
+a {
+  text-decoration: none;
+}
 *.hidden {
-	display: none;
+  display: none;
 }
 /**/
-#component_templates { display: none; }
-#template-cont { @include box_block(); }
+#component_templates {
+  display: none;
+}
+#template-cont {
+  @include box_block();
+}
 #app {
-	@include box_block();
-	@include box_absolute();
-	pointer-events: none;
-	z-index: 101;
+  @include box_block();
+  @include box_absolute();
+  pointer-events: none;
+  z-index: 101;
 }
 /*APP COVER*/
 #app-cover {
-	@include box_block();
-	@include box_absolute();
-	background-color: $white;
-	color: $gray20;
-	overflow-y: scroll; 
-	pointer-events: auto;
-	position: fixed; 
-	z-index: 1002;
-	> div {
-		@include box_block();
-		margin: 8rem auto 2rem auto;
-		max-width: $desktop;
-		text-align: center;
-		@include breakpoint($tablet){ width: 80%; }
-		@include breakpoint($desktop){
-			margin: 2rem auto 2rem auto;
-		}
-	}
-	label{
-		display: block;
-		margin-bottom: 1rem;
-	}
-	.app-cover-start{
-		img.logo, .actions{ position: absolute; }		
-		img.logo{
-			top: 1rem;
-			left: 1rem;
-			width: 5rem;			
-		}
-		.actions{			
-			right: 1rem;
-			top: 1rem;
-			a{
-				color: $pink60;
-				cursor: pointer;
-				float: left;
-				padding-left: 1rem;
-				font-size: .75rem;
-				i {
-					display: block;
-					font-size: 1rem;
-					margin-bottom: .5rem;
-				}
-			}
-		}
-		.control-design-cont{
-			display: grid;
-			grid-gap: 2rem 2rem;
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-			overflow: visible;
-			position: relative;
-			left: -8.5rem;
-			margin-top: 2rem;
-			@include breakpoint($tablet){ left: 0; grid-template-columns: 1fr 1fr;	}
-			@include breakpoint($desktop){ grid-template-columns: 1fr 1fr 1fr 1fr; }
-		}
-		.control-design-thumb {
-			@include border_radius(.5rem);
-			background-color: $gray80;
-			cursor: pointer;
-			margin: 0 auto;
-			min-width: 10rem;
-			max-width: 12rem;
-			padding: 2rem 1rem;
-			width: auto;
-			&.thumb-selected i::before{ content: "\f192"; }
-			&:hover { background-color: $pink100; }
-			&.thumb-selected { background-color: $pink80; }
-			/*&:not(:first-child) { display: none; }*/
-			@include breakpoint($tablet){ &:not(:first-child) { display: block; }	}
-			aside{ 
-				margin-bottom: 1rem;
-				overflow: hidden;
-			}
-			img {
-				display: block;
-				width: 100%;
-			}
-		}
-		.next{
-			clear: both;
-			cursor: pointer;
-			margin-top: 1rem;
-		}
-	}
+  @include box_block();
+  @include box_absolute();
+  background-color: $white;
+  color: $gray20;
+  overflow-y: scroll;
+  pointer-events: auto;
+  position: fixed;
+  z-index: 1002;
+  > div {
+    @include box_block();
+    margin: 8rem auto 2rem auto;
+    max-width: $desktop;
+    text-align: center;
+    @include breakpoint($tablet) {
+      width: 80%;
+    }
+    @include breakpoint($desktop) {
+      margin: 2rem auto 2rem auto;
+    }
+  }
+  label {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .app-cover-start {
+    img.logo,
+    .actions {
+      position: absolute;
+    }
+    img.logo {
+      top: 1rem;
+      left: 1rem;
+      width: 5rem;
+    }
+    .actions {
+      right: 1rem;
+      top: 1rem;
+      a {
+        color: $pink60;
+        cursor: pointer;
+        float: left;
+        padding-left: 1rem;
+        font-size: 0.75rem;
+        i {
+          display: block;
+          font-size: 1rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+    .control-design-cont {
+      display: grid;
+      grid-gap: 2rem 2rem;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      overflow: visible;
+      position: relative;
+      left: -8.5rem;
+      margin-top: 2rem;
+      @include breakpoint($tablet) {
+        left: 0;
+        grid-template-columns: 1fr 1fr;
+      }
+      @include breakpoint($desktop) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+    .control-design-thumb {
+      @include border_radius(0.5rem);
+      background-color: $gray80;
+      cursor: pointer;
+      margin: 0 auto;
+      min-width: 10rem;
+      max-width: 12rem;
+      padding: 2rem 1rem;
+      width: auto;
+      &.thumb-selected i::before {
+        content: "\f192";
+      }
+      &:hover {
+        background-color: $pink100;
+      }
+      &.thumb-selected {
+        background-color: $pink80;
+      }
+      /*&:not(:first-child) { display: none; }*/
+      @include breakpoint($tablet) {
+        &:not(:first-child) {
+          display: block;
+        }
+      }
+      aside {
+        margin-bottom: 1rem;
+        overflow: hidden;
+      }
+      img {
+        display: block;
+        width: 100%;
+      }
+    }
+    .next {
+      clear: both;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  }
 }
-.app-new-start { 
-	@extend .modal-login;
-	font-size: 1rem;
-	.boton { margin: 2rem auto; }
+.app-new-start {
+  @extend .modal-login;
+  font-size: 1rem;
+  .boton {
+    margin: 2rem auto;
+  }
+
+  form {
+    label {
+      display: block;
+      font-size: 0.8rem;
+      margin-top: 5px;
+
+      input {
+        width: auto;
+        vertical-align: middle;
+      }
+
+      a {
+        text-decoration: underline;
+	  }
+	  
+	}
+	div + label {
+		margin-top: 20px;
+	}
+  }
+
 }
 /*APP COVER*/
 /*APP COVER FINISH*/
-.app-cover-finish{
-	> div {
-		> img{ width: 5rem; }
-		.extra-info{								
-			display: block;
-			margin: 1rem 0;
-		}
-	}
-	h3{
-		color: $gray40;
-		font-size: 2rem;
-	}
-	.url .siteName{
-		color: $blue60;
-		font-size: 2rem;
-		margin: 1rem auto;
-	}
-	#back {
-		display: block;
-		margin-top: 2rem;
-		width: 100%;
-	}
+.app-cover-finish {
+  > div {
+    > img {
+      width: 5rem;
+    }
+    .extra-info {
+      display: block;
+      margin: 1rem 0;
+    }
+  }
+  h3 {
+    color: $gray40;
+    font-size: 2rem;
+  }
+  .url .siteName {
+    color: $blue60;
+    font-size: 2rem;
+    margin: 1rem auto;
+  }
+  #back {
+    display: block;
+    margin-top: 2rem;
+    width: 100%;
+  }
 }
 /*APP COVER FINISH*/
 /*PACKAGES*/
-.paquetes{
-	@include box_block();
-	display: grid;
-	grid-gap: 2rem 2rem;
-	grid-template-columns: 1fr;
-	@include breakpoint($desktop){ grid-template-columns: 1fr 1fr 1fr; }
+.paquetes {
+  @include box_block();
+  display: grid;
+  grid-gap: 2rem 2rem;
+  grid-template-columns: 1fr;
+  @include breakpoint($desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .app-cover-finish-package {
-	@include border_radius(.5rem);
-	background-color: $pink40;
-	color: $white;
-	padding: 1rem;
-	text-align: center;
-	width: auto;
-	@include breakpoint($tablet){
-		display: grid;
-		grid-gap: 1rem 1rem;
-		grid-template-columns: 1fr 1fr 1fr;
-	}
-	@include breakpoint($desktop){ display: block; }
-	hr { margin: 0 auto; width: 10%; }
-	.price{
-		display: block;
-		font-size: 3rem;
-		font-weight: bold;
-		margin-top: 2rem;	
-		+ span{
-			display: block;
-			font-size: 1rem;
-			margin-bottom: 1rem;
-		}
-	}
-	ul{
-		font-size: 1rem;	
-		height: 12rem;
-		text-align: center;
-		@include breakpoint($desktop){
-			height: 6rem;
-		}
-	}
-	.finish{
-		background: none;				
-		border-radius: 0;
-		cursor: pointer;
-		display: block;
-		min-height: 2rem;
-		margin-top: 2rem;
-		width: 100%;
-		height: auto;				
-	}
-	button.finish{
-		padding: 0px 1rem;
-		border: 1px solid $white; 
-		background: $white;
-		color: $pink40;
-		font-size: 1rem;
-		i, span{ vertical-align: middle; }
-		&:hover{
-			background: $pink40;
-			color: $white;
-		} 
-	}
-}		
+  @include border_radius(0.5rem);
+  background-color: $pink40;
+  color: $white;
+  padding: 1rem;
+  text-align: center;
+  width: auto;
+  @include breakpoint($tablet) {
+    display: grid;
+    grid-gap: 1rem 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @include breakpoint($desktop) {
+    display: block;
+  }
+  hr {
+    margin: 0 auto;
+    width: 10%;
+  }
+  .price {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    + span {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  ul {
+    font-size: 1rem;
+    height: 12rem;
+    text-align: center;
+    @include breakpoint($desktop) {
+      height: 6rem;
+    }
+  }
+  .finish {
+    background: none;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    min-height: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    height: auto;
+  }
+  button.finish {
+    padding: 0px 1rem;
+    border: 1px solid $white;
+    background: $white;
+    color: $pink40;
+    font-size: 1rem;
+    i,
+    span {
+      vertical-align: middle;
+    }
+    &:hover {
+      background: $pink40;
+      color: $white;
+    }
+  }
+}
 /*PACKAGES*/
 /*APP CONTROL*/
 #app-control {
-	@include box_block(auto);
-	@include box_absolute();
-	background-color: $gray80;
-	color: $gray20;
-	pointer-events: auto;
-	position: fixed;
-	z-index: 103;
-	@include breakpoint($tablet){
-		@include border-radius(1rem);
-		bottom: 4rem;
-		left: calc((100% - 40rem) / 2);
-		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-		top: 4rem;
-		width: 40rem;
-	}
+  @include box_block(auto);
+  @include box_absolute();
+  background-color: $gray80;
+  color: $gray20;
+  pointer-events: auto;
+  position: fixed;
+  z-index: 103;
+  @include breakpoint($tablet) {
+    @include border-radius(1rem);
+    bottom: 4rem;
+    left: calc((100% - 40rem) / 2);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    top: 4rem;
+    width: 40rem;
+  }
 }
 #app-control.view {
-	@include border-radius(0);
-	bottom: auto;
-	left: 0;
-	top: 0;
-	right: 0;
-	width: 100%;
-	#app-control-nav, .app-control-step { display: none; }
+  @include border-radius(0);
+  bottom: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  #app-control-nav,
+  .app-control-step {
+    display: none;
+  }
 }
 /*APP CONTROL*/
 /*APP CONTROL STEP*/
 .app-control-step {
-	background-color: $white;
-	color: $black;	
-	font-size: 1rem;
-	height: calc(100% - 8rem);
-	padding: 1rem 2rem;
-	overflow-y: auto;
-	width: auto;
-	@include breakpoint($desktop){
-		padding: 1rem 4rem;
-	}
-	>div {
-		@include box_block();
-		input[type="text"].noIcon, select{
-			border-color: $gray80;
-			border-radius: .5rem;
-			border-style: solid;
-			box-sizing: border-box;
-			margin: 0 0 1rem 0;
-			padding: 1rem;
-			width: 100%;
-		}
-		.inp-cont { position: relative; }
-		input[type="text"].noIcon { height: auto; }
-		select { margin-bottom: 1rem; }
-	}
-	h2{
-		color: $gray40;	
-		font-size: 1.5rem;
-		@include breakpoint($tablet){ font-size: 2rem; }
+  background-color: $white;
+  color: $black;
+  font-size: 1rem;
+  height: calc(100% - 10rem);
+  padding: 1rem 2rem;
+  overflow-y: auto;
+  width: auto;
 
-		+ p {
-			color: $gray40;
-			margin-bottom: 2rem;
-		}
-	}
-	h3 {
-		font-weight: bold;
-		margin: 1rem 0 1rem 0;
-	}
-	aside {
-		margin: 1rem auto;
-	}
-	[class~=item-control]{
-		margin-bottom: 1rem;
-	}
+  @include breakpoint($tablet) {
+    height: calc(100% - 8rem);
+  }
+
+  @include breakpoint($desktop) {
+    padding: 1rem 4rem;
+  }
+  > div {
+    @include box_block();
+    input[type="text"].noIcon,
+    select {
+      border-color: $gray80;
+      border-radius: 0.5rem;
+      border-style: solid;
+      box-sizing: border-box;
+      margin: 0 0 1rem 0;
+      padding: 1rem;
+      width: 100%;
+    }
+    .inp-cont {
+      position: relative;
+    }
+    input[type="text"].noIcon {
+      height: auto;
+    }
+    select {
+      margin-bottom: 1rem;
+    }
+  }
+  h2 {
+    color: $gray40;
+    font-size: 1.5rem;
+    @include breakpoint($tablet) {
+      font-size: 2rem;
+    }
+
+    + p {
+      color: $gray40;
+      margin-bottom: 2rem;
+    }
+  }
+  h3 {
+    font-weight: bold;
+    margin: 1rem 0 1rem 0;
+  }
+  aside {
+    margin: 1rem auto;
+  }
+  [class~="item-control"] {
+    margin-bottom: 1rem;
+  }
 }
 .app-control-step-finish {
-	margin-top: 50%;
-	text-align: center;
-	@include breakpoint($desktop){ margin-top: 6rem; }
+  margin-top: 50%;
+  text-align: center;
+  @include breakpoint($desktop) {
+    margin-top: 6rem;
+  }
 }
 /*APP CONTROL STEP*/
 /*CONTAINER INPUT*/
 .container-input {
-	@include box_block();
-	margin-top: .5rem;
-	.inputWihIcons {
-		@include border-radius(.5rem);	
-		float: left;
-		width: calc(100% - 2rem);
-	}
-	textarea {
-		@include border-radius(.5rem);	
-		border: 1px solid $gray60;
-		height: 14rem;
-		max-width: 38rem;
-		width: calc(100% - 4rem);
-		padding: 1rem;
-		resize: none;
-	}
-	label {
-		@include box_block();
-		margin: 0 0 .25rem .25rem;
-	}
-	p {
-		clear: both;
-	}
-	.input-error {
-		@include border-radius(.5rem);	
-		border: 1px solid $red60;
-		display: none;
-		margin-bottom: .5rem;
-		padding: 1rem;
-	}
+  @include box_block();
+  margin-top: 0.5rem;
+  .inputWihIcons {
+    @include border-radius(0.5rem);
+    float: left;
+    width: calc(100% - 2rem);
+  }
+  textarea {
+    @include border-radius(0.5rem);
+    border: 1px solid $gray60;
+    height: 14rem;
+    max-width: 38rem;
+    width: calc(100% - 4rem);
+    padding: 1rem;
+    resize: none;
+  }
+  label {
+    @include box_block();
+    margin: 0 0 0.25rem 0.25rem;
+  }
+  p {
+    clear: both;
+  }
+  .input-error {
+    @include border-radius(0.5rem);
+    border: 1px solid $red60;
+    display: none;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+  }
+
+  &.colors{
+    position: relative;
+  }
+
 }
 .container-input.container-error {
-	.inputWihIcons {
-		border-color: $red60;
-	}
-	.input-error {
-		display: block;
-	}
+  .inputWihIcons {
+    border-color: $red60;
+  }
+  .input-error {
+    display: block;
+  }
 }
 .remove-content {
-	display: none;
+  display: none;
 }
 /*CONTAINER INPUT*/
 /*TOGGLE*/
 .toggle {
-	color: $blue80;
-	cursor: pointer;
-	font-size: 1.5rem;
-	margin-right: 1rem;
-	position: relative;
-	top: .25rem;
+  color: $blue80;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  position: relative;
+  top: 0.25rem;
 }
 /*TOGGLE*/
 /*ACCORDION*/
 .accordion {
-	h4 {
-		border-bottom: 1px solid $gray60;
-		color: $gray40;
-		cursor: pointer;
-		padding-bottom: .5rem;
-		&::after {
-			content: " ↑";
-		}
-		&.expanded::after {
-			content: " ↓";
-		}
-	}
+  h4 {
+    border-bottom: 1px solid $gray60;
+    color: $gray40;
+    cursor: pointer;
+    padding-bottom: 0.5rem;
+    &::after {
+      content: " ↑";
+    }
+    &.expanded::after {
+      content: " ↓";
+    }
+  }
 }
 /*ACCORDION*/
 /*TOOLTIP*/
 .app-control-step-tooltip {
-	@include border-radius(2rem);	
-	@include box_block(auto);
-	background-color: $blue80;
-	color: $white;
-	cursor: pointer;
-	display: inline;
-	font-size: .75rem;
-	margin-left: .5rem;
-	padding: .25rem .5rem;
-	position: relative;
-	top: .5rem;
+  @include border-radius(2rem);
+  @include box_block(auto);
+  background-color: $blue80;
+  color: $white;
+  cursor: pointer;
+  display: inline;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  top: 0.5rem;
 }
 .app-control-step-tooltip-info {
-	@include border-radius(.5rem);	
-	border: 1px solid $blue60;
-	display: none;
-	margin-bottom: .5rem;
-	padding: 1rem;
+  @include border-radius(0.5rem);
+  border: 1px solid $blue60;
+  display: none;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
 }
-.app-control-step-tooltip-info.active { display: block; }
+.app-control-step-tooltip-info.active {
+  display: block;
+}
 /*TOOLTIP*/
 /*CONTROL COLOR*/
 #inp-color {
-	@include border-radius(2rem);	
-	border: none;
-	cursor: pointer;
-	float: left;
-	height: 3rem;
-	outline: none;
-	width: calc(100% - 2rem);
+  @include border-radius(2rem);
+  border: none;
+  cursor: pointer;
+  float: left;
+  height: 3rem;
+  outline: none;
+  width: calc(100% - 2rem);
 }
 input::-webkit-color-swatch {
-	border: none;
-	@include border-radius(2rem);	
+  border: none;
+  @include border-radius(2rem);
 }
 #app-control-palettes {
-	@include box_block();
-	display: grid;
-	grid-gap: 1rem 0;
-	grid-template-columns: 1fr;
+  @include box_block();
+  display: grid;
+  grid-gap: 1rem 0;
+  grid-template-columns: 1fr;
 }
 .control-color {
-	@include box_block();
-	display: grid;
-	grid-gap: 0 1rem;
-	grid-template-columns: 1fr 2rem 1fr 0;
-	height: 3rem;
-	color: $gray60;
+  @include box_block();
+  display: grid;
+  grid-gap: 0 1rem;
+  grid-template-columns: 1fr 2rem 1fr 0;
+  height: 3rem;
+  color: $gray60;
 
-	.thumb-selected{
+  .thumb-selected {
+    + div,
+    + div + h4 {
+      color: black;
+    }
+  }
 
-		+ div , + div + h4{
-			color: black;
-		}	
-	}
-
-	@include breakpoint($tablet){ grid-template-columns: 2fr 2rem 1fr 0; }
-	h4 {
-		font-weight: normal;
-		line-height: 48px;
-		color: $gray60;
-	}
+  @include breakpoint($tablet) {
+    grid-template-columns: 2fr 2rem 1fr 0;
+  }
+  h4 {
+    font-weight: normal;
+    line-height: 48px;
+    color: $gray60;
+  }
 }
 .control-color-thumb {
-	@include border-radius(2rem);	
-	border: 3px solid $gray60;
-	cursor: pointer;
-	display: block; 
-	overflow: hidden;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	width: calc(100% - 3px);
-	&.thumb-selected { border-color: $pink80; }
+  @include border-radius(2rem);
+  border: 3px solid $gray60;
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: calc(100% - 3px);
+  &.thumb-selected {
+    border-color: $pink80;
+  }
 }
 .control-color-thumb-bg {
-	display: block;
-	float: left;
-	height: 6rem;
-	overflow: hidden;
+  display: block;
+  float: left;
+  height: 6rem;
+  overflow: hidden;
 }
 #color-pointer {
-	color: $white;
-	font-size: 1.5rem;
-	left: 20%;
-	opacity: 1;
-	pointer-events: none;
-    position: absolute;
-	top: 8rem;
-	transition: top 2s, opacity 2s;
+  color: $white;
+  font-size: 1.5rem;
+  left: 20%;
+  opacity: 1;
+  pointer-events: none;
+  position: absolute;
+  top: 3rem;
+  transition: top 2s, opacity 2s;
 }
 #color-pointer.focus {
-	opacity: 0;
-	top: 6rem;
-	@include breakpoint($tablet){ top: 7rem; }
+  opacity: 0;
+  top: 1rem;
+  @include breakpoint($tablet) {
+    top: 2rem;
+  }
 }
 .control-color-radio {
-	align-content: center;
-	display: grid;
-	justify-content: center;
-	i { cursor: pointer; }
+  align-content: center;
+  display: grid;
+  justify-content: center;
+  i {
+    cursor: pointer;
+  }
 }
 .control-color-thumb.thumb-selected + .control-color-radio {
-	i::before{ content: "\f192"; }
+  i::before {
+    content: "\f192";
+  }
 }
 /*CONTROL COLOR*/
 /*CONTROL IMAGES*/
 .app-control-images {
-	display: block;
-	height: auto;
-	margin-top: 1rem;
-	overflow: visible;
-	position: relative;
-	width: auto;
-	a {
-		text-decoration: underline;
-		color: $gray60;
-	}
+  display: block;
+  height: auto;
+  margin-top: 1rem;
+  overflow: visible;
+  position: relative;
+  width: auto;
+  a {
+    text-decoration: underline;
+    color: $gray60;
+  }
 }
 [id^="app-control-images"] {
-	margin: 1rem auto;
-	overflow: auto;	
+  margin: 1rem auto;
+  overflow: auto;
 }
-.photo-container{		
-	display: grid;
-	height: auto;
-	overflow: hidden;
-	width: auto;
-	grid-template-columns: 1fr;
-	@include breakpoint($tablet){
-		grid-template-columns: 1fr 1fr;
-		grid-gap: .25rem .25rem;
-	}
+.photo-container {
+  display: grid;
+  height: auto;
+  overflow: hidden;
+  width: auto;
+  grid-template-columns: 1fr;
+  @include breakpoint($tablet) {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.25rem 0.25rem;
+  }
 }
 .img-thumb {
-	background-color: $gray80;
-	cursor: pointer;
-	height: 12rem;
-	position: relative;
-	z-index: 101;
-	@include breakpoint($tablet){
-		height: 15rem;
-		&:hover .img-thumb-autor { display: block; }
-	}	
+  background-color: $gray80;
+  cursor: pointer;
+  height: 12rem;
+  position: relative;
+  z-index: 101;
+  @include breakpoint($tablet) {
+    height: 15rem;
+    &:hover .img-thumb-autor {
+      display: block;
+    }
+  }
 }
 .img-thumb-cont {
-	@include box_block();
-	background-color: $white;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	margin: 1rem auto;
-	height: calc(100% - 2rem);
-	width: calc(100% - 2rem);
+  @include box_block();
+  background-color: $white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 1rem auto;
+  height: calc(100% - 2rem);
+  width: calc(100% - 2rem);
 }
 #app-control-images-logo {
-	.img-thumb-cont {
-		background-size: contain;
-	}
+  .img-thumb-cont {
+    background-size: contain;
+  }
 }
 .img-thumb-cont-zoom {
-	background-color: $white;
-	bottom: 0;
-	height: 2rem;
-	position: absolute;
-	right: 0;
-	width: 2rem;
-	z-index: 2;
-	i { margin: .5rem 0 0 .5rem; }
+  background-color: $white;
+  bottom: 0;
+  height: 2rem;
+  position: absolute;
+  right: 0;
+  width: 2rem;
+  z-index: 2;
+  i {
+    margin: 0.5rem 0 0 0.5rem;
+  }
 }
 .img-thumb-overlay {
-	@include box_block();
-	@include box_absolute();
-	display: none;
-	z-index: 1;
+  @include box_block();
+  @include box_absolute();
+  display: none;
+  z-index: 1;
 }
 .img-thumb-autor {
-	background: hsla(0, 0, 0, 0.5);
-	padding: .5rem;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: 1000;
-	@include breakpoint($tablet){ display: none; }
-	a {
-		color: $white;
-		font-size: .75rem;
-		text-decoration: underline;
-	}
+  background: hsla(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  @include breakpoint($tablet) {
+    display: none;
+  }
+  a {
+    color: $white;
+    font-size: 0.75rem;
+    text-decoration: underline;
+  }
 }
-.thumb-selected { z-index: 102; }
+.thumb-selected {
+  z-index: 102;
+}
 .thumb-selected .img-thumb-overlay {
-	background-color: rgba(255,255,255,.8);
-	display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: block;
 }
 .img-thumb.selected .img-thumb-overlay {
-	background-color: rgba(255,255,255,.8);
-	display: block;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: block;
 }
-.img-thumb-overlay>span {
-	color: $black;
-	display: block;
-	font-size: 2rem;
-	font-weight: bold;
-	padding-top: 1rem;
-	text-align: center;
+.img-thumb-overlay > span {
+  color: $black;
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  text-align: center;
 }
 .img-thumb-zoomed {
-	@include box_block(96%);
-	margin: 0 auto;
+  @include box_block(96%);
+  margin: 0 auto;
 }
 /*CONTROL IMAGES*/
 /*CONTROL ITEMS*/
 #content-item-type {
-	@include box_block();
-	margin-bottom: .5rem;
-	label {
-		@include border_radius(.25rem);
-		cursor: pointer;
-		background-color: $blue100;
-		color: $white;
-		float: left;
-		height: auto;
-		margin-right: .5rem;
-		overflow: hidden;
-		padding: .5rem;
-		width: auto;
-		input {
-			display: none;
-		}
-		&.checked {
-			background-color: $blue60;
-		}	
-	}
+  @include box_block();
+  margin-bottom: 0.5rem;
+  label {
+    @include border_radius(0.25rem);
+    cursor: pointer;
+    background-color: $blue100;
+    color: $white;
+    float: left;
+    height: auto;
+    margin-right: 0.5rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    width: auto;
+    input {
+      display: none;
+    }
+    &.checked {
+      background-color: $blue60;
+    }
+  }
 }
 .content-item-number {
-	font-weight: inherit;
+  font-weight: inherit;
 }
-.content-items-type, .content-item-type {
-	font-weight: inherit;
+.content-items-type,
+.content-item-type {
+  font-weight: inherit;
 }
 .item-control {
-	margin-top: 2rem;
+  margin-top: 2rem;
 }
 .number-item-control {
-	@include box_block();
-	margin-top: .5rem;
-	input {
-		background-color: $gray80;
-		border: none;
-		color: $gray20;
-		float: left;
-		padding: .5rem;
-		text-align: center;
-		width: 2rem;
-	}
-	button {
-		background-color: $blue60;
-		float: left;
-		&.remove-item {
-			border-top-right-radius: 0;
-			border-bottom-right-radius: 0;
-		}
-		&.add-item {
-			border-top-left-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-	}
+  @include box_block();
+  margin-top: 0.5rem;
+  input {
+    background-color: $gray80;
+    border: none;
+    color: $gray20;
+    float: left;
+    padding: 0.5rem;
+    text-align: center;
+    width: 2rem;
+  }
+  button {
+    background-color: $blue60;
+    float: left;
+    &.remove-item {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &.add-item {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  }
 }
 /*CONTROL ITEMS*/
 /*ITEMS NAVIGATION*/
 #items-navigation {
-	@include box_block();
-	.item-navigation {
-		@include border-radius(.25rem);
-		background-color: $blue100;
-		color: $white;
-		cursor: pointer;
-		float: left;
-		margin-right: .5rem;
-		padding: .5rem;
-		&.selected {
-			background-color: $blue60;
-		}
-	}
+  @include box_block();
+  .item-navigation {
+    @include border-radius(0.25rem);
+    background-color: $blue100;
+    color: $white;
+    cursor: pointer;
+    float: left;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    &.selected {
+      background-color: $blue60;
+    }
+  }
 }
 /*ITEMS NAVIGATION*/
 /*OPTIONALS NAVIGATION*/
 #optionals-navigation {
-	@include box_block();
-	.optional-navigation {
-		background-color: $blue100;
-		color: $white;
-		cursor: pointer;
-		float: left;
-		padding: .5rem 1rem;
-		&.selected {
-			background-color: $blue60;
-		}
-	}
+  @include box_block();
+  .optional-navigation {
+    background-color: $blue100;
+    color: $white;
+    cursor: pointer;
+    float: left;
+    padding: 0.5rem 1rem;
+    &.selected {
+      background-color: $blue60;
+    }
+  }
 }
 /*OPTIONALS NAVIGATION*/
 /*NAME CONTROL*/
 .inputWihIcons {
-	position: relative;
-	span {
-		@include box_absolute();
-		left: auto;
-		font-size: .5rem;
-		right: .5rem;
-		top: 1rem;
-	}
+  position: relative;
+  span {
+    @include box_absolute();
+    left: auto;
+    right: 0.5rem;
+	top: .5rem;
+	opacity: .6;
+  }
 }
+
 /*NAME CONTROL*/
 /*APP CONTROL NAV*/
 #app-control-nav {
-	@include box_block();
-	bottom: 0;
-	position: absolute;
-	text-align: center;
-	#control-view-nav {
-		float: left;
-		position: relative;
-		overflow: hidden;
-		width: 100%;
-		a.nav-btns {
-			bottom: 0;
-			margin: .5rem auto;
-			position: absolute;
-			z-index: 101;
-			&.prev{ left: 1rem; }
-			&.next{ right: 1rem; }
-		}
-		a.disabled {
-			background-color: $gray40;
-			cursor: default;
-		}
-	}
-	&.view { #control-view-nav { display: none; } }
+  @include box_block();
+  bottom: 30px;
+  position: absolute;
+  text-align: center;
+
+  @include breakpoint($tablet) {
+    bottom: 0;
+  }
+  
+  #control-view-nav {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    a.nav-btns {
+      bottom: 0;
+      margin: 0.5rem auto;
+      position: absolute;
+      z-index: 101;
+      &.prev {
+        left: 1rem;
+      }
+      &.next {
+        right: 1rem;
+      }
+    }
+    a.disabled {
+      background-color: $gray40;
+      cursor: default;
+    }
+  }
+  &.view {
+    #control-view-nav {
+      display: none;
+    }
+  }
 }
 /*APP CONTROL NAV*/
 /*CONTROL VIEW INDEX*/
 #control-view-index {
-	display: inline-block;
-	margin: 1.5rem auto 0 auto;
-	overflow: hidden;
-	width: auto;
-	+ a { float: right; }
+  display: inline-block;
+  margin: 1.5rem auto 0 auto;
+  overflow: hidden;
+  width: auto;
+  + a {
+    float: right;
+  }
 }
 .control-view-index-step {
-	background-color: $gray60;
-	cursor: pointer;
-	display: inline-block;
-	height: .5rem;
-	margin: 1.5rem .5rem .5rem 0;
-	overflow: hidden;
-	width: .5rem;
-	@include border-radius(.5rem);
+  background-color: $gray60;
+  cursor: pointer;
+  display: inline-block;
+  height: 0.5rem;
+  margin: 1.5rem 0.5rem 0.5rem 0;
+  overflow: hidden;
+  width: 0.5rem;
+  @include border-radius(0.5rem);
 }
-.control-view-index-step.current { background-color: $pink60; }
+.control-view-index-step.current {
+  background-color: $pink60;
+}
 /*CONTROL VIEW INDEX*/
 /*APP SWITCH*/
 #app-switch {
-	@include box_block(auto);
-	background-color: $blue20;
-	color: $white;
-	font-size: 1rem;
-	padding: .5rem 1rem;
-	position: relative;
-	overflow: visible;
-	text-align: right;
-	height: 40px;
-	box-sizing: border-box;
-	@include breakpoint($tablet){ font-size: 1rem; }
-	.switch-menu {
-		float: right;
-	}
-	li { display: inline; }
-    a{
-		cursor: pointer;
-		margin-left: 1rem;
-		span { margin-left: .5rem; }
-	}
-	#switch-edit { display: none; }
-	&.view {
-		#switch-edit { display: inline-block; }
-		#switch-view { display: none; }
-	}
-	.hamburger-icon {
-		cursor: pointer;
-		position: absolute;
-		right: 1rem;
-		z-index: 100000;
-		.fa-times {
-			display: none;
-			margin-top: .125rem;
-		}
-	}
-	.hamburger-control {
-		cursor: pointer;
-		float: right;
-		margin: .5rem 0 0 1rem;
-		opacity: 0;
-		position: relative;
-		z-index: 100001;
-		&:checked {
-			&+ .hamburger-icon {
-				&+ .hamburger {
-					max-height: 8rem;
-				}
-				.fa-bars { display: none; }
-				.fa-times { display: block; }
-			} 
-		} 
-	}
-	.hamburger {
-		background-color: $gray20;
-		left: 0;
-		height: auto;
-		max-height: 0;
-		overflow: hidden;
-		position: absolute;
-		top: 40px;
-		transition: max-height 1s;
-		width: 100%;
-		z-index: 100000;
-		li {
-			display: block;
-			padding: .5rem 1rem;
-		}
-	}
-	#breadcrumb {
-		font-size: 1rem;
-		float: left;
-		text-align: left;
-	}
+  @include box_block(auto);
+  background-color: $blue20;
+  color: $white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  overflow: visible;
+  text-align: right;
+  height: 40px;
+  box-sizing: border-box;
+  @include breakpoint($tablet) {
+    font-size: 1rem;
+  }
+  .switch-menu {
+    float: right;
+  }
+  li {
+    display: inline;
+  }
+  a {
+    cursor: pointer;
+    margin-left: 1rem;
+    span {
+      margin-left: 0.5rem;
+    }
+  }
+  #switch-edit {
+    display: none;
+  }
+  &.view {
+    #switch-edit {
+      display: inline-block;
+    }
+    #switch-view {
+      display: none;
+    }
+  }
+  .hamburger-icon {
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 100000;
+    .fa-times {
+      display: none;
+      margin-top: 0.125rem;
+    }
+  }
+  .hamburger-control {
+    cursor: pointer;
+    float: right;
+    margin: 0.5rem 0 0 1rem;
+    opacity: 0;
+    position: relative;
+    z-index: 100001;
+    &:checked {
+      & + .hamburger-icon {
+        & + .hamburger {
+          max-height: 8rem;
+        }
+        .fa-bars {
+          display: none;
+        }
+        .fa-times {
+          display: block;
+        }
+      }
+    }
+  }
+  .hamburger {
+    background-color: $gray20;
+    left: 0;
+    height: auto;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 40px;
+    transition: max-height 1s;
+    width: 100%;
+    z-index: 100000;
+    li {
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+  }
+  #breadcrumb {
+    font-size: 1rem;
+    float: left;
+    text-align: left;
+  }
 }
 /*APP SWITCH*/
-.file-upload{
-	@include border_radius(.25rem);
-	border: 1px dashed $blue100;
-	display: block;
-	margin-top: 1rem;
-	overflow: hidden;
-	padding: 1rem 0;
-	input[type=file]{ display: none; }
-	input[type=submit],button{
-		background-color: $blue80;
-		cursor: pointer;
-		font-weight: normal;
-		padding: .5rem 1rem;
-		text-transform: none;
-		&:hover { background-color: $blue100; }
-		&:disabled{ display: none; }
-	}
-	p{
-		margin: 0;
-		overflow: hidden;
-		padding: 1rem 0;
-		span{
-			width: 100%;
-			display: inline-block;
-			margin-top: 1rem 0;
-			color: $gray40;
-			@include breakpoint($desktop){ width: 70%; }
-		}
-	}
-	button {
-		width: auto;
-		margin: 1rem auto;
-	}
-	.error {
-		display: block;
-		text-align: left;
-		margin-bottom: 1rem;
-		clear: both;
-	}
-}
-.form-label-note{
+.file-upload {
+  @include border_radius(0.25rem);
+  border: 1px dashed $blue100;
+  display: block;
+  margin-top: 1rem;
+  overflow: hidden;
+  padding: 1rem 0;
+  input[type="file"] {
+    display: none;
+  }
+  input[type="submit"],
+  button {
+    background-color: $blue80;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 0.5rem 1rem;
+    text-transform: none;
+    &:hover {
+      background-color: $blue100;
+    }
+    &:disabled {
+      display: none;
+    }
+  }
+  p {
+    margin: 0;
+    overflow: hidden;
+    padding: 1rem 0;
+    span {
+      width: 100%;
+      display: inline-block;
+      margin-top: 1rem 0;
+      color: $gray40;
+      @include breakpoint($desktop) {
+        width: 70%;
+      }
+    }
+  }
+  button {
+    width: auto;
+    margin: 1rem auto;
+  }
+  .error {
     display: block;
-    margin-bottom: 1rem;	
+    text-align: left;
+    margin-bottom: 1rem;
+    clear: both;
+  }
 }
-.nav-btns{
-	color: $pink60;	
-	display: block;
-	font-size: 2rem;
-	text-align: center;
+.form-label-note {
+  display: block;
+  margin-bottom: 1rem;
+}
+.nav-btns {
+  color: $pink60;
+  display: block;
+  font-size: 2rem;
+  text-align: center;
 }
 /*MODAL BG*/
 #modal-bg {
-	@include box_block();
-	background-color: rgba(0,0,0,.8);
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 1003; 
+  @include box_block();
+  background-color: rgba(0, 0, 0, 0.8);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1003;
 }
 /*MODAL BG*/
 #single-modal {
-	background-color: $white;
-	border: 1px solid $gray60;
-	bottom: auto;
-	display: none;
-	height: auto;
-	left: 5%;
-	overflow: hidden;
-	padding: 2rem 0;
-	position: fixed;
-	right: 5%;
-	top: 5%;
-	width: 90%;
-	z-index: 1004; 
+  background-color: $white;
+  border: 1px solid $gray60;
+  bottom: auto;
+  display: none;
+  height: auto;
+  left: 5%;
+  overflow: hidden;
+  padding: 2rem 0;
+  position: fixed;
+  right: 5%;
+  top: 5%;
+  width: 90%;
+  z-index: 1004;
 }
 #single-modal.small {
-	left: 1rem;
-	width: calc(100% - 2rem);
-	@include breakpoint($tablet){
-		left: calc(50% - 12rem);
-		width: 24rem;
-	}
+  left: 1rem;
+  width: calc(100% - 2rem);
+  @include breakpoint($tablet) {
+    left: calc(50% - 12rem);
+    width: 24rem;
+  }
 }
 #single-modal i {
-	cursor: pointer;
-	height: 2rem;
-	padding-top: 1rem;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 2rem;
-	z-index: 101;
+  cursor: pointer;
+  height: 2rem;
+  padding-top: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2rem;
+  z-index: 101;
 }
 /**/
 /*PAGE SWITCHER*/
 .page-switcher {
-	@include box_block();
-	font-size: 1rem;
-	margin: 0;
-	padding: 2rem 2rem;
-	text-align: center;
-	width: calc(100% - 4rem);
-	img {
-		max-width: 6rem;
-	}
-	button {
-		margin: 1rem auto 0 auto;
-	}
+  @include box_block();
+  font-size: 1rem;
+  margin: 0;
+  padding: 2rem 2rem;
+  text-align: center;
+  width: calc(100% - 4rem);
+  img {
+    max-width: 6rem;
+  }
+  button {
+    margin: 1rem auto 0 auto;
+  }
 }
 /*PAGE SWITCHER*/
 /*Modal*/
 .ventana-login {
-	@extend .modal-login;
-	/*@include login-paginas;*/
+  @extend .modal-login;
+  /*@include login-paginas;*/
 }
-.final-msgs{
-	@extend .modal-login;
+.final-msgs {
+  @extend .modal-login;
 }
 // Map
-.map-error, .map-input{
-	margin-top: 0px;
-    position: relative;
-    top: -5px;	
+.map-error,
+.map-input {
+  margin-top: 0px;
+  position: relative;
+  top: -5px;
 }
 /*TEMPLATE ACOMMODATIONS*/
-body #menu { top: 40px; }
-body.init #menu { top: 0; }
+body #menu {
+  top: 40px;
+}
+body.init #menu {
+  top: 0;
+}
 
 .floating-logo {
-	position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 100;
-    opacity: .3;
-	width: 100px;
-	
-	&:hover {
-		opacity: .6;
-	}
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 100;
+  opacity: 0.3;
+  width: 100px;
+
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 a.cerrar-final-msgs {
-	font-size: 16px;
+  font-size: 16px;
 }

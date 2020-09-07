@@ -590,13 +590,24 @@ main {
   width: 100%;
 }
 
-#hero a.cta {
-  margin: 1rem auto 5rem auto;
+#hero .botones-intro {
+  margin-bottom: 5rem;
+}
+
+#hero .botones-intro a {
+  margin: .5rem auto .5rem auto;
   max-width: 18rem;
+  width: 10rem;
+  display: inline-block;
+  color: white;
+}
+
+#hero .botones-intro a:first-child {
+  margin-right: 5px;
 }
 
 @media screen and (min-width: 1280px) {
-  #hero a.cta {
+  #hero .botones-intro {
     margin-bottom: 10rem;
   }
 }

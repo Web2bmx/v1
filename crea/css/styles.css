@@ -197,7 +197,7 @@ input.cta:active {
 /*MIXINS*/
 * {
   list-style-type: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -295,7 +295,8 @@ a {
   margin-bottom: 1rem;
 }
 
-#app-cover .app-cover-start img.logo, #app-cover .app-cover-start .actions {
+#app-cover .app-cover-start img.logo,
+#app-cover .app-cover-start .actions {
   position: absolute;
 }
 
@@ -315,13 +316,13 @@ a {
   cursor: pointer;
   float: left;
   padding-left: 1rem;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 #app-cover .app-cover-start .actions a i {
   display: block;
   font-size: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #app-cover .app-cover-start .control-design-cont {
@@ -402,6 +403,25 @@ a {
 
 .app-new-start .boton {
   margin: 2rem auto;
+}
+
+.app-new-start form label {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.app-new-start form label input {
+  width: auto;
+  vertical-align: middle;
+}
+
+.app-new-start form label a {
+  text-decoration: underline;
+}
+
+.app-new-start form div + label {
+  margin-top: 20px;
 }
 
 /*APP COVER*/
@@ -525,7 +545,8 @@ a {
   font-size: 1rem;
 }
 
-.app-cover-finish-package button.finish i, .app-cover-finish-package button.finish span {
+.app-cover-finish-package button.finish i,
+.app-cover-finish-package button.finish span {
   vertical-align: middle;
 }
 
@@ -579,7 +600,8 @@ a {
   width: 100%;
 }
 
-#app-control.view #app-control-nav, #app-control.view .app-control-step {
+#app-control.view #app-control-nav,
+#app-control.view .app-control-step {
   display: none;
 }
 
@@ -589,10 +611,16 @@ a {
   background-color: white;
   color: black;
   font-size: 1rem;
-  height: calc(100% - 8rem);
+  height: calc(100% - 10rem);
   padding: 1rem 2rem;
   overflow-y: auto;
   width: auto;
+}
+
+@media (min-width: 660px) {
+  .app-control-step {
+    height: calc(100% - 8rem);
+  }
 }
 
 @media (min-width: 1040px) {
@@ -608,9 +636,10 @@ a {
   width: 100%;
 }
 
-.app-control-step > div input[type="text"].noIcon, .app-control-step > div select {
+.app-control-step > div input[type="text"].noIcon,
+.app-control-step > div select {
   border-color: #f0f0f0;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border-style: solid;
   box-sizing: border-box;
   margin: 0 0 1rem 0;
@@ -655,7 +684,7 @@ a {
   margin: 1rem auto;
 }
 
-.app-control-step [class~=item-control] {
+.app-control-step [class~="item-control"] {
   margin-bottom: 1rem;
 }
 
@@ -677,7 +706,7 @@ a {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .container-input .inputWihIcons {
@@ -707,7 +736,7 @@ a {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin: 0 0 .25rem .25rem;
+  margin: 0 0 0.25rem 0.25rem;
 }
 
 .container-input p {
@@ -721,8 +750,12 @@ a {
   border-radius: 0.5rem;
   border: 1px solid #ff052f;
   display: none;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   padding: 1rem;
+}
+
+.container-input.colors {
+  position: relative;
 }
 
 .container-input.container-error .inputWihIcons {
@@ -745,7 +778,7 @@ a {
   font-size: 1.5rem;
   margin-right: 1rem;
   position: relative;
-  top: .25rem;
+  top: 0.25rem;
 }
 
 /*TOGGLE*/
@@ -754,7 +787,7 @@ a {
   border-bottom: 1px solid #b4b4b4;
   color: #787878;
   cursor: pointer;
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }
 
 .accordion h4::after {
@@ -780,11 +813,11 @@ a {
   color: white;
   cursor: pointer;
   display: inline;
-  font-size: .75rem;
-  margin-left: .5rem;
-  padding: .25rem .5rem;
+  font-size: 0.75rem;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
   position: relative;
-  top: .5rem;
+  top: 0.5rem;
 }
 
 .app-control-step-tooltip-info {
@@ -794,7 +827,7 @@ a {
   border-radius: 0.5rem;
   border: 1px solid #055dff;
   display: none;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   padding: 1rem;
 }
 
@@ -847,7 +880,8 @@ input::-webkit-color-swatch {
   color: #b4b4b4;
 }
 
-.control-color .thumb-selected + div, .control-color .thumb-selected + div + h4 {
+.control-color .thumb-selected + div,
+.control-color .thumb-selected + div + h4 {
   color: black;
 }
 
@@ -895,18 +929,18 @@ input::-webkit-color-swatch {
   opacity: 1;
   pointer-events: none;
   position: absolute;
-  top: 8rem;
+  top: 3rem;
   transition: top 2s, opacity 2s;
 }
 
 #color-pointer.focus {
   opacity: 0;
-  top: 6rem;
+  top: 1rem;
 }
 
 @media (min-width: 660px) {
   #color-pointer.focus {
-    top: 7rem;
+    top: 2rem;
   }
 }
 
@@ -956,7 +990,7 @@ input::-webkit-color-swatch {
 @media (min-width: 660px) {
   .photo-container {
     grid-template-columns: 1fr 1fr;
-    grid-gap: .25rem .25rem;
+    grid-gap: 0.25rem 0.25rem;
   }
 }
 
@@ -1006,7 +1040,7 @@ input::-webkit-color-swatch {
 }
 
 .img-thumb-cont-zoom i {
-  margin: .5rem 0 0 .5rem;
+  margin: 0.5rem 0 0 0.5rem;
 }
 
 .img-thumb-overlay {
@@ -1025,7 +1059,7 @@ input::-webkit-color-swatch {
 
 .img-thumb-autor {
   background: rgba(0, 0, 0, 0.5);
-  padding: .5rem;
+  padding: 0.5rem;
   position: absolute;
   top: 0;
   width: 100%;
@@ -1040,7 +1074,7 @@ input::-webkit-color-swatch {
 
 .img-thumb-autor a {
   color: white;
-  font-size: .75rem;
+  font-size: 0.75rem;
   text-decoration: underline;
 }
 
@@ -1082,7 +1116,7 @@ input::-webkit-color-swatch {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 #content-item-type label {
@@ -1095,9 +1129,9 @@ input::-webkit-color-swatch {
   color: white;
   float: left;
   height: auto;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   overflow: hidden;
-  padding: .5rem;
+  padding: 0.5rem;
   width: auto;
 }
 
@@ -1113,7 +1147,8 @@ input::-webkit-color-swatch {
   font-weight: inherit;
 }
 
-.content-items-type, .content-item-type {
+.content-items-type,
+.content-item-type {
   font-weight: inherit;
 }
 
@@ -1126,7 +1161,7 @@ input::-webkit-color-swatch {
   height: auto;
   overflow: hidden;
   width: 100%;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 .number-item-control input {
@@ -1134,7 +1169,7 @@ input::-webkit-color-swatch {
   border: none;
   color: #3c3c3c;
   float: left;
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: center;
   width: 2rem;
 }
@@ -1172,8 +1207,8 @@ input::-webkit-color-swatch {
   color: white;
   cursor: pointer;
   float: left;
-  margin-right: .5rem;
-  padding: .5rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
 }
 
 #items-navigation .item-navigation.selected {
@@ -1194,7 +1229,7 @@ input::-webkit-color-swatch {
   color: white;
   cursor: pointer;
   float: left;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 #optionals-navigation .optional-navigation.selected {
@@ -1214,9 +1249,9 @@ input::-webkit-color-swatch {
   right: 0;
   top: 0;
   left: auto;
-  font-size: .5rem;
-  right: .5rem;
-  top: 1rem;
+  right: 0.5rem;
+  top: .5rem;
+  opacity: .6;
 }
 
 /*NAME CONTROL*/
@@ -1226,9 +1261,15 @@ input::-webkit-color-swatch {
   height: auto;
   overflow: hidden;
   width: 100%;
-  bottom: 0;
+  bottom: 30px;
   position: absolute;
   text-align: center;
+}
+
+@media (min-width: 660px) {
+  #app-control-nav {
+    bottom: 0;
+  }
 }
 
 #app-control-nav #control-view-nav {
@@ -1240,7 +1281,7 @@ input::-webkit-color-swatch {
 
 #app-control-nav #control-view-nav a.nav-btns {
   bottom: 0;
-  margin: .5rem auto;
+  margin: 0.5rem auto;
   position: absolute;
   z-index: 101;
 }
@@ -1279,10 +1320,10 @@ input::-webkit-color-swatch {
   background-color: #b4b4b4;
   cursor: pointer;
   display: inline-block;
-  height: .5rem;
-  margin: 1.5rem .5rem .5rem 0;
+  height: 0.5rem;
+  margin: 1.5rem 0.5rem 0.5rem 0;
   overflow: hidden;
-  width: .5rem;
+  width: 0.5rem;
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
@@ -1303,7 +1344,7 @@ input::-webkit-color-swatch {
   background-color: #0f1626;
   color: white;
   font-size: 1rem;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   position: relative;
   overflow: visible;
   text-align: right;
@@ -1331,7 +1372,7 @@ input::-webkit-color-swatch {
 }
 
 #app-switch a span {
-  margin-left: .5rem;
+  margin-left: 0.5rem;
 }
 
 #app-switch #switch-edit {
@@ -1355,13 +1396,13 @@ input::-webkit-color-swatch {
 
 #app-switch .hamburger-icon .fa-times {
   display: none;
-  margin-top: .125rem;
+  margin-top: 0.125rem;
 }
 
 #app-switch .hamburger-control {
   cursor: pointer;
   float: right;
-  margin: .5rem 0 0 1rem;
+  margin: 0.5rem 0 0 1rem;
   opacity: 0;
   position: relative;
   z-index: 100001;
@@ -1394,7 +1435,7 @@ input::-webkit-color-swatch {
 
 #app-switch .hamburger li {
   display: block;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 #app-switch #breadcrumb {
@@ -1416,23 +1457,26 @@ input::-webkit-color-swatch {
   padding: 1rem 0;
 }
 
-.file-upload input[type=file] {
+.file-upload input[type="file"] {
   display: none;
 }
 
-.file-upload input[type=submit], .file-upload button {
+.file-upload input[type="submit"],
+.file-upload button {
   background-color: #5091ff;
   cursor: pointer;
   font-weight: normal;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   text-transform: none;
 }
 
-.file-upload input[type=submit]:hover, .file-upload button:hover {
+.file-upload input[type="submit"]:hover,
+.file-upload button:hover {
   background-color: #b0c7f2;
 }
 
-.file-upload input[type=submit]:disabled, .file-upload button:disabled {
+.file-upload input[type="submit"]:disabled,
+.file-upload button:disabled {
   display: none;
 }
 
@@ -1562,7 +1606,8 @@ input::-webkit-color-swatch {
   /*@include login-paginas;*/
 }
 
-.map-error, .map-input {
+.map-error,
+.map-input {
   margin-top: 0px;
   position: relative;
   top: -5px;
@@ -1582,12 +1627,12 @@ body.init #menu {
   bottom: 15px;
   right: 15px;
   z-index: 100;
-  opacity: .3;
+  opacity: 0.3;
   width: 100px;
 }
 
 .floating-logo:hover {
-  opacity: .6;
+  opacity: 0.6;
 }
 
 a.cerrar-final-msgs {
