@@ -895,18 +895,18 @@ input::-webkit-color-swatch {
   opacity: 1;
   pointer-events: none;
   position: absolute;
-  top: 10rem;
+  top: 8rem;
   transition: top 2s, opacity 2s;
 }
 
 #color-pointer.focus {
   opacity: 0;
-  top: 8rem;
+  top: 6rem;
 }
 
 @media (min-width: 660px) {
   #color-pointer.focus {
-    top: 9rem;
+    top: 7rem;
   }
 }
 
@@ -1347,6 +1347,7 @@ input::-webkit-color-swatch {
 }
 
 #app-switch .hamburger-icon {
+  cursor: pointer;
   position: absolute;
   right: 1rem;
   z-index: 100000;
@@ -1358,6 +1359,7 @@ input::-webkit-color-swatch {
 }
 
 #app-switch .hamburger-control {
+  cursor: pointer;
   float: right;
   margin: .5rem 0 0 1rem;
   opacity: 0;

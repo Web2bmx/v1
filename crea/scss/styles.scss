@@ -473,13 +473,13 @@ input::-webkit-color-swatch {
 	opacity: 1;
 	pointer-events: none;
     position: absolute;
-	top: 10rem;
+	top: 8rem;
 	transition: top 2s, opacity 2s;
 }
 #color-pointer.focus {
 	opacity: 0;
-	top: 8rem;
-	@include breakpoint($tablet){ top: 9rem; }
+	top: 6rem;
+	@include breakpoint($tablet){ top: 7rem; }
 }
 .control-color-radio {
 	align-content: center;
@@ -774,6 +774,7 @@ input::-webkit-color-swatch {
 		#switch-view { display: none; }
 	}
 	.hamburger-icon {
+		cursor: pointer;
 		position: absolute;
 		right: 1rem;
 		z-index: 100000;
@@ -783,6 +784,7 @@ input::-webkit-color-swatch {
 		}
 	}
 	.hamburger-control {
+		cursor: pointer;
 		float: right;
 		margin: .5rem 0 0 1rem;
 		opacity: 0;
