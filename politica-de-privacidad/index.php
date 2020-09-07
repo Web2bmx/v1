@@ -43,7 +43,7 @@
 					</div>
 				</div>
 			</nav>
-			<main>
+			<main class="legal">
 				<section id="politica">
 				<h1>DECLARACIÓN DE PRIVACIDAD</h1>
 				<p>Fecha de última modificación: 9 de febrero de 2020.</p>
@@ -106,6 +106,7 @@
 							<li><a href="/#steps">¿Cómo funciona?</a></li>
 							<li><a href="/#services">Nuestros servicios</a></li>
 							<li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
+							<li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
 							<li><a href="/tour">Comenzar</a></li>
 							<li><a class="login-btn">Ingreso</a></li>
 						</ul>

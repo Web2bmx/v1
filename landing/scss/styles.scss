@@ -773,6 +773,9 @@ footer {
 .right { float: right; }
 .left { float: left; }
 /*PRIVACY POLICY*/
+main.legal {
+	background-color: #FFFFFF;
+}
 #politica {
 	background-color: $white;
 	color: $gray20;
@@ -791,7 +794,10 @@ footer {
 }
 @media screen and (min-width: $desktop) {
 	#politica {
+		margin: 0 auto;
+		max-width: $tablet;
 		padding: 2rem 2rem;
+		
 	}	
 }
 #politica ul {

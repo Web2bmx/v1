@@ -976,6 +976,10 @@ footer nav li {
 }
 
 /*PRIVACY POLICY*/
+main.legal {
+  background-color: #FFFFFF;
+}
+
 #politica {
   background-color: white;
   color: #3c3c3c;
@@ -998,6 +1002,8 @@ footer nav li {
 
 @media screen and (min-width: 1040px) {
   #politica {
+    margin: 0 auto;
+    max-width: 660px;
     padding: 2rem 2rem;
   }
 }

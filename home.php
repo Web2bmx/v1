@@ -124,6 +124,7 @@
 							<li><a href="#steps">¿Cómo funciona?</a></li>
 							<li><a href="#services">Nuestros servicios</a></li>
 							<li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
+							<li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
 							<li><a href="/tour">Comenzar</a></li>
 							<li><a href="#login" class="login-btn">Login</a></li>
 							<li><a class="panel" href="/crea" style="display: none">Panel</a></li>
