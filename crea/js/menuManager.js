@@ -61,6 +61,7 @@ export default function templateManager () {
 		/*TOGGLES*/
 		$('.toggle').click(function (e) {
 			e.preventDefault();
+			let b = false;
 			let $this = $(this);
 			let t = $this.attr('id').replace('toggle', '#conditional');
 			let i = $this.attr('id').replace('toggle', '#inp-rem-content');
@@ -68,10 +69,11 @@ export default function templateManager () {
 				$this.find('.fas.fa-toggle-on').attr('class', 'fas fa-toggle-off');
 			} else {
 				$this.find('.fas.fa-toggle-off').attr('class', 'fas fa-toggle-on');
+				b = true;
 			}
 			$(i).trigger('click');
 			_ctrl.new_templateManager.updateContent(e.currentTarget);
-			hideFormElements($(t));
+			hideFormElements($(t), b);
 		});
 		/*TOGGLES*/
 		/*ACCORDION*/
@@ -195,8 +197,12 @@ export default function templateManager () {
 		$('#optionals-navigation .optional-navigation:first').trigger('click');
 		/*OPTIONALS*/
 	};
-	var hideFormElements = function($s) {
-		$s.toggleClass('hidden');
+	var hideFormElements = function($s, b) {
+		if (!b) { 
+			$s.hide();
+		} else {
+			$s.show();
+		}
 	};
 	var goToStep = function (step, target) {
 		if ($('.app-control-step .container-error').length == 0) {

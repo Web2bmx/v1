@@ -4,7 +4,7 @@
 		<div class="wrapper-content">
 			
 				<div id="branding">
-					<img id="img-logo" src="<?php echo($content->hero[0]->logotipo); ?>" alt="Logotipo" />
+					<img id="img-logo" src="<?php echo $content->hero[0]->logotipo ? $content->hero[0]->logotipo : ''; ?>" alt="Logotipo" />
 				</div>	
 			
 			<h1 id="val-content-name"><?php echo($content->hero[0]->title); ?></h1>

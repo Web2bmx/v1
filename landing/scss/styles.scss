@@ -452,13 +452,26 @@ main {
 	position: relative;
 	text-align: center;
 	width: 100%;
-	a.cta {
-		margin: 1rem auto 5rem auto;
-		max-width: 18rem;
+
+	.botones-intro {
+		margin-bottom: 5rem;
+
+		a {
+			margin: .5rem auto .5rem auto;
+			max-width: 18rem;
+			width: 10rem;
+			display: inline-block;
+			color: white;
+
+			&:first-child {
+				margin-right: 5px;
+			}
+		}
 	}
+
 }
 @media screen and (min-width: $ext-desktop) { #hero {
-	a.cta {
+	.botones-intro {
 		margin-bottom: 10rem;
 	}
 }}
@@ -773,6 +786,9 @@ footer {
 .right { float: right; }
 .left { float: left; }
 /*PRIVACY POLICY*/
+main.legal {
+	background-color: #FFFFFF;
+}
 #politica {
 	background-color: $white;
 	color: $gray20;
@@ -791,7 +807,10 @@ footer {
 }
 @media screen and (min-width: $desktop) {
 	#politica {
+		margin: 0 auto;
+		max-width: $tablet;
 		padding: 2rem 2rem;
+		
 	}	
 }
 #politica ul {

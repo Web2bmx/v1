@@ -1,9 +1,9 @@
 <div>
 	<h2>Colores</h2>
-	<!--<p>
+	<h3>
 		Escoge un color principal para tu sitio y selecciona la paleta de colores que mas te guste.
-	</p>-->
-	<div class="container-input"> 
+	</h3>
+	<div class="container-input colors"> 
 		<label for="inp-color">Color principal</label>
 		<input type="color" id="inp-color" name="inp-color" value="#ff0000" />
 		<i id="color-pointer" class="far fa-hand-pointer"></i>

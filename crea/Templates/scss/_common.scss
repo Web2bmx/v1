@@ -45,7 +45,7 @@ $ext-ext-desktop: 1560px;
 #template main { @include box_block(); }
 .font-icon { font-family: 'Modern Pics', cursive; }
 /*TEMPLATE LEVEL*/
-/*MAP*/ #map, #map>.wrapper, #map>.wrapper>div { @include box_block();
+/*MAP*/ #conditional-map, #conditional-map>.wrapper, #conditional-map>.wrapper>div { @include box_block();
 }
-#map>.wrapper>div>iframe { display: block; height: 600px; overflow: hidden; width: 100%; }
+#conditional-map>.wrapper>div>iframe { display: block; height: 600px; overflow: hidden; width: 100%; }
 /*MAP*/

@@ -96,14 +96,14 @@
 
 /*TEMPLATE LEVEL*/
 /*MAP*/
-#map, #map > .wrapper, #map > .wrapper > div {
+#conditional-map, #conditional-map > .wrapper, #conditional-map > .wrapper > div {
   display: block;
   height: auto;
   overflow: hidden;
   width: 100%;
 }
 
-#map > .wrapper > div > iframe {
+#conditional-map > .wrapper > div > iframe {
   display: block;
   height: 600px;
   overflow: hidden;

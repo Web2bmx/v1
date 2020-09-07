@@ -9,7 +9,7 @@ export default function userValidator () {
 	};
 
 	var openLoginDialog = () => {
-		$('.app-new-start.dialog').dialog('option', 'width', 300);
+		$('.app-new-start.dialog').dialog('option', 'width', 400);
 		$('.app-new-start.dialog').dialog('open');
 	};
 
@@ -62,6 +62,8 @@ export default function userValidator () {
                 $('#correo').val().trim() == '' ||
                 $('#password').val().trim() == '') {
 				$('.empty-fields').css('display', 'block');
+			} else if (!$('#politicas-check').is(':checked') || !$('#terminos-check').is(':checked')) {
+				$('.check-invalid').show();				
 			} else if (!_ctrl.new_validator.isValidDomain($('#nombrePagina').val().trim().toLowerCase())) {
 				$('.name-invalid').show();
 			} else if (!_ctrl.new_validator.isEmail($('#correo').val())) {
