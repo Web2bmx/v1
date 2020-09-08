@@ -33,10 +33,10 @@
 					<input type="checkbox" /><span></span><span></span><span></span>
 					<div id="menu">
 						<ul>
-							<li><a href="#hero">Inicio</a></li>
+							<li><a href="/#hero">Inicio</a></li>
 							<li><a href="/blog">Blog</a></li>
-							<li><a href="#steps">¿Cómo funciona?</a></li>
-							<li><a href="#services">Nuestros servicios</a></li>
+							<li><a href="/#steps">¿Cómo funciona?</a></li>
+							<li><a href="/#services">Nuestros servicios</a></li>
 							<li><a href="/tour">Comenzar</a></li>
 							<li><a class="login-btn" href="">Ingreso</a></li>
 						</ul>
