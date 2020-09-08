@@ -38,7 +38,7 @@
 							<li><a href="#services">Nuestros servicios</a></li>
 							<li><a href="/tour">Comenzar</a></li>
 							<li><a class="login-btn" href="">Iniciar Sesión</a></li>
-							<li><a class="panel" href="/crea" style="display: none">Panel</a></li>
+							<li><a class="panel" href="/crea" style="display: none">Mis páginas</a></li>
 						</ul>
 					</div>
 				</div>
@@ -52,7 +52,8 @@
 						<h2>Crea tu página web en minutos</h2>
 						<aside class="botones-intro">
 							<a class="cta" href="/tour">¡Comenzar!</a>
-							<a class="login-btn boton" href="">Iniciar Sesión</a>						
+							<a class="login-btn boton" href="">Iniciar Sesión</a>
+							<a class="panel boton" href="/crea" style="display: none">Mis páginas</a>					
 						</aside>
 					</div>
 					<span class="graph" id="gr_alien_side" style="background-image: url(landing/img/item_alien.svg);"></span>
@@ -130,7 +131,7 @@
 							<li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
 							<li><a href="/tour">Comenzar</a></li>
 							<li><a href="#login" class="login-btn">Iniciar Sesión</a></li>
-							<li><a class="panel" href="/crea" style="display: none">Panel</a></li>
+							<li><a class="panel" href="/crea" style="display: none">Mis páginas</a></li>
 						</ul>
 					</nav>	
 					<nav>

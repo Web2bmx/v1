@@ -997,6 +997,10 @@ main.legal {
   padding: 2rem 1rem;
 }
 
+#politica p {
+  margin-bottom: 1rem;
+}
+
 #politica a {
   color: #172133;
   text-decoration: none;
