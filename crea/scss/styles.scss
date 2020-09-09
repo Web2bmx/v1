@@ -801,15 +801,12 @@ input::-webkit-color-swatch {
 /*NAME CONTROL*/
 .inputWihIcons {
   position: relative;
-  span {
-    @include box_absolute();
-    left: auto;
-    right: 0.5rem;
-	top: .5rem;
-	opacity: .6;
-  }
 }
-
+#control-help-siteName {
+  color: $gray20;
+  font-size: .875rem;
+  font-style: italic;
+}
 /*NAME CONTROL*/
 /*APP CONTROL NAV*/
 #app-control-nav {

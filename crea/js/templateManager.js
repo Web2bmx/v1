@@ -145,6 +145,9 @@ export default function templateManager () {
 							$('#inp-content-aboutus').val($template.find('#val-content-aboutus').html());
 						}
 					}
+					if (i_id == 'siteName') {
+						$("#control-help-siteName>span").html(val);
+					}
 					updateSpecificFields($this, i_id, v_id, text, $template, selections);
 					if ($this.hasClass('optional')) {
 						if ($('.app-control-step:eq(' + (_ctrl.current_step) + ')').has($this).length > 0) {

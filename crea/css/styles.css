@@ -1242,16 +1242,10 @@ input::-webkit-color-swatch {
   position: relative;
 }
 
-.inputWihIcons span {
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  left: auto;
-  right: 0.5rem;
-  top: .5rem;
-  opacity: .6;
+#control-help-siteName {
+  color: #3c3c3c;
+  font-size: .875rem;
+  font-style: italic;
 }
 
 /*NAME CONTROL*/
