@@ -402,6 +402,7 @@ a {
 .container-input {
   @include box_block();
   margin-top: 0.5rem;
+  box-sizing: border-box;
   .inputWihIcons {
     @include border-radius(0.5rem);
     float: left;

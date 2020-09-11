@@ -1,11 +1,16 @@
-#### Página de términos y condiciones [Antonio - 90%]
+[ ] Aun hay cierto contenido que no es editable, como el texto de la galería [Antonio]
+[ ] El deslizamiento movil no es facil ni claro [Antonio]
+[ ] Deshabilitar autocomplete [Carlos]
+[ ] Enviar lista de prospectos y correo para enviar [Antonio]
 
+[ ] Agregar claridad a la seccion de "invitación" [Antonio]
 [ ] Agregar funcionalidad de correos al loggearse [Carlos]
+[ ] Cambiar prioridad de botones en el homepage y el wording de los mismos al estar loggead [Antonio]
+[ ] logotipo escondido por default [Carlos]
+[ ] Aceptar color [Antonio]
+[ ] Agregar rubros faltantes (musica, catering, venta directa, barberia) [Antonio]
 
-
-
-#### Regresar los botones de "ver mas" con funcionalidad
-#### cambiar iconos de facebook y twiter y agregar font awesome
-#### Horarios de atención mas sencillos de llenar con dropdowns
-#### Dropdown de dias de atencion
-#### Que haya un campo de direccion y otro del mapa
+NICE TO HAVE
+[ ] cambiar iconos de facebook y twiter
+[ ] Horarios de atención mas sencillos de llenar con dropdowns
+[ ] Seleccionar los items del template para su edicion
