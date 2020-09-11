@@ -5,8 +5,10 @@
 @import "../../scss/components/_modal";
 @import "../../scss/components/_buttons";
 @import "../../scss/components/_inputFields";
+
 /*@import "../../scss/components/login-paginas";*/
 @import "../../scss/partials/_errors";
+
 /*MIXINS*/
 @mixin box_block($width: 100%) {
   display: block;

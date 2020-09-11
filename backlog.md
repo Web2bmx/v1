@@ -1,6 +1,6 @@
 [ ] Aun hay cierto contenido que no es editable, como el texto de la galería [Antonio]
 [ ] El deslizamiento movil no es facil ni claro [Antonio]
-[ ] Deshabilitar autocomplete [Carlos]
+[x] Deshabilitar autocomplete [Carlos]
 [ ] Enviar lista de prospectos y correo para enviar [Antonio]
 
 [ ] Agregar claridad a la seccion de "invitación" [Antonio]
