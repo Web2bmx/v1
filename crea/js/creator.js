@@ -28,6 +28,7 @@ export default function creator() {
 	_this.lastKeyPressed = 0;
 	_this.jd = {};
 	_this.jd_templateId = null;
+	_this.isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);	
 	/*Objects*/
 	_this.new_colorManager = new colorManager();
 	_this.new_colorManager.init(_this);
