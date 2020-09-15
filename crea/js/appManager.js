@@ -1,20 +1,34 @@
 export default function appManager() {
 	var _ctrl = null;
 	var init = function (_that) { _ctrl = _that; };
+	var _cursorX = 0;
 	var setApp = function () {
 		/*SET MENU*/
 		_ctrl.new_menuManager.setMenu();
 		/*DESIGN SELECTION*/
-		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		if(_ctrl.isMobile) {
 			setTimeout(function() {
 				$('.control-design-cont').prepend($('.control-design-thumb.thumb-selected'));
 				$('.control-design-cont').prepend($('.control-design-thumb:last'));
-			}, 500);
-			$('body').on('click', '.control-design-thumb', function(e){
+			}, 300);
+			$('body').on('touchstart', '.app-cover-start', function(event){
 				let $this = $(this);
-				let i = $('.control-design-thumb').index($this);
-				if (i == 0) { $this.parent().prepend($('.control-design-thumb:last')); }
-				if (i == 2) { $this.parent().append($('.control-design-thumb:first')); }
+				_cursorX = event.touches[0].clientX;
+			});
+			$('body').on('touchend', '.app-cover-start', function(event){
+				let $this = $(this);
+				let tap = event.changedTouches[0].clientX - _cursorX;
+				if (tap < 0) {
+					$(".control-design-cont").append($('.control-design-thumb:first'));
+				} else if (tap > 0)  {
+					$(".control-design-cont").prepend($('.control-design-thumb:last'));
+				}
+				if (tap != 0) { $(".control-design-cont").css({ "left" : '-8.5rem' }); }
+			});
+			$('body').on('touchmove', '.app-cover-start', function(event){
+				let $this = $(this);
+				let tap = event.changedTouches[0].clientX - _cursorX;
+				$(".control-design-cont").css({ "left" : ((-8.5 + (tap / 15)) + 'rem') });
 			});
 		}
 		$('body').on('click','.control-design-thumb', function () {

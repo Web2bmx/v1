@@ -151,7 +151,7 @@ export default function templateManager () {
 			var $this = $(this);
 			let $t = $('#inp-content-items-number');
 			let v = $this.hasClass('add-item') ? ($t.val() * 1) + 1 : ($t.val() * 1) - 1;
-			if (v >= 1 && v <= 5) {
+			if (v >= 1 && v <= 10) {
 				$t.val(v);
 				_ctrl.new_itemManager.addItem(v);
 			}

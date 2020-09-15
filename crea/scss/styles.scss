@@ -5,8 +5,10 @@
 @import "../../scss/components/_modal";
 @import "../../scss/components/_buttons";
 @import "../../scss/components/_inputFields";
+
 /*@import "../../scss/components/login-paginas";*/
 @import "../../scss/partials/_errors";
+
 /*MIXINS*/
 @mixin box_block($width: 100%) {
   display: block;
@@ -402,6 +404,7 @@ a {
 .container-input {
   @include box_block();
   margin-top: 0.5rem;
+  box-sizing: border-box;
   .inputWihIcons {
     @include border-radius(0.5rem);
     float: left;
@@ -801,15 +804,12 @@ input::-webkit-color-swatch {
 /*NAME CONTROL*/
 .inputWihIcons {
   position: relative;
-  span {
-    @include box_absolute();
-    left: auto;
-    right: 0.5rem;
-	top: .5rem;
-	opacity: .6;
-  }
 }
-
+#control-help-siteName {
+  color: $gray20;
+  font-size: .875rem;
+  font-style: italic;
+}
 /*NAME CONTROL*/
 /*APP CONTROL NAV*/
 #app-control-nav {

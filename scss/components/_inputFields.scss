@@ -8,6 +8,7 @@
         box-sizing: border-box;
     }
     [type="text"],
+    [type="search"],
     [type="email"],
     [type="password"]{
         background-color: $white;
