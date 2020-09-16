@@ -1,8 +1,8 @@
 <section id="gallery">
     <div class="wrapper"> 
         <header>
-            <h2><?php echo($content->gallery[0]->header[0]->title); ?></h2>
-            <p><?php echo($content->gallery[0]->header[0]->text); ?></p>
+            <h2 id="val-content-gallery-title"><?php echo($content->gallery[0]->header[0]->title); ?></h2>
+            <p id="val-content-gallery-text"><?php echo($content->gallery[0]->header[0]->text); ?></p>
         </header>
         <div class="gallery">
             <?php for ($i = 0; $i < count($content->gallery->images[0]->img); $i ++) : ?>

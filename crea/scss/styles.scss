@@ -161,9 +161,15 @@ a {
       }
     }
     .next {
+      @include box_block();
+      color: $white;
       clear: both;
       cursor: pointer;
-      margin-top: 1rem;
+      font-family: inherit;
+      font-weight: inherit;
+      margin: 1rem auto 0 auto;
+      max-width: 20rem;
+      width: calc(100% - 4rem)
     }
   }
 }

@@ -10,6 +10,17 @@
 			</h3>
 			<p>Elige las imagenes para la galería del sitio web de tu Negocio</p>
 		</div>
+		<div class="container-input">	
+			<label>Encabezado</label>
+			<div class="inputWihIcons inp-cont">
+				<i class="fas fa-pen"></i>
+				<input type="text" value="" id="inp-content-gallery-title" name="inp-content-gallery-title" placeholder="Título" />
+			</div>
+		</div>
+		<div class="container-input">	
+			<label>Descripción</label>
+			<textarea id="inp-content-gallery-text" name="inp-content-gallery-text" placeholder="Descripción"></textarea>
+		</div>
 		<div id="conditional-gallery">
 			<div class="container-input accordion">	
 				<h4>Sube una imagen</h4>
@@ -78,14 +89,14 @@
 		<div class="container-input">	
 			<h3>
 				<a id="toggle-cta" class="toggle"><i class="fas fa-toggle-on"></i></a>
-				<span class="label">Invitación</span>
+				<span class="label">Acción</span>
 				<input type="checkbox" id="inp-rem-content-cta" name="inp-rem-content-cta" class="remove-content" value="y" checked="checked" />
 			</h3>
-			<p>Invita a tus clientes a realizar una acción</p>
+			<p>Agrega un llamado a la acción</p>
 		</div>
 		<div id="conditional-cta">
 			<div class="container-input">
-				<label>Dile a tus Clientes que esperas de ellos</label>
+				<label>Encabezado</label>
 				<div class="inputWihIcons inp-cont">
 					<i class="fas fa-location-arrow"></i>		
 					<input type="text" value="" id="inp-content-title-cta" name="inp-content-title-cta" placeholder="Invita a tus Clientes" />
@@ -93,7 +104,7 @@
 				
 			</div>
 			<div class="container-input">
-				<label>Ofrécele más información a tus Clientes sobre lo que esperas de ellos</label>				
+				<label>Descripción</label>				
 				<textarea id="inp-content-cta" name="inp-content-cta" placeholder="Detallales qué esperas de ellos."></textarea>
 			</div>
 			<div class="container-input accordion">	

@@ -393,9 +393,18 @@ a {
 }
 
 #app-cover .app-cover-start .next {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+  color: white;
   clear: both;
   cursor: pointer;
-  margin-top: 1rem;
+  font-family: inherit;
+  font-weight: inherit;
+  margin: 1rem auto 0 auto;
+  max-width: 20rem;
+  width: calc(100% - 4rem);
 }
 
 .app-new-start {

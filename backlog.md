@@ -1,9 +1,9 @@
-[ ] Aun hay cierto contenido que no es editable, como el texto de la galería [Antonio]
+[x] Aun hay cierto contenido que no es editable, como el texto de la galería [Antonio]
 [x] El deslizamiento movil no es facil ni claro [Antonio]
 [x] Deshabilitar autocomplete [Carlos]
 [ ] Enviar lista de prospectos y correo para enviar [Antonio]
 
-[ ] Agregar claridad a la seccion de "invitación" [Antonio]
+[x] Agregar claridad a la seccion de "invitación" [Antonio]
 [ ] Agregar funcionalidad de correos al loggearse [Carlos]
 [ ] Cambiar prioridad de botones en el homepage y el wording de los mismos al estar loggead [Antonio]
 [ ] logotipo escondido por default [Carlos]
