@@ -145,6 +145,18 @@ export default function templateManager () {
 		$('body').on('click', '.control-color-radio', function() {
 			$(this).parent().find('.control-color-thumb').trigger('click');
 		});
+		$("#inp-color").on("click", function() {
+			//console.log("click show");
+			$("#color-accept").show();
+		});
+		$("#color-accept").on("click", function() {
+			//console.log("click hide");
+			$("#color-accept").hide();
+		});
+		$("#inp-color").on("change", function() {
+			//console.log("change hide");
+			//$("#color-accept").hide();
+		});
 		/*COLOR*/
 		/*ITEMS*/
 		$('body').on('click', '.items-change-number', function() {

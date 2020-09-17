@@ -565,6 +565,17 @@ input::-webkit-color-swatch {
     border-color: $pink80;
   }
 }
+#color-accept {
+  @include border-radius(2rem);
+  display: none;
+  float: left;
+  height: 3rem;
+  outline: none;
+  width: calc(100% - 2rem);
+  position: absolute;
+  top: 1.5rem;
+  z-index: 2;
+}
 .control-color-thumb-bg {
   display: block;
   float: left;
@@ -583,7 +594,7 @@ input::-webkit-color-swatch {
 }
 #color-pointer.focus {
   opacity: 0;
-  top: 1rem;
+  top: 1.5rem;
   @include breakpoint($tablet) {
     top: 2rem;
   }
