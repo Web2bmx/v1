@@ -454,7 +454,7 @@ main {
 	width: 100%;
 
 	.botones-intro {
-		margin-bottom: 5rem;
+		
 
 		a {
 			margin: .5rem auto .5rem auto;
@@ -468,11 +468,20 @@ main {
 			}
 		}
 	}
-
+	.botones-extra {	
+		display: inline-block;
+		margin: 0 auto 4rem auto;
+		width: auto;
+		a {
+			font-size: .75rem;
+			text-decoration: underline;
+		}
+	}
+	
 }
 @media screen and (min-width: $ext-desktop) { #hero {
-	.botones-intro {
-		margin-bottom: 10rem;
+	.botones-extra {
+		margin-bottom: 8rem;
 	}
 }}
 #graph-rocket {

@@ -5,9 +5,9 @@
 
 [x] Agregar claridad a la seccion de "invitación" [Antonio]
 [ ] Agregar funcionalidad de correos al loggearse [Carlos]
-[ ] Cambiar prioridad de botones en el homepage y el wording de los mismos al estar loggead [Antonio]
+[x] Cambiar prioridad de botones en el homepage y el wording de los mismos al estar loggead [Antonio]
 [ ] logotipo escondido por default [Carlos]
-[ ] Aceptar color [Antonio]
+[x] Aceptar color [Antonio]
 [ ] Agregar rubros faltantes (musica, catering, venta directa, barberia) [Antonio]
 
 NICE TO HAVE
