@@ -6,7 +6,7 @@ export default function appManager() {
 		/*SET MENU*/
 		_ctrl.new_menuManager.setMenu();
 		/*DESIGN SELECTION*/
-		if(_ctrl.isMobile) {
+		if(_ctrl.isMobile && !_ctrl.isTablet) {
 			setTimeout(function() {
 				$('.control-design-cont').prepend($('.control-design-thumb.thumb-selected'));
 				$('.control-design-cont').prepend($('.control-design-thumb:last'));
@@ -18,26 +18,37 @@ export default function appManager() {
 			$('body').on('touchend', '.app-cover-start', function(event){
 				let $this = $(this);
 				let tap = event.changedTouches[0].clientX - _cursorX;
-				if (tap < 0) {
+				let click = "";
+				if (tap == 0 && (screen.width - event.changedTouches[0].clientX) < 20) { click = "next"; }
+				if (tap == 0 && (screen.width - event.changedTouches[0].clientX) < (screen.width - 20)) { click = "prev"; }
+				if (tap < 0 || click == 'prev') {
 					$(".control-design-cont").append($('.control-design-thumb:first'));
-				} else if (tap > 0)  {
+				} else if (tap > 0 || click == 'next')  {
 					$(".control-design-cont").prepend($('.control-design-thumb:last'));
 				}
-				if (tap != 0) { $(".control-design-cont").css({ "left" : '-8.5rem' }); }
+				if (tap != 0 || click == 'next' || click == 'prev') {
+					$(".control-design-cont").css({ "left" : '-8.5rem' });
+					$(this).find('.thumb-selected').removeClass('thumb-selected');
+					$('.control-design-thumb:eq(1)').addClass('thumb-selected');
+					$('[name^=\'inp-design\']').prop('checked', false);
+					$('.control-design-thumb:eq(1)').find('[name^=\'inp-design\']').prop('checked', true);
+					_ctrl.new_templateManager.loadTemplate(true);
+				}	
 			});
 			$('body').on('touchmove', '.app-cover-start', function(event){
 				let $this = $(this);
 				let tap = event.changedTouches[0].clientX - _cursorX;
 				$(".control-design-cont").css({ "left" : ((-8.5 + (tap / 15)) + 'rem') });
 			});
-		}
-		$('body').on('click','.control-design-thumb', function () {
-			$(this).parent().find('.thumb-selected').removeClass('thumb-selected');
-			$(this).addClass('thumb-selected');
-			$('[name^=\'inp-design\']').prop('checked', false);
-			$(this).find('[name^=\'inp-design\']').prop('checked', true);
-			_ctrl.new_templateManager.loadTemplate(true);
-		});
+		} else {
+			$('body').on('click','.control-design-thumb', function () {
+				$(this).parent().find('.thumb-selected').removeClass('thumb-selected');
+				$(this).addClass('thumb-selected');
+				$('[name^=\'inp-design\']').prop('checked', false);
+				$(this).find('[name^=\'inp-design\']').prop('checked', true);
+				_ctrl.new_templateManager.loadTemplate(true);
+			});
+		}	
 		/*START SCREEN NEXT BUTTON*/
 		$('.app-cover-start .next').click(function () {
 			$('#app-cover').hide();

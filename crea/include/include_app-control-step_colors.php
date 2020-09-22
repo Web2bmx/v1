@@ -8,6 +8,7 @@
 		<input type="color" id="inp-color" name="inp-color" value="#ff0000" />
 		<i id="color-pointer" class="far fa-hand-pointer"></i>
 		<p class="app-control-step-tooltip-info">Usaremos este color para generar automáticamente una paleta de colores para el sitio web de tu Negocio.</p>
+		<button id="color-accept">Elegir</button>	
 	</div>
 	<div class="container-input">
 		<label for="app-control-palettes">Paleta de colores</label>

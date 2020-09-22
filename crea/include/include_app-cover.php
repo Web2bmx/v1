@@ -50,9 +50,9 @@
 				<input type="radio" id="inp-design-004" name="inp-design" value="inp-design-004" style="display: none;" />
 			</div>
 		</div>
-		<a class="next nav-btns">
-			<i class="fas fa-arrow-circle-right"></i>
-		</a>
+		<button class="next nav-btns">
+			SELECCIONAR
+		</button>
 	</div>			
 	<div class="app-cover-finish" style="display: none;">
 		<div>

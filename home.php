@@ -52,8 +52,10 @@
 						<h2>Crea tu página web en minutos</h2>
 						<aside class="botones-intro">
 							<a class="cta" href="/tour">¡Comenzar!</a>
-							<a class="login-btn boton" href="">Iniciar Sesión</a>
-							<a class="panel boton" href="/crea" style="display: none">Mis páginas</a>					
+						</aside>
+						<aside class="botones-extra">
+							<a class="login-btn" href="">Iniciar Sesión</a>
+							<a class="panel" href="/crea" style="display: none">Mis páginas</a>					
 						</aside>
 					</div>
 					<span class="graph" id="gr_alien_side" style="background-image: url(landing/img/item_alien.svg);"></span>
