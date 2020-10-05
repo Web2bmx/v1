@@ -1,6 +1,7 @@
 <!doctype html>
 	<html lang="en">
 		<head>
+			<?php include_once("../include/include_gtm_head.php"); ?>
 			<!--
 			<script type="text/javascript" id="inspectletjs" src="js/inspectlet.js"></script>
 			<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108388790-1"></script>
@@ -24,6 +25,7 @@
 			<![endif]-->
 		</head>
 		<body>
+			<?php include_once("../include/include_gtm_body.php"); ?>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 			<header>
 				<div id="branding"><img id="logo" src="../landing/img/logo_web2b.svg" /></div>

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<?php include_once("../include/include_gtm_head.php"); ?>
 		<meta charset="utf-8">
 		<title>Web2b - Tu sitio web rápido y fácil</title>
 		<meta name="description" content="Impulsa tu estrategia digital">
@@ -18,6 +19,7 @@
 		<link rel="stylesheet" href="css/styles.css?v=1.0">
 	</head>
 	<body class="init">		
+		<?php include_once("../include/include_gtm_body.php"); ?>
 		<div id="template-cont"></div>
 		<div id="app">
 			<?php

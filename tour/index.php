@@ -5,6 +5,7 @@
 ?>
 <html>
     <head>
+       <?php include_once("../include/include_gtm_head.php"); ?>
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <meta charset="utf-8" />
         <title>Web2b - Impulsa tu estrategia digital</title>
@@ -22,6 +23,7 @@
         <link rel="stylesheet" href="css/tour.css" >
     </head>
     <body>
+        <?php include_once("../include/include_gtm_body.php"); ?>
         <nav id="global-navigation"><a href="/" class="global-navigation-back"><i class="fas fa-arrow-circle-left"></i><span>Regresar</span></a></nav>
     	<aside id="background"><div class='stars1'></div><div class='stars2'></div><div class='stars3'></div></aside>
         <main>
