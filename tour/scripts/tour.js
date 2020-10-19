@@ -1,8 +1,10 @@
 import dataManager from '../../js/dataManager';
+import analyticsManager from '../../js/analyticsManager';
 import menuSingleSelection from '../../js/menuSingleSelection';
 import modal from '../../js/modal';
 export default function Tour() {
     var new_dataManager = new dataManager(); 
+    var new_analyticsManager = new analyticsManager(); 
     var new_menuSingleSelection = new menuSingleSelection(); 
     var new_modal = new modal(); 
     var _tplData = new_dataManager.getObjFromLocalStorage("web2b");
@@ -84,7 +86,8 @@ export default function Tour() {
                 new_modal.show("#dialog-question-" + current_step);
                 $("#item-rocket>img:last").animate({ "opacity" : 0 }, 300);
             }, 3000);
-        }, delay);        
+        }, delay);
+        new_analyticsManager.trackClick("Tour step " + step);        
     };
     var animateBackground = function (){
         for (let i = 1; i < 4; i++) {

@@ -243,6 +243,9 @@ export default function templateManager () {
 				$('#color-pointer').removeClass('focus');
 			}
 			/*TRANSITIONS*/
+			/*ANALYTICS*/
+			_ctrl.new_analyticsManager.trackClick("Crea step " + step);
+			/*ANALYTICS*/
 		} else { $('.app-control-step .container-error').hide().fadeIn('fast'); }
 	};
 	return {

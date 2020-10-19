@@ -9,6 +9,7 @@ import paymentsManager from "./paymentsManager";
 import utilsManager from "./utilsManager";
 import dataManager from "../../js/dataManager";
 import pageManager from '../../js/pageManager';
+import analyticsManager from '../../js/analyticsManager';
 import validator from "./validator";
 import userValidator from "./userValidator";
 /**/
@@ -57,6 +58,7 @@ export default function creator() {
 	/*External objects*/
 	_this.new_dataManager = new dataManager();
 	_this.new_PageManager = new pageManager();
+	_this.new_analyticsManager = new analyticsManager();
 	_this.new_validator = new validator();
 
 	/*FUNCTIONS*/
