@@ -38,7 +38,7 @@
 							<li><a href="/blog">Blog</a></li>
 							<li><a href="#steps">¿Cómo funciona?</a></li>
 							<li><a href="#services">Nuestros servicios</a></li>
-							<li><a href="/tour">Comenzar</a></li>
+							<li><a href="/tour">¡Empieza Ya!</a></li>
 							<li><a class="login-btn" href="">Iniciar Sesión</a></li>
 							<li><a class="panel" href="/crea" style="display: none">Mis páginas</a></li>
 						</ul>
@@ -50,10 +50,9 @@
 					<span class='stars1'></span><span class='stars2'></span><span class='stars3'></span>
 					<div class="container">	
 						<img id="graph-rocket" src="landing/img/item_rocket.svg" />					
-						<h1>Impulsa tu estrategia digital</h1>
-						<h2>Crea tu página web en minutos</h2>
+						<h1>Tu página web: <br> Fácil, Rápido y las veces que quieras</h1>
 						<aside class="botones-intro">
-							<a class="cta" href="/tour">¡Comenzar!</a>
+							<a class="cta" href="/tour">¡Empieza Ya!</a>
 						</aside>
 						<aside class="botones-extra">
 							<a class="login-btn" href="">Iniciar Sesión</a>
@@ -133,7 +132,7 @@
 							<li><a href="#services">Nuestros servicios</a></li>
 							<li><a href="/politica-de-privacidad">Política de Privacidad</a></li>
 							<li><a href="/terminos-y-condiciones">Términos y Condiciones</a></li>
-							<li><a href="/tour">Comenzar</a></li>
+							<li><a href="/tour">¡Empieza Ya!</a></li>
 							<li><a href="#login" class="login-btn">Iniciar Sesión</a></li>
 							<li><a class="panel" href="/crea" style="display: none">Mis páginas</a></li>
 						</ul>
